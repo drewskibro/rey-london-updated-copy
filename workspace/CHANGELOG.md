@@ -124,5 +124,17 @@ You MUST maintain this file to track your work across messages. This is NON-NEGO
 ### 2026-03-16 — Linked Travel Clinic hero card to travel health page
 - Updated `href` on Travel Clinic `.service-card` in hero from `#travel-clinic` to `travel-health-south-east-london.html`
 - File: `index.html`
+### 2026-03-16 — Premium design uplift: travel health hero, stats & why-choose sections
+- Hero badge: replaced cheap white box with dark blue glassmorphism badge (icon wrap + 2-line text, gradient bg, inset glow)
+- Stats section: replaced bland light gradient with dark blue glassmorphism cards (matching destinations/services pattern) — bold stat numbers, translucent cards
+- Why Choose: removed 4th card (Two Locations), restructured to 3-col grid with proper image cards, numbered badges, hover zoom, CTA pill buttons
+- New CSS classes: `.th-hero-badge-premium`, `.th-stats-section-dark`, `.th-stat-card-dark`, `.th-why-grid-3`, `.th-why-card`
+- Files: `travel-health-south-east-london.html`, `travel-health.css`
+### 2026-03-16 — Fixed thailand.html bespoke header & footer — replaced with homepage versions
+- thailand.html had a stripped-down nav (no mega dropdowns, no hamburger, no Travel Health/Locations/About menus)
+- Footer was also bespoke (no newsletter, no social links, undersized link columns)
+- Replaced both `<header>` and `<footer>` blocks with exact copies from `index.html`, all hrefs prefixed with `/#`
+- Updated PATTERNS.md to explicitly call out footer as required match, not just header
+- File: `thailand.html`
 <!-- NEXT_ENTRY_HERE -->
 </changelog>

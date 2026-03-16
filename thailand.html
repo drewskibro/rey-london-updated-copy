@@ -26,48 +26,620 @@
         </a>
 
         <nav class="nav">
-          <div class="nav-item">
-            <a href="/" class="nav-link">Home</a>
-          </div>
+          <!-- Services Dropdown -->
           <div class="nav-item has-dropdown">
-            <a href="#services" class="nav-link">
+            <a href="/#services" class="nav-link">
               Services
               <svg class="dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
                 <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
               </svg>
             </a>
+            <div class="mega-dropdown">
+              <div class="dropdown-content">
+                <div class="dropdown-section">
+                  <h4 class="dropdown-title">NHS Services</h4>
+                  <a href="/#nhs-prescriptions" class="dropdown-link">
+                    <div class="link-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="4" y="4" width="16" height="16" rx="2"/>
+                        <path d="M9 9h6v6H9z"/>
+                        <path d="M12 9v6"/>
+                        <path d="M9 12h6"/>
+                      </svg>
+                    </div>
+                    <div class="link-content">
+                      <span class="link-name">NHS Prescriptions</span>
+                      <span class="link-desc">Free prescription collection</span>
+                    </div>
+                  </a>
+                  <a href="/#nhs-consultations" class="dropdown-link">
+                    <div class="link-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                      </svg>
+                    </div>
+                    <div class="link-content">
+                      <span class="link-name">NHS Consultations</span>
+                      <span class="link-desc">Expert pharmacist advice</span>
+                    </div>
+                  </a>
+                  <a href="/#nhs-vaccinations" class="dropdown-link">
+                    <div class="link-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        <line x1="12" y1="2" x2="12" y2="6"/>
+                        <line x1="12" y1="13" x2="12" y2="22"/>
+                      </svg>
+                    </div>
+                    <div class="link-content">
+                      <span class="link-name">NHS Vaccinations</span>
+                      <span class="link-desc">Flu jabs & immunisations</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="dropdown-section">
+                  <h4 class="dropdown-title">Private Services</h4>
+                  <a href="/#private-gp" class="dropdown-link">
+                    <div class="link-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                      </svg>
+                    </div>
+                    <div class="link-content">
+                      <span class="link-name">Private GP</span>
+                      <span class="link-desc">Same-day appointments</span>
+                    </div>
+                  </a>
+                  <a href="/#travel-clinic" class="dropdown-link">
+                    <div class="link-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                        <line x1="12" y1="22.08" x2="12" y2="12"/>
+                      </svg>
+                    </div>
+                    <div class="link-content">
+                      <span class="link-name">Travel Clinic</span>
+                      <span class="link-desc">Vaccinations & advice</span>
+                    </div>
+                  </a>
+                  <a href="/#health-checks" class="dropdown-link">
+                    <div class="link-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                      </svg>
+                    </div>
+                    <div class="link-content">
+                      <span class="link-name">Health Checks</span>
+                      <span class="link-desc">Blood pressure & diabetes</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="dropdown-section">
+                  <h4 class="dropdown-title">Specialist Care</h4>
+                  <a href="weight-loss.html" class="dropdown-link">
+                    <div class="link-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                      </svg>
+                    </div>
+                    <div class="link-content">
+                      <span class="link-name">Weight Loss</span>
+                      <span class="link-desc">Personalized programs</span>
+                    </div>
+                  </a>
+                  <a href="/#hair-loss" class="dropdown-link">
+                    <div class="link-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                        <line x1="12" y1="19" x2="12" y2="22"/>
+                      </svg>
+                    </div>
+                    <div class="link-content">
+                      <span class="link-name">Hair Loss</span>
+                      <span class="link-desc">Effective treatments</span>
+                    </div>
+                  </a>
+                  <a href="/#erectile-dysfunction" class="dropdown-link">
+                    <div class="link-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                      </svg>
+                    </div>
+                    <div class="link-content">
+                      <span class="link-name">Erectile Dysfunction</span>
+                      <span class="link-desc">Discreet consultations</span>
+                    </div>
+                  </a>
+                  <a href="/#menopause" class="dropdown-link">
+                    <div class="link-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                      </svg>
+                    </div>
+                    <div class="link-content">
+                      <span class="link-name">Menopause</span>
+                      <span class="link-desc">HRT & support</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="dropdown-featured">
+                  <div class="featured-card">
+                    <div class="featured-badge">Most Popular</div>
+                    <h5>Free Delivery Service</h5>
+                    <p>Get your prescriptions delivered free across London on orders over £20</p>
+                    <a href="/#delivery" class="featured-btn">Learn More →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Travel Health Dropdown -->
+          <div class="nav-item has-dropdown">
+            <a href="/#travel-health" class="nav-link">
+              Travel Health
+              <svg class="dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
+            <div class="mega-dropdown travel-health-dropdown">
+              <div class="dropdown-content dropdown-content-4col">
+                <div class="dropdown-section">
+                  <h4 class="dropdown-title">Travel Vaccinations</h4>
+                  <a href="/#hepatitis-a" class="dropdown-link">
+                    <div class="link-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19.5 12.572l-7.5 7.428l-7.5-7.428A5 5 0 1 1 12 6.006a5 5 0 1 1 7.5 6.572"/>
+                      </svg>
+                    </div>
+                    <div class="link-content">
+                      <span class="link-name">Hepatitis A</span>
+                      <span class="link-desc">Pre-travel protection</span>
+                    </div>
+                  </a>
+                  <a href="/#hepatitis-b" class="dropdown-link">
+                    <div class="link-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19.5 12.572l-7.5 7.428l-7.5-7.428A5 5 0 1 1 12 6.006a5 5 0 1 1 7.5 6.572"/>
+                      </svg>
+                    </div>
+                    <div class="link-content">
+                      <span class="link-name">Hepatitis B</span>
+                      <span class="link-desc">Long-term immunity</span>
+                    </div>
+                  </a>
+                  <a href="/#typhoid" class="dropdown-link">
+                    <div class="link-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                      </svg>
+                    </div>
+                    <div class="link-content">
+                      <span class="link-name">Typhoid</span>
+                      <span class="link-desc">Food & waterborne disease</span>
+                    </div>
+                  </a>
+                  <a href="/#cholera" class="dropdown-link">
+                    <div class="link-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                      </svg>
+                    </div>
+                    <div class="link-content">
+                      <span class="link-name">Cholera</span>
+                      <span class="link-desc">Oral vaccine available</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="dropdown-section">
+                  <h4 class="dropdown-title">Yellow Fever</h4>
+                  <a href="/#yellow-fever-vaccine" class="dropdown-link">
+                    <div class="link-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                      </svg>
+                    </div>
+                    <div class="link-content">
+                      <span class="link-name">Yellow Fever Vaccine</span>
+                      <span class="link-desc">WHO-approved centre</span>
+                    </div>
+                  </a>
+                  <a href="/#yellow-fever-certificate" class="dropdown-link">
+                    <div class="link-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                      </svg>
+                    </div>
+                    <div class="link-content">
+                      <span class="link-name">International Certificate</span>
+                      <span class="link-desc">ICVP issued on-site</span>
+                    </div>
+                  </a>
+                  <a href="/#yellow-fever-countries" class="dropdown-link">
+                    <div class="link-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="2" y1="12" x2="22" y2="12"/>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                      </svg>
+                    </div>
+                    <div class="link-content">
+                      <span class="link-name">Country Requirements</span>
+                      <span class="link-desc">Check if you need it</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="dropdown-section">
+                  <h4 class="dropdown-title">Rabies</h4>
+                  <a href="/#rabies-pre-exposure" class="dropdown-link">
+                    <div class="link-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                      </svg>
+                    </div>
+                    <div class="link-content">
+                      <span class="link-name">Pre-Exposure Course</span>
+                      <span class="link-desc">3-dose vaccination schedule</span>
+                    </div>
+                  </a>
+                  <a href="/#rabies-post-exposure" class="dropdown-link">
+                    <div class="link-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                      </svg>
+                    </div>
+                    <div class="link-content">
+                      <span class="link-name">Post-Exposure Advice</span>
+                      <span class="link-desc">Urgent bite assessment</span>
+                    </div>
+                  </a>
+                  <a href="thailand.html" class="dropdown-link">
+                    <div class="link-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                      </svg>
+                    </div>
+                    <div class="link-content">
+                      <span class="link-name">High-Risk Areas</span>
+                      <span class="link-desc">Asia, Africa & Americas</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="dropdown-section">
+                  <h4 class="dropdown-title">Malaria Prevention</h4>
+                  <a href="/#malaria-tablets" class="dropdown-link">
+                    <div class="link-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M12 8v8"/>
+                        <path d="M8 12h8"/>
+                      </svg>
+                    </div>
+                    <div class="link-content">
+                      <span class="link-name">Antimalarial Tablets</span>
+                      <span class="link-desc">Malarone, Doxycycline & more</span>
+                    </div>
+                  </a>
+                  <a href="/#malaria-consultation" class="dropdown-link">
+                    <div class="link-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                      </svg>
+                    </div>
+                    <div class="link-content">
+                      <span class="link-name">Malaria Consultation</span>
+                      <span class="link-desc">Personalised risk assessment</span>
+                    </div>
+                  </a>
+                  <a href="/#malaria-prevention-tips" class="dropdown-link">
+                    <div class="link-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="16" x2="12" y2="12"/>
+                        <line x1="12" y1="8" x2="12.01" y2="8"/>
+                      </svg>
+                    </div>
+                    <div class="link-content">
+                      <span class="link-name">Bite Prevention Tips</span>
+                      <span class="link-desc">Nets, repellents & clothing</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Locations Dropdown -->
+          <div class="nav-item has-dropdown">
+            <a href="/#locations" class="nav-link">
+              Locations
+              <svg class="dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
             <div class="dropdown-menu">
-              <a href="/#services" class="dropdown-link">
+              <a href="/#pond-pharmacy" class="dropdown-link">
                 <div class="link-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M12 9v6"/><path d="M9 12h6"/></svg>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
                 </div>
                 <div class="link-content">
-                  <span class="link-name">All Services</span>
-                  <span class="link-desc">View our full range</span>
+                  <span class="link-name">Pond Pharmacy</span>
+                  <span class="link-desc">59 High St, Chislehurst BR7 5AF</span>
                 </div>
               </a>
-              <a href="/#travel-clinic" class="dropdown-link">
+              <a href="/#chislehurst-pharmacy" class="dropdown-link">
                 <div class="link-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
                 </div>
                 <div class="link-content">
-                  <span class="link-name">Travel Clinic</span>
-                  <span class="link-desc">Vaccinations & advice</span>
+                  <span class="link-name">Chislehurst Pharmacy</span>
+                  <span class="link-desc">59 Chislehurst Rd, BR7 5NP</span>
+                </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="/#directions" class="dropdown-link">
+                <div class="link-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                  </svg>
+                </div>
+                <div class="link-content">
+                  <span class="link-name">Get Directions</span>
+                  <span class="link-desc">Find us on the map</span>
                 </div>
               </a>
             </div>
           </div>
-          <a href="/#locations" class="nav-link">Locations</a>
+
+          <!-- About Dropdown -->
+          <div class="nav-item has-dropdown">
+            <a href="/#about" class="nav-link">
+              About
+              <svg class="dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
+            <div class="dropdown-menu">
+              <a href="/#team" class="dropdown-link">
+                <div class="link-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                  </svg>
+                </div>
+                <div class="link-content">
+                  <span class="link-name">Our Team</span>
+                  <span class="link-desc">Meet our pharmacists</span>
+                </div>
+              </a>
+              <a href="/#testimonials" class="dropdown-link">
+                <div class="link-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                  </svg>
+                </div>
+                <div class="link-content">
+                  <span class="link-name">Testimonials</span>
+                  <span class="link-desc">What customers say</span>
+                </div>
+              </a>
+              <a href="/#certifications" class="dropdown-link">
+                <div class="link-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="7"/>
+                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+                  </svg>
+                </div>
+                <div class="link-content">
+                  <span class="link-name">Certifications</span>
+                  <span class="link-desc">GPhC registered</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
           <a href="/#contact" class="nav-link">Contact</a>
         </nav>
 
+        <!-- Hamburger Button (mobile only) -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
         <div class="header-actions">
+          <button class="icon-btn search-btn" aria-label="Search">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
+              <path d="M13.5 13.5L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <button class="icon-btn account-btn" aria-label="Account">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="10" cy="7" r="3" stroke="currentColor" stroke-width="2"/>
+              <path d="M4 17C4 14 6.5 12 10 12C13.5 12 16 14 16 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
           <a href="tel:02084673158" class="cta-btn">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M14.5 11.5V13.5C14.5 14.05 14.05 14.5 13.5 14.5C6.6 14.5 1 8.9 1 2C1 1.45 1.45 1 2 1H4.5C5.05 1 5.5 1.45 5.5 2V4.5C5.5 5.05 5.05 5.5 4.5 5.5H3.5C4 8.5 6.5 11 9.5 11.5V10.5C9.5 9.95 9.95 9.5 10.5 9.5H13C13.55 9.5 14 9.95 14 10.5V11.5Z" fill="currentColor"/>
+              <path d="M14.5 11.5V13.5C14.5 14.05 14.05 14.5 13.5 14.5H12.5C6.7 14.5 2 9.8 2 4V3C2 2.45 2.45 2 3 2H5C5.55 2 6 2.45 6 3V5.5C6 6.05 5.55 6.5 5 6.5H4C4.5 9.5 6.5 11.5 9.5 12V11C9.5 10.45 9.95 10 10.5 10H13C13.55 10 14 10.45 14 11V11.5C14 11.78 14.22 12 14.5 12C14.78 12 15 11.78 15 11.5V11C15 10.45 14.55 10 14 10H11.5C10.95 10 10.5 10.45 10.5 11V12C7.5 11.5 5.5 9.5 5 6.5H6C6.55 6.5 7 6.05 7 5.5V3C7 2.45 6.55 2 6 2H4C3.45 2 3 2.45 3 3V4C3 9.8 7.7 14.5 13.5 14.5H14.5C15.05 14.5 15.5 14.05 15.5 13.5V11.5C15.5 10.95 15.05 10.5 14.5 10.5Z" fill="currentColor"/>
             </svg>
             <span>Call Now</span>
           </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <div class="mobile-nav-header">
+        <a href="/" class="logo"><span class="logo-text">Rey London</span></a>
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="mobile-nav-body">
+        <!-- Services Accordion -->
+        <div class="mobile-nav-item">
+          <button class="mobile-nav-trigger" aria-expanded="false">
+            Services
+            <svg class="mobile-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="mobile-nav-sub">
+            <a href="/#nhs-prescriptions" class="mobile-nav-sub-link">NHS Prescriptions</a>
+            <a href="/#nhs-consultations" class="mobile-nav-sub-link">NHS Consultations</a>
+            <a href="/#nhs-vaccinations" class="mobile-nav-sub-link">NHS Vaccinations</a>
+            <a href="/#private-gp" class="mobile-nav-sub-link">Private GP</a>
+            <a href="/#travel-clinic" class="mobile-nav-sub-link">Travel Clinic</a>
+            <a href="/#health-checks" class="mobile-nav-sub-link">Health Checks</a>
+            <a href="weight-loss.html" class="mobile-nav-sub-link">Weight Loss</a>
+            <a href="/#hair-loss" class="mobile-nav-sub-link">Hair Loss</a>
+            <a href="/#erectile-dysfunction" class="mobile-nav-sub-link">Erectile Dysfunction</a>
+            <a href="/#menopause" class="mobile-nav-sub-link">Menopause</a>
+          </div>
+        </div>
+
+        <!-- Travel Health Accordion -->
+        <div class="mobile-nav-item">
+          <button class="mobile-nav-trigger" aria-expanded="false">
+            Travel Health
+            <svg class="mobile-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="mobile-nav-sub">
+            <a href="/#hepatitis-a" class="mobile-nav-sub-link">Hepatitis A</a>
+            <a href="/#hepatitis-b" class="mobile-nav-sub-link">Hepatitis B</a>
+            <a href="/#typhoid" class="mobile-nav-sub-link">Typhoid</a>
+            <a href="/#cholera" class="mobile-nav-sub-link">Cholera</a>
+            <a href="/#yellow-fever-vaccine" class="mobile-nav-sub-link">Yellow Fever Vaccine</a>
+            <a href="/#yellow-fever-certificate" class="mobile-nav-sub-link">International Certificate</a>
+            <a href="/#rabies-pre-exposure" class="mobile-nav-sub-link">Pre-Exposure Rabies Course</a>
+            <a href="/#malaria-tablets" class="mobile-nav-sub-link">Antimalarial Tablets</a>
+            <a href="/#malaria-consultation" class="mobile-nav-sub-link">Malaria Consultation</a>
+            <a href="thailand.html" class="mobile-nav-sub-link">Thailand Travel Health</a>
+          </div>
+        </div>
+
+        <!-- Locations Accordion -->
+        <div class="mobile-nav-item">
+          <button class="mobile-nav-trigger" aria-expanded="false">
+            Locations
+            <svg class="mobile-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="mobile-nav-sub">
+            <a href="/#pond-pharmacy" class="mobile-nav-sub-link">Pond Pharmacy — High St, Chislehurst</a>
+            <a href="/#chislehurst-pharmacy" class="mobile-nav-sub-link">Chislehurst Pharmacy — Chislehurst Rd</a>
+            <a href="/#directions" class="mobile-nav-sub-link">Get Directions</a>
+          </div>
+        </div>
+
+        <!-- About Accordion -->
+        <div class="mobile-nav-item">
+          <button class="mobile-nav-trigger" aria-expanded="false">
+            About
+            <svg class="mobile-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="mobile-nav-sub">
+            <a href="/#team" class="mobile-nav-sub-link">Our Team</a>
+            <a href="/#testimonials" class="mobile-nav-sub-link">Testimonials</a>
+            <a href="/#certifications" class="mobile-nav-sub-link">Certifications</a>
+          </div>
+        </div>
+
+        <a href="/#contact" class="mobile-nav-link">Contact</a>
+      </div>
+
+      <div class="mobile-nav-footer">
+        <a href="tel:02084673158" class="mobile-nav-cta">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M16.5 12.75v2.25a1.5 1.5 0 0 1-1.635 1.497A14.85 14.85 0 0 1 8.4 14.118a14.625 14.625 0 0 1-4.5-4.5 14.85 14.85 0 0 1-2.13-6.517A1.5 1.5 0 0 1 3.255 1.5H5.5A1.5 1.5 0 0 1 7 2.818c.198.975.504 1.926.907 2.828a1.5 1.5 0 0 1-.337 1.582L6.555 8.243a12 12 0 0 0 4.5 4.5l1.015-1.015a1.5 1.5 0 0 1 1.582-.337 9.635 9.635 0 0 0 2.826.907A1.5 1.5 0 0 1 16.5 12.75z" fill="currentColor"/>
+          </svg>
+          020 8467 3158
+        </a>
+      </div>
+    </nav>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay">
+      <div class="search-overlay-content">
+        <button class="search-close" aria-label="Close search">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="search-box">
+          <svg class="search-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+            <path d="M16 16L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <input type="text" placeholder="Search for services, treatments, or advice..." class="search-overlay-input">
+        </div>
+        <div class="search-suggestions">
+          <div class="suggestion-category">
+            <h5>Popular Searches</h5>
+            <a href="weight-loss.html">Weight Loss Programs</a>
+            <a href="#travel-vaccines">Travel Vaccinations</a>
+            <a href="/#private-gp">Private GP Appointments</a>
+            <a href="/#nhs-prescriptions">NHS Prescriptions</a>
+          </div>
         </div>
       </div>
     </div>
@@ -867,26 +1439,62 @@
   <footer class="footer">
     <div class="footer-glow"></div>
     <div class="container">
+      <!-- Newsletter Section -->
+      <div class="footer-newsletter">
+        <div class="newsletter-content">
+          <div class="newsletter-text">
+            <h3>Stay informed about your health</h3>
+            <p>Get expert health tips, exclusive offers, and updates delivered to your inbox</p>
+          </div>
+          <form class="newsletter-form">
+            <div class="newsletter-input-wrapper">
+              <svg class="newsletter-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M3 4h14c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M19 6l-9 6-9-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <input type="email" placeholder="Enter your email address" class="newsletter-input" required>
+              <button type="submit" class="newsletter-btn">
+                Subscribe
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Main Footer Content -->
       <div class="footer-main">
         <div class="footer-grid">
+          <!-- Brand Column -->
           <div class="footer-brand-col">
             <div class="footer-logo-wrapper">
               <span class="footer-logo-text">Rey London</span>
             </div>
             <p class="footer-description">Your trusted healthcare partner in London. Providing expert pharmaceutical care and personalized health services since 2010.</p>
+
+            <!-- Contact Cards -->
             <div class="footer-contact-cards">
               <div class="contact-card">
                 <div class="contact-card-icon">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M18 8c0 5.5-7 11-7 11S4 13.5 4 8a7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="8" r="2" stroke="currentColor" stroke-width="2"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M18 8c0 5.5-7 11-7 11S4 13.5 4 8a7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="11" cy="8" r="2" stroke="currentColor" stroke-width="2"/>
+                  </svg>
                 </div>
                 <div class="contact-card-content">
                   <span class="contact-card-label">Pond Pharmacy</span>
                   <a href="tel:02084673158" class="contact-card-value">020 8467 3158</a>
                 </div>
               </div>
+
               <div class="contact-card">
                 <div class="contact-card-icon">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M18 8c0 5.5-7 11-7 11S4 13.5 4 8a7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="8" r="2" stroke="currentColor" stroke-width="2"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M18 8c0 5.5-7 11-7 11S4 13.5 4 8a7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="11" cy="8" r="2" stroke="currentColor" stroke-width="2"/>
+                  </svg>
                 </div>
                 <div class="contact-card-content">
                   <span class="contact-card-label">Chislehurst Pharmacy</span>
@@ -894,49 +1502,101 @@
                 </div>
               </div>
             </div>
+
+            <!-- Social Links -->
+            <div class="footer-social">
+              <span class="social-label">Follow Us</span>
+              <div class="social-links-premium">
+                <a href="#facebook" class="social-link" aria-label="Facebook">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M15 1H12C10.6739 1 9.40215 1.52678 8.46447 2.46447C7.52678 3.40215 7 4.67392 7 6V9H4V13H7V19H11V13H14L15 9H11V6C11 5.73478 11.1054 5.48043 11.2929 5.29289C11.4804 5.10536 11.7348 5 12 5H15V1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+                <a href="#instagram" class="social-link" aria-label="Instagram">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <rect x="2" y="2" width="16" height="16" rx="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="14.5" cy="5.5" r="0.5" fill="currentColor"/>
+                  </svg>
+                </a>
+                <a href="#twitter" class="social-link" aria-label="Twitter">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M19 3a8.5 8.5 0 01-2.36.64 4.13 4.13 0 001.81-2.27 8.21 8.21 0 01-2.61 1 4.1 4.1 0 00-7 3.74A11.64 11.64 0 012 2.13a4.1 4.1 0 001.27 5.47A4.07 4.07 0 011.64 7v.05a4.1 4.1 0 003.29 4 4.1 4.1 0 01-1.85.07 4.1 4.1 0 003.83 2.85A8.23 8.23 0 011 15.54a11.6 11.6 0 006.29 1.84c7.55 0 11.68-6.25 11.68-11.67 0-.18 0-.35-.01-.53A8.35 8.35 0 0019 3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+                <a href="#linkedin" class="social-link" aria-label="LinkedIn">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M13 7a5 5 0 015 5v6h-4v-6a1 1 0 00-2 0v6H8v-6a5 5 0 015-5zM4 8h4v10H4V8zM6 5a2 2 0 100-4 2 2 0 000 4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
+
+          <!-- Services Column -->
           <div class="footer-links-col">
             <h4 class="footer-col-title">Services</h4>
             <ul class="footer-links-list">
-              <li><a href="/">Home</a></li>
-              <li><a href="/#services">All Services</a></li>
+              <li><a href="/#prescriptions">NHS Prescriptions</a></li>
+              <li><a href="/#private-gp">Private GP Consultations</a></li>
               <li><a href="/#travel-clinic">Travel Clinic</a></li>
-              <li><a href="#vaccines">Thailand Vaccines</a></li>
-              <li><a href="#pricing">Pricing</a></li>
+              <li><a href="/#health-checks">Health Checks</a></li>
+              <li><a href="weight-loss.html">Weight Loss Programs</a></li>
+              <li><a href="/#vaccinations">Vaccinations</a></li>
+              <li><a href="/#delivery">Free Delivery</a></li>
             </ul>
           </div>
+
+          <!-- Quick Links Column -->
           <div class="footer-links-col">
             <h4 class="footer-col-title">Quick Links</h4>
             <ul class="footer-links-list">
               <li><a href="/#about">About Us</a></li>
-              <li><a href="/#locations">Locations</a></li>
-              <li><a href="/#team">Our Team</a></li>
-              <li><a href="#faq">FAQs</a></li>
-              <li><a href="/#contact">Contact</a></li>
+              <li><a href="/#locations">Our Locations</a></li>
+              <li><a href="/#team">Meet the Team</a></li>
+              <li><a href="/#testimonials">Testimonials</a></li>
+              <li><a href="/#health-hub">Health Hub</a></li>
+              <li><a href="/#careers">Careers</a></li>
+              <li><a href="/#contact">Contact Us</a></li>
             </ul>
           </div>
+
+          <!-- Support Column -->
           <div class="footer-links-col">
             <h4 class="footer-col-title">Support</h4>
             <ul class="footer-links-list">
-              <li><a href="/#faq">General FAQs</a></li>
+              <li><a href="#faq">FAQs</a></li>
+              <li><a href="/#opening-hours">Opening Hours</a></li>
               <li><a href="/#privacy">Privacy Policy</a></li>
               <li><a href="/#terms">Terms & Conditions</a></li>
+              <li><a href="/#complaints">Complaints Procedure</a></li>
               <li><a href="/#accessibility">Accessibility</a></li>
+              <li><a href="/#sitemap">Sitemap</a></li>
             </ul>
           </div>
         </div>
       </div>
+
+      <!-- Footer Bottom -->
       <div class="footer-bottom-premium">
         <div class="footer-bottom-content">
           <div class="footer-legal">
             <p class="footer-copyright">© 2026 Rey London Pharmacy. All rights reserved.</p>
             <p class="footer-registration">Registered Pharmacy | GPhC Registration: 1234567</p>
           </div>
+
           <div class="footer-certifications">
-            <div class="cert-badge"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/mhra.svg" alt="MHRA Approved"></div>
-            <div class="cert-badge"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/gpc.svg" alt="GPhC Registered"></div>
-            <div class="cert-badge"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/ico.svg" alt="ICO Registered"></div>
+            <div class="cert-badge">
+              <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/mhra.svg" alt="MHRA Approved">
+            </div>
+            <div class="cert-badge">
+              <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/gpc.svg" alt="GPhC Registered">
+            </div>
+            <div class="cert-badge">
+              <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/ico.svg" alt="ICO Registered">
+            </div>
           </div>
+
           <div class="footer-payments">
             <span class="payments-label">We Accept</span>
             <div class="payment-methods">

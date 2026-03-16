@@ -42,12 +42,16 @@ CRITICAL: Keep this file under 300 lines. You are allowed to summarize, change t
 
 ## Architecture
 
-### Shared Navigation Across Pages
+### Shared Navigation & Footer Across Pages
 
 **Category:** Architecture
 **Status:** Active
-**Description:** Every page (homepage, thailand.html, weight-loss.html, future pages) must use the identical `<header>` block from index.html. The only difference: anchor-only links (`#section`) become cross-page links (`/#section`) on sub-pages. Never create a custom/simplified nav for individual pages.
-**Rationale:** Consistent UX, single source of truth for nav structure, avoids drift between pages.
+**Description:** Every page (homepage, thailand.html, weight-loss.html, future pages) must use the IDENTICAL `<header>` AND `<footer>` blocks from index.html. No bespoke or simplified versions allowed on sub-pages.
+- Header: copy in full, including mega dropdowns, hamburger button, mobile nav drawer, search overlay, and header-actions
+- Footer: copy in full, including newsletter section, social links, full 4-column link grid, and footer-bottom bar
+- Anchor-only links (`#section`) → cross-page links (`/#section`) on sub-pages
+- Page-specific anchor links (`#faq`, `#vaccines`, etc.) stay as-is on the page that contains them
+**Rationale:** Consistent UX, single source of truth for nav/footer structure, prevents drift between pages. Bespoke nav/footer is the #1 recurring issue — always check both when creating a new page.
 
 ## Data Flow
 
