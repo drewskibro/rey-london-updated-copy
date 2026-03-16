@@ -18,6 +18,12 @@ You MUST maintain this file to track your work across messages. This is NON-NEGO
 </instructions>
 
 <changelog>
+### 2026-03-16 — Merged homepage CTA + Newsletter into integrated block (HPV-style)
+- Replaced two separate sections (`.cta-section` "Need help?" + `.footer-newsletter` "Stay informed") with single `.hp-footer-cta-block`
+- New block: glassmorphism badge pills (GPhC Registered / Two Locations / Same-Day Service), bold H2, subtitle, white + ghost CTA buttons, tick checks row, divider, newsletter 2-col row
+- New CSS: `.hp-footer-cta-block`, `.hp-cta-badges`, `.hp-footer-cta-title`, `.hp-btn-cta-white`, `.hp-btn-cta-ghost`, `.hp-footer-cta-divider`, `.hp-footer-newsletter-row` with responsive breakpoints
+- Removed old `.cta-section`, `.cta-content-full`, `.btn-cta-primary`, `.footer-newsletter` CSS; footer `.footer-main` padding-top reduced
+- Files: `index.html`, `styles.css`
 ### 2026-03-16 — Created blog post template page (Mounjaro article)
 - New `health-hub/mounjaro-weight-loss-south-east-london.html` — full editorial blog post with 12 sections: hero, featured image, clinically reviewed E-E-A-T block, article body with TOC sidebar, weight calculator, medical warnings, callout cards, 8 FAQ accordions, closer CTA card, compliance pills, post navigation, social proof, related posts grid
 - New `health-hub/blog-post.css` (~1000 lines) — all `bp-` prefixed classes, same design system (CSS variables, blue gradient, glassmorphism, Playfair Display + Inter typography, pill badges, card shadows, responsive breakpoints)
@@ -72,6 +78,11 @@ You MUST maintain this file to track your work across messages. This is NON-NEGO
 - Number counter animations: destinations stats (2/20+/Same/5★), testimonials trust (4.9/5, 400+, 10,000+), team stat cards (8/15+/2/10,000+)
 - Removed old script.js observer for `.benefit-card`, `.step-card`, `.product-card` (now handled by hp-reveal); `prefers-reduced-motion` respected
 - Files: `styles.css`, `index.html`, `script.js`
+### 2026-03-16 — Rewrote Mounjaro blog post to fix failed nav link edit
+- Full rewrite of `health-hub/mounjaro-weight-loss-south-east-london.html` — replace_in_file had failed on dense inline SVG nav markup
+- Updated Hepatitis A & B link in Travel Health dropdown from `/#hepatitis-a` to `/hepatitis-vaccine-london.html`
+- Also updated Yellow Fever link to `/yellow-fever-vaccine-london.html`, Our Team link to `/meet-the-team.html`
+- Added Hepatitis A & B sub-link to mobile Travel Health accordion; footer Quick Links now links to meet-the-team.html
 <!-- NEXT_ENTRY_HERE -->
 ### 2026-03-16 — Created Hepatitis A & B Vaccines London service page
 - New `hepatitis-vaccine-london.html` — full 14-section page: hero, quick info, understanding hepatitis, A vs B comparison table, who should get vaccinated (3-card), 3-tier pricing (Hep A £50, Hep B £50, Combined Twinrix £75 featured), vaccination process (sticky photo + 3 steps), high-risk regions (2-col), side effects/safety, NHS vs Private comparison table, why choose REY (6 cards), locations (2 cards), 15-question FAQ, integrated CTA+newsletter footer, medical disclaimer
