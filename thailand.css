@@ -1,0 +1,1278 @@
+/* ================================
+   Thailand Travel Vaccinations Page
+   ================================ */
+
+/* Hero Section */
+.th-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 50%, var(--dark-blue) 100%);
+  padding: 80px 0 100px;
+}
+
+.th-hero-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.th-hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.th-hero-orb-1 {
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  right: -100px;
+}
+
+.th-hero-orb-2 {
+  width: 400px;
+  height: 400px;
+  bottom: -150px;
+  left: -100px;
+}
+
+.th-hero-container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.th-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 50px;
+  margin-bottom: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.th-hero-title {
+  font-size: 52px;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  margin-bottom: 24px;
+  font-family: 'Inter', sans-serif;
+}
+
+.th-hero-subtitle {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  font-weight: 400;
+  max-width: 600px;
+}
+
+.th-hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.th-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  background: var(--white);
+  color: var(--primary-blue);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 2px solid transparent;
+}
+
+.th-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.th-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.th-btn-secondary:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.th-hero-trust {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.th-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.th-hero-visual {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.th-hero-visual img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+.th-hero-visual-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(90, 60, 150, 0.25) 0%, rgba(10, 47, 138, 0.15) 100%);
+  pointer-events: none;
+}
+
+/* Common Section Styles */
+.th-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #ffffff 0%, var(--secondary-blue) 50%, #f5f9fc 100%);
+  position: relative;
+}
+
+.th-section-dark {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 50%, var(--dark-blue) 100%);
+  padding: 100px 0;
+}
+
+.th-section-dark-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.th-dark-orb {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.th-dark-orb-1 {
+  width: 500px;
+  height: 500px;
+  top: -180px;
+  right: -160px;
+}
+
+.th-dark-orb-2 {
+  width: 600px;
+  height: 600px;
+  bottom: -200px;
+  left: -140px;
+}
+
+.th-risks-container,
+.th-process-container,
+.th-pricing-container,
+.th-why-container,
+.th-final-cta-container {
+  position: relative;
+  z-index: 2;
+}
+
+.th-section-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.th-section-header-dark {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.th-section-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(10, 47, 138, 0.08);
+  color: var(--primary-blue);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 50px;
+  margin-bottom: 28px;
+  border: 1px solid rgba(10, 47, 138, 0.15);
+}
+
+.th-pill-dark {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.th-section-desc {
+  font-size: 18px;
+  color: var(--text-gray);
+  max-width: 800px;
+  margin: 24px auto 0;
+  line-height: 1.7;
+}
+
+.th-title-dark {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.th-desc-dark {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Vaccine Category */
+.th-vaccine-category {
+  margin-bottom: 56px;
+}
+
+.th-vaccine-category:last-child {
+  margin-bottom: 0;
+}
+
+.th-category-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 32px;
+  border-radius: 16px;
+  margin-bottom: 28px;
+}
+
+.th-category-routine {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.th-category-routine .th-category-icon {
+  color: #10b981;
+}
+
+.th-category-recommended {
+  background: linear-gradient(135deg, rgba(10, 47, 138, 0.08) 0%, rgba(10, 47, 138, 0.04) 100%);
+  border: 1px solid rgba(10, 47, 138, 0.15);
+}
+
+.th-category-recommended .th-category-icon {
+  color: var(--primary-blue);
+}
+
+.th-category-required {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(239, 68, 68, 0.04) 100%);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.th-category-required .th-category-icon {
+  color: #ef4444;
+}
+
+.th-category-icon {
+  width: 52px;
+  height: 52px;
+  background: var(--white);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.th-category-header h3 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.th-category-header p {
+  font-size: 15px;
+  color: var(--text-gray);
+}
+
+/* Vaccine Grid */
+.th-vaccine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.th-vaccine-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 32px;
+  border: 1px solid rgba(10, 47, 138, 0.1);
+  box-shadow: 0 2px 12px rgba(10, 47, 138, 0.04);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.th-vaccine-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(10, 47, 138, 0.15);
+  border-color: rgba(10, 47, 138, 0.2);
+}
+
+.th-vaccine-card-required {
+  border-color: rgba(239, 68, 68, 0.2);
+  background: linear-gradient(135deg, #fff 0%, rgba(239, 68, 68, 0.03) 100%);
+}
+
+.th-vaccine-name {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--primary-blue);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.th-vaccine-full {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+}
+
+.th-vaccine-desc {
+  font-size: 15px;
+  color: var(--text-gray);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.th-vaccine-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.th-vaccine-who,
+.th-vaccine-doses {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary-blue);
+  padding: 8px 14px;
+  background: rgba(10, 47, 138, 0.06);
+  border-radius: 8px;
+}
+
+.th-vaccine-who svg,
+.th-vaccine-doses svg {
+  flex-shrink: 0;
+}
+
+/* Health Risks */
+.th-risks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.th-risk-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.th-risk-card:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.th-risk-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.th-risk-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.th-risk-card p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+}
+
+/* Malaria Section */
+.th-malaria-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.th-malaria-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 40px 32px;
+  border: 1px solid rgba(10, 47, 138, 0.1);
+  box-shadow: 0 2px 12px rgba(10, 47, 138, 0.04);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+}
+
+.th-malaria-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(10, 47, 138, 0.15);
+}
+
+.th-malaria-icon {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, rgba(10, 47, 138, 0.1) 0%, rgba(10, 47, 138, 0.04) 100%);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  color: var(--primary-blue);
+  border: 1px solid rgba(10, 47, 138, 0.15);
+}
+
+.th-malaria-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.th-malaria-card p {
+  font-size: 15px;
+  color: var(--text-gray);
+  line-height: 1.7;
+}
+
+/* Process Steps */
+.th-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.th-step-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 40px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+}
+
+.th-step-card:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.th-step-number {
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.th-step-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.th-step-card p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+}
+
+.th-step-cta {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.th-step-cta a {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: all 0.3s;
+}
+
+.th-step-cta a:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Locations */
+.th-locations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.th-location-card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 40px;
+  border: 1px solid rgba(10, 47, 138, 0.12);
+  box-shadow: 0 4px 24px rgba(10, 47, 138, 0.06);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.th-location-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(10, 47, 138, 0.15);
+}
+
+.th-location-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+  color: var(--white);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+}
+
+.th-location-card h3 {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--primary-blue);
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.th-location-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.th-location-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--text-dark);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.th-location-item svg {
+  color: var(--primary-blue);
+  flex-shrink: 0;
+}
+
+.th-location-item a {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s;
+}
+
+.th-location-item a:hover {
+  color: var(--light-blue);
+}
+
+.th-location-serving {
+  font-size: 14px;
+  color: var(--text-gray);
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+.th-location-map {
+  margin-bottom: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(10, 47, 138, 0.1);
+}
+
+.th-location-btn {
+  display: block;
+  text-align: center;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 16px rgba(10, 47, 138, 0.3);
+}
+
+.th-location-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(10, 47, 138, 0.4);
+}
+
+.th-service-area {
+  text-align: center;
+  padding: 32px 40px;
+  background: rgba(10, 47, 138, 0.04);
+  border-radius: 16px;
+  border: 1px solid rgba(10, 47, 138, 0.1);
+}
+
+.th-service-area p {
+  font-size: 16px;
+  color: var(--text-gray);
+  line-height: 1.7;
+}
+
+.th-service-area strong {
+  color: var(--primary-blue);
+  font-weight: 700;
+}
+
+/* Pricing */
+.th-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.th-pricing-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 40px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.th-pricing-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-6px);
+}
+
+.th-pricing-card-featured {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+  transform: scale(1.04);
+}
+
+.th-pricing-card-featured:hover {
+  transform: scale(1.04) translateY(-6px);
+}
+
+.th-pricing-popular {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 24px;
+  background: linear-gradient(135deg, #facc15, #eab308);
+  color: #1a1a1a;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 12px rgba(234, 179, 8, 0.4);
+}
+
+.th-pricing-tier {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.th-pricing-card h3 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.th-pricing-price {
+  margin-bottom: 32px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.th-price-from {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+}
+
+.th-price-amount {
+  font-size: 56px;
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.th-pricing-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.th-pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.th-pricing-features li svg {
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+.th-pricing-btn {
+  display: block;
+  text-align: center;
+  padding: 16px 32px;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s;
+}
+
+.th-pricing-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+}
+
+.th-pricing-btn-featured {
+  background: var(--white);
+  color: var(--primary-blue);
+  border-color: transparent;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.th-pricing-btn-featured:hover {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* Individual pricing */
+.th-pricing-card-individual h3 {
+  margin-bottom: 32px;
+}
+
+.th-individual-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 24px;
+}
+
+.th-individual-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+}
+
+.th-individual-item:last-child {
+  border-bottom: none;
+}
+
+.th-individual-price {
+  font-weight: 800;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+.th-pricing-note {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  font-style: italic;
+}
+
+/* Timing */
+.th-timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.th-timeline-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 40px 32px;
+  border: 1px solid rgba(10, 47, 138, 0.1);
+  box-shadow: 0 2px 12px rgba(10, 47, 138, 0.04);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.th-timeline-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(10, 47, 138, 0.15);
+}
+
+.th-timeline-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.th-timeline-ideal::before {
+  background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.th-timeline-good::before {
+  background: linear-gradient(90deg, var(--primary-blue), var(--light-blue));
+}
+
+.th-timeline-lastmin::before {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+
+.th-timeline-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+.th-timeline-ideal .th-timeline-badge {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.th-timeline-good .th-timeline-badge {
+  background: rgba(10, 47, 138, 0.08);
+  color: var(--primary-blue);
+}
+
+.th-timeline-lastmin .th-timeline-badge {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.th-timeline-period {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--primary-blue);
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+
+.th-timeline-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.th-timeline-card p {
+  font-size: 15px;
+  color: var(--text-gray);
+  line-height: 1.7;
+}
+
+/* Why Choose Us */
+.th-why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.th-why-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+}
+
+.th-why-card:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.th-why-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s;
+}
+
+.th-why-card:hover .th-why-icon {
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
+}
+
+.th-why-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.th-why-card p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+}
+
+/* FAQ */
+.th-faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.th-faq-item {
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid rgba(10, 47, 138, 0.1);
+  overflow: hidden;
+  transition: all 0.4s;
+  box-shadow: 0 2px 8px rgba(10, 47, 138, 0.04);
+}
+
+.th-faq-item:hover {
+  border-color: rgba(10, 47, 138, 0.2);
+  box-shadow: 0 4px 20px rgba(10, 47, 138, 0.08);
+}
+
+.th-faq-item[open] {
+  border-color: var(--primary-blue);
+  box-shadow: 0 8px 32px rgba(10, 47, 138, 0.12);
+}
+
+.th-faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.th-faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.th-faq-question span {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  letter-spacing: -0.01em;
+  flex: 1;
+  padding-right: 16px;
+}
+
+.th-faq-question svg {
+  color: var(--primary-blue);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+.th-faq-item[open] .th-faq-question svg {
+  transform: rotate(180deg);
+}
+
+.th-faq-answer {
+  padding: 0 28px 24px;
+}
+
+.th-faq-answer p {
+  font-size: 16px;
+  color: var(--text-gray);
+  line-height: 1.7;
+}
+
+/* Final CTA */
+.th-final-cta {
+  padding: 100px 0;
+}
+
+.th-final-cta-container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.th-final-cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 48px;
+}
+
+.th-final-trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 56px;
+  flex-wrap: wrap;
+}
+
+.th-final-trust img {
+  height: 40px;
+  width: auto;
+  opacity: 0.7;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.3s;
+}
+
+.th-final-trust img:hover {
+  opacity: 1;
+}
+
+/* ================================
+   Responsive
+   ================================ */
+@media (max-width: 1024px) {
+  .th-hero-container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .th-hero-title {
+    font-size: 42px;
+  }
+
+  .th-hero-visual img {
+    height: 360px;
+  }
+
+  .th-malaria-grid,
+  .th-steps-grid,
+  .th-pricing-grid,
+  .th-timeline-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .th-pricing-card-featured {
+    transform: none;
+  }
+
+  .th-pricing-card-featured:hover {
+    transform: translateY(-6px);
+  }
+
+  .th-locations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .th-title-dark {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .th-hero {
+    padding: 48px 0 64px;
+  }
+
+  .th-hero-title {
+    font-size: 32px;
+  }
+
+  .th-hero-subtitle {
+    font-size: 17px;
+  }
+
+  .th-hero-actions {
+    flex-direction: column;
+  }
+
+  .th-btn-primary,
+  .th-btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .th-hero-trust {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .th-section,
+  .th-section-dark {
+    padding: 64px 0;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .th-title-dark {
+    font-size: 28px;
+  }
+
+  .th-section-desc,
+  .th-desc-dark {
+    font-size: 16px;
+  }
+
+  .th-vaccine-grid,
+  .th-risks-grid,
+  .th-why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .th-category-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .th-final-cta-buttons {
+    flex-direction: column;
+  }
+
+  .th-final-trust {
+    gap: 32px;
+  }
+
+  .th-price-amount {
+    font-size: 44px;
+  }
+}

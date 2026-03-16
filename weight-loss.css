@@ -1,0 +1,706 @@
+/* ============================================
+   Weight Loss Page — Rey London
+   Uses homepage design system exclusively
+   ============================================ */
+
+/* ============================================
+   HERO
+   ============================================ */
+.wl-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 50%, var(--dark-blue) 100%);
+  padding: 80px 0 100px;
+}
+
+.wl-hero-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.wl-hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.wl-hero-orb-1 {
+  width: 700px;
+  height: 700px;
+  top: -250px;
+  right: -180px;
+}
+
+.wl-hero-orb-2 {
+  width: 450px;
+  height: 450px;
+  bottom: -180px;
+  left: -120px;
+}
+
+.wl-hero-container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* Badge */
+.wl-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 50px;
+  margin-bottom: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.wl-hero-badge svg {
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.wl-hero-title {
+  font-size: 52px;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  margin-bottom: 24px;
+  font-family: 'Inter', sans-serif;
+}
+
+.wl-hero-subtitle {
+  font-size: 19px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin-bottom: 40px;
+  font-weight: 400;
+  max-width: 580px;
+}
+
+.wl-hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 44px;
+}
+
+.wl-btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 36px !important;
+  font-size: 17px !important;
+  box-shadow: 0 8px 32px rgba(10, 47, 138, 0.4);
+}
+
+.wl-btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 36px;
+  font-size: 17px;
+}
+
+.wl-hero-trust {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.wl-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.wl-trust-item svg {
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Hero Visual */
+.wl-hero-visual {
+  position: relative;
+}
+
+.wl-hero-img-stack {
+  position: relative;
+}
+
+.wl-hero-img {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.wl-hero-img img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.wl-hero-img-main img {
+  height: 480px;
+}
+
+.wl-hero-img-secondary {
+  position: absolute;
+  bottom: -32px;
+  left: -40px;
+  width: 54%;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  z-index: 2;
+}
+
+.wl-hero-img-secondary img {
+  height: 180px;
+}
+
+/* Floating stat cards */
+.wl-stat-float {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 12px 40px rgba(10, 47, 138, 0.2);
+  z-index: 3;
+  border: 1px solid rgba(10, 47, 138, 0.1);
+}
+
+.wl-stat-float-1 {
+  top: 24px;
+  right: -24px;
+  text-align: center;
+}
+
+.wl-stat-float-2 {
+  bottom: 60px;
+  right: -16px;
+  max-width: 200px;
+}
+
+.wl-stat-float-number {
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.wl-stat-float-label {
+  font-size: 13px;
+  color: var(--text-gray);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.wl-stat-float-stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 8px;
+}
+
+.wl-stat-float-text {
+  font-size: 13px;
+  color: var(--text-dark);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* ============================================
+   SOCIAL PROOF BAR
+   ============================================ */
+.wl-proof-bar {
+  background: var(--white);
+  border-bottom: 1px solid var(--border-light);
+  padding: 32px 0;
+  box-shadow: 0 2px 16px rgba(10, 47, 138, 0.06);
+}
+
+.wl-proof-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.wl-proof-item {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.wl-proof-number {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--primary-blue);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.wl-proof-label {
+  font-size: 13px;
+  color: var(--text-gray);
+  font-weight: 500;
+}
+
+.wl-proof-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--border-light);
+  flex-shrink: 0;
+}
+
+/* ============================================
+   PROBLEM / SOLUTION SECTION
+   ============================================ */
+.wl-problem-section {
+  background: linear-gradient(135deg, #ffffff 0%, var(--secondary-blue) 50%, #f5f9fc 100%) !important;
+}
+
+/* Override gradient-text on light-bg sections so both ends of the animation stay readable */
+.wl-problem-section .gradient-text,
+.wl-problem-section ~ .services-section .gradient-text {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 50%, #3a6bb5 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease-in-out infinite;
+}
+
+.wl-problem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 56px;
+}
+
+.wl-problem-card {
+  border-radius: 24px;
+  padding: 48px;
+  border: 1px solid transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wl-problem-card-bad {
+  background: #f8f9fb;
+  border-color: rgba(100, 116, 139, 0.15);
+}
+
+.wl-problem-card-good {
+  background: var(--white);
+  border-color: rgba(10, 47, 138, 0.15);
+  box-shadow: 0 4px 24px rgba(10, 47, 138, 0.08);
+}
+
+.wl-problem-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(10, 47, 138, 0.12);
+}
+
+.wl-problem-header {
+  margin-bottom: 32px;
+}
+
+.wl-problem-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+}
+
+.wl-tag-muted {
+  background: rgba(100, 116, 139, 0.1);
+  color: #64748b;
+}
+
+.wl-tag-blue {
+  background: rgba(10, 47, 138, 0.08);
+  color: var(--primary-blue);
+}
+
+.wl-problem-header h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.wl-problem-card-bad .wl-problem-header h3 {
+  color: var(--text-dark);
+}
+
+.wl-problem-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wl-problem-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.wl-list-bad li {
+  color: #475569;
+}
+
+.wl-list-good li {
+  color: var(--text-dark);
+  margin-bottom: 0;
+}
+
+.wl-problem-list li svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* ============================================
+   ELIGIBILITY NOTE
+   ============================================ */
+.wl-eligibility-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 24px 32px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  margin-top: 40px;
+}
+
+.wl-eligibility-note svg {
+  color: rgba(255, 255, 255, 0.7);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.wl-eligibility-note p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* ============================================
+   LOCATION SEO TEXT
+   ============================================ */
+.wl-location-seo {
+  font-size: 14px;
+  color: var(--text-gray);
+  line-height: 1.6;
+  margin-bottom: 28px;
+  padding: 16px 20px;
+  background: rgba(10, 47, 138, 0.04);
+  border-radius: 10px;
+  border-left: 3px solid var(--primary-blue);
+}
+
+/* ============================================
+   WHY US PILLARS (inside team stats area)
+   ============================================ */
+.wl-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.wl-pillar {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.3s;
+}
+
+.wl-pillar:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateX(4px);
+}
+
+.wl-pillar-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.wl-pillar-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wl-pillar-text strong {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.wl-pillar-text span {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* ============================================
+   FAQ
+   ============================================ */
+.wl-faq-grid {
+  max-width: 900px;
+  margin: 48px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wl-faq-item {
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid rgba(10, 47, 138, 0.1);
+  overflow: hidden;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(10, 47, 138, 0.04);
+}
+
+.wl-faq-item:hover {
+  border-color: rgba(10, 47, 138, 0.2);
+  box-shadow: 0 4px 20px rgba(10, 47, 138, 0.08);
+}
+
+.wl-faq-item[open] {
+  border-color: var(--primary-blue);
+  box-shadow: 0 8px 32px rgba(10, 47, 138, 0.12);
+}
+
+.wl-faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.wl-faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.wl-faq-question span {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  letter-spacing: -0.01em;
+  flex: 1;
+  padding-right: 16px;
+}
+
+.wl-faq-chevron {
+  color: var(--primary-blue);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.wl-faq-item[open] .wl-faq-chevron {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+.wl-faq-answer {
+  padding: 0 28px 28px;
+}
+
+.wl-faq-answer p {
+  font-size: 16px;
+  color: var(--text-gray);
+  line-height: 1.75;
+}
+
+/* ============================================
+   JOURNEY SECTION — line spacing fix
+   ============================================ */
+.how-it-works .section-title.gradient-text {
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1200px) {
+  .wl-stat-float-1 {
+    right: -8px;
+  }
+  .wl-stat-float-2 {
+    right: -8px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .wl-hero-container {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  .wl-hero-title {
+    font-size: 42px;
+  }
+
+  .wl-hero-img-main img {
+    height: 360px;
+  }
+
+  .wl-hero-img-secondary {
+    width: 45%;
+    bottom: -24px;
+    left: -20px;
+  }
+
+  .wl-hero-img-secondary img {
+    height: 150px;
+  }
+
+  .wl-stat-float-1 {
+    top: 16px;
+    right: 16px;
+  }
+
+  .wl-stat-float-2 {
+    bottom: 40px;
+    right: 16px;
+  }
+
+  .wl-problem-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wl-proof-grid {
+    gap: 16px;
+  }
+
+  .wl-proof-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .wl-hero {
+    padding: 56px 0 80px;
+  }
+
+  .wl-hero-title {
+    font-size: 32px;
+  }
+
+  .wl-hero-subtitle {
+    font-size: 17px;
+  }
+
+  .wl-hero-actions {
+    flex-direction: column;
+  }
+
+  .wl-btn-hero-primary,
+  .wl-btn-hero-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .wl-hero-trust {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .wl-hero-img-secondary {
+    display: none;
+  }
+
+  .wl-stat-float-1,
+  .wl-stat-float-2 {
+    display: none;
+  }
+
+  .wl-proof-grid {
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    gap: 24px;
+  }
+
+  .wl-proof-divider {
+    display: none;
+  }
+
+  .wl-problem-card {
+    padding: 32px 24px;
+  }
+
+  .wl-problem-header h3 {
+    font-size: 20px;
+  }
+
+  .wl-faq-question span {
+    font-size: 16px;
+  }
+
+  .wl-pillars {
+    gap: 12px;
+  }
+
+  .wl-location-seo {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wl-proof-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .wl-proof-number {
+    font-size: 22px;
+  }
+}
