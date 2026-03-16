@@ -1,3 +1,63 @@
+// ================================
+// Mobile Hamburger Navigation
+// ================================
+(function () {
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  const mobileNavClose = document.getElementById('mobileNavClose');
+  const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+
+  function openNav() {
+    mobileNav.classList.add('is-open');
+    mobileNavOverlay.classList.add('is-open');
+    hamburgerBtn.classList.add('is-open');
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('mobile-nav-open');
+  }
+
+  function closeNav() {
+    mobileNav.classList.remove('is-open');
+    mobileNavOverlay.classList.remove('is-open');
+    hamburgerBtn.classList.remove('is-open');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('mobile-nav-open');
+  }
+
+  if (hamburgerBtn) hamburgerBtn.addEventListener('click', openNav);
+  if (mobileNavClose) mobileNavClose.addEventListener('click', closeNav);
+  if (mobileNavOverlay) mobileNavOverlay.addEventListener('click', closeNav);
+
+  // Accordion triggers
+  document.querySelectorAll('.mobile-nav-trigger').forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+      var sub = this.nextElementSibling;
+      var isOpen = this.getAttribute('aria-expanded') === 'true';
+
+      // Close all others
+      document.querySelectorAll('.mobile-nav-trigger').forEach(function (t) {
+        t.setAttribute('aria-expanded', 'false');
+        t.nextElementSibling.classList.remove('is-open');
+      });
+
+      // Toggle clicked
+      if (!isOpen) {
+        this.setAttribute('aria-expanded', 'true');
+        sub.classList.add('is-open');
+      }
+    });
+  });
+
+  // Close nav when a sub-link or direct link is clicked
+  document.querySelectorAll('.mobile-nav-sub-link, .mobile-nav-link').forEach(function (link) {
+    link.addEventListener('click', closeNav);
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNav();
+  });
+})();
+
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {

@@ -93,5 +93,36 @@ You MUST maintain this file to track your work across messages. This is NON-NEGO
 - Changed `.th-why-grid` from `auto-fit, minmax(280px)` to `repeat(4, 1fr)` for even layout
 - Mobile breakpoint: 2-col grid at 768px instead of 1-col for why cards
 - Files: `thailand.html`, `thailand.css`
+### 2026-03-16 — Added mobile hamburger navigation drawer
+- Hamburger button in header (hidden on desktop, shown ≤1024px) with animated 3-line → X transition
+- Slide-out drawer from right (360px wide, `is-open` class pattern) with overlay + blur backdrop
+- Accordion sub-menus for Services, Travel Health, Locations, About — collapse on open-other
+- Drawer footer: blue gradient "020 8467 3158" CTA button; body scroll locked while open
+- Files: `index.html`, `styles.css`, `script.js`
+### 2026-03-16 — Fixed empty prescription-services.css — full page CSS written
+- `prescription-services.css` only contained `/* ` — all `rx-` classes were unstyled, page rendered as raw HTML
+- Wrote complete stylesheet (~800 lines): hero (gradient bg, floating stat cards), stats bar, step cards, feature cards, benefits list, repeat dispensing, accept cards, collection service, why-us cards, FAQ accordion, scroll-reveal, responsive breakpoints
+- Design system: matches existing blue gradient/glassmorphism/pill patterns from thailand.css and styles.css
+- File: `prescription-services.css`
+
+### 2026-03-16 — Prescription page: upgraded repeat dispensing section + merged bottom CTAs
+- Converted "What is NHS Repeat Dispensing" section from bland grey `.rx-section-mid` to premium dark blue `.rx-section-dark` with glassmorphism cards
+- Added dark-variant CSS: `.rx-repeat-card-dark`, `.rx-eps-note-dark`, `.rx-dark-body` etc.
+- Merged standalone `cta-section` and `footer-newsletter` into single `.rx-footer-cta-block` inside footer — eliminates two adjacent blue sections bleeding together
+- New CSS: `.rx-footer-cta-block`, `.rx-footer-cta-divider`, `.rx-footer-newsletter-row` with responsive breakpoints
+- Files: `prescription-services-south-east-london.html`, `prescription-services.css`
+
+### 2026-03-16 — Linked all weight loss CTAs to weight-loss.html
+- Updated 6 links in `index.html`: Services dropdown, mobile nav sub-link, hero service card, search suggestions, benefit CTA, and footer link
+- All `href="#weight-loss"` references now point to `weight-loss.html`
+### 2026-03-16 — Created Travel Health Clinic landing page
+- New `travel-health-south-east-london.html` — full SEO page with 10 sections: hero, stats, why-choose, destinations, services, vaccines, process, trust/about, locations, FAQ, CTA
+- New `travel-health.css` — dedicated stylesheet using homepage design system (blue gradient, glassmorphism, pill badges, card patterns)
+- Design: identical nav/footer to homepage, same section patterns (destinations-section, how-it-works, locations-section, cta-section), same CSS variables
+- SEO: title tag, meta description, LocalBusiness + FAQPage schema markup, targeted keywords for South East London travel health
+- 8 popular destination cards (Thailand→Indonesia), 12 vaccine cards, 5 service cards, 8 FAQ accordions, dual location cards
+### 2026-03-16 — Linked Travel Clinic hero card to travel health page
+- Updated `href` on Travel Clinic `.service-card` in hero from `#travel-clinic` to `travel-health-south-east-london.html`
+- File: `index.html`
 <!-- NEXT_ENTRY_HERE -->
 </changelog>

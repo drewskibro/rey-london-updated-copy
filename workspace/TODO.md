@@ -24,17 +24,13 @@ This file powers chat suggestion chips. Keep it focused and actionable.
 - Prefer specific wording tied to real project scope/files; avoid vague goals.
 </instructions>
 
-<todo id="mobile-nav-hamburger">
-Add mobile hamburger navigation
-The desktop nav is hidden below 1024px but there's no mobile menu replacement — users on smaller screens can't navigate. Critical on homepage, Thailand, and weight-loss pages.
-</todo>
-
 <todo id="dest-detail-pages">
 Build more destination-specific vaccination pages
-Thailand page is done — replicate this template for other popular destinations (India, Kenya, Brazil, etc.) to build out SEO-driven landing pages.
+Thailand page is done — replicate this template for India, Kenya, Vietnam, etc. Link from the new travel health hub destination cards.
 </todo>
 
+
 <todo id="thailand-booking-form">
-Add online booking form to Thailand page
-Currently relies on phone CTAs only — adding an inline or modal booking form would improve conversion and reduce friction for users.
+Add online booking form to travel pages
+Currently relies on phone CTAs only — adding an inline or modal booking form would improve conversion on travel-health, thailand, and weight-loss pages.
 </todo>

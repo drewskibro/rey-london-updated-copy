@@ -51,4 +51,12 @@ CRITICAL: Keep this file under 300 lines. You are allowed to summarize, change t
 
 ## Resolved Issues
 
+### 2026-03-16 — Prescription services page completely unstyled
+
+**Status:** Fixed
+**Symptoms:** Page renders as raw unstyled HTML — no layout, no colors, no spacing, no cards. Screenshot shows plain text with bullet icons.
+**Root Cause:** `prescription-services.css` contained only `/* ` — an incomplete comment and zero actual CSS rules. All `rx-`-prefixed classes in the HTML had no corresponding styles.
+**Solution:** Wrote complete `prescription-services.css` (~800 lines) covering: hero with gradient bg + floating stat cards, stats bar, step cards with images, feature cards (glassmorphism dark sections), benefits list, repeat dispensing grid, accept cards, collection service grid, why-us cards, FAQ accordion, scroll-reveal animations, and full responsive breakpoints.
+**Prevention:** Always verify new page CSS files contain actual content after creation. Template from existing pages (thailand.css) when starting new landing pages.
+
 <!-- Historical debugging records -->
