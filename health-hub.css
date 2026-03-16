@@ -346,56 +346,45 @@
   pointer-events: none;
 }
 
-/* Premium badge */
-.hh-featured-badge-premium {
+/* Editorial label — replaces old pill badge */
+.hh-featured-editorial-label {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
-  padding: 14px 28px 14px 18px;
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 60%, var(--dark-blue) 100%);
-  border-radius: 60px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px rgba(10, 47, 138, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.12);
-  position: relative;
-  z-index: 1;
+  gap: 18px;
 }
 
-.hh-featured-badge-icon {
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fbbf24;
+.hh-featured-editorial-rule {
+  display: block;
+  width: 3px;
+  height: 44px;
+  background: linear-gradient(to bottom, var(--primary-blue) 0%, var(--light-blue) 100%);
+  border-radius: 2px;
   flex-shrink: 0;
 }
 
-.hh-featured-badge-text {
+.hh-featured-editorial-text {
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  gap: 3px;
 }
 
-.hh-featured-badge-label {
-  font-size: 14px;
+.hh-featured-editorial-eyebrow {
+  font-size: 11px;
   font-weight: 800;
-  color: var(--white);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  line-height: 1.2;
+  color: var(--light-blue);
+  line-height: 1;
 }
 
-.hh-featured-badge-sub {
-  font-size: 12px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
-  letter-spacing: 0.02em;
+.hh-featured-editorial-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--primary-blue);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
 }
 
 .hh-featured-card {
@@ -1382,19 +1371,8 @@
     height: 320px;
   }
 
-  .hh-featured-badge-premium {
-    padding: 12px 22px 12px 14px;
-    gap: 12px;
-  }
-
-  .hh-featured-badge-icon {
-    width: 36px;
-    height: 36px;
-    min-width: 36px;
-  }
-
-  .hh-featured-badge-label {
-    font-size: 13px;
+  .hh-featured-editorial-title {
+    font-size: 19px;
   }
 
   .hh-trust-grid {
