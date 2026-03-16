@@ -70,5 +70,28 @@ You MUST maintain this file to track your work across messages. This is NON-NEGO
 - `.gradient-text::after` line at `bottom: -8px` was colliding with `.section-subtitle` below
 - Added `padding-bottom: 16px` and `margin-bottom: 24px` to `.how-it-works .section-title.gradient-text` in `weight-loss.css`
 - File: `weight-loss.css`
+### 2026-03-16 — Added scroll-reveal animations & hero entrance to weight-loss page
+- Staggered hero text entrance (badge → title → subtitle → CTAs → trust), visual slides in from right, stat cards pop-in then float
+- IntersectionObserver-based scroll-reveal system: sections, cards, grids all fade/slide in on scroll
+- Proof bar numbers animate with counting-up effect when scrolled into view
+- Alternating left/right reveal for 2-col grids (problem/solution, locations); scale effect for pharmacist section
+- `prefers-reduced-motion` respected; files: `weight-loss.html`, `weight-loss.css`
+### 2026-03-16 — Removed hero floating stat cards from weight-loss page
+- Deleted both `.wl-stat-float` elements (20% stat + 4.9/5 reviews) from `weight-loss.html`
+- Removed all related CSS: pop-in animation, float animation, positioning, responsive overrides in `weight-loss.css`
+- Removed JS setTimeout that added `wl-float-active` class after entrance animation
+- Files: `weight-loss.html`, `weight-loss.css`
+### 2026-03-16 — Added lifestyle image banners to Thailand page
+- Two horizontal photo banners between vaccine→health risks and malaria→booking sections
+- Parallax-style: Thailand floating market + long-tail boats on clear water
+- Glassmorphism caption overlay with icon, matching design system (blue gradient, blur, rounded)
+- Responsive: 320px desktop → 240px mobile; caption adapts sizing
+- Files: `thailand.html`, `thailand.css`
+### 2026-03-16 — Fixed "Why Choose" grid & replaced $ with £ on Thailand page
+- Added 8th card "Family-Friendly Consultations" to fill out 4×2 grid in why-us section
+- Replaced dollar-sign SVG icon with pound-sign SVG on "Competitive Pricing" card and pricing section pill
+- Changed `.th-why-grid` from `auto-fit, minmax(280px)` to `repeat(4, 1fr)` for even layout
+- Mobile breakpoint: 2-col grid at 768px instead of 1-col for why cards
+- Files: `thailand.html`, `thailand.css`
 <!-- NEXT_ENTRY_HERE -->
 </changelog>
