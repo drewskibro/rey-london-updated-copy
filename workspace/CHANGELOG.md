@@ -108,7 +108,18 @@ You MUST maintain this file to track your work across messages. This is NON-NEGO
 - New `search-styles.css` (~140 lines): result cards with icon/title/description/category-badge layout, hover states, match highlighting (`<mark>`), no-results empty state, responsive mobile
 - Updated search overlay HTML: split into `#searchResults` (dynamic) + `#searchPopular` (static default); popular links now point to real pages
 - Files: `script.js`, `index.html`, `search-styles.css`
+### 2026-03-16 — Complete Hair Loss page rebuild (was broken, unstyled)
+- Root cause: page used `th-` (travel-health) class prefixes for hero/trust/FAQ and missing `.cta-section`/`.btn-cta-primary` CSS — rendering raw unstyled HTML with wrong image
+- Full rewrite of `hair-loss-treatment-south-east-london.html` (~1000 lines): hero, quick info stats, understanding section, treatment cards, process (sticky photo grid), expectations, suitability, safety (with lifestyle banner), pricing, why choose (6 cards), locations (2 cards with photos), 10 FAQ accordions, integrated CTA+newsletter footer, medical disclaimer
+- Full rewrite of `hair-loss.css` (~700 lines): all `hl-` prefixed classes, matches HPV/Yellow Fever design system (blue gradient, glassmorphism, pill badges, card shadows, scroll-reveal, responsive breakpoints)
+- Added: IntersectionObserver scroll-reveal JS, FAQ accordion JS, proper hero image (confident man), lifestyle safety banner, quick info stat cards, sticky process photo grid, `prefers-reduced-motion` support
+- Updated nav: Contact→contact.html, About→meet-the-team.html+health-hub.html, correct cert badge assets, Book Now CTA, HPV Vaccine in Services
+
 <!-- NEXT_ENTRY_HERE -->
+### 2026-03-16 — Fixed Hair Loss nav link on homepage
+- Desktop Services dropdown and mobile nav sub-link both had `href="#hair-loss"` (anchor, no page)
+- Changed both to `href="hair-loss-treatment-south-east-london.html"` so clicking navigates to the page
+- File: `index.html`
 ### 2026-03-16 — Fixed broken weight-loss page final CTA (white/unstyled)
 - Root cause: `.cta-section`, `.cta-content-full`, `.btn-cta-primary` had zero CSS — removed from `styles.css` during homepage CTA merge but weight-loss page still used them
 - Replaced old `.cta-section` + standalone `.footer-newsletter` with integrated `.wl-footer-cta-block` matching all other pages' pattern
