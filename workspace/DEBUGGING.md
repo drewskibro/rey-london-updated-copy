@@ -47,6 +47,13 @@ CRITICAL: Keep this file under 300 lines. You are allowed to summarize, change t
 
 ## Current Issues
 
+### 2026-03-16 — Mounjaro vs Wegovy blog post white screen
+**Status:** Fixed
+**Symptoms:** Clicking "Read Full Article" on Health Hub featured article (Mounjaro vs Wegovy) loaded a blank white page.
+**Root Cause:** `health-hub/mounjaro-vs-wegovy-clinical-trials.html` was a stub containing only `\n<!` — same pattern as B12 and prescription-services pages.
+**Solution:** Wrote complete blog post (~900 lines) using existing blog-post template/CSS: 8-section article body (dual mechanism comparison, STEP 1 vs SURMOUNT-1 trial data, side effects, UK pricing, switching guidance), 8 FAQ accordions, clinically reviewed block, closer CTA, social proof, related posts, full homepage nav+footer.
+**Prevention:** Always verify new HTML files contain full content. This is the third time a stub file caused a white screen — consider adding a pre-launch checklist.
+
 ### 2026-03-16 — Health Hub filter tabs non-functional
 **Status:** Fixed
 **Symptoms:** Clicking category filter tabs in hero did nothing visible — articles grid was off-screen, no scroll, topic cards and featured article not filtered.

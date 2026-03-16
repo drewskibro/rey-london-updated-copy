@@ -18,6 +18,52 @@ You MUST maintain this file to track your work across messages. This is NON-NEGO
 </instructions>
 
 <changelog>
+### 2026-03-16 — Created blog post template page (Mounjaro article)
+- New `health-hub/mounjaro-weight-loss-south-east-london.html` — full editorial blog post with 12 sections: hero, featured image, clinically reviewed E-E-A-T block, article body with TOC sidebar, weight calculator, medical warnings, callout cards, 8 FAQ accordions, closer CTA card, compliance pills, post navigation, social proof, related posts grid
+- New `health-hub/blog-post.css` (~1000 lines) — all `bp-` prefixed classes, same design system (CSS variables, blue gradient, glassmorphism, Playfair Display + Inter typography, pill badges, card shadows, responsive breakpoints)
+- Exact homepage header + footer with `/#` cross-page prefixed links, mobile nav drawer, search overlay
+- SEO: Article + FAQPage JSON-LD schema markup, meta description, semantic HTML hierarchy
+- Interactive: sticky TOC with active-scroll highlighting, FAQ accordion, weight loss calculator (kg/stone/lbs), scroll reveal system
+### 2026-03-16 — Built Mounjaro vs Wegovy blog post (was stub causing white screen)
+- Root cause: `health-hub/mounjaro-vs-wegovy-clinical-trials.html` was only `\n<!` — third instance of stub-file white screen issue
+- Full article: 8 sections (dual mechanism, STEP 1 vs SURMOUNT-1 data, side effects, UK cost/access, which suits who, switching, bottom line)
+- 8 FAQ accordions with schema markup, clinically reviewed E-E-A-T block, closer CTA, social proof, related posts grid
+- Uses shared `blog-post.css` — no new CSS needed; inline JS for TOC, FAQ accordion, scroll reveal
+- Exact homepage header/footer with `/#` cross-page links, mobile nav drawer, search overlay
+### 2026-03-16 — Audited blog post navigation menus
+- Confirmed both `health-hub/mounjaro-weight-loss-south-east-london.html` and `health-hub/mounjaro-vs-wegovy-clinical-trials.html` use full homepage nav (5 dropdowns, mobile drawer, search overlay, header actions)
+- Minor difference: blog posts trim a few low-traffic sub-links from Services/Travel Health/Locations/About dropdowns vs homepage's exhaustive list
+- No changes made — awaiting user decision on exact vs trimmed nav sync
+### 2026-03-16 — Created HPV Vaccine London service page
+- New `hpv-vaccine-london.html` — full conversion-focused service page with 12 sections: hero, quick info cards, understanding HPV, Gardasil 9 explainer, eligibility (3-card grid), dosing schedule (3-col), cancer protection (6 cards), how it works (science + appointment steps), side effects/safety, pricing (3-tier), why choose REY, locations, 12-question FAQ, final CTA, medical disclaimer
+- New `hpv-vaccine-london.css` (~700 lines) — all `hpv-` prefixed classes, same design system (CSS variables, blue gradient, glassmorphism, pill badges, card hover effects, scroll-reveal, responsive breakpoints)
+- SEO: title tag, meta description, LocalBusiness + MedicalBusiness + FAQPage JSON-LD schema, targets "HPV vaccine London" / "Gardasil 9 London"
+- Nav includes HPV Vaccine link in Services dropdown and mobile nav; exact homepage header + footer with `/#` cross-page links
+- Interactive: IntersectionObserver scroll-reveal, FAQ accordion with numbered badges, pricing cards with featured highlight
+### 2026-03-16 — Swapped Menopause → HPV Vaccine in Services dropdown across all pages
+- Replaced Menopause (sun icon, `#menopause` href, "HRT & support" desc) with HPV Vaccine (shield+check icon, `hpv-vaccine-london.html` link, "Gardasil 9 protection" desc)
+- Updated desktop Specialist Care dropdown + mobile nav sub-link in: `index.html`, `thailand.html`, `weight-loss.html`, `prescription-services-south-east-london.html`, `travel-health-south-east-london.html`, `vitamin-b12-injection-south-east-london.html`, `hair-loss-treatment-south-east-london.html`
+### 2026-03-16 — Upgraded HPV Vaccine page CTA to integrated travel-health style
+- Replaced old `.hpv-final-cta` (plain centred text + green check spans + separate footer newsletter) with `.hpv-footer-cta-block` — same pattern as travel health page
+- New block: glassmorphism badge pills row, bold H2, subtitle, two ghost/white CTA buttons, tick checks row, divider, newsletter row — all on blue gradient
+- New CSS: `.hpv-footer-cta-block`, `.hpv-cta-badges`, `.hpv-footer-cta-title`, `.hpv-footer-cta-divider`, `.hpv-footer-newsletter-row` with responsive breakpoints
+- Removed standalone footer newsletter section from footer (no double newsletter now); footer `footer-main` padding-top set to 0
+- Files: `hpv-vaccine-london.html`, `hpv-vaccine-london.css`
+<!-- NEXT_ENTRY_HERE -->
+### 2026-03-16 — Fixed broken "Call Us" button in HPV footer CTA
+- `.btn-cta-secondary-ghost` class was missing from `hpv-vaccine-london.css` — button rendered as raw unstyled link
+- Added `.btn-cta-primary` and `.btn-cta-secondary-ghost` styles scoped to `.hpv-footer-cta-top`
+- White ghost button with border, hover lift, matches Book Appointment button design
+- Mobile responsive: full-width buttons on small screens
+- File: `hpv-vaccine-london.css`
+
+### 2026-03-16 — Added lifestyle images to HPV Vaccine How It Works & Side Effects sections
+- "How the HPV Vaccine Works": converted to sticky 2-col grid — pharmacist consultation photo (Unsplash) on left with glassmorphism badge overlay, all content on right
+- "Side Effects & Safety": added full-width 380px lifestyle banner (smiling patient after vaccination) with parallax-style hover zoom + dark gradient overlay + glassmorphism caption chip
+- New CSS: `.hpv-hiw-grid`, `.hpv-hiw-photo-wrap`, `.hpv-hiw-photo-badge`, `.hpv-safety-banner`, `.hpv-safety-banner-overlay`, `.hpv-safety-banner-caption`
+- Responsive: banner collapses to 220px on mobile, photo switches to 16:9 on tablet, sticky photo col goes static
+- Files: `hpv-vaccine-london.html`, `hpv-vaccine-london.css`
+### 2026-03-16 — Created Thailand Travel Vaccinations landing page
 ### 2026-03-16 — Created Thailand Travel Vaccinations landing page
 - New `thailand.html` with 9 sections: hero, vaccines grid, health risks, malaria, booking process, locations, pricing, timing, why us, FAQ, final CTA
 - New `thailand.css` dedicated stylesheet (~900 lines) using identical design system (blue gradient, glassmorphism, pill badges, card patterns)
@@ -185,6 +231,13 @@ You MUST maintain this file to track your work across messages. This is NON-NEGO
 - Deepened card box-shadow for more depth; added decorative radial glow on content column
 - Responsive: badge scales down at 1024px breakpoint
 - Files: `health-hub.html`, `health-hub.css`
+
+### 2026-03-16 — Created Meet the Team page
+- New `meet-the-team.html` — full team page: hero, lead pharmacist profile (Dilip Modhvadia), trust bar, qualifications grid, full team grid (5 members), values section, lifestyle banner, final CTA
+- New `meet-the-team.css` (~500 lines) — all `mt-` prefixed classes, same design system (blue gradient, glassmorphism, pill badges, card hover effects, scroll-reveal, responsive)
+- Lead pharmacist: sticky 2-col grid with photo + glassmorphism badge, floating "15+ years" stat card, credentials pills, specialisms cards, quote, CTA buttons
+- Team grid on dark blue gradient: 5 member cards (Dilip, Bhavna, Adrian, Sophie, James) with avatar, role, bio, tags, book CTA; qualifications 4-card grid + GPhC card, 6 values cards
+- Updated About dropdown nav to link to `meet-the-team.html` instead of `/#team`; exact homepage header + footer with `/#` cross-page links
 
 ### 2026-03-16 — Added Health Hub to About nav dropdown
 - Added Health Hub link (book icon, "Expert health guides & advice" desc) to desktop About dropdown in `index.html`

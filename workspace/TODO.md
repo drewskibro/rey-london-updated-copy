@@ -24,11 +24,10 @@ This file powers chat suggestion chips. Keep it focused and actionable.
 - Prefer specific wording tied to real project scope/files; avoid vague goals.
 </instructions>
 
-<todo id="dest-detail-pages">
-Build more destination-specific vaccination pages
-Thailand page is done — replicate this template for India, Kenya, Vietnam, etc. Link from the new travel health hub destination cards.
+<todo id="blog-post-content">
+Populate remaining blog post articles
+Mounjaro and Wegovy vs Mounjaro articles are live — create 2-3 more (travel checklist, B12 deficiency signs, seasonal flu guide) and link them from the Health Hub grid + homepage articles section.
 </todo>
-
 
 <todo id="thailand-booking-form">
 Add online booking form to travel pages
@@ -38,5 +37,10 @@ Currently relies on phone CTAs only — adding an inline or modal booking form w
 <todo id="hair-loss-page-audit">
 Audit hair-loss-treatment page for same class issues as B12
 If it reuses th- or other page prefixes without matching CSS, it'll have the same broken styling. Needs proofing before launch.
+</todo>
+
+<todo id="hpv-homepage-links">
+Link HPV Vaccine from homepage hero grid + nav dropdowns
+The HPV page is live but not yet linked from the homepage service grid cards, search suggestions, or footer Services column. Add it to all relevant navigation touchpoints.
 </todo>
 
