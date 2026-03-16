@@ -224,7 +224,8 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe all cards and sections with staggered animation
-document.querySelectorAll('.treatment-card, .benefit-card, .stat-card, .story-card, .step-card, .team-stat, .product-card').forEach((el, index) => {
+// (Homepage now uses hp-reveal system instead; keep for non-homepage pages)
+document.querySelectorAll('.treatment-card, .stat-card, .story-card, .team-stat').forEach((el, index) => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(20px)';
   el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;

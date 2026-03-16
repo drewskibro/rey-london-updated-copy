@@ -49,7 +49,47 @@ You MUST maintain this file to track your work across messages. This is NON-NEGO
 - New CSS: `.hpv-footer-cta-block`, `.hpv-cta-badges`, `.hpv-footer-cta-title`, `.hpv-footer-cta-divider`, `.hpv-footer-newsletter-row` with responsive breakpoints
 - Removed standalone footer newsletter section from footer (no double newsletter now); footer `footer-main` padding-top set to 0
 - Files: `hpv-vaccine-london.html`, `hpv-vaccine-london.css`
+### 2026-03-16 — Fixed hero trust checkmark colour on Yellow Fever page
+- Changed `.yf-hero-trust` SVG check icons from green `#10B981` to yellow `#F5A623` to match page's yellow accent design system
+- Full page rewrite to apply the change (replace_in_file had failed on dense inline SVG)
+- File: `yellow-fever-vaccine-london.html`
+### 2026-03-16 — Synced Yellow Fever page nav with homepage
+- Replaced trimmed nav on `yellow-fever-vaccine-london.html` with exact homepage header (all 5 dropdowns including Travel Health mega menu)
+- Added missing: Travel Health dropdown, NHS Vaccinations, Health Checks, Erectile Dysfunction, Account button, Get Directions, Certifications
+- Mobile nav now includes Travel Health accordion with all sub-links, matching homepage exactly
+- All cross-page hrefs use `/#` prefix; direct page links (weight-loss.html, hpv-vaccine-london.html etc.) kept as-is
+### 2026-03-16 — Added premium motion system to Yellow Fever page (matching weight-loss)
+- Hero choreography: staggered fade-up for eyebrow → h1 → subtitle → trust → CTAs; hero image slides in from right
+- Scroll-reveal upgraded: directional reveals (left/right for 2-col), scale entrance for lifestyle banners, stagger-children delay system
+- Quick-info cards: staggered reveal with animated number counter (counts up on scroll into view)
+- Stat boxes (200,000 / 30-60K / 50%+ / 99%): number counter animation on scroll
+- All section titles, cards, FAQ items, pricing, locations, CTA auto-tagged for reveal; `prefers-reduced-motion` respected
+- Files: `yellow-fever-vaccine-london.html`, `yellow-fever-vaccine-london.css`
+### 2026-03-16 — Added premium motion system to homepage (matching weight-loss page)
+- Hero choreography: staggered slide-up for title lines → subtitle → "View all" button → service grid → trust badges; service cards pop in one by one
+- Scroll-reveal: IntersectionObserver system with `hp-reveal`/`hp-visible` classes, directional reveals (left/right for location cards), scale for pharmacist section
+- Stagger containers: articles, destinations, locations, benefits, testimonials, steps, team stats, products grids all get child stagger delays
+- Number counter animations: destinations stats (2/20+/Same/5★), testimonials trust (4.9/5, 400+, 10,000+), team stat cards (8/15+/2/10,000+)
+- Removed old script.js observer for `.benefit-card`, `.step-card`, `.product-card` (now handled by hp-reveal); `prefers-reduced-motion` respected
+- Files: `styles.css`, `index.html`, `script.js`
 <!-- NEXT_ENTRY_HERE -->
+### 2026-03-16 — Created Hepatitis A & B Vaccines London service page
+- New `hepatitis-vaccine-london.html` — full 14-section page: hero, quick info, understanding hepatitis, A vs B comparison table, who should get vaccinated (3-card), 3-tier pricing (Hep A £50, Hep B £50, Combined Twinrix £75 featured), vaccination process (sticky photo + 3 steps), high-risk regions (2-col), side effects/safety, NHS vs Private comparison table, why choose REY (6 cards), locations (2 cards), 15-question FAQ, integrated CTA+newsletter footer, medical disclaimer
+- New `hepatitis-vaccine-london.css` (~900 lines) — all `hep-` prefixed classes, GREEN accent (#10B981 emerald, #059669 deep) for CTAs/icons/badges, same design system as Yellow Fever (card shadows, typography, section padding, glassmorphism, scroll-reveal, responsive breakpoints)
+- SEO: title tag, meta description, LocalBusiness + MedicalBusiness + FAQPage JSON-LD schema, targets "hepatitis vaccine London" / "hepatitis A B Chislehurst" / "Twinrix London"
+- Nav includes Hepatitis A & B link in Travel Health dropdown and mobile nav; exact homepage header + footer with `/#` cross-page links
+- Interactive: IntersectionObserver scroll-reveal, FAQ accordion (15 questions), staggered card animations, stat number counter
+
+### 2026-03-16 — Removed £85 price badge from Yellow Fever hero
+- Deleted `.yf-hero-float-badge` element from `yellow-fever-vaccine-london.html` hero visual column
+- Badge showed "£85 / All-inclusive, certificate included" with a document-check icon on a white card
+### 2026-03-16 — Created Yellow Fever Vaccine London service page
+- New `yellow-fever-vaccine-london.html` — full 14-section page: hero, quick info, what is yellow fever (with 4 stat boxes), why you need it (3 numbered cards), risk areas (Africa/South America 2-col), who should get it (3 cards), vaccination process (sticky photo + 3 steps), ICVP certificate (2-col checklist card), side effects/safety (lifestyle banner + two-col), pricing (single featured £85 card), why choose REY (6 cards), locations (2 cards), 12 FAQ accordions, integrated CTA+newsletter footer
+- New `yellow-fever-vaccine-london.css` (~700 lines) — all `yf-` prefixed classes, exact HPV design system match (same card shadows, button styles, section padding, hover animations, scroll-reveal, glassmorphism CTA block)
+- Added Yellow Fever to Services desktop dropdown and mobile nav across the page; footer col 3 replaced with Yellow Fever on-page links + NaTHNaC mention in footer registration line
+- SEO: title tag, meta description, LocalBusiness + MedicalBusiness + FAQPage JSON-LD schema, targets "yellow fever vaccine London" / "NaTHNaC registered centre Chislehurst"
+- Interactive: IntersectionObserver scroll-reveal, FAQ accordion (12 questions), safety banner with hover zoom
+
 ### 2026-03-16 — Fixed broken "Call Us" button in HPV footer CTA
 - `.btn-cta-secondary-ghost` class was missing from `hpv-vaccine-london.css` — button rendered as raw unstyled link
 - Added `.btn-cta-primary` and `.btn-cta-secondary-ghost` styles scoped to `.hpv-footer-cta-top`
