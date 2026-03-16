@@ -156,16 +156,24 @@ document.addEventListener('click', (e) => {
 
 // Search overlay functionality
 const searchBtn = document.querySelector('.search-btn');
-const searchOverlay = document.querySelector('.search-overlay');
+let searchOverlay = document.querySelector('.search-overlay');
 const searchClose = document.querySelector('.search-close');
 const searchInput = document.querySelector('.search-overlay-input');
 
+// Move the search overlay out of <header> to <body> so that
+// header's backdrop-filter stacking context doesn't clip it
+if (searchOverlay && searchOverlay.parentElement && searchOverlay.parentElement.tagName !== 'BODY') {
+  document.body.appendChild(searchOverlay);
+  console.log('__ANIMA_DBG__ search overlay moved to body');
+}
+
 if (searchBtn && searchOverlay) {
   searchBtn.addEventListener('click', () => {
+    console.log('__ANIMA_DBG__ search btn clicked, adding active class');
     searchOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
     setTimeout(() => {
-      searchInput.focus();
+      if (searchInput) searchInput.focus();
     }, 300);
   });
 }
@@ -281,19 +289,6 @@ if (viewAllBtn) {
   });
 }
 
-// Search functionality
-const searchInput = document.querySelector('.search-input');
-if (searchInput) {
-  searchInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-      const searchTerm = searchInput.value.trim();
-      if (searchTerm) {
-        console.log('Searching for:', searchTerm);
-        // Add your search logic here
-      }
-    }
-  });
-}
 
 // Newsletter form submission
 const newsletterForm = document.querySelector('.newsletter-form');

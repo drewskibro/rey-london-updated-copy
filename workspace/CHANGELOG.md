@@ -83,7 +83,26 @@ You MUST maintain this file to track your work across messages. This is NON-NEGO
 - Updated Hepatitis A & B link in Travel Health dropdown from `/#hepatitis-a` to `/hepatitis-vaccine-london.html`
 - Also updated Yellow Fever link to `/yellow-fever-vaccine-london.html`, Our Team link to `/meet-the-team.html`
 - Added Hepatitis A & B sub-link to mobile Travel Health accordion; footer Quick Links now links to meet-the-team.html
+### 2026-03-16 — Header menu fixes: Call Now → Book Now + search overlay bug
+- Swapped "Call Now" CTA button to "Book Now" with calendar SVG icon (was phone icon + `tel:` link, now `#book-appointment` href)
+- Fixed search overlay not opening: `script.js` had duplicate `const searchInput` declaration (`.search-overlay-input` + `.search-input`) causing SyntaxError that killed the entire script
+- Removed the redundant second `searchInput` block (`.search-input` doesn't exist in DOM anyway) — first declaration for `.search-overlay-input` now runs correctly
+- Search overlay: CSS was already in `styles.css`, JS was already wired — only the crash prevented it from working
+- Files: `index.html`, `script.js`
+### 2026-03-16 — Fixed search overlay invisible on blue backgrounds
+- Root cause: `.search-overlay` sat inside `<header>` which has `backdrop-filter: blur(20px)` — creates a new containing block that clips `position: fixed` descendants
+- JS fix: moves `.search-overlay` element from `<header>` to `<body>` on page load so it's free from the stacking context
+- CSS fix: replaced semi-transparent `rgba(10,47,138,0.95)` bg with fully opaque dark-blue gradient; raised z-index to 9999
+- Boosted input/suggestion contrast: thicker borders, higher background opacity, `box-shadow` depth, `backdrop-filter` on suggestion links
+- Files: `styles.css`, `script.js`
 <!-- NEXT_ENTRY_HERE -->
+### 2026-03-16 — Upgraded hepatitis page locations to match homepage design
+- Replaced plain text `.hep-loc-card` (no images, SVG icons, pill CTA) with rich cards matching homepage `.location-card` pattern
+- New cards: pharmacy photos (same Unsplash assets as homepage), styled detail rows with icon images, blue top-bar hover accent, "Get Directions" + "Call Now" action buttons
+- Renamed "Chislehurst Pharmacy — Station" → "Chislehurst Pharmacy"; title now "Find your nearest Rey London pharmacy" with gradient-text span
+- New CSS: `.hep-loc-image`, `.hep-loc-content`, `.hep-loc-row`, `.hep-loc-actions`, `.hep-loc-btn-primary`, `.hep-loc-btn-outline` with hover lifts and responsive breakpoints
+- Files: `hepatitis-vaccine-london.html`, `hepatitis-vaccine-london.css`
+
 ### 2026-03-16 — Created Hepatitis A & B Vaccines London service page
 - New `hepatitis-vaccine-london.html` — full 14-section page: hero, quick info, understanding hepatitis, A vs B comparison table, who should get vaccinated (3-card), 3-tier pricing (Hep A £50, Hep B £50, Combined Twinrix £75 featured), vaccination process (sticky photo + 3 steps), high-risk regions (2-col), side effects/safety, NHS vs Private comparison table, why choose REY (6 cards), locations (2 cards), 15-question FAQ, integrated CTA+newsletter footer, medical disclaimer
 - New `hepatitis-vaccine-london.css` (~900 lines) — all `hep-` prefixed classes, GREEN accent (#10B981 emerald, #059669 deep) for CTAs/icons/badges, same design system as Yellow Fever (card shadows, typography, section padding, glassmorphism, scroll-reveal, responsive breakpoints)
