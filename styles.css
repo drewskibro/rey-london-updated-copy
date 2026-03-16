@@ -194,7 +194,9 @@ body {
 }
 
 .nav-item:hover .dropdown-menu,
-.nav-item:hover .mega-dropdown {
+.nav-item:hover .mega-dropdown,
+.nav-item.active .dropdown-menu,
+.nav-item.active .mega-dropdown {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
@@ -212,6 +214,19 @@ body {
   min-width: 900px;
   left: 50%;
   transform: translateX(-50%) translateY(-10px);
+  /* Invisible bridge fills the gap between nav link and dropdown panel */
+  margin-top: 0;
+}
+
+.mega-dropdown::before,
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -14px;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background: transparent;
 }
 
 /* Travel Health 4-col Mega Dropdown */
@@ -223,7 +238,8 @@ body {
   grid-template-columns: repeat(4, 1fr);
 }
 
-.nav-item:hover .mega-dropdown {
+.nav-item:hover .mega-dropdown,
+.nav-item.active .mega-dropdown {
   transform: translateX(-50%) translateY(0);
 }
 

@@ -136,5 +136,12 @@ You MUST maintain this file to track your work across messages. This is NON-NEGO
 - Replaced both `<header>` and `<footer>` blocks with exact copies from `index.html`, all hrefs prefixed with `/#`
 - Updated PATTERNS.md to explicitly call out footer as required match, not just header
 - File: `thailand.html`
+### 2026-03-16 — Fixed mega menu hover persistence
+- Pure CSS `:hover` caused dropdown to close when mouse crossed the 12px gap between nav link and panel
+- Added invisible `::before` bridge (14px tall) on `.mega-dropdown` and `.dropdown-menu` to cover the gap
+- Added JS 120ms close-debounce on `mouseleave` for both the `nav-item` and the dropdown panel itself
+- Added `.nav-item.active` CSS class triggers alongside `:hover` so JS-controlled state is respected
+- Added global `document click` listener to close all open dropdowns when clicking outside
+- Files: `script.js`, `styles.css`
 <!-- NEXT_ENTRY_HERE -->
 </changelog>

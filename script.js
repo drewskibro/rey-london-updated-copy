@@ -96,25 +96,62 @@ window.addEventListener('scroll', () => {
   lastScroll = currentScroll;
 });
 
-// Dropdown menu interactions
+// Dropdown menu interactions — debounced hover to prevent flicker on gap crossing
 document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
   const link = item.querySelector('.nav-link');
-  
-  // Prevent default click on dropdown triggers
+  let closeTimer = null;
+
+  // Prevent default click on dropdown triggers (desktop only)
   link.addEventListener('click', (e) => {
     if (window.innerWidth > 1024) {
       e.preventDefault();
     }
   });
-  
-  // Add active state on hover
+
+  // Open immediately on mouseenter
   item.addEventListener('mouseenter', () => {
+    if (closeTimer) {
+      clearTimeout(closeTimer);
+      closeTimer = null;
+    }
     item.classList.add('active');
   });
-  
+
+  // Delay close by 120ms — covers the gap between nav link and dropdown panel
   item.addEventListener('mouseleave', () => {
-    item.classList.remove('active');
+    closeTimer = setTimeout(() => {
+      item.classList.remove('active');
+      closeTimer = null;
+    }, 120);
   });
+
+  // Also keep open if mouse enters the dropdown panel itself
+  const dropdown = item.querySelector('.mega-dropdown, .dropdown-menu');
+  if (dropdown) {
+    dropdown.addEventListener('mouseenter', () => {
+      if (closeTimer) {
+        clearTimeout(closeTimer);
+        closeTimer = null;
+      }
+      item.classList.add('active');
+    });
+
+    dropdown.addEventListener('mouseleave', () => {
+      closeTimer = setTimeout(() => {
+        item.classList.remove('active');
+        closeTimer = null;
+      }, 120);
+    });
+  }
+});
+
+// Close all dropdowns when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.nav-item.has-dropdown')) {
+    document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+      item.classList.remove('active');
+    });
+  }
 });
 
 // Search overlay functionality
