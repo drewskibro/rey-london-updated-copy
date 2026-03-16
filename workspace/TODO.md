@@ -32,5 +32,11 @@ Thailand page is done — replicate this template for India, Kenya, Vietnam, etc
 
 <todo id="thailand-booking-form">
 Add online booking form to travel pages
-Currently relies on phone CTAs only — adding an inline or modal booking form would improve conversion on travel-health, thailand, and weight-loss pages.
+Currently relies on phone CTAs only — adding an inline or modal booking form would improve conversion on travel-health, thailand, weight-loss, and B12 pages.
 </todo>
+
+<todo id="hair-loss-page-audit">
+Audit hair-loss-treatment page for same class issues as B12
+If it reuses th- or other page prefixes without matching CSS, it'll have the same broken styling. Needs proofing before launch.
+</todo>
+

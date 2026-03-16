@@ -143,5 +143,52 @@ You MUST maintain this file to track your work across messages. This is NON-NEGO
 - Added `.nav-item.active` CSS class triggers alongside `:hover` so JS-controlled state is respected
 - Added global `document click` listener to close all open dropdowns when clicking outside
 - Files: `script.js`, `styles.css`
+### 2026-03-16 — Systematic B12 page proofing & fixes
+- Replaced all `th-` (travel-health) class prefixes with `b12-` own classes across hero, trust strip, CTA, FAQ, steps sections
+- Rewrote CSS with full `b12-hero-grid`, `b12-hero-pill`, `b12-hero-title`, `b12-hero-badge-premium` etc. (no more dependency on travel-health.css)
+- Fixed compare section: added padding-top on winner header, replaced wrench icon with injection/B12 icon
+- Rebuilt "How it Works" section with `b12-step-card/b12-step-image/b12-step-content` (was using homepage step-card classes)
+- Added inline IntersectionObserver scroll-reveal JS + FAQ accordion JS; removed hardcoded `b12-revealed` so animations trigger on scroll
+- Files: `vitamin-b12-injection-south-east-london.html`, `vitamin-b12.css`
+
+### 2026-03-16 — Built Vitamin B12 injection landing page (was empty file causing white screen)
+- Root cause: `vitamin-b12-injection-south-east-london.html` contained only `\n<!` — file was never built out
+- New full page: hero, stats bar, about/what-is-B12, symptoms (6 cards), injection vs tablets compare, how-it-works (3 steps), 6 benefits, pricing (3 tiers), locations, 8-question FAQ, CTA, full footer
+- New `vitamin-b12.css` (~500 lines): all `b12-` prefixed classes, same design system (blue gradient, glassmorphism, scroll-reveal, responsive)
+- SEO: title tag, meta description, LocalBusiness + FAQPage schema markup targeting South East London B12 searches
+- Files: `vitamin-b12-injection-south-east-london.html`, `vitamin-b12.css`
+### 2026-03-16 — Replaced B12 footer with exact homepage footer + B12-specific column
+- Swapped out bespoke B12 footer (plain text cert badges, minimal social icons, custom columns)
+- Now uses exact homepage footer: full newsletter form, brand col with proper contact cards, 4-col link grid
+- Column 3 replaced with B12-specific "B12 Information" on-page links (symptoms, injection vs tablets, pricing, FAQ)
+- Column 4 is homepage "Support" column; Column 2 is homepage "Services" column — all `/#` cross-page prefixes applied
+- Footer bottom now uses real SVG cert assets (MHRA, GPhC, ICO) and Visa/Mastercard/Apple Pay/Google Pay
+### 2026-03-16 — Created Health Hub main page
+- New `health-hub.html` — full editorial magazine-style page at /health-hub with 7 sections: hero, choose-your-topic, featured article, latest articles grid, explore-by-topic, trusted expertise, newsletter + CTA
+- New `health-hub.css` (~620 lines) — all `hh-` prefixed classes, same design system (CSS variables, blue gradient, glassmorphism, Playfair Display editorial type, hover lifts, scroll-reveal)
+- Hero: dark blue gradient, Playfair Display H1, filter tabs (All/Weight Loss/Travel Health/Wellness) with JS category filtering on article grid
+- 3 large magazine topic journey cards with full-bleed imagery, gradient overlay, animated CTA pill on hover
+- Featured article: 60/40 split card with large landscape image, category badge, pharmacist byline avatar, read time
+- 6 article cards (16:9 images, category color-coded badges, Playfair headlines, bylines) — JS filter ties to hero tabs
+- 8 explore-by-topic tiles on dark blue gradient section; trusted expertise 2-col section with pharmacist image + 4 trust markers
+- Exact homepage header + footer (newsletter form, 4-col link grid, cert badges, payment methods, social links)
+### 2026-03-16 — Fixed Health Hub category filter tabs
+- Filter tabs in hero now smooth-scroll to content and filter topic cards, featured article, and article grid
+- Added `data-category` attributes to topic cards and featured card so all sections respond to filter
+- Fixed scroll-reveal conflict: filtered-in cards get `hh-revealed` class forced on so they don't stay invisible
+- Hidden featured section entirely when its category doesn't match the active filter
+- Files: `health-hub.html`, `health-hub.css`
+
+### 2026-03-16 — Premium uplift: Health Hub featured article section
+- Replaced flat white `background: var(--white)` with subtle radial-gradient bg that flows between adjacent topic/articles sections
+- Replaced cheap translucent pill badge with dark-blue glassmorphism capsule: gold star icon circle + "Featured This Week" / "Editor's Pick" 2-line text
+- Deepened card box-shadow for more depth; added decorative radial glow on content column
+- Responsive: badge scales down at 1024px breakpoint
+- Files: `health-hub.html`, `health-hub.css`
+
+### 2026-03-16 — Added Health Hub to About nav dropdown
+- Added Health Hub link (book icon, "Expert health guides & advice" desc) to desktop About dropdown in `index.html`
+- Added Health Hub sub-link to mobile About accordion in `index.html`
+- Removed completed `health-hub-link-nav` TODO task
 <!-- NEXT_ENTRY_HERE -->
 </changelog>
