@@ -95,7 +95,34 @@ You MUST maintain this file to track your work across messages. This is NON-NEGO
 - CSS fix: replaced semi-transparent `rgba(10,47,138,0.95)` bg with fully opaque dark-blue gradient; raised z-index to 9999
 - Boosted input/suggestion contrast: thicker borders, higher background opacity, `box-shadow` depth, `backdrop-filter` on suggestion links
 - Files: `styles.css`, `script.js`
+### 2026-03-16 — Created 3 new blog posts + linked from Health Hub & homepage
+- New `health-hub/travel-health-checklist-2026.html` — 7 min read, 6 sections: timing, vaccines, malaria, health kit, insurance, destination guides. 6 FAQ accordions, FAQPage schema, TOC sidebar.
+- New `health-hub/b12-deficiency-signs.html` — 5 min read, 10 sections covering 7 deficiency signs, risk groups, injection vs tablets. 6 FAQ accordions, FAQPage schema.
+- New `health-hub/seasonal-flu-guide.html` — 5 min read, 6 sections: why flu matters, NHS eligibility, private option, timing, myths, REY London. 6 FAQ accordions, FAQPage schema.
+- Updated `health-hub.html` articles grid: Article 1 → B12 deficiency blog, Article 2 → travel checklist blog, Article 6 → flu guide blog (all with real hrefs)
+- Updated `index.html` homepage articles section: 3 cards now link to Mounjaro blog, travel checklist blog, and flu guide blog (were `#` placeholders)
+### 2026-03-16 — Built full search functionality with real-time filtering
+- Root cause: search overlay had zero filter logic — `keypress` handler was just `console.log`; "Popular Searches" were static hardcoded links that never changed on input
+- Built `pageIndex` array with 24 entries covering all site pages (services, travel health, blog posts, locations) — each with title, description, keywords, URL, category
+- Real-time `input` event listener: scores matches across title (×10), description (×5), keywords (×3), category (×2); shows top 8 ranked results with highlighted matching text
+- New `search-styles.css` (~140 lines): result cards with icon/title/description/category-badge layout, hover states, match highlighting (`<mark>`), no-results empty state, responsive mobile
+- Updated search overlay HTML: split into `#searchResults` (dynamic) + `#searchPopular` (static default); popular links now point to real pages
+- Files: `script.js`, `index.html`, `search-styles.css`
 <!-- NEXT_ENTRY_HERE -->
+### 2026-03-16 — Fixed broken weight-loss page final CTA (white/unstyled)
+- Root cause: `.cta-section`, `.cta-content-full`, `.btn-cta-primary` had zero CSS — removed from `styles.css` during homepage CTA merge but weight-loss page still used them
+- Replaced old `.cta-section` + standalone `.footer-newsletter` with integrated `.wl-footer-cta-block` matching all other pages' pattern
+- New block: glassmorphism badge pills, bold H2, subtitle, white + ghost CTA buttons, tick checks, divider, newsletter row — all on blue gradient
+- New CSS in `weight-loss.css`: `.wl-footer-cta-block`, `.wl-cta-badges`, `.wl-footer-cta-title`, `.wl-btn-cta-white`, `.wl-btn-cta-ghost`, `.wl-footer-cta-divider`, `.wl-footer-newsletter-row` with responsive breakpoints
+- Footer `padding-top: 0` applied to avoid double spacing; files: `weight-loss.html`, `weight-loss.css`
+
+### 2026-03-16 — Created Contact page + linked from homepage nav
+- New `contact.html` — full contact page: hero with 3 quick-contact cards, 4-card how-we-help, 2 location cards with photos, Google Maps embed, 2-col contact form + info sidebar, opening hours on dark blue, 8-question FAQ, integrated CTA+newsletter footer
+- New `contact.css` (~500 lines) — all `ct-` prefixed classes, same design system (blue gradient hero, glassmorphism cards, pill badges, card shadows, scroll-reveal, responsive)
+- SEO: title tag, meta description, LocalBusiness + FAQPage JSON-LD schema, targets "contact Rey London pharmacy Chislehurst"
+- Updated `index.html`: Contact nav link `#contact` → `contact.html` (desktop + mobile drawer)
+- Removed `__ANIMA_DBG__` console.log debug lines from `script.js` (2 occurrences)
+
 ### 2026-03-16 — Upgraded hepatitis page locations to match homepage design
 - Replaced plain text `.hep-loc-card` (no images, SVG icons, pill CTA) with rich cards matching homepage `.location-card` pattern
 - New cards: pharmacy photos (same Unsplash assets as homepage), styled detail rows with icon images, blue top-bar hover accent, "Get Directions" + "Call Now" action buttons

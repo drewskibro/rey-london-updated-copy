@@ -164,12 +164,10 @@ const searchInput = document.querySelector('.search-overlay-input');
 // header's backdrop-filter stacking context doesn't clip it
 if (searchOverlay && searchOverlay.parentElement && searchOverlay.parentElement.tagName !== 'BODY') {
   document.body.appendChild(searchOverlay);
-  console.log('__ANIMA_DBG__ search overlay moved to body');
 }
 
 if (searchBtn && searchOverlay) {
   searchBtn.addEventListener('click', () => {
-    console.log('__ANIMA_DBG__ search btn clicked, adding active class');
     searchOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
     setTimeout(() => {
@@ -203,18 +201,161 @@ if (searchOverlay) {
   });
 }
 
-// Search functionality
-if (searchInput) {
-  searchInput.addEventListener('keypress', (e) => {
+// ================================
+// Search functionality — full page index with real-time filtering
+// ================================
+(function () {
+  var sInput = document.querySelector('.search-overlay-input');
+  if (!sInput) return;
+
+  var resultsBox = document.getElementById('searchResults');
+  var popularBox = document.getElementById('searchPopular');
+
+  // Full site page index — keywords, title, description, url, category
+  var pageIndex = [
+    { title: 'Weight Loss Programs', desc: 'Mounjaro, Wegovy & GLP-1 weight management in Chislehurst', url: 'weight-loss.html', category: 'Services', keywords: 'weight loss mounjaro wegovy glp-1 ozempic slimming obesity bmi diet injection tirzepatide semaglutide chislehurst' },
+    { title: 'Yellow Fever Vaccine', desc: 'NaTHNaC registered yellow fever vaccination centre in London', url: 'yellow-fever-vaccine-london.html', category: 'Travel Health', keywords: 'yellow fever vaccine vaccination certificate icvp nathnac africa south america tropical travel jab london' },
+    { title: 'Hepatitis A & B Vaccines', desc: 'Hepatitis A, B & combined Twinrix vaccinations in London', url: 'hepatitis-vaccine-london.html', category: 'Travel Health', keywords: 'hepatitis a b vaccine twinrix hep liver vaccination travel london chislehurst' },
+    { title: 'HPV Vaccine (Gardasil 9)', desc: 'HPV vaccination for cervical cancer protection in London', url: 'hpv-vaccine-london.html', category: 'Services', keywords: 'hpv vaccine gardasil 9 cervical cancer human papillomavirus warts vaccination london' },
+    { title: 'Vitamin B12 Injections', desc: 'B12 energy injections for fatigue & deficiency in South East London', url: 'vitamin-b12-injection-south-east-london.html', category: 'Services', keywords: 'vitamin b12 injection energy fatigue deficiency tiredness boost hydroxocobalamin south east london chislehurst' },
+    { title: 'Travel Health Clinic', desc: 'Travel vaccinations & health advice for South East London', url: 'travel-health-south-east-london.html', category: 'Travel Health', keywords: 'travel health clinic vaccinations travel vaccines malaria prevention south east london chislehurst' },
+    { title: 'Prescription Services', desc: 'NHS repeat prescriptions, collection & free delivery', url: 'prescription-services-south-east-london.html', category: 'NHS Services', keywords: 'nhs prescription repeat dispensing collection delivery free pharmacy chislehurst south east london' },
+    { title: 'Thailand Travel Vaccinations', desc: 'Essential vaccines & health advice for Thailand travel', url: 'thailand.html', category: 'Travel Health', keywords: 'thailand travel vaccines hepatitis typhoid rabies malaria bangkok phuket chiang mai' },
+    { title: 'Hair Loss Treatment', desc: 'Effective hair loss treatments & consultations', url: 'hair-loss-treatment-south-east-london.html', category: 'Services', keywords: 'hair loss treatment finasteride minoxidil thinning alopecia consultation' },
+    { title: 'Health Hub', desc: 'Expert health guides, articles & pharmacy advice', url: 'health-hub.html', category: 'About', keywords: 'health hub blog articles guides advice pharmacy wellness' },
+    { title: 'Meet the Team', desc: 'Meet our experienced pharmacists at Rey London', url: 'meet-the-team.html', category: 'About', keywords: 'team pharmacist pharmacists staff dilip about us meet' },
+    { title: 'Mounjaro Weight Loss Guide', desc: 'Why patients wish they\'d started Mounjaro sooner', url: 'health-hub/mounjaro-weight-loss-south-east-london.html', category: 'Health Hub', keywords: 'mounjaro tirzepatide weight loss glp-1 gip injection guide article blog' },
+    { title: 'Mounjaro vs Wegovy', desc: 'Clinical trials comparison — which GLP-1 is better?', url: 'health-hub/mounjaro-vs-wegovy-clinical-trials.html', category: 'Health Hub', keywords: 'mounjaro vs wegovy comparison clinical trials semaglutide tirzepatide glp-1 step surmount' },
+    { title: 'Travel Health Checklist 2026', desc: 'The ultimate pre-travel health checklist', url: 'health-hub/travel-health-checklist-2026.html', category: 'Health Hub', keywords: 'travel health checklist vaccines malaria kit insurance 2026 preparation' },
+    { title: 'B12 Deficiency Signs', desc: '7 signs you might be B12 deficient', url: 'health-hub/b12-deficiency-signs.html', category: 'Health Hub', keywords: 'b12 deficiency signs symptoms fatigue tingling anaemia vegan vegetarian' },
+    { title: 'Seasonal Flu Guide', desc: 'Who should get the flu jab — and who pays for it', url: 'health-hub/seasonal-flu-guide.html', category: 'Health Hub', keywords: 'flu jab vaccine influenza nhs private winter seasonal guide eligibility' },
+    { title: 'NHS Consultations', desc: 'Free pharmacist consultations for common conditions', url: '#nhs-consultations', category: 'NHS Services', keywords: 'nhs consultation pharmacist advice free common conditions' },
+    { title: 'NHS Vaccinations', desc: 'Flu jabs & routine immunisations', url: '#nhs-vaccinations', category: 'NHS Services', keywords: 'nhs vaccinations flu jab immunisations routine covid' },
+    { title: 'Malaria Prevention', desc: 'Antimalarial tablets — Malarone, Doxycycline & more', url: '#malaria-tablets', category: 'Travel Health', keywords: 'malaria prevention tablets antimalarial malarone doxycycline atovaquone chloroquine' },
+    { title: 'Rabies Vaccine', desc: 'Pre-exposure rabies vaccination course', url: '#rabies-pre-exposure', category: 'Travel Health', keywords: 'rabies vaccine pre-exposure course animal bite travel' },
+    { title: 'Erectile Dysfunction', desc: 'Discreet consultations & treatment', url: '#erectile-dysfunction', category: 'Services', keywords: 'erectile dysfunction ed viagra sildenafil tadalafil discreet treatment' },
+    { title: 'Free Delivery', desc: 'Free prescription delivery on orders over £20 across London', url: '#delivery', category: 'Services', keywords: 'free delivery prescription london courier home' },
+    { title: 'Pond Pharmacy', desc: '59 High St, Chislehurst BR7 5AF', url: '#pond-pharmacy', category: 'Locations', keywords: 'pond pharmacy high street chislehurst br7 5af location directions' },
+    { title: 'Chislehurst Pharmacy', desc: '59 Chislehurst Rd, BR7 5NP', url: '#chislehurst-pharmacy', category: 'Locations', keywords: 'chislehurst pharmacy chislehurst road br7 5np location directions' }
+  ];
+
+  // Category icons (SVG) by category name
+  var catIcons = {
+    'Services': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>',
+    'Travel Health': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>',
+    'NHS Services': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>',
+    'Health Hub': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>',
+    'About': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>',
+    'Locations': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>'
+  };
+
+  function escapeHtml(str) {
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function highlightMatch(text, query) {
+    if (!query) return escapeHtml(text);
+    var escaped = escapeHtml(text);
+    var re = new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+    return escaped.replace(re, '<mark class="search-highlight">$1</mark>');
+  }
+
+  function searchPages(query) {
+    if (!query || query.length < 2) return [];
+    var q = query.toLowerCase();
+    var words = q.split(/\s+/).filter(function(w) { return w.length > 0; });
+
+    var scored = [];
+    for (var i = 0; i < pageIndex.length; i++) {
+      var page = pageIndex[i];
+      var titleLower = page.title.toLowerCase();
+      var descLower = page.desc.toLowerCase();
+      var kw = page.keywords;
+      var catLower = page.category.toLowerCase();
+      var score = 0;
+
+      for (var w = 0; w < words.length; w++) {
+        var word = words[w];
+        if (titleLower.indexOf(word) !== -1) score += 10;
+        if (descLower.indexOf(word) !== -1) score += 5;
+        if (kw.indexOf(word) !== -1) score += 3;
+        if (catLower.indexOf(word) !== -1) score += 2;
+      }
+
+      if (score > 0) {
+        scored.push({ page: page, score: score });
+      }
+    }
+
+    scored.sort(function(a, b) { return b.score - a.score; });
+    return scored.slice(0, 8);
+  }
+
+  function renderResults(results, query) {
+    if (!resultsBox) return;
+    if (results.length === 0) {
+      resultsBox.innerHTML = '<div class="search-no-results"><div class="search-no-results-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M16 16L20 20"/></svg></div><p>No results found for &ldquo;' + escapeHtml(query) + '&rdquo;</p><span>Try searching for a service, vaccine, or treatment</span></div>';
+      resultsBox.style.display = 'block';
+      if (popularBox) popularBox.style.display = 'none';
+      return;
+    }
+
+    var html = '<div class="search-results-header"><span class="search-results-count">' + results.length + ' result' + (results.length > 1 ? 's' : '') + '</span></div>';
+    for (var i = 0; i < results.length; i++) {
+      var r = results[i].page;
+      var icon = catIcons[r.category] || catIcons['Services'];
+      html += '<a href="' + r.url + '" class="search-result-item">';
+      html += '<div class="search-result-icon">' + icon + '</div>';
+      html += '<div class="search-result-content">';
+      html += '<span class="search-result-title">' + highlightMatch(r.title, query) + '</span>';
+      html += '<span class="search-result-desc">' + highlightMatch(r.desc, query) + '</span>';
+      html += '</div>';
+      html += '<span class="search-result-badge">' + escapeHtml(r.category) + '</span>';
+      html += '</a>';
+    }
+    resultsBox.innerHTML = html;
+    resultsBox.style.display = 'block';
+    if (popularBox) popularBox.style.display = 'none';
+  }
+
+  function clearResults() {
+    if (resultsBox) { resultsBox.innerHTML = ''; resultsBox.style.display = 'none'; }
+    if (popularBox) popularBox.style.display = '';
+  }
+
+  // Real-time filtering on input
+  sInput.addEventListener('input', function () {
+    var q = this.value.trim();
+    if (q.length < 2) { clearResults(); return; }
+    var results = searchPages(q);
+    renderResults(results, q);
+  });
+
+  // Enter key navigates to first result
+  sInput.addEventListener('keydown', function (e) {
     if (e.key === 'Enter') {
-      const searchTerm = searchInput.value.trim();
-      if (searchTerm) {
-        console.log('Searching for:', searchTerm);
-        // Add your search logic here
+      e.preventDefault();
+      var firstLink = resultsBox && resultsBox.querySelector('.search-result-item');
+      if (firstLink) {
+        window.location.href = firstLink.getAttribute('href');
       }
     }
   });
-}
+
+  // Clear when overlay closes
+  var sOverlay = document.querySelector('.search-overlay');
+  if (sOverlay) {
+    var obs = new MutationObserver(function (mutations) {
+      for (var m = 0; m < mutations.length; m++) {
+        if (mutations[m].attributeName === 'class' && !sOverlay.classList.contains('active')) {
+          sInput.value = '';
+          clearResults();
+        }
+      }
+    });
+    obs.observe(sOverlay, { attributes: true });
+  }
+})();
 
 // Animate elements on scroll
 const observerOptions = {

@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="search-styles.css">
 </head>
 <body>
   <!-- Top Banner -->
@@ -487,7 +488,7 @@
             </div>
           </div>
 
-          <a href="#contact" class="nav-link">Contact</a>
+          <a href="contact.html" class="nav-link">Contact</a>
         </nav>
 
         <!-- Hamburger Button (mobile only) -->
@@ -612,7 +613,7 @@
           </div>
         </div>
 
-        <a href="#contact" class="mobile-nav-link">Contact</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
       </div>
 
       <div class="mobile-nav-footer">
@@ -641,12 +642,15 @@
           <input type="text" placeholder="Search for services, treatments, or advice..." class="search-overlay-input">
         </div>
         <div class="search-suggestions">
-          <div class="suggestion-category">
-            <h5>Popular Searches</h5>
-            <a href="weight-loss.html">Weight Loss Programs</a>
-            <a href="#travel-vaccines">Travel Vaccinations</a>
-            <a href="#private-gp">Private GP Appointments</a>
-            <a href="#nhs-prescriptions">NHS Prescriptions</a>
+          <div class="search-results" id="searchResults" style="display:none;"></div>
+          <div class="search-popular" id="searchPopular">
+            <div class="suggestion-category">
+              <h5>Popular Searches</h5>
+              <a href="weight-loss.html">Weight Loss Programs</a>
+              <a href="travel-health-south-east-london.html">Travel Vaccinations</a>
+              <a href="prescription-services-south-east-london.html">NHS Prescriptions</a>
+              <a href="yellow-fever-vaccine-london.html">Yellow Fever Vaccine</a>
+            </div>
           </div>
         </div>
       </div>
@@ -762,14 +766,14 @@
 
       <div class="articles-grid">
         <!-- Article 1 -->
-        <a href="#weight-loss-article" class="article-card">
+        <a href="health-hub/mounjaro-weight-loss-south-east-london.html" class="article-card">
           <div class="article-image">
             <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=500&fit=crop" alt="Weight Loss Guide">
             <div class="article-badge">Weight Loss</div>
           </div>
           <div class="article-content">
-            <h3>Understanding Medical Weight Loss: Is it Right for You?</h3>
-            <p>Discover how modern GLP-1 treatments are revolutionising weight management for London residents.</p>
+            <h3>Why Most Patients Wish They'd Started Mounjaro Sooner</h3>
+            <p>The dual-action GLP-1 delivering 20.9% average weight loss. Our pharmacist explains what patients need to know.</p>
             <span class="article-link">
               Read Article
               <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow">
@@ -778,14 +782,14 @@
         </a>
 
         <!-- Article 2 -->
-        <a href="#travel-health-article" class="article-card">
+        <a href="health-hub/travel-health-checklist-2026.html" class="article-card">
           <div class="article-image">
             <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=500&fit=crop" alt="Travel Health">
             <div class="article-badge">Travel Health</div>
           </div>
           <div class="article-content">
-            <h3>The Ultimate Pre-Travel Health Checklist</h3>
-            <p>From yellow fever to malaria prevention, here's what you need to know before your next adventure.</p>
+            <h3>The Ultimate Pre-Travel Health Checklist for 2026</h3>
+            <p>Vaccines, malaria prevention, health kits — everything you need before your next adventure.</p>
             <span class="article-link">
               Read Article
               <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow">
@@ -794,14 +798,14 @@
         </a>
 
         <!-- Article 3 -->
-        <a href="#flu-jab-article" class="article-card">
+        <a href="health-hub/seasonal-flu-guide.html" class="article-card">
           <div class="article-image">
-            <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769518729428-0.jpeg" alt="Flu Vaccination">
+            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&h=500&fit=crop" alt="Flu Vaccination">
             <div class="article-badge">Seasonal Health</div>
           </div>
           <div class="article-content">
-            <h3>Why the Flu Jab is More Important Than Ever</h3>
-            <p>Protect yourself and your family this winter. Learn about eligibility and private options.</p>
+            <h3>Who Should Get the Flu Jab This Year — and Who Pays for It</h3>
+            <p>NHS eligibility changes each season. Find out if you qualify for a free jab — or whether private makes sense.</p>
             <span class="article-link">
               Read Article
               <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow">

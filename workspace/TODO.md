@@ -24,9 +24,9 @@ This file powers chat suggestion chips. Keep it focused and actionable.
 - Prefer specific wording tied to real project scope/files; avoid vague goals.
 </instructions>
 
-<todo id="blog-post-content">
-Populate remaining blog post articles
-Mounjaro and Wegovy vs Mounjaro articles are live — create 2-3 more (travel checklist, B12 deficiency signs, seasonal flu guide) and link them from the Health Hub grid + homepage articles section.
+<todo id="cross-link-blog-related-posts">
+Update related posts on existing Mounjaro + Wegovy blog posts
+Both existing blog posts still have `href="#"` placeholder links in their related posts grids. Update to point to the 3 new blog posts.
 </todo>
 
 <todo id="thailand-booking-form">
