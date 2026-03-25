@@ -14,13 +14,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Deploy via SSH/rsync
-        uses: burnett01/rsync-deployments@7.0.1
-        with:
-          switches: -avzr --delete --exclude='.git' --exclude='.github'
-          path: wp-content/themes/rey-london/
-          remote_path: ${{ secrets.KINSTA_DEPLOY_PATH }}
-          remote_host: ${{ secrets.KINSTA_SSH_HOST }}
-          remote_port: ${{ secrets.KINSTA_SSH_PORT }}
-          remote_user: ${{ secrets.KINSTA_SSH_USER }}
-          remote_key: ${{ secrets.KINSTA_SSH_KEY }}
+      - name: Install sshpass
+        run: sudo apt-get update && sudo apt-get install -y sshpass
+
+      - name: Deploy via rsync with password
+        run: |
+          sshpass -p "${{ secrets.BOWLAND_KINSTA_SSH_PASSWORD }}" rsync -avzr \
+            --delete \
+            --exclude='.git' \
+            --exclude='.github' \
+            -e "ssh -p ${{ secrets.KINSTA_SSH_PORT }} -o StrictHostKeyChecking=no" \
+            ./ \
+            ${{ secrets.KINSTA_SSH_USER }}@${{ secrets.KINSTA_SSH_HOST }}:${{ secrets.KINSTA_DEPLOY_PATH }}
