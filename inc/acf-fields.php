@@ -1330,10 +1330,204 @@ acf_add_local_field_group( array(
     'key'      => 'group_rl_yellow_fever',
     'title'    => 'Yellow Fever Vaccine Page',
     'fields'   => array(
+        // ── HERO ──
         array( 'key' => 'field_rl_yf_hero_tab', 'label' => 'Hero Section', 'type' => 'tab' ),
         array( 'key' => 'field_rl_yf_hero_title', 'label' => 'Hero Title', 'name' => 'yf_hero_title', 'type' => 'text', 'default_value' => 'Yellow Fever Vaccine London: Official Vaccination Centre in Chislehurst' ),
         array( 'key' => 'field_rl_yf_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'yf_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'Registered Yellow Fever Vaccination Centre serving South East London. Lifetime protection with official International Certificate included.' ),
         array( 'key' => 'field_rl_yf_hero_image', 'label' => 'Hero Image', 'name' => 'yf_hero_image', 'type' => 'image', 'return_format' => 'url' ),
+        array( 'key' => 'field_rl_yf_hero_eyebrow', 'label' => 'Eyebrow Text', 'name' => 'yf_hero_eyebrow', 'type' => 'text', 'default_value' => 'NaTHNaC Registered  |  Yellow Fever Vaccination Centre' ),
+        array(
+            'key' => 'field_rl_yf_hero_trust_badges', 'label' => 'Trust Badges', 'name' => 'yf_hero_trust_badges', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Badge',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_yf_trust_badge_text', 'label' => 'Badge Text', 'name' => 'text', 'type' => 'text' ),
+            ),
+        ),
+
+        // ── KEY FACTS ──
+        array( 'key' => 'field_rl_yf_keyfacts_tab', 'label' => 'Key Facts', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_yf_keyfacts_pill', 'label' => 'Pill Label', 'name' => 'yf_keyfacts_pill', 'type' => 'text', 'default_value' => 'At a Glance' ),
+        array( 'key' => 'field_rl_yf_keyfacts_title', 'label' => 'Section Title', 'name' => 'yf_keyfacts_title', 'type' => 'text', 'default_value' => 'Key Facts About the Yellow Fever Vaccine' ),
+        array(
+            'key' => 'field_rl_yf_keyfacts_cards', 'label' => 'Stat Cards', 'name' => 'yf_keyfacts_cards', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Stat Card',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_yf_kf_stat', 'label' => 'Stat', 'name' => 'stat', 'type' => 'text' ),
+                array( 'key' => 'field_rl_yf_kf_label', 'label' => 'Label', 'name' => 'label', 'type' => 'text' ),
+            ),
+        ),
+
+        // ── UNDERSTANDING YELLOW FEVER ──
+        array( 'key' => 'field_rl_yf_understanding_tab', 'label' => 'Understanding YF', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_yf_understanding_eyebrow', 'label' => 'Eyebrow', 'name' => 'yf_understanding_eyebrow', 'type' => 'text', 'default_value' => 'What You Need to Know' ),
+        array( 'key' => 'field_rl_yf_understanding_heading', 'label' => 'Heading', 'name' => 'yf_understanding_heading', 'type' => 'text', 'default_value' => 'What is Yellow Fever?' ),
+        array( 'key' => 'field_rl_yf_understanding_body', 'label' => 'Body Content', 'name' => 'yf_understanding_body', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0 ),
+        array(
+            'key' => 'field_rl_yf_understanding_stats', 'label' => 'Stat Boxes', 'name' => 'yf_understanding_stats', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Stat',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_yf_und_stat_num', 'label' => 'Number', 'name' => 'number', 'type' => 'text' ),
+                array( 'key' => 'field_rl_yf_und_stat_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'text' ),
+            ),
+        ),
+        array( 'key' => 'field_rl_yf_understanding_image', 'label' => 'Section Image', 'name' => 'yf_understanding_image', 'type' => 'image', 'return_format' => 'url' ),
+        array( 'key' => 'field_rl_yf_understanding_badge', 'label' => 'Image Badge Text', 'name' => 'yf_understanding_badge', 'type' => 'text', 'default_value' => '50%+ mortality rate in severe cases' ),
+
+        // ── WHY YOU NEED IT ──
+        array( 'key' => 'field_rl_yf_why_need_tab', 'label' => 'Why You Need It', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_yf_why_need_title', 'label' => 'Section Title', 'name' => 'yf_why_need_title', 'type' => 'text', 'default_value' => 'Why You Need the Yellow Fever Vaccine' ),
+        array( 'key' => 'field_rl_yf_why_need_subtitle', 'label' => 'Subtitle', 'name' => 'yf_why_need_subtitle', 'type' => 'textarea', 'rows' => 2, 'default_value' => 'Three compelling reasons why yellow fever vaccination is essential for travel to affected regions — not optional.' ),
+        array(
+            'key' => 'field_rl_yf_why_need_cards', 'label' => 'Reason Cards', 'name' => 'yf_why_need_cards', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Reason',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_yf_need_title', 'label' => 'Title', 'name' => 'title', 'type' => 'text' ),
+                array( 'key' => 'field_rl_yf_need_body', 'label' => 'Body', 'name' => 'body', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0 ),
+            ),
+        ),
+
+        // ── LIFESTYLE BANNERS ──
+        array( 'key' => 'field_rl_yf_banners_tab', 'label' => 'Banners', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_yf_banner1_image', 'label' => 'Banner 1 Image', 'name' => 'yf_banner1_image', 'type' => 'image', 'return_format' => 'url' ),
+        array( 'key' => 'field_rl_yf_banner1_title', 'label' => 'Banner 1 Title', 'name' => 'yf_banner1_title', 'type' => 'text', 'default_value' => '40+ Countries Require Certification' ),
+        array( 'key' => 'field_rl_yf_banner1_text', 'label' => 'Banner 1 Subtitle', 'name' => 'yf_banner1_text', 'type' => 'text', 'default_value' => 'Protect yourself before exploring Africa & South America' ),
+        array( 'key' => 'field_rl_yf_banner2_image', 'label' => 'Banner 2 Image', 'name' => 'yf_banner2_image', 'type' => 'image', 'return_format' => 'url' ),
+        array( 'key' => 'field_rl_yf_banner2_title', 'label' => 'Banner 2 Title', 'name' => 'yf_banner2_title', 'type' => 'text', 'default_value' => 'Professional Travel Health Service' ),
+        array( 'key' => 'field_rl_yf_banner2_text', 'label' => 'Banner 2 Subtitle', 'name' => 'yf_banner2_text', 'type' => 'text', 'default_value' => 'GPhC-registered pharmacists · Consultation + vaccine + certificate in 20 minutes' ),
+
+        // ── RISK AREAS ──
+        array( 'key' => 'field_rl_yf_risk_tab', 'label' => 'Risk Areas', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_yf_risk_pill', 'label' => 'Pill Label', 'name' => 'yf_risk_pill', 'type' => 'text', 'default_value' => 'Risk Areas' ),
+        array( 'key' => 'field_rl_yf_risk_title', 'label' => 'Section Title', 'name' => 'yf_risk_title', 'type' => 'text', 'default_value' => 'Yellow Fever Risk Areas' ),
+        array( 'key' => 'field_rl_yf_risk_subtitle', 'label' => 'Subtitle', 'name' => 'yf_risk_subtitle', 'type' => 'textarea', 'rows' => 3 ),
+        array( 'key' => 'field_rl_yf_risk_africa_body', 'label' => 'Africa Description', 'name' => 'yf_risk_africa_body', 'type' => 'textarea', 'rows' => 2 ),
+        array( 'key' => 'field_rl_yf_risk_africa_list', 'label' => 'Africa Countries', 'name' => 'yf_risk_africa_list', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0 ),
+        array( 'key' => 'field_rl_yf_risk_americas_body', 'label' => 'South America Description', 'name' => 'yf_risk_americas_body', 'type' => 'textarea', 'rows' => 2 ),
+        array( 'key' => 'field_rl_yf_risk_americas_list', 'label' => 'South America Countries', 'name' => 'yf_risk_americas_list', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0 ),
+        array( 'key' => 'field_rl_yf_risk_transit_warning', 'label' => 'Transit Warning', 'name' => 'yf_risk_transit_warning', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0 ),
+
+        // ── WHO SHOULD GET VACCINATED ──
+        array( 'key' => 'field_rl_yf_who_tab', 'label' => 'Who Should Get', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_yf_who_title', 'label' => 'Section Title', 'name' => 'yf_who_title', 'type' => 'text', 'default_value' => 'Who Should Get the Yellow Fever Vaccine?' ),
+        array( 'key' => 'field_rl_yf_who_subtitle', 'label' => 'Subtitle', 'name' => 'yf_who_subtitle', 'type' => 'textarea', 'rows' => 3 ),
+        array(
+            'key' => 'field_rl_yf_who_cards', 'label' => 'Eligibility Cards', 'name' => 'yf_who_cards', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Card',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_yf_who_card_title', 'label' => 'Title', 'name' => 'title', 'type' => 'text' ),
+                array( 'key' => 'field_rl_yf_who_card_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 3 ),
+            ),
+        ),
+        array( 'key' => 'field_rl_yf_who_info_box', 'label' => 'Info Box', 'name' => 'yf_who_info_box', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0 ),
+
+        // ── VACCINATION PROCESS ──
+        array( 'key' => 'field_rl_yf_process_tab', 'label' => 'Vaccination Process', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_yf_process_title', 'label' => 'Section Title', 'name' => 'yf_process_title', 'type' => 'text', 'default_value' => 'What to Expect at Your Appointment' ),
+        array( 'key' => 'field_rl_yf_process_subtitle', 'label' => 'Subtitle', 'name' => 'yf_process_subtitle', 'type' => 'textarea', 'rows' => 2 ),
+        array( 'key' => 'field_rl_yf_process_image', 'label' => 'Photo', 'name' => 'yf_process_image', 'type' => 'image', 'return_format' => 'url' ),
+        array( 'key' => 'field_rl_yf_process_badge', 'label' => 'Photo Badge Text', 'name' => 'yf_process_badge', 'type' => 'text', 'default_value' => 'GPhC-Registered Pharmacists' ),
+        array(
+            'key' => 'field_rl_yf_process_steps', 'label' => 'Steps', 'name' => 'yf_process_steps', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Step',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_yf_step_title', 'label' => 'Title', 'name' => 'title', 'type' => 'text' ),
+                array( 'key' => 'field_rl_yf_step_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 3 ),
+            ),
+        ),
+        array( 'key' => 'field_rl_yf_process_time', 'label' => 'Total Time Text', 'name' => 'yf_process_time', 'type' => 'text', 'default_value' => 'Allow 20 minutes total · Book at least 10 days before travel' ),
+
+        // ── ICVP CERTIFICATE ──
+        array( 'key' => 'field_rl_yf_cert_tab', 'label' => 'Certificate', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_yf_cert_pill', 'label' => 'Pill Label', 'name' => 'yf_cert_pill', 'type' => 'text', 'default_value' => 'The Yellow Card' ),
+        array( 'key' => 'field_rl_yf_cert_title', 'label' => 'Section Title', 'name' => 'yf_cert_title', 'type' => 'text', 'default_value' => 'Your Official Yellow Fever Certificate' ),
+        array( 'key' => 'field_rl_yf_cert_subtitle', 'label' => 'Subtitle', 'name' => 'yf_cert_subtitle', 'type' => 'textarea', 'rows' => 3 ),
+        array(
+            'key' => 'field_rl_yf_cert_items', 'label' => 'Certificate Items', 'name' => 'yf_cert_items', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Item',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_yf_cert_item_text', 'label' => 'Item', 'name' => 'text', 'type' => 'text' ),
+            ),
+        ),
+        array(
+            'key' => 'field_rl_yf_cert_bring', 'label' => 'Bring to Appointment', 'name' => 'yf_cert_bring', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Item',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_yf_cert_bring_text', 'label' => 'Item', 'name' => 'text', 'type' => 'text' ),
+            ),
+        ),
+        array( 'key' => 'field_rl_yf_cert_validity', 'label' => 'Validity Note', 'name' => 'yf_cert_validity', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0 ),
+
+        // ── SIDE EFFECTS / SAFETY ──
+        array( 'key' => 'field_rl_yf_safety_tab', 'label' => 'Safety', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_yf_safety_banner_image', 'label' => 'Safety Banner Image', 'name' => 'yf_safety_banner_image', 'type' => 'image', 'return_format' => 'url' ),
+        array( 'key' => 'field_rl_yf_safety_banner_title', 'label' => 'Banner Title', 'name' => 'yf_safety_banner_title', 'type' => 'text', 'default_value' => '600+ Million Doses Administered Worldwide' ),
+        array( 'key' => 'field_rl_yf_safety_banner_text', 'label' => 'Banner Subtitle', 'name' => 'yf_safety_banner_text', 'type' => 'text', 'default_value' => 'WHO-prequalified vaccine · Over 80 years of safety record' ),
+        array( 'key' => 'field_rl_yf_safety_title', 'label' => 'Section Title', 'name' => 'yf_safety_title', 'type' => 'text', 'default_value' => 'Side Effects & Safety Information' ),
+        array( 'key' => 'field_rl_yf_safety_subtitle', 'label' => 'Subtitle', 'name' => 'yf_safety_subtitle', 'type' => 'textarea', 'rows' => 3 ),
+        array( 'key' => 'field_rl_yf_safety_common_title', 'label' => 'Common Title', 'name' => 'yf_safety_common_title', 'type' => 'text', 'default_value' => 'Common Side Effects (Affecting 1 in 3 People)' ),
+        array(
+            'key' => 'field_rl_yf_safety_common_list', 'label' => 'Common Side Effects', 'name' => 'yf_safety_common_list', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add',
+            'sub_fields' => array( array( 'key' => 'field_rl_yf_safety_common_item', 'label' => 'Text', 'name' => 'text', 'type' => 'text' ) ),
+        ),
+        array( 'key' => 'field_rl_yf_safety_common_note', 'label' => 'Common Note', 'name' => 'yf_safety_common_note', 'type' => 'textarea', 'rows' => 2 ),
+        array( 'key' => 'field_rl_yf_safety_serious_title', 'label' => 'Serious Title', 'name' => 'yf_safety_serious_title', 'type' => 'text', 'default_value' => 'Serious Side Effects (Very Rare)' ),
+        array( 'key' => 'field_rl_yf_safety_serious_text', 'label' => 'Serious Text', 'name' => 'yf_safety_serious_text', 'type' => 'textarea', 'rows' => 3 ),
+        array( 'key' => 'field_rl_yf_safety_contra_title', 'label' => 'Contra Title', 'name' => 'yf_safety_contra_title', 'type' => 'text', 'default_value' => 'Who Should NOT Receive Yellow Fever Vaccine' ),
+        array(
+            'key' => 'field_rl_yf_safety_contra_list', 'label' => 'Contraindications', 'name' => 'yf_safety_contra_list', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add',
+            'sub_fields' => array( array( 'key' => 'field_rl_yf_safety_contra_item', 'label' => 'Text', 'name' => 'text', 'type' => 'text' ) ),
+        ),
+        array( 'key' => 'field_rl_yf_safety_precautions_title', 'label' => 'Precautions Title', 'name' => 'yf_safety_precautions_title', 'type' => 'text', 'default_value' => 'Special Precautions' ),
+        array(
+            'key' => 'field_rl_yf_safety_precautions', 'label' => 'Precautions', 'name' => 'yf_safety_precautions', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add',
+            'sub_fields' => array( array( 'key' => 'field_rl_yf_safety_prec_text', 'label' => 'Text', 'name' => 'text', 'type' => 'text' ) ),
+        ),
+        array( 'key' => 'field_rl_yf_safety_box', 'label' => 'Safety Summary', 'name' => 'yf_safety_box', 'type' => 'textarea', 'rows' => 3 ),
+
+        // ── PRICING ──
+        array( 'key' => 'field_rl_yf_pricing_tab', 'label' => 'Pricing', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_yf_pricing_title', 'label' => 'Section Title', 'name' => 'yf_pricing_title', 'type' => 'text', 'default_value' => 'Transparent Yellow Fever Vaccine Pricing' ),
+        array( 'key' => 'field_rl_yf_pricing_subtitle', 'label' => 'Subtitle', 'name' => 'yf_pricing_subtitle', 'type' => 'text', 'default_value' => 'All-inclusive price. No hidden fees. No consultation charges.' ),
+        array( 'key' => 'field_rl_yf_price_amount', 'label' => 'Price Amount', 'name' => 'yf_price_amount', 'type' => 'text', 'default_value' => '85' ),
+        array( 'key' => 'field_rl_yf_price_badge', 'label' => 'Price Badge Text', 'name' => 'yf_price_badge', 'type' => 'text', 'default_value' => 'All-Inclusive · Everything Included' ),
+        array(
+            'key' => 'field_rl_yf_price_includes', 'label' => 'Includes List', 'name' => 'yf_price_includes', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Item',
+            'sub_fields' => array( array( 'key' => 'field_rl_yf_price_include_text', 'label' => 'Text', 'name' => 'text', 'type' => 'text' ) ),
+        ),
+        array( 'key' => 'field_rl_yf_pricing_info', 'label' => 'Pricing Info Box', 'name' => 'yf_pricing_info', 'type' => 'textarea', 'rows' => 3 ),
+        array( 'key' => 'field_rl_yf_pricing_note', 'label' => 'Pricing Note', 'name' => 'yf_pricing_note', 'type' => 'textarea', 'rows' => 2 ),
+
+        // ── WHY CHOOSE US ──
+        array( 'key' => 'field_rl_yf_why_tab', 'label' => 'Why Choose Us', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_yf_why_title', 'label' => 'Section Title', 'name' => 'yf_why_title', 'type' => 'text', 'default_value' => 'Official Yellow Fever Vaccination Centre' ),
+        array( 'key' => 'field_rl_yf_why_subtitle', 'label' => 'Subtitle', 'name' => 'yf_why_subtitle', 'type' => 'textarea', 'rows' => 3 ),
+        array(
+            'key' => 'field_rl_yf_why_cards', 'label' => 'Feature Cards', 'name' => 'yf_why_cards', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Card',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_yf_why_card_title', 'label' => 'Title', 'name' => 'title', 'type' => 'text' ),
+                array( 'key' => 'field_rl_yf_why_card_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 3 ),
+            ),
+        ),
+
+        // ── LOCATIONS ──
+        array( 'key' => 'field_rl_yf_locations_tab', 'label' => 'Locations', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_yf_locations_title', 'label' => 'Section Title', 'name' => 'yf_locations_title', 'type' => 'text', 'default_value' => 'Visit Our Yellow Fever Vaccination Centres in Chislehurst' ),
+        array(
+            'key' => 'field_rl_yf_locations', 'label' => 'Location Cards', 'name' => 'yf_locations', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Location',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_yf_loc_name', 'label' => 'Name', 'name' => 'name', 'type' => 'text' ),
+                array( 'key' => 'field_rl_yf_loc_address', 'label' => 'Address', 'name' => 'address', 'type' => 'text' ),
+                array( 'key' => 'field_rl_yf_loc_phone', 'label' => 'Phone', 'name' => 'phone', 'type' => 'text' ),
+                array( 'key' => 'field_rl_yf_loc_hours', 'label' => 'Hours', 'name' => 'hours', 'type' => 'text' ),
+                array( 'key' => 'field_rl_yf_loc_parking', 'label' => 'Parking Info', 'name' => 'parking', 'type' => 'text' ),
+                array( 'key' => 'field_rl_yf_loc_directions_url', 'label' => 'Directions URL', 'name' => 'directions_url', 'type' => 'url' ),
+                array( 'key' => 'field_rl_yf_loc_cta_text', 'label' => 'CTA Text', 'name' => 'cta_text', 'type' => 'text' ),
+            ),
+        ),
+        array( 'key' => 'field_rl_yf_locations_serving', 'label' => 'Serving Areas Text', 'name' => 'yf_locations_serving', 'type' => 'textarea', 'rows' => 2 ),
+
+        // ── FOOTER CTA ──
+        array( 'key' => 'field_rl_yf_cta_tab', 'label' => 'Footer CTA', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_yf_cta_title', 'label' => 'CTA Title', 'name' => 'yf_cta_title', 'type' => 'text', 'default_value' => 'Protect Yourself Before You Travel' ),
+        array( 'key' => 'field_rl_yf_cta_subtitle', 'label' => 'CTA Subtitle', 'name' => 'yf_cta_subtitle', 'type' => 'textarea', 'rows' => 2 ),
+        array(
+            'key' => 'field_rl_yf_cta_badges', 'label' => 'CTA Badges', 'name' => 'yf_cta_badges', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Badge',
+            'sub_fields' => array( array( 'key' => 'field_rl_yf_cta_badge_text', 'label' => 'Text', 'name' => 'text', 'type' => 'text' ) ),
+        ),
+
+        // ── COUNTRIES (existing) ──
         array( 'key' => 'field_rl_yf_countries_tab', 'label' => 'Countries', 'type' => 'tab' ),
         array(
             'key' => 'field_rl_yf_countries', 'label' => 'Country Cards', 'name' => 'yf_countries', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Country',
@@ -1343,6 +1537,8 @@ acf_add_local_field_group( array(
                 array( 'key' => 'field_rl_yf_country_flag', 'label' => 'Flag Image', 'name' => 'flag', 'type' => 'image', 'return_format' => 'url' ),
             ),
         ),
+
+        // ── FAQs (existing) ──
         array( 'key' => 'field_rl_yf_faq_tab', 'label' => 'FAQs', 'type' => 'tab' ),
         array(
             'key' => 'field_rl_yf_faqs', 'label' => 'FAQs', 'name' => 'yf_faqs', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add FAQ',
