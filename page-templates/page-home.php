@@ -16,12 +16,11 @@ get_header();
           <div class="hero-header">
             <div class="hero-text">
               <h1 class="hero-title">
-                <span class="hero-title-line">Healthcare that puts</span>
-                <span class="hero-title-line"><span class="gradient-text">you first</span></span>
+                <span class="hero-title-line"><?php echo esc_html( rl_field( 'hero_title_line1', 'Healthcare that puts' ) ); ?></span>
+                <span class="hero-title-line"><span class="gradient-text"><?php echo esc_html( rl_field( 'hero_title_line2', 'you first' ) ); ?></span></span>
               </h1>
               <p class="hero-subtitle">
-                Expert prescriptions, travel health, and weight management across South East London. Two Chislehurst
-                locations ready to help.
+                <?php echo esc_html( rl_field( 'hero_subtitle', 'Expert prescriptions, travel health, and weight management across South East London. Two Chislehurst locations ready to help.' ) ); ?>
               </p>
             </div>
             <a href="#all-services" class="btn-secondary btn-view-all">
@@ -31,45 +30,39 @@ get_header();
           </div>
 
           <div class="service-grid">
+            <?php
+            $services = rl_field( 'hero_services' );
+            if ( $services ) :
+              foreach ( $services as $service ) :
+            ?>
+            <a href="<?php echo esc_url( $service['url'] ); ?>" class="service-card">
+              <span class="service-title"><?php echo esc_html( $service['title'] ); ?></span>
+              <div class="service-image">
+                <img src="<?php echo esc_url( $service['image'] ); ?>" alt="<?php echo esc_attr( $service['title'] ); ?>" />
+              </div>
+              <div class="arrow-icon">
+                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-17.svg" alt="Arrow" />
+              </div>
+            </a>
+            <?php endforeach; else : ?>
             <a href="<?php echo esc_url( home_url( '/prescription-services/' ) ); ?>" class="service-card">
               <span class="service-title">Prescription Services</span>
               <div class="service-image">
-                <img
-                  src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769448207085-0.png"
-                  alt="Prescriptions"
-                />
+                <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769448207085-0.png" alt="Prescriptions" />
               </div>
               <div class="arrow-icon">
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-17.svg" alt="Arrow" />
               </div>
             </a>
-
             <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="service-card">
               <span class="service-title">Weight Loss</span>
               <div class="service-image">
-                <img
-                  src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769450770107-0.png"
-                  alt="Weight Loss"
-                />
+                <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769450770107-0.png" alt="Weight Loss" />
               </div>
               <div class="arrow-icon">
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-17.svg" alt="Arrow" />
               </div>
             </a>
-
-            <a href="#health-checks" class="service-card">
-              <span class="service-title">Health Checks</span>
-              <div class="service-image">
-                <img
-                  src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769453402126-0.png"
-                  alt="Health Checks"
-                />
-              </div>
-              <div class="arrow-icon">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-17.svg" alt="Arrow" />
-              </div>
-            </a>
-
             <a href="<?php echo esc_url( home_url( '/travel-health/' ) ); ?>" class="service-card">
               <span class="service-title">Travel Clinic</span>
               <div class="service-image">
@@ -79,29 +72,25 @@ get_header();
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-17.svg" alt="Arrow" />
               </div>
             </a>
-
             <a href="<?php echo esc_url( home_url( '/vitamin-b12-injection/' ) ); ?>" class="service-card">
               <span class="service-title">Vitamin B12</span>
               <div class="service-image">
-                <img
-                  src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769514862073-0.png"
-                  alt="Vitamin B12"
-                />
+                <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769514862073-0.png" alt="Vitamin B12" />
               </div>
               <div class="arrow-icon">
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-17.svg" alt="Arrow" />
               </div>
             </a>
-
-            <a href="#delivery" class="service-card">
+            <a href="<?php echo esc_url( home_url( '/hair-loss/' ) ); ?>" class="service-card">
               <span class="service-title">Hair Loss</span>
               <div class="service-image">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/1759225236perioddelay.png" alt="Delivery" />
+                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/1759225236perioddelay.png" alt="Hair Loss" />
               </div>
               <div class="arrow-icon">
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-17.svg" alt="Arrow" />
               </div>
             </a>
+            <?php endif; ?>
           </div>
 
           <div class="trust-badges">
@@ -364,12 +353,44 @@ get_header();
         <p class="section-subtitle">Visit us in person for expert advice and immediate service</p>
 
         <div class="locations-grid">
+          <?php
+          $locations = rl_field( 'locations' );
+          if ( $locations ) :
+            foreach ( $locations as $loc ) :
+              $phone_digits = preg_replace( '/[^0-9+]/', '', $loc['phone'] );
+          ?>
+          <div class="location-card">
+            <?php if ( ! empty( $loc['image'] ) ) : ?>
+            <div class="location-image">
+              <img src="<?php echo esc_url( $loc['image'] ); ?>" alt="<?php echo esc_attr( $loc['name'] ); ?>" />
+            </div>
+            <?php endif; ?>
+            <div class="location-content">
+              <h3><?php echo esc_html( $loc['name'] ); ?></h3>
+              <div class="location-details">
+                <div class="detail-item">
+                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-19.svg" alt="Address" />
+                  <p><?php echo esc_html( $loc['address'] ); ?></p>
+                </div>
+                <div class="detail-item">
+                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-32.svg" alt="Phone" />
+                  <a href="tel:<?php echo esc_attr( $phone_digits ); ?>"><?php echo esc_html( $loc['phone'] ); ?></a>
+                </div>
+                <div class="detail-item">
+                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours" />
+                  <p><?php echo esc_html( $loc['hours'] ); ?></p>
+                </div>
+              </div>
+              <div class="location-actions">
+                <a href="<?php echo esc_url( $loc['directions_url'] ?: '#directions' ); ?>" class="btn-primary">Get Directions</a>
+                <a href="tel:<?php echo esc_attr( $phone_digits ); ?>" class="btn-outline">Call Now</a>
+              </div>
+            </div>
+          </div>
+          <?php endforeach; else : ?>
           <div class="location-card">
             <div class="location-image">
-              <img
-                src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769343725749-0.jpeg"
-                alt="Pond Pharmacy"
-              />
+              <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769343725749-0.jpeg" alt="Pond Pharmacy" />
             </div>
             <div class="location-content">
               <h3>Pond Pharmacy</h3>
@@ -393,13 +414,9 @@ get_header();
               </div>
             </div>
           </div>
-
           <div class="location-card">
             <div class="location-image">
-              <img
-                src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769344823391-0.jpeg"
-                alt="Chislehurst Pharmacy"
-              />
+              <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769344823391-0.jpeg" alt="Chislehurst Pharmacy" />
             </div>
             <div class="location-content">
               <h3>Chislehurst Pharmacy</h3>
@@ -423,6 +440,7 @@ get_header();
               </div>
             </div>
           </div>
+          <?php endif; ?>
         </div>
       </div>
     </section>
@@ -606,7 +624,7 @@ get_header();
             </svg>
             <span>Trusted by Thousands</span>
           </div>
-          <h2 class="testimonials-title">What Our Patients Say</h2>
+          <h2 class="testimonials-title"><?php echo esc_html( rl_field( 'testimonials_title', 'What Our Patients Say' ) ); ?></h2>
           <p class="testimonials-desc">Real experiences from real patients across our London locations.</p>
         </div>
 
@@ -905,8 +923,8 @@ get_header();
               <div class="pharmacist-profile-card">
                 <div class="profile-header">
                   <div class="profile-info">
-                    <h3 class="profile-name">Sumeet Banker</h3>
-                    <p class="profile-title">Superintendent Pharmacist & Owner</p>
+                    <h3 class="profile-name"><?php echo esc_html( rl_field( 'pharmacist_name', 'Sumeet Banker' ) ); ?></h3>
+                    <p class="profile-title"><?php echo esc_html( rl_field( 'pharmacist_title', 'Superintendent Pharmacist & Owner' ) ); ?></p>
                     <div class="profile-badge">
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M8 1l2.5 5 5.5.5-4 4 1 5.5L8 13l-5 3 1-5.5-4-4 5.5-.5L8 1z" fill="currentColor" />
@@ -917,8 +935,7 @@ get_header();
                 </div>
 
                 <p class="profile-bio">
-                  With over 15 years of experience, Sumeet leads our team in providing exceptional pharmaceutical care
-                  to the South East London community.
+                  <?php echo esc_html( rl_field( 'pharmacist_bio', 'With over 15 years of experience, Sumeet leads our team in providing exceptional pharmaceutical care to the South East London community.' ) ); ?>
                 </p>
 
                 <div class="profile-actions">
@@ -1202,20 +1219,19 @@ get_header();
             <span class="hp-cta-badge">Two Locations</span>
             <span class="hp-cta-badge">Same-Day Service</span>
           </div>
-          <h2 class="hp-footer-cta-title">Need help with something?</h2>
+          <h2 class="hp-footer-cta-title"><?php echo esc_html( rl_field( 'cta_title', 'Need help with something?' ) ); ?></h2>
           <p class="hp-footer-cta-sub">
-            Our expert pharmacists are here to help you across both South East London locations. No appointment needed
-            for most services.
+            <?php echo esc_html( rl_field( 'cta_subtitle', 'Our expert pharmacists are here to help you across both South East London locations. No appointment needed for most services.' ) ); ?>
           </p>
           <div class="hp-footer-cta-buttons">
-            <a href="#book" class="hp-btn-cta-white">Book Appointment</a>
-            <a href="tel:02084673158" class="hp-btn-cta-ghost">
+            <a href="<?php echo esc_url( rl_field( 'cta_button_url' ) ?: rl_booking_url() ); ?>" class="hp-btn-cta-white"><?php echo esc_html( rl_field( 'cta_button_text', 'Book Appointment' ) ); ?></a>
+            <a href="tel:<?php echo esc_attr( rl_phone_link() ); ?>" class="hp-btn-cta-ghost">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path
                   d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.09 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81L9.27 8.95a16 16 0 0 0 6.78 6.78l1.42-1.42a12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
                 />
               </svg>
-              Call Us: 020 8467 3158
+              Call Us: <?php echo esc_html( rl_phone() ); ?>
             </a>
           </div>
           <div class="hp-cta-checks">
