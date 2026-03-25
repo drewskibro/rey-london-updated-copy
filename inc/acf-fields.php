@@ -1183,3 +1183,66 @@ acf_add_local_field_group( array(
     'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-yellow-fever.php' ) ) ),
     'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
 ) );
+
+// =============================================================================
+// CONTACT PAGE FIELDS
+// =============================================================================
+acf_add_local_field_group( array(
+    'key'      => 'group_rl_contact',
+    'title'    => 'Contact Page',
+    'fields'   => array(
+        array( 'key' => 'field_rl_ct_hero_tab', 'label' => 'Hero Section', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_ct_hero_title', 'label' => 'Hero Title', 'name' => 'ct_hero_title', 'type' => 'text', 'default_value' => 'Contact Rey London Pharmacy' ),
+        array( 'key' => 'field_rl_ct_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'ct_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'We\'re here to help with prescriptions, travel vaccinations, specialist consultations, and any health questions. Two Chislehurst locations, walk-ins welcome.' ),
+        array( 'key' => 'field_rl_ct_locations_tab', 'label' => 'Locations', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_ct_locations', 'label' => 'Location Cards', 'name' => 'ct_locations', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Location',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_ct_loc_name', 'label' => 'Name', 'name' => 'name', 'type' => 'text' ),
+                array( 'key' => 'field_rl_ct_loc_address', 'label' => 'Address', 'name' => 'address', 'type' => 'text' ),
+                array( 'key' => 'field_rl_ct_loc_phone', 'label' => 'Phone', 'name' => 'phone', 'type' => 'text' ),
+                array( 'key' => 'field_rl_ct_loc_email', 'label' => 'Email', 'name' => 'email', 'type' => 'email' ),
+                array( 'key' => 'field_rl_ct_loc_hours', 'label' => 'Opening Hours', 'name' => 'hours', 'type' => 'textarea', 'rows' => 3 ),
+                array( 'key' => 'field_rl_ct_loc_map_url', 'label' => 'Google Maps Embed URL', 'name' => 'map_url', 'type' => 'url' ),
+                array( 'key' => 'field_rl_ct_loc_directions', 'label' => 'Directions URL', 'name' => 'directions_url', 'type' => 'url' ),
+            ),
+        ),
+        array( 'key' => 'field_rl_ct_faq_tab', 'label' => 'FAQs', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_ct_faqs', 'label' => 'FAQs', 'name' => 'ct_faqs', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add FAQ',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_ct_faq_q', 'label' => 'Question', 'name' => 'question', 'type' => 'text' ),
+                array( 'key' => 'field_rl_ct_faq_a', 'label' => 'Answer', 'name' => 'answer', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0 ),
+            ),
+        ),
+    ),
+    'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-contact.php' ) ) ),
+    'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
+) );
+
+// =============================================================================
+// MEET THE TEAM PAGE FIELDS
+// =============================================================================
+acf_add_local_field_group( array(
+    'key'      => 'group_rl_team',
+    'title'    => 'Meet the Team Page',
+    'fields'   => array(
+        array( 'key' => 'field_rl_mt_hero_tab', 'label' => 'Hero Section', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_mt_hero_title', 'label' => 'Hero Title', 'name' => 'mt_hero_title', 'type' => 'text', 'default_value' => 'People Behind Your Exceptional Care' ),
+        array( 'key' => 'field_rl_mt_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'mt_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'Our team of GPhC-registered pharmacists, independent prescribers, and healthcare professionals are dedicated to delivering personalised, evidence-based care.' ),
+        array( 'key' => 'field_rl_mt_members_tab', 'label' => 'Team Members', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_mt_members', 'label' => 'Team Members', 'name' => 'mt_members', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Team Member',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_mt_member_name', 'label' => 'Name', 'name' => 'name', 'type' => 'text' ),
+                array( 'key' => 'field_rl_mt_member_role', 'label' => 'Role', 'name' => 'role', 'type' => 'text' ),
+                array( 'key' => 'field_rl_mt_member_bio', 'label' => 'Bio', 'name' => 'bio', 'type' => 'textarea', 'rows' => 4 ),
+                array( 'key' => 'field_rl_mt_member_photo', 'label' => 'Photo', 'name' => 'photo', 'type' => 'image', 'return_format' => 'url' ),
+                array( 'key' => 'field_rl_mt_member_gphc', 'label' => 'GPhC Number', 'name' => 'gphc', 'type' => 'text' ),
+                array( 'key' => 'field_rl_mt_member_qualifications', 'label' => 'Qualifications', 'name' => 'qualifications', 'type' => 'text' ),
+            ),
+        ),
+    ),
+    'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-team.php' ) ) ),
+    'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
+) );
