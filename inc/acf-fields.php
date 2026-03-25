@@ -1762,3 +1762,167 @@ acf_add_local_field_group( array(
     'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-gambia.php' ) ) ),
     'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
 ) );
+
+// =============================================================================
+// PHARMACY SETTINGS — CONTACT & LOCATIONS
+// =============================================================================
+acf_add_local_field_group( array(
+    'key'    => 'group_rl_contact_locations',
+    'title'  => 'Contact & Locations',
+    'fields' => array(
+        array( 'key' => 'field_rl_opt_group_email', 'label' => 'Group Email', 'name' => 'pharmacy_group_email', 'type' => 'email', 'default_value' => '' ),
+        array( 'key' => 'field_rl_opt_booking_url', 'label' => 'Online Booking URL', 'name' => 'pharmacy_booking_url', 'type' => 'url', 'instructions' => 'Main booking link used across all pages' ),
+        array( 'key' => 'field_rl_opt_patients_treated', 'label' => 'Patients Treated (stat)', 'name' => 'pharmacy_patients_treated', 'type' => 'text', 'default_value' => '10,000+' ),
+        array(
+            'key' => 'field_rl_opt_locations', 'label' => 'Locations', 'name' => 'pharmacy_locations', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Location',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_opt_loc_name', 'label' => 'Location Name', 'name' => 'name', 'type' => 'text' ),
+                array( 'key' => 'field_rl_opt_loc_phone', 'label' => 'Phone', 'name' => 'phone', 'type' => 'text' ),
+                array( 'key' => 'field_rl_opt_loc_email', 'label' => 'Email', 'name' => 'email', 'type' => 'email' ),
+                array( 'key' => 'field_rl_opt_loc_address_1', 'label' => 'Address Line 1', 'name' => 'address_line_1', 'type' => 'text' ),
+                array( 'key' => 'field_rl_opt_loc_address_2', 'label' => 'Address Line 2', 'name' => 'address_line_2', 'type' => 'text' ),
+                array( 'key' => 'field_rl_opt_loc_postcode', 'label' => 'Postcode', 'name' => 'postcode', 'type' => 'text' ),
+                array( 'key' => 'field_rl_opt_loc_directions_url', 'label' => 'Google Maps Directions URL', 'name' => 'directions_url', 'type' => 'url' ),
+                array( 'key' => 'field_rl_opt_loc_maps_embed', 'label' => 'Google Maps Embed URL', 'name' => 'maps_embed_url', 'type' => 'url' ),
+                array( 'key' => 'field_rl_opt_loc_parking', 'label' => 'Parking Info', 'name' => 'parking', 'type' => 'textarea', 'rows' => 2 ),
+                array( 'key' => 'field_rl_opt_loc_store_image', 'label' => 'Storefront Photo', 'name' => 'store_image', 'type' => 'image', 'return_format' => 'url' ),
+                array( 'key' => 'field_rl_opt_loc_hours_weekday', 'label' => 'Weekday Hours', 'name' => 'hours_weekday', 'type' => 'text', 'default_value' => 'Mon–Fri: 9am–6pm' ),
+                array( 'key' => 'field_rl_opt_loc_hours_saturday', 'label' => 'Saturday Hours', 'name' => 'hours_saturday', 'type' => 'text', 'default_value' => 'Sat: 9am–1pm' ),
+                array( 'key' => 'field_rl_opt_loc_hours_sunday', 'label' => 'Sunday Hours', 'name' => 'hours_sunday', 'type' => 'text', 'default_value' => 'Sun: Closed' ),
+            ),
+        ),
+    ),
+    'location' => array( array( array( 'param' => 'options_page', 'operator' => '==', 'value' => 'contact-locations' ) ) ),
+    'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
+) );
+
+// =============================================================================
+// PHARMACY SETTINGS — REGISTRATION & COMPLIANCE
+// =============================================================================
+acf_add_local_field_group( array(
+    'key'    => 'group_rl_registration',
+    'title'  => 'Registration & Compliance',
+    'fields' => array(
+        array( 'key' => 'field_rl_opt_gphc_number', 'label' => 'GPhC Pharmacy Number', 'name' => 'gphc_registration', 'type' => 'text' ),
+        array( 'key' => 'field_rl_opt_company_reg', 'label' => 'Company Registration Number', 'name' => 'company_registration', 'type' => 'text' ),
+        array( 'key' => 'field_rl_opt_established_year', 'label' => 'Established Year', 'name' => 'established_year', 'type' => 'text', 'default_value' => '2010' ),
+        array( 'key' => 'field_rl_opt_superintendent', 'label' => 'Superintendent Pharmacist', 'name' => 'superintendent_pharmacist', 'type' => 'text', 'default_value' => 'Sumeet Banker' ),
+        array( 'key' => 'field_rl_opt_superintendent_gphc', 'label' => 'Superintendent GPhC Number', 'name' => 'superintendent_gphc_number', 'type' => 'text' ),
+        array( 'key' => 'field_rl_opt_gphc_verify_url', 'label' => 'GPhC Verify URL', 'name' => 'gphc_verify_url', 'type' => 'url', 'instructions' => 'Link to your GPhC register entry' ),
+        array( 'key' => 'field_rl_opt_nathnac_registered', 'label' => 'NaTHNaC Registered?', 'name' => 'nathnac_registered', 'type' => 'true_false', 'default_value' => 1, 'instructions' => 'Yellow Fever Vaccination Centre status' ),
+        array( 'key' => 'field_rl_opt_reviewer_url', 'label' => 'Clinical Reviewer Profile URL', 'name' => 'reviewer_profile_url', 'type' => 'url' ),
+    ),
+    'location' => array( array( array( 'param' => 'options_page', 'operator' => '==', 'value' => 'registration-compliance' ) ) ),
+    'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
+) );
+
+// =============================================================================
+// PHARMACY SETTINGS — SOCIAL MEDIA
+// =============================================================================
+acf_add_local_field_group( array(
+    'key'    => 'group_rl_social_media',
+    'title'  => 'Social Media',
+    'fields' => array(
+        array( 'key' => 'field_rl_opt_social_facebook', 'label' => 'Facebook URL', 'name' => 'social_facebook', 'type' => 'url' ),
+        array( 'key' => 'field_rl_opt_social_instagram', 'label' => 'Instagram URL', 'name' => 'social_instagram', 'type' => 'url' ),
+        array( 'key' => 'field_rl_opt_social_twitter', 'label' => 'Twitter / X URL', 'name' => 'social_twitter', 'type' => 'url' ),
+        array( 'key' => 'field_rl_opt_social_linkedin', 'label' => 'LinkedIn URL', 'name' => 'social_linkedin', 'type' => 'url' ),
+        array( 'key' => 'field_rl_opt_social_tiktok', 'label' => 'TikTok URL', 'name' => 'social_tiktok', 'type' => 'url' ),
+    ),
+    'location' => array( array( array( 'param' => 'options_page', 'operator' => '==', 'value' => 'social-media' ) ) ),
+    'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
+) );
+
+// =============================================================================
+// PHARMACY SETTINGS — BRANDING
+// =============================================================================
+acf_add_local_field_group( array(
+    'key'    => 'group_rl_branding',
+    'title'  => 'Branding',
+    'fields' => array(
+        array( 'key' => 'field_rl_opt_pharmacy_name', 'label' => 'Pharmacy Group Name', 'name' => 'pharmacy_name', 'type' => 'text', 'default_value' => 'Rey London Pharmacy' ),
+        array( 'key' => 'field_rl_opt_pharmacy_logo', 'label' => 'Logo', 'name' => 'pharmacy_logo', 'type' => 'image', 'return_format' => 'url' ),
+        array( 'key' => 'field_rl_opt_pharmacy_logo_dark', 'label' => 'Logo (Dark/White)', 'name' => 'pharmacy_logo_dark', 'type' => 'image', 'return_format' => 'url', 'instructions' => 'For dark backgrounds / footer' ),
+        array( 'key' => 'field_rl_opt_footer_tagline', 'label' => 'Footer Tagline', 'name' => 'footer_tagline', 'type' => 'textarea', 'rows' => 2, 'default_value' => 'Your trusted healthcare partner in London. Providing expert pharmaceutical care and personalized health services since 2010.' ),
+        array( 'key' => 'field_rl_opt_google_rating', 'label' => 'Google Rating', 'name' => 'google_rating', 'type' => 'number', 'default_value' => '4.9', 'step' => 0.1, 'min' => 0, 'max' => 5 ),
+        array( 'key' => 'field_rl_opt_google_review_count', 'label' => 'Google Review Count', 'name' => 'google_review_count', 'type' => 'text', 'default_value' => '200+' ),
+        array( 'key' => 'field_rl_opt_google_review_url', 'label' => 'Google Review URL', 'name' => 'google_review_url', 'type' => 'url', 'instructions' => 'Link to leave a Google review' ),
+    ),
+    'location' => array( array( array( 'param' => 'options_page', 'operator' => '==', 'value' => 'branding' ) ) ),
+    'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
+) );
+
+// =============================================================================
+// PHARMACY SETTINGS — NAVIGATION
+// =============================================================================
+acf_add_local_field_group( array(
+    'key'    => 'group_rl_navigation',
+    'title'  => 'Navigation',
+    'fields' => array(
+        // ── Top-Level Menu Items ──
+        array( 'key' => 'field_rl_nav_toplevel_tab', 'label' => 'Top-Level Menu', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_nav_items', 'label' => 'Menu Items', 'name' => 'nav_menu_items', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Menu Item',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_nav_item_show', 'label' => 'Show in Menu', 'name' => 'show', 'type' => 'true_false', 'default_value' => 1 ),
+                array( 'key' => 'field_rl_nav_item_label', 'label' => 'Label', 'name' => 'label', 'type' => 'text' ),
+                array( 'key' => 'field_rl_nav_item_url', 'label' => 'URL', 'name' => 'url', 'type' => 'url' ),
+                array( 'key' => 'field_rl_nav_item_has_dropdown', 'label' => 'Has Dropdown?', 'name' => 'has_dropdown', 'type' => 'true_false', 'default_value' => 0 ),
+            ),
+        ),
+
+        // ── Dropdown Sub-Links ──
+        array( 'key' => 'field_rl_nav_dropdowns_tab', 'label' => 'Dropdown Sub-Links', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_nav_dropdowns_msg', 'label' => '', 'name' => '', 'type' => 'message', 'message' => 'Configure dropdown sub-links for menu items that have dropdowns enabled. Each section corresponds to a top-level menu item.' ),
+
+        // Weight Loss dropdown
+        array( 'key' => 'field_rl_nav_dd_wl_tab', 'label' => 'Weight Loss', 'type' => 'tab', 'placement' => 'left' ),
+        array(
+            'key' => 'field_rl_nav_dd_wl_links', 'label' => 'Weight Loss Links', 'name' => 'nav_dd_wl_links', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Link',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_nav_dd_wl_label', 'label' => 'Label', 'name' => 'label', 'type' => 'text' ),
+                array( 'key' => 'field_rl_nav_dd_wl_url', 'label' => 'URL', 'name' => 'url', 'type' => 'url' ),
+            ),
+        ),
+
+        // Travel Health dropdown
+        array( 'key' => 'field_rl_nav_dd_th_tab', 'label' => 'Travel Health', 'type' => 'tab', 'placement' => 'left' ),
+        array(
+            'key' => 'field_rl_nav_dd_th_vaccinations', 'label' => 'Vaccinations Links', 'name' => 'nav_dd_th_vaccinations', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Link',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_nav_dd_th_v_label', 'label' => 'Label', 'name' => 'label', 'type' => 'text' ),
+                array( 'key' => 'field_rl_nav_dd_th_v_url', 'label' => 'URL', 'name' => 'url', 'type' => 'url' ),
+            ),
+        ),
+        array(
+            'key' => 'field_rl_nav_dd_th_destinations', 'label' => 'Popular Destinations', 'name' => 'nav_dd_th_destinations', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Destination',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_nav_dd_th_d_name', 'label' => 'Country', 'name' => 'name', 'type' => 'text' ),
+                array( 'key' => 'field_rl_nav_dd_th_d_flag', 'label' => 'Flag URL', 'name' => 'flag_url', 'type' => 'url' ),
+                array( 'key' => 'field_rl_nav_dd_th_d_url', 'label' => 'Page URL', 'name' => 'url', 'type' => 'url' ),
+            ),
+        ),
+
+        // Vaccines dropdown
+        array( 'key' => 'field_rl_nav_dd_vac_tab', 'label' => 'Vaccines', 'type' => 'tab', 'placement' => 'left' ),
+        array(
+            'key' => 'field_rl_nav_dd_vac_links', 'label' => 'Vaccine Links', 'name' => 'nav_dd_vac_links', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Link',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_nav_dd_vac_label', 'label' => 'Label', 'name' => 'label', 'type' => 'text' ),
+                array( 'key' => 'field_rl_nav_dd_vac_url', 'label' => 'URL', 'name' => 'url', 'type' => 'url' ),
+            ),
+        ),
+
+        // About dropdown
+        array( 'key' => 'field_rl_nav_dd_about_tab', 'label' => 'About', 'type' => 'tab', 'placement' => 'left' ),
+        array(
+            'key' => 'field_rl_nav_dd_about_links', 'label' => 'About Links', 'name' => 'nav_dd_about_links', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Link',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_nav_dd_about_label', 'label' => 'Label', 'name' => 'label', 'type' => 'text' ),
+                array( 'key' => 'field_rl_nav_dd_about_url', 'label' => 'URL', 'name' => 'url', 'type' => 'url' ),
+            ),
+        ),
+    ),
+    'location' => array( array( array( 'param' => 'options_page', 'operator' => '==', 'value' => 'navigation' ) ) ),
+    'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
+) );
