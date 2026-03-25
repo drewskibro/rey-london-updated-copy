@@ -1129,6 +1129,172 @@ acf_add_local_field_group( array(
         array( 'key' => 'field_rl_hpv_hero_title', 'label' => 'Hero Title', 'name' => 'hpv_hero_title', 'type' => 'text', 'default_value' => 'HPV Vaccine London: Protect Against Cancer-Causing HPV' ),
         array( 'key' => 'field_rl_hpv_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'hpv_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'Private Gardasil 9 vaccination for men and women aged 9–45+. Same-day appointments available at our South East London clinics. No GP referral needed.' ),
         array( 'key' => 'field_rl_hpv_hero_image', 'label' => 'Hero Image', 'name' => 'hpv_hero_image', 'type' => 'image', 'return_format' => 'url', 'instructions' => 'Upload to replace the default shield illustration' ),
+        array( 'key' => 'field_rl_hpv_hero_eyebrow', 'label' => 'Hero Eyebrow Text', 'name' => 'hpv_hero_eyebrow', 'type' => 'text', 'default_value' => 'Cancer Prevention  |  HPV Vaccination' ),
+        array(
+            'key' => 'field_rl_hpv_hero_trust_badges', 'label' => 'Hero Trust Badges', 'name' => 'hpv_hero_trust_badges', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Badge',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_hpv_trust_badge_text', 'label' => 'Badge Text', 'name' => 'text', 'type' => 'text' ),
+            ),
+        ),
+
+        // ── KEY FACTS / AT A GLANCE ──
+        array( 'key' => 'field_rl_hpv_keyfacts_tab', 'label' => 'Key Facts', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_hpv_keyfacts_pill', 'label' => 'Pill Label', 'name' => 'hpv_keyfacts_pill', 'type' => 'text', 'default_value' => 'At a Glance' ),
+        array( 'key' => 'field_rl_hpv_keyfacts_title', 'label' => 'Section Title', 'name' => 'hpv_keyfacts_title', 'type' => 'text', 'default_value' => 'Key Facts About the HPV Vaccine' ),
+        array(
+            'key' => 'field_rl_hpv_keyfacts_cards', 'label' => 'Stat Cards', 'name' => 'hpv_keyfacts_cards', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Stat Card',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_hpv_kf_stat', 'label' => 'Stat Number/Text', 'name' => 'stat', 'type' => 'text' ),
+                array( 'key' => 'field_rl_hpv_kf_label', 'label' => 'Label', 'name' => 'label', 'type' => 'text' ),
+            ),
+        ),
+
+        // ── UNDERSTANDING HPV ──
+        array( 'key' => 'field_rl_hpv_understanding_tab', 'label' => 'Understanding HPV', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_hpv_understanding_image', 'label' => 'Section Image', 'name' => 'hpv_understanding_image', 'type' => 'image', 'return_format' => 'url', 'instructions' => 'Upload to replace the default SVG illustration' ),
+        array( 'key' => 'field_rl_hpv_understanding_eyebrow', 'label' => 'Eyebrow', 'name' => 'hpv_understanding_eyebrow', 'type' => 'text', 'default_value' => 'The Problem' ),
+        array( 'key' => 'field_rl_hpv_understanding_heading', 'label' => 'Heading', 'name' => 'hpv_understanding_heading', 'type' => 'text', 'default_value' => 'What is HPV, and Why Does It Matter?' ),
+        array( 'key' => 'field_rl_hpv_understanding_body', 'label' => 'Body Content', 'name' => 'hpv_understanding_body', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0, 'default_value' => '<p>Human papillomavirus (HPV) is one of the most common sexually transmitted infections globally. <strong>Over 70% of sexually active people</strong> will contract HPV at some point in their lives.</p><p>Most HPV infections clear naturally without symptoms. But for some people, persistent HPV infection can lead to serious health consequences years or even decades later.</p>' ),
+        array( 'key' => 'field_rl_hpv_understanding_callout', 'label' => 'Callout Text', 'name' => 'hpv_understanding_callout', 'type' => 'textarea', 'rows' => 2, 'default_value' => 'HPV causes 99% of cervical cancers and contributes to thousands of other cancers each year in the UK.' ),
+        array( 'key' => 'field_rl_hpv_understanding_body2', 'label' => 'Body Content (below callout)', 'name' => 'hpv_understanding_body2', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0, 'default_value' => '<p>HPV spreads through skin-to-skin contact, including sexual activity. Because most people with HPV show no symptoms, it transmits easily without anyone realising.</p><p><strong>The good news:</strong> vaccination provides strong protection against the HPV types most likely to cause cancer and genital warts.</p>' ),
+
+        // ── GARDASIL 9 / THE SOLUTION ──
+        array( 'key' => 'field_rl_hpv_gardasil_tab', 'label' => 'Gardasil 9', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_hpv_gardasil_image', 'label' => 'Section Image', 'name' => 'hpv_gardasil_image', 'type' => 'image', 'return_format' => 'url', 'instructions' => 'Upload to replace the default SVG illustration' ),
+        array( 'key' => 'field_rl_hpv_gardasil_eyebrow', 'label' => 'Eyebrow', 'name' => 'hpv_gardasil_eyebrow', 'type' => 'text', 'default_value' => 'The Solution' ),
+        array( 'key' => 'field_rl_hpv_gardasil_heading', 'label' => 'Heading', 'name' => 'hpv_gardasil_heading', 'type' => 'text', 'default_value' => 'Gardasil 9: The Most Comprehensive HPV Protection Available' ),
+        array( 'key' => 'field_rl_hpv_gardasil_body', 'label' => 'Body Content', 'name' => 'hpv_gardasil_body', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0, 'default_value' => '<p>Gardasil 9 is the HPV vaccine used by REY London Pharmacy. It\'s the most advanced HPV vaccine available, protecting against nine HPV types:</p><p><strong>High-Risk Types (Cancer-Causing):</strong> HPV 16, 18, 31, 33, 45, 52, and 58</p><p><strong>Low-Risk Types (Genital Warts):</strong> HPV 6 and 11</p><p>Together, these nine types are responsible for:</p>' ),
+        array(
+            'key' => 'field_rl_hpv_gardasil_stats', 'label' => 'Protection Stats List', 'name' => 'hpv_gardasil_stats', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Stat',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_hpv_gard_stat_text', 'label' => 'Stat Text', 'name' => 'text', 'type' => 'text' ),
+            ),
+        ),
+        array( 'key' => 'field_rl_hpv_gardasil_highlight', 'label' => 'Highlight Box Text', 'name' => 'hpv_gardasil_highlight', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0, 'default_value' => 'Clinical trials show Gardasil 9 is nearly <strong>100% effective</strong> at preventing infections and pre-cancers caused by the HPV types it targets when given before exposure.' ),
+
+        // ── WHO SHOULD GET VACCINATED ──
+        array( 'key' => 'field_rl_hpv_who_tab', 'label' => 'Who Should Get Vaccinated', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_hpv_who_title', 'label' => 'Section Title', 'name' => 'hpv_who_title', 'type' => 'text', 'default_value' => 'Who Should Get the HPV Vaccine in London?' ),
+        array( 'key' => 'field_rl_hpv_who_subtitle', 'label' => 'Section Subtitle', 'name' => 'hpv_who_subtitle', 'type' => 'textarea', 'rows' => 3, 'default_value' => 'The HPV vaccine provides the most benefit when given before exposure. However, even if you\'re sexually active, you can still benefit from vaccination.' ),
+        array(
+            'key' => 'field_rl_hpv_who_cards', 'label' => 'Eligibility Cards', 'name' => 'hpv_who_cards', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Card',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_hpv_who_card_title', 'label' => 'Title', 'name' => 'title', 'type' => 'text' ),
+                array( 'key' => 'field_rl_hpv_who_card_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 3 ),
+                array(
+                    'key' => 'field_rl_hpv_who_card_bullets', 'label' => 'Bullet Points', 'name' => 'bullets', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Bullet',
+                    'sub_fields' => array(
+                        array( 'key' => 'field_rl_hpv_who_bullet_text', 'label' => 'Text', 'name' => 'text', 'type' => 'text' ),
+                    ),
+                ),
+                array( 'key' => 'field_rl_hpv_who_card_cta', 'label' => 'CTA Text', 'name' => 'cta_text', 'type' => 'text' ),
+                array( 'key' => 'field_rl_hpv_who_card_cta_url', 'label' => 'CTA URL', 'name' => 'cta_url', 'type' => 'url' ),
+            ),
+        ),
+        array( 'key' => 'field_rl_hpv_who_info_box', 'label' => 'Info Box Text', 'name' => 'hpv_who_info_box', 'type' => 'textarea', 'rows' => 3, 'default_value' => 'Men who have sex with men (MSM) aged 45 and under may be eligible for free HPV vaccination through the NHS at sexual health clinics. Contact your local clinic for information.' ),
+
+        // ── DOSING SCHEDULE ──
+        array( 'key' => 'field_rl_hpv_dosing_tab', 'label' => 'Dosing Schedule', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_hpv_dosing_title', 'label' => 'Section Title', 'name' => 'hpv_dosing_title', 'type' => 'text', 'default_value' => 'How Many Doses Do You Need?' ),
+        array( 'key' => 'field_rl_hpv_dosing_subtitle', 'label' => 'Section Subtitle', 'name' => 'hpv_dosing_subtitle', 'type' => 'textarea', 'rows' => 2, 'default_value' => 'The number of doses depends on your age when you receive your first vaccination and your immune system status.' ),
+        array(
+            'key' => 'field_rl_hpv_dosing_cards', 'label' => 'Dose Cards', 'name' => 'hpv_dosing_cards', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Dose Card',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_hpv_dose_number', 'label' => 'Dose Number', 'name' => 'dose_number', 'type' => 'text' ),
+                array( 'key' => 'field_rl_hpv_dose_title', 'label' => 'Title', 'name' => 'title', 'type' => 'text' ),
+                array( 'key' => 'field_rl_hpv_dose_who', 'label' => 'Who (Age Range)', 'name' => 'who', 'type' => 'text' ),
+                array( 'key' => 'field_rl_hpv_dose_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 2 ),
+                array( 'key' => 'field_rl_hpv_dose_note', 'label' => 'Timing Note', 'name' => 'note', 'type' => 'text' ),
+                array( 'key' => 'field_rl_hpv_dose_recommended', 'label' => 'Recommended?', 'name' => 'recommended', 'type' => 'true_false', 'default_value' => 0 ),
+            ),
+        ),
+        array( 'key' => 'field_rl_hpv_dosing_info_box', 'label' => 'Info Box Text', 'name' => 'hpv_dosing_info_box', 'type' => 'textarea', 'rows' => 3, 'default_value' => 'Your consultation with our pharmacist will determine the right schedule for you based on your age and medical history. We\'ll book all necessary appointments to ensure you complete your course.' ),
+
+        // ── PROTECTION SECTION ──
+        array( 'key' => 'field_rl_hpv_protection_tab', 'label' => 'Protection', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_hpv_protection_title', 'label' => 'Section Title', 'name' => 'hpv_protection_title', 'type' => 'text', 'default_value' => 'Cancer Prevention: What Gardasil 9 Protects Against' ),
+        array( 'key' => 'field_rl_hpv_protection_subtitle', 'label' => 'Section Subtitle', 'name' => 'hpv_protection_subtitle', 'type' => 'textarea', 'rows' => 3, 'default_value' => 'HPV vaccination is one of the most effective cancer prevention tools available. Here\'s what protection against nine HPV types means for your long-term health.' ),
+        array(
+            'key' => 'field_rl_hpv_protection_cards', 'label' => 'Protection Cards', 'name' => 'hpv_protection_cards', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Protection Card',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_hpv_prot_title', 'label' => 'Title', 'name' => 'title', 'type' => 'text' ),
+                array( 'key' => 'field_rl_hpv_prot_stat', 'label' => 'Stat Line', 'name' => 'stat', 'type' => 'text' ),
+                array( 'key' => 'field_rl_hpv_prot_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 3 ),
+            ),
+        ),
+        array( 'key' => 'field_rl_hpv_protection_warning', 'label' => 'Warning Box Text', 'name' => 'hpv_protection_warning', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0, 'default_value' => '<strong>Important:</strong> The HPV vaccine does not replace cervical screening. Women should continue regular cervical screening (smear tests) as recommended, regardless of vaccination status.' ),
+
+        // ── HOW IT WORKS ──
+        array( 'key' => 'field_rl_hpv_hiw_tab', 'label' => 'How It Works', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_hpv_hiw_title', 'label' => 'Section Title', 'name' => 'hpv_hiw_title', 'type' => 'text', 'default_value' => 'How the HPV Vaccine Works' ),
+        array( 'key' => 'field_rl_hpv_hiw_image', 'label' => 'Photo', 'name' => 'hpv_hiw_image', 'type' => 'image', 'return_format' => 'url', 'instructions' => 'Photo of pharmacist administering vaccine' ),
+        array( 'key' => 'field_rl_hpv_hiw_badge_text', 'label' => 'Photo Badge Text', 'name' => 'hpv_hiw_badge_text', 'type' => 'text', 'default_value' => 'GPhC-Registered Pharmacists' ),
+        array( 'key' => 'field_rl_hpv_hiw_eyebrow', 'label' => 'Mechanism Eyebrow', 'name' => 'hpv_hiw_eyebrow', 'type' => 'text', 'default_value' => 'Vaccine Mechanism' ),
+        array( 'key' => 'field_rl_hpv_hiw_body', 'label' => 'Mechanism Body', 'name' => 'hpv_hiw_body', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0, 'default_value' => '<p>Gardasil 9 is a recombinant vaccine made from virus-like particles (VLPs) that mimic the outer shell of HPV.</p><p><strong>Important: The vaccine does NOT contain live virus or viral DNA. It cannot cause HPV infection.</strong></p><p>When you receive the vaccine, your immune system recognises these particles as foreign and creates antibodies. If you\'re later exposed to real HPV, your body already has the antibodies ready to neutralise the virus before it can establish infection.</p>' ),
+        array( 'key' => 'field_rl_hpv_hiw_callout', 'label' => 'Callout Text', 'name' => 'hpv_hiw_callout', 'type' => 'textarea', 'rows' => 2, 'default_value' => 'Nearly 100% effective at preventing persistent infection and pre-cancers when given before HPV exposure.' ),
+        array( 'key' => 'field_rl_hpv_hiw_steps_eyebrow', 'label' => 'Steps Eyebrow', 'name' => 'hpv_hiw_steps_eyebrow', 'type' => 'text', 'default_value' => 'Your Appointment' ),
+        array(
+            'key' => 'field_rl_hpv_hiw_steps', 'label' => 'Appointment Steps', 'name' => 'hpv_hiw_steps', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Step',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_hpv_hiw_step_title', 'label' => 'Title', 'name' => 'title', 'type' => 'text' ),
+                array( 'key' => 'field_rl_hpv_hiw_step_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 2 ),
+            ),
+        ),
+        array( 'key' => 'field_rl_hpv_hiw_total_time', 'label' => 'Total Time Text', 'name' => 'hpv_hiw_total_time', 'type' => 'text', 'default_value' => 'Total time: approximately 20–30 minutes' ),
+
+        // ── SIDE EFFECTS / SAFETY ──
+        array( 'key' => 'field_rl_hpv_safety_tab', 'label' => 'Side Effects / Safety', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_hpv_safety_banner_image', 'label' => 'Safety Banner Image', 'name' => 'hpv_safety_banner_image', 'type' => 'image', 'return_format' => 'url', 'instructions' => 'Wide banner photo for safety section' ),
+        array( 'key' => 'field_rl_hpv_safety_banner_title', 'label' => 'Banner Title', 'name' => 'hpv_safety_banner_title', 'type' => 'text', 'default_value' => 'Trusted Globally Since 2014' ),
+        array( 'key' => 'field_rl_hpv_safety_banner_text', 'label' => 'Banner Subtitle', 'name' => 'hpv_safety_banner_text', 'type' => 'text', 'default_value' => 'Used safely in 300+ million doses worldwide' ),
+        array( 'key' => 'field_rl_hpv_safety_title', 'label' => 'Section Title', 'name' => 'hpv_safety_title', 'type' => 'text', 'default_value' => 'Side Effects and Safety Information' ),
+        array( 'key' => 'field_rl_hpv_safety_subtitle', 'label' => 'Section Subtitle', 'name' => 'hpv_safety_subtitle', 'type' => 'textarea', 'rows' => 3, 'default_value' => 'Gardasil 9 has been extensively studied in clinical trials involving over 15,000 participants and has been used safely in millions of people worldwide since 2014.' ),
+        array( 'key' => 'field_rl_hpv_safety_common_title', 'label' => 'Common Side Effects Title', 'name' => 'hpv_safety_common_title', 'type' => 'text', 'default_value' => 'Common Side Effects (Usually Mild & Temporary)' ),
+        array(
+            'key' => 'field_rl_hpv_safety_common_list', 'label' => 'Common Side Effects', 'name' => 'hpv_safety_common_list', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Side Effect',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_hpv_safety_common_item', 'label' => 'Side Effect', 'name' => 'text', 'type' => 'text' ),
+            ),
+        ),
+        array( 'key' => 'field_rl_hpv_safety_common_note', 'label' => 'Common Side Effects Note', 'name' => 'hpv_safety_common_note', 'type' => 'textarea', 'rows' => 2, 'default_value' => 'These side effects typically resolve within 1–2 days and can be managed with over-the-counter pain relief if needed.' ),
+        array( 'key' => 'field_rl_hpv_safety_serious_title', 'label' => 'Serious Side Effects Title', 'name' => 'hpv_safety_serious_title', 'type' => 'text', 'default_value' => 'Serious Side Effects (Very Rare)' ),
+        array( 'key' => 'field_rl_hpv_safety_serious_text', 'label' => 'Serious Side Effects Text', 'name' => 'hpv_safety_serious_text', 'type' => 'textarea', 'rows' => 3, 'default_value' => 'Serious allergic reactions are extremely rare (less than 1 in 1,000,000 doses) but possible with any vaccine. This is why we observe all patients for 15 minutes after vaccination. Our pharmacists are trained to recognise and treat allergic reactions immediately.' ),
+        array( 'key' => 'field_rl_hpv_safety_contra_title', 'label' => 'Contraindications Title', 'name' => 'hpv_safety_contra_title', 'type' => 'text', 'default_value' => 'Who Should Not Get the Vaccine' ),
+        array(
+            'key' => 'field_rl_hpv_safety_contra_list', 'label' => 'Contraindications', 'name' => 'hpv_safety_contra_list', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Contraindication',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_hpv_safety_contra_item', 'label' => 'Contraindication', 'name' => 'text', 'type' => 'text' ),
+            ),
+        ),
+        array( 'key' => 'field_rl_hpv_safety_contra_note', 'label' => 'Contraindications Note', 'name' => 'hpv_safety_contra_note', 'type' => 'textarea', 'rows' => 2, 'default_value' => 'Breastfeeding is safe — the vaccine does not pass into breast milk.' ),
+        array( 'key' => 'field_rl_hpv_safety_box', 'label' => 'Safety Summary Box', 'name' => 'hpv_safety_box', 'type' => 'textarea', 'rows' => 3, 'default_value' => 'Safety monitoring by the MHRA and WHO continues to confirm HPV vaccines have a favourable safety profile. Over 160 studies confirm the vaccine\'s safety and effectiveness.' ),
+
+        // ── WHY CHOOSE US ──
+        array( 'key' => 'field_rl_hpv_why_tab', 'label' => 'Why Choose Us', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_hpv_why_title', 'label' => 'Section Title', 'name' => 'hpv_why_title', 'type' => 'text', 'default_value' => 'Why Choose REY London for Your HPV Vaccination' ),
+        array(
+            'key' => 'field_rl_hpv_why_cards', 'label' => 'Feature Cards', 'name' => 'hpv_why_cards', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Feature Card',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_hpv_why_card_title', 'label' => 'Title', 'name' => 'title', 'type' => 'text' ),
+                array( 'key' => 'field_rl_hpv_why_card_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 3 ),
+            ),
+        ),
+
+        // ── LOCATIONS ──
+        array( 'key' => 'field_rl_hpv_locations_tab', 'label' => 'Locations', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_hpv_locations_title', 'label' => 'Section Title', 'name' => 'hpv_locations_title', 'type' => 'text', 'default_value' => 'Visit Us at Our South East London Locations' ),
+        array(
+            'key' => 'field_rl_hpv_locations', 'label' => 'Location Cards', 'name' => 'hpv_locations', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Location',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_hpv_loc_name', 'label' => 'Name', 'name' => 'name', 'type' => 'text' ),
+                array( 'key' => 'field_rl_hpv_loc_address', 'label' => 'Address', 'name' => 'address', 'type' => 'text' ),
+                array( 'key' => 'field_rl_hpv_loc_phone', 'label' => 'Phone', 'name' => 'phone', 'type' => 'text' ),
+                array( 'key' => 'field_rl_hpv_loc_hours', 'label' => 'Opening Hours', 'name' => 'hours', 'type' => 'text' ),
+                array( 'key' => 'field_rl_hpv_loc_directions_url', 'label' => 'Directions URL', 'name' => 'directions_url', 'type' => 'url' ),
+            ),
+        ),
+        array( 'key' => 'field_rl_hpv_locations_serving', 'label' => 'Serving Areas Text', 'name' => 'hpv_locations_serving', 'type' => 'textarea', 'rows' => 2, 'default_value' => 'Conveniently located to serve patients across Chislehurst, Bromley, Orpington, Sidcup, Bexley, Eltham, and surrounding South East London areas. Free parking available at both locations.' ),
+
         array( 'key' => 'field_rl_hpv_pricing_tab', 'label' => 'Pricing', 'type' => 'tab' ),
         array( 'key' => 'field_rl_hpv_pricing_title', 'label' => 'Pricing Section Title', 'name' => 'hpv_pricing_title', 'type' => 'text', 'default_value' => 'Transparent Pricing — HPV Vaccine London' ),
         array( 'key' => 'field_rl_hpv_pricing_subtitle', 'label' => 'Pricing Subtitle', 'name' => 'hpv_pricing_subtitle', 'type' => 'text', 'default_value' => 'No hidden fees. No consultation charges. The price you see is the price you pay.' ),
