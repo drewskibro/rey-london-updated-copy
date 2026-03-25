@@ -295,12 +295,11 @@ body {
 }
 
 .dropdown-link:hover::before {
-  left: 100%;
+  display: none;
 }
 
 .dropdown-link:hover {
   background: rgba(10, 47, 138, 0.08);
-  transform: translateX(4px);
 }
 
 .link-icon {
@@ -326,14 +325,9 @@ body {
 
 .dropdown-link:hover .link-icon {
   background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
-  transform: scale(1.08) rotate(-3deg);
   border-color: var(--primary-blue);
   color: var(--white);
   box-shadow: 0 4px 12px rgba(10, 47, 138, 0.25);
-}
-
-.dropdown-link:hover .link-icon svg {
-  transform: scale(1.1);
 }
 
 .link-content {
