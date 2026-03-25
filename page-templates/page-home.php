@@ -63,6 +63,15 @@ get_header();
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-17.svg" alt="Arrow" />
               </div>
             </a>
+            <a href="<?php echo esc_url( home_url( '/health-checks/' ) ); ?>" class="service-card">
+              <span class="service-title">Health Checks</span>
+              <div class="service-image">
+                <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769453402126-0.png" alt="Health Checks" />
+              </div>
+              <div class="arrow-icon">
+                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-17.svg" alt="Arrow" />
+              </div>
+            </a>
             <a href="<?php echo esc_url( home_url( '/travel-health/' ) ); ?>" class="service-card">
               <span class="service-title">Travel Clinic</span>
               <div class="service-image">
