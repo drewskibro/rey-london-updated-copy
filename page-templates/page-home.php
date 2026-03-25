@@ -1054,7 +1054,8 @@ get_header();
       </div>
     </section>
 
-    <!-- Top Products Section -->
+    <!-- Top Products Section (hidden per client request) -->
+    <?php /* Products section removed — client does not want to sell products yet.
     <section class="products-section">
       <div class="container">
         <div class="products-header">
@@ -1204,6 +1205,7 @@ get_header();
         </div>
       </div>
     </section>
+    */ ?>
 
     <!-- Integrated CTA + Newsletter Block -->
     <section class="hp-footer-cta-block" id="contact">

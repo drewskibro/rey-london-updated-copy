@@ -98,14 +98,19 @@ function rey_london_scripts() {
 
     if ( is_page_template( 'page-templates/page-health-hub.php' ) || is_home() || is_category() || is_tag() || is_archive() ) {
         wp_enqueue_style( 'rey-london-health-hub', REY_LONDON_URI . '/assets/css/health-hub.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
+        if ( is_page_template( 'page-templates/page-health-hub.php' ) ) {
+            wp_enqueue_script( 'rey-london-health-hub-js', REY_LONDON_URI . '/assets/js/health-hub.js', array(), REY_LONDON_VERSION, true );
+        }
     }
 
     if ( is_page_template( 'page-templates/page-contact.php' ) ) {
         wp_enqueue_style( 'rey-london-contact', REY_LONDON_URI . '/assets/css/contact.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
+        wp_enqueue_script( 'rey-london-contact-js', REY_LONDON_URI . '/assets/js/contact.js', array(), REY_LONDON_VERSION, true );
     }
 
     if ( is_page_template( 'page-templates/page-team.php' ) ) {
         wp_enqueue_style( 'rey-london-team', REY_LONDON_URI . '/assets/css/meet-the-team.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
+        wp_enqueue_script( 'rey-london-team-js', REY_LONDON_URI . '/assets/js/meet-the-team.js', array(), REY_LONDON_VERSION, true );
     }
 
     if ( is_page_template( 'page-templates/page-hair-loss.php' ) ) {
@@ -115,22 +120,27 @@ function rey_london_scripts() {
 
     if ( is_page_template( 'page-templates/page-prescription-services.php' ) ) {
         wp_enqueue_style( 'rey-london-prescriptions', REY_LONDON_URI . '/assets/css/prescription-services.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
+        wp_enqueue_script( 'rey-london-prescriptions-js', REY_LONDON_URI . '/assets/js/prescription-services.js', array(), REY_LONDON_VERSION, true );
     }
 
     if ( is_page_template( 'page-templates/page-vitamin-b12.php' ) ) {
         wp_enqueue_style( 'rey-london-vitamin-b12', REY_LONDON_URI . '/assets/css/vitamin-b12.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
+        wp_enqueue_script( 'rey-london-vitamin-b12-js', REY_LONDON_URI . '/assets/js/vitamin-b12.js', array(), REY_LONDON_VERSION, true );
     }
 
     if ( is_page_template( 'page-templates/page-hepatitis.php' ) ) {
         wp_enqueue_style( 'rey-london-hepatitis', REY_LONDON_URI . '/assets/css/hepatitis-vaccine-london.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
+        wp_enqueue_script( 'rey-london-hepatitis-js', REY_LONDON_URI . '/assets/js/hepatitis.js', array(), REY_LONDON_VERSION, true );
     }
 
     if ( is_page_template( 'page-templates/page-hpv.php' ) ) {
         wp_enqueue_style( 'rey-london-hpv', REY_LONDON_URI . '/assets/css/hpv-vaccine-london.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
+        wp_enqueue_script( 'rey-london-hpv-js', REY_LONDON_URI . '/assets/js/hpv.js', array(), REY_LONDON_VERSION, true );
     }
 
     if ( is_page_template( 'page-templates/page-yellow-fever.php' ) ) {
         wp_enqueue_style( 'rey-london-yellow-fever', REY_LONDON_URI . '/assets/css/yellow-fever-vaccine-london.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
+        wp_enqueue_script( 'rey-london-yellow-fever-js', REY_LONDON_URI . '/assets/js/yellow-fever.js', array(), REY_LONDON_VERSION, true );
     }
 
     if ( is_page_template( 'page-templates/page-thailand.php' ) ) {
