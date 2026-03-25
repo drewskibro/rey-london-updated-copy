@@ -88,10 +88,12 @@ function rey_london_scripts() {
     // Page-specific CSS
     if ( is_page_template( 'page-templates/page-weight-loss.php' ) ) {
         wp_enqueue_style( 'rey-london-weight-loss', REY_LONDON_URI . '/assets/css/weight-loss.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
+        wp_enqueue_script( 'rey-london-weight-loss-js', REY_LONDON_URI . '/assets/js/weight-loss.js', array(), REY_LONDON_VERSION, true );
     }
 
     if ( is_page_template( 'page-templates/page-travel-health.php' ) ) {
         wp_enqueue_style( 'rey-london-travel-health', REY_LONDON_URI . '/assets/css/travel-health.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
+        wp_enqueue_script( 'rey-london-travel-health-js', REY_LONDON_URI . '/assets/js/travel-health.js', array(), REY_LONDON_VERSION, true );
     }
 
     if ( is_page_template( 'page-templates/page-health-hub.php' ) || is_home() || is_category() || is_tag() || is_archive() ) {
@@ -108,6 +110,7 @@ function rey_london_scripts() {
 
     if ( is_page_template( 'page-templates/page-hair-loss.php' ) ) {
         wp_enqueue_style( 'rey-london-hair-loss', REY_LONDON_URI . '/assets/css/hair-loss.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
+        wp_enqueue_script( 'rey-london-hair-loss-js', REY_LONDON_URI . '/assets/js/hair-loss.js', array(), REY_LONDON_VERSION, true );
     }
 
     if ( is_page_template( 'page-templates/page-prescription-services.php' ) ) {
