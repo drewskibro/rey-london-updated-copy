@@ -143,7 +143,7 @@ function rey_london_scripts() {
         wp_enqueue_script( 'rey-london-yellow-fever-js', REY_LONDON_URI . '/assets/js/yellow-fever.js', array(), REY_LONDON_VERSION, true );
     }
 
-    if ( is_page_template( 'page-templates/page-thailand.php' ) ) {
+    if ( is_page_template( 'page-templates/page-thailand.php' ) || is_page_template( 'page-templates/page-india.php' ) || is_page_template( 'page-templates/page-gambia.php' ) ) {
         wp_enqueue_style( 'rey-london-thailand', REY_LONDON_URI . '/assets/css/thailand.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
     }
 

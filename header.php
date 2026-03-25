@@ -234,6 +234,20 @@ $booking_url   = rl_booking_url();
                         <span class="link-desc">Vaccinations & malaria advice</span>
                       </div>
                     </a>
+                    <a href="<?php echo esc_url( home_url( '/travel-india/' ) ); ?>" class="dropdown-link">
+                      <div class="link-icon"><span class="flag-icon">🇮🇳</span></div>
+                      <div class="link-content">
+                        <span class="link-name">India</span>
+                        <span class="link-desc">Vaccines, malaria & health advice</span>
+                      </div>
+                    </a>
+                    <a href="<?php echo esc_url( home_url( '/travel-gambia/' ) ); ?>" class="dropdown-link">
+                      <div class="link-icon"><span class="flag-icon">🇬🇲</span></div>
+                      <div class="link-content">
+                        <span class="link-name">The Gambia</span>
+                        <span class="link-desc">Yellow fever & travel vaccines</span>
+                      </div>
+                    </a>
                   </div>
 
                   <div class="dropdown-section">

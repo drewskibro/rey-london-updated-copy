@@ -1326,3 +1326,37 @@ acf_add_local_field_group( array(
     'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-vitamin-b12.php' ) ) ),
     'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
 ) );
+
+// =============================================================================
+// INDIA TRAVEL HEALTH PAGE FIELDS
+// =============================================================================
+acf_add_local_field_group( array(
+    'key'      => 'group_rl_india',
+    'title'    => 'India Travel Health Page',
+    'fields'   => array(
+        array( 'key' => 'field_rl_india_hero_tab', 'label' => 'Hero Section', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_india_hero_title', 'label' => 'Hero Title', 'name' => 'india_hero_title', 'type' => 'text', 'default_value' => 'India Travel Vaccinations in South East London' ),
+        array( 'key' => 'field_rl_india_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'india_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'Expert travel health advice and essential vaccines for your India trip. Same-day appointments available at our Chislehurst and Pond End clinics.' ),
+        array( 'key' => 'field_rl_india_vaccines_tab', 'label' => 'Vaccines', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_india_vaccines', 'label' => 'Recommended Vaccines', 'name' => 'india_vaccines', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Vaccine',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_india_vax_name', 'label' => 'Name', 'name' => 'name', 'type' => 'text' ),
+                array( 'key' => 'field_rl_india_vax_rec', 'label' => 'Recommendation', 'name' => 'recommendation', 'type' => 'select', 'choices' => array( 'required' => 'Required', 'recommended' => 'Recommended', 'consider' => 'Consider' ) ),
+                array( 'key' => 'field_rl_india_vax_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 2 ),
+                array( 'key' => 'field_rl_india_vax_price', 'label' => 'Price', 'name' => 'price', 'type' => 'text' ),
+                array( 'key' => 'field_rl_india_vax_doses', 'label' => 'Doses/Schedule', 'name' => 'doses', 'type' => 'text' ),
+            ),
+        ),
+        array( 'key' => 'field_rl_india_faq_tab', 'label' => 'FAQs', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_india_faqs', 'label' => 'FAQs', 'name' => 'india_faqs', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add FAQ',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_india_faq_question', 'label' => 'Question', 'name' => 'question', 'type' => 'text' ),
+                array( 'key' => 'field_rl_india_faq_answer', 'label' => 'Answer', 'name' => 'answer', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0 ),
+            ),
+        ),
+    ),
+    'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-india.php' ) ) ),
+    'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
+) );
