@@ -1246,3 +1246,83 @@ acf_add_local_field_group( array(
     'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-team.php' ) ) ),
     'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
 ) );
+
+// =============================================================================
+// HEALTH HUB PAGE FIELDS
+// =============================================================================
+acf_add_local_field_group( array(
+    'key'      => 'group_rl_health_hub',
+    'title'    => 'Health Hub Page',
+    'fields'   => array(
+        array( 'key' => 'field_rl_hh_hero_tab', 'label' => 'Hero Section', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_hh_hero_title', 'label' => 'Hero Title', 'name' => 'hh_hero_title', 'type' => 'text', 'default_value' => 'Expert insights on weight loss, travel health, and living your healthiest life' ),
+        array( 'key' => 'field_rl_hh_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'hh_hero_subtitle', 'type' => 'textarea', 'rows' => 3, 'default_value' => 'Trusted advice from our GPhC-registered pharmacists. Evidence-based guidance to help you make informed health decisions across South East London.' ),
+    ),
+    'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-health-hub.php' ) ) ),
+    'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
+) );
+
+// =============================================================================
+// PRESCRIPTION SERVICES PAGE FIELDS
+// =============================================================================
+acf_add_local_field_group( array(
+    'key'      => 'group_rl_prescriptions',
+    'title'    => 'Prescription Services Page',
+    'fields'   => array(
+        array( 'key' => 'field_rl_rx_hero_tab', 'label' => 'Hero Section', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_rx_hero_title', 'label' => 'Hero Title', 'name' => 'rx_hero_title', 'type' => 'text', 'default_value' => 'NHS & Private Prescription Services in South East London' ),
+        array( 'key' => 'field_rl_rx_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'rx_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'Free delivery, online ordering, and automatic refills. Your prescriptions delivered to your door with expert care from our GPhC-registered pharmacists.' ),
+        array( 'key' => 'field_rl_rx_services_tab', 'label' => 'Services', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_rx_services', 'label' => 'Service Cards', 'name' => 'rx_services', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Service',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_rx_svc_title', 'label' => 'Title', 'name' => 'title', 'type' => 'text' ),
+                array( 'key' => 'field_rl_rx_svc_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 2 ),
+                array( 'key' => 'field_rl_rx_svc_icon', 'label' => 'Icon Class', 'name' => 'icon', 'type' => 'text' ),
+            ),
+        ),
+        array( 'key' => 'field_rl_rx_faq_tab', 'label' => 'FAQs', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_rx_faqs', 'label' => 'FAQs', 'name' => 'rx_faqs', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add FAQ',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_rx_faq_q', 'label' => 'Question', 'name' => 'question', 'type' => 'text' ),
+                array( 'key' => 'field_rl_rx_faq_a', 'label' => 'Answer', 'name' => 'answer', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0 ),
+            ),
+        ),
+    ),
+    'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-prescription-services.php' ) ) ),
+    'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
+) );
+
+// =============================================================================
+// VITAMIN B12 PAGE FIELDS
+// =============================================================================
+acf_add_local_field_group( array(
+    'key'      => 'group_rl_vitamin_b12',
+    'title'    => 'Vitamin B12 Page',
+    'fields'   => array(
+        array( 'key' => 'field_rl_b12_hero_tab', 'label' => 'Hero Section', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_b12_hero_title', 'label' => 'Hero Title', 'name' => 'b12_hero_title', 'type' => 'text', 'default_value' => 'Vitamin B12 Injections in South East London' ),
+        array( 'key' => 'field_rl_b12_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'b12_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'Boost your energy, lift brain fog, and address B12 deficiency with a fast-acting intramuscular injection. No GP referral needed. Walk-ins welcome at both Chislehurst pharmacies.' ),
+        array( 'key' => 'field_rl_b12_hero_image', 'label' => 'Hero Image', 'name' => 'b12_hero_image', 'type' => 'image', 'return_format' => 'url' ),
+        array( 'key' => 'field_rl_b12_pricing_tab', 'label' => 'Pricing', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_b12_pricing', 'label' => 'Pricing Options', 'name' => 'b12_pricing', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Pricing Option',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_b12_price_name', 'label' => 'Name', 'name' => 'name', 'type' => 'text' ),
+                array( 'key' => 'field_rl_b12_price_price', 'label' => 'Price', 'name' => 'price', 'type' => 'text' ),
+                array( 'key' => 'field_rl_b12_price_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'text' ),
+            ),
+        ),
+        array( 'key' => 'field_rl_b12_faq_tab', 'label' => 'FAQs', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_b12_faqs', 'label' => 'FAQs', 'name' => 'b12_faqs', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add FAQ',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_b12_faq_q', 'label' => 'Question', 'name' => 'question', 'type' => 'text' ),
+                array( 'key' => 'field_rl_b12_faq_a', 'label' => 'Answer', 'name' => 'answer', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0 ),
+            ),
+        ),
+    ),
+    'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-vitamin-b12.php' ) ) ),
+    'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
+) );

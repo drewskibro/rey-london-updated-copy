@@ -98,6 +98,9 @@ function rey_london_scripts() {
 
     if ( is_page_template( 'page-templates/page-health-hub.php' ) || is_home() || is_category() || is_tag() || is_archive() ) {
         wp_enqueue_style( 'rey-london-health-hub', REY_LONDON_URI . '/assets/css/health-hub.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
+        if ( is_page_template( 'page-templates/page-health-hub.php' ) ) {
+            wp_enqueue_script( 'rey-london-health-hub-js', REY_LONDON_URI . '/assets/js/health-hub.js', array(), REY_LONDON_VERSION, true );
+        }
     }
 
     if ( is_page_template( 'page-templates/page-contact.php' ) ) {
@@ -117,10 +120,12 @@ function rey_london_scripts() {
 
     if ( is_page_template( 'page-templates/page-prescription-services.php' ) ) {
         wp_enqueue_style( 'rey-london-prescriptions', REY_LONDON_URI . '/assets/css/prescription-services.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
+        wp_enqueue_script( 'rey-london-prescriptions-js', REY_LONDON_URI . '/assets/js/prescription-services.js', array(), REY_LONDON_VERSION, true );
     }
 
     if ( is_page_template( 'page-templates/page-vitamin-b12.php' ) ) {
         wp_enqueue_style( 'rey-london-vitamin-b12', REY_LONDON_URI . '/assets/css/vitamin-b12.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
+        wp_enqueue_script( 'rey-london-vitamin-b12-js', REY_LONDON_URI . '/assets/js/vitamin-b12.js', array(), REY_LONDON_VERSION, true );
     }
 
     if ( is_page_template( 'page-templates/page-hepatitis.php' ) ) {
