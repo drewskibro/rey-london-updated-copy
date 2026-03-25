@@ -26,7 +26,10 @@ get_header();
           <p class="th-hero-subtitle"><?php echo esc_html( rl_field( 'th_hero_subtitle', 'From yellow fever certification to malaria prevention – protect yourself with expert travel vaccinations before your next adventure. Serving Chislehurst, Bromley, Orpington, Sidcup, and Bexley.' ) ); ?></p>
           <div class="th-hero-ctas">
             <a href="#book" class="btn-primary th-btn-lg">Book Travel Consultation</a>
-            <a href="tel:02082950017" class="btn-outline th-btn-lg th-btn-outline-hero">Call Chislehurst: 020 8295 0017</a>
+            <a href="#vaccines" class="btn-outline th-btn-lg th-btn-outline-hero">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg>
+              Check What Vaccines You Need
+            </a>
           </div>
           <div class="th-trust-strip">
             <div class="th-trust-item">
@@ -553,9 +556,9 @@ get_header();
         <p class="th-footer-cta-sub">Don't let preventable illness ruin your trip. Get comprehensive travel health protection from South East London's trusted travel clinic.</p>
         <div class="cta-buttons">
           <a href="#book" class="btn-cta-primary">Book Travel Health Consultation</a>
-          <a href="tel:02082950017" class="btn-cta-secondary-ghost">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.09 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81L9.27 8.95a16 16 0 0 0 6.78 6.78l1.42-1.42a12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Call Chislehurst: 020 8295 0017
+          <a href="#vaccines" class="btn-cta-secondary-ghost">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg>
+            Check What Vaccines You Need
           </a>
         </div>
         <div class="th-cta-checks">
