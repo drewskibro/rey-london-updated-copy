@@ -123,14 +123,17 @@ function rey_london_scripts() {
 
     if ( is_page_template( 'page-templates/page-hepatitis.php' ) ) {
         wp_enqueue_style( 'rey-london-hepatitis', REY_LONDON_URI . '/assets/css/hepatitis-vaccine-london.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
+        wp_enqueue_script( 'rey-london-hepatitis-js', REY_LONDON_URI . '/assets/js/hepatitis.js', array(), REY_LONDON_VERSION, true );
     }
 
     if ( is_page_template( 'page-templates/page-hpv.php' ) ) {
         wp_enqueue_style( 'rey-london-hpv', REY_LONDON_URI . '/assets/css/hpv-vaccine-london.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
+        wp_enqueue_script( 'rey-london-hpv-js', REY_LONDON_URI . '/assets/js/hpv.js', array(), REY_LONDON_VERSION, true );
     }
 
     if ( is_page_template( 'page-templates/page-yellow-fever.php' ) ) {
         wp_enqueue_style( 'rey-london-yellow-fever', REY_LONDON_URI . '/assets/css/yellow-fever-vaccine-london.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
+        wp_enqueue_script( 'rey-london-yellow-fever-js', REY_LONDON_URI . '/assets/js/yellow-fever.js', array(), REY_LONDON_VERSION, true );
     }
 
     if ( is_page_template( 'page-templates/page-thailand.php' ) ) {
