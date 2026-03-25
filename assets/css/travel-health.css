@@ -91,6 +91,10 @@
   font-size: 16px;
 }
 
+.th-hero-ctas .btn-primary {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
 .th-btn-outline-hero {
   color: var(--white);
   border-color: rgba(255, 255, 255, 0.4);
@@ -145,28 +149,29 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  background: linear-gradient(135deg, rgba(10, 47, 138, 0.92) 0%, rgba(26, 79, 196, 0.88) 100%);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  padding: 16px 24px;
-  border-radius: 16px;
-  box-shadow: 0 16px 48px rgba(10, 47, 138, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 14px 22px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: var(--white);
   animation: fadeInUp 0.8s ease 1s both;
 }
 
 .th-badge-icon-wrap {
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  background: rgba(255, 255, 255, 0.18);
-  border-radius: 10px;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--white);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .th-badge-text {
@@ -1349,14 +1354,14 @@
   .th-hero-badge-premium {
     left: 12px;
     bottom: -16px;
-    padding: 12px 16px;
+    padding: 10px 16px;
     gap: 10px;
   }
 
   .th-badge-icon-wrap {
-    width: 34px;
-    height: 34px;
-    min-width: 34px;
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
   }
 
   .th-badge-label { font-size: 13px; }
