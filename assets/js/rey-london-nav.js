@@ -457,3 +457,43 @@ if (newsletterForm) {
     }
   });
 }
+
+// ================================
+// Desktop Search Overlay
+// ================================
+(function () {
+  var searchBtn = document.getElementById('headerSearchBtn');
+  var overlay = document.getElementById('searchOverlay');
+  var closeBtn = document.getElementById('searchOverlayClose');
+  var backdrop = overlay ? overlay.querySelector('.search-overlay-backdrop') : null;
+  var input = overlay ? overlay.querySelector('.search-overlay-input') : null;
+
+  if (!searchBtn || !overlay) return;
+
+  function openSearch() {
+    overlay.classList.add('is-open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (input) {
+      setTimeout(function () { input.focus(); }, 100);
+    }
+  }
+
+  function closeSearch() {
+    overlay.classList.remove('is-open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (input) input.value = '';
+  }
+
+  searchBtn.addEventListener('click', openSearch);
+  closeBtn.addEventListener('click', closeSearch);
+  if (backdrop) backdrop.addEventListener('click', closeSearch);
+
+  // Close on Escape key
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
+      closeSearch();
+    }
+  });
+})();

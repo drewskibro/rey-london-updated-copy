@@ -327,6 +327,13 @@ $booking_url   = rl_booking_url();
             </a>
             <a href="<?php echo esc_url( $booking_url ); ?>" class="btn-primary">Book Consultation</a>
 
+            <!-- Search Button (Desktop) -->
+            <button class="header-search-btn" id="headerSearchBtn" aria-label="Search services">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+
             <!-- Mobile Menu Toggle -->
             <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
               <span class="hamburger-line"></span>
@@ -337,3 +344,36 @@ $booking_url   = rl_booking_url();
         </div>
       </div>
     </header>
+
+    <!-- Search Overlay (Desktop) -->
+    <div class="search-overlay" id="searchOverlay" aria-hidden="true">
+      <div class="search-overlay-backdrop"></div>
+      <div class="search-overlay-content">
+        <button class="search-overlay-close" id="searchOverlayClose" aria-label="Close search">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+        <div class="search-overlay-inner">
+          <form class="search-overlay-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
+            <div class="search-overlay-input-wrap">
+              <svg class="search-overlay-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+              <input type="search" name="s" class="search-overlay-input" placeholder="Search for services, treatments, or advice..." autocomplete="off" />
+            </div>
+          </form>
+          <div class="search-overlay-popular">
+            <span class="search-popular-label">Popular Searches</span>
+            <div class="search-popular-links">
+              <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="search-popular-link">Weight Loss Programs</a>
+              <a href="<?php echo esc_url( home_url( '/travel-health/' ) ); ?>" class="search-popular-link">Travel Vaccinations</a>
+              <a href="<?php echo esc_url( home_url( '/prescription-services/' ) ); ?>" class="search-popular-link">NHS Prescriptions</a>
+              <a href="<?php echo esc_url( home_url( '/yellow-fever-vaccine/' ) ); ?>" class="search-popular-link">Yellow Fever Vaccine</a>
+              <a href="<?php echo esc_url( home_url( '/vitamin-b12-injection/' ) ); ?>" class="search-popular-link">Vitamin B12 Injections</a>
+              <a href="<?php echo esc_url( home_url( '/hair-loss/' ) ); ?>" class="search-popular-link">Hair Loss Treatment</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
