@@ -1,0 +1,28 @@
+name: Deploy to Kinsta Staging
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy Theme to Kinsta
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install sshpass
+        run: sudo apt-get update && sudo apt-get install -y sshpass
+
+      - name: Deploy via rsync with password
+        run: |
+          sshpass -p "${{ secrets.REY_LONDON_KINSTA_SSH_PASSWORD }}" rsync -avzr \
+            --delete \
+            --exclude='.git' \
+            --exclude='.github' \
+            -e "ssh -p ${{ secrets.KINSTA_SSH_PORT }} -o StrictHostKeyChecking=no" \
+            ./ \
+            ${{ secrets.KINSTA_SSH_USER }}@${{ secrets.KINSTA_SSH_HOST }}:${{ secrets.KINSTA_DEPLOY_PATH }}
