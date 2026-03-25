@@ -27,5 +27,3 @@
         observer.observe(el);
       });
     })();
-  </script>
-</body>
