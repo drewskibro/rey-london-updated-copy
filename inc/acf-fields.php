@@ -1004,3 +1004,82 @@ acf_add_local_field_group( array(
     'style'      => 'default',
     'label_placement' => 'top',
 ) );
+
+// =============================================================================
+// TRAVEL HEALTH PAGE FIELDS
+// =============================================================================
+acf_add_local_field_group( array(
+    'key'      => 'group_rl_travel_health',
+    'title'    => 'Travel Health Page',
+    'fields'   => array(
+        array( 'key' => 'field_rl_th_hero_tab', 'label' => 'Hero Section', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_th_hero_title', 'label' => 'Hero Title', 'name' => 'th_hero_title', 'type' => 'text', 'default_value' => 'South East London\'s Trusted Travel Health Clinic' ),
+        array( 'key' => 'field_rl_th_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'th_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'From yellow fever certification to malaria prevention – protect yourself with expert travel vaccinations before your next adventure.' ),
+        array( 'key' => 'field_rl_th_hero_image', 'label' => 'Hero Image', 'name' => 'th_hero_image', 'type' => 'image', 'return_format' => 'url' ),
+        array( 'key' => 'field_rl_th_vaccines_tab', 'label' => 'Vaccinations', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_th_vaccines', 'label' => 'Vaccination Cards', 'name' => 'th_vaccines', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Vaccination',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_th_vax_name', 'label' => 'Name', 'name' => 'name', 'type' => 'text' ),
+                array( 'key' => 'field_rl_th_vax_description', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 2 ),
+                array( 'key' => 'field_rl_th_vax_price', 'label' => 'Price', 'name' => 'price', 'type' => 'text' ),
+                array( 'key' => 'field_rl_th_vax_doses', 'label' => 'Doses Info', 'name' => 'doses', 'type' => 'text' ),
+                array( 'key' => 'field_rl_th_vax_url', 'label' => 'Link URL', 'name' => 'url', 'type' => 'url' ),
+            ),
+        ),
+        array( 'key' => 'field_rl_th_destinations_tab', 'label' => 'Destinations', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_th_destinations', 'label' => 'Destination Cards', 'name' => 'th_destinations', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Destination',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_th_dest_name', 'label' => 'Name', 'name' => 'name', 'type' => 'text' ),
+                array( 'key' => 'field_rl_th_dest_image', 'label' => 'Image', 'name' => 'image', 'type' => 'image', 'return_format' => 'url' ),
+                array( 'key' => 'field_rl_th_dest_vaccines', 'label' => 'Vaccines Required', 'name' => 'vaccines', 'type' => 'text' ),
+                array( 'key' => 'field_rl_th_dest_url', 'label' => 'Link URL', 'name' => 'url', 'type' => 'url' ),
+            ),
+        ),
+        array( 'key' => 'field_rl_th_faq_tab', 'label' => 'FAQs', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_th_faqs', 'label' => 'FAQs', 'name' => 'th_faqs', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add FAQ',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_th_faq_question', 'label' => 'Question', 'name' => 'question', 'type' => 'text' ),
+                array( 'key' => 'field_rl_th_faq_answer', 'label' => 'Answer', 'name' => 'answer', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0 ),
+            ),
+        ),
+    ),
+    'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-travel-health.php' ) ) ),
+    'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
+) );
+
+// =============================================================================
+// THAILAND PAGE FIELDS
+// =============================================================================
+acf_add_local_field_group( array(
+    'key'      => 'group_rl_thailand',
+    'title'    => 'Thailand Travel Health Page',
+    'fields'   => array(
+        array( 'key' => 'field_rl_thai_hero_tab', 'label' => 'Hero Section', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_thai_hero_title', 'label' => 'Hero Title', 'name' => 'thai_hero_title', 'type' => 'text', 'default_value' => 'Thailand Travel Vaccinations in South East London' ),
+        array( 'key' => 'field_rl_thai_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'thai_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'Expert travel health advice and essential vaccines for your Thailand trip. Same-day appointments available at our Chislehurst and Pond End clinics.' ),
+        array( 'key' => 'field_rl_thai_vaccines_tab', 'label' => 'Vaccines', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_thai_vaccines', 'label' => 'Recommended Vaccines', 'name' => 'thai_vaccines', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Vaccine',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_thai_vax_name', 'label' => 'Name', 'name' => 'name', 'type' => 'text' ),
+                array( 'key' => 'field_rl_thai_vax_rec', 'label' => 'Recommendation', 'name' => 'recommendation', 'type' => 'select', 'choices' => array( 'required' => 'Required', 'recommended' => 'Recommended', 'consider' => 'Consider' ) ),
+                array( 'key' => 'field_rl_thai_vax_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 2 ),
+                array( 'key' => 'field_rl_thai_vax_price', 'label' => 'Price', 'name' => 'price', 'type' => 'text' ),
+                array( 'key' => 'field_rl_thai_vax_doses', 'label' => 'Doses/Schedule', 'name' => 'doses', 'type' => 'text' ),
+            ),
+        ),
+        array( 'key' => 'field_rl_thai_faq_tab', 'label' => 'FAQs', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_thai_faqs', 'label' => 'FAQs', 'name' => 'thai_faqs', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add FAQ',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_thai_faq_question', 'label' => 'Question', 'name' => 'question', 'type' => 'text' ),
+                array( 'key' => 'field_rl_thai_faq_answer', 'label' => 'Answer', 'name' => 'answer', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0 ),
+            ),
+        ),
+    ),
+    'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-thailand.php' ) ) ),
+    'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
+) );
