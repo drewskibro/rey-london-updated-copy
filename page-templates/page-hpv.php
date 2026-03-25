@@ -38,6 +38,12 @@ get_header();
         </div>
 
         <div class="hpv-hero-visual">
+          <?php $hpv_hero_img = rl_field( 'hpv_hero_image' ); ?>
+          <?php if ( $hpv_hero_img ) : ?>
+          <div class="hpv-hero-visual-inner">
+            <img src="<?php echo esc_url( $hpv_hero_img ); ?>" alt="HPV Vaccine London" style="width:100%;height:auto;border-radius:16px;" />
+          </div>
+          <?php else : ?>
           <div class="hpv-hero-visual-inner">
             <!-- Shield illustration -->
             <svg viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,6 +52,7 @@ get_header();
               <text x="60" y="115" text-anchor="middle" fill="currentColor" font-size="10" font-weight="700" font-family="Inter, sans-serif" opacity=".6">GARDASIL 9</text>
             </svg>
           </div>
+          <?php endif; ?>
           <div class="hpv-hero-float-badge">
             <div class="hpv-float-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
             <div class="hpv-float-text"><span class="hpv-float-stat">9 Types</span><span class="hpv-float-label">HPV Protection</span></div>
@@ -432,14 +439,14 @@ get_header();
   <section class="hpv-section-white" id="pricing">
     <div class="container">
       <div style="text-align:center;">
-        <h2 class="section-title">Transparent Pricing — HPV Vaccine London</h2>
-        <p class="section-subtitle" style="max-width:700px;margin:0 auto 0;">No hidden fees. No consultation charges. The price you see is the price you pay.</p>
+        <h2 class="section-title"><?php echo esc_html( rl_field( 'hpv_pricing_title', 'Transparent Pricing — HPV Vaccine London' ) ); ?></h2>
+        <p class="section-subtitle" style="max-width:700px;margin:0 auto 0;"><?php echo esc_html( rl_field( 'hpv_pricing_subtitle', 'No hidden fees. No consultation charges. The price you see is the price you pay.' ) ); ?></p>
       </div>
 
       <div class="hpv-pricing-grid hpv-reveal">
         <!-- Single Dose -->
         <div class="hpv-price-card">
-          <div class="hpv-price-amount">£150</div>
+          <div class="hpv-price-amount"><?php echo esc_html( rl_field( 'hpv_price_per_dose', '£150' ) ); ?></div>
           <div class="hpv-price-per">per dose</div>
           <ul class="hpv-price-includes">
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Gardasil 9 vaccine</li>
@@ -608,8 +615,8 @@ get_header();
           <span class="hpv-cta-badge">Gardasil 9 Vaccine</span>
           <span class="hpv-cta-badge">Same-Day Service</span>
         </div>
-        <h2 class="hpv-footer-cta-title">Protect your future health today</h2>
-        <p class="hpv-footer-cta-sub">Book your private HPV vaccination at REY London Pharmacy — South East London's trusted clinic. No GP referral needed, same-day appointments available.</p>
+        <h2 class="hpv-footer-cta-title"><?php echo esc_html( rl_field( 'hpv_cta_title', 'Protect your future health today' ) ); ?></h2>
+        <p class="hpv-footer-cta-sub"><?php echo esc_html( rl_field( 'hpv_cta_subtitle', 'Book your private HPV vaccination at REY London Pharmacy — South East London\'s trusted clinic. No GP referral needed, same-day appointments available.' ) ); ?></p>
         <div class="cta-buttons">
           <a href="#book" class="btn-cta-primary">Book HPV Vaccine Appointment</a>
           <a href="tel:02084673158" class="btn-cta-secondary-ghost">
