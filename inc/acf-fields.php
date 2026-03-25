@@ -559,3 +559,527 @@ acf_add_local_field_group( array(
     'style'      => 'default',
     'label_placement' => 'top',
 ) );
+
+// =============================================================================
+// WEIGHT LOSS PAGE FIELDS
+// =============================================================================
+acf_add_local_field_group( array(
+    'key'      => 'group_rl_weight_loss',
+    'title'    => 'Weight Loss Page',
+    'fields'   => array(
+
+        // ── HERO ──
+        array(
+            'key'   => 'field_rl_wl_hero_tab',
+            'label' => 'Hero Section',
+            'type'  => 'tab',
+        ),
+        array(
+            'key'           => 'field_rl_wl_hero_badge',
+            'label'         => 'Hero Badge Text',
+            'name'          => 'wl_hero_badge',
+            'type'          => 'text',
+            'default_value' => 'Medical Weight Loss · London',
+        ),
+        array(
+            'key'           => 'field_rl_wl_hero_title',
+            'label'         => 'Hero Title',
+            'name'          => 'wl_hero_title',
+            'type'          => 'textarea',
+            'rows'          => 3,
+            'default_value' => 'Lose 10–20% of your body weight in 12 months — with prescription support at your local London pharmacy',
+        ),
+        array(
+            'key'           => 'field_rl_wl_hero_subtitle',
+            'label'         => 'Hero Subtitle',
+            'name'          => 'wl_hero_subtitle',
+            'type'          => 'textarea',
+            'rows'          => 4,
+            'default_value' => 'Mounjaro and Wegovy prescriptions from our South East London pharmacists. No GP referral. No long waits. Expert face-to-face care at Chislehurst and Pond End — from people who know your name.',
+        ),
+        array(
+            'key'           => 'field_rl_wl_hero_image_main',
+            'label'         => 'Hero Main Image',
+            'name'          => 'wl_hero_image_main',
+            'type'          => 'image',
+            'return_format' => 'url',
+        ),
+        array(
+            'key'           => 'field_rl_wl_hero_image_secondary',
+            'label'         => 'Hero Secondary Image',
+            'name'          => 'wl_hero_image_secondary',
+            'type'          => 'image',
+            'return_format' => 'url',
+        ),
+
+        // ── TREATMENTS / PRODUCTS ──
+        array(
+            'key'   => 'field_rl_wl_treatments_tab',
+            'label' => 'Treatments',
+            'type'  => 'tab',
+        ),
+        array(
+            'key'          => 'field_rl_wl_treatments',
+            'label'        => 'Treatment Cards',
+            'name'         => 'wl_treatments',
+            'type'         => 'repeater',
+            'layout'       => 'block',
+            'button_label' => 'Add Treatment',
+            'sub_fields'   => array(
+                array(
+                    'key'   => 'field_rl_wl_treat_name',
+                    'label' => 'Name',
+                    'name'  => 'name',
+                    'type'  => 'text',
+                ),
+                array(
+                    'key'   => 'field_rl_wl_treat_description',
+                    'label' => 'Description',
+                    'name'  => 'description',
+                    'type'  => 'textarea',
+                    'rows'  => 2,
+                ),
+                array(
+                    'key'           => 'field_rl_wl_treat_image',
+                    'label'         => 'Image',
+                    'name'          => 'image',
+                    'type'          => 'image',
+                    'return_format' => 'url',
+                ),
+                array(
+                    'key'   => 'field_rl_wl_treat_price',
+                    'label' => 'Price',
+                    'name'  => 'price',
+                    'type'  => 'text',
+                ),
+                array(
+                    'key'   => 'field_rl_wl_treat_badge',
+                    'label' => 'Badge',
+                    'name'  => 'badge',
+                    'type'  => 'text',
+                ),
+                array(
+                    'key'   => 'field_rl_wl_treat_url',
+                    'label' => 'Link URL',
+                    'name'  => 'url',
+                    'type'  => 'url',
+                ),
+            ),
+        ),
+
+        // ── TESTIMONIALS ──
+        array(
+            'key'   => 'field_rl_wl_testimonials_tab',
+            'label' => 'Testimonials',
+            'type'  => 'tab',
+        ),
+        array(
+            'key'          => 'field_rl_wl_testimonials',
+            'label'        => 'Testimonials',
+            'name'         => 'wl_testimonials',
+            'type'         => 'repeater',
+            'layout'       => 'block',
+            'button_label' => 'Add Testimonial',
+            'sub_fields'   => array(
+                array(
+                    'key'   => 'field_rl_wl_test_quote',
+                    'label' => 'Quote',
+                    'name'  => 'quote',
+                    'type'  => 'textarea',
+                    'rows'  => 4,
+                ),
+                array(
+                    'key'   => 'field_rl_wl_test_name',
+                    'label' => 'Name',
+                    'name'  => 'name',
+                    'type'  => 'text',
+                ),
+                array(
+                    'key'   => 'field_rl_wl_test_initials',
+                    'label' => 'Initials',
+                    'name'  => 'initials',
+                    'type'  => 'text',
+                ),
+                array(
+                    'key'   => 'field_rl_wl_test_detail',
+                    'label' => 'Detail (e.g. "Lost 18kg in 4 months")',
+                    'name'  => 'detail',
+                    'type'  => 'text',
+                ),
+                array(
+                    'key'           => 'field_rl_wl_test_stars',
+                    'label'         => 'Star Rating',
+                    'name'          => 'stars',
+                    'type'          => 'number',
+                    'default_value' => 5,
+                    'min'           => 1,
+                    'max'           => 5,
+                ),
+            ),
+        ),
+
+        // ── FAQ ──
+        array(
+            'key'   => 'field_rl_wl_faq_tab',
+            'label' => 'FAQs',
+            'type'  => 'tab',
+        ),
+        array(
+            'key'          => 'field_rl_wl_faqs',
+            'label'        => 'FAQs',
+            'name'         => 'wl_faqs',
+            'type'         => 'repeater',
+            'layout'       => 'block',
+            'button_label' => 'Add FAQ',
+            'sub_fields'   => array(
+                array(
+                    'key'   => 'field_rl_wl_faq_question',
+                    'label' => 'Question',
+                    'name'  => 'question',
+                    'type'  => 'text',
+                ),
+                array(
+                    'key'   => 'field_rl_wl_faq_answer',
+                    'label' => 'Answer',
+                    'name'  => 'answer',
+                    'type'  => 'wysiwyg',
+                    'toolbar' => 'basic',
+                    'media_upload' => 0,
+                ),
+            ),
+        ),
+
+        // ── CTA ──
+        array(
+            'key'   => 'field_rl_wl_cta_tab',
+            'label' => 'Footer CTA',
+            'type'  => 'tab',
+        ),
+        array(
+            'key'           => 'field_rl_wl_cta_title',
+            'label'         => 'CTA Title',
+            'name'          => 'wl_cta_title',
+            'type'          => 'text',
+            'default_value' => 'Ready to start your weight loss journey?',
+        ),
+        array(
+            'key'           => 'field_rl_wl_cta_subtitle',
+            'label'         => 'CTA Subtitle',
+            'name'          => 'wl_cta_subtitle',
+            'type'          => 'textarea',
+            'rows'          => 2,
+        ),
+        array(
+            'key'           => 'field_rl_wl_cta_button_text',
+            'label'         => 'CTA Button Text',
+            'name'          => 'wl_cta_button_text',
+            'type'          => 'text',
+            'default_value' => 'Book Free Consultation',
+        ),
+    ),
+    'location'  => array(
+        array(
+            array(
+                'param'    => 'page_template',
+                'operator' => '==',
+                'value'    => 'page-templates/page-weight-loss.php',
+            ),
+        ),
+    ),
+    'menu_order' => 0,
+    'position'   => 'normal',
+    'style'      => 'default',
+    'label_placement' => 'top',
+) );
+
+// =============================================================================
+// HAIR LOSS PAGE FIELDS
+// =============================================================================
+acf_add_local_field_group( array(
+    'key'      => 'group_rl_hair_loss',
+    'title'    => 'Hair Loss Page',
+    'fields'   => array(
+
+        // ── HERO ──
+        array(
+            'key'   => 'field_rl_hl_hero_tab',
+            'label' => 'Hero Section',
+            'type'  => 'tab',
+        ),
+        array(
+            'key'           => 'field_rl_hl_hero_title',
+            'label'         => 'Hero Title',
+            'name'          => 'hl_hero_title',
+            'type'          => 'text',
+            'default_value' => 'Hair Loss Treatment in South East London',
+        ),
+        array(
+            'key'           => 'field_rl_hl_hero_subtitle',
+            'label'         => 'Hero Subtitle',
+            'name'          => 'hl_hero_subtitle',
+            'type'          => 'textarea',
+            'rows'          => 4,
+            'default_value' => 'Regain your confidence with clinically proven treatments. Private consultations, prescription finasteride, minoxidil, and expert pharmacist support to stop hair loss and stimulate regrowth — at both Chislehurst locations.',
+        ),
+        array(
+            'key'           => 'field_rl_hl_hero_image',
+            'label'         => 'Hero Image',
+            'name'          => 'hl_hero_image',
+            'type'          => 'image',
+            'return_format' => 'url',
+        ),
+
+        // ── TREATMENTS ──
+        array(
+            'key'   => 'field_rl_hl_treatments_tab',
+            'label' => 'Treatments',
+            'type'  => 'tab',
+        ),
+        array(
+            'key'          => 'field_rl_hl_treatments',
+            'label'        => 'Treatment Options',
+            'name'         => 'hl_treatments',
+            'type'         => 'repeater',
+            'layout'       => 'block',
+            'button_label' => 'Add Treatment',
+            'sub_fields'   => array(
+                array(
+                    'key'   => 'field_rl_hl_treat_name',
+                    'label' => 'Name',
+                    'name'  => 'name',
+                    'type'  => 'text',
+                ),
+                array(
+                    'key'   => 'field_rl_hl_treat_type',
+                    'label' => 'Type (e.g. Oral Tablet, Topical)',
+                    'name'  => 'type',
+                    'type'  => 'text',
+                ),
+                array(
+                    'key'   => 'field_rl_hl_treat_description',
+                    'label' => 'Description',
+                    'name'  => 'description',
+                    'type'  => 'textarea',
+                    'rows'  => 3,
+                ),
+                array(
+                    'key'   => 'field_rl_hl_treat_price',
+                    'label' => 'Price',
+                    'name'  => 'price',
+                    'type'  => 'text',
+                ),
+                array(
+                    'key'          => 'field_rl_hl_treat_features',
+                    'label'        => 'Key Features',
+                    'name'         => 'features',
+                    'type'         => 'repeater',
+                    'layout'       => 'table',
+                    'button_label' => 'Add Feature',
+                    'sub_fields'   => array(
+                        array(
+                            'key'   => 'field_rl_hl_treat_feature_text',
+                            'label' => 'Feature',
+                            'name'  => 'text',
+                            'type'  => 'text',
+                        ),
+                    ),
+                ),
+            ),
+        ),
+
+        // ── PRICING ──
+        array(
+            'key'   => 'field_rl_hl_pricing_tab',
+            'label' => 'Pricing',
+            'type'  => 'tab',
+        ),
+        array(
+            'key'          => 'field_rl_hl_pricing',
+            'label'        => 'Pricing Cards',
+            'name'         => 'hl_pricing',
+            'type'         => 'repeater',
+            'layout'       => 'block',
+            'button_label' => 'Add Pricing Card',
+            'sub_fields'   => array(
+                array(
+                    'key'   => 'field_rl_hl_price_name',
+                    'label' => 'Treatment Name',
+                    'name'  => 'name',
+                    'type'  => 'text',
+                ),
+                array(
+                    'key'   => 'field_rl_hl_price_price',
+                    'label' => 'Price',
+                    'name'  => 'price',
+                    'type'  => 'text',
+                ),
+                array(
+                    'key'   => 'field_rl_hl_price_period',
+                    'label' => 'Period (e.g. per month)',
+                    'name'  => 'period',
+                    'type'  => 'text',
+                ),
+                array(
+                    'key'          => 'field_rl_hl_price_includes',
+                    'label'        => 'Includes',
+                    'name'         => 'includes',
+                    'type'         => 'repeater',
+                    'layout'       => 'table',
+                    'button_label' => 'Add Item',
+                    'sub_fields'   => array(
+                        array(
+                            'key'   => 'field_rl_hl_price_include_text',
+                            'label' => 'Item',
+                            'name'  => 'text',
+                            'type'  => 'text',
+                        ),
+                    ),
+                ),
+            ),
+        ),
+
+        // ── FAQ ──
+        array(
+            'key'   => 'field_rl_hl_faq_tab',
+            'label' => 'FAQs',
+            'type'  => 'tab',
+        ),
+        array(
+            'key'          => 'field_rl_hl_faqs',
+            'label'        => 'FAQs',
+            'name'         => 'hl_faqs',
+            'type'         => 'repeater',
+            'layout'       => 'block',
+            'button_label' => 'Add FAQ',
+            'sub_fields'   => array(
+                array(
+                    'key'   => 'field_rl_hl_faq_question',
+                    'label' => 'Question',
+                    'name'  => 'question',
+                    'type'  => 'text',
+                ),
+                array(
+                    'key'   => 'field_rl_hl_faq_answer',
+                    'label' => 'Answer',
+                    'name'  => 'answer',
+                    'type'  => 'wysiwyg',
+                    'toolbar' => 'basic',
+                    'media_upload' => 0,
+                ),
+            ),
+        ),
+
+        // ── CTA ──
+        array(
+            'key'   => 'field_rl_hl_cta_tab',
+            'label' => 'Footer CTA',
+            'type'  => 'tab',
+        ),
+        array(
+            'key'           => 'field_rl_hl_cta_title',
+            'label'         => 'CTA Title',
+            'name'          => 'hl_cta_title',
+            'type'          => 'text',
+            'default_value' => 'Ready to take the first step?',
+        ),
+        array(
+            'key'           => 'field_rl_hl_cta_subtitle',
+            'label'         => 'CTA Subtitle',
+            'name'          => 'hl_cta_subtitle',
+            'type'          => 'textarea',
+            'rows'          => 2,
+        ),
+    ),
+    'location'  => array(
+        array(
+            array(
+                'param'    => 'page_template',
+                'operator' => '==',
+                'value'    => 'page-templates/page-hair-loss.php',
+            ),
+        ),
+    ),
+    'menu_order' => 0,
+    'position'   => 'normal',
+    'style'      => 'default',
+    'label_placement' => 'top',
+) );
+
+// =============================================================================
+// TRAVEL HEALTH PAGE FIELDS
+// =============================================================================
+acf_add_local_field_group( array(
+    'key'      => 'group_rl_travel_health',
+    'title'    => 'Travel Health Page',
+    'fields'   => array(
+        array( 'key' => 'field_rl_th_hero_tab', 'label' => 'Hero Section', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_th_hero_title', 'label' => 'Hero Title', 'name' => 'th_hero_title', 'type' => 'text', 'default_value' => 'South East London\'s Trusted Travel Health Clinic' ),
+        array( 'key' => 'field_rl_th_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'th_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'From yellow fever certification to malaria prevention – protect yourself with expert travel vaccinations before your next adventure.' ),
+        array( 'key' => 'field_rl_th_hero_image', 'label' => 'Hero Image', 'name' => 'th_hero_image', 'type' => 'image', 'return_format' => 'url' ),
+        array( 'key' => 'field_rl_th_vaccines_tab', 'label' => 'Vaccinations', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_th_vaccines', 'label' => 'Vaccination Cards', 'name' => 'th_vaccines', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Vaccination',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_th_vax_name', 'label' => 'Name', 'name' => 'name', 'type' => 'text' ),
+                array( 'key' => 'field_rl_th_vax_description', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 2 ),
+                array( 'key' => 'field_rl_th_vax_price', 'label' => 'Price', 'name' => 'price', 'type' => 'text' ),
+                array( 'key' => 'field_rl_th_vax_doses', 'label' => 'Doses Info', 'name' => 'doses', 'type' => 'text' ),
+                array( 'key' => 'field_rl_th_vax_url', 'label' => 'Link URL', 'name' => 'url', 'type' => 'url' ),
+            ),
+        ),
+        array( 'key' => 'field_rl_th_destinations_tab', 'label' => 'Destinations', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_th_destinations', 'label' => 'Destination Cards', 'name' => 'th_destinations', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Destination',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_th_dest_name', 'label' => 'Name', 'name' => 'name', 'type' => 'text' ),
+                array( 'key' => 'field_rl_th_dest_image', 'label' => 'Image', 'name' => 'image', 'type' => 'image', 'return_format' => 'url' ),
+                array( 'key' => 'field_rl_th_dest_vaccines', 'label' => 'Vaccines Required', 'name' => 'vaccines', 'type' => 'text' ),
+                array( 'key' => 'field_rl_th_dest_url', 'label' => 'Link URL', 'name' => 'url', 'type' => 'url' ),
+            ),
+        ),
+        array( 'key' => 'field_rl_th_faq_tab', 'label' => 'FAQs', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_th_faqs', 'label' => 'FAQs', 'name' => 'th_faqs', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add FAQ',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_th_faq_question', 'label' => 'Question', 'name' => 'question', 'type' => 'text' ),
+                array( 'key' => 'field_rl_th_faq_answer', 'label' => 'Answer', 'name' => 'answer', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0 ),
+            ),
+        ),
+    ),
+    'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-travel-health.php' ) ) ),
+    'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
+) );
+
+// =============================================================================
+// THAILAND PAGE FIELDS
+// =============================================================================
+acf_add_local_field_group( array(
+    'key'      => 'group_rl_thailand',
+    'title'    => 'Thailand Travel Health Page',
+    'fields'   => array(
+        array( 'key' => 'field_rl_thai_hero_tab', 'label' => 'Hero Section', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_thai_hero_title', 'label' => 'Hero Title', 'name' => 'thai_hero_title', 'type' => 'text', 'default_value' => 'Thailand Travel Vaccinations in South East London' ),
+        array( 'key' => 'field_rl_thai_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'thai_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'Expert travel health advice and essential vaccines for your Thailand trip. Same-day appointments available at our Chislehurst and Pond End clinics.' ),
+        array( 'key' => 'field_rl_thai_vaccines_tab', 'label' => 'Vaccines', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_thai_vaccines', 'label' => 'Recommended Vaccines', 'name' => 'thai_vaccines', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Vaccine',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_thai_vax_name', 'label' => 'Name', 'name' => 'name', 'type' => 'text' ),
+                array( 'key' => 'field_rl_thai_vax_rec', 'label' => 'Recommendation', 'name' => 'recommendation', 'type' => 'select', 'choices' => array( 'required' => 'Required', 'recommended' => 'Recommended', 'consider' => 'Consider' ) ),
+                array( 'key' => 'field_rl_thai_vax_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 2 ),
+                array( 'key' => 'field_rl_thai_vax_price', 'label' => 'Price', 'name' => 'price', 'type' => 'text' ),
+                array( 'key' => 'field_rl_thai_vax_doses', 'label' => 'Doses/Schedule', 'name' => 'doses', 'type' => 'text' ),
+            ),
+        ),
+        array( 'key' => 'field_rl_thai_faq_tab', 'label' => 'FAQs', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_thai_faqs', 'label' => 'FAQs', 'name' => 'thai_faqs', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add FAQ',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_thai_faq_question', 'label' => 'Question', 'name' => 'question', 'type' => 'text' ),
+                array( 'key' => 'field_rl_thai_faq_answer', 'label' => 'Answer', 'name' => 'answer', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0 ),
+            ),
+        ),
+    ),
+    'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-thailand.php' ) ) ),
+    'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
+) );
