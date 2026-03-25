@@ -16,16 +16,24 @@ get_header();
         <div class="yf-hero-text">
           <div class="yf-hero-eyebrow">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="12" r="3"/></svg>
-            NaTHNaC Registered&nbsp;&nbsp;|&nbsp;&nbsp;Yellow Fever Vaccination Centre
+            <?php echo esc_html( rl_field( 'yf_hero_eyebrow', 'NaTHNaC Registered  |  Yellow Fever Vaccination Centre' ) ); ?>
           </div>
           <h1><?php echo wp_kses_post( rl_field( 'yf_hero_title', 'Yellow Fever Vaccine London: <span class="gradient-text">Official Vaccination Centre</span> in Chislehurst' ) ); ?></h1>
           <p class="yf-hero-sub"><?php echo esc_html( rl_field( 'yf_hero_subtitle', 'Registered Yellow Fever Vaccination Centre serving South East London. Lifetime protection with official International Certificate included. Same-day appointments available at our Chislehurst pharmacies.' ) ); ?></p>
 
           <div class="yf-hero-trust">
+            <?php
+            $yf_trust_badges = rl_field( 'yf_hero_trust_badges' );
+            if ( $yf_trust_badges && is_array( $yf_trust_badges ) ) :
+                foreach ( $yf_trust_badges as $badge ) : ?>
+                <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <?php echo esc_html( $badge['text'] ); ?></span>
+                <?php endforeach;
+            else : ?>
             <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> NaTHNaC Registered Centre</span>
             <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Official ICVP Certificate</span>
             <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> GPhC Registered Pharmacists</span>
             <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Valid for Life</span>
+            <?php endif; ?>
           </div>
 
           <div class="yf-hero-ctas">
@@ -42,7 +50,8 @@ get_header();
 
         <div class="yf-hero-visual">
           <div class="yf-hero-visual-inner">
-            <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80&auto=format&fit=crop" alt="Traveller overlooking African savanna landscape — yellow fever vaccination for travel protection" loading="lazy" />
+            <?php $yf_hero_img = rl_field( 'yf_hero_image' ); ?>
+            <img src="<?php echo esc_url( $yf_hero_img ?: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80&auto=format&fit=crop' ); ?>" alt="Traveller overlooking African savanna landscape — yellow fever vaccination for travel protection" loading="lazy" />
           </div>
         </div>
       </div>
@@ -55,11 +64,28 @@ get_header();
       <div style="text-align:center;">
         <div class="yf-quick-pill">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-          At a Glance
+          <?php echo esc_html( rl_field( 'yf_keyfacts_pill', 'At a Glance' ) ); ?>
         </div>
-        <h2 class="section-title">Key Facts About the Yellow Fever Vaccine</h2>
+        <h2 class="section-title"><?php echo esc_html( rl_field( 'yf_keyfacts_title', 'Key Facts About the Yellow Fever Vaccine' ) ); ?></h2>
       </div>
       <div class="yf-quick-grid yf-reveal">
+        <?php
+        $yf_keyfacts = rl_field( 'yf_keyfacts_cards' );
+        if ( $yf_keyfacts && is_array( $yf_keyfacts ) ) :
+            $kf_icons = array(
+                '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>',
+                '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg>',
+                '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>',
+                '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>',
+            );
+            foreach ( $yf_keyfacts as $i => $card ) : ?>
+        <div class="yf-quick-card">
+          <div class="yf-quick-icon"><?php echo $kf_icons[ $i % count( $kf_icons ) ]; ?></div>
+          <div class="yf-quick-stat"><?php echo esc_html( $card['stat'] ); ?></div>
+          <div class="yf-quick-label"><?php echo esc_html( $card['label'] ); ?></div>
+        </div>
+            <?php endforeach;
+        else : ?>
         <div class="yf-quick-card">
           <div class="yf-quick-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
           <div class="yf-quick-stat">Lifetime</div>
@@ -80,6 +106,7 @@ get_header();
           <div class="yf-quick-stat">2 Locations</div>
           <div class="yf-quick-label">Chislehurst pharmacies serving South East London</div>
         </div>
+        <?php endif; ?>
       </div>
     </div>
   </section>
@@ -89,13 +116,29 @@ get_header();
     <div class="container">
       <div class="yf-two-col yf-reveal">
         <div>
-          <span class="yf-eyebrow">What You Need to Know</span>
-          <h2 class="yf-section-title">What is Yellow Fever?</h2>
+          <span class="yf-eyebrow"><?php echo esc_html( rl_field( 'yf_understanding_eyebrow', 'What You Need to Know' ) ); ?></span>
+          <h2 class="yf-section-title"><?php echo esc_html( rl_field( 'yf_understanding_heading', 'What is Yellow Fever?' ) ); ?></h2>
+          <?php
+          $yf_understanding_body = rl_field( 'yf_understanding_body' );
+          if ( $yf_understanding_body ) :
+              echo wp_kses_post( $yf_understanding_body );
+          else : ?>
           <p class="yf-body-text">Yellow Fever is a serious viral disease transmitted by infected mosquitoes in tropical regions of Africa and South America. The virus can cause severe illness with a <strong>mortality rate exceeding 50%</strong> in those who develop serious symptoms.</p>
           <p class="yf-body-text">While yellow fever is not found in the UK or Europe, travellers visiting endemic areas face significant risk. The disease cannot be treated once contracted — <strong>vaccination is the only effective prevention.</strong></p>
           <p class="yf-body-text">Many countries legally require proof of yellow fever vaccination for entry, even if you're just transiting through an airport in an affected region. Without an official International Certificate of Vaccination or Prophylaxis (ICVP), you may be <strong>denied boarding, quarantined on arrival, or refused entry entirely.</strong></p>
+          <?php endif; ?>
 
           <div class="yf-stat-grid">
+            <?php
+            $yf_understanding_stats = rl_field( 'yf_understanding_stats' );
+            if ( $yf_understanding_stats && is_array( $yf_understanding_stats ) ) :
+                foreach ( $yf_understanding_stats as $stat ) : ?>
+            <div class="yf-stat-box">
+              <div class="yf-stat-num"><?php echo esc_html( $stat['number'] ); ?></div>
+              <div class="yf-stat-desc"><?php echo esc_html( $stat['description'] ); ?></div>
+            </div>
+                <?php endforeach;
+            else : ?>
             <div class="yf-stat-box">
               <div class="yf-stat-num">200,000</div>
               <div class="yf-stat-desc">Estimated cases globally per year</div>
@@ -112,13 +155,15 @@ get_header();
               <div class="yf-stat-num">99%</div>
               <div class="yf-stat-desc">Protection with vaccination</div>
             </div>
+            <?php endif; ?>
           </div>
         </div>
         <div class="yf-visual-placeholder">
-          <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80&auto=format&fit=crop" alt="Mosquito close-up on tropical leaf — yellow fever is transmitted by infected mosquitoes" loading="lazy" />
+          <?php $yf_understanding_img = rl_field( 'yf_understanding_image' ); ?>
+          <img src="<?php echo esc_url( $yf_understanding_img ?: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80&auto=format&fit=crop' ); ?>" alt="Mosquito close-up on tropical leaf — yellow fever is transmitted by infected mosquitoes" loading="lazy" />
           <div class="yf-visual-badge">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            <span>50%+ mortality rate in severe cases</span>
+            <span><?php echo esc_html( rl_field( 'yf_understanding_badge', '50%+ mortality rate in severe cases' ) ); ?></span>
           </div>
         </div>
       </div>
@@ -129,11 +174,22 @@ get_header();
   <section class="yf-section-white" id="why-vaccinate">
     <div class="container">
       <div style="text-align:center;">
-        <h2 class="section-title">Why You Need the Yellow Fever Vaccine</h2>
-        <p class="section-subtitle" style="max-width:800px;margin:0 auto 0;">Three compelling reasons why yellow fever vaccination is essential for travel to affected regions — not optional.</p>
+        <h2 class="section-title"><?php echo esc_html( rl_field( 'yf_why_need_title', 'Why You Need the Yellow Fever Vaccine' ) ); ?></h2>
+        <p class="section-subtitle" style="max-width:800px;margin:0 auto 0;"><?php echo esc_html( rl_field( 'yf_why_need_subtitle', 'Three compelling reasons why yellow fever vaccination is essential for travel to affected regions — not optional.' ) ); ?></p>
       </div>
 
       <div class="yf-need-grid yf-reveal">
+        <?php
+        $yf_why_need_cards = rl_field( 'yf_why_need_cards' );
+        if ( $yf_why_need_cards && is_array( $yf_why_need_cards ) ) :
+            foreach ( $yf_why_need_cards as $i => $card ) : ?>
+        <div class="yf-need-card">
+          <div class="yf-need-num"><?php echo esc_html( $i + 1 ); ?></div>
+          <h3><?php echo esc_html( $card['title'] ); ?></h3>
+          <?php echo wp_kses_post( $card['body'] ); ?>
+        </div>
+            <?php endforeach;
+        else : ?>
         <div class="yf-need-card">
           <div class="yf-need-num">1</div>
           <h3>Legal Entry Requirement</h3>
@@ -149,19 +205,21 @@ get_header();
           <h3>Lifetime Protection</h3>
           <p>Unlike many travel vaccines, yellow fever vaccination provides <strong>lifelong immunity from a single dose.</strong> Your official certificate is valid for life, even if it shows an old expiry date — certificates issued before 2016 are still valid under WHO rules.</p>
         </div>
+        <?php endif; ?>
       </div>
     </div>
   </section>
 
   <!-- ===================== LIFESTYLE BANNER 1 ===================== -->
   <div class="yf-lifestyle-banner">
-    <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1600&q=80&auto=format&fit=crop" alt="African safari landscape at golden hour — yellow fever vaccination essential for travel to sub-Saharan Africa" loading="lazy" />
+    <?php $yf_banner1_img = rl_field( 'yf_banner1_image' ); ?>
+    <img src="<?php echo esc_url( $yf_banner1_img ?: 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1600&q=80&auto=format&fit=crop' ); ?>" alt="African safari landscape at golden hour — yellow fever vaccination essential for travel to sub-Saharan Africa" loading="lazy" />
     <div class="yf-lifestyle-banner-overlay">
       <div class="yf-lifestyle-banner-caption">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         <div>
-          <strong>40+ Countries Require Certification</strong>
-          <span>Protect yourself before exploring Africa &amp; South America</span>
+          <strong><?php echo esc_html( rl_field( 'yf_banner1_title', '40+ Countries Require Certification' ) ); ?></strong>
+          <span><?php echo esc_html( rl_field( 'yf_banner1_text', 'Protect yourself before exploring Africa & South America' ) ); ?></span>
         </div>
       </div>
     </div>
@@ -173,10 +231,10 @@ get_header();
       <div style="text-align:center;">
         <div class="yf-quick-pill">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Risk Areas
+          <?php echo esc_html( rl_field( 'yf_risk_pill', 'Risk Areas' ) ); ?>
         </div>
-        <h2 class="section-title">Yellow Fever Risk Areas</h2>
-        <p class="section-subtitle" style="max-width:800px;margin:0 auto 0;">Yellow fever is endemic across large areas of sub-Saharan Africa and South America. If your itinerary passes through or near these regions, you almost certainly need vaccination and certification.</p>
+        <h2 class="section-title"><?php echo esc_html( rl_field( 'yf_risk_title', 'Yellow Fever Risk Areas' ) ); ?></h2>
+        <p class="section-subtitle" style="max-width:800px;margin:0 auto 0;"><?php echo esc_html( rl_field( 'yf_risk_subtitle', 'Yellow fever is endemic across large areas of sub-Saharan Africa and South America. If your itinerary passes through or near these regions, you almost certainly need vaccination and certification.' ) ); ?></p>
       </div>
 
       <div class="yf-risk-two-col yf-reveal">
@@ -185,7 +243,12 @@ get_header();
             <span class="yf-risk-flag">🌍</span>
             Africa
           </h3>
-          <p style="font-size:15px;color:var(--text-gray);margin-bottom:18px;line-height:1.6;">Sub-Saharan Africa (47 countries at risk). West Africa carries the highest risk.</p>
+          <p style="font-size:15px;color:var(--text-gray);margin-bottom:18px;line-height:1.6;"><?php echo esc_html( rl_field( 'yf_risk_africa_body', 'Sub-Saharan Africa (47 countries at risk). West Africa carries the highest risk.' ) ); ?></p>
+          <?php
+          $yf_risk_africa_list = rl_field( 'yf_risk_africa_list' );
+          if ( $yf_risk_africa_list ) :
+              echo wp_kses_post( $yf_risk_africa_list );
+          else : ?>
           <ul class="yf-risk-list">
             <li>Ghana, Nigeria, Senegal, Côte d'Ivoire (West Africa — highest risk)</li>
             <li>Kenya, Ethiopia, Tanzania, Uganda (East Africa)</li>
@@ -193,13 +256,19 @@ get_header();
             <li>Angola, Zambia, Zimbabwe (Southern Africa risk zones)</li>
             <li>South Africa (some border regions only)</li>
           </ul>
+          <?php endif; ?>
         </div>
         <div class="yf-risk-col">
           <h3>
             <span class="yf-risk-flag">🌎</span>
             South America
           </h3>
-          <p style="font-size:15px;color:var(--text-gray);margin-bottom:18px;line-height:1.6;">Central and South America (13 countries). Amazon rainforest regions carry the highest risk.</p>
+          <p style="font-size:15px;color:var(--text-gray);margin-bottom:18px;line-height:1.6;"><?php echo esc_html( rl_field( 'yf_risk_americas_body', 'Central and South America (13 countries). Amazon rainforest regions carry the highest risk.' ) ); ?></p>
+          <?php
+          $yf_risk_americas_list = rl_field( 'yf_risk_americas_list' );
+          if ( $yf_risk_americas_list ) :
+              echo wp_kses_post( $yf_risk_americas_list );
+          else : ?>
           <ul class="yf-risk-list">
             <li>Brazil (Amazon basin, north and central states)</li>
             <li>Peru, Colombia, Ecuador (Andean and Amazon regions)</li>
@@ -207,11 +276,17 @@ get_header();
             <li>Panama, Trinidad and Tobago</li>
             <li>Argentina and Paraguay (border risk zones)</li>
           </ul>
+          <?php endif; ?>
         </div>
       </div>
 
       <div class="yf-transit-box yf-reveal">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <?php
+        $yf_risk_transit = rl_field( 'yf_risk_transit_warning' );
+        if ( $yf_risk_transit ) :
+            echo '<div>' . wp_kses_post( $yf_risk_transit ) . '</div>';
+        else : ?>
         <div>
           <strong style="display:block;margin-bottom:8px;color:var(--primary-blue);">Transit Warning — Don't Overlook This</strong>
           Even if your destination doesn't have yellow fever, you may need a certificate if <strong>transiting through affected countries.</strong> For example, travelling UK → Kenya → Seychelles requires a certificate for Seychelles entry, despite no yellow fever in Seychelles. The same applies to many Asian and island nations. We check your complete itinerary during consultation.
@@ -221,6 +296,7 @@ get_header();
             Check Your Country Requirements
           </a>
         </div>
+        <?php endif; ?>
       </div>
     </div>
   </section>
@@ -229,11 +305,29 @@ get_header();
   <section class="yf-section-dark" id="eligibility">
     <div class="container">
       <div style="text-align:center;">
-        <h2 class="section-title">Who Should Get the Yellow Fever Vaccine?</h2>
-        <p class="section-subtitle" style="max-width:800px;margin:0 auto 0;">Yellow fever vaccination is recommended for all eligible travellers visiting or transiting endemic regions. Our pharmacist will assess your individual circumstances.</p>
+        <h2 class="section-title"><?php echo esc_html( rl_field( 'yf_who_title', 'Who Should Get the Yellow Fever Vaccine?' ) ); ?></h2>
+        <p class="section-subtitle" style="max-width:800px;margin:0 auto 0;"><?php echo esc_html( rl_field( 'yf_who_subtitle', 'Yellow fever vaccination is recommended for all eligible travellers visiting or transiting endemic regions. Our pharmacist will assess your individual circumstances.' ) ); ?></p>
       </div>
 
       <div class="yf-who-grid yf-reveal">
+        <?php
+        $yf_who_cards = rl_field( 'yf_who_cards' );
+        if ( $yf_who_cards && is_array( $yf_who_cards ) ) :
+            $who_icons = array(
+                '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 12 20a19.45 19.45 0 0 1-4.83-2.78M2.11 2A19.79 19.79 0 0 0 2 12a19.79 19.79 0 0 0 3.09 8.67"/><path d="M6.5 6.5h11"/><path d="M17 3l-5 5-5-5"/></svg>',
+                '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+                '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>',
+            );
+            foreach ( $yf_who_cards as $i => $card ) : ?>
+        <div class="yf-who-card">
+          <div class="yf-who-icon">
+            <?php echo $who_icons[ $i % count( $who_icons ) ]; ?>
+          </div>
+          <h3><?php echo esc_html( $card['title'] ); ?></h3>
+          <p><?php echo esc_html( $card['description'] ); ?></p>
+        </div>
+            <?php endforeach;
+        else : ?>
         <!-- Card 1 -->
         <div class="yf-who-card">
           <div class="yf-who-icon">
@@ -258,24 +352,32 @@ get_header();
           <h3>Laboratory Workers</h3>
           <p>Researchers and laboratory staff who may be exposed to yellow fever virus through their work. Vaccination provides essential protection against accidental exposure or aerosol transmission in controlled research environments.</p>
         </div>
+        <?php endif; ?>
       </div>
 
       <div class="yf-info-box">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <?php
+        $yf_who_info = rl_field( 'yf_who_info_box' );
+        if ( $yf_who_info ) :
+            echo wp_kses_post( $yf_who_info );
+        else : ?>
         The yellow fever vaccine is suitable from <strong>9 months of age</strong>. Infants under 9 months, severely immunocompromised individuals, and those with certain conditions may not be eligible. Our pharmacist will assess your suitability during consultation.
+        <?php endif; ?>
       </div>
     </div>
   </section>
 
   <!-- ===================== LIFESTYLE BANNER 2 ===================== -->
   <div class="yf-lifestyle-banner">
-    <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=1600&q=80&auto=format&fit=crop" alt="Pharmacist preparing travel vaccination in clinical setting" loading="lazy" />
+    <?php $yf_banner2_img = rl_field( 'yf_banner2_image' ); ?>
+    <img src="<?php echo esc_url( $yf_banner2_img ?: 'https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=1600&q=80&auto=format&fit=crop' ); ?>" alt="Pharmacist preparing travel vaccination in clinical setting" loading="lazy" />
     <div class="yf-lifestyle-banner-overlay">
       <div class="yf-lifestyle-banner-caption">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
         <div>
-          <strong>Professional Travel Health Service</strong>
-          <span>GPhC-registered pharmacists · Consultation + vaccine + certificate in 20 minutes</span>
+          <strong><?php echo esc_html( rl_field( 'yf_banner2_title', 'Professional Travel Health Service' ) ); ?></strong>
+          <span><?php echo esc_html( rl_field( 'yf_banner2_text', 'GPhC-registered pharmacists · Consultation + vaccine + certificate in 20 minutes' ) ); ?></span>
         </div>
       </div>
     </div>
@@ -285,23 +387,24 @@ get_header();
   <section class="yf-section-white" id="how-it-works">
     <div class="container">
       <div style="text-align:center;">
-        <h2 class="section-title">What to Expect at Your Appointment</h2>
-        <p class="section-subtitle" style="max-width:800px;margin:0 auto 0;">A streamlined, professional vaccination experience. From consultation to certified ICVP in under 20 minutes.</p>
+        <h2 class="section-title"><?php echo esc_html( rl_field( 'yf_process_title', 'What to Expect at Your Appointment' ) ); ?></h2>
+        <p class="section-subtitle" style="max-width:800px;margin:0 auto 0;"><?php echo esc_html( rl_field( 'yf_process_subtitle', 'A streamlined, professional vaccination experience. From consultation to certified ICVP in under 20 minutes.' ) ); ?></p>
       </div>
 
       <div class="yf-hiw-grid yf-reveal">
         <!-- LEFT: Photo -->
         <div class="yf-hiw-photo-col">
           <div class="yf-hiw-photo-wrap">
+            <?php $yf_process_img = rl_field( 'yf_process_image' ); ?>
             <img
-              src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80&auto=format&fit=crop"
+              src="<?php echo esc_url( $yf_process_img ?: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80&auto=format&fit=crop' ); ?>"
               alt="Pharmacist administering a travel vaccine in a professional clinical setting"
               class="yf-hiw-photo"
               loading="lazy"
             />
             <div class="yf-hiw-photo-badge">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-              <span>GPhC-Registered Pharmacists</span>
+              <span><?php echo esc_html( rl_field( 'yf_process_badge', 'GPhC-Registered Pharmacists' ) ); ?></span>
             </div>
           </div>
         </div>
@@ -310,6 +413,19 @@ get_header();
         <div class="yf-hiw-content-col">
           <span class="yf-eyebrow">Your Appointment</span>
           <div class="yf-process-steps">
+            <?php
+            $yf_process_steps = rl_field( 'yf_process_steps' );
+            if ( $yf_process_steps && is_array( $yf_process_steps ) ) :
+                foreach ( $yf_process_steps as $i => $step ) : ?>
+            <div class="yf-process-step">
+              <div class="yf-step-num"><?php echo esc_html( $i + 1 ); ?></div>
+              <div class="yf-step-body">
+                <h4><?php echo esc_html( $step['title'] ); ?></h4>
+                <p><?php echo esc_html( $step['description'] ); ?></p>
+              </div>
+            </div>
+                <?php endforeach;
+            else : ?>
             <div class="yf-process-step">
               <div class="yf-step-num">1</div>
               <div class="yf-step-body">
@@ -331,8 +447,9 @@ get_header();
                 <p>You receive your International Certificate of Vaccination or Prophylaxis (ICVP) immediately. We complete all required fields — vaccine batch number, date, official stamp, and pharmacist signature. Your certificate is valid 10 days after vaccination and lasts for life.</p>
               </div>
             </div>
+            <?php endif; ?>
           </div>
-          <div class="yf-total-time">⏱ Allow 20 minutes total · Book at least 10 days before travel</div>
+          <div class="yf-total-time"><?php echo esc_html( rl_field( 'yf_process_time', '⏱ Allow 20 minutes total · Book at least 10 days before travel' ) ); ?></div>
           <div style="text-align:center;margin-top:24px;">
             <a href="#book" class="yf-price-cta" style="display:inline-flex;">Book Your Appointment →</a>
           </div>
@@ -347,10 +464,10 @@ get_header();
       <div style="text-align:center;">
         <div class="yf-quick-pill">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg>
-          The Yellow Card
+          <?php echo esc_html( rl_field( 'yf_cert_pill', 'The Yellow Card' ) ); ?>
         </div>
-        <h2 class="section-title" style="color:var(--white);">Your Official Yellow Fever Certificate</h2>
-        <p class="section-subtitle" style="max-width:820px;margin:0 auto 0;color:rgba(255,255,255,.75);">As a NaTHNaC-registered Yellow Fever Vaccination Centre, REY London Pharmacy is authorised to issue the official International Certificate of Vaccination or Prophylaxis (ICVP), known as the "yellow card."</p>
+        <h2 class="section-title" style="color:var(--white);"><?php echo esc_html( rl_field( 'yf_cert_title', 'Your Official Yellow Fever Certificate' ) ); ?></h2>
+        <p class="section-subtitle" style="max-width:820px;margin:0 auto 0;color:rgba(255,255,255,.75);"><?php echo esc_html( rl_field( 'yf_cert_subtitle', 'As a NaTHNaC-registered Yellow Fever Vaccination Centre, REY London Pharmacy is authorised to issue the official International Certificate of Vaccination or Prophylaxis (ICVP), known as the "yellow card."' ) ); ?></p>
       </div>
 
       <div class="yf-cert-card yf-reveal">
@@ -361,6 +478,13 @@ get_header();
               What's on your certificate
             </h4>
             <ul class="yf-cert-list">
+              <?php
+              $yf_cert_items = rl_field( 'yf_cert_items' );
+              if ( $yf_cert_items && is_array( $yf_cert_items ) ) :
+                  foreach ( $yf_cert_items as $item ) : ?>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <?php echo esc_html( $item['text'] ); ?></li>
+                  <?php endforeach;
+              else : ?>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Your full name and date of birth</li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Passport number</li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Vaccine manufacturer and batch number</li>
@@ -368,6 +492,7 @@ get_header();
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Signature of administering pharmacist</li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Official REY London Pharmacy vaccination centre stamp</li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Validity dates (valid for life, starting 10 days post-vaccination)</li>
+              <?php endif; ?>
             </ul>
           </div>
           <div class="yf-cert-col">
@@ -376,17 +501,31 @@ get_header();
               Bring to your appointment
             </h4>
             <ul class="yf-cert-list">
+              <?php
+              $yf_cert_bring = rl_field( 'yf_cert_bring' );
+              if ( $yf_cert_bring && is_array( $yf_cert_bring ) ) :
+                  foreach ( $yf_cert_bring as $item ) : ?>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <?php echo esc_html( $item['text'] ); ?></li>
+                  <?php endforeach;
+              else : ?>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Valid passport (required for certificate)</li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Previous yellow fever certificate (if previously vaccinated)</li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> List of all countries you're visiting and transiting</li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Current medication list (if applicable)</li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Travel insurance details (recommended)</li>
+              <?php endif; ?>
             </ul>
           </div>
         </div>
         <div class="yf-cert-validity">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-          <span><strong>Certificate validity:</strong> Your ICVP is valid for life. Even certificates issued before July 2016 with an original expiry date are now accepted as lifelong under updated WHO regulations. Keep your certificate safe and make multiple copies for your records.</span>
+          <span><?php
+          $yf_cert_validity = rl_field( 'yf_cert_validity' );
+          if ( $yf_cert_validity ) :
+              echo wp_kses_post( $yf_cert_validity );
+          else : ?>
+          <strong>Certificate validity:</strong> Your ICVP is valid for life. Even certificates issued before July 2016 with an original expiry date are now accepted as lifelong under updated WHO regulations. Keep your certificate safe and make multiple copies for your records.
+          <?php endif; ?></span>
         </div>
       </div>
     </div>
@@ -397,8 +536,9 @@ get_header();
 
     <!-- Safety Banner -->
     <div class="yf-safety-banner">
+      <?php $yf_safety_banner_img = rl_field( 'yf_safety_banner_image' ); ?>
       <img
-        src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1600&q=80&auto=format&fit=crop&crop=center"
+        src="<?php echo esc_url( $yf_safety_banner_img ?: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1600&q=80&auto=format&fit=crop&crop=center' ); ?>"
         alt="Healthcare professional reviewing travel health documentation — professional travel vaccination service"
         class="yf-safety-banner-img"
         loading="lazy"
@@ -407,8 +547,8 @@ get_header();
         <div class="yf-safety-banner-caption">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
           <div>
-            <strong>600+ Million Doses Administered Worldwide</strong>
-            <span>WHO-prequalified vaccine · Over 80 years of safety record</span>
+            <strong><?php echo esc_html( rl_field( 'yf_safety_banner_title', '600+ Million Doses Administered Worldwide' ) ); ?></strong>
+            <span><?php echo esc_html( rl_field( 'yf_safety_banner_text', 'WHO-prequalified vaccine · Over 80 years of safety record' ) ); ?></span>
           </div>
         </div>
       </div>
@@ -416,52 +556,76 @@ get_header();
 
     <div class="container">
       <div style="text-align:center;margin-top:72px;">
-        <h2 class="section-title">Side Effects &amp; Safety Information</h2>
-        <p class="section-subtitle" style="max-width:860px;margin:0 auto 0;">The yellow fever vaccine has an excellent safety record with over 600 million doses administered. Serious reactions are extremely rare. We observe all patients for 15 minutes post-vaccination.</p>
+        <h2 class="section-title"><?php echo esc_html( rl_field( 'yf_safety_title', 'Side Effects & Safety Information' ) ); ?></h2>
+        <p class="section-subtitle" style="max-width:860px;margin:0 auto 0;"><?php echo esc_html( rl_field( 'yf_safety_subtitle', 'The yellow fever vaccine has an excellent safety record with over 600 million doses administered. Serious reactions are extremely rare. We observe all patients for 15 minutes post-vaccination.' ) ); ?></p>
       </div>
 
       <div class="yf-two-col equal yf-reveal" style="margin-top:48px;align-items:start;">
         <!-- Left: Common + Rare -->
         <div class="yf-side-col">
-          <h3>Common Side Effects (Affecting 1 in 3 People)</h3>
+          <h3><?php echo esc_html( rl_field( 'yf_safety_common_title', 'Common Side Effects (Affecting 1 in 3 People)' ) ); ?></h3>
           <ul class="yf-side-list">
+            <?php
+            $yf_common_list = rl_field( 'yf_safety_common_list' );
+            if ( $yf_common_list && is_array( $yf_common_list ) ) :
+                foreach ( $yf_common_list as $item ) : ?>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <?php echo esc_html( $item['text'] ); ?></li>
+                <?php endforeach;
+            else : ?>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Injection site pain, redness, or swelling</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Headache</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Muscle aches</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Low-grade fever</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Fatigue</li>
+            <?php endif; ?>
           </ul>
-          <p class="yf-side-note">These mild effects typically appear 5–10 days after vaccination and resolve within 2 weeks without treatment.</p>
+          <p class="yf-side-note"><?php echo esc_html( rl_field( 'yf_safety_common_note', 'These mild effects typically appear 5–10 days after vaccination and resolve within 2 weeks without treatment.' ) ); ?></p>
 
-          <h3 style="margin-top:32px;">Serious Side Effects (Very Rare)</h3>
+          <h3 style="margin-top:32px;"><?php echo esc_html( rl_field( 'yf_safety_serious_title', 'Serious Side Effects (Very Rare)' ) ); ?></h3>
           <div class="yf-side-warning">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#92400E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            <div>Allergic reaction (anaphylaxis): ~8 per million doses · YEL-AND (neurotropic disease): ~4 per million doses · YEL-AVD (viscerotropic disease): ~3 per million doses. We observe all patients for 15 minutes and are trained to respond to any reaction immediately.</div>
+            <div><?php echo wp_kses_post( rl_field( 'yf_safety_serious_text', 'Allergic reaction (anaphylaxis): ~8 per million doses · YEL-AND (neurotropic disease): ~4 per million doses · YEL-AVD (viscerotropic disease): ~3 per million doses. We observe all patients for 15 minutes and are trained to respond to any reaction immediately.' ) ); ?></div>
           </div>
         </div>
 
         <!-- Right: Contraindications + Precautions -->
         <div class="yf-side-col">
-          <h3>Who Should NOT Receive Yellow Fever Vaccine</h3>
+          <h3><?php echo esc_html( rl_field( 'yf_safety_contra_title', 'Who Should NOT Receive Yellow Fever Vaccine' ) ); ?></h3>
           <ul class="yf-contra-list">
+            <?php
+            $yf_contra_list = rl_field( 'yf_safety_contra_list' );
+            if ( $yf_contra_list && is_array( $yf_contra_list ) ) :
+                foreach ( $yf_contra_list as $item ) : ?>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> <?php echo esc_html( $item['text'] ); ?></li>
+                <?php endforeach;
+            else : ?>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Infants under 9 months old</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Severe egg allergy or previous severe reaction to yellow fever vaccine</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Thymus disorders or history of thymus removal</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Severely immunocompromised (symptomatic HIV, chemotherapy, high-dose steroids)</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> People over 60 travelling to areas where vaccination is not essential (risk-benefit assessment required)</li>
+            <?php endif; ?>
           </ul>
 
-          <h3 style="margin-top:28px;">Special Precautions</h3>
+          <h3 style="margin-top:28px;"><?php echo esc_html( rl_field( 'yf_safety_precautions_title', 'Special Precautions' ) ); ?></h3>
           <ul class="yf-precaution-list">
+            <?php
+            $yf_precautions = rl_field( 'yf_safety_precautions' );
+            if ( $yf_precautions && is_array( $yf_precautions ) ) :
+                foreach ( $yf_precautions as $item ) : ?>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/></svg> <?php echo wp_kses_post( $item['text'] ); ?></li>
+                <?php endforeach;
+            else : ?>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/></svg> <strong>Pregnancy:</strong> Only if travel to high-risk area is unavoidable</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/></svg> <strong>Breastfeeding infants under 9 months:</strong> Contraindicated</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/></svg> <strong>Ages 60+:</strong> Requires careful risk-benefit assessment by our pharmacist</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/></svg> <strong>Mild immunosuppression:</strong> Case-by-case evaluation based on medication and dose</li>
+            <?php endif; ?>
           </ul>
         </div>
       </div>
 
-      <div class="yf-safety-box">Safety monitoring by the MHRA, WHO, and NaTHNaC continues to confirm yellow fever vaccine has an excellent, well-established safety profile. Over 600 million doses have been safely administered worldwide over eight decades.</div>
+      <div class="yf-safety-box"><?php echo wp_kses_post( rl_field( 'yf_safety_box', 'Safety monitoring by the MHRA, WHO, and NaTHNaC continues to confirm yellow fever vaccine has an excellent, well-established safety profile. Over 600 million doses have been safely administered worldwide over eight decades.' ) ); ?></div>
     </div>
   </section>
 
@@ -469,16 +633,23 @@ get_header();
   <section class="yf-section-white" id="pricing">
     <div class="container">
       <div style="text-align:center;">
-        <h2 class="section-title">Transparent Yellow Fever Vaccine Pricing</h2>
-        <p class="section-subtitle" style="max-width:700px;margin:0 auto 0;">All-inclusive price. No hidden fees. No consultation charges.</p>
+        <h2 class="section-title"><?php echo esc_html( rl_field( 'yf_pricing_title', 'Transparent Yellow Fever Vaccine Pricing' ) ); ?></h2>
+        <p class="section-subtitle" style="max-width:700px;margin:0 auto 0;"><?php echo esc_html( rl_field( 'yf_pricing_subtitle', 'All-inclusive price. No hidden fees. No consultation charges.' ) ); ?></p>
       </div>
 
       <div class="yf-pricing-wrapper yf-reveal">
         <div class="yf-price-card-single">
-          <div class="yf-price-badge-top">All-Inclusive · Everything Included</div>
-          <div class="yf-price-amount"><sup>£</sup>85</div>
+          <div class="yf-price-badge-top"><?php echo esc_html( rl_field( 'yf_price_badge', 'All-Inclusive · Everything Included' ) ); ?></div>
+          <div class="yf-price-amount"><sup>£</sup><?php echo esc_html( rl_field( 'yf_price_amount', '85' ) ); ?></div>
           <div class="yf-price-per">per person · single lifetime dose</div>
           <ul class="yf-price-includes">
+            <?php
+            $yf_price_includes = rl_field( 'yf_price_includes' );
+            if ( $yf_price_includes && is_array( $yf_price_includes ) ) :
+                foreach ( $yf_price_includes as $item ) : ?>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <?php echo esc_html( $item['text'] ); ?></li>
+                <?php endforeach;
+            else : ?>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Yellow fever vaccine (single lifetime dose)</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> GPhC pharmacist travel health consultation</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Full travel health risk assessment</li>
@@ -487,6 +658,7 @@ get_header();
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Official International Certificate of Vaccination (ICVP)</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Vaccine batch number documentation</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> No additional fees whatsoever</li>
+            <?php endif; ?>
           </ul>
           <div class="yf-price-validity">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
@@ -498,9 +670,9 @@ get_header();
 
       <div class="yf-pricing-info-box yf-reveal">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-        <span>Unlike many vaccination centres, we include the official ICVP certificate in our price — some providers charge £20–40 extra for the certificate. The price you see is the price you pay. We accept cash, card, and contactless payments.</span>
+        <span><?php echo wp_kses_post( rl_field( 'yf_pricing_info', 'Unlike many vaccination centres, we include the official ICVP certificate in our price — some providers charge £20–40 extra for the certificate. The price you see is the price you pay. We accept cash, card, and contactless payments.' ) ); ?></span>
       </div>
-      <p class="yf-pricing-note">Important: Book at least 10 days before your departure date to ensure your certificate is valid on arrival at your destination.</p>
+      <p class="yf-pricing-note"><?php echo esc_html( rl_field( 'yf_pricing_note', 'Important: Book at least 10 days before your departure date to ensure your certificate is valid on arrival at your destination.' ) ); ?></p>
     </div>
   </section>
 
@@ -508,11 +680,30 @@ get_header();
   <section class="yf-section-dark" id="why-us">
     <div class="container">
       <div style="text-align:center;">
-        <h2 class="section-title" style="color:var(--white);">Official Yellow Fever Vaccination Centre</h2>
-        <p class="section-subtitle" style="max-width:800px;margin:0 auto 0;color:rgba(255,255,255,.75);">REY London Pharmacy is an officially designated NaTHNaC Yellow Fever Vaccination Centre — the only type of centre authorised to issue valid ICVP certificates.</p>
+        <h2 class="section-title" style="color:var(--white);"><?php echo esc_html( rl_field( 'yf_why_title', 'Official Yellow Fever Vaccination Centre' ) ); ?></h2>
+        <p class="section-subtitle" style="max-width:800px;margin:0 auto 0;color:rgba(255,255,255,.75);"><?php echo esc_html( rl_field( 'yf_why_subtitle', 'REY London Pharmacy is an officially designated NaTHNaC Yellow Fever Vaccination Centre — the only type of centre authorised to issue valid ICVP certificates.' ) ); ?></p>
       </div>
 
       <div class="yf-why-grid yf-reveal">
+        <?php
+        $yf_why_cards = rl_field( 'yf_why_cards' );
+        if ( $yf_why_cards && is_array( $yf_why_cards ) ) :
+            $why_icons = array(
+                '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>',
+                '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>',
+                '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>',
+                '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>',
+                '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
+                '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>',
+            );
+            foreach ( $yf_why_cards as $i => $card ) : ?>
+        <div class="yf-why-card">
+          <div class="yf-why-icon"><?php echo $why_icons[ $i % count( $why_icons ) ]; ?></div>
+          <h3><?php echo esc_html( $card['title'] ); ?></h3>
+          <p><?php echo esc_html( $card['description'] ); ?></p>
+        </div>
+            <?php endforeach;
+        else : ?>
         <div class="yf-why-card">
           <div class="yf-why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
           <h3>NaTHNaC Registered Centre</h3>
@@ -543,6 +734,7 @@ get_header();
           <h3>Complete Travel Health Service</h3>
           <p>Yellow fever vaccination is often combined with other travel vaccines — typhoid, hepatitis A/B, rabies, meningitis. We provide comprehensive pre-travel consultations covering all destination-specific risks in one appointment.</p>
         </div>
+        <?php endif; ?>
       </div>
     </div>
   </section>
@@ -551,10 +743,36 @@ get_header();
   <section class="yf-locations" id="locations">
     <div class="container">
       <div style="text-align:center;">
-        <h2 class="section-title">Visit Our Yellow Fever Vaccination Centres in Chislehurst</h2>
+        <h2 class="section-title"><?php echo esc_html( rl_field( 'yf_locations_title', 'Visit Our Yellow Fever Vaccination Centres in Chislehurst' ) ); ?></h2>
       </div>
 
       <div class="yf-loc-grid yf-reveal">
+        <?php
+        $yf_locations = rl_field( 'yf_locations' );
+        if ( $yf_locations && is_array( $yf_locations ) ) :
+            foreach ( $yf_locations as $loc ) : ?>
+        <div class="yf-loc-card">
+          <h3><?php echo esc_html( $loc['name'] ); ?></h3>
+          <div class="yf-loc-detail">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span><?php echo esc_html( $loc['address'] ); ?></span>
+          </div>
+          <div class="yf-loc-detail">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3"/></svg>
+            <a href="tel:<?php echo esc_attr( preg_replace( '/\s+/', '', $loc['phone'] ) ); ?>"><?php echo esc_html( $loc['phone'] ); ?></a>
+          </div>
+          <div class="yf-loc-detail">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span><?php echo esc_html( $loc['hours'] ); ?></span>
+          </div>
+          <div class="yf-loc-detail">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span><?php echo esc_html( $loc['parking'] ); ?></span>
+          </div>
+          <a href="<?php echo esc_url( $loc['directions_url'] ); ?>" target="_blank" class="yf-loc-cta"><?php echo esc_html( $loc['cta_text'] ); ?></a>
+        </div>
+            <?php endforeach;
+        else : ?>
         <div class="yf-loc-card">
           <h3>Pond Pharmacy — Chislehurst</h3>
           <div class="yf-loc-detail">
@@ -595,9 +813,10 @@ get_header();
           </div>
           <a href="https://maps.google.com/?q=59+Chislehurst+Road+BR7+5NP" target="_blank" class="yf-loc-cta">Book Station Appointment →</a>
         </div>
+        <?php endif; ?>
       </div>
 
-      <div class="yf-serving-text">Conveniently located to serve patients across Chislehurst, Bromley, Orpington, Sidcup, Bexley, Eltham, and surrounding South East London areas. Free parking available at both locations.</div>
+      <div class="yf-serving-text"><?php echo esc_html( rl_field( 'yf_locations_serving', 'Conveniently located to serve patients across Chislehurst, Bromley, Orpington, Sidcup, Bexley, Eltham, and surrounding South East London areas. Free parking available at both locations.' ) ); ?></div>
     </div>
   </section>
 
@@ -730,13 +949,21 @@ get_header();
       <!-- CTA top -->
       <div class="yf-footer-cta-top">
         <div class="yf-cta-badges">
+          <?php
+          $yf_cta_badges = rl_field( 'yf_cta_badges' );
+          if ( $yf_cta_badges && is_array( $yf_cta_badges ) ) :
+              foreach ( $yf_cta_badges as $badge ) : ?>
+          <span class="yf-cta-badge"><?php echo esc_html( $badge['text'] ); ?></span>
+              <?php endforeach;
+          else : ?>
           <span class="yf-cta-badge">NaTHNaC Registered</span>
           <span class="yf-cta-badge">Official Certificate Included</span>
           <span class="yf-cta-badge">Same-Day Service</span>
           <span class="yf-cta-badge">GPhC Pharmacists</span>
+          <?php endif; ?>
         </div>
-        <h2 class="yf-footer-cta-title">Protect Yourself Before You Travel</h2>
-        <p class="yf-footer-cta-sub">Don't risk being denied boarding or quarantined on arrival. Book your yellow fever vaccination at our registered vaccination centre in Chislehurst today.</p>
+        <h2 class="yf-footer-cta-title"><?php echo esc_html( rl_field( 'yf_cta_title', 'Protect Yourself Before You Travel' ) ); ?></h2>
+        <p class="yf-footer-cta-sub"><?php echo esc_html( rl_field( 'yf_cta_subtitle', 'Don\'t risk being denied boarding or quarantined on arrival. Book your yellow fever vaccination at our registered vaccination centre in Chislehurst today.' ) ); ?></p>
         <div class="cta-buttons">
           <a href="tel:02084673158" class="btn-cta-primary">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
