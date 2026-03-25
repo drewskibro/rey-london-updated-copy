@@ -1669,19 +1669,121 @@ acf_add_local_field_group( array(
     'key'      => 'group_rl_vitamin_b12',
     'title'    => 'Vitamin B12 Page',
     'fields'   => array(
+        // ── HERO ──
         array( 'key' => 'field_rl_b12_hero_tab', 'label' => 'Hero Section', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_b12_hero_pill', 'label' => 'Hero Pill Text', 'name' => 'b12_hero_pill', 'type' => 'text', 'default_value' => 'Private Injection Service' ),
         array( 'key' => 'field_rl_b12_hero_title', 'label' => 'Hero Title', 'name' => 'b12_hero_title', 'type' => 'text', 'default_value' => 'Vitamin B12 Injections in South East London' ),
         array( 'key' => 'field_rl_b12_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'b12_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'Boost your energy, lift brain fog, and address B12 deficiency with a fast-acting intramuscular injection. No GP referral needed. Walk-ins welcome at both Chislehurst pharmacies.' ),
         array( 'key' => 'field_rl_b12_hero_image', 'label' => 'Hero Image', 'name' => 'b12_hero_image', 'type' => 'image', 'return_format' => 'url' ),
-        array( 'key' => 'field_rl_b12_pricing_tab', 'label' => 'Pricing', 'type' => 'tab' ),
         array(
-            'key' => 'field_rl_b12_pricing', 'label' => 'Pricing Options', 'name' => 'b12_pricing', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Pricing Option',
+            'key' => 'field_rl_b12_hero_trust', 'label' => 'Trust Strip Items', 'name' => 'b12_hero_trust', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Item',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_b12_trust_text', 'label' => 'Text', 'name' => 'text', 'type' => 'text' ),
+            ),
+        ),
+
+        // ── STATS ──
+        array( 'key' => 'field_rl_b12_stats_tab', 'label' => 'Stats', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_b12_stats', 'label' => 'Stat Cards', 'name' => 'b12_stats', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Stat',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_b12_stat_number', 'label' => 'Number', 'name' => 'number', 'type' => 'text' ),
+                array( 'key' => 'field_rl_b12_stat_label', 'label' => 'Label', 'name' => 'label', 'type' => 'text' ),
+            ),
+        ),
+
+        // ── WHAT IS B12 ──
+        array( 'key' => 'field_rl_b12_about_tab', 'label' => 'What is B12', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_b12_about_image', 'label' => 'Section Image', 'name' => 'b12_about_image', 'type' => 'image', 'return_format' => 'url' ),
+        array( 'key' => 'field_rl_b12_about_badge', 'label' => 'Image Badge Text', 'name' => 'b12_about_badge', 'type' => 'text', 'default_value' => '6–8 wks' ),
+        array( 'key' => 'field_rl_b12_about_badge_desc', 'label' => 'Image Badge Description', 'name' => 'b12_about_badge_desc', 'type' => 'text', 'default_value' => 'How long a single injection can sustain optimal B12 levels' ),
+        array( 'key' => 'field_rl_b12_about_eyebrow', 'label' => 'Eyebrow', 'name' => 'b12_about_eyebrow', 'type' => 'text', 'default_value' => 'THE ESSENTIAL VITAMIN' ),
+        array( 'key' => 'field_rl_b12_about_heading', 'label' => 'Heading', 'name' => 'b12_about_heading', 'type' => 'text', 'default_value' => 'Why Vitamin B12 matters more than you think' ),
+        array( 'key' => 'field_rl_b12_about_intro', 'label' => 'Intro Text', 'name' => 'b12_about_intro', 'type' => 'textarea', 'rows' => 3 ),
+        array(
+            'key' => 'field_rl_b12_about_facts', 'label' => 'Fact Cards', 'name' => 'b12_about_facts', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Fact',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_b12_fact_title', 'label' => 'Title', 'name' => 'title', 'type' => 'text' ),
+                array( 'key' => 'field_rl_b12_fact_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 2 ),
+            ),
+        ),
+
+        // ── SYMPTOMS ──
+        array( 'key' => 'field_rl_b12_symptoms_tab', 'label' => 'Symptoms', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_b12_symptoms_pill', 'label' => 'Pill Text', 'name' => 'b12_symptoms_pill', 'type' => 'text', 'default_value' => 'Recognise the Signs' ),
+        array( 'key' => 'field_rl_b12_symptoms_title', 'label' => 'Title', 'name' => 'b12_symptoms_title', 'type' => 'text', 'default_value' => 'Could you be B12 deficient?' ),
+        array( 'key' => 'field_rl_b12_symptoms_desc', 'label' => 'Description', 'name' => 'b12_symptoms_desc', 'type' => 'textarea', 'rows' => 2 ),
+        array(
+            'key' => 'field_rl_b12_symptoms_cards', 'label' => 'Symptom Cards', 'name' => 'b12_symptoms_cards', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Symptom',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_b12_symp_title', 'label' => 'Title', 'name' => 'title', 'type' => 'text' ),
+                array( 'key' => 'field_rl_b12_symp_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 2 ),
+            ),
+        ),
+        array( 'key' => 'field_rl_b12_at_risk_note', 'label' => 'At-Risk Note', 'name' => 'b12_at_risk_note', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0 ),
+
+        // ── INJECTION VS TABLETS ──
+        array( 'key' => 'field_rl_b12_compare_tab', 'label' => 'Injection vs Tablets', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_b12_compare_title', 'label' => 'Title', 'name' => 'b12_compare_title', 'type' => 'text', 'default_value' => 'Injection vs oral supplements' ),
+        array( 'key' => 'field_rl_b12_compare_subtitle', 'label' => 'Subtitle', 'name' => 'b12_compare_subtitle', 'type' => 'textarea', 'rows' => 2 ),
+        array(
+            'key' => 'field_rl_b12_injection_pros', 'label' => 'Injection Advantages', 'name' => 'b12_injection_pros', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add',
+            'sub_fields' => array( array( 'key' => 'field_rl_b12_inj_pro_text', 'label' => 'Text', 'name' => 'text', 'type' => 'text' ) ),
+        ),
+        array(
+            'key' => 'field_rl_b12_tablet_cons', 'label' => 'Tablet Disadvantages', 'name' => 'b12_tablet_cons', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add',
+            'sub_fields' => array( array( 'key' => 'field_rl_b12_tab_con_text', 'label' => 'Text', 'name' => 'text', 'type' => 'text' ) ),
+        ),
+
+        // ── HOW IT WORKS ──
+        array( 'key' => 'field_rl_b12_process_tab', 'label' => 'How It Works', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_b12_process_title', 'label' => 'Title', 'name' => 'b12_process_title', 'type' => 'text', 'default_value' => 'Your B12 injection appointment' ),
+        array( 'key' => 'field_rl_b12_process_subtitle', 'label' => 'Subtitle', 'name' => 'b12_process_subtitle', 'type' => 'textarea', 'rows' => 2 ),
+        array(
+            'key' => 'field_rl_b12_process_steps', 'label' => 'Steps', 'name' => 'b12_process_steps', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Step',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_b12_step_image', 'label' => 'Image', 'name' => 'image', 'type' => 'image', 'return_format' => 'url' ),
+                array( 'key' => 'field_rl_b12_step_title', 'label' => 'Title', 'name' => 'title', 'type' => 'text' ),
+                array( 'key' => 'field_rl_b12_step_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 3 ),
+                array( 'key' => 'field_rl_b12_step_meta', 'label' => 'Meta Note', 'name' => 'meta', 'type' => 'text' ),
+            ),
+        ),
+
+        // ── BENEFITS ──
+        array( 'key' => 'field_rl_b12_benefits_tab', 'label' => 'Benefits', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_b12_benefits_title', 'label' => 'Title', 'name' => 'b12_benefits_title', 'type' => 'text', 'default_value' => 'Benefits most people notice' ),
+        array( 'key' => 'field_rl_b12_benefits_subtitle', 'label' => 'Subtitle', 'name' => 'b12_benefits_subtitle', 'type' => 'textarea', 'rows' => 2 ),
+        array(
+            'key' => 'field_rl_b12_benefits_cards', 'label' => 'Benefit Cards', 'name' => 'b12_benefits_cards', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Benefit',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_b12_benefit_title', 'label' => 'Title', 'name' => 'title', 'type' => 'text' ),
+                array( 'key' => 'field_rl_b12_benefit_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 2 ),
+            ),
+        ),
+
+        // ── PRICING ──
+        array( 'key' => 'field_rl_b12_pricing_tab', 'label' => 'Pricing', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_b12_pricing_pill', 'label' => 'Pill Text', 'name' => 'b12_pricing_pill', 'type' => 'text', 'default_value' => 'Transparent Pricing' ),
+        array( 'key' => 'field_rl_b12_pricing_title', 'label' => 'Title', 'name' => 'b12_pricing_title', 'type' => 'text', 'default_value' => 'Simple, affordable B12 injection pricing' ),
+        array( 'key' => 'field_rl_b12_pricing_desc', 'label' => 'Description', 'name' => 'b12_pricing_desc', 'type' => 'textarea', 'rows' => 2 ),
+        array(
+            'key' => 'field_rl_b12_pricing', 'label' => 'Pricing Cards', 'name' => 'b12_pricing', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Pricing Option',
             'sub_fields' => array(
                 array( 'key' => 'field_rl_b12_price_name', 'label' => 'Name', 'name' => 'name', 'type' => 'text' ),
                 array( 'key' => 'field_rl_b12_price_price', 'label' => 'Price', 'name' => 'price', 'type' => 'text' ),
                 array( 'key' => 'field_rl_b12_price_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'text' ),
+                array( 'key' => 'field_rl_b12_price_featured', 'label' => 'Featured?', 'name' => 'featured', 'type' => 'true_false', 'default_value' => 0 ),
+                array( 'key' => 'field_rl_b12_price_badge', 'label' => 'Badge Text', 'name' => 'badge', 'type' => 'text', 'instructions' => 'e.g. "Best Value"' ),
             ),
         ),
+        array( 'key' => 'field_rl_b12_pricing_note', 'label' => 'Pricing Note', 'name' => 'b12_pricing_note', 'type' => 'textarea', 'rows' => 2 ),
+
+        // ── LOCATIONS ──
+        array( 'key' => 'field_rl_b12_locations_tab', 'label' => 'Locations', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_b12_locations_title', 'label' => 'Title', 'name' => 'b12_locations_title', 'type' => 'text', 'default_value' => 'Two South East London locations' ),
+        array( 'key' => 'field_rl_b12_locations_subtitle', 'label' => 'Subtitle', 'name' => 'b12_locations_subtitle', 'type' => 'textarea', 'rows' => 2 ),
+
+        // ── FAQs (existing) ──
         array( 'key' => 'field_rl_b12_faq_tab', 'label' => 'FAQs', 'type' => 'tab' ),
         array(
             'key' => 'field_rl_b12_faqs', 'label' => 'FAQs', 'name' => 'b12_faqs', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add FAQ',
@@ -1689,6 +1791,15 @@ acf_add_local_field_group( array(
                 array( 'key' => 'field_rl_b12_faq_q', 'label' => 'Question', 'name' => 'question', 'type' => 'text' ),
                 array( 'key' => 'field_rl_b12_faq_a', 'label' => 'Answer', 'name' => 'answer', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0 ),
             ),
+        ),
+
+        // ── FOOTER CTA ──
+        array( 'key' => 'field_rl_b12_cta_tab', 'label' => 'Footer CTA', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_b12_cta_title', 'label' => 'CTA Title', 'name' => 'b12_cta_title', 'type' => 'text', 'default_value' => 'Feel the difference a B12 injection makes' ),
+        array( 'key' => 'field_rl_b12_cta_subtitle', 'label' => 'CTA Subtitle', 'name' => 'b12_cta_subtitle', 'type' => 'textarea', 'rows' => 2 ),
+        array(
+            'key' => 'field_rl_b12_cta_badges', 'label' => 'CTA Badges', 'name' => 'b12_cta_badges', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Badge',
+            'sub_fields' => array( array( 'key' => 'field_rl_b12_cta_badge_text', 'label' => 'Text', 'name' => 'text', 'type' => 'text' ) ),
         ),
     ),
     'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-vitamin-b12.php' ) ) ),
