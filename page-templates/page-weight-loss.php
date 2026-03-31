@@ -64,10 +64,12 @@ get_header();
       <div class="wl-hero-visual">
         <div class="wl-hero-img-stack">
           <div class="wl-hero-img wl-hero-img-main">
-            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=700&h=800&fit=crop" alt="Medical weight loss consultation at Chislehurst Pharmacy Group pharmacy">
+            <?php $wl_hero_main = rl_field( 'wl_hero_image_main' ); ?>
+            <img src="<?php echo esc_url( $wl_hero_main ?: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=700&h=800&fit=crop' ); ?>" alt="Medical weight loss consultation at Chislehurst Pharmacy Group pharmacy">
           </div>
           <div class="wl-hero-img wl-hero-img-secondary">
-            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500&h=400&fit=crop" alt="Weight loss results">
+            <?php $wl_hero_sec = rl_field( 'wl_hero_image_secondary' ); ?>
+            <img src="<?php echo esc_url( $wl_hero_sec ?: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500&h=400&fit=crop' ); ?>" alt="Weight loss results">
           </div>
         </div>
       </div>
