@@ -347,7 +347,7 @@ $booking_url   = rl_booking_url();
             <a href="<?php echo esc_url( $booking_url ); ?>" class="btn-primary">Book Consultation</a>
 
             <!-- Mobile Menu Toggle -->
-            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+            <button class="mobile-menu-toggle" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
               <span class="hamburger-line"></span>
               <span class="hamburger-line"></span>
               <span class="hamburger-line"></span>
@@ -389,3 +389,92 @@ $booking_url   = rl_booking_url();
         </div>
       </div>
     </div>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+    <!-- Mobile Navigation Drawer -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <div class="mobile-nav-header">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
+          <?php if ( $logo_url ) : ?>
+            <img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php echo esc_attr( $pharmacy_name ); ?>" class="logo-img" style="height:36px" />
+          <?php else : ?>
+            <span class="logo-text"><?php echo esc_html( $pharmacy_name ); ?></span>
+          <?php endif; ?>
+        </a>
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="mobile-nav-body">
+        <!-- Services Accordion -->
+        <div class="mobile-nav-item">
+          <button class="mobile-nav-trigger" aria-expanded="false">
+            Services
+            <svg class="mobile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="mobile-nav-sub">
+            <a href="<?php echo esc_url( home_url( '/prescription-services/' ) ); ?>" class="mobile-nav-sub-link">NHS Prescriptions</a>
+            <a href="<?php echo esc_url( home_url( '/pharmacy-first/' ) ); ?>" class="mobile-nav-sub-link">Pharmacy First</a>
+            <a href="<?php echo esc_url( home_url( '/nhs-vaccinations/' ) ); ?>" class="mobile-nav-sub-link">NHS Vaccinations</a>
+            <a href="<?php echo esc_url( home_url( '/vitamin-b12-injection/' ) ); ?>" class="mobile-nav-sub-link">Vitamin B12 Injections</a>
+            <a href="<?php echo esc_url( home_url( '/health-checks/' ) ); ?>" class="mobile-nav-sub-link">Health Checks</a>
+            <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="mobile-nav-sub-link">Weight Loss</a>
+            <a href="<?php echo esc_url( home_url( '/hair-loss/' ) ); ?>" class="mobile-nav-sub-link">Hair Loss</a>
+            <a href="<?php echo esc_url( home_url( '/hpv-vaccine/' ) ); ?>" class="mobile-nav-sub-link">HPV Vaccine</a>
+          </div>
+        </div>
+
+        <!-- Travel Health Accordion -->
+        <div class="mobile-nav-item">
+          <button class="mobile-nav-trigger" aria-expanded="false">
+            Travel Health
+            <svg class="mobile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="mobile-nav-sub">
+            <a href="<?php echo esc_url( home_url( '/hepatitis-vaccine-london/' ) ); ?>" class="mobile-nav-sub-link">Hepatitis A &amp; B</a>
+            <a href="<?php echo esc_url( home_url( '/yellow-fever-vaccine-london/' ) ); ?>" class="mobile-nav-sub-link">Yellow Fever</a>
+            <a href="<?php echo esc_url( home_url( '/hpv-vaccine/' ) ); ?>" class="mobile-nav-sub-link">HPV Vaccine</a>
+            <a href="<?php echo esc_url( home_url( '/travel-thailand/' ) ); ?>" class="mobile-nav-sub-link">Thailand</a>
+            <a href="<?php echo esc_url( home_url( '/travel-india/' ) ); ?>" class="mobile-nav-sub-link">India</a>
+            <a href="<?php echo esc_url( home_url( '/travel-gambia/' ) ); ?>" class="mobile-nav-sub-link">The Gambia</a>
+            <a href="<?php echo esc_url( home_url( '/travel-health/' ) ); ?>" class="mobile-nav-sub-link">Travel Consultations</a>
+            <a href="<?php echo esc_url( home_url( '/malaria-prevention/' ) ); ?>" class="mobile-nav-sub-link">Malaria Prevention</a>
+          </div>
+        </div>
+
+        <!-- Health Hub (direct link) -->
+        <a href="<?php echo esc_url( home_url( '/health-hub/' ) ); ?>" class="mobile-nav-link">Health Hub</a>
+
+        <!-- About Accordion -->
+        <div class="mobile-nav-item">
+          <button class="mobile-nav-trigger" aria-expanded="false">
+            About
+            <svg class="mobile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="mobile-nav-sub">
+            <a href="<?php echo esc_url( home_url( '/meet-the-team/' ) ); ?>" class="mobile-nav-sub-link">Meet the Team</a>
+            <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="mobile-nav-sub-link">Contact &amp; Locations</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mobile-nav-footer">
+        <a href="<?php echo esc_url( $booking_url ); ?>" class="mobile-nav-cta">
+          Book Consultation
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+          </svg>
+        </a>
+      </div>
+    </nav>
