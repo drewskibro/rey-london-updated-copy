@@ -508,6 +508,7 @@ body {
   .header-actions .btn-primary {
     padding: 10px 18px;
     font-size: 13px;
+    text-align: center;
   }
 
   .header-actions .header-search-btn {
