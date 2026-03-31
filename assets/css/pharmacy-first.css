@@ -627,12 +627,180 @@
   text-align: center;
 }
 
+/* ── LIFESTYLE BANNER ── */
+.pf-lifestyle-banner {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+}
+
+.pf-lifestyle-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  transition: transform .6s cubic-bezier(.4,0,.2,1);
+}
+
+.pf-lifestyle-banner:hover .pf-lifestyle-banner-img {
+  transform: scale(1.03);
+}
+
+.pf-lifestyle-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(6,22,77,.75) 0%, rgba(6,22,77,.3) 50%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 32px 48px;
+}
+
+.pf-lifestyle-banner-caption {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 16px;
+  padding: 18px 24px;
+  color: #fff;
+}
+
+.pf-lifestyle-banner-caption svg { flex-shrink: 0; color: #7ee8a2; }
+
+.pf-lifestyle-banner-caption div { display: flex; flex-direction: column; gap: 3px; }
+
+.pf-lifestyle-banner-caption strong { font-size: 15px; font-weight: 700; line-height: 1.3; }
+
+.pf-lifestyle-banner-caption span { font-size: 13px; opacity: .85; font-weight: 400; }
+
+/* ── LOCATIONS ── */
+.pf-locations { padding: 90px 0; background: #fff; }
+
+.pf-loc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.pf-loc-card {
+  background: var(--light-bg);
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid rgba(10,47,138,.08);
+  transition: all .4s;
+}
+
+.pf-loc-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(10,47,138,.12);
+}
+
+.pf-loc-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 20px;
+}
+
+.pf-loc-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+  font-size: 15px;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.pf-loc-detail svg { flex-shrink: 0; color: var(--primary-blue); margin-top: 2px; }
+
+.pf-loc-detail a {
+  color: var(--primary-blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.pf-loc-detail a:hover { text-decoration: underline; }
+
+.pf-loc-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: rgba(10,47,138,.08);
+  color: var(--primary-blue);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: all .3s;
+  border: 1px solid rgba(10,47,138,.15);
+}
+
+.pf-loc-cta:hover {
+  background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+  color: #fff;
+  border-color: transparent;
+}
+
+.pf-serving-text {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 15px;
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+/* ── NEWSLETTER ROW (inside footer CTA) ── */
+.pf-footer-cta-divider {
+  height: 1px;
+  background: rgba(255,255,255,.15);
+  margin: 48px 0 0;
+}
+
+.pf-footer-newsletter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  padding: 48px 0;
+  flex-wrap: wrap;
+}
+
+.pf-footer-newsletter-text h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.pf-footer-newsletter-text p {
+  font-size: 15px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.6;
+  max-width: 420px;
+}
+
+.pf-footer-newsletter-form {
+  flex-shrink: 0;
+  min-width: 360px;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .pf-hero-grid { grid-template-columns: 1fr; gap: 40px; }
   .pf-hero-visual { display: none; }
   .pf-quick-grid { grid-template-columns: repeat(3, 1fr); }
   .pf-steps-grid { grid-template-columns: repeat(3, 1fr); }
+  .pf-lifestyle-banner { height: 340px; }
+  .pf-lifestyle-banner-overlay { padding: 24px 32px; }
+  .pf-loc-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -645,15 +813,24 @@
   .pf-quick-grid { grid-template-columns: repeat(2, 1fr); }
   .pf-quick-grid .pf-quick-card:last-child:nth-child(odd) { grid-column: 1 / -1; max-width: 240px; margin: 0 auto; }
 
-  .pf-section-light, .pf-section-white, .pf-faq-section { padding: 56px 0; }
+  .pf-section-light, .pf-section-white, .pf-faq-section, .pf-locations { padding: 56px 0; }
   .pf-section-title { font-size: 28px; }
   .pf-conditions-grid { grid-template-columns: 1fr; }
   .pf-condition-card:last-child:nth-child(odd) { max-width: 100%; }
   .pf-steps-grid { grid-template-columns: 1fr; }
+
+  .pf-lifestyle-banner { height: 260px; }
+  .pf-lifestyle-banner-overlay { padding: 16px 20px; }
+  .pf-lifestyle-banner-caption { padding: 12px 16px; }
+  .pf-lifestyle-banner-caption strong { font-size: 13px; }
+  .pf-lifestyle-banner-caption span { display: none; }
 
   .pf-footer-cta-block { padding: 56px 0; }
   .pf-footer-cta-title { font-size: 28px; }
   .pf-cta-buttons { flex-direction: column; align-items: center; }
   .pf-cta-primary, .pf-cta-secondary { width: 100%; justify-content: center; text-align: center; }
   .pf-cta-checks { flex-direction: column; align-items: center; gap: 8px; }
+
+  .pf-footer-newsletter-row { flex-direction: column; gap: 28px; }
+  .pf-footer-newsletter-form { min-width: 0; width: 100%; }
 }
