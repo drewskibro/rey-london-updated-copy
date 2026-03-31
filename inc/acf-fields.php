@@ -1137,6 +1137,12 @@ acf_add_local_field_group( array(
             ),
         ),
 
+        // ── HERO CTA BUTTONS ──
+        array( 'key' => 'field_rl_hpv_hero_cta1_text', 'label' => 'Button 1 Text', 'name' => 'hpv_hero_cta1_text', 'type' => 'text', 'default_value' => 'Book My Vaccination' ),
+        array( 'key' => 'field_rl_hpv_hero_cta1_url', 'label' => 'Button 1 URL', 'name' => 'hpv_hero_cta1_url', 'type' => 'url', 'default_value' => '#book' ),
+        array( 'key' => 'field_rl_hpv_hero_cta2_text', 'label' => 'Button 2 Text', 'name' => 'hpv_hero_cta2_text', 'type' => 'text', 'default_value' => 'Check Eligibility First' ),
+        array( 'key' => 'field_rl_hpv_hero_cta2_url', 'label' => 'Button 2 URL', 'name' => 'hpv_hero_cta2_url', 'type' => 'url', 'default_value' => '#eligibility' ),
+
         // ── KEY FACTS / AT A GLANCE ──
         array( 'key' => 'field_rl_hpv_keyfacts_tab', 'label' => 'Key Facts', 'type' => 'tab' ),
         array( 'key' => 'field_rl_hpv_keyfacts_pill', 'label' => 'Pill Label', 'name' => 'hpv_keyfacts_pill', 'type' => 'text', 'default_value' => 'At a Glance' ),
