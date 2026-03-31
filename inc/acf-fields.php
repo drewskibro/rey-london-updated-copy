@@ -2093,6 +2093,12 @@ acf_add_local_field_group( array(
             ),
         ),
 
+        // ── LIFESTYLE BANNER ──
+        array( 'key' => 'field_rl_pf_banner_tab', 'label' => 'Lifestyle Banner', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_pf_banner_image', 'label' => 'Banner Image', 'name' => 'pf_banner_image', 'type' => 'image', 'return_format' => 'url', 'instructions' => 'Full-width lifestyle photo (recommended 1600px wide). Shows between Conditions and How It Works.' ),
+        array( 'key' => 'field_rl_pf_banner_title', 'label' => 'Banner Caption Title', 'name' => 'pf_banner_title', 'type' => 'text', 'default_value' => 'NHS Pharmacy First' ),
+        array( 'key' => 'field_rl_pf_banner_text', 'label' => 'Banner Caption Text', 'name' => 'pf_banner_text', 'type' => 'text', 'default_value' => 'Free treatment for 7 common conditions — no GP referral needed' ),
+
         // ── HOW IT WORKS ──
         array( 'key' => 'field_rl_pf_hiw_tab', 'label' => 'How It Works', 'type' => 'tab' ),
         array( 'key' => 'field_rl_pf_hiw_eyebrow', 'label' => 'Eyebrow', 'name' => 'pf_hiw_eyebrow', 'type' => 'text', 'default_value' => 'HOW IT WORKS' ),
@@ -2111,6 +2117,22 @@ acf_add_local_field_group( array(
         array( 'key' => 'field_rl_pf_elig_eyebrow', 'label' => 'Eyebrow', 'name' => 'pf_elig_eyebrow', 'type' => 'text', 'default_value' => 'WHO IS ELIGIBLE?' ),
         array( 'key' => 'field_rl_pf_elig_title', 'label' => 'Title', 'name' => 'pf_elig_title', 'type' => 'text', 'default_value' => 'Is Pharmacy First Right for You?' ),
         array( 'key' => 'field_rl_pf_elig_body', 'label' => 'Body Content', 'name' => 'pf_elig_body', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0 ),
+
+        // ── FAQs ──
+        // ── LOCATIONS ──
+        array( 'key' => 'field_rl_pf_locations_tab', 'label' => 'Locations', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_pf_locations_title', 'label' => 'Section Title', 'name' => 'pf_locations_title', 'type' => 'text', 'default_value' => 'Visit Us at Either Chislehurst Location' ),
+        array(
+            'key' => 'field_rl_pf_locations', 'label' => 'Locations', 'name' => 'pf_locations', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Location',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_pf_loc_name', 'label' => 'Name', 'name' => 'name', 'type' => 'text' ),
+                array( 'key' => 'field_rl_pf_loc_address', 'label' => 'Address', 'name' => 'address', 'type' => 'text' ),
+                array( 'key' => 'field_rl_pf_loc_phone', 'label' => 'Phone', 'name' => 'phone', 'type' => 'text' ),
+                array( 'key' => 'field_rl_pf_loc_hours', 'label' => 'Hours', 'name' => 'hours', 'type' => 'text' ),
+                array( 'key' => 'field_rl_pf_loc_directions', 'label' => 'Directions URL', 'name' => 'directions_url', 'type' => 'url' ),
+            ),
+        ),
+        array( 'key' => 'field_rl_pf_locations_serving', 'label' => 'Serving Text', 'name' => 'pf_locations_serving', 'type' => 'textarea', 'rows' => 2 ),
 
         // ── FAQs ──
         array( 'key' => 'field_rl_pf_faq_tab', 'label' => 'FAQs', 'type' => 'tab' ),

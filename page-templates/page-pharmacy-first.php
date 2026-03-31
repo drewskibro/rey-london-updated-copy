@@ -183,6 +183,26 @@ $booking_url = rl_booking_url();
     </div>
   </section>
 
+  <!-- ===================== LIFESTYLE BANNER ===================== -->
+  <div class="pf-lifestyle-banner">
+    <?php $pf_banner_img = rl_field( 'pf_banner_image' ); ?>
+    <img
+      src="<?php echo esc_url( $pf_banner_img ?: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1600&q=80&auto=format&fit=crop&crop=center' ); ?>"
+      alt="Pharmacist consulting with a patient at Chislehurst Pharmacy"
+      class="pf-lifestyle-banner-img"
+      loading="lazy"
+    />
+    <div class="pf-lifestyle-banner-overlay">
+      <div class="pf-lifestyle-banner-caption">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <div>
+          <strong><?php echo esc_html( rl_field( 'pf_banner_title', 'NHS Pharmacy First' ) ); ?></strong>
+          <span><?php echo esc_html( rl_field( 'pf_banner_text', 'Free treatment for 7 common conditions — no GP referral needed' ) ); ?></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ===================== HOW IT WORKS ===================== -->
   <section class="pf-section-white" id="how-it-works">
     <div class="container">
@@ -238,6 +258,53 @@ $booking_url = rl_booking_url();
     </div>
   </section>
 
+  <!-- ===================== LOCATIONS ===================== -->
+  <section class="pf-locations" id="locations">
+    <div class="container">
+      <div style="text-align:center; max-width:720px; margin:0 auto 48px;">
+        <div class="pf-eyebrow pf-reveal">OUR LOCATIONS</div>
+        <h2 class="pf-section-title pf-reveal"><?php echo wp_kses_post( rl_field( 'pf_locations_title', 'Visit Us at Either <span class="gradient-text">Chislehurst Location</span>' ) ); ?></h2>
+      </div>
+
+      <div class="pf-loc-grid pf-reveal">
+        <?php
+        $pf_locations = rl_field( 'pf_locations' );
+        if ( $pf_locations && is_array( $pf_locations ) ) :
+            foreach ( $pf_locations as $loc ) : ?>
+        <div class="pf-loc-card">
+          <h3><?php echo esc_html( $loc['name'] ); ?></h3>
+          <div class="pf-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span><?php echo esc_html( $loc['address'] ); ?></span></div>
+          <div class="pf-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3"/></svg><a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', $loc['phone'] ) ); ?>"><?php echo esc_html( $loc['phone'] ); ?></a></div>
+          <?php if ( ! empty( $loc['hours'] ) ) : ?>
+          <div class="pf-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span><?php echo esc_html( $loc['hours'] ); ?></span></div>
+          <?php endif; ?>
+          <?php if ( ! empty( $loc['directions_url'] ) ) : ?>
+          <a href="<?php echo esc_url( $loc['directions_url'] ); ?>" target="_blank" class="pf-loc-cta">Get Directions &rarr;</a>
+          <?php endif; ?>
+        </div>
+            <?php endforeach;
+        else : ?>
+        <div class="pf-loc-card">
+          <h3>Pond Pharmacy — Chislehurst</h3>
+          <div class="pf-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>59 High Street, Chislehurst, BR7 5AF</span></div>
+          <div class="pf-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3"/></svg><a href="tel:02084673158">020 8467 3158</a></div>
+          <div class="pf-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>Mon–Fri: 9am–6pm &nbsp;|&nbsp; Sat: 9am–1pm &nbsp;|&nbsp; Sun: Closed</span></div>
+          <a href="https://maps.google.com/?q=59+High+Street+Chislehurst+BR7+5AF" target="_blank" class="pf-loc-cta">Get Directions &rarr;</a>
+        </div>
+        <div class="pf-loc-card">
+          <h3>Chislehurst Pharmacy</h3>
+          <div class="pf-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>59 Chislehurst Road, Chislehurst, BR7 5NP</span></div>
+          <div class="pf-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3"/></svg><a href="tel:02082950017">020 8295 0017</a></div>
+          <div class="pf-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>Mon–Fri: 9am–6pm &nbsp;|&nbsp; Sat: 9am–1pm &nbsp;|&nbsp; Sun: Closed</span></div>
+          <a href="https://maps.google.com/?q=59+Chislehurst+Road+BR7+5NP" target="_blank" class="pf-loc-cta">Get Directions &rarr;</a>
+        </div>
+        <?php endif; ?>
+      </div>
+
+      <div class="pf-serving-text pf-reveal"><?php echo esc_html( rl_field( 'pf_locations_serving', 'Conveniently located to serve patients across Chislehurst, Bromley, Orpington, Sidcup, Bexley, Eltham, and surrounding South East London areas. Free parking available at both locations.' ) ); ?></div>
+    </div>
+  </section>
+
   <!-- ===================== FAQ ===================== -->
   <section class="pf-faq-section" id="faq">
     <div class="container">
@@ -287,6 +354,22 @@ $booking_url = rl_booking_url();
           <span>✓ Seven conditions treated free</span>
           <span>✓ Same-day appointments at both locations</span>
         </div>
+      </div>
+      <!-- Divider -->
+      <div class="pf-footer-cta-divider"></div>
+      <!-- Newsletter row -->
+      <div class="pf-footer-newsletter-row">
+        <div class="pf-footer-newsletter-text">
+          <h3>Stay informed about your health</h3>
+          <p>Get expert health tips, NHS service updates, and appointment reminders delivered to your inbox</p>
+        </div>
+        <form class="newsletter-form pf-footer-newsletter-form">
+          <div class="newsletter-input-wrapper">
+            <svg class="newsletter-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 4h14c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 6l-9 6-9-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <input type="email" placeholder="Enter your email address" class="newsletter-input" required>
+            <button type="submit" class="newsletter-btn">Subscribe <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+        </form>
       </div>
     </div>
   </section>
