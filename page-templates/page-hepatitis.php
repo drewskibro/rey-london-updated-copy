@@ -416,7 +416,7 @@ get_header();
       </div>
       <div style="overflow-x:auto;">
         <table class="hep-nhs-table">
-          <thead><tr><th></th><th>Free on NHS</th><th>Private at REY London</th></tr></thead>
+          <thead><tr><th></th><th>Free on NHS</th><th>Private at Chislehurst Pharmacy Group</th></tr></thead>
           <tbody>
             <tr>
               <td>Hepatitis A</td>
@@ -442,7 +442,7 @@ get_header();
     <div class="container">
       <div style="text-align:center;">
         <h2 class="section-title" style="color:var(--white);">Expert Hepatitis Vaccination in Chislehurst</h2>
-        <p class="section-subtitle" style="max-width:800px;margin:0 auto 0;color:rgba(255,255,255,.75);">REY London Pharmacy provides professional, accessible hepatitis vaccination with expert guidance and flexible scheduling.</p>
+        <p class="section-subtitle" style="max-width:800px;margin:0 auto 0;color:rgba(255,255,255,.75);">Chislehurst Pharmacy Group provides professional, accessible hepatitis vaccination with expert guidance and flexible scheduling.</p>
       </div>
 
       <div class="hep-why-grid">
@@ -484,7 +484,7 @@ get_header();
   <section class="hep-locations" id="locations">
     <div class="container">
       <div style="text-align:center;">
-        <h2 class="section-title">Find your nearest<br><span class="gradient-text">Rey London pharmacy</span></h2>
+        <h2 class="section-title">Find your nearest<br><span class="gradient-text">Chislehurst Pharmacy Group location</span></h2>
         <p class="section-subtitle" style="max-width:700px;margin:0 auto;">Visit us in person for expert advice and immediate service</p>
       </div>
       <div class="hep-loc-grid">
@@ -556,7 +556,7 @@ get_header();
       </div>
       <div class="hep-faq-list">
         <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">01</span><span class="hep-faq-question">Do I need both hepatitis A and hepatitis B vaccines for travel?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">It depends on your destination and planned activities. Hepatitis A is recommended for most travellers to Asia, Africa, South America, and the Middle East due to food/water contamination risk. Hepatitis B is essential if staying 6+ months, may need medical treatment, have sexual contact with new partners, or work in healthcare. The combined A+B vaccine (Twinrix) offers convenient comprehensive protection for both.</div></div></div>
-        <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">02</span><span class="hep-faq-question">Can I get hepatitis vaccines on the NHS?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Hepatitis A: Often available free on NHS for travel to endemic areas — consult your GP 6–8 weeks before departure. Hepatitis B: Free on NHS only for occupational health (healthcare workers, prison staff) or high-risk groups, NOT typically for travel. Most travellers require private vaccination. REY London offers immediate appointments without GP referral wait times.</div></div></div>
+        <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">02</span><span class="hep-faq-question">Can I get hepatitis vaccines on the NHS?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Hepatitis A: Often available free on NHS for travel to endemic areas — consult your GP 6–8 weeks before departure. Hepatitis B: Free on NHS only for occupational health (healthcare workers, prison staff) or high-risk groups, NOT typically for travel. Most travellers require private vaccination. Chislehurst Pharmacy Group offers immediate appointments without GP referral wait times.</div></div></div>
         <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">03</span><span class="hep-faq-question">How long before travel should I get vaccinated?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Hepatitis A: First dose at least 2 weeks before travel (ideally 3–4 weeks). Single dose provides good short-term protection for imminent trips. Hepatitis B: Standard course takes 6 months — start as early as possible. Accelerated course provides protection in 3 weeks but requires 12-month booster. Combined A+B: Same timeline as hepatitis B schedules.</div></div></div>
         <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">04</span><span class="hep-faq-question">What if I'm travelling in 2 weeks and haven't been vaccinated?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Hepatitis A: First dose now still provides substantial protection — don't delay. Hepatitis B: Consider accelerated schedule (doses at 0, 7, 21 days) for urgent travel, with 12-month booster later. OR assess your specific risk and consider deferring hepatitis B to future trips if low-risk activities. Combined A+B: Accelerated schedule available. Book consultation to discuss your situation.</div></div></div>
         <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">05</span><span class="hep-faq-question">How long does hepatitis vaccine protection last?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Hepatitis A: 25+ years after completing the 2-dose course, possibly lifelong. No routine boosters needed. Hepatitis B: 20–30+ years after 3-dose course, often lifelong protection. Routine boosters not needed for most people. Healthcare workers: May require blood tests (anti-HBs titres) and 5-year boosters depending on results. Bring vaccination records to appointments.</div></div></div>
@@ -586,7 +586,7 @@ get_header();
           <span class="hep-cta-badge">Same-Day Appointments</span>
         </div>
         <h2 class="hep-footer-cta-title">Protect Your Liver. Protect Your Future.</h2>
-        <p class="hep-footer-cta-sub">Don't risk serious liver disease while travelling or at work. Book your hepatitis vaccination at REY London Pharmacy in Chislehurst today.</p>
+        <p class="hep-footer-cta-sub">Don't risk serious liver disease while travelling or at work. Book your hepatitis vaccination at Chislehurst Pharmacy Group today.</p>
         <div class="cta-buttons">
           <a href="tel:02084673158" class="btn-cta-primary">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -628,34 +628,5 @@ get_header();
       This information is for educational purposes and does not constitute medical advice. Hepatitis A and B vaccinations are prescription-only medicines in the UK. Eligibility and suitability are assessed by our GPhC-registered pharmacists during your consultation. Information is accurate as of March 2026 and based on current MHRA, NHS, and WHO guidance.
     </div>
   </div>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-glow"></div>
-    <div class="container">
-      <div class="footer-main" style="padding-top:0;">
-        <div class="footer-grid">
-          <div class="footer-brand-col">
-            <div class="footer-logo-wrapper"><span class="footer-logo-text">Rey London</span></div>
-            <p class="footer-description">Your trusted healthcare partner in London. Providing expert pharmaceutical care and personalized health services since 2010.</p>
-            <div class="footer-contact-cards">
-              <div class="contact-card"><div class="contact-card-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M18 8c0 5.5-7 11-7 11S4 13.5 4 8a7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="8" r="2" stroke="currentColor" stroke-width="2"/></svg></div><div class="contact-card-content"><span class="contact-card-label">Pond Pharmacy</span><a href="tel:02084673158" class="contact-card-value">020 8467 3158</a></div></div>
-              <div class="contact-card"><div class="contact-card-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M18 8c0 5.5-7 11-7 11S4 13.5 4 8a7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="8" r="2" stroke="currentColor" stroke-width="2"/></svg></div><div class="contact-card-content"><span class="contact-card-label">Chislehurst Pharmacy</span><a href="tel:02082950017" class="contact-card-value">020 8295 0017</a></div></div>
-            </div>
-            <div class="footer-social"><span class="social-label">Follow Us</span><div class="social-links-premium"><a href="#facebook" class="social-link" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 1H12C10.67 1 9.4 1.53 8.46 2.46C7.53 3.4 7 4.67 7 6V9H4V13H7V19H11V13H14L15 9H11V6C11 5.73 11.1 5.48 11.29 5.29C11.48 5.1 11.73 5 12 5H15V1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="#instagram" class="social-link" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="4" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg></a></div></div>
-          </div>
-          <div class="footer-links-col"><h4 class="footer-col-title">Services</h4><ul class="footer-links-list"><li><a href="/#prescriptions">NHS Prescriptions</a></li><li><a href="<?php echo esc_url( home_url( '/travel-health/' ) ); ?>">Travel Clinic</a></li><li><a href="<?php echo esc_url( home_url( '/yellow-fever-vaccine/' ) ); ?>">Yellow Fever Vaccine</a></li><li><a href="<?php echo esc_url( home_url( '/hpv-vaccine/' ) ); ?>">HPV Vaccine</a></li><li><a href="<?php echo esc_url( home_url( '/vitamin-b12-injection/' ) ); ?>">Vitamin B12</a></li><li><a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>">Weight Loss Programs</a></li></ul></div>
-          <div class="footer-links-col"><h4 class="footer-col-title">Hepatitis Vaccines</h4><ul class="footer-links-list"><li><a href="#about">What is Hepatitis?</a></li><li><a href="#comparison">A vs B Comparison</a></li><li><a href="#eligibility">Who Needs Vaccines</a></li><li><a href="#pricing">Pricing &amp; Courses</a></li><li><a href="#risk-areas">Risk Regions</a></li><li><a href="#faq">FAQs</a></li></ul></div>
-          <div class="footer-links-col"><h4 class="footer-col-title">Support</h4><ul class="footer-links-list"><li><a href="/#faq">FAQs</a></li><li><a href="/#opening-hours">Opening Hours</a></li><li><a href="/#privacy">Privacy Policy</a></li><li><a href="/#terms">Terms &amp; Conditions</a></li></ul></div>
-        </div>
-      </div>
-      <div class="footer-bottom-premium">
-        <div class="footer-bottom-content">
-          <div class="footer-legal"><p class="footer-copyright">© 2026 Rey London Pharmacy. All rights reserved.</p><p class="footer-registration">Registered Pharmacy | GPhC Registration: 1234567</p></div>
-          <div class="footer-certifications"><div class="cert-badge"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/mhra.svg" alt="MHRA Approved"></div><div class="cert-badge"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/gpc.svg" alt="GPhC Registered"></div><div class="cert-badge"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/ico.svg" alt="ICO Registered"></div></div>
-          <div class="footer-payments"><span class="payments-label">We Accept</span><div class="payment-methods"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/visa.svg" alt="Visa"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/mastercard.svg" alt="Mastercard"><div class="payment-badge-text">Apple Pay</div><div class="payment-badge-text">Google Pay</div></div></div>
-        </div>
-      </div>
-    </div>
 
 <?php get_footer(); ?>
