@@ -832,7 +832,7 @@ get_header();
             <span class="yf-faq-question">How long does yellow fever vaccination protection last?</span>
             <svg class="yf-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="yf-faq-answer"><div class="yf-faq-answer-inner">A single dose of yellow fever vaccine provides lifelong immunity for most people. The International Certificate of Vaccination is now valid for life (previously 10 years under old WHO rules). You won't need booster doses unless you were pregnant, immunocompromised, or under 2 years old when first vaccinated — in which case re-vaccination may be recommended before travel.</div></div>
+          <div class="yf-faq-answer"><div class="yf-faq-answer-inner">A single dose of yellow fever vaccine provides lifelong immunity for most people. The International Certificate of Vaccination is now valid for life (previously 10 years under old WHO rules). You won't need booster doses unless you were pregnant, immunocompromised, or haematopoietic stem cell transplant recipients when first vaccinated — in which case re-vaccination may be recommended before travel.</div></div>
         </div>
 
         <div class="yf-faq-item">
@@ -895,7 +895,7 @@ get_header();
             <span class="yf-faq-question">I'm over 60. Can I get the yellow fever vaccine?</span>
             <svg class="yf-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="yf-faq-answer"><div class="yf-faq-answer-inner">Yes, but with additional precautions. People over 60 have a slightly higher risk of rare serious side effects (approximately 1 in 100,000 for viscerotropic disease). If travel to a yellow fever area is essential, vaccination is still generally recommended as the risk of yellow fever itself far outweighs vaccine risk. If travel is discretionary or to low actual-risk areas, we'll discuss alternatives including exemption letters, which some countries will accept in lieu of vaccination.</div></div>
+          <div class="yf-faq-answer"><div class="yf-faq-answer-inner">Yes, but with additional precautions. People over 60 have a slightly higher risk of rare serious side effects (approximately 1.2 per 100,000 doses). If travel to a yellow fever area is essential, vaccination is still generally recommended as the risk of yellow fever itself far outweighs vaccine risk. If travel is discretionary or to low actual-risk areas, we'll discuss alternatives including exemption letters, which some countries will accept in lieu of vaccination.</div></div>
         </div>
 
         <div class="yf-faq-item">
@@ -904,7 +904,7 @@ get_header();
             <span class="yf-faq-question">Can my child get the yellow fever vaccine?</span>
             <svg class="yf-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="yf-faq-answer"><div class="yf-faq-answer-inner">Yellow fever vaccine is approved from 9 months of age. Children aged 9 months to 9 years can be safely vaccinated. Infants under 9 months should not receive the vaccine due to an increased risk of a rare but serious neurological complication. If your infant under 9 months must travel to a high-risk area, our pharmacist will discuss protective measures such as mosquito avoidance strategies and can provide exemption documentation for border requirements.</div></div>
+          <div class="yf-faq-answer"><div class="yf-faq-answer-inner">Yellow fever vaccine is approved from 9 months of age. Children aged 9 months and over can be safely vaccinated. Infants under 9 months should not receive the vaccine due to an increased risk of a rare but serious neurological complication. If your infant under 9 months must travel to a high-risk area, our pharmacist will discuss protective measures such as mosquito avoidance strategies and can provide exemption documentation for border requirements.</div></div>
         </div>
 
         <div class="yf-faq-item">
