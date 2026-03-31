@@ -38,18 +38,13 @@ $booking_url   = rl_booking_url();
     <header class="header">
       <div class="container">
         <div class="header-content">
-          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo" aria-label="<?php echo esc_attr( $pharmacy_name ); ?>">
-            <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 130" aria-hidden="true">
-              <path d="M 97 26 A 44 44 0 1 0 97 94" fill="none" stroke="#11368F" stroke-width="11" stroke-linecap="round"/>
-              <rect x="28" y="56" width="32" height="7" rx="3.5" fill="#11368F"/>
-              <rect x="41" y="43" width="7" height="32" rx="3.5" fill="#11368F"/>
-              <text x="130" y="52" font-family="Georgia,'Times New Roman',serif" font-size="36" font-weight="700" fill="#11368F" letter-spacing="-0.5">Chislehurst</text>
-              <text x="130" y="92" font-family="Georgia,'Times New Roman',serif" font-size="36" font-weight="700" fill="#11368F" letter-spacing="-0.5">Pharmacy Group</text>
-              <line x1="130" y1="101" x2="410" y2="101" stroke="#11368F" stroke-width="1"/>
-              <text x="130" y="120" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#11368F" letter-spacing="3">CHISLEHURST</text>
-              <text x="280" y="120" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#11368F">·</text>
-              <text x="296" y="120" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#11368F" letter-spacing="3">LONDON</text>
-            </svg>
+          <?php $logo_url = rl_logo_url(); ?>
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
+            <?php if ( $logo_url ) : ?>
+              <img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php echo esc_attr( $pharmacy_name ); ?>" class="logo-img" />
+            <?php else : ?>
+              <span class="logo-text"><?php echo esc_html( $pharmacy_name ); ?></span>
+            <?php endif; ?>
           </a>
 
           <nav class="nav">
