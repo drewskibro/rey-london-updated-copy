@@ -3419,10 +3419,8 @@ body {
 }
 
 .footer-logo-img {
-  height: 55px;
+  height: 80px;
   width: auto;
-  max-width: 320px;
-  object-fit: contain;
   display: block;
 }
 
