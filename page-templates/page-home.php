@@ -226,7 +226,7 @@ get_header();
             Destination
           </h2>
           <p class="destinations-desc">
-            At Rey London, we provide expert travel health services across South East London. Find the vaccines you need
+            At Chislehurst Pharmacy Group, we provide expert travel health services across South East London. Find the vaccines you need
             for your next adventure.
           </p>
         </div>
@@ -357,7 +357,7 @@ get_header();
       <div class="container">
         <h2 class="section-title">
           Find your nearest<br />
-          <span class="gradient-text">Rey London pharmacy</span>
+          <span class="gradient-text">Chislehurst Pharmacy Group pharmacy</span>
         </h2>
         <p class="section-subtitle">Visit us in person for expert advice and immediate service</p>
 
@@ -473,7 +473,7 @@ get_header();
             <div class="benefit-content">
               <h3>Prescription Services</h3>
               <p>
-                Same-day collection available. Transfer your prescription to Rey London for convenient, reliable
+                Same-day collection available. Transfer your prescription to Chislehurst Pharmacy Group for convenient, reliable
                 service.
               </p>
               <a href="#prescriptions" class="benefit-cta">
@@ -787,7 +787,7 @@ get_header();
               </svg>
             </div>
             <p class="testimonial-quote">
-              "As a frequent traveller, I rely on Rey London for all my travel health needs. Yellow fever certification
+              "As a frequent traveller, I rely on Chislehurst Pharmacy Group for all my travel health needs. Yellow fever certification
               was processed immediately. Couldn't ask for better service."
             </p>
             <div class="testimonial-author">
