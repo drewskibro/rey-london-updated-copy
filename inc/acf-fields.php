@@ -2043,3 +2043,99 @@ acf_add_local_field_group( array(
     'location' => array( array( array( 'param' => 'options_page', 'operator' => '==', 'value' => 'navigation' ) ) ),
     'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
 ) );
+
+/* ================================================================
+   NHS PHARMACY FIRST PAGE
+   ================================================================ */
+acf_add_local_field_group( array(
+    'key' => 'group_rl_pharmacy_first',
+    'title' => 'NHS Pharmacy First',
+    'fields' => array(
+
+        // ── HERO ──
+        array( 'key' => 'field_rl_pf_hero_tab', 'label' => 'Hero Section', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_pf_hero_eyebrow', 'label' => 'Eyebrow Text', 'name' => 'pf_hero_eyebrow', 'type' => 'text', 'default_value' => 'NHS Pharmacy First  |  Free NHS Treatment' ),
+        array( 'key' => 'field_rl_pf_hero_title', 'label' => 'Hero Title', 'name' => 'pf_hero_title', 'type' => 'text', 'default_value' => 'Free NHS Treatment in Chislehurst. No GP Appointment Needed.' ),
+        array( 'key' => 'field_rl_pf_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'pf_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'Under the NHS Pharmacy First scheme, our pharmacists at Chislehurst Pharmacy Group can assess and treat seven common conditions — completely free of charge. No referral, no waiting weeks for a GP. Walk in or book online and get treated the same day.' ),
+        array( 'key' => 'field_rl_pf_hero_image', 'label' => 'Hero Image', 'name' => 'pf_hero_image', 'type' => 'image', 'return_format' => 'url', 'instructions' => 'Upload to replace the default shield illustration' ),
+        array( 'key' => 'field_rl_pf_hero_cta1_text', 'label' => 'Button 1 Text', 'name' => 'pf_hero_cta1_text', 'type' => 'text', 'default_value' => 'Book a Pharmacy First Appointment' ),
+        array( 'key' => 'field_rl_pf_hero_cta1_url', 'label' => 'Button 1 URL', 'name' => 'pf_hero_cta1_url', 'type' => 'url', 'default_value' => '/book-appointment/' ),
+        array( 'key' => 'field_rl_pf_hero_cta2_text', 'label' => 'Button 2 Text', 'name' => 'pf_hero_cta2_text', 'type' => 'text', 'default_value' => 'Learn About the Seven Conditions' ),
+        array( 'key' => 'field_rl_pf_hero_cta2_url', 'label' => 'Button 2 URL', 'name' => 'pf_hero_cta2_url', 'type' => 'url', 'default_value' => '#conditions' ),
+        array(
+            'key' => 'field_rl_pf_hero_trust_badges', 'label' => 'Hero Trust Badges', 'name' => 'pf_hero_trust_badges', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Badge',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_pf_trust_badge_text', 'label' => 'Badge Text', 'name' => 'text', 'type' => 'text' ),
+            ),
+        ),
+
+        // ── STATS BAR ──
+        array( 'key' => 'field_rl_pf_stats_tab', 'label' => 'Stats Bar', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_pf_stats_cards', 'label' => 'Stat Cards', 'name' => 'pf_stats_cards', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Stat',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_pf_stat_stat', 'label' => 'Stat', 'name' => 'stat', 'type' => 'text' ),
+                array( 'key' => 'field_rl_pf_stat_label', 'label' => 'Label', 'name' => 'label', 'type' => 'text' ),
+            ),
+        ),
+
+        // ── CONDITIONS ──
+        array( 'key' => 'field_rl_pf_conditions_tab', 'label' => 'Conditions', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_pf_conditions_eyebrow', 'label' => 'Eyebrow', 'name' => 'pf_conditions_eyebrow', 'type' => 'text', 'default_value' => 'CONDITIONS WE TREAT' ),
+        array( 'key' => 'field_rl_pf_conditions_title', 'label' => 'Section Title', 'name' => 'pf_conditions_title', 'type' => 'text', 'default_value' => 'Seven Common Conditions. Treated Free. Today.' ),
+        array( 'key' => 'field_rl_pf_conditions_subtitle', 'label' => 'Subtitle', 'name' => 'pf_conditions_subtitle', 'type' => 'textarea', 'rows' => 3 ),
+        array(
+            'key' => 'field_rl_pf_conditions', 'label' => 'Conditions', 'name' => 'pf_conditions', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Condition',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_pf_cond_name', 'label' => 'Name', 'name' => 'name', 'type' => 'text' ),
+                array( 'key' => 'field_rl_pf_cond_age', 'label' => 'Age Range', 'name' => 'age_range', 'type' => 'text' ),
+                array( 'key' => 'field_rl_pf_cond_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 3 ),
+            ),
+        ),
+
+        // ── HOW IT WORKS ──
+        array( 'key' => 'field_rl_pf_hiw_tab', 'label' => 'How It Works', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_pf_hiw_eyebrow', 'label' => 'Eyebrow', 'name' => 'pf_hiw_eyebrow', 'type' => 'text', 'default_value' => 'HOW IT WORKS' ),
+        array( 'key' => 'field_rl_pf_hiw_title', 'label' => 'Section Title', 'name' => 'pf_hiw_title', 'type' => 'text', 'default_value' => 'Three Steps to Free NHS Treatment' ),
+        array( 'key' => 'field_rl_pf_hiw_subtitle', 'label' => 'Subtitle', 'name' => 'pf_hiw_subtitle', 'type' => 'textarea', 'rows' => 2 ),
+        array(
+            'key' => 'field_rl_pf_hiw_steps', 'label' => 'Steps', 'name' => 'pf_hiw_steps', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Step',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_pf_step_title', 'label' => 'Title', 'name' => 'title', 'type' => 'text' ),
+                array( 'key' => 'field_rl_pf_step_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 3 ),
+            ),
+        ),
+
+        // ── ELIGIBILITY ──
+        array( 'key' => 'field_rl_pf_elig_tab', 'label' => 'Eligibility', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_pf_elig_eyebrow', 'label' => 'Eyebrow', 'name' => 'pf_elig_eyebrow', 'type' => 'text', 'default_value' => 'WHO IS ELIGIBLE?' ),
+        array( 'key' => 'field_rl_pf_elig_title', 'label' => 'Title', 'name' => 'pf_elig_title', 'type' => 'text', 'default_value' => 'Is Pharmacy First Right for You?' ),
+        array( 'key' => 'field_rl_pf_elig_body', 'label' => 'Body Content', 'name' => 'pf_elig_body', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0 ),
+
+        // ── FAQs ──
+        array( 'key' => 'field_rl_pf_faq_tab', 'label' => 'FAQs', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_pf_faq_title', 'label' => 'FAQ Title', 'name' => 'pf_faq_title', 'type' => 'text', 'default_value' => 'Pharmacy First — Your Questions Answered' ),
+        array(
+            'key' => 'field_rl_pf_faqs', 'label' => 'FAQs', 'name' => 'pf_faqs', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add FAQ',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_pf_faq_q', 'label' => 'Question', 'name' => 'question', 'type' => 'text' ),
+                array( 'key' => 'field_rl_pf_faq_a', 'label' => 'Answer', 'name' => 'answer', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0 ),
+            ),
+        ),
+
+        // ── FOOTER CTA ──
+        array( 'key' => 'field_rl_pf_cta_tab', 'label' => 'Footer CTA', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_pf_cta_title', 'label' => 'CTA Title', 'name' => 'pf_cta_title', 'type' => 'text', 'default_value' => 'Don\'t Wait Weeks for a GP. Get Treated Today.' ),
+        array( 'key' => 'field_rl_pf_cta_subtitle', 'label' => 'CTA Subtitle', 'name' => 'pf_cta_subtitle', 'type' => 'textarea', 'rows' => 3 ),
+        array( 'key' => 'field_rl_pf_cta_cta1_text', 'label' => 'Button 1 Text', 'name' => 'pf_cta_cta1_text', 'type' => 'text', 'default_value' => 'Book a Pharmacy First Appointment' ),
+        array( 'key' => 'field_rl_pf_cta_cta1_url', 'label' => 'Button 1 URL', 'name' => 'pf_cta_cta1_url', 'type' => 'url', 'default_value' => '/book-appointment/' ),
+        array( 'key' => 'field_rl_pf_cta_cta2_text', 'label' => 'Button 2 Text', 'name' => 'pf_cta_cta2_text', 'type' => 'text', 'default_value' => 'Find Your Nearest Location' ),
+        array( 'key' => 'field_rl_pf_cta_cta2_url', 'label' => 'Button 2 URL', 'name' => 'pf_cta_cta2_url', 'type' => 'url', 'default_value' => '/contact/' ),
+
+        // ── DISCLAIMER ──
+        array( 'key' => 'field_rl_pf_disclaimer_tab', 'label' => 'Disclaimer', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_pf_disclaimer', 'label' => 'Disclaimer Text', 'name' => 'pf_disclaimer', 'type' => 'textarea', 'rows' => 3 ),
+    ),
+    'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-pharmacy-first.php' ) ) ),
+    'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
+) );

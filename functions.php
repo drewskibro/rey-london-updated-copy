@@ -138,6 +138,11 @@ function rey_london_scripts() {
         wp_enqueue_script( 'rey-london-hpv-js', REY_LONDON_URI . '/assets/js/hpv.js', array(), REY_LONDON_VERSION, true );
     }
 
+    if ( is_page_template( 'page-templates/page-pharmacy-first.php' ) ) {
+        wp_enqueue_style( 'rey-london-pharmacy-first', REY_LONDON_URI . '/assets/css/pharmacy-first.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
+        wp_enqueue_script( 'rey-london-pharmacy-first-js', REY_LONDON_URI . '/assets/js/pharmacy-first.js', array(), REY_LONDON_VERSION, true );
+    }
+
     if ( is_page_template( 'page-templates/page-yellow-fever.php' ) ) {
         wp_enqueue_style( 'rey-london-yellow-fever', REY_LONDON_URI . '/assets/css/yellow-fever-vaccine-london.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
         wp_enqueue_script( 'rey-london-yellow-fever-js', REY_LONDON_URI . '/assets/js/yellow-fever.js', array(), REY_LONDON_VERSION, true );
