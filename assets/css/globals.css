@@ -116,11 +116,12 @@ body {
 }
 
 .logo-img {
-  height: 50px;
+  height: 80px;
   width: auto;
-  max-width: 200px;
+  max-width: 280px;
   object-fit: contain;
   display: block;
+  margin: -15px 0;
 }
 
 .logo-text {
@@ -3421,11 +3422,12 @@ body {
 }
 
 .footer-logo-img {
-  height: 50px;
+  height: 80px;
   width: auto;
-  max-width: 220px;
+  max-width: 280px;
   object-fit: contain;
   display: block;
+  margin: -15px 0;
 }
 
 .footer-logo-text {
