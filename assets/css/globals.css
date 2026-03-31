@@ -115,12 +115,16 @@ body {
   transform: scale(1.02);
 }
 
-.logo-img {
-  height: 65px;
+.logo-svg {
+  height: 50px;
   width: auto;
-  max-width: 360px;
-  object-fit: contain;
   display: block;
+}
+
+@media (min-width: 1024px) {
+  .logo-svg {
+    height: 55px;
+  }
 }
 
 .logo-text {
