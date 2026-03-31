@@ -37,11 +37,11 @@ get_header();
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
-          <a href="tel:02084673158" class="btn-secondary wl-btn-hero-secondary">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M14.5 11.5V13.5C14.5 14.05 14.05 14.5 13.5 14.5C6.6 14.5 1 8.9 1 2C1 1.45 1.45 1 2 1H4.5C5.05 1 5.5 1.45 5.5 2V4.5C5.5 5.05 5.05 5.5 4.5 5.5H3.5C4 8.5 6.5 11 9.5 11.5V10.5C9.5 9.95 9.95 9.5 10.5 9.5H13C13.55 9.5 14 9.95 14 10.5V11.5Z" fill="currentColor"/>
+          <a href="#treatments" class="btn-secondary wl-btn-hero-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>
             </svg>
-            020 8467 3158
+            Check Eligibility
           </a>
         </div>
         <div class="wl-hero-trust">
@@ -66,10 +66,6 @@ get_header();
           <div class="wl-hero-img wl-hero-img-main">
             <?php $wl_hero_main = rl_field( 'wl_hero_image_main' ); ?>
             <img src="<?php echo esc_url( $wl_hero_main ?: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=700&h=800&fit=crop' ); ?>" alt="Medical weight loss consultation at Chislehurst Pharmacy Group pharmacy">
-          </div>
-          <div class="wl-hero-img wl-hero-img-secondary">
-            <?php $wl_hero_sec = rl_field( 'wl_hero_image_secondary' ); ?>
-            <img src="<?php echo esc_url( $wl_hero_sec ?: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500&h=400&fit=crop' ); ?>" alt="Weight loss results">
           </div>
         </div>
       </div>
