@@ -97,6 +97,11 @@ body {
   border-bottom-color: rgba(10, 47, 138, 0.15);
 }
 
+.header.scrolled .logo-img {
+  height: 80px;
+  transition: height 0.3s ease;
+}
+
 .header-content {
   display: flex;
   align-items: center;
@@ -118,6 +123,7 @@ body {
   height: 70px;
   width: auto;
   display: block;
+  transition: height 0.3s ease;
 }
 
 .logo-text {
