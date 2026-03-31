@@ -492,11 +492,11 @@ get_header();
     </div>
   </section>
 
-  <!-- ========== WHY CHOOSE REY LONDON ========== -->
+  <!-- ========== WHY CHOOSE CHISLEHURST PHARMACY GROUP ========== -->
   <section class="hl-why-section" id="why-us">
     <div class="container">
       <div style="text-align:center;">
-        <h2 class="section-title">Why choose REY London for <span class="gradient-text">hair loss treatment</span></h2>
+        <h2 class="section-title">Why choose Chislehurst Pharmacy Group for <span class="gradient-text">hair loss treatment</span></h2>
       </div>
       <div class="hl-why-grid">
         <div class="hl-why-card hl-reveal">
@@ -617,7 +617,7 @@ get_header();
           <span class="hl-cta-badge">Same-Day Service</span>
         </div>
         <h2 class="hl-footer-cta-title">Stop hair loss before it progresses</h2>
-        <p class="hl-footer-cta-sub">The earlier you start treatment, the better your results. Book your confidential consultation today at REY London Pharmacy — no GP referral needed.</p>
+        <p class="hl-footer-cta-sub">The earlier you start treatment, the better your results. Book your confidential consultation today at Chislehurst Pharmacy Group Pharmacy — no GP referral needed.</p>
         <div class="hl-footer-cta-btns">
           <a href="tel:02082950017" class="hl-btn-cta-white">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>

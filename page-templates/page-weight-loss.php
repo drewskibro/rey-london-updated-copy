@@ -64,7 +64,7 @@ get_header();
       <div class="wl-hero-visual">
         <div class="wl-hero-img-stack">
           <div class="wl-hero-img wl-hero-img-main">
-            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=700&h=800&fit=crop" alt="Medical weight loss consultation at Rey London pharmacy">
+            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=700&h=800&fit=crop" alt="Medical weight loss consultation at Chislehurst Pharmacy Group pharmacy">
           </div>
           <div class="wl-hero-img wl-hero-img-secondary">
             <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500&h=400&fit=crop" alt="Weight loss results">
@@ -451,7 +451,7 @@ get_header();
        ============================================ -->
   <section class="how-it-works" id="how-it-works">
     <div class="container">
-      <h2 class="section-title gradient-text">Your weight loss journey at Rey London</h2>
+      <h2 class="section-title gradient-text">Your weight loss journey at Chislehurst Pharmacy Group</h2>
       <p class="section-subtitle">Four clear steps from your first conversation to your goal weight</p>
 
       <div class="steps-grid">
@@ -567,7 +567,7 @@ get_header();
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           </div>
-          <p class="testimonial-quote">"My GP had a 3-month waiting list. Rey London had me started on Mounjaro within a week. The pharmacist knew everything about the treatment and answered every single question I had. I've now lost 3 stone and my diabetes medication has been halved."</p>
+          <p class="testimonial-quote">"My GP had a 3-month waiting list. Chislehurst Pharmacy Group had me started on Mounjaro within a week. The pharmacist knew everything about the treatment and answered every single question I had. I've now lost 3 stone and my diabetes medication has been halved."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">JA</div>
             <div>
@@ -585,7 +585,7 @@ get_header();
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           </div>
-          <p class="testimonial-quote">"As a busy working mum, I didn't have time for an expensive weight loss clinic. Rey London fit perfectly into my routine — pop in monthly on my way home. Lost 14kg without the stress. Genuinely could not recommend more highly."</p>
+          <p class="testimonial-quote">"As a busy working mum, I didn't have time for an expensive weight loss clinic. Chislehurst Pharmacy Group fit perfectly into my routine — pop in monthly on my way home. Lost 14kg without the stress. Genuinely could not recommend more highly."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">LK</div>
             <div>
@@ -621,7 +621,7 @@ get_header();
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           </div>
-          <p class="testimonial-quote">"After a hip replacement, my surgeon told me I needed to lose weight before they'd consider the second hip. In 7 months with Mounjaro at Rey London, I lost 25kg. The op is now booked. I'm beyond grateful."</p>
+          <p class="testimonial-quote">"After a hip replacement, my surgeon told me I needed to lose weight before they'd consider the second hip. In 7 months with Mounjaro at Chislehurst Pharmacy Group, I lost 25kg. The op is now booked. I'm beyond grateful."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">DH</div>
             <div>
@@ -665,7 +665,7 @@ get_header();
       <div class="locations-grid">
         <div class="location-card">
           <div class="location-image">
-            <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769343725749-0.jpeg" alt="Rey London Pond Pharmacy - Weight Loss Chislehurst">
+            <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769343725749-0.jpeg" alt="Chislehurst Pharmacy Group Pond Pharmacy - Weight Loss Chislehurst">
           </div>
           <div class="location-content">
             <h3>Pond Pharmacy — Chislehurst</h3>
@@ -693,7 +693,7 @@ get_header();
 
         <div class="location-card">
           <div class="location-image">
-            <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769344823391-0.jpeg" alt="Rey London Chislehurst Pharmacy - Weight Loss London">
+            <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769344823391-0.jpeg" alt="Chislehurst Pharmacy Group Chislehurst Pharmacy - Weight Loss London">
           </div>
           <div class="location-content">
             <h3>Chislehurst Pharmacy — Pond End</h3>
@@ -723,13 +723,13 @@ get_header();
   </section>
 
   <!-- ============================================
-       WHY REY LONDON
+       WHY CHISLEHURST PHARMACY GROUP
        ============================================ -->
   <section class="team-section" id="why-us">
     <div class="container">
       <div class="team-header">
         <h2 class="section-title">
-          Why choose Rey London for<br>
+          Why choose Chislehurst Pharmacy Group for<br>
           <span class="gradient-text">medical weight loss?</span>
         </h2>
         <p class="section-subtitle">We're not an online chatbot or a faceless app. We're your local pharmacist — the difference is enormous.</p>
@@ -738,7 +738,7 @@ get_header();
       <div class="team-content-grid">
         <div class="pharmacist-hero">
           <div class="pharmacist-image-wrapper">
-            <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517579457-0.png" alt="Sumeet Banker — Superintendent Pharmacist, Rey London weight loss specialist" class="pharmacist-image">
+            <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517579457-0.png" alt="Sumeet Banker — Superintendent Pharmacist, Chislehurst Pharmacy Group weight loss specialist" class="pharmacist-image">
             <div class="pharmacist-profile-card">
               <div class="profile-header">
                 <div class="profile-info">

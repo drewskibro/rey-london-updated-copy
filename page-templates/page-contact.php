@@ -18,7 +18,7 @@ get_header();
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             Get In Touch
           </div>
-          <h1><?php echo wp_kses_post( rl_field( 'ct_hero_title', 'Contact <span class="gradient-text">Rey London</span> Pharmacy' ) ); ?></h1>
+          <h1><?php echo wp_kses_post( rl_field( 'ct_hero_title', 'Contact <span class="gradient-text">Chislehurst Pharmacy Group</span> Pharmacy' ) ); ?></h1>
           <p class="ct-hero-sub"><?php echo esc_html( rl_field( 'ct_hero_subtitle', 'We\'re here to help with prescriptions, travel vaccinations, specialist consultations, and any health questions. Two Chislehurst locations, walk-ins welcome.' ) ); ?></p>
 
           <div class="ct-hero-trust">
@@ -107,7 +107,7 @@ get_header();
   <section class="ct-locations" id="locations">
     <div class="container">
       <div style="text-align:center;">
-        <h2 class="section-title">Find Your Nearest <span class="gradient-text" style="background:linear-gradient(135deg,var(--primary-blue),var(--light-blue),#3a6bb5);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Rey London</span> Pharmacy</h2>
+        <h2 class="section-title">Find Your Nearest <span class="gradient-text" style="background:linear-gradient(135deg,var(--primary-blue),var(--light-blue),#3a6bb5);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Chislehurst Pharmacy Group</span> Pharmacy</h2>
         <p class="section-subtitle" style="max-width:700px;margin:0 auto;">Both pharmacies are conveniently located in Chislehurst with easy access from across South East London.</p>
       </div>
       <div class="ct-loc-grid ct-reveal">
@@ -180,7 +180,7 @@ get_header();
   <!-- ===================== MAP ===================== -->
   <section class="ct-map-section">
     <div class="ct-map-wrap">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2492.8!2d0.0545!3d51.4045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDI0JzE2LjIiTiAwwrAwMycxNi4yIkU!5e0!3m2!1sen!2suk!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Rey London Pharmacy locations in Chislehurst"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2492.8!2d0.0545!3d51.4045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDI0JzE2LjIiTiAwwrAwMycxNi4yIkU!5e0!3m2!1sen!2suk!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Chislehurst Pharmacy Group Pharmacy locations in Chislehurst"></iframe>
     </div>
   </section>
 
@@ -319,7 +319,7 @@ get_header();
     <div class="container">
       <div style="text-align:center;">
         <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-subtitle" style="max-width:700px;margin:0 auto;">Quick answers to common questions about visiting, booking, and contacting Rey London Pharmacy.</p>
+        <p class="section-subtitle" style="max-width:700px;margin:0 auto;">Quick answers to common questions about visiting, booking, and contacting Chislehurst Pharmacy Group Pharmacy.</p>
       </div>
       <div class="ct-faq-grid ct-reveal">
         <div class="ct-faq-item">
@@ -335,7 +335,7 @@ get_header();
           <div class="ct-faq-a"><div class="ct-faq-a-inner">Yes. Pond Pharmacy has on-street parking on High Street and nearby public car parks. Chislehurst Pharmacy has convenient parking available on Chislehurst Road and surrounding streets.</div></div>
         </div>
         <div class="ct-faq-item">
-          <button class="ct-faq-q" aria-expanded="false">Can I transfer my NHS prescription to Rey London?<svg class="ct-faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+          <button class="ct-faq-q" aria-expanded="false">Can I transfer my NHS prescription to Chislehurst Pharmacy Group?<svg class="ct-faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
           <div class="ct-faq-a"><div class="ct-faq-a-inner">Yes, transferring is simple. Just nominate us as your preferred pharmacy through your GP surgery, or ask us in-store and we can guide you through the process. It takes effect within 24–48 hours.</div></div>
         </div>
         <div class="ct-faq-item">
@@ -400,91 +400,5 @@ get_header();
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-glow"></div>
-    <div class="container">
-      <div class="footer-main">
-        <div class="footer-grid">
-          <div class="footer-brand-col">
-            <div class="footer-logo-wrapper"><span class="footer-logo-text">Rey London</span></div>
-            <p class="footer-description">Your trusted healthcare partner in London. Providing expert pharmaceutical care and personalized health services since 2010.</p>
-            <div class="footer-contact-cards">
-              <div class="contact-card">
-                <div class="contact-card-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M18 8c0 5.5-7 11-7 11S4 13.5 4 8a7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="8" r="2" stroke="currentColor" stroke-width="2"/></svg></div>
-                <div class="contact-card-content"><span class="contact-card-label">Pond Pharmacy</span><a href="tel:02084673158" class="contact-card-value">020 8467 3158</a></div>
-              </div>
-              <div class="contact-card">
-                <div class="contact-card-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M18 8c0 5.5-7 11-7 11S4 13.5 4 8a7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="8" r="2" stroke="currentColor" stroke-width="2"/></svg></div>
-                <div class="contact-card-content"><span class="contact-card-label">Chislehurst Pharmacy</span><a href="tel:02082950017" class="contact-card-value">020 8295 0017</a></div>
-              </div>
-            </div>
-            <div class="footer-social">
-              <span class="social-label">Follow Us</span>
-              <div class="social-links-premium">
-                <a href="#facebook" class="social-link" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 1H12C10.6739 1 9.40215 1.52678 8.46447 2.46447C7.52678 3.40215 7 4.67392 7 6V9H4V13H7V19H11V13H14L15 9H11V6C11 5.73478 11.1054 5.48043 11.2929 5.29289C11.4804 5.10536 11.7348 5 12 5H15V1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-                <a href="#instagram" class="social-link" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="4" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg></a>
-                <a href="#twitter" class="social-link" aria-label="Twitter"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M19 3a8.5 8.5 0 01-2.36.64 4.13 4.13 0 001.81-2.27 8.21 8.21 0 01-2.61 1 4.1 4.1 0 00-7 3.74A11.64 11.64 0 012 2.13a4.1 4.1 0 001.27 5.47A4.07 4.07 0 011.64 7v.05a4.1 4.1 0 003.29 4 4.1 4.1 0 01-1.85.07 4.1 4.1 0 003.83 2.85A8.23 8.23 0 011 15.54a11.6 11.6 0 006.29 1.84c7.55 0 11.68-6.25 11.68-11.67 0-.18 0-.35-.01-.53A8.35 8.35 0 0019 3z" stroke="currentColor" stroke-width="2"/></svg></a>
-              </div>
-            </div>
-          </div>
-          <div class="footer-links-col">
-            <h4 class="footer-col-title">Services</h4>
-            <ul class="footer-links-list">
-              <li><a href="<?php echo esc_url( home_url( '/prescription-services/' ) ); ?>">NHS Prescriptions</a></li>
-              <li><a href="<?php echo esc_url( home_url( '/travel-health/' ) ); ?>">Travel Clinic</a></li>
-              <li><a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>">Weight Loss Programs</a></li>
-              <li><a href="<?php echo esc_url( home_url( '/hpv-vaccine/' ) ); ?>">HPV Vaccine</a></li>
-              <li><a href="<?php echo esc_url( home_url( '/vitamin-b12-injection/' ) ); ?>">Vitamin B12</a></li>
-              <li><a href="/#delivery">Free Delivery</a></li>
-            </ul>
-          </div>
-          <div class="footer-links-col">
-            <h4 class="footer-col-title">Quick Links</h4>
-            <ul class="footer-links-list">
-              <li><a href="/">Home</a></li>
-              <li><a href="<?php echo esc_url( home_url( '/meet-the-team/' ) ); ?>">Meet the Team</a></li>
-              <li><a href="<?php echo esc_url( home_url( '/health-hub/' ) ); ?>">Health Hub</a></li>
-              <li><a href="/#testimonials">Testimonials</a></li>
-              <li><a href="/#locations">Locations</a></li>
-              <li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Contact Us</a></li>
-            </ul>
-          </div>
-          <div class="footer-links-col">
-            <h4 class="footer-col-title">Support</h4>
-            <ul class="footer-links-list">
-              <li><a href="#faq">FAQs</a></li>
-              <li><a href="#hours">Opening Hours</a></li>
-              <li><a href="/#privacy">Privacy Policy</a></li>
-              <li><a href="/#terms">Terms &amp; Conditions</a></li>
-              <li><a href="/#complaints">Complaints Procedure</a></li>
-              <li><a href="/#accessibility">Accessibility</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom-premium">
-        <div class="footer-bottom-content">
-          <div class="footer-legal">
-            <p class="footer-copyright">© 2026 Rey London Pharmacy. All rights reserved.</p>
-            <p class="footer-registration">Registered Pharmacy | GPhC Registration: 1234567</p>
-          </div>
-          <div class="footer-certifications">
-            <div class="cert-badge"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/mhra.svg" alt="MHRA Approved"></div>
-            <div class="cert-badge"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/gpc.svg" alt="GPhC Registered"></div>
-            <div class="cert-badge"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/ico.svg" alt="ICO Registered"></div>
-          </div>
-          <div class="footer-payments">
-            <span class="payments-label">We Accept</span>
-            <div class="payment-methods">
-              <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/visa.svg" alt="Visa">
-              <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/mastercard.svg" alt="Mastercard">
-              <div class="payment-badge-text">Apple Pay</div>
-              <div class="payment-badge-text">Google Pay</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
 <?php get_footer(); ?>

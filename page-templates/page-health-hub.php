@@ -504,7 +504,7 @@ get_header();
         <!-- Right: Visual -->
         <div class="hh-trust-visual">
           <div class="hh-trust-img-wrap">
-            <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517579457-0.png" alt="Sumeet Banker — Superintendent Pharmacist, REY London" class="hh-trust-img">
+            <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517579457-0.png" alt="Sumeet Banker — Superintendent Pharmacist, Chislehurst Pharmacy Group" class="hh-trust-img">
             <div class="hh-trust-float-badge">
               <div class="hh-trust-float-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>

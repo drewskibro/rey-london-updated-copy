@@ -467,7 +467,7 @@ get_header();
           <?php echo esc_html( rl_field( 'yf_cert_pill', 'The Yellow Card' ) ); ?>
         </div>
         <h2 class="section-title" style="color:var(--white);"><?php echo esc_html( rl_field( 'yf_cert_title', 'Your Official Yellow Fever Certificate' ) ); ?></h2>
-        <p class="section-subtitle" style="max-width:820px;margin:0 auto 0;color:rgba(255,255,255,.75);"><?php echo esc_html( rl_field( 'yf_cert_subtitle', 'As a NaTHNaC-registered Yellow Fever Vaccination Centre, REY London Pharmacy is authorised to issue the official International Certificate of Vaccination or Prophylaxis (ICVP), known as the "yellow card."' ) ); ?></p>
+        <p class="section-subtitle" style="max-width:820px;margin:0 auto 0;color:rgba(255,255,255,.75);"><?php echo esc_html( rl_field( 'yf_cert_subtitle', 'As a NaTHNaC-registered Yellow Fever Vaccination Centre, Chislehurst Pharmacy Group Pharmacy is authorised to issue the official International Certificate of Vaccination or Prophylaxis (ICVP), known as the "yellow card."' ) ); ?></p>
       </div>
 
       <div class="yf-cert-card yf-reveal">
@@ -490,7 +490,7 @@ get_header();
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Vaccine manufacturer and batch number</li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Date of vaccination</li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Signature of administering pharmacist</li>
-              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Official REY London Pharmacy vaccination centre stamp</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Official Chislehurst Pharmacy Group Pharmacy vaccination centre stamp</li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Validity dates (valid for life, starting 10 days post-vaccination)</li>
               <?php endif; ?>
             </ul>
@@ -681,7 +681,7 @@ get_header();
     <div class="container">
       <div style="text-align:center;">
         <h2 class="section-title" style="color:var(--white);"><?php echo esc_html( rl_field( 'yf_why_title', 'Official Yellow Fever Vaccination Centre' ) ); ?></h2>
-        <p class="section-subtitle" style="max-width:800px;margin:0 auto 0;color:rgba(255,255,255,.75);"><?php echo esc_html( rl_field( 'yf_why_subtitle', 'REY London Pharmacy is an officially designated NaTHNaC Yellow Fever Vaccination Centre — the only type of centre authorised to issue valid ICVP certificates.' ) ); ?></p>
+        <p class="section-subtitle" style="max-width:800px;margin:0 auto 0;color:rgba(255,255,255,.75);"><?php echo esc_html( rl_field( 'yf_why_subtitle', 'Chislehurst Pharmacy Group Pharmacy is an officially designated NaTHNaC Yellow Fever Vaccination Centre — the only type of centre authorised to issue valid ICVP certificates.' ) ); ?></p>
       </div>
 
       <div class="yf-why-grid yf-reveal">
@@ -872,7 +872,7 @@ get_header();
             <span class="yf-faq-question">Can I get yellow fever vaccine on the NHS?</span>
             <svg class="yf-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="yf-faq-answer"><div class="yf-faq-answer-inner">No. Yellow fever vaccination has never been available on the NHS. It must be obtained privately from a registered Yellow Fever Vaccination Centre like REY London Pharmacy. Our all-inclusive price is £85, which covers the vaccine, consultation, official ICVP certificate, and everything you need in a single appointment — no hidden fees.</div></div>
+          <div class="yf-faq-answer"><div class="yf-faq-answer-inner">No. Yellow fever vaccination has never been available on the NHS. It must be obtained privately from a registered Yellow Fever Vaccination Centre like Chislehurst Pharmacy Group Pharmacy. Our all-inclusive price is £85, which covers the vaccine, consultation, official ICVP certificate, and everything you need in a single appointment — no hidden fees.</div></div>
         </div>
 
         <div class="yf-faq-item">
@@ -881,7 +881,7 @@ get_header();
             <span class="yf-faq-question">I lost my yellow fever certificate. Can I get a replacement?</span>
             <svg class="yf-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="yf-faq-answer"><div class="yf-faq-answer-inner">If you were vaccinated at REY London Pharmacy, we can issue a replacement certificate if we have your original vaccination records on file — including the vaccine batch number and date of administration. Bring valid photo ID. If you were vaccinated elsewhere, contact that vaccination centre directly. You cannot obtain a legitimate replacement from a different centre without proof of your original vaccination record.</div></div>
+          <div class="yf-faq-answer"><div class="yf-faq-answer-inner">If you were vaccinated at Chislehurst Pharmacy Group Pharmacy, we can issue a replacement certificate if we have your original vaccination records on file — including the vaccine batch number and date of administration. Bring valid photo ID. If you were vaccinated elsewhere, contact that vaccination centre directly. You cannot obtain a legitimate replacement from a different centre without proof of your original vaccination record.</div></div>
         </div>
 
         <div class="yf-faq-item">
@@ -935,7 +935,7 @@ get_header();
             <span class="yf-faq-question">What's the difference between yellow fever vaccine and malaria prevention?</span>
             <svg class="yf-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="yf-faq-answer"><div class="yf-faq-answer-inner">Yellow fever and malaria are entirely separate diseases requiring different prevention strategies. Yellow fever is prevented by a one-time vaccine providing lifelong protection from a single dose. Malaria prevention requires daily or weekly antimalarial tablets taken throughout your entire trip — currently no vaccine exists for travellers. Many of the same destinations, particularly in sub-Saharan Africa, require BOTH yellow fever vaccination and antimalarial medication. At REY London Pharmacy, we provide comprehensive travel health consultations covering all risks relevant to your specific destinations.</div></div>
+          <div class="yf-faq-answer"><div class="yf-faq-answer-inner">Yellow fever and malaria are entirely separate diseases requiring different prevention strategies. Yellow fever is prevented by a one-time vaccine providing lifelong protection from a single dose. Malaria prevention requires daily or weekly antimalarial tablets taken throughout your entire trip — currently no vaccine exists for travellers. Many of the same destinations, particularly in sub-Saharan Africa, require BOTH yellow fever vaccination and antimalarial medication. At Chislehurst Pharmacy Group Pharmacy, we provide comprehensive travel health consultations covering all risks relevant to your specific destinations.</div></div>
         </div>
 
       </div>
@@ -1007,35 +1007,5 @@ get_header();
       This information is for educational purposes and does not constitute medical advice. Yellow fever vaccination is a prescription-only medicine in the UK. Eligibility and suitability are assessed by our GPhC-registered pharmacists during your consultation. Only NaTHNaC-registered vaccination centres are authorised to issue International Certificates of Vaccination or Prophylaxis (ICVP). Information is accurate as of March 2026 and based on current NaTHNaC, WHO, and MHRA guidance.
     </div>
   </div>
-
-  <!-- Footer (exact homepage) -->
-  <footer class="footer">
-    <div class="footer-glow"></div>
-    <div class="container">
-      <div class="footer-main" style="padding-top:0;">
-        <div class="footer-grid">
-          <div class="footer-brand-col">
-            <div class="footer-logo-wrapper"><span class="footer-logo-text">Rey London</span></div>
-            <p class="footer-description">Your trusted healthcare partner in London. Providing expert pharmaceutical care and personalized health services since 2010.</p>
-            <div class="footer-contact-cards">
-              <div class="contact-card"><div class="contact-card-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M18 8c0 5.5-7 11-7 11S4 13.5 4 8a7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="8" r="2" stroke="currentColor" stroke-width="2"/></svg></div><div class="contact-card-content"><span class="contact-card-label">Pond Pharmacy</span><a href="tel:02084673158" class="contact-card-value">020 8467 3158</a></div></div>
-              <div class="contact-card"><div class="contact-card-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M18 8c0 5.5-7 11-7 11S4 13.5 4 8a7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="8" r="2" stroke="currentColor" stroke-width="2"/></svg></div><div class="contact-card-content"><span class="contact-card-label">Chislehurst Pharmacy</span><a href="tel:02082950017" class="contact-card-value">020 8295 0017</a></div></div>
-            </div>
-            <div class="footer-social"><span class="social-label">Follow Us</span><div class="social-links-premium"><a href="#facebook" class="social-link" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 1H12C10.67 1 9.4 1.53 8.46 2.46C7.53 3.4 7 4.67 7 6V9H4V13H7V19H11V13H14L15 9H11V6C11 5.73 11.1 5.48 11.29 5.29C11.48 5.1 11.73 5 12 5H15V1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="#instagram" class="social-link" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="4" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg></a></div></div>
-          </div>
-          <div class="footer-links-col"><h4 class="footer-col-title">Services</h4><ul class="footer-links-list"><li><a href="/#prescriptions">NHS Prescriptions</a></li><li><a href="<?php echo esc_url( home_url( '/travel-health/' ) ); ?>">Travel Clinic</a></li><li><a href="<?php echo esc_url( home_url( '/yellow-fever-vaccine/' ) ); ?>">Yellow Fever Vaccine</a></li><li><a href="<?php echo esc_url( home_url( '/hpv-vaccine/' ) ); ?>">HPV Vaccine</a></li><li><a href="<?php echo esc_url( home_url( '/vitamin-b12-injection/' ) ); ?>">Vitamin B12</a></li><li><a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>">Weight Loss Programs</a></li></ul></div>
-          <div class="footer-links-col"><h4 class="footer-col-title">Yellow Fever</h4><ul class="footer-links-list"><li><a href="#about">What is Yellow Fever?</a></li><li><a href="#risk-areas">Risk Areas</a></li><li><a href="#certificate">ICVP Certificate</a></li><li><a href="#safety">Side Effects</a></li><li><a href="#pricing">Pricing — £85</a></li><li><a href="#faq">FAQs</a></li></ul></div>
-          <div class="footer-links-col"><h4 class="footer-col-title">Support</h4><ul class="footer-links-list"><li><a href="/#faq">FAQs</a></li><li><a href="/#opening-hours">Opening Hours</a></li><li><a href="/#privacy">Privacy Policy</a></li><li><a href="/#terms">Terms &amp; Conditions</a></li></ul></div>
-        </div>
-      </div>
-
-      <div class="footer-bottom-premium">
-        <div class="footer-bottom-content">
-          <div class="footer-legal"><p class="footer-copyright">© 2026 Rey London Pharmacy. All rights reserved.</p><p class="footer-registration">Registered Pharmacy | GPhC Registration: 1234567 | NaTHNaC Yellow Fever Centre</p></div>
-          <div class="footer-certifications"><div class="cert-badge"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/mhra.svg" alt="MHRA Approved"></div><div class="cert-badge"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/gpc.svg" alt="GPhC Registered"></div><div class="cert-badge"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/ico.svg" alt="ICO Registered"></div></div>
-          <div class="footer-payments"><span class="payments-label">We Accept</span><div class="payment-methods"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/visa.svg" alt="Visa"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/mastercard.svg" alt="Mastercard"><div class="payment-badge-text">Apple Pay</div><div class="payment-badge-text">Google Pay</div></div></div>
-        </div>
-      </div>
-    </div>
 
 <?php get_footer(); ?>

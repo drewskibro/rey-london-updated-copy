@@ -150,7 +150,7 @@ get_header();
         <div>
           <span class="hpv-eyebrow"><?php echo esc_html( rl_field( 'hpv_gardasil_eyebrow', 'The Solution' ) ); ?></span>
           <h2 class="hpv-section-title"><?php echo esc_html( rl_field( 'hpv_gardasil_heading', 'Gardasil 9: The Most Comprehensive HPV Protection Available' ) ); ?></h2>
-          <?php echo wp_kses_post( rl_field( 'hpv_gardasil_body', '<p class="hpv-body-text">Gardasil 9 is the HPV vaccine used by REY London Pharmacy. It\'s the most advanced HPV vaccine available, protecting against nine HPV types:</p><p class="hpv-body-text"><strong>High-Risk Types (Cancer-Causing):</strong> HPV 16, 18, 31, 33, 45, 52, and 58</p><p class="hpv-body-text"><strong>Low-Risk Types (Genital Warts):</strong> HPV 6 and 11</p><p class="hpv-body-text">Together, these nine types are responsible for:</p>' ) ); ?>
+          <?php echo wp_kses_post( rl_field( 'hpv_gardasil_body', '<p class="hpv-body-text">Gardasil 9 is the HPV vaccine used by Chislehurst Pharmacy Group Pharmacy. It\'s the most advanced HPV vaccine available, protecting against nine HPV types:</p><p class="hpv-body-text"><strong>High-Risk Types (Cancer-Causing):</strong> HPV 16, 18, 31, 33, 45, 52, and 58</p><p class="hpv-body-text"><strong>Low-Risk Types (Genital Warts):</strong> HPV 6 and 11</p><p class="hpv-body-text">Together, these nine types are responsible for:</p>' ) ); ?>
           <ul class="hpv-percentage-list">
             <?php
             $gardasil_stats = rl_field( 'hpv_gardasil_stats' );
@@ -628,7 +628,7 @@ get_header();
   <section class="hpv-section-light" id="why-us">
     <div class="container">
       <div style="text-align:center;">
-        <h2 class="section-title"><?php echo esc_html( rl_field( 'hpv_why_title', 'Why Choose REY London for Your HPV Vaccination' ) ); ?></h2>
+        <h2 class="section-title"><?php echo esc_html( rl_field( 'hpv_why_title', 'Why Choose Chislehurst Pharmacy Group for Your HPV Vaccination' ) ); ?></h2>
       </div>
 
       <div class="hpv-why-grid hpv-reveal">
@@ -763,7 +763,7 @@ get_header();
 
         <div class="hpv-faq-item"><button class="hpv-faq-trigger"><span class="hpv-faq-num">11</span><span class="hpv-faq-question">What's the difference between Gardasil 9 and the old HPV vaccines?</span><svg class="hpv-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hpv-faq-answer"><div class="hpv-faq-answer-inner">Earlier HPV vaccines (Gardasil and Cervarix) protected against 2 or 4 HPV types. Gardasil 9 protects against 9 types — all the previous ones plus five additional cancer-causing types (31, 33, 45, 52, 58). This increases protection from 70% to 90% of cervical cancers. Gardasil 9 is now the standard vaccine used in the UK.</div></div></div>
 
-        <div class="hpv-faq-item"><button class="hpv-faq-trigger"><span class="hpv-faq-num">12</span><span class="hpv-faq-question">Can I get the HPV vaccine on the NHS?</span><svg class="hpv-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hpv-faq-answer"><div class="hpv-faq-answer-inner">The NHS provides free HPV vaccination to children aged 12–13 in school year 8, and catch-up vaccination for those up to age 25 who missed school vaccination (girls born after Sept 1991, boys born after Sept 2006). Men who have sex with men under 46 can access it at sexual health clinics. If you don't meet NHS criteria, private vaccination is available at REY London Pharmacy.</div></div></div>
+        <div class="hpv-faq-item"><button class="hpv-faq-trigger"><span class="hpv-faq-num">12</span><span class="hpv-faq-question">Can I get the HPV vaccine on the NHS?</span><svg class="hpv-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hpv-faq-answer"><div class="hpv-faq-answer-inner">The NHS provides free HPV vaccination to children aged 12–13 in school year 8, and catch-up vaccination for those up to age 25 who missed school vaccination (girls born after Sept 1991, boys born after Sept 2006). Men who have sex with men under 46 can access it at sexual health clinics. If you don't meet NHS criteria, private vaccination is available at Chislehurst Pharmacy Group Pharmacy.</div></div></div>
       </div>
     </div>
   </section>
@@ -780,7 +780,7 @@ get_header();
           <span class="hpv-cta-badge">Same-Day Service</span>
         </div>
         <h2 class="hpv-footer-cta-title"><?php echo esc_html( rl_field( 'hpv_cta_title', 'Protect your future health today' ) ); ?></h2>
-        <p class="hpv-footer-cta-sub"><?php echo esc_html( rl_field( 'hpv_cta_subtitle', 'Book your private HPV vaccination at REY London Pharmacy — South East London\'s trusted clinic. No GP referral needed, same-day appointments available.' ) ); ?></p>
+        <p class="hpv-footer-cta-sub"><?php echo esc_html( rl_field( 'hpv_cta_subtitle', 'Book your private HPV vaccination at Chislehurst Pharmacy Group Pharmacy — South East London\'s trusted clinic. No GP referral needed, same-day appointments available.' ) ); ?></p>
         <div class="cta-buttons">
           <a href="#book" class="btn-cta-primary">Book HPV Vaccine Appointment</a>
           <a href="tel:02084673158" class="btn-cta-secondary-ghost">
@@ -820,35 +820,5 @@ get_header();
     </div>
   </div>
 
-  <!-- Footer (exact homepage) -->
-  <footer class="footer">
-    <div class="footer-glow"></div>
-    <div class="container">
-
-      <div class="footer-main" style="padding-top:0;">
-        <div class="footer-grid">
-          <div class="footer-brand-col">
-            <div class="footer-logo-wrapper"><span class="footer-logo-text">Rey London</span></div>
-            <p class="footer-description">Your trusted healthcare partner in London. Providing expert pharmaceutical care and personalized health services since 2010.</p>
-            <div class="footer-contact-cards">
-              <div class="contact-card"><div class="contact-card-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M18 8c0 5.5-7 11-7 11S4 13.5 4 8a7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="8" r="2" stroke="currentColor" stroke-width="2"/></svg></div><div class="contact-card-content"><span class="contact-card-label">Pond Pharmacy</span><a href="tel:02084673158" class="contact-card-value">020 8467 3158</a></div></div>
-              <div class="contact-card"><div class="contact-card-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M18 8c0 5.5-7 11-7 11S4 13.5 4 8a7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="8" r="2" stroke="currentColor" stroke-width="2"/></svg></div><div class="contact-card-content"><span class="contact-card-label">Chislehurst Pharmacy</span><a href="tel:02082950017" class="contact-card-value">020 8295 0017</a></div></div>
-            </div>
-            <div class="footer-social"><span class="social-label">Follow Us</span><div class="social-links-premium"><a href="#facebook" class="social-link" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 1H12C10.67 1 9.4 1.53 8.46 2.46C7.53 3.4 7 4.67 7 6V9H4V13H7V19H11V13H14L15 9H11V6C11 5.73 11.1 5.48 11.29 5.29C11.48 5.1 11.73 5 12 5H15V1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="#instagram" class="social-link" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="4" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg></a></div></div>
-          </div>
-          <div class="footer-links-col"><h4 class="footer-col-title">Services</h4><ul class="footer-links-list"><li><a href="/#prescriptions">NHS Prescriptions</a></li><li><a href="<?php echo esc_url( home_url( '/travel-health/' ) ); ?>">Travel Clinic</a></li><li><a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>">Weight Loss Programs</a></li><li><a href="<?php echo esc_url( home_url( '/hpv-vaccine/' ) ); ?>">HPV Vaccine</a></li><li><a href="<?php echo esc_url( home_url( '/vitamin-b12-injection/' ) ); ?>">Vitamin B12</a></li><li><a href="/#vaccinations">Vaccinations</a></li></ul></div>
-          <div class="footer-links-col"><h4 class="footer-col-title">Quick Links</h4><ul class="footer-links-list"><li><a href="/#about">About Us</a></li><li><a href="/#locations">Our Locations</a></li><li><a href="/#team">Meet the Team</a></li><li><a href="<?php echo esc_url( home_url( '/health-hub/' ) ); ?>">Health Hub</a></li><li><a href="/#contact">Contact Us</a></li></ul></div>
-          <div class="footer-links-col"><h4 class="footer-col-title">Support</h4><ul class="footer-links-list"><li><a href="/#faq">FAQs</a></li><li><a href="/#opening-hours">Opening Hours</a></li><li><a href="/#privacy">Privacy Policy</a></li><li><a href="/#terms">Terms &amp; Conditions</a></li></ul></div>
-        </div>
-      </div>
-
-      <div class="footer-bottom-premium">
-        <div class="footer-bottom-content">
-          <div class="footer-legal"><p class="footer-copyright">© 2026 Rey London Pharmacy. All rights reserved.</p><p class="footer-registration">Registered Pharmacy | GPhC Registration: 1234567</p></div>
-          <div class="footer-certifications"><div class="cert-badge"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/mhra.svg" alt="MHRA Approved"></div><div class="cert-badge"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/gpc.svg" alt="GPhC Registered"></div><div class="cert-badge"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/ico.svg" alt="ICO Registered"></div></div>
-          <div class="footer-payments"><span class="payments-label">We Accept</span><div class="payment-methods"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/visa.svg" alt="Visa"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/mastercard.svg" alt="Mastercard"><div class="payment-badge-text">Apple Pay</div><div class="payment-badge-text">Google Pay</div></div></div>
-        </div>
-      </div>
-    </div>
 
 <?php get_footer(); ?>

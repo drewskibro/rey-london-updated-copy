@@ -18,7 +18,7 @@ get_header();
     <div class="container" style="position:relative;z-index:2;">
       <div class="mt-hero-eyebrow">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        Our Clinical Team&nbsp;&nbsp;|&nbsp;&nbsp;REY London Pharmacy
+        Our Clinical Team&nbsp;&nbsp;|&nbsp;&nbsp;Chislehurst Pharmacy Group Pharmacy
       </div>
       <h1 class="mt-hero-title"><?php echo wp_kses_post( rl_field( 'mt_hero_title', 'People Behind Your<br><span class="gradient-text">Exceptional Care</span>' ) ); ?></h1>
       <p class="mt-hero-sub"><?php echo esc_html( rl_field( 'mt_hero_subtitle', 'Our team of GPhC-registered pharmacists, independent prescribers, and healthcare professionals are dedicated to delivering personalised, evidence-based care to every patient at both of our South East London locations.' ) ); ?></p>
@@ -363,7 +363,7 @@ get_header();
 
   <!-- ===================== LIFESTYLE BANNER ===================== -->
   <div class="mt-banner">
-    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1400&q=80&auto=format&fit=crop" alt="Our clinical team at REY London Pharmacy" class="mt-banner-img" />
+    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1400&q=80&auto=format&fit=crop" alt="Our clinical team at Chislehurst Pharmacy Group Pharmacy" class="mt-banner-img" />
     <div class="mt-banner-overlay">
       <div class="mt-banner-caption">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7ee8a2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
@@ -395,47 +395,5 @@ get_header();
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-glow"></div>
-    <div class="container">
-      <div class="footer-newsletter">
-        <div class="newsletter-content">
-          <div class="newsletter-text"><h3>Stay informed about your health</h3><p>Get expert health tips, exclusive offers, and updates delivered to your inbox</p></div>
-          <form class="newsletter-form">
-            <div class="newsletter-input-wrapper">
-              <svg class="newsletter-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 4h14c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 6l-9 6-9-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <input type="email" placeholder="Enter your email address" class="newsletter-input" required>
-              <button type="submit" class="newsletter-btn">Subscribe <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            </div>
-          </form>
-        </div>
-      </div>
-
-      <div class="footer-main">
-        <div class="footer-grid">
-          <div class="footer-brand-col">
-            <div class="footer-logo-wrapper"><span class="footer-logo-text">Rey London</span></div>
-            <p class="footer-description">Your trusted healthcare partner in London. Providing expert pharmaceutical care and personalized health services since 2010.</p>
-            <div class="footer-contact-cards">
-              <div class="contact-card"><div class="contact-card-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M18 8c0 5.5-7 11-7 11S4 13.5 4 8a7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="8" r="2" stroke="currentColor" stroke-width="2"/></svg></div><div class="contact-card-content"><span class="contact-card-label">Pond Pharmacy</span><a href="tel:02084673158" class="contact-card-value">020 8467 3158</a></div></div>
-              <div class="contact-card"><div class="contact-card-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M18 8c0 5.5-7 11-7 11S4 13.5 4 8a7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="8" r="2" stroke="currentColor" stroke-width="2"/></svg></div><div class="contact-card-content"><span class="contact-card-label">Chislehurst Pharmacy</span><a href="tel:02082950017" class="contact-card-value">020 8295 0017</a></div></div>
-            </div>
-            <div class="footer-social"><span class="social-label">Follow Us</span><div class="social-links-premium"><a href="#facebook" class="social-link" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 1H12C10.67 1 9.4 1.53 8.46 2.46C7.53 3.4 7 4.67 7 6V9H4V13H7V19H11V13H14L15 9H11V6C11 5.73 11.1 5.48 11.29 5.29C11.48 5.1 11.73 5 12 5H15V1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="#instagram" class="social-link" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="4" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg></a></div></div>
-          </div>
-          <div class="footer-links-col"><h4 class="footer-col-title">Services</h4><ul class="footer-links-list"><li><a href="/#prescriptions">NHS Prescriptions</a></li><li><a href="<?php echo esc_url( home_url( '/travel-health/' ) ); ?>">Travel Clinic</a></li><li><a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>">Weight Loss Programs</a></li><li><a href="<?php echo esc_url( home_url( '/hpv-vaccine/' ) ); ?>">HPV Vaccine</a></li><li><a href="<?php echo esc_url( home_url( '/vitamin-b12-injection/' ) ); ?>">Vitamin B12</a></li><li><a href="/#vaccinations">Vaccinations</a></li></ul></div>
-          <div class="footer-links-col"><h4 class="footer-col-title">Quick Links</h4><ul class="footer-links-list"><li><a href="/#about">About Us</a></li><li><a href="/#locations">Our Locations</a></li><li><a href="<?php echo esc_url( home_url( '/meet-the-team/' ) ); ?>">Meet the Team</a></li><li><a href="<?php echo esc_url( home_url( '/health-hub/' ) ); ?>">Health Hub</a></li><li><a href="/#contact">Contact Us</a></li></ul></div>
-          <div class="footer-links-col"><h4 class="footer-col-title">Support</h4><ul class="footer-links-list"><li><a href="/#faq">FAQs</a></li><li><a href="/#opening-hours">Opening Hours</a></li><li><a href="/#privacy">Privacy Policy</a></li><li><a href="/#terms">Terms &amp; Conditions</a></li></ul></div>
-        </div>
-      </div>
-
-      <div class="footer-bottom-premium">
-        <div class="footer-bottom-content">
-          <div class="footer-legal"><p class="footer-copyright">© 2026 Rey London Pharmacy. All rights reserved.</p><p class="footer-registration">Registered Pharmacy | GPhC Registration: 1234567</p></div>
-          <div class="footer-certifications"><div class="cert-badge"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/mhra.svg" alt="MHRA Approved"></div><div class="cert-badge"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/gpc.svg" alt="GPhC Registered"></div><div class="cert-badge"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/ico.svg" alt="ICO Registered"></div></div>
-          <div class="footer-payments"><span class="payments-label">We Accept</span><div class="payment-methods"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/visa.svg" alt="Visa"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/mastercard.svg" alt="Mastercard"><div class="payment-badge-text">Apple Pay</div><div class="payment-badge-text">Google Pay</div></div></div>
-        </div>
-      </div>
-    </div>
 
 <?php get_footer(); ?>
