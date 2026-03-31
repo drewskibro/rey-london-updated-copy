@@ -38,8 +38,13 @@ $booking_url   = rl_booking_url();
     <header class="header">
       <div class="container">
         <div class="header-content">
+          <?php $logo_url = rl_logo_url(); ?>
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
-            <span class="logo-text"><?php echo esc_html( $pharmacy_name ); ?></span>
+            <?php if ( $logo_url ) : ?>
+              <img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php echo esc_attr( $pharmacy_name ); ?>" class="logo-img" />
+            <?php else : ?>
+              <span class="logo-text"><?php echo esc_html( $pharmacy_name ); ?></span>
+            <?php endif; ?>
           </a>
 
           <nav class="nav">

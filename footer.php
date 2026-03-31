@@ -25,7 +25,17 @@ $booking_url   = rl_booking_url();
             <!-- Brand Column -->
             <div class="footer-brand-col">
               <div class="footer-logo-wrapper">
-                <span class="footer-logo-text"><?php echo esc_html( $pharmacy_name ); ?></span>
+                <?php
+                  $footer_logo = rl_option( 'pharmacy_logo_dark' );
+                  if ( ! $footer_logo ) {
+                      $footer_logo = rl_logo_url();
+                  }
+                ?>
+                <?php if ( $footer_logo ) : ?>
+                  <img src="<?php echo esc_url( is_array( $footer_logo ) ? $footer_logo['url'] : $footer_logo ); ?>" alt="<?php echo esc_attr( $pharmacy_name ); ?>" class="footer-logo-img" />
+                <?php else : ?>
+                  <span class="footer-logo-text"><?php echo esc_html( $pharmacy_name ); ?></span>
+                <?php endif; ?>
               </div>
               <p class="footer-description">
                 <?php echo esc_html( rl_option( 'footer_description', 'Your trusted healthcare partner in London. Providing expert pharmaceutical care and personalized health services since 2010.' ) ); ?>

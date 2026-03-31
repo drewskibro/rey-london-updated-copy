@@ -115,6 +115,14 @@ body {
   transform: scale(1.02);
 }
 
+.logo-img {
+  height: 50px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  display: block;
+}
+
 .logo-text {
   font-size: 26px;
   font-weight: 900;
@@ -3410,6 +3418,14 @@ body {
 
 .footer-logo-wrapper {
   margin-bottom: 8px;
+}
+
+.footer-logo-img {
+  height: 50px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  display: block;
 }
 
 .footer-logo-text {
