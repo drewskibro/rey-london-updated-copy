@@ -195,7 +195,7 @@ $booking_url   = rl_booking_url();
                 <div class="dropdown-content dropdown-content-4col">
                   <div class="dropdown-section">
                     <h4 class="dropdown-title">Travel Vaccinations</h4>
-                    <a href="<?php echo esc_url( home_url( '/hepatitis-vaccine/' ) ); ?>" class="dropdown-link">
+                    <a href="<?php echo esc_url( home_url( '/hepatitis-vaccine-london/' ) ); ?>" class="dropdown-link">
                       <div class="link-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="M9 12l2 2 4-4" />
@@ -206,7 +206,7 @@ $booking_url   = rl_booking_url();
                         <span class="link-desc">Essential travel protection</span>
                       </div>
                     </a>
-                    <a href="<?php echo esc_url( home_url( '/yellow-fever-vaccine/' ) ); ?>" class="dropdown-link">
+                    <a href="<?php echo esc_url( home_url( '/yellow-fever-vaccine-london/' ) ); ?>" class="dropdown-link">
                       <div class="link-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
@@ -382,7 +382,7 @@ $booking_url   = rl_booking_url();
               <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="search-popular-link">Weight Loss Programs</a>
               <a href="<?php echo esc_url( home_url( '/travel-health/' ) ); ?>" class="search-popular-link">Travel Vaccinations</a>
               <a href="<?php echo esc_url( home_url( '/prescription-services/' ) ); ?>" class="search-popular-link">NHS Prescriptions</a>
-              <a href="<?php echo esc_url( home_url( '/yellow-fever-vaccine/' ) ); ?>" class="search-popular-link">Yellow Fever Vaccine</a>
+              <a href="<?php echo esc_url( home_url( '/yellow-fever-vaccine-london/' ) ); ?>" class="search-popular-link">Yellow Fever Vaccine</a>
               <a href="<?php echo esc_url( home_url( '/vitamin-b12-injection/' ) ); ?>" class="search-popular-link">Vitamin B12 Injections</a>
               <a href="<?php echo esc_url( home_url( '/hair-loss/' ) ); ?>" class="search-popular-link">Hair Loss Treatment</a>
             </div>
