@@ -265,6 +265,16 @@ body {
   background: rgba(10, 47, 138, 0.04);
 }
 
+/* Compact About dropdown */
+.about-dropdown {
+  min-width: 320px;
+}
+
+.about-dropdown .dropdown-content-2col {
+  display: block;
+  padding: 12px;
+}
+
 .dropdown-title {
   font-size: 13px;
   font-weight: 700;
