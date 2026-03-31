@@ -269,7 +269,7 @@ get_header();
     <div class="container">
       <div style="text-align:center;">
         <h2 class="section-title"><?php echo esc_html( rl_field( 'hpv_dosing_title', 'How Many Doses Do You Need?' ) ); ?></h2>
-        <p class="section-subtitle" style="max-width:800px;margin:0 auto 0;"><?php echo esc_html( rl_field( 'hpv_dosing_subtitle', 'The number of doses depends on your age when you receive your first vaccination and your immune system status.' ) ); ?></p>
+        <p class="section-subtitle" style="max-width:800px;margin:0 auto 0;"><?php echo esc_html( rl_field( 'hpv_dosing_subtitle', 'The number of doses depends on your age when you receive your first vaccination and your immune system status. For private vaccination, we follow the Gardasil 9 Summary of Product Characteristics.' ) ); ?></p>
       </div>
 
       <div class="hpv-dose-grid hpv-reveal">
@@ -290,28 +290,28 @@ get_header();
             <?php endforeach;
         else : ?>
         <div class="hpv-dose-card recommended">
-          <div class="hpv-dose-number">1</div>
-          <h3>1 Dose</h3>
-          <div class="hpv-dose-who">Ages 9–24 years</div>
-          <p>If you receive your first dose before your 25th birthday, you only need one dose for lifetime protection.</p>
-          <div class="hpv-timeline"><div class="hpv-timeline-dot"></div></div>
-          <div class="hpv-dose-note">Single appointment</div>
-        </div>
-        <div class="hpv-dose-card">
           <div class="hpv-dose-number">2</div>
           <h3>2 Doses</h3>
-          <div class="hpv-dose-who">Ages 25–45+ years</div>
-          <p>Adults aged 25 and older need two doses for optimal protection.</p>
+          <div class="hpv-dose-who">Ages 9–14 years</div>
+          <p>Two doses provide full protection when the second dose is given 6 to 12 months after the first.</p>
           <div class="hpv-timeline"><div class="hpv-timeline-dot"></div><div class="hpv-timeline-line"></div><div class="hpv-timeline-dot"></div></div>
-          <div class="hpv-dose-note">6–24 months apart</div>
+          <div class="hpv-dose-note">Second dose 6–12 months after first</div>
+        </div>
+        <div class="hpv-dose-card">
+          <div class="hpv-dose-number">3</div>
+          <h3>3 Doses</h3>
+          <div class="hpv-dose-who">Ages 15 and over</div>
+          <p>Three doses are recommended for anyone receiving their first dose aged 15 or older.</p>
+          <div class="hpv-timeline"><div class="hpv-timeline-dot"></div><div class="hpv-timeline-line"></div><div class="hpv-timeline-dot"></div><div class="hpv-timeline-line"></div><div class="hpv-timeline-dot"></div></div>
+          <div class="hpv-dose-note">Doses at 0, 2 and 6 months</div>
         </div>
         <div class="hpv-dose-card">
           <div class="hpv-dose-number">3</div>
           <h3>3 Doses</h3>
           <div class="hpv-dose-who">Immunocompromised individuals</div>
-          <p>If you have HIV, are immunosuppressed, or have a weakened immune system, you'll need three doses.</p>
+          <p>If you have HIV, are immunosuppressed, or have a weakened immune system, three doses are required regardless of age.</p>
           <div class="hpv-timeline"><div class="hpv-timeline-dot"></div><div class="hpv-timeline-line"></div><div class="hpv-timeline-dot"></div><div class="hpv-timeline-line"></div><div class="hpv-timeline-dot"></div></div>
-          <div class="hpv-dose-note">Doses at 0, 1–2, and 6 months</div>
+          <div class="hpv-dose-note">Doses at 0, 1–2 and 6 months</div>
         </div>
         <?php endif; ?>
       </div>
@@ -500,7 +500,7 @@ get_header();
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
           <div>
             <strong><?php echo esc_html( rl_field( 'hpv_safety_banner_title', 'Trusted Globally Since 2014' ) ); ?></strong>
-            <span><?php echo esc_html( rl_field( 'hpv_safety_banner_text', 'Used safely in 300+ million doses worldwide' ) ); ?></span>
+            <span><?php echo esc_html( rl_field( 'hpv_safety_banner_text', 'Used safely in hundreds of millions of doses worldwide since 2014' ) ); ?></span>
           </div>
         </div>
       </div>
@@ -537,7 +537,7 @@ get_header();
         <!-- Right: Serious / Contraindications -->
         <div class="hpv-side-col">
           <h3><?php echo esc_html( rl_field( 'hpv_safety_serious_title', 'Serious Side Effects (Very Rare)' ) ); ?></h3>
-          <div class="hpv-side-warning"><?php echo esc_html( rl_field( 'hpv_safety_serious_text', 'Serious allergic reactions are extremely rare (less than 1 in 1,000,000 doses) but possible with any vaccine. This is why we observe all patients for 15 minutes after vaccination. Our pharmacists are trained to recognise and treat allergic reactions immediately.' ) ); ?></div>
+          <div class="hpv-side-warning"><?php echo esc_html( rl_field( 'hpv_safety_serious_text', 'Serious allergic reactions are extremely rare (fewer than 2 per million doses) but possible with any vaccine. This is why we observe all patients for 15 minutes after vaccination. Our pharmacists are trained to recognise and treat allergic reactions immediately.' ) ); ?></div>
           <h3 style="margin-top:24px;"><?php echo esc_html( rl_field( 'hpv_safety_contra_title', 'Who Should Not Get the Vaccine' ) ); ?></h3>
           <ul class="hpv-contra-list">
             <?php
@@ -553,11 +553,11 @@ get_header();
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Currently moderately or severely ill (delay until recovered)</li>
             <?php endif; ?>
           </ul>
-          <p class="hpv-side-note" style="margin-top:16px;"><?php echo esc_html( rl_field( 'hpv_safety_contra_note', 'Breastfeeding is safe — the vaccine does not pass into breast milk.' ) ); ?></p>
+          <p class="hpv-side-note" style="margin-top:16px;"><?php echo esc_html( rl_field( 'hpv_safety_contra_note', 'Gardasil 9 is generally considered compatible with breastfeeding — discuss with your pharmacist if you have concerns.' ) ); ?></p>
         </div>
       </div>
 
-      <div class="hpv-safety-box"><?php echo esc_html( rl_field( 'hpv_safety_box', 'Safety monitoring by the MHRA and WHO continues to confirm HPV vaccines have a favourable safety profile. Over 160 studies confirm the vaccine\'s safety and effectiveness.' ) ); ?></div>
+      <div class="hpv-safety-box"><?php echo esc_html( rl_field( 'hpv_safety_box', 'Safety monitoring by the MHRA and WHO continues to confirm HPV vaccines have a favourable safety profile. Extensive post-marketing surveillance studies continue to confirm the vaccine\'s safety and effectiveness.' ) ); ?></div>
     </div>
   </section>
 

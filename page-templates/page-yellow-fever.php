@@ -553,13 +553,13 @@ get_header();
     <div class="container">
       <div style="text-align:center;margin-top:72px;">
         <h2 class="section-title"><?php echo esc_html( rl_field( 'yf_safety_title', 'Side Effects & Safety Information' ) ); ?></h2>
-        <p class="section-subtitle" style="max-width:860px;margin:0 auto 0;"><?php echo esc_html( rl_field( 'yf_safety_subtitle', 'The yellow fever vaccine has an excellent safety record with over 600 million doses administered. Serious reactions are extremely rare. We observe all patients for 15 minutes post-vaccination.' ) ); ?></p>
+        <p class="section-subtitle" style="max-width:860px;margin:0 auto 0;"><?php echo esc_html( rl_field( 'yf_safety_subtitle', 'The yellow fever vaccine has an excellent safety record with over 500 million doses administered. Serious reactions are extremely rare. We observe all patients for 15 minutes post-vaccination.' ) ); ?></p>
       </div>
 
       <div class="yf-two-col equal yf-reveal" style="margin-top:48px;align-items:start;">
         <!-- Left: Common + Rare -->
         <div class="yf-side-col">
-          <h3><?php echo esc_html( rl_field( 'yf_safety_common_title', 'Common Side Effects (Affecting 1 in 3 People)' ) ); ?></h3>
+          <h3><?php echo esc_html( rl_field( 'yf_safety_common_title', 'Common Side Effects (Affecting up to 1 in 3 People)' ) ); ?></h3>
           <ul class="yf-side-list">
             <?php
             $yf_common_list = rl_field( 'yf_safety_common_list' );
@@ -580,7 +580,7 @@ get_header();
           <h3 style="margin-top:32px;"><?php echo esc_html( rl_field( 'yf_safety_serious_title', 'Serious Side Effects (Very Rare)' ) ); ?></h3>
           <div class="yf-side-warning">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#92400E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            <div><?php echo wp_kses_post( rl_field( 'yf_safety_serious_text', 'Allergic reaction (anaphylaxis): ~8 per million doses · YEL-AND (neurotropic disease): ~4 per million doses · YEL-AVD (viscerotropic disease): ~3 per million doses. We observe all patients for 15 minutes and are trained to respond to any reaction immediately.' ) ); ?></div>
+            <div><?php echo wp_kses_post( rl_field( 'yf_safety_serious_text', 'Anaphylaxis: approximately 1.3 per 100,000 doses · YEL-AND (neurotropic disease): very rare · YEL-AVD (viscerotropic disease): approximately 0.3 per 100,000 doses. We observe all patients for 15 minutes and are trained to respond to any reaction immediately.' ) ); ?></div>
           </div>
         </div>
 
@@ -621,7 +621,7 @@ get_header();
         </div>
       </div>
 
-      <div class="yf-safety-box"><?php echo wp_kses_post( rl_field( 'yf_safety_box', 'Safety monitoring by the MHRA, WHO, and NaTHNaC continues to confirm yellow fever vaccine has an excellent, well-established safety profile. Over 600 million doses have been safely administered worldwide over eight decades.' ) ); ?></div>
+      <div class="yf-safety-box"><?php echo wp_kses_post( rl_field( 'yf_safety_box', 'Safety monitoring by the MHRA, WHO, and NaTHNaC continues to confirm yellow fever vaccine has an excellent, well-established safety profile. Over 500 million doses have been safely administered worldwide over eight decades.' ) ); ?></div>
     </div>
   </section>
 
@@ -832,7 +832,7 @@ get_header();
             <span class="yf-faq-question">How long does yellow fever vaccination protection last?</span>
             <svg class="yf-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="yf-faq-answer"><div class="yf-faq-answer-inner">A single dose of yellow fever vaccine provides lifelong immunity for most people. The International Certificate of Vaccination is now valid for life (previously 10 years under old WHO rules). You won't need booster doses unless you were pregnant, immunocompromised, or under 2 years old when first vaccinated — in which case re-vaccination may be recommended before travel.</div></div>
+          <div class="yf-faq-answer"><div class="yf-faq-answer-inner">A single dose of yellow fever vaccine provides lifelong immunity for most people. The International Certificate of Vaccination is now valid for life (previously 10 years under old WHO rules). You won't need booster doses unless you were pregnant, immunocompromised, or haematopoietic stem cell transplant recipients when first vaccinated — in which case re-vaccination may be recommended before travel.</div></div>
         </div>
 
         <div class="yf-faq-item">
@@ -895,7 +895,7 @@ get_header();
             <span class="yf-faq-question">I'm over 60. Can I get the yellow fever vaccine?</span>
             <svg class="yf-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="yf-faq-answer"><div class="yf-faq-answer-inner">Yes, but with additional precautions. People over 60 have a slightly higher risk of rare serious side effects (approximately 1 in 100,000 for viscerotropic disease). If travel to a yellow fever area is essential, vaccination is still generally recommended as the risk of yellow fever itself far outweighs vaccine risk. If travel is discretionary or to low actual-risk areas, we'll discuss alternatives including exemption letters, which some countries will accept in lieu of vaccination.</div></div>
+          <div class="yf-faq-answer"><div class="yf-faq-answer-inner">Yes, but with additional precautions. People over 60 have a slightly higher risk of rare serious side effects (approximately 1.2 per 100,000 doses). If travel to a yellow fever area is essential, vaccination is still generally recommended as the risk of yellow fever itself far outweighs vaccine risk. If travel is discretionary or to low actual-risk areas, we'll discuss alternatives including exemption letters, which some countries will accept in lieu of vaccination.</div></div>
         </div>
 
         <div class="yf-faq-item">
@@ -904,7 +904,7 @@ get_header();
             <span class="yf-faq-question">Can my child get the yellow fever vaccine?</span>
             <svg class="yf-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="yf-faq-answer"><div class="yf-faq-answer-inner">Yellow fever vaccine is approved from 9 months of age. Children aged 9 months to 9 years can be safely vaccinated. Infants under 9 months should not receive the vaccine due to an increased risk of a rare but serious neurological complication. If your infant under 9 months must travel to a high-risk area, our pharmacist will discuss protective measures such as mosquito avoidance strategies and can provide exemption documentation for border requirements.</div></div>
+          <div class="yf-faq-answer"><div class="yf-faq-answer-inner">Yellow fever vaccine is approved from 9 months of age. Children aged 9 months and over can be safely vaccinated. Infants under 9 months should not receive the vaccine due to an increased risk of a rare but serious neurological complication. If your infant under 9 months must travel to a high-risk area, our pharmacist will discuss protective measures such as mosquito avoidance strategies and can provide exemption documentation for border requirements.</div></div>
         </div>
 
         <div class="yf-faq-item">
