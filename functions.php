@@ -254,6 +254,15 @@ function rl_logo_url() {
 }
 
 /**
+ * Allow SVG uploads in the WordPress media library.
+ */
+add_filter( 'upload_mimes', function ( $mimes ) {
+    $mimes['svg']  = 'image/svg+xml';
+    $mimes['svgz'] = 'image/svg+xml';
+    return $mimes;
+} );
+
+/**
  * Register widget areas
  */
 function rey_london_widgets_init() {
