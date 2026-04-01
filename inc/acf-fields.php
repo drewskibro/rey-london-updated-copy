@@ -1566,7 +1566,7 @@ acf_add_local_field_group( array(
     'title'    => 'Contact Page',
     'fields'   => array(
         array( 'key' => 'field_rl_ct_hero_tab', 'label' => 'Hero Section', 'type' => 'tab' ),
-        array( 'key' => 'field_rl_ct_hero_title', 'label' => 'Hero Title', 'name' => 'ct_hero_title', 'type' => 'text', 'default_value' => 'Contact Rey London Pharmacy' ),
+        array( 'key' => 'field_rl_ct_hero_title', 'label' => 'Hero Title', 'name' => 'ct_hero_title', 'type' => 'text', 'default_value' => 'Book an Appointment at Chislehurst Pharmacy Group' ),
         array( 'key' => 'field_rl_ct_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'ct_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'We\'re here to help with prescriptions, travel vaccinations, specialist consultations, and any health questions. Two Chislehurst locations, walk-ins welcome.' ),
         array( 'key' => 'field_rl_ct_locations_tab', 'label' => 'Locations', 'type' => 'tab' ),
         array(
