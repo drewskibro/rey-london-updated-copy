@@ -1604,6 +1604,8 @@ acf_add_local_field_group( array(
         array( 'key' => 'field_rl_mt_hero_tab', 'label' => 'Hero Section', 'type' => 'tab' ),
         array( 'key' => 'field_rl_mt_hero_title', 'label' => 'Hero Title', 'name' => 'mt_hero_title', 'type' => 'text', 'default_value' => 'People Behind Your Exceptional Care' ),
         array( 'key' => 'field_rl_mt_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'mt_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'Our team of GPhC-registered pharmacists, independent prescribers, and healthcare professionals are dedicated to delivering personalised, evidence-based care.' ),
+        array( 'key' => 'field_rl_mt_lead_tab', 'label' => 'Lead Pharmacist', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_mt_lead_photo', 'label' => 'Lead Pharmacist Photo', 'name' => 'mt_lead_photo', 'type' => 'image', 'return_format' => 'url', 'instructions' => 'Photo for the featured lead pharmacist section. Recommended: 600x750px.' ),
         array( 'key' => 'field_rl_mt_members_tab', 'label' => 'Team Members', 'type' => 'tab' ),
         array(
             'key' => 'field_rl_mt_members', 'label' => 'Team Members', 'name' => 'mt_members', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Team Member',
@@ -1614,6 +1616,8 @@ acf_add_local_field_group( array(
                 array( 'key' => 'field_rl_mt_member_photo', 'label' => 'Photo', 'name' => 'photo', 'type' => 'image', 'return_format' => 'url' ),
                 array( 'key' => 'field_rl_mt_member_gphc', 'label' => 'GPhC Number', 'name' => 'gphc', 'type' => 'text' ),
                 array( 'key' => 'field_rl_mt_member_qualifications', 'label' => 'Qualifications', 'name' => 'qualifications', 'type' => 'text' ),
+                array( 'key' => 'field_rl_mt_member_specialisms', 'label' => 'Specialisms (Tags)', 'name' => 'specialisms', 'type' => 'text', 'instructions' => 'Comma-separated tags, e.g. "Weight Loss, Travel Health, Ind. Prescriber"' ),
+                array( 'key' => 'field_rl_mt_member_is_featured', 'label' => 'Featured (Lead)?', 'name' => 'is_featured', 'type' => 'true_false', 'default_value' => 0, 'instructions' => 'Toggle on for the lead pharmacist card to show the "Lead Pharmacist" badge.' ),
             ),
         ),
     ),
