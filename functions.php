@@ -233,11 +233,15 @@ function rl_phone_link() {
  * Helper: Get booking URL
  */
 function rl_booking_url() {
+    $url = rl_option( 'pharmacy_booking_url' );
+    if ( $url ) {
+        return $url;
+    }
     $page = rl_option( 'booking_page' );
     if ( $page ) {
         return get_permalink( $page );
     }
-    return home_url( '/book-appointment/' );
+    return home_url( '/contact-page/#book-appointment' );
 }
 
 /**
