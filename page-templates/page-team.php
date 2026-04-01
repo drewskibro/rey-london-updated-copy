@@ -38,8 +38,9 @@ get_header();
         <!-- Left: Photo card -->
         <div class="mt-lead-photo-col">
           <div class="mt-lead-photo-wrap">
+            <?php $lead_photo = rl_field( 'mt_lead_photo', 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80&auto=format&fit=crop' ); ?>
             <img
-              src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80&auto=format&fit=crop"
+              src="<?php echo esc_url( $lead_photo ); ?>"
               alt="Dilip Modhvadia — Lead Pharmacist & Independent Prescriber"
               class="mt-lead-photo"
             />
@@ -212,92 +213,46 @@ get_header();
       </div>
 
       <div class="mt-team-grid mt-reveal">
-        <!-- Dilip -->
-        <div class="mt-team-card mt-team-card-featured">
-          <div class="mt-team-card-badge">Lead Pharmacist</div>
+        <?php
+        $members = rl_field( 'mt_members' );
+        if ( $members ) :
+          foreach ( $members as $member ) :
+            $is_featured = ! empty( $member['is_featured'] );
+            $photo       = ! empty( $member['photo'] ) ? $member['photo'] : '';
+            $name        = ! empty( $member['name'] ) ? $member['name'] : '';
+            $role        = ! empty( $member['role'] ) ? $member['role'] : '';
+            $bio         = ! empty( $member['bio'] ) ? $member['bio'] : '';
+            $specialisms = ! empty( $member['specialisms'] ) ? array_map( 'trim', explode( ',', $member['specialisms'] ) ) : array();
+        ?>
+        <div class="mt-team-card<?php echo $is_featured ? ' mt-team-card-featured' : ''; ?>">
+          <?php if ( $is_featured ) : ?>
+            <div class="mt-team-card-badge">Lead Pharmacist</div>
+          <?php endif; ?>
           <div class="mt-team-avatar-wrap">
-            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&q=80&auto=format&fit=crop&crop=face" alt="Dilip Modhvadia" class="mt-team-avatar" />
+            <?php if ( $photo ) : ?>
+              <img src="<?php echo esc_url( $photo ); ?>" alt="<?php echo esc_attr( $name ); ?>" class="mt-team-avatar" />
+            <?php endif; ?>
           </div>
           <div class="mt-team-card-body">
-            <h3 class="mt-team-name">Dilip Modhvadia</h3>
-            <p class="mt-team-role">Lead Pharmacist &amp; Independent Prescriber</p>
-            <p class="mt-team-bio">15+ years of clinical experience. Specialist in weight loss, travel health, and ear wax removal. Leads both Chislehurst locations.</p>
-            <div class="mt-team-tags">
-              <span>Weight Loss</span>
-              <span>Travel Health</span>
-              <span>Ind. Prescriber</span>
-            </div>
+            <h3 class="mt-team-name"><?php echo esc_html( $name ); ?></h3>
+            <p class="mt-team-role"><?php echo esc_html( $role ); ?></p>
+            <p class="mt-team-bio"><?php echo esc_html( $bio ); ?></p>
+            <?php if ( $specialisms ) : ?>
+              <div class="mt-team-tags">
+                <?php foreach ( $specialisms as $tag ) : ?>
+                  <span><?php echo esc_html( $tag ); ?></span>
+                <?php endforeach; ?>
+              </div>
+            <?php endif; ?>
             <a href="#book" class="mt-team-cta">Book Appointment</a>
           </div>
         </div>
-
-        <!-- Bhavna -->
-        <div class="mt-team-card">
-          <div class="mt-team-avatar-wrap">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&q=80&auto=format&fit=crop&crop=face" alt="Bhavna Modhvadia" class="mt-team-avatar" />
-          </div>
-          <div class="mt-team-card-body">
-            <h3 class="mt-team-name">Bhavna Modhvadia</h3>
-            <p class="mt-team-role">Senior Pharmacist &amp; Vaccination Specialist</p>
-            <p class="mt-team-bio">Specialist in travel vaccinations and NHS services. Extensive experience delivering patient-centred care.</p>
-            <div class="mt-team-tags">
-              <span>Vaccinations</span>
-              <span>NHS Services</span>
-            </div>
-            <a href="#book" class="mt-team-cta">Book Appointment</a>
-          </div>
-        </div>
-
-        <!-- Adrian -->
-        <div class="mt-team-card">
-          <div class="mt-team-avatar-wrap">
-            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=300&q=80&auto=format&fit=crop&crop=face" alt="Adrian" class="mt-team-avatar" />
-          </div>
-          <div class="mt-team-card-body">
-            <h3 class="mt-team-name">Adrian Chen</h3>
-            <p class="mt-team-role">Pharmacist &amp; Clinical Technician</p>
-            <p class="mt-team-bio">Focuses on medicines optimisation, patient consultations, and dispensing accuracy. Trained in ear wax microsuction.</p>
-            <div class="mt-team-tags">
-              <span>Ear Wax</span>
-              <span>Dispensing</span>
-            </div>
-            <a href="#book" class="mt-team-cta">Book Appointment</a>
-          </div>
-        </div>
-
-        <!-- Sophie -->
-        <div class="mt-team-card">
-          <div class="mt-team-avatar-wrap">
-            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=300&q=80&auto=format&fit=crop&crop=face" alt="Sophie Hartley" class="mt-team-avatar" />
-          </div>
-          <div class="mt-team-card-body">
-            <h3 class="mt-team-name">Sophie Hartley</h3>
-            <p class="mt-team-role">Pharmacist &amp; Hair Loss Specialist</p>
-            <p class="mt-team-bio">Specialised in hair loss treatment and dermatological care. Passionate about helping patients regain confidence.</p>
-            <div class="mt-team-tags">
-              <span>Hair Loss</span>
-              <span>Dermatology</span>
-            </div>
-            <a href="#book" class="mt-team-cta">Book Appointment</a>
-          </div>
-        </div>
-
-        <!-- James -->
-        <div class="mt-team-card">
-          <div class="mt-team-avatar-wrap">
-            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=300&q=80&auto=format&fit=crop&crop=face" alt="James Okafor" class="mt-team-avatar" />
-          </div>
-          <div class="mt-team-card-body">
-            <h3 class="mt-team-name">James Okafor</h3>
-            <p class="mt-team-role">Healthcare Assistant &amp; Patient Coordinator</p>
-            <p class="mt-team-bio">First point of contact for patients at both locations, supporting clinical staff with scheduling and patient welfare.</p>
-            <div class="mt-team-tags">
-              <span>Patient Care</span>
-              <span>Coordination</span>
-            </div>
-            <a href="#book" class="mt-team-cta">Book Appointment</a>
-          </div>
-        </div>
+        <?php
+          endforeach;
+        else :
+        ?>
+          <p style="color:rgba(255,255,255,.7);text-align:center;grid-column:1/-1;">Team members coming soon. Add them via the WordPress admin.</p>
+        <?php endif; ?>
       </div>
     </div>
   </section>
