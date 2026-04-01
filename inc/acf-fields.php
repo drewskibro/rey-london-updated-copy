@@ -1625,6 +1625,7 @@ acf_add_local_field_group( array(
         array( 'key' => 'field_rl_mt_lead_stat_label', 'label' => 'Stat Label', 'name' => 'mt_lead_stat_label', 'type' => 'text', 'default_value' => 'Years of Clinical Practice' ),
 
         array( 'key' => 'field_rl_mt_trust_tab', 'label' => 'Trust Bar', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_mt_trust_visible', 'label' => 'Show Trust Bar', 'name' => 'mt_trust_visible', 'type' => 'true_false', 'default_value' => 1, 'ui' => 1, 'instructions' => 'Toggle off to hide the trust bar section (star rating, review count, etc.) from the page.' ),
         array( 'key' => 'field_rl_mt_trust_score', 'label' => 'Rating Score', 'name' => 'mt_trust_score', 'type' => 'text', 'default_value' => '4.8' ),
         array( 'key' => 'field_rl_mt_trust_count', 'label' => 'Review Count', 'name' => 'mt_trust_count', 'type' => 'text', 'default_value' => '400+ reviews' ),
         array( 'key' => 'field_rl_mt_trust_source', 'label' => 'Review Source', 'name' => 'mt_trust_source', 'type' => 'text', 'default_value' => 'Google & Trustpilot' ),

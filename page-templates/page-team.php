@@ -142,6 +142,7 @@ get_header();
   </section>
 
   <!-- ===================== TRUST BAR ===================== -->
+  <?php if ( rl_field( 'mt_trust_visible', true ) ) : ?>
   <section class="mt-trust-bar">
     <div class="container">
       <div class="mt-trust-inner mt-reveal">
@@ -165,6 +166,7 @@ get_header();
       </div>
     </div>
   </section>
+  <?php endif; ?>
 
   <!-- ===================== QUALIFICATIONS ===================== -->
   <section class="mt-quals-section" id="qualifications">
