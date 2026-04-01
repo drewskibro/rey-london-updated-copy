@@ -940,6 +940,23 @@
   padding: 40px;
   box-shadow: 0 25px 60px rgba(0,0,0,.25);
 }
+/* Reduce excess top whitespace inside Amelia form */
+.ct-booking-form-wrap .amelia-app-booking {
+  padding-top: 0;
+}
+/* Match Amelia Continue/Submit button to brand navy */
+.ct-booking-form-wrap .amelia-app-booking button[type="submit"],
+.ct-booking-form-wrap .amelia-app-booking .amelia-booking-footer button {
+  background: var(--primary-blue);
+  border-radius: 12px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  transition: opacity .2s ease;
+}
+.ct-booking-form-wrap .amelia-app-booking button[type="submit"]:hover,
+.ct-booking-form-wrap .amelia-app-booking .amelia-booking-footer button:hover {
+  opacity: .9;
+}
 .ct-booking-trust {
   display: flex;
   justify-content: center;
