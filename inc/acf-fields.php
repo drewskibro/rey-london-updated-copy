@@ -1604,8 +1604,43 @@ acf_add_local_field_group( array(
         array( 'key' => 'field_rl_mt_hero_tab', 'label' => 'Hero Section', 'type' => 'tab' ),
         array( 'key' => 'field_rl_mt_hero_title', 'label' => 'Hero Title', 'name' => 'mt_hero_title', 'type' => 'text', 'default_value' => 'People Behind Your Exceptional Care' ),
         array( 'key' => 'field_rl_mt_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'mt_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'Our team of GPhC-registered pharmacists, independent prescribers, and healthcare professionals are dedicated to delivering personalised, evidence-based care.' ),
+
         array( 'key' => 'field_rl_mt_lead_tab', 'label' => 'Lead Pharmacist', 'type' => 'tab' ),
         array( 'key' => 'field_rl_mt_lead_photo', 'label' => 'Lead Pharmacist Photo', 'name' => 'mt_lead_photo', 'type' => 'image', 'return_format' => 'url', 'instructions' => 'Photo for the featured lead pharmacist section. Recommended: 600x750px.' ),
+        array( 'key' => 'field_rl_mt_lead_name', 'label' => 'Lead Name', 'name' => 'mt_lead_name', 'type' => 'text', 'default_value' => 'Dilip Modhvadia' ),
+        array( 'key' => 'field_rl_mt_lead_role', 'label' => 'Lead Role', 'name' => 'mt_lead_role', 'type' => 'text', 'default_value' => 'Lead Pharmacist & Independent Prescriber' ),
+        array( 'key' => 'field_rl_mt_lead_bio', 'label' => 'Lead Bio', 'name' => 'mt_lead_bio', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'With over 15 years of experience, Dilip leads our clinical team across both locations in Chislehurst. As an Independent Prescriber, he specialises in weight loss treatment, travel health, and ear wax removal — and is well-known for his straightforward, no-jargon approach, no waiting lists, and his commitment to building a system designed to make you well.' ),
+        array( 'key' => 'field_rl_mt_lead_quote', 'label' => 'Lead Quote', 'name' => 'mt_lead_quote', 'type' => 'textarea', 'rows' => 3, 'default_value' => '"My approach has always been the same — listen first, treat second. Every patient deserves a pharmacist who takes the time to understand not just their symptoms, but their life. That\'s the standard I hold our entire team to."' ),
+        array( 'key' => 'field_rl_mt_lead_credentials', 'label' => 'Lead Credentials', 'name' => 'mt_lead_credentials', 'type' => 'text', 'default_value' => 'MPharm, Ind. Prescriber, GPhC Registered', 'instructions' => 'Comma-separated credential pills, e.g. "MPharm, Ind. Prescriber, GPhC Registered"' ),
+        array( 'key' => 'field_rl_mt_lead_cta_text', 'label' => 'Lead CTA Button Text', 'name' => 'mt_lead_cta_text', 'type' => 'text', 'default_value' => 'Book with Dilip' ),
+        array(
+            'key' => 'field_rl_mt_lead_specialisms', 'label' => 'Lead Specialisms', 'name' => 'mt_lead_specialisms', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Specialism',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_mt_lead_spec_name', 'label' => 'Name', 'name' => 'name', 'type' => 'text' ),
+                array( 'key' => 'field_rl_mt_lead_spec_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'text' ),
+                array( 'key' => 'field_rl_mt_lead_spec_url', 'label' => 'Link URL', 'name' => 'url', 'type' => 'text', 'instructions' => 'Relative path, e.g. /weight-loss/' ),
+            ),
+        ),
+        array( 'key' => 'field_rl_mt_lead_stat_num', 'label' => 'Stat Number', 'name' => 'mt_lead_stat_num', 'type' => 'text', 'default_value' => '15+' ),
+        array( 'key' => 'field_rl_mt_lead_stat_label', 'label' => 'Stat Label', 'name' => 'mt_lead_stat_label', 'type' => 'text', 'default_value' => 'Years of Clinical Practice' ),
+
+        array( 'key' => 'field_rl_mt_trust_tab', 'label' => 'Trust Bar', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_mt_trust_score', 'label' => 'Rating Score', 'name' => 'mt_trust_score', 'type' => 'text', 'default_value' => '4.8' ),
+        array( 'key' => 'field_rl_mt_trust_count', 'label' => 'Review Count', 'name' => 'mt_trust_count', 'type' => 'text', 'default_value' => '400+ reviews' ),
+        array( 'key' => 'field_rl_mt_trust_source', 'label' => 'Review Source', 'name' => 'mt_trust_source', 'type' => 'text', 'default_value' => 'Google & Trustpilot' ),
+        array( 'key' => 'field_rl_mt_trust_headline', 'label' => 'Trust Headline', 'name' => 'mt_trust_headline', 'type' => 'text', 'default_value' => 'Trusted by Surrey.' ),
+        array( 'key' => 'field_rl_mt_trust_text', 'label' => 'Trust Text', 'name' => 'mt_trust_text', 'type' => 'text', 'default_value' => "Your health, guided by one of Surrey's most experienced pharmacists." ),
+        array( 'key' => 'field_rl_mt_trust_subtext', 'label' => 'Trust Subtext', 'name' => 'mt_trust_subtext', 'type' => 'textarea', 'rows' => 2, 'default_value' => 'Over 15 years of clinical experience, hundreds of 5-star reviews, and a proven commitment to face-to-face care that puts you first.' ),
+
+        array( 'key' => 'field_rl_mt_quals_tab', 'label' => 'Qualifications', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_mt_quals', 'label' => 'Qualification Cards', 'name' => 'mt_quals', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Qualification',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_mt_qual_title', 'label' => 'Title', 'name' => 'title', 'type' => 'text' ),
+                array( 'key' => 'field_rl_mt_qual_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'text' ),
+            ),
+        ),
+
         array( 'key' => 'field_rl_mt_members_tab', 'label' => 'Team Members', 'type' => 'tab' ),
         array(
             'key' => 'field_rl_mt_members', 'label' => 'Team Members', 'name' => 'mt_members', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Team Member',
