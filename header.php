@@ -31,7 +31,7 @@ $booking_url   = rl_booking_url();
 
     <!-- Top Banner -->
     <div class="top-banner">
-      <p><?php echo esc_html( rl_option( 'top_banner_text', 'Free delivery on orders over £20 across London | Walk-ins welcome at both locations' ) ); ?></p>
+      <p><?php echo esc_html( rl_option( 'top_banner_text', 'GPhC-registered pharmacists across two Chislehurst locations · No GP referral needed · Same-day appointments available' ) ); ?></p>
     </div>
 
     <!-- Header -->
