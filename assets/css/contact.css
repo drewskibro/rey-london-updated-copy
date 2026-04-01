@@ -935,10 +935,10 @@
 .ct-booking-form-wrap {
   max-width: 900px;
   margin: 48px auto 0;
-  background: var(--white);
+  background: rgba(255,255,255,.95);
   border-radius: 20px;
   padding: 8px 16px 16px;
-  box-shadow: 0 25px 60px rgba(0,0,0,.25);
+  box-shadow: 0 25px 60px rgba(0,0,0,.2);
 }
 .ct-booking-trust {
   display: flex;
