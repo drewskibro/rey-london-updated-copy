@@ -924,8 +924,8 @@ get_header();
           <div class="pharmacist-hero">
             <div class="pharmacist-image-wrapper">
               <img
-                src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517579457-0.png"
-                alt="Sumeet Banker - Superintendent Pharmacist"
+                src="<?php echo esc_url( rl_field( 'pharmacist_image', 'https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517579457-0.png' ) ); ?>"
+                alt="<?php echo esc_attr( rl_field( 'pharmacist_name', 'Sumeet Banker' ) ); ?> - Superintendent Pharmacist"
                 class="pharmacist-image"
               />
 
