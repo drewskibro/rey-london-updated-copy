@@ -1794,6 +1794,17 @@ body {
   z-index: 1;
 }
 
+/* Keep the fade effect on the services heading but use darker brand
+   blues so the text remains legible on the section's light background
+   (WCAG AA for large text). */
+.services-section .gradient-text {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 40%, var(--light-blue) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 
 .how-it-works {
   padding: 80px 0;
