@@ -227,6 +227,17 @@ $booking_url   = rl_booking_url();
                         <span class="link-desc">Protect against 3 serious infections</span>
                       </div>
                     </a>
+                    <a href="<?php echo esc_url( home_url( '/hajj-umrah-vaccine/' ) ); ?>" class="dropdown-link">
+                      <div class="link-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="M9 12l2 2 4-4" />
+                        </svg>
+                      </div>
+                      <div class="link-content">
+                        <span class="link-name">Hajj &amp; Umrah</span>
+                        <span class="link-desc">MenACWY certificate same day</span>
+                      </div>
+                    </a>
                   </div>
 
                   <div class="dropdown-section">
@@ -443,6 +454,7 @@ $booking_url   = rl_booking_url();
             <a href="<?php echo esc_url( home_url( '/hepatitis-vaccine-london/' ) ); ?>" class="mobile-nav-sub-link">Hepatitis A &amp; B</a>
             <a href="<?php echo esc_url( home_url( '/yellow-fever-vaccine-london/' ) ); ?>" class="mobile-nav-sub-link">Yellow Fever</a>
             <a href="<?php echo esc_url( home_url( '/dtp-vaccine-london/' ) ); ?>" class="mobile-nav-sub-link">DTP</a>
+            <a href="<?php echo esc_url( home_url( '/hajj-umrah-vaccine/' ) ); ?>" class="mobile-nav-sub-link">Hajj &amp; Umrah</a>
             <a href="<?php echo esc_url( home_url( '/travel-thailand/' ) ); ?>" class="mobile-nav-sub-link">Thailand</a>
             <a href="<?php echo esc_url( home_url( '/travel-india/' ) ); ?>" class="mobile-nav-sub-link">India</a>
             <a href="<?php echo esc_url( home_url( '/travel-gambia/' ) ); ?>" class="mobile-nav-sub-link">The Gambia</a>
