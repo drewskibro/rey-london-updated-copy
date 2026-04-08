@@ -274,10 +274,8 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(8,145,178,.2);
-  /* Bright teal for legibility on the dark navy .dtp-quick background —
-     the dark --dtp-accent fails contrast here. */
-  color: #67E8F9;
+  background: rgba(8,145,178,.12);
+  color: var(--dtp-accent);
   font-size: 12px;
   font-weight: 700;
   padding: 10px 22px;
@@ -285,8 +283,16 @@
   margin-bottom: 16px;
   text-transform: uppercase;
   letter-spacing: .1em;
-  border: 1px solid rgba(103,232,249,.4);
+  border: 1px solid rgba(8,145,178,.35);
   backdrop-filter: blur(8px);
+}
+/* Dark-section override: inside .dtp-quick the pill sits on a dark
+   navy background, so the default dark teal fails contrast. Swap to
+   a bright cyan with a matching border. */
+.dtp-quick .dtp-quick-pill {
+  background: rgba(8,145,178,.2);
+  color: #67E8F9;
+  border-color: rgba(103,232,249,.4);
 }
 .dtp-quick .section-title { color: var(--white); }
 .dtp-quick-grid {

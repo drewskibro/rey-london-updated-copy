@@ -276,10 +276,8 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(217,119,6,.2);
-  /* Bright amber for legibility on the dark navy .hajj-quick background —
-     the dark --hajj-accent fails contrast here. */
-  color: var(--hajj-accent-bright);
+  background: rgba(217,119,6,.12);
+  color: var(--hajj-accent);
   font-size: 12px;
   font-weight: 700;
   padding: 10px 22px;
@@ -287,8 +285,16 @@
   margin-bottom: 16px;
   text-transform: uppercase;
   letter-spacing: .1em;
-  border: 1px solid rgba(252,211,77,.4);
+  border: 1px solid rgba(217,119,6,.35);
   backdrop-filter: blur(8px);
+}
+/* Dark-section override: inside .hajj-quick the pill sits on a dark
+   navy background, so the default dark amber fails contrast. Swap to
+   the bright amber variant with a matching border. */
+.hajj-quick .hajj-quick-pill {
+  background: rgba(217,119,6,.2);
+  color: var(--hajj-accent-bright);
+  border-color: rgba(252,211,77,.4);
 }
 .hajj-quick .section-title { color: var(--white); }
 .hajj-quick-grid {
