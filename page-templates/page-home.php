@@ -23,7 +23,7 @@ get_header();
                 <?php echo esc_html( rl_field( 'hero_subtitle', 'Expert prescriptions, travel health, and weight management across South East London. Two Chislehurst locations ready to help.' ) ); ?>
               </p>
             </div>
-            <a href="#all-services" class="btn-secondary btn-view-all">
+            <a href="#services" class="btn-secondary btn-view-all">
               View all services
               <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow" />
             </a>
