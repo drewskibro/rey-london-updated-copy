@@ -1546,6 +1546,17 @@ body {
   z-index: 1;
 }
 
+/* Keep the fade effect on the locations heading but use darker brand
+   blues so the text remains legible on the section's light background
+   (WCAG AA for large text). */
+.locations-section .gradient-text {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 40%, var(--light-blue) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .locations-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
