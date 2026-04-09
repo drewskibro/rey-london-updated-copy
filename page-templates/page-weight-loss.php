@@ -268,61 +268,40 @@ get_header();
       </div>
 
       <div class="products-grid">
-        <!-- Mounjaro -->
+        <?php
+        if ( function_exists( 'have_rows' ) && have_rows( 'wl_treatments' ) ) :
+          while ( have_rows( 'wl_treatments' ) ) :
+            the_row();
+            $wl_name  = get_sub_field( 'name' );
+            $wl_desc  = get_sub_field( 'description' );
+            $wl_image = get_sub_field( 'image' );
+            $wl_price = get_sub_field( 'price' );
+            $wl_badge = get_sub_field( 'badge' );
+            $wl_url   = get_sub_field( 'url' );
+        ?>
         <div class="product-card">
-          <div class="product-badge">Most Effective</div>
+          <?php if ( $wl_badge ) : ?>
+          <div class="product-badge"><?php echo esc_html( $wl_badge ); ?></div>
+          <?php endif; ?>
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&h=400&fit=crop" alt="Mounjaro tirzepatide weight loss injection">
+            <img src="<?php echo esc_url( $wl_image ); ?>" alt="<?php echo esc_attr( $wl_name ); ?>">
           </div>
           <div class="product-content">
-            <h3>Mounjaro (Tirzepatide)</h3>
-            <p>The most advanced GLP-1 treatment available. Activates two receptors (GLP-1 and GIP) for significantly greater weight loss than older options. Clinical trials show up to 22% body weight lost in 72 weeks.</p>
+            <h3><?php echo esc_html( $wl_name ); ?></h3>
+            <p><?php echo esc_html( $wl_desc ); ?></p>
             <div class="product-footer">
-              <span class="product-price">From £125/mo</span>
-              <a href="#consultation" class="product-cta">
+              <span class="product-price"><?php echo esc_html( $wl_price ); ?></span>
+              <a href="<?php echo esc_url( $wl_url ? $wl_url : '#consultation' ); ?>" class="product-cta">
                 Book Now
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow">
               </a>
             </div>
           </div>
         </div>
-
-        <!-- Wegovy -->
-        <div class="product-card">
-          <div class="product-badge">NICE Approved</div>
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop" alt="Wegovy semaglutide prescription">
-          </div>
-          <div class="product-content">
-            <h3>Wegovy (Semaglutide)</h3>
-            <p>The first GLP-1 to receive NICE approval for obesity. Reduces appetite by mimicking the natural fullness hormone. Proven to deliver 15–17% average weight loss in clinical trials over 68 weeks.</p>
-            <div class="product-footer">
-              <span class="product-price">From £199/mo</span>
-              <a href="#consultation" class="product-cta">
-                Book Now
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow">
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Saxenda -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop" alt="Saxenda liraglutide weight management">
-          </div>
-          <div class="product-content">
-            <h3>Saxenda (Liraglutide)</h3>
-            <p>A well-established daily GLP-1 injection with a strong safety record. Approved for long-term weight management. An excellent choice for patients seeking a proven treatment already familiar to clinicians.</p>
-            <div class="product-footer">
-              <span class="product-price">From £150/mo</span>
-              <a href="#consultation" class="product-cta">
-                Book Now
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow">
-              </a>
-            </div>
-          </div>
-        </div>
+        <?php
+          endwhile;
+        endif;
+        ?>
       </div>
 
       <!-- Eligibility note -->
