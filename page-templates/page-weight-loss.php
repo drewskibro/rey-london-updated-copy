@@ -577,7 +577,7 @@ get_header();
   $why_subtitle        = get_field( 'wl_why_subtitle' )        ?: "We're not an online chatbot or a faceless app. We're your local pharmacist — the difference is enormous.";
   $why_pharm_image     = get_field( 'wl_why_pharmacist_image' ) ?: 'https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517579457-0.png';
   $why_pharm_name      = get_field( 'wl_why_pharmacist_name' )  ?: 'Sumeet Banker';
-  $why_pharm_role      = get_field( 'wl_why_pharmacist_role' )  ?: 'Superintendent Pharmacist & Independent Prescriber';
+  $why_pharm_role      = get_field( 'wl_why_pharmacist_role' )  ?: 'Superintendent Pharmacist';
   $why_pharm_badge     = get_field( 'wl_why_pharmacist_badge' ) ?: 'GPhC Registered';
   $why_pharm_bio       = get_field( 'wl_why_pharmacist_bio' )   ?: '"Weight is complex — it\'s hormonal, emotional, and behavioural. That\'s why I believe everyone deserves face-to-face care from someone who actually listens. Not an algorithm."';
   $why_stats           = get_field( 'wl_why_stats' );
@@ -594,7 +594,7 @@ get_header();
 
   if ( empty( $why_pillars ) ) {
       $why_pillars = array(
-          array( 'title' => 'Independent Prescribers on-site',  'description' => 'No referral, no waiting list — prescription same day' ),
+          array( 'title' => 'Qualified staff on-site',  'description' => 'No referral, no waiting list — prescription same day' ),
           array( 'title' => 'Monthly face-to-face reviews',     'description' => 'We track more than weight — blood pressure, glucose, wellbeing' ),
           array( 'title' => 'Genuine clinical privacy',         'description' => "Discreet consultations — we've heard everything before" ),
       );
