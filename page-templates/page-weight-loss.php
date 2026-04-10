@@ -358,55 +358,64 @@ get_header();
   <!-- ============================================
        HOW IT WORKS — STEPS
        ============================================ -->
+  <?php
+  /* ── Journey Steps — ACF-driven with hardcoded fallback ── */
+  $journey_title    = get_field( 'wl_journey_title' )    ?: 'Your weight loss journey at Chislehurst Pharmacy Group';
+  $journey_subtitle = get_field( 'wl_journey_subtitle' ) ?: 'Four clear steps from your first conversation to your goal weight';
+  $journey_steps    = get_field( 'wl_journey_steps' );
+
+  /* Fallback data when the repeater is empty / not yet saved */
+  if ( empty( $journey_steps ) ) {
+      $journey_steps = array(
+          array(
+              'image'       => 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop',
+              'image_alt'   => 'Initial weight loss consultation',
+              'label'       => 'Step 1',
+              'heading'     => 'Free Consultation',
+              'description' => 'Meet your pharmacist at our Chislehurst or Pond End clinic. We review your health history, calculate your BMI, discuss your goals and confirm which treatment is right for you. No pressure, no commitment on the day.',
+          ),
+          array(
+              'image'       => 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&h=400&fit=crop',
+              'image_alt'   => 'Same day prescription Mounjaro Wegovy London',
+              'label'       => 'Step 2',
+              'heading'     => 'Same-Day Prescription',
+              'description' => 'As Independent Prescribers, our pharmacists can prescribe Mounjaro, Wegovy or Saxenda the same day. You leave your appointment with your medication and a clear injection guide — no waiting for a GP letter.',
+          ),
+          array(
+              'image'       => 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&h=400&fit=crop',
+              'image_alt'   => 'Monthly review weight loss check-in',
+              'label'       => 'Step 3',
+              'heading'     => 'Monthly Check-Ins',
+              'description' => 'Every month, pop back in for a face-to-face review. We track your weight, blood pressure and how you\'re feeling. We adjust your dose as needed and tackle any side effects early. You\'re never left to figure it out alone.',
+          ),
+          array(
+              'image'       => 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop',
+              'image_alt'   => 'Reach goal weight London',
+              'label'       => 'Step 4',
+              'heading'     => 'Reach Your Goal',
+              'description' => 'Most patients reach their target weight within 9–12 months. We then transition you to a maintenance plan designed to keep the weight off permanently — because the goal isn\'t just losing weight, it\'s not finding it again.',
+          ),
+      );
+  }
+  ?>
   <section class="how-it-works" id="how-it-works">
     <div class="container">
-      <h2 class="section-title gradient-text">Your weight loss journey at Chislehurst Pharmacy Group</h2>
-      <p class="section-subtitle">Four clear steps from your first conversation to your goal weight</p>
+      <h2 class="section-title gradient-text"><?php echo esc_html( $journey_title ); ?></h2>
+      <p class="section-subtitle"><?php echo esc_html( $journey_subtitle ); ?></p>
 
       <div class="steps-grid">
+        <?php foreach ( $journey_steps as $i => $step ) : ?>
         <div class="step-card">
           <div class="step-image">
-            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop" alt="Initial weight loss consultation">
+            <img src="<?php echo esc_url( $step['image'] ); ?>" alt="<?php echo esc_attr( $step['image_alt'] ?? '' ); ?>">
           </div>
           <div class="step-content">
-            <span class="step-label">Step 1</span>
-            <h3>Free Consultation</h3>
-            <p>Meet your pharmacist at our Chislehurst or Pond End clinic. We review your health history, calculate your BMI, discuss your goals and confirm which treatment is right for you. No pressure, no commitment on the day.</p>
+            <span class="step-label"><?php echo esc_html( $step['label'] ); ?></span>
+            <h3><?php echo esc_html( $step['heading'] ); ?></h3>
+            <p><?php echo esc_html( $step['description'] ); ?></p>
           </div>
         </div>
-
-        <div class="step-card">
-          <div class="step-image">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&h=400&fit=crop" alt="Same day prescription Mounjaro Wegovy London">
-          </div>
-          <div class="step-content">
-            <span class="step-label">Step 2</span>
-            <h3>Same-Day Prescription</h3>
-            <p>As Independent Prescribers, our pharmacists can prescribe Mounjaro, Wegovy or Saxenda the same day. You leave your appointment with your medication and a clear injection guide — no waiting for a GP letter.</p>
-          </div>
-        </div>
-
-        <div class="step-card">
-          <div class="step-image">
-            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&h=400&fit=crop" alt="Monthly review weight loss check-in">
-          </div>
-          <div class="step-content">
-            <span class="step-label">Step 3</span>
-            <h3>Monthly Check-Ins</h3>
-            <p>Every month, pop back in for a face-to-face review. We track your weight, blood pressure and how you're feeling. We adjust your dose as needed and tackle any side effects early. You're never left to figure it out alone.</p>
-          </div>
-        </div>
-
-        <div class="step-card">
-          <div class="step-image">
-            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop" alt="Reach goal weight London">
-          </div>
-          <div class="step-content">
-            <span class="step-label">Step 4</span>
-            <h3>Reach Your Goal</h3>
-            <p>Most patients reach their target weight within 9–12 months. We then transition you to a maintenance plan designed to keep the weight off permanently — because the goal isn't just losing weight, it's not finding it again.</p>
-          </div>
-        </div>
+        <?php endforeach; ?>
       </div>
     </div>
   </section>
@@ -631,6 +640,50 @@ get_header();
     </div>
   </section>
 
+  <?php
+  /* ── Why Choose Us — ACF-driven with hardcoded fallback ── */
+  $why_title           = get_field( 'wl_why_title' )           ?: 'Why choose Chislehurst Pharmacy Group for';
+  $why_title_highlight = get_field( 'wl_why_title_highlight' ) ?: 'medical weight loss?';
+  $why_subtitle        = get_field( 'wl_why_subtitle' )        ?: "We're not an online chatbot or a faceless app. We're your local pharmacist — the difference is enormous.";
+  $why_pharm_image     = get_field( 'wl_why_pharmacist_image' ) ?: 'https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517579457-0.png';
+  $why_pharm_name      = get_field( 'wl_why_pharmacist_name' )  ?: 'Sumeet Banker';
+  $why_pharm_role      = get_field( 'wl_why_pharmacist_role' )  ?: 'Superintendent Pharmacist & Independent Prescriber';
+  $why_pharm_badge     = get_field( 'wl_why_pharmacist_badge' ) ?: 'GPhC Registered';
+  $why_pharm_bio       = get_field( 'wl_why_pharmacist_bio' )   ?: '"Weight is complex — it\'s hormonal, emotional, and behavioural. That\'s why I believe everyone deserves face-to-face care from someone who actually listens. Not an algorithm."';
+  $why_stats           = get_field( 'wl_why_stats' );
+  $why_pillars         = get_field( 'wl_why_pillars' );
+
+  if ( empty( $why_stats ) ) {
+      $why_stats = array(
+          array( 'number' => 'No GP',  'label' => 'Referral required — start this week' ),
+          array( 'number' => '15+',    'label' => 'Years of pharmacy expertise in London' ),
+          array( 'number' => '2',      'label' => 'Convenient South East London locations' ),
+          array( 'number' => '10K+',   'label' => "Patients who've trusted our care" ),
+      );
+  }
+
+  if ( empty( $why_pillars ) ) {
+      $why_pillars = array(
+          array( 'title' => 'Independent Prescribers on-site',  'description' => 'No referral, no waiting list — prescription same day' ),
+          array( 'title' => 'Monthly face-to-face reviews',     'description' => 'We track more than weight — blood pressure, glucose, wellbeing' ),
+          array( 'title' => 'Genuine clinical privacy',         'description' => "Discreet consultations — we've heard everything before" ),
+      );
+  }
+
+  /* SVG icons for stat cards — cycled by index */
+  $stat_icons = array(
+      '<svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+      '<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+      '<svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+      '<svg viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  );
+
+  $pillar_icons = array(
+      '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>',
+      '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>',
+      '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+  );
+  ?>
   <!-- ============================================
        WHY CHISLEHURST PHARMACY GROUP
        ============================================ -->
@@ -638,33 +691,33 @@ get_header();
     <div class="container">
       <div class="team-header">
         <h2 class="section-title">
-          Why choose Chislehurst Pharmacy Group for<br>
-          <span class="gradient-text">medical weight loss?</span>
+          <?php echo esc_html( $why_title ); ?><br>
+          <span class="gradient-text"><?php echo esc_html( $why_title_highlight ); ?></span>
         </h2>
-        <p class="section-subtitle">We're not an online chatbot or a faceless app. We're your local pharmacist — the difference is enormous.</p>
+        <p class="section-subtitle"><?php echo esc_html( $why_subtitle ); ?></p>
       </div>
 
       <div class="team-content-grid">
         <div class="pharmacist-hero">
           <div class="pharmacist-image-wrapper">
-            <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517579457-0.png" alt="Sumeet Banker — Superintendent Pharmacist, Chislehurst Pharmacy Group weight loss specialist" class="pharmacist-image">
+            <img src="<?php echo esc_url( $why_pharm_image ); ?>" alt="<?php echo esc_attr( $why_pharm_name ); ?> — <?php echo esc_attr( $why_pharm_role ); ?>" class="pharmacist-image">
             <div class="pharmacist-profile-card">
               <div class="profile-header">
                 <div class="profile-info">
-                  <h3 class="profile-name">Sumeet Banker</h3>
-                  <p class="profile-title">Superintendent Pharmacist & Independent Prescriber</p>
+                  <h3 class="profile-name"><?php echo esc_html( $why_pharm_name ); ?></h3>
+                  <p class="profile-title"><?php echo esc_html( $why_pharm_role ); ?></p>
                   <div class="profile-badge">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                       <path d="M8 1l2.5 5 5.5.5-4 4 1 5.5L8 13l-5 3 1-5.5-4-4 5.5-.5L8 1z" fill="currentColor"/>
                     </svg>
-                    <span>GPhC Registered</span>
+                    <span><?php echo esc_html( $why_pharm_badge ); ?></span>
                   </div>
                 </div>
               </div>
-              <p class="profile-bio">"Weight is complex — it's hormonal, emotional, and behavioural. That's why I believe everyone deserves face-to-face care from someone who actually listens. Not an algorithm."</p>
+              <p class="profile-bio"><?php echo esc_html( $why_pharm_bio ); ?></p>
               <div class="profile-actions">
                 <a href="tel:02084673158" class="btn-profile-primary">Book Consultation</a>
-                <a href="/#team" class="btn-profile-secondary">Meet the Team</a>
+                <a href="<?php echo esc_url( home_url( '/meet-the-team/' ) ); ?>" class="btn-profile-secondary">Meet the Team</a>
               </div>
             </div>
           </div>
@@ -672,88 +725,32 @@ get_header();
 
         <div class="team-stats-premium">
           <div class="stats-grid-premium">
+            <?php foreach ( $why_stats as $i => $stat ) : ?>
             <div class="stat-card-hero">
               <div class="stat-icon-hero">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                  <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                <?php echo $stat_icons[ $i % count( $stat_icons ) ]; ?>
               </div>
               <div class="stat-content-hero">
-                <div class="stat-number-hero">No GP</div>
-                <h4 class="stat-label-hero">Referral required — start this week</h4>
+                <div class="stat-number-hero"><?php echo esc_html( $stat['number'] ); ?></div>
+                <h4 class="stat-label-hero"><?php echo esc_html( $stat['label'] ); ?></h4>
               </div>
             </div>
-
-            <div class="stat-card-hero">
-              <div class="stat-icon-hero">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M12 6v6l4 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div class="stat-content-hero">
-                <div class="stat-number-hero">15+</div>
-                <h4 class="stat-label-hero">Years of pharmacy expertise in London</h4>
-              </div>
-            </div>
-
-            <div class="stat-card-hero">
-              <div class="stat-icon-hero">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                  <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div class="stat-content-hero">
-                <div class="stat-number-hero">2</div>
-                <h4 class="stat-label-hero">Convenient South East London locations</h4>
-              </div>
-            </div>
-
-            <div class="stat-card-hero">
-              <div class="stat-icon-hero">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div class="stat-content-hero">
-                <div class="stat-number-hero">10K+</div>
-                <h4 class="stat-label-hero">Patients who've trusted our care</h4>
-              </div>
-            </div>
+            <?php endforeach; ?>
           </div>
 
           <!-- Feature pillars -->
           <div class="wl-pillars">
+            <?php foreach ( $why_pillars as $i => $pillar ) : ?>
             <div class="wl-pillar">
               <div class="wl-pillar-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+                <?php echo $pillar_icons[ $i % count( $pillar_icons ) ]; ?>
               </div>
               <div class="wl-pillar-text">
-                <strong>Independent Prescribers on-site</strong>
-                <span>No referral, no waiting list — prescription same day</span>
+                <strong><?php echo esc_html( $pillar['title'] ); ?></strong>
+                <span><?php echo esc_html( $pillar['description'] ); ?></span>
               </div>
             </div>
-            <div class="wl-pillar">
-              <div class="wl-pillar-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              </div>
-              <div class="wl-pillar-text">
-                <strong>Monthly face-to-face reviews</strong>
-                <span>We track more than weight — blood pressure, glucose, wellbeing</span>
-              </div>
-            </div>
-            <div class="wl-pillar">
-              <div class="wl-pillar-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              </div>
-              <div class="wl-pillar-text">
-                <strong>Genuine clinical privacy</strong>
-                <span>Discreet consultations — we've heard everything before</span>
-              </div>
-            </div>
+            <?php endforeach; ?>
           </div>
         </div>
       </div>
