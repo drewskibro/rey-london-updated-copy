@@ -516,7 +516,7 @@ get_header();
             <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769343725749-0.jpeg" alt="Chislehurst Pharmacy Group Pond Pharmacy - Weight Loss Chislehurst">
           </div>
           <div class="location-content">
-            <h3>Pond Pharmacy — Chislehurst</h3>
+            <h3>Pond Pharmacy</h3>
             <p class="wl-location-seo">Medical weight loss in Chislehurst, BR7. Prescription Mounjaro & Wegovy with same-day appointments. Serving Chislehurst, Bromley, Sidcup, and Bexley.</p>
             <div class="location-details">
               <div class="detail-item">
@@ -544,8 +544,8 @@ get_header();
             <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769344823391-0.jpeg" alt="Chislehurst Pharmacy Group Chislehurst Pharmacy - Weight Loss London">
           </div>
           <div class="location-content">
-            <h3>Chislehurst Pharmacy — Pond End</h3>
-            <p class="wl-location-seo">Medical weight loss at Pond End, SE London. Prescription Mounjaro & Wegovy with face-to-face pharmacist support. Serving Orpington, Petts Wood, St Mary Cray, and Swanley.</p>
+            <h3>Chislehurst Pharmacy</h3>
+            <p class="wl-location-seo">Medical weight loss in Chislehurst. Prescription Mounjaro & Wegovy with face-to-face pharmacist support. Serving Orpington, Petts Wood, St Mary Cray, and Swanley.</p>
             <div class="location-details">
               <div class="detail-item">
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-19.svg" alt="Address">
