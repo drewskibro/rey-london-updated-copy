@@ -31,16 +31,29 @@ get_header();
     </div>
   </section>
 
-  <!-- ===================== LEAD PHARMACIST — DILIP ===================== -->
-  <section class="mt-lead-section" id="dilip">
+  <!-- ===================== LEAD PHARMACIST ===================== -->
+  <?php
+  $lead_name  = rl_field( 'mt_lead_name', 'Dilip Modhvadia' );
+  $lead_role  = rl_field( 'mt_lead_role', 'Lead Pharmacist & Independent Prescriber' );
+  $lead_photo = rl_field( 'mt_lead_photo', 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80&auto=format&fit=crop' );
+  $lead_bio   = rl_field( 'mt_lead_bio', 'With over 15 years of experience, Dilip leads our clinical team across both locations in Chislehurst. As an Independent Prescriber, he specialises in weight loss treatment, travel health, and ear wax removal — and is well-known for his straightforward, no-jargon approach, no waiting lists, and his commitment to building a system designed to make you well.' );
+  $lead_quote = rl_field( 'mt_lead_quote', '"My approach has always been the same — listen first, treat second. Every patient deserves a pharmacist who takes the time to understand not just their symptoms, but their life. That\'s the standard I hold our entire team to."' );
+  $lead_creds = rl_field( 'mt_lead_credentials', 'MPharm, Ind. Prescriber, GPhC Registered' );
+  $lead_cta   = rl_field( 'mt_lead_cta_text', 'Book with Dilip' );
+  $lead_stat_num   = rl_field( 'mt_lead_stat_num', '15+' );
+  $lead_stat_label = rl_field( 'mt_lead_stat_label', 'Years of Clinical Practice' );
+  $lead_specialisms = rl_field( 'mt_lead_specialisms' );
+  $cred_items = array_map( 'trim', explode( ',', $lead_creds ) );
+  ?>
+  <section class="mt-lead-section" id="lead-pharmacist">
     <div class="container">
       <div class="mt-lead-grid mt-reveal">
         <!-- Left: Photo card -->
         <div class="mt-lead-photo-col">
           <div class="mt-lead-photo-wrap">
             <img
-              src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80&auto=format&fit=crop"
-              alt="Dilip Modhvadia — Lead Pharmacist & Independent Prescriber"
+              src="<?php echo esc_url( $lead_photo ); ?>"
+              alt="<?php echo esc_attr( $lead_name . ' — ' . $lead_role ); ?>"
               class="mt-lead-photo"
             />
             <div class="mt-lead-photo-badge">
@@ -49,18 +62,18 @@ get_header();
               </div>
               <div>
                 <strong>GPhC Registered</strong>
-                <span>Lead Pharmacist &amp; Independent Prescriber</span>
+                <span><?php echo esc_html( $lead_role ); ?></span>
               </div>
             </div>
           </div>
           <!-- Floating stat card -->
           <div class="mt-lead-stat-float">
-            <div class="mt-lead-stat-num">15+</div>
-            <div class="mt-lead-stat-label">Years of Clinical Practice</div>
+            <div class="mt-lead-stat-num"><?php echo esc_html( $lead_stat_num ); ?></div>
+            <div class="mt-lead-stat-label"><?php echo esc_html( $lead_stat_label ); ?></div>
             <div class="mt-lead-stat-checks">
               <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> GPhC Registered</span>
               <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> 1000+ Patients Treated</span>
-              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> 400+ Five-Star Reviews</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <?php echo esc_html( rl_field( 'mt_trust_count', '400+ reviews' ) ); ?></span>
             </div>
           </div>
         </div>
@@ -68,47 +81,56 @@ get_header();
         <!-- Right: Content -->
         <div class="mt-lead-content">
           <span class="mt-eyebrow">Lead Pharmacist</span>
-          <h2 class="mt-lead-name">Dilip Modhvadia</h2>
-          <p class="mt-lead-role">Lead Pharmacist &amp; Independent Prescriber</p>
+          <h2 class="mt-lead-name"><?php echo esc_html( $lead_name ); ?></h2>
+          <p class="mt-lead-role"><?php echo esc_html( $lead_role ); ?></p>
 
           <div class="mt-lead-credentials">
-            <span class="mt-cred-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> MPharm</span>
-            <span class="mt-cred-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Ind. Prescriber</span>
-            <span class="mt-cred-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg> GPhC Registered</span>
+            <?php foreach ( $cred_items as $cred ) : ?>
+              <span class="mt-cred-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg> <?php echo esc_html( $cred ); ?></span>
+            <?php endforeach; ?>
           </div>
 
-          <p class="mt-body-text">With over 15 years of experience, Dilip leads our clinical team across both locations in Chislehurst. As an Independent Prescriber, he specialises in weight loss treatment, travel health, and ear wax removal — and is well-known for his straightforward, no-jargon approach, no waiting lists, and his commitment to building a system designed to make you well.</p>
+          <p class="mt-body-text"><?php echo esc_html( $lead_bio ); ?></p>
 
-          <p class="mt-body-text mt-body-quote">"My approach has always been the same — listen first, treat second. Every patient deserves a pharmacist who takes the time to understand not just their symptoms, but their life. That's the standard I hold our entire team to."</p>
+          <p class="mt-body-text mt-body-quote"><?php echo esc_html( $lead_quote ); ?></p>
 
           <div class="mt-lead-specialisms">
             <h4 class="mt-specialisms-title">Clinical Specialisms</h4>
             <div class="mt-specialism-grid">
-              <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="mt-specialism-card">
-                <div class="mt-spec-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-                <div><span class="mt-spec-name">Weight Loss Treatment</span><span class="mt-spec-desc">Mounjaro, Wegovy &amp; GLP-1s</span></div>
-              </a>
-              <a href="<?php echo esc_url( home_url( '/travel-health/' ) ); ?>" class="mt-specialism-card">
-                <div class="mt-spec-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
-                <div><span class="mt-spec-name">Travel Health &amp; Vaccinations</span><span class="mt-spec-desc">All destinations, 100+ vaccines</span></div>
-              </a>
-              <a href="<?php echo esc_url( home_url( '/hair-loss/' ) ); ?>" class="mt-specialism-card">
-                <div class="mt-spec-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg></div>
-                <div><span class="mt-spec-name">Ear Wax Removal</span><span class="mt-spec-desc">Microsuction specialist</span></div>
-              </a>
-              <a href="<?php echo esc_url( home_url( '/prescription-services/' ) ); ?>" class="mt-specialism-card">
-                <div class="mt-spec-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M12 9v6"/><path d="M9 12h6"/></svg></div>
-                <div><span class="mt-spec-name">Independent Prescribing</span><span class="link-desc">PGDs &amp; clinical protocols</span></div>
-              </a>
-              <a href="<?php echo esc_url( home_url( '/hpv-vaccine/' ) ); ?>" class="mt-specialism-card">
-                <div class="mt-spec-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                <div><span class="mt-spec-name">Clinical Consultations</span><span class="mt-spec-desc">Face-to-face and remote</span></div>
-              </a>
+              <?php if ( $lead_specialisms ) : ?>
+                <?php foreach ( $lead_specialisms as $spec ) : ?>
+                  <a href="<?php echo esc_url( home_url( $spec['url'] ) ); ?>" class="mt-specialism-card">
+                    <div class="mt-spec-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                    <div><span class="mt-spec-name"><?php echo esc_html( $spec['name'] ); ?></span><span class="mt-spec-desc"><?php echo esc_html( $spec['description'] ); ?></span></div>
+                  </a>
+                <?php endforeach; ?>
+              <?php else : ?>
+                <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="mt-specialism-card">
+                  <div class="mt-spec-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+                  <div><span class="mt-spec-name">Weight Loss Treatment</span><span class="mt-spec-desc">Mounjaro, Wegovy &amp; GLP-1s</span></div>
+                </a>
+                <a href="<?php echo esc_url( home_url( '/travel-health/' ) ); ?>" class="mt-specialism-card">
+                  <div class="mt-spec-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+                  <div><span class="mt-spec-name">Travel Health &amp; Vaccinations</span><span class="mt-spec-desc">All destinations, 100+ vaccines</span></div>
+                </a>
+                <a href="<?php echo esc_url( home_url( '/ear-wax-removal/' ) ); ?>" class="mt-specialism-card">
+                  <div class="mt-spec-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg></div>
+                  <div><span class="mt-spec-name">Ear Wax Removal</span><span class="mt-spec-desc">Microsuction specialist</span></div>
+                </a>
+                <a href="<?php echo esc_url( home_url( '/prescription-services/' ) ); ?>" class="mt-specialism-card">
+                  <div class="mt-spec-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M12 9v6"/><path d="M9 12h6"/></svg></div>
+                  <div><span class="mt-spec-name">Independent Prescribing</span><span class="mt-spec-desc">PGDs &amp; clinical protocols</span></div>
+                </a>
+                <a href="<?php echo esc_url( home_url( '/hpv-vaccine/' ) ); ?>" class="mt-specialism-card">
+                  <div class="mt-spec-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                  <div><span class="mt-spec-name">Clinical Consultations</span><span class="mt-spec-desc">Face-to-face and remote</span></div>
+                </a>
+              <?php endif; ?>
             </div>
           </div>
 
           <div class="mt-lead-actions">
-            <a href="#book" class="mt-btn-primary">Book with Dilip</a>
+            <a href="#book" class="mt-btn-primary"><?php echo esc_html( $lead_cta ); ?></a>
             <a href="tel:02084673158" class="mt-btn-outline">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               Call 020 8467 3158
@@ -120,6 +142,7 @@ get_header();
   </section>
 
   <!-- ===================== TRUST BAR ===================== -->
+  <?php if ( rl_field( 'mt_trust_visible', true ) ) : ?>
   <section class="mt-trust-bar">
     <div class="container">
       <div class="mt-trust-inner mt-reveal">
@@ -131,18 +154,19 @@ get_header();
             <svg width="20" height="20" viewBox="0 0 24 24" fill="#facc15"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="#facc15"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
-          <span class="mt-trust-score">4.8</span>
-          <span class="mt-trust-count">400+ reviews</span>
-          <span class="mt-trust-source">Google &amp; Trustpilot</span>
+          <span class="mt-trust-score"><?php echo esc_html( rl_field( 'mt_trust_score', '4.8' ) ); ?></span>
+          <span class="mt-trust-count"><?php echo esc_html( rl_field( 'mt_trust_count', '400+ reviews' ) ); ?></span>
+          <span class="mt-trust-source"><?php echo esc_html( rl_field( 'mt_trust_source', 'Google & Trustpilot' ) ); ?></span>
         </div>
         <div class="mt-trust-divider"></div>
         <div class="mt-trust-quote">
-          <p><strong>Trusted by Surrey.</strong> Your health, guided by one of Surrey's most experienced pharmacists.</p>
-          <span>Over 15 years of clinical experience, hundreds of 5-star reviews, and a proven commitment to face-to-face care that puts you first.</span>
+          <p><strong><?php echo esc_html( rl_field( 'mt_trust_headline', 'Trusted by Surrey.' ) ); ?></strong> <?php echo esc_html( rl_field( 'mt_trust_text', "Your health, guided by one of Surrey's most experienced pharmacists." ) ); ?></p>
+          <span><?php echo esc_html( rl_field( 'mt_trust_subtext', 'Over 15 years of clinical experience, hundreds of 5-star reviews, and a proven commitment to face-to-face care that puts you first.' ) ); ?></span>
         </div>
       </div>
     </div>
   </section>
+  <?php endif; ?>
 
   <!-- ===================== QUALIFICATIONS ===================== -->
   <section class="mt-quals-section" id="qualifications">
@@ -157,34 +181,51 @@ get_header();
       </div>
 
       <div class="mt-quals-grid mt-reveal">
-        <div class="mt-qual-card">
-          <div class="mt-qual-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        <?php
+        $quals = rl_field( 'mt_quals' );
+        if ( $quals ) :
+          foreach ( $quals as $qual ) :
+        ?>
+          <div class="mt-qual-card">
+            <div class="mt-qual-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <h3><?php echo esc_html( $qual['title'] ); ?></h3>
+            <p><?php echo esc_html( $qual['description'] ); ?></p>
           </div>
-          <h3>MPharm (Bachelor of Pharmacy)</h3>
-          <p>4-year integrated Master's degree from a UK-accredited university</p>
-        </div>
-        <div class="mt-qual-card">
-          <div class="mt-qual-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M12 9v6"/><path d="M9 12h6"/></svg>
+        <?php
+          endforeach;
+        else :
+        ?>
+          <div class="mt-qual-card">
+            <div class="mt-qual-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <h3>MPharm (Bachelor of Pharmacy)</h3>
+            <p>4-year integrated Master's degree from a UK-accredited university</p>
           </div>
-          <h3>PG Cert Non-Medical Prescribing</h3>
-          <p>Qualified to prescribe independently across therapeutic areas</p>
-        </div>
-        <div class="mt-qual-card">
-          <div class="mt-qual-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+          <div class="mt-qual-card">
+            <div class="mt-qual-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M12 9v6"/><path d="M9 12h6"/></svg>
+            </div>
+            <h3>PG Cert Non-Medical Prescribing</h3>
+            <p>Qualified to prescribe independently across therapeutic areas</p>
           </div>
-          <h3>Master's in Medical Informatics</h3>
-          <p>NHS Lancaster University Medical School — clinical data &amp; systems</p>
-        </div>
-        <div class="mt-qual-card">
-          <div class="mt-qual-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          <div class="mt-qual-card">
+            <div class="mt-qual-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+            </div>
+            <h3>Master's in Medical Informatics</h3>
+            <p>NHS Lancaster University Medical School — clinical data &amp; systems</p>
           </div>
-          <h3>Diploma in Diseases</h3>
-          <p>Advanced understanding of long-term conditions and comorbidities</p>
-        </div>
+          <div class="mt-qual-card">
+            <div class="mt-qual-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <h3>Diploma in Diseases</h3>
+            <p>Advanced understanding of long-term conditions and comorbidities</p>
+          </div>
+        <?php endif; ?>
       </div>
 
       <div class="mt-gphc-card mt-reveal">
@@ -212,92 +253,46 @@ get_header();
       </div>
 
       <div class="mt-team-grid mt-reveal">
-        <!-- Dilip -->
-        <div class="mt-team-card mt-team-card-featured">
-          <div class="mt-team-card-badge">Lead Pharmacist</div>
+        <?php
+        $members = rl_field( 'mt_members' );
+        if ( $members ) :
+          foreach ( $members as $member ) :
+            $is_featured = ! empty( $member['is_featured'] );
+            $photo       = ! empty( $member['photo'] ) ? $member['photo'] : '';
+            $name        = ! empty( $member['name'] ) ? $member['name'] : '';
+            $role        = ! empty( $member['role'] ) ? $member['role'] : '';
+            $bio         = ! empty( $member['bio'] ) ? $member['bio'] : '';
+            $specialisms = ! empty( $member['specialisms'] ) ? array_map( 'trim', explode( ',', $member['specialisms'] ) ) : array();
+        ?>
+        <div class="mt-team-card<?php echo $is_featured ? ' mt-team-card-featured' : ''; ?>">
+          <?php if ( $is_featured ) : ?>
+            <div class="mt-team-card-badge">Lead Pharmacist</div>
+          <?php endif; ?>
           <div class="mt-team-avatar-wrap">
-            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&q=80&auto=format&fit=crop&crop=face" alt="Dilip Modhvadia" class="mt-team-avatar" />
+            <?php if ( $photo ) : ?>
+              <img src="<?php echo esc_url( $photo ); ?>" alt="<?php echo esc_attr( $name ); ?>" class="mt-team-avatar" />
+            <?php endif; ?>
           </div>
           <div class="mt-team-card-body">
-            <h3 class="mt-team-name">Dilip Modhvadia</h3>
-            <p class="mt-team-role">Lead Pharmacist &amp; Independent Prescriber</p>
-            <p class="mt-team-bio">15+ years of clinical experience. Specialist in weight loss, travel health, and ear wax removal. Leads both Chislehurst locations.</p>
-            <div class="mt-team-tags">
-              <span>Weight Loss</span>
-              <span>Travel Health</span>
-              <span>Ind. Prescriber</span>
-            </div>
+            <h3 class="mt-team-name"><?php echo esc_html( $name ); ?></h3>
+            <p class="mt-team-role"><?php echo esc_html( $role ); ?></p>
+            <p class="mt-team-bio"><?php echo esc_html( $bio ); ?></p>
+            <?php if ( $specialisms ) : ?>
+              <div class="mt-team-tags">
+                <?php foreach ( $specialisms as $tag ) : ?>
+                  <span><?php echo esc_html( $tag ); ?></span>
+                <?php endforeach; ?>
+              </div>
+            <?php endif; ?>
             <a href="#book" class="mt-team-cta">Book Appointment</a>
           </div>
         </div>
-
-        <!-- Bhavna -->
-        <div class="mt-team-card">
-          <div class="mt-team-avatar-wrap">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&q=80&auto=format&fit=crop&crop=face" alt="Bhavna Modhvadia" class="mt-team-avatar" />
-          </div>
-          <div class="mt-team-card-body">
-            <h3 class="mt-team-name">Bhavna Modhvadia</h3>
-            <p class="mt-team-role">Senior Pharmacist &amp; Vaccination Specialist</p>
-            <p class="mt-team-bio">Specialist in travel vaccinations and NHS services. Extensive experience delivering patient-centred care.</p>
-            <div class="mt-team-tags">
-              <span>Vaccinations</span>
-              <span>NHS Services</span>
-            </div>
-            <a href="#book" class="mt-team-cta">Book Appointment</a>
-          </div>
-        </div>
-
-        <!-- Adrian -->
-        <div class="mt-team-card">
-          <div class="mt-team-avatar-wrap">
-            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=300&q=80&auto=format&fit=crop&crop=face" alt="Adrian" class="mt-team-avatar" />
-          </div>
-          <div class="mt-team-card-body">
-            <h3 class="mt-team-name">Adrian Chen</h3>
-            <p class="mt-team-role">Pharmacist &amp; Clinical Technician</p>
-            <p class="mt-team-bio">Focuses on medicines optimisation, patient consultations, and dispensing accuracy. Trained in ear wax microsuction.</p>
-            <div class="mt-team-tags">
-              <span>Ear Wax</span>
-              <span>Dispensing</span>
-            </div>
-            <a href="#book" class="mt-team-cta">Book Appointment</a>
-          </div>
-        </div>
-
-        <!-- Sophie -->
-        <div class="mt-team-card">
-          <div class="mt-team-avatar-wrap">
-            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=300&q=80&auto=format&fit=crop&crop=face" alt="Sophie Hartley" class="mt-team-avatar" />
-          </div>
-          <div class="mt-team-card-body">
-            <h3 class="mt-team-name">Sophie Hartley</h3>
-            <p class="mt-team-role">Pharmacist &amp; Hair Loss Specialist</p>
-            <p class="mt-team-bio">Specialised in hair loss treatment and dermatological care. Passionate about helping patients regain confidence.</p>
-            <div class="mt-team-tags">
-              <span>Hair Loss</span>
-              <span>Dermatology</span>
-            </div>
-            <a href="#book" class="mt-team-cta">Book Appointment</a>
-          </div>
-        </div>
-
-        <!-- James -->
-        <div class="mt-team-card">
-          <div class="mt-team-avatar-wrap">
-            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=300&q=80&auto=format&fit=crop&crop=face" alt="James Okafor" class="mt-team-avatar" />
-          </div>
-          <div class="mt-team-card-body">
-            <h3 class="mt-team-name">James Okafor</h3>
-            <p class="mt-team-role">Healthcare Assistant &amp; Patient Coordinator</p>
-            <p class="mt-team-bio">First point of contact for patients at both locations, supporting clinical staff with scheduling and patient welfare.</p>
-            <div class="mt-team-tags">
-              <span>Patient Care</span>
-              <span>Coordination</span>
-            </div>
-            <a href="#book" class="mt-team-cta">Book Appointment</a>
-          </div>
-        </div>
+        <?php
+          endforeach;
+        else :
+        ?>
+          <p style="color:rgba(255,255,255,.7);text-align:center;grid-column:1/-1;">Team members coming soon. Add them via the WordPress admin.</p>
+        <?php endif; ?>
       </div>
     </div>
   </section>

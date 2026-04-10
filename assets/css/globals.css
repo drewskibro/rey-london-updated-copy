@@ -1546,6 +1546,17 @@ body {
   z-index: 1;
 }
 
+/* Keep the fade effect on the locations heading but use darker brand
+   blues so the text remains legible on the section's light background
+   (WCAG AA for large text). */
+.locations-section .gradient-text {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 40%, var(--light-blue) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .locations-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
@@ -1792,6 +1803,17 @@ body {
 .services-section .container {
   position: relative;
   z-index: 1;
+}
+
+/* Keep the fade effect on the services heading but use darker brand
+   blues so the text remains legible on the section's light background
+   (WCAG AA for large text). */
+.services-section .gradient-text {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 40%, var(--light-blue) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 
@@ -2369,6 +2391,7 @@ body {
   width: 100%;
   height: 700px;
   object-fit: cover;
+  object-position: center 25%;
   border-radius: 24px;
   box-shadow: 0 20px 60px rgba(10, 47, 138, 0.15);
   border: 1px solid rgba(10, 47, 138, 0.15);

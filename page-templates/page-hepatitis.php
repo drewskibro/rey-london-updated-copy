@@ -97,9 +97,9 @@ get_header();
           <p class="hep-body-text">Both are preventable through vaccination — offering protection whether you're travelling abroad, working in healthcare, or simply protecting your long-term health.</p>
 
           <div class="hep-stat-grid">
-            <div class="hep-stat-box"><div class="hep-stat-num">1,400,000</div><div class="hep-stat-desc">Hepatitis A cases annually worldwide</div></div>
-            <div class="hep-stat-box"><div class="hep-stat-num">296,000,000</div><div class="hep-stat-desc">People living with chronic hepatitis B</div></div>
-            <div class="hep-stat-box"><div class="hep-stat-num">820,000</div><div class="hep-stat-desc">Hepatitis B deaths each year</div></div>
+            <div class="hep-stat-box"><div class="hep-stat-num">159 Million</div><div class="hep-stat-desc">Estimated global hepatitis A infections annually</div></div>
+            <div class="hep-stat-box"><div class="hep-stat-num">254,000,000</div><div class="hep-stat-desc">People living with chronic hepatitis B</div></div>
+            <div class="hep-stat-box"><div class="hep-stat-num">1,100,000</div><div class="hep-stat-desc">Hepatitis B deaths each year</div></div>
             <div class="hep-stat-box"><div class="hep-stat-num">95%+</div><div class="hep-stat-desc">Vaccine effectiveness after full course</div></div>
           </div>
         </div>
@@ -127,7 +127,7 @@ get_header();
             <tr><td>How It Spreads</td><td>Contaminated food/water, poor hygiene, faecal-oral route</td><td>Blood, bodily fluids, sexual contact, needles, childbirth</td></tr>
             <tr><td>Risk Regions</td><td>Asia, Africa, South/Central America, Middle East</td><td>Same regions + Eastern Europe, Pacific Islands</td></tr>
             <tr><td>Becomes Chronic?</td><td>No — always acute infection only</td><td>Yes — can become lifelong infection</td></tr>
-            <tr><td>Serious Complications</td><td>Rare liver failure (mainly adults 50+)</td><td>Cirrhosis, liver cancer, liver failure</td></tr>
+            <tr><td>Serious Complications</td><td>Rare fulminant liver failure — risk increases with age</td><td>Cirrhosis, liver cancer, liver failure</td></tr>
             <tr><td>Typical Recovery</td><td>2–6 months complete recovery</td><td>Can persist for life if chronic</td></tr>
             <tr><td>Vaccine Schedule</td><td>2 doses (0, 6–12 months)</td><td>3 doses (0, 1, 6 months)</td></tr>
             <tr><td>Protection Duration</td><td>25+ years after course</td><td>20–30+ years, often lifelong</td></tr>
@@ -400,40 +400,10 @@ get_header();
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg> Breastfeeding: Both vaccines safe</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg> Immunosuppression: Safe but may have reduced effectiveness</li>
           </ul>
-          <p class="hep-side-note">Both vaccines have outstanding safety profiles with hundreds of millions of doses administered worldwide over 30+ years. Serious reactions are extremely rare — less than 1 in 1,000,000 doses.</p>
+          <p class="hep-side-note">Both vaccines have outstanding safety profiles with hundreds of millions of doses administered worldwide over 30+ years. Serious reactions are extremely rare with both hepatitis vaccines.</p>
         </div>
       </div>
       <div class="hep-safety-box">Both hepatitis A and B vaccines are <strong>inactivated vaccines</strong> — they cannot cause the disease. We observe all patients for 15 minutes post-vaccination. Emergency treatment is immediately available.</div>
-    </div>
-  </section>
-
-  <!-- ===================== NHS vs PRIVATE ===================== -->
-  <section class="hep-section-light" id="nhs-private">
-    <div class="container">
-      <div style="text-align:center;">
-        <h2 class="section-title">Hepatitis Vaccines: NHS or Private?</h2>
-        <p class="section-subtitle" style="max-width:800px;margin:0 auto 0;">Understanding when you can access free NHS vaccination vs when private is needed.</p>
-      </div>
-      <div style="overflow-x:auto;">
-        <table class="hep-nhs-table">
-          <thead><tr><th></th><th>Free on NHS</th><th>Private at Chislehurst Pharmacy Group</th></tr></thead>
-          <tbody>
-            <tr>
-              <td>Hepatitis A</td>
-              <td><ul class="hep-nhs-list"><li>Travel to endemic areas (GP referral, 6–8 weeks wait)</li><li>Chronic liver disease</li><li>Occupational exposure (sewage/lab)</li><li>MSM (sexual health clinics)</li></ul></td>
-              <td><ul class="hep-nhs-list"><li>Immediate appointments (no GP wait)</li><li>Last-minute travel (&lt;6 weeks)</li><li>Pharmacy convenience</li><li>Combined A+B preferred</li><li>Accelerated schedule needed</li></ul></td>
-            </tr>
-            <tr>
-              <td>Hepatitis B</td>
-              <td><ul class="hep-nhs-list"><li>Healthcare workers (occupational)</li><li>Prison staff (occupational)</li><li>MSM (sexual health clinics)</li><li>People who inject drugs</li><li>UK babies (routine since 2017)</li></ul></td>
-              <td><ul class="hep-nhs-list"><li>Travel to endemic areas</li><li>Not eligible for occupational NHS</li><li>Accelerated schedule for urgent travel</li><li>Combined A+B preferred</li><li>Pharmacy convenience &amp; speed</li></ul></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="hep-highlight-box" style="margin-top:32px;">
-        <strong>Important:</strong> Many GPs now only provide hepatitis B for occupational health, not travel. NHS appointments may have 6–8 week wait times. Private vaccination offers immediate access, flexible scheduling, and combined A+B availability.
-      </div>
     </div>
   </section>
 
@@ -565,7 +535,7 @@ get_header();
         <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">08</span><span class="hep-faq-question">I started my hepatitis B course abroad but didn't finish. Can I continue here?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Absolutely. Hepatitis B vaccination is a series — you don't need to restart. Just continue where you left off. Ideally bring documentation of doses received (dates, vaccine brand if available). If you don't have records, we can arrange a blood test to check antibody levels and determine next steps. The vaccine series remains valid even with long gaps between doses.</div></div></div>
         <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">09</span><span class="hep-faq-question">Do I need a booster if I was vaccinated years ago?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Usually no. Hepatitis A: No booster needed after full 2-dose course — protection lasts 25+ years. Hepatitis B: No routine travel booster after full 3-dose course. Healthcare workers: May need blood test to check anti-HBs antibody levels and possible 5-year booster depending on results and exposure risk. Bring previous vaccination documentation to consultation.</div></div></div>
         <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">10</span><span class="hep-faq-question">Are hepatitis vaccines safe during pregnancy?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Hepatitis A: Generally deferred during pregnancy unless high exposure risk makes it essential. Hepatitis B: Safe during pregnancy if significant exposure risk exists (e.g., healthcare work, travel to endemic area). Both are inactivated vaccines containing no live virus. We assess risk vs benefit during consultation. Inform pharmacist if you're pregnant or may become pregnant.</div></div></div>
-        <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">11</span><span class="hep-faq-question">What are the side effects?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Most people experience only mild effects: injection site soreness, headache, or fatigue for 1–2 days. Manage with paracetamol if needed. Serious reactions are extremely rare — less than 1 in 1,000,000 doses. Both vaccines have excellent safety records with hundreds of millions of doses administered globally over 30+ years. We observe all patients for 15 minutes post-vaccination.</div></div></div>
+        <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">11</span><span class="hep-faq-question">What are the side effects?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Most people experience only mild effects: injection site soreness, headache, or fatigue for 1–2 days. Manage with paracetamol if needed. Serious reactions are extremely rare with both hepatitis vaccines. Both have excellent safety records with hundreds of millions of doses administered globally over 30+ years. We observe all patients for 15 minutes post-vaccination.</div></div></div>
         <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">12</span><span class="hep-faq-question">Can I have hepatitis vaccines with other travel vaccinations?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Yes. Hepatitis A and B can be given simultaneously with yellow fever, typhoid, rabies, meningitis, and other travel vaccines. We administer them at separate sites (different arms). This is ideal for multi-destination travel requiring multiple vaccines. Book a comprehensive travel health consultation to coordinate all necessary vaccinations efficiently.</div></div></div>
         <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">13</span><span class="hep-faq-question">I have liver disease. Should I get hepatitis vaccines?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Yes, strongly recommended. People with chronic liver disease (cirrhosis, hepatitis C, fatty liver disease, alcoholic liver disease) face higher risk of severe complications from hepatitis A or B infection. Hepatitis A can cause acute liver failure in people with existing liver disease. Hepatitis B can accelerate liver damage. Inform pharmacist of your liver condition during consultation.</div></div></div>
         <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">14</span><span class="hep-faq-question">What if I'm allergic to yeast?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Hepatitis B and combined A+B vaccines are grown in yeast — severe yeast allergy (anaphylaxis to yeast) is a contraindication. You cannot receive these vaccines. Hepatitis A vaccine does NOT contain yeast and is safe. If you have yeast allergy, you can receive hepatitis A vaccine separately but not hepatitis B or Twinrix. Mild yeast sensitivity (not anaphylaxis) may still allow vaccination with extended observation — discuss during consultation.</div></div></div>

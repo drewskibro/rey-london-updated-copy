@@ -23,7 +23,7 @@ get_header();
                 <?php echo esc_html( rl_field( 'hero_subtitle', 'Expert prescriptions, travel health, and weight management across South East London. Two Chislehurst locations ready to help.' ) ); ?>
               </p>
             </div>
-            <a href="#all-services" class="btn-secondary btn-view-all">
+            <a href="#services" class="btn-secondary btn-view-all">
               View all services
               <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow" />
             </a>
@@ -924,8 +924,8 @@ get_header();
           <div class="pharmacist-hero">
             <div class="pharmacist-image-wrapper">
               <img
-                src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517579457-0.png"
-                alt="Sumeet Banker - Superintendent Pharmacist"
+                src="<?php echo esc_url( rl_field( 'pharmacist_image', 'https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517579457-0.png' ) ); ?>"
+                alt="<?php echo esc_attr( rl_field( 'pharmacist_name', 'Sumeet Banker' ) ); ?> - Superintendent Pharmacist"
                 class="pharmacist-image"
               />
 
@@ -1235,14 +1235,12 @@ get_header();
             <?php echo esc_html( rl_field( 'cta_subtitle', 'Our expert pharmacists are here to help you across both South East London locations. No appointment needed for most services.' ) ); ?>
           </p>
           <div class="hp-footer-cta-buttons">
-            <a href="<?php echo esc_url( rl_field( 'cta_button_url' ) ?: rl_booking_url() ); ?>" class="hp-btn-cta-white"><?php echo esc_html( rl_field( 'cta_button_text', 'Book Appointment' ) ); ?></a>
-            <a href="tel:<?php echo esc_attr( rl_phone_link() ); ?>" class="hp-btn-cta-ghost">
+            <a href="<?php echo esc_url( rl_field( 'cta_button_url' ) ?: rl_booking_url() ); ?>" class="hp-btn-cta-white"><?php echo esc_html( rl_field( 'cta_button_text', 'Book Consultation' ) ); ?></a>
+            <a href="<?php echo esc_url( home_url( '/contact-page/' ) ); ?>" class="hp-btn-cta-ghost">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.09 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81L9.27 8.95a16 16 0 0 0 6.78 6.78l1.42-1.42a12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                />
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
               </svg>
-              Call Us: <?php echo esc_html( rl_phone() ); ?>
+              Contact Us
             </a>
           </div>
           <div class="hp-cta-checks">
