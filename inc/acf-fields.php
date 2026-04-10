@@ -667,6 +667,43 @@ acf_add_local_field_group( array(
             ),
         ),
 
+        // ── BENEFITS / OUTCOMES ──
+        array(
+            'key'   => 'field_rl_wl_benefits_tab',
+            'label' => 'Benefits / Outcomes',
+            'type'  => 'tab',
+        ),
+        array(
+            'key'          => 'field_rl_wl_benefits',
+            'label'        => 'Benefit Cards',
+            'name'         => 'wl_benefits',
+            'type'         => 'repeater',
+            'layout'       => 'block',
+            'button_label' => 'Add Benefit',
+            'sub_fields'   => array(
+                array(
+                    'key'   => 'field_rl_wl_benefit_title',
+                    'label' => 'Title',
+                    'name'  => 'title',
+                    'type'  => 'text',
+                ),
+                array(
+                    'key'   => 'field_rl_wl_benefit_description',
+                    'label' => 'Description',
+                    'name'  => 'description',
+                    'type'  => 'textarea',
+                    'rows'  => 2,
+                ),
+                array(
+                    'key'           => 'field_rl_wl_benefit_image',
+                    'label'         => 'Image',
+                    'name'          => 'image',
+                    'type'          => 'image',
+                    'return_format' => 'url',
+                ),
+            ),
+        ),
+
         // ── TESTIMONIALS ──
         array(
             'key'   => 'field_rl_wl_testimonials_tab',
