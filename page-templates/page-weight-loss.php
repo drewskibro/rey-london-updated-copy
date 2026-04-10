@@ -102,6 +102,11 @@ get_header();
           <div class="wl-proof-number">Same Day</div>
           <div class="wl-proof-label">Appointments Available</div>
         </div>
+        <div class="wl-proof-divider"></div>
+        <div class="wl-proof-item">
+          <div class="wl-proof-number">£0</div>
+          <div class="wl-proof-label">Free Initial Consultation</div>
+        </div>
       </div>
     </div>
   </section>
