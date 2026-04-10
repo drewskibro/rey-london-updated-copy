@@ -529,7 +529,7 @@ get_header();
               </div>
               <div class="detail-item">
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours">
-                <p>Mon–Fri: 8am–8pm | Sat: 9am–6pm | Sun: 10am–4pm</p>
+                <p>Mon–Fri: 8.30am–6.30pm | Sat: 9am–2pm | Sun: Closed</p>
               </div>
             </div>
             <div class="location-actions">
@@ -557,7 +557,7 @@ get_header();
               </div>
               <div class="detail-item">
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours">
-                <p>Mon–Fri: 8am–8pm | Sat: 9am–6pm | Sun: 10am–4pm</p>
+                <p>Mon–Fri: 9am–6pm | Sat: 9am–1pm | Sun: Closed</p>
               </div>
             </div>
             <div class="location-actions">
