@@ -84,7 +84,7 @@ get_header();
         </div>
         <div class="wl-proof-divider"></div>
         <div class="wl-proof-item">
-          <div class="wl-proof-number">10–20%</div>
+          <div class="wl-proof-number">10–20%*</div>
           <div class="wl-proof-label">Average Body Weight Lost</div>
         </div>
         <div class="wl-proof-divider"></div>
@@ -104,8 +104,8 @@ get_header();
         </div>
         <div class="wl-proof-divider"></div>
         <div class="wl-proof-item">
-          <div class="wl-proof-number">£0</div>
-          <div class="wl-proof-label">Free Initial Consultation</div>
+          <div class="wl-proof-number">FREE</div>
+          <div class="wl-proof-label">Initial Consultation</div>
         </div>
       </div>
     </div>
