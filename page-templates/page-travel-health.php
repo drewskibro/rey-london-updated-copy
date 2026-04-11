@@ -502,7 +502,7 @@ get_header();
           'hours'          => 'Mon–Fri: 9am–6pm | Sat: 9am–1pm | Sun: Closed',
           'services'       => 'All travel vaccines • Same-day appointments • Antimalarial medications • Travel health kits',
           'area'           => 'Serving Chislehurst, Bromley, and Sidcup',
-          'directions_url' => 'https://maps.google.com/?q=59+Chislehurst+Road+BR7+5NP',
+          'directions_url' => 'https://maps.app.goo.gl/Y8XVaALSLgZ531iG8',
       ),
       array(
           'name'           => 'Pond Pharmacy',
@@ -512,7 +512,7 @@ get_header();
           'hours'          => 'Mon–Fri: 8.30am–6.30pm | Sat: 9am–2pm | Sun: Closed',
           'services'       => 'Full travel vaccination service • Malaria prevention • Travel health consultations • Emergency travel advice',
           'area'           => 'Convenient for Orpington, Bexley, and Eltham',
-          'directions_url' => 'https://maps.google.com/?q=59+High+Street+Chislehurst+BR7+5AF',
+          'directions_url' => 'https://maps.app.goo.gl/6fC4p4Fm73nLXrgf9',
       ),
   );
   $th_locations = rl_field( 'th_locations' );
@@ -571,7 +571,7 @@ get_header();
   <!-- ========== FAQ SECTION ========== -->
   <section class="th-faq-section" id="faq">
     <div class="container">
-      <h2 class="section-title">Travel Health Questions <span class="gradient-text">Answered</span></h2>
+      <h2 class="section-title">Travel Health Questions <span class="gradient-text-light">Answered</span></h2>
       <p class="section-subtitle">Everything you need to know before your travel health appointment</p>
       <div class="th-faq-list">
         <div class="th-faq-item">
@@ -670,7 +670,7 @@ get_header();
         <h2 class="th-footer-cta-title">Protect your next adventure</h2>
         <p class="th-footer-cta-sub">Don't let preventable illness ruin your trip. Get comprehensive travel health protection from South East London's trusted travel clinic.</p>
         <div class="cta-buttons">
-          <a href="#book" class="btn-cta-primary">Book Travel Health Consultation</a>
+          <a href="<?php echo esc_url( home_url( '/contact-page/#book-appointment' ) ); ?>" class="btn-cta-primary">Book Travel Health Consultation</a>
           <a href="#vaccines" class="btn-cta-secondary-ghost">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg>
             Check What Vaccines You Need
@@ -678,7 +678,9 @@ get_header();
         </div>
         <div class="th-cta-checks">
           <span>✓ All vaccines in stock</span>
+          <?php if ( $th_is_yfc ) : ?>
           <span>✓ Official yellow fever certificates</span>
+          <?php endif; ?>
           <span>✓ Same-day appointments available</span>
         </div>
       </div>
