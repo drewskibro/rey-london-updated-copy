@@ -135,8 +135,8 @@ get_header();
       <!-- Stats Row -->
       <div class="wl-vs-stats">
         <div class="wl-vs-stat-card">
-          <div class="wl-vs-stat-number">95%</div>
-          <div class="wl-vs-stat-label">of diets fail within 5 years</div>
+          <div class="wl-vs-stat-number">20.9%*</div>
+          <div class="wl-vs-stat-label">Average weight loss with Mounjaro</div>
         </div>
         <div class="wl-vs-stat-card">
           <div class="wl-vs-stat-number">20%</div>
