@@ -1249,6 +1249,20 @@ acf_add_local_field_group( array(
         array( 'key' => 'field_rl_th_stat1_number', 'label' => 'Stat 1 — Number / Value', 'name' => 'th_stat1_number', 'type' => 'text', 'default_value' => 'Same Day' ),
         array( 'key' => 'field_rl_th_stat1_label', 'label' => 'Stat 1 — Label', 'name' => 'th_stat1_label', 'type' => 'text', 'default_value' => 'Travel vaccinations available' ),
         array( 'key' => 'field_rl_th_stat1_desc', 'label' => 'Stat 1 — Description', 'name' => 'th_stat1_desc', 'type' => 'text', 'default_value' => 'No referral needed, no long waits' ),
+        array( 'key' => 'field_rl_th_why_tab', 'label' => 'Why Choose Us', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_th_why_title', 'label' => 'Section Title', 'name' => 'th_why_title', 'type' => 'text', 'default_value' => 'Why choose our South East London travel clinic?', 'instructions' => 'Plain text. The words "travel clinic?" will automatically be wrapped in the gradient accent.' ),
+        array( 'key' => 'field_rl_th_why_subtitle', 'label' => 'Section Subtitle', 'name' => 'th_why_subtitle', 'type' => 'textarea', 'rows' => 2, 'default_value' => 'More than just jabs – comprehensive travel health protection that gives you confidence from booking to landing.' ),
+        array(
+            'key' => 'field_rl_th_why_cards', 'label' => 'Why Choose Cards', 'name' => 'th_why_cards', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Card',
+            'instructions' => 'The numbered label (01, 02, 03...) is auto-generated from the row order. Add, remove or reorder cards in any order — numbering adjusts automatically.',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_th_why_card_image', 'label' => 'Image', 'name' => 'image', 'type' => 'image', 'return_format' => 'url' ),
+                array( 'key' => 'field_rl_th_why_card_title', 'label' => 'Title', 'name' => 'title', 'type' => 'text' ),
+                array( 'key' => 'field_rl_th_why_card_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 3 ),
+                array( 'key' => 'field_rl_th_why_card_cta_label', 'label' => 'CTA Label', 'name' => 'cta_label', 'type' => 'text', 'default_value' => 'Book Consultation' ),
+                array( 'key' => 'field_rl_th_why_card_cta_url', 'label' => 'CTA URL', 'name' => 'cta_url', 'type' => 'text', 'default_value' => '#book', 'instructions' => 'Can be a full URL, an on-page anchor like #book or #vaccines, or a path like /contact/.' ),
+            ),
+        ),
         array( 'key' => 'field_rl_th_vaccines_tab', 'label' => 'Vaccinations', 'type' => 'tab' ),
         array(
             'key' => 'field_rl_th_vaccines', 'label' => 'Vaccination Cards', 'name' => 'th_vaccines', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Vaccination',
