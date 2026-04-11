@@ -805,6 +805,49 @@ body {
   animation: underlineGlow 3s ease-in-out infinite;
 }
 
+/* ============================================
+   .gradient-text-light
+   ---------------------------------------------
+   Use this on headings sitting on LIGHT / white
+   section backgrounds where the default
+   .gradient-text (white → light blue) becomes
+   invisible. Same animated fade effect, but the
+   palette stays in readable brand blues so it
+   works on near-white backgrounds.
+
+   When adding a new section with a gradient
+   heading, pick:
+     - .gradient-text          → dark bg sections
+     - .gradient-text-light    → light bg sections
+   ============================================ */
+.gradient-text-light {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 40%, var(--light-blue) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+  animation: gradientShift 4s ease-in-out infinite;
+  display: inline;
+  position: relative;
+  text-shadow: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.gradient-text-light::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--light-blue), transparent);
+  border-radius: 2px;
+  animation: underlineGlow 3s ease-in-out infinite;
+}
+
 @keyframes underlineGlow {
   0%, 100% {
     opacity: 0.5;
