@@ -99,38 +99,83 @@ get_header();
   </section>
 
   <!-- ========== WHY CHOOSE US ========== -->
+  <?php
+  /* Default "Why Choose" cards — used as whole-repeater fallback
+     when wl_why_cards is empty, and as per-field fallbacks for rows
+     missing individual sub-fields so populated rows still render
+     sensibly before every field is filled in. */
+  $th_why_default_cards = array(
+      array(
+          'image'       => 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop',
+          'title'       => 'Expert Travel Consultations',
+          'description' => 'Personalised risk assessment based on your exact itinerary, not generic destination advice. We consider your route, accommodation type, activities, and medical history.',
+          'cta_label'   => 'Book Consultation',
+          'cta_url'     => '#book',
+      ),
+      array(
+          'image'       => 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=600&h=400&fit=crop',
+          'title'       => 'Same-Day Appointments',
+          'description' => 'Last-minute trip? No problem. Get essential vaccinations administered the same day and walk out protected, not stressed about timing.',
+          'cta_label'   => 'Book Today',
+          'cta_url'     => '#book',
+      ),
+      array(
+          'image'       => 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop',
+          'title'       => 'Every Vaccine In Stock',
+          'description' => 'No prescription delays or follow-up visits. We stock every travel vaccine including yellow fever, rabies, Japanese encephalitis, and malaria prevention.',
+          'cta_label'   => 'View Vaccines',
+          'cta_url'     => '#vaccines',
+      ),
+  );
+  $th_why_cards = rl_field( 'th_why_cards' );
+  if ( ! $th_why_cards || ! is_array( $th_why_cards ) ) {
+      $th_why_cards = $th_why_default_cards;
+  }
+
+  /* Split the section title on the last two words so the closing
+     phrase is always wrapped in the gradient accent, regardless of
+     what the user types into the Section Title ACF field. */
+  $th_why_title_raw = rl_field( 'th_why_title', 'Why choose our South East London travel clinic?' );
+  $th_why_title_words = preg_split( '/\s+/', trim( $th_why_title_raw ) );
+  if ( count( $th_why_title_words ) > 2 ) {
+      $th_why_title_tail = implode( ' ', array_slice( $th_why_title_words, -2 ) );
+      $th_why_title_head = implode( ' ', array_slice( $th_why_title_words, 0, -2 ) );
+  } else {
+      $th_why_title_tail = $th_why_title_raw;
+      $th_why_title_head = '';
+  }
+  ?>
   <section class="th-why-section">
     <div class="container">
-      <h2 class="section-title">Why choose our South East London <span class="gradient-text">travel clinic?</span></h2>
-      <p class="section-subtitle">More than just jabs – comprehensive travel health protection that gives you confidence from booking to landing.</p>
+      <h2 class="section-title">
+        <?php echo esc_html( $th_why_title_head ); ?>
+        <?php if ( $th_why_title_head ) echo ' '; ?>
+        <span class="gradient-text"><?php echo esc_html( $th_why_title_tail ); ?></span>
+      </h2>
+      <p class="section-subtitle"><?php echo esc_html( rl_field( 'th_why_subtitle', 'More than just jabs – comprehensive travel health protection that gives you confidence from booking to landing.' ) ); ?></p>
       <div class="th-why-grid-3">
+        <?php foreach ( $th_why_cards as $i => $card ) :
+          /* Per-field fallback — rows missing sub-fields get the
+             defaults from the matching index so existing populated
+             rows don't break when new sub-fields get added later. */
+          $default = isset( $th_why_default_cards[ $i ] ) ? $th_why_default_cards[ $i ] : $th_why_default_cards[0];
+          $card_image = ! empty( $card['image'] )       ? $card['image']       : $default['image'];
+          $card_title = ! empty( $card['title'] )       ? $card['title']       : $default['title'];
+          $card_desc  = ! empty( $card['description'] ) ? $card['description'] : $default['description'];
+          $card_label = ! empty( $card['cta_label'] )   ? $card['cta_label']   : $default['cta_label'];
+          $card_url   = ! empty( $card['cta_url'] )     ? $card['cta_url']     : $default['cta_url'];
+          $card_num   = str_pad( (string) ( $i + 1 ), 2, '0', STR_PAD_LEFT );
+        ?>
         <div class="th-why-card">
-          <div class="th-why-card-image"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="Expert pharmacist travel consultation South East London"></div>
+          <div class="th-why-card-image"><img src="<?php echo esc_url( $card_image ); ?>" alt="<?php echo esc_attr( $card_title ); ?>"></div>
           <div class="th-why-card-body">
-            <div class="th-why-card-number">01</div>
-            <h3>Expert Travel Consultations</h3>
-            <p>Personalized risk assessment based on your exact itinerary, not generic destination advice. We consider your route, accommodation type, activities, and medical history.</p>
-            <a href="#book" class="th-why-card-link">Book Consultation <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <div class="th-why-card-number"><?php echo esc_html( $card_num ); ?></div>
+            <h3><?php echo esc_html( $card_title ); ?></h3>
+            <p><?php echo esc_html( $card_desc ); ?></p>
+            <a href="<?php echo esc_url( $card_url ); ?>" class="th-why-card-link"><?php echo esc_html( $card_label ); ?> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
         </div>
-        <div class="th-why-card">
-          <div class="th-why-card-image"><img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=600&h=400&fit=crop" alt="Same-day travel vaccination appointments"></div>
-          <div class="th-why-card-body">
-            <div class="th-why-card-number">02</div>
-            <h3>Same-Day Appointments</h3>
-            <p>Last-minute trip? No problem. Get essential vaccinations administered the same day and walk out protected, not stressed about timing.</p>
-            <a href="#book" class="th-why-card-link">Book Today <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
-        </div>
-        <div class="th-why-card">
-          <div class="th-why-card-image"><img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop" alt="Travel vaccines in stock at Chislehurst pharmacy"></div>
-          <div class="th-why-card-body">
-            <div class="th-why-card-number">03</div>
-            <h3>Every Vaccine In Stock</h3>
-            <p>No prescription delays or follow-up visits. We stock every travel vaccine including yellow fever, rabies, Japanese encephalitis, and malaria prevention.</p>
-            <a href="#vaccines" class="th-why-card-link">View Vaccines <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
-        </div>
+        <?php endforeach; ?>
       </div>
     </div>
   </section>
