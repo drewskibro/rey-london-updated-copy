@@ -431,7 +431,7 @@ get_header();
       <div class="th-trust-grid">
         <div class="th-trust-content">
           <span class="th-eyebrow"><?php echo esc_html( rl_field( 'th_trust_eyebrow', 'COMPREHENSIVE TRAVEL HEALTH EXPERTISE' ) ); ?></span>
-          <h2 class="section-title th-trust-title"><?php echo esc_html( rl_field( 'th_trust_title_main', 'Your trusted travel health partner in' ) ); ?> <span class="gradient-text"><?php echo esc_html( rl_field( 'th_trust_title_accent', 'South East London' ) ); ?></span></h2>
+          <h2 class="section-title th-trust-title"><?php echo esc_html( rl_field( 'th_trust_title_main', 'Your trusted travel health partner in' ) ); ?> <span class="gradient-text-light"><?php echo esc_html( rl_field( 'th_trust_title_accent', 'South East London' ) ); ?></span></h2>
           <p class="th-trust-intro"><?php echo esc_html( rl_field( 'th_trust_intro', 'Our travel health service goes beyond just administering vaccinations. We provide comprehensive destination-specific guidance that keeps you safe before, during, and after your trip. With two convenient South East London locations and over 15 years serving travellers across Bromley, Orpington, Sidcup, Bexley, and Chislehurst, we understand the health risks unique to each region you might visit.' ) ); ?></p>
           <div class="th-feature-cards">
             <div class="th-feature-card">
@@ -479,63 +479,91 @@ get_header();
   </section>
 
   <!-- ========== LOCATIONS ========== -->
+  <?php
+  /* Default location data — used as the whole-repeater fallback
+     when th_locations is empty, and as per-field fallbacks for rows
+     missing individual sub-fields so existing populated rows still
+     render sensibly before every field is filled in.
+     Defaults have been corrected vs the previous hardcoded version:
+     - "Pond End Pharmacy" → "Pond Pharmacy" (correct name)
+     - Opening hours updated to reflect real pharmacy hours
+     - Services lines neutralised — removed "Yellow Fever
+       Vaccination Centre" (Chislehurst) and "Official vaccination
+       certificates" (Pond) to keep defaults YFC-compliant until
+       designation is confirmed
+     - Get Directions URLs point to real Google Maps lookups
+       instead of the broken "#directions" anchor */
+  $th_default_locations = array(
+      array(
+          'name'           => 'Chislehurst Pharmacy',
+          'image'          => 'https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769344823391-0.jpeg',
+          'address'        => '59 Chislehurst Rd, Chislehurst BR7 5NP',
+          'phone'          => '020 8295 0017',
+          'hours'          => 'Mon–Fri: 9am–6pm | Sat: 9am–1pm | Sun: Closed',
+          'services'       => 'All travel vaccines • Same-day appointments • Antimalarial medications • Travel health kits',
+          'area'           => 'Serving Chislehurst, Bromley, and Sidcup',
+          'directions_url' => 'https://maps.google.com/?q=59+Chislehurst+Road+BR7+5NP',
+      ),
+      array(
+          'name'           => 'Pond Pharmacy',
+          'image'          => 'https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769343725749-0.jpeg',
+          'address'        => '59 High St, Chislehurst BR7 5AF',
+          'phone'          => '020 8467 3158',
+          'hours'          => 'Mon–Fri: 8.30am–6.30pm | Sat: 9am–2pm | Sun: Closed',
+          'services'       => 'Full travel vaccination service • Malaria prevention • Travel health consultations • Emergency travel advice',
+          'area'           => 'Convenient for Orpington, Bexley, and Eltham',
+          'directions_url' => 'https://maps.google.com/?q=59+High+Street+Chislehurst+BR7+5AF',
+      ),
+  );
+  $th_locations = rl_field( 'th_locations' );
+  if ( ! $th_locations || ! is_array( $th_locations ) ) {
+      $th_locations = $th_default_locations;
+  }
+  ?>
   <section class="locations-section" id="locations">
     <div class="container">
-      <h2 class="section-title">Two Convenient South East London <span class="gradient-text">Locations</span></h2>
-      <p class="section-subtitle">Based in Chislehurst, we're South East London's local travel health clinic serving patients across Bromley, Orpington, Sidcup, Bexley, Eltham, Lewisham, and surrounding areas.</p>
+      <h2 class="section-title"><?php echo esc_html( rl_field( 'th_locations_title_main', 'Two Convenient South East London' ) ); ?> <span class="gradient-text-light"><?php echo esc_html( rl_field( 'th_locations_title_accent', 'Locations' ) ); ?></span></h2>
+      <p class="section-subtitle"><?php echo esc_html( rl_field( 'th_locations_subtitle', "Based in Chislehurst, we're South East London's local travel health clinic serving patients across Bromley, Orpington, Sidcup, Bexley, Eltham, Lewisham, and surrounding areas." ) ); ?></p>
       <div class="locations-grid">
+        <?php foreach ( $th_locations as $i => $loc ) :
+          $default = isset( $th_default_locations[ $i ] ) ? $th_default_locations[ $i ] : $th_default_locations[0];
+          $loc_name     = ! empty( $loc['name'] )           ? $loc['name']           : $default['name'];
+          $loc_image    = ! empty( $loc['image'] )          ? $loc['image']          : $default['image'];
+          $loc_address  = ! empty( $loc['address'] )        ? $loc['address']        : $default['address'];
+          $loc_phone    = ! empty( $loc['phone'] )          ? $loc['phone']          : $default['phone'];
+          $loc_phone_t  = preg_replace( '/[^0-9+]/', '', $loc_phone );
+          $loc_hours    = ! empty( $loc['hours'] )          ? $loc['hours']          : $default['hours'];
+          $loc_services = ! empty( $loc['services'] )       ? $loc['services']       : $default['services'];
+          $loc_area     = ! empty( $loc['area'] )           ? $loc['area']           : $default['area'];
+          $loc_dir_url  = ! empty( $loc['directions_url'] ) ? $loc['directions_url'] : $default['directions_url'];
+        ?>
         <div class="location-card">
-          <div class="location-image"><img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&h=400&fit=crop" alt="Chislehurst Pharmacy travel health clinic"></div>
+          <div class="location-image"><img src="<?php echo esc_url( $loc_image ); ?>" alt="<?php echo esc_attr( $loc_name ); ?> — travel health clinic"></div>
           <div class="location-content">
-            <h3>Chislehurst Pharmacy</h3>
+            <h3><?php echo esc_html( $loc_name ); ?></h3>
             <div class="location-details">
               <div class="detail-item">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <p>59 Chislehurst Rd, Chislehurst BR7 5NP</p>
+                <p><?php echo esc_html( $loc_address ); ?></p>
               </div>
               <div class="detail-item">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.09 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81L9.27 8.95a16 16 0 0 0 6.78 6.78l1.42-1.42a12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                <a href="tel:02082950017">020 8295 0017</a>
+                <a href="tel:<?php echo esc_attr( $loc_phone_t ); ?>"><?php echo esc_html( $loc_phone ); ?></a>
               </div>
               <div class="detail-item">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                <p>Mon-Fri: 8am-8pm | Sat: 9am-6pm | Sun: 10am-4pm</p>
+                <p><?php echo esc_html( $loc_hours ); ?></p>
               </div>
             </div>
-            <p class="th-location-services"><strong>Services:</strong> Yellow Fever Vaccination Centre • All travel vaccines • Same-day appointments • Antimalarial medications • Travel health kits</p>
-            <p class="th-location-area">Serving Chislehurst, Bromley, and Sidcup</p>
+            <p class="th-location-services"><strong>Services:</strong> <?php echo esc_html( $loc_services ); ?></p>
+            <p class="th-location-area"><?php echo esc_html( $loc_area ); ?></p>
             <div class="location-actions">
-              <a href="#directions" class="btn-primary">Get Directions</a>
-              <a href="tel:02082950017" class="btn-outline">Call Now</a>
+              <a href="<?php echo esc_url( $loc_dir_url ); ?>" target="_blank" rel="noopener" class="btn-primary">Get Directions</a>
+              <a href="tel:<?php echo esc_attr( $loc_phone_t ); ?>" class="btn-outline">Call Now</a>
             </div>
           </div>
         </div>
-        <div class="location-card">
-          <div class="location-image"><img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop" alt="Pond End Pharmacy travel vaccinations"></div>
-          <div class="location-content">
-            <h3>Pond End Pharmacy</h3>
-            <div class="location-details">
-              <div class="detail-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <p>59 High St, Chislehurst BR7 5AF</p>
-              </div>
-              <div class="detail-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.09 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81L9.27 8.95a16 16 0 0 0 6.78 6.78l1.42-1.42a12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                <a href="tel:02084673158">020 8467 3158</a>
-              </div>
-              <div class="detail-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                <p>Mon-Fri: 8am-8pm | Sat: 9am-6pm | Sun: 10am-4pm</p>
-              </div>
-            </div>
-            <p class="th-location-services"><strong>Services:</strong> Full travel vaccination service • Malaria prevention • Official vaccination certificates • Travel health consultations • Emergency travel advice</p>
-            <p class="th-location-area">Convenient for Orpington, Bexley, and Eltham</p>
-            <div class="location-actions">
-              <a href="#directions" class="btn-primary">Get Directions</a>
-              <a href="tel:02084673158" class="btn-outline">Call Now</a>
-            </div>
-          </div>
-        </div>
+        <?php endforeach; ?>
       </div>
     </div>
   </section>
