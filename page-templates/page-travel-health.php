@@ -430,15 +430,15 @@ get_header();
     <div class="container">
       <div class="th-trust-grid">
         <div class="th-trust-content">
-          <span class="th-eyebrow">COMPREHENSIVE TRAVEL HEALTH EXPERTISE</span>
-          <h2 class="section-title th-trust-title">Your trusted travel health partner in <span class="gradient-text">South East London</span></h2>
-          <p class="th-trust-intro">Our travel health service goes beyond just administering vaccinations. We provide comprehensive destination-specific guidance that keeps you safe before, during, and after your trip. With two convenient South East London locations and over 15 years serving travelers across Bromley, Orpington, Sidcup, Bexley, and Chislehurst, we understand the health risks unique to each region you might visit.</p>
+          <span class="th-eyebrow"><?php echo esc_html( rl_field( 'th_trust_eyebrow', 'COMPREHENSIVE TRAVEL HEALTH EXPERTISE' ) ); ?></span>
+          <h2 class="section-title th-trust-title"><?php echo esc_html( rl_field( 'th_trust_title_main', 'Your trusted travel health partner in' ) ); ?> <span class="gradient-text"><?php echo esc_html( rl_field( 'th_trust_title_accent', 'South East London' ) ); ?></span></h2>
+          <p class="th-trust-intro"><?php echo esc_html( rl_field( 'th_trust_intro', 'Our travel health service goes beyond just administering vaccinations. We provide comprehensive destination-specific guidance that keeps you safe before, during, and after your trip. With two convenient South East London locations and over 15 years serving travellers across Bromley, Orpington, Sidcup, Bexley, and Chislehurst, we understand the health risks unique to each region you might visit.' ) ); ?></p>
           <div class="th-feature-cards">
             <div class="th-feature-card">
               <div class="th-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
               <div>
-                <h4>Destination-Specific Expertise</h4>
-                <p>Thailand needs different preparation than Tanzania. Urban Dubai requires different vaccines than rural Kenya. We assess your exact itinerary and activities.</p>
+                <h4><?php echo esc_html( rl_field( 'th_trust_feat1_title', 'Destination-Specific Expertise' ) ); ?></h4>
+                <p><?php echo esc_html( rl_field( 'th_trust_feat1_desc', 'Thailand needs different preparation than Tanzania. Urban Dubai requires different vaccines than rural Kenya. We assess your exact itinerary and activities.' ) ); ?></p>
               </div>
             </div>
             <?php if ( $th_is_yfc ) : ?>
@@ -453,25 +453,25 @@ get_header();
             <div class="th-feature-card">
               <div class="th-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
               <div>
-                <h4>Convenient Local Access</h4>
-                <p>Two pharmacies serving South East London with free parking, extended hours, and easy access from surrounding areas. No need to travel into Central London.</p>
+                <h4><?php echo esc_html( rl_field( 'th_trust_feat2_title', 'Convenient Local Access' ) ); ?></h4>
+                <p><?php echo esc_html( rl_field( 'th_trust_feat2_desc', 'Two pharmacies serving South East London with free parking, extended hours, and easy access from surrounding areas. No need to travel into Central London.' ) ); ?></p>
               </div>
             </div>
             <div class="th-feature-card">
               <div class="th-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
               <div>
-                <h4>Ongoing Support</h4>
-                <p>Access to your vaccination records anytime. Need repeat antimalarials? Quick refills without full re-consultation. Got sick abroad? Emergency advice line.</p>
+                <h4><?php echo esc_html( rl_field( 'th_trust_feat3_title', 'Ongoing Support' ) ); ?></h4>
+                <p><?php echo esc_html( rl_field( 'th_trust_feat3_desc', 'Access to your vaccination records anytime. Need repeat antimalarials? Quick refills without full re-consultation. Got sick abroad? Emergency advice line.' ) ); ?></p>
               </div>
             </div>
           </div>
-          <a href="#book" class="btn-primary th-btn-lg">Book Your Travel Health Consultation</a>
+          <a href="<?php echo esc_url( rl_field( 'th_trust_cta_url', '#book' ) ); ?>" class="btn-primary th-btn-lg"><?php echo esc_html( rl_field( 'th_trust_cta_label', 'Book Your Travel Health Consultation' ) ); ?></a>
         </div>
         <div class="th-trust-visual">
-          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&h=900&fit=crop" alt="Pharmacist providing travel health consultation South East London">
+          <img src="<?php echo esc_url( rl_field( 'th_trust_image', 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&h=900&fit=crop' ) ); ?>" alt="<?php echo esc_attr( rl_field( 'th_trust_eyebrow', 'Comprehensive Travel Health Expertise' ) ); ?>">
           <div class="th-trust-float-badge">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            <span>15+ Years Serving South East London Travelers</span>
+            <span><?php echo esc_html( rl_field( 'th_trust_badge_text', '15+ Years Serving South East London Travellers' ) ); ?></span>
           </div>
         </div>
       </div>
