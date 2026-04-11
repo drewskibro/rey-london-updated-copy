@@ -1263,6 +1263,19 @@ acf_add_local_field_group( array(
                 array( 'key' => 'field_rl_th_why_card_cta_url', 'label' => 'CTA URL', 'name' => 'cta_url', 'type' => 'text', 'default_value' => '#book', 'instructions' => 'Can be a full URL, an on-page anchor like #book or #vaccines, or a path like /contact/.' ),
             ),
         ),
+        array( 'key' => 'field_rl_th_journey_tab', 'label' => 'How It Works / Journey', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_th_journey_title', 'label' => 'Section Title', 'name' => 'th_journey_title', 'type' => 'text', 'default_value' => 'Your travel health journey' ),
+        array( 'key' => 'field_rl_th_journey_subtitle', 'label' => 'Section Subtitle', 'name' => 'th_journey_subtitle', 'type' => 'text', 'default_value' => 'Three simple steps to complete travel protection' ),
+        array(
+            'key' => 'field_rl_th_journey_steps', 'label' => 'Journey Steps', 'name' => 'th_journey_steps', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Step',
+            'instructions' => 'The "Step 1 / Step 2 / Step 3" label is auto-generated from row order — reorder, add or remove steps and the numbering adjusts automatically.',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_th_journey_step_image', 'label' => 'Image', 'name' => 'image', 'type' => 'image', 'return_format' => 'url' ),
+                array( 'key' => 'field_rl_th_journey_step_title', 'label' => 'Title', 'name' => 'title', 'type' => 'text' ),
+                array( 'key' => 'field_rl_th_journey_step_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 4 ),
+                array( 'key' => 'field_rl_th_journey_step_meta', 'label' => 'Meta / Pill Text', 'name' => 'meta', 'type' => 'text', 'instructions' => 'The small pill-style line shown beneath the description (e.g. "Typically 30-45 minutes appointment").' ),
+            ),
+        ),
         array( 'key' => 'field_rl_th_vaccines_tab', 'label' => 'Vaccinations', 'type' => 'tab' ),
         array(
             'key' => 'field_rl_th_vaccines', 'label' => 'Vaccination Cards', 'name' => 'th_vaccines', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Vaccination',
