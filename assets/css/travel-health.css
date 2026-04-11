@@ -447,7 +447,11 @@
 /* ========== SERVICES GRID ========== */
 .th-services-section {
   padding: 80px 0;
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 50%, var(--dark-blue) 100%);
+  /* Same jewel-tone drift used on .th-vaccines-section so both
+     adjacent dark sections share a coherent rich backdrop. Card
+     size and grid differ (3-col here, 4-col on vaccines) which
+     provides enough natural visual separation. */
+  background: linear-gradient(135deg, #0A2F8A 0%, #1E3A8A 30%, #312E81 65%, #0F172A 100%);
   position: relative;
   overflow: hidden;
 }
@@ -528,6 +532,37 @@
   font-size: 15px;
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.7;
+}
+
+/* ============================================
+   CATEGORY-CODED SERVICE ICONS
+   Same pattern as the vaccines section but with a smaller 3-colour
+   palette. Each .th-service-card has a data-category attribute
+   that maps to two CSS custom properties: --svc-accent (R,G,B
+   triplet for rgba mixing) and --svc-icon-color (solid stroke
+   colour). A shared icon rule consumes both so hover states work
+   from a single rule set.
+   Palette choices:
+     clinical — sky blue (NEW, not in vaccines palette — gives the
+       services section its own identity)
+     supply   — amber (echoes vaccines "viral" palette — creates
+       cohesion with the vaccines grid below)
+     advice   — soft violet (echoes vaccines "meningo" palette —
+       same cohesion reason)
+   ============================================ */
+.th-service-card[data-category="clinical"] { --svc-accent: 56, 189, 248;  --svc-icon-color: #7DD3FC; }  /* sky     — administered treatments (Vaccinations, Malaria Prevention) */
+.th-service-card[data-category="supply"]   { --svc-accent: 245, 158, 11;  --svc-icon-color: #FCD34D; }  /* amber   — physical takeaways (Travel Health Kits, Official Certificates) */
+.th-service-card[data-category="advice"]   { --svc-accent: 139, 92, 246;  --svc-icon-color: #C4B5FD; }  /* violet  — knowledge / information (Pre-Travel Advice, Post-Travel Follow-Up) */
+
+.th-service-card[data-category] .th-service-icon {
+  background: rgba(var(--svc-accent), 0.14);
+  border-color: rgba(var(--svc-accent), 0.35);
+  color: var(--svc-icon-color);
+}
+.th-service-card[data-category]:hover .th-service-icon {
+  background: rgba(var(--svc-accent), 0.22);
+  border-color: rgba(var(--svc-accent), 0.55);
+  box-shadow: 0 8px 24px rgba(var(--svc-accent), 0.2);
 }
 
 /* ========== VACCINES GRID ========== */
