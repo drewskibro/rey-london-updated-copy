@@ -291,6 +291,20 @@
   text-align: center;
 }
 
+/* Keep the fade effect on the "travel clinic?" heading span but use
+   darker brand blues so it stays legible on this section's light
+   background. The default .gradient-text (white → #bfdbfe) is
+   designed for dark section backgrounds and becomes invisible
+   here. Same override pattern used on .services-section and
+   .locations-section on the homepage. */
+.th-why-section .gradient-text {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 40%, var(--light-blue) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .th-why-grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
