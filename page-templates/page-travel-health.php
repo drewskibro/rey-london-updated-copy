@@ -20,7 +20,7 @@ get_header();
         <div class="th-hero-text">
           <div class="th-hero-pill">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <span>Official Yellow Fever Centre</span>
+            <span><?php echo esc_html( rl_field( 'th_hero_pill', 'GPhC Registered Travel Clinic' ) ); ?></span>
           </div>
           <h1 class="th-hero-title"><?php echo wp_kses_post( rl_field( 'th_hero_title', 'South East London\'s Trusted <span class="gradient-text">Travel Health Clinic</span>' ) ); ?></h1>
           <p class="th-hero-subtitle"><?php echo esc_html( rl_field( 'th_hero_subtitle', 'From yellow fever certification to malaria prevention – protect yourself with expert travel vaccinations before your next adventure. Serving Chislehurst, Bromley, Orpington, Sidcup, and Bexley.' ) ); ?></p>
@@ -32,10 +32,6 @@ get_header();
             </a>
           </div>
           <div class="th-trust-strip">
-            <div class="th-trust-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
-              <span>Yellow Fever Centre</span>
-            </div>
             <div class="th-trust-item">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               <span>All Travel Vaccines</span>
@@ -72,9 +68,9 @@ get_header();
     <div class="container th-stats-container-dark">
       <div class="th-stats-grid-dark">
         <div class="th-stat-card-dark">
-          <div class="th-stat-number-dark">Official</div>
-          <div class="th-stat-label-dark">Yellow Fever Centre</div>
-          <div class="th-stat-desc-dark">Internationally recognized certificates</div>
+          <div class="th-stat-number-dark"><?php echo esc_html( rl_field( 'th_stat1_number', 'Same Day' ) ); ?></div>
+          <div class="th-stat-label-dark"><?php echo esc_html( rl_field( 'th_stat1_label', 'Travel vaccinations available' ) ); ?></div>
+          <div class="th-stat-desc-dark"><?php echo esc_html( rl_field( 'th_stat1_desc', 'No referral needed, no long waits' ) ); ?></div>
         </div>
         <div class="th-stat-card-dark">
           <div class="th-stat-number-dark">1,000+</div>

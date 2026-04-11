@@ -109,7 +109,7 @@ $booking_url   = rl_booking_url();
                         <span class="link-desc">Energy & health boosts</span>
                       </div>
                     </a>
-                    <a href="<?php echo esc_url( home_url( '/travel-health/' ) ); ?>" class="dropdown-link">
+                    <a href="<?php echo esc_url( home_url( '/travel-vaccinations-london/' ) ); ?>" class="dropdown-link">
                       <div class="link-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
@@ -184,7 +184,7 @@ $booking_url   = rl_booking_url();
 
             <!-- Travel Health Dropdown -->
             <div class="nav-item has-dropdown">
-              <a href="<?php echo esc_url( home_url( '/travel-health/' ) ); ?>" class="nav-link">
+              <a href="<?php echo esc_url( home_url( '/travel-vaccinations-london/' ) ); ?>" class="nav-link">
                 Travel Health
                 <svg class="dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
                   <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
@@ -267,7 +267,7 @@ $booking_url   = rl_booking_url();
 
                   <div class="dropdown-section">
                     <h4 class="dropdown-title">Travel Services</h4>
-                    <a href="<?php echo esc_url( home_url( '/travel-health/' ) ); ?>" class="dropdown-link">
+                    <a href="<?php echo esc_url( home_url( '/travel-vaccinations-london/' ) ); ?>" class="dropdown-link">
                       <div class="link-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <rect x="1" y="4" width="22" height="16" rx="2" ry="2" /><line x1="1" y1="10" x2="23" y2="10" />
@@ -390,7 +390,7 @@ $booking_url   = rl_booking_url();
             <span class="search-popular-label">Popular Searches</span>
             <div class="search-popular-links">
               <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="search-popular-link">Weight Loss Programs</a>
-              <a href="<?php echo esc_url( home_url( '/travel-health/' ) ); ?>" class="search-popular-link">Travel Vaccinations</a>
+              <a href="<?php echo esc_url( home_url( '/travel-vaccinations-london/' ) ); ?>" class="search-popular-link">Travel Vaccinations</a>
               <a href="<?php echo esc_url( home_url( '/prescription-services/' ) ); ?>" class="search-popular-link">NHS Prescriptions</a>
               <a href="<?php echo esc_url( home_url( '/yellow-fever-vaccine-london/' ) ); ?>" class="search-popular-link">Yellow Fever Vaccine</a>
               <a href="<?php echo esc_url( home_url( '/vitamin-b12-injection/' ) ); ?>" class="search-popular-link">Vitamin B12 Injections</a>
@@ -458,7 +458,7 @@ $booking_url   = rl_booking_url();
             <a href="<?php echo esc_url( home_url( '/travel-thailand/' ) ); ?>" class="mobile-nav-sub-link">Thailand</a>
             <a href="<?php echo esc_url( home_url( '/travel-india/' ) ); ?>" class="mobile-nav-sub-link">India</a>
             <a href="<?php echo esc_url( home_url( '/travel-gambia/' ) ); ?>" class="mobile-nav-sub-link">The Gambia</a>
-            <a href="<?php echo esc_url( home_url( '/travel-health/' ) ); ?>" class="mobile-nav-sub-link">Travel Consultations</a>
+            <a href="<?php echo esc_url( home_url( '/travel-vaccinations-london/' ) ); ?>" class="mobile-nav-sub-link">Travel Consultations</a>
             <a href="<?php echo esc_url( home_url( '/malaria-prevention/' ) ); ?>" class="mobile-nav-sub-link">Malaria Prevention</a>
           </div>
         </div>
