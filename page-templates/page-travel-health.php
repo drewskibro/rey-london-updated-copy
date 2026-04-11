@@ -431,7 +431,7 @@ get_header();
       <div class="th-trust-grid">
         <div class="th-trust-content">
           <span class="th-eyebrow"><?php echo esc_html( rl_field( 'th_trust_eyebrow', 'COMPREHENSIVE TRAVEL HEALTH EXPERTISE' ) ); ?></span>
-          <h2 class="section-title th-trust-title"><?php echo esc_html( rl_field( 'th_trust_title_main', 'Your trusted travel health partner in' ) ); ?> <span class="gradient-text"><?php echo esc_html( rl_field( 'th_trust_title_accent', 'South East London' ) ); ?></span></h2>
+          <h2 class="section-title th-trust-title"><?php echo esc_html( rl_field( 'th_trust_title_main', 'Your trusted travel health partner in' ) ); ?> <span class="gradient-text-light"><?php echo esc_html( rl_field( 'th_trust_title_accent', 'South East London' ) ); ?></span></h2>
           <p class="th-trust-intro"><?php echo esc_html( rl_field( 'th_trust_intro', 'Our travel health service goes beyond just administering vaccinations. We provide comprehensive destination-specific guidance that keeps you safe before, during, and after your trip. With two convenient South East London locations and over 15 years serving travellers across Bromley, Orpington, Sidcup, Bexley, and Chislehurst, we understand the health risks unique to each region you might visit.' ) ); ?></p>
           <div class="th-feature-cards">
             <div class="th-feature-card">
