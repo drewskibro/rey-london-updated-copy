@@ -305,8 +305,10 @@ get_header();
         <p class="destinations-desc">We stock and administer every travel vaccine recommended by UK health authorities. No referrals needed, no delays.</p>
       </div>
       <div class="th-vaccine-grid">
-        <div class="th-vaccine-card th-vaccine-featured">
+        <div class="th-vaccine-card<?php echo $th_is_yfc ? ' th-vaccine-featured' : ''; ?>">
+          <?php if ( $th_is_yfc ) : ?>
           <div class="th-vaccine-badge">Official Centre</div>
+          <?php endif; ?>
           <div class="th-vaccine-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/></svg></div>
           <h4>Yellow Fever</h4>
         </div>

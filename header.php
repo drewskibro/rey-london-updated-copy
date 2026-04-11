@@ -242,21 +242,21 @@ $booking_url   = rl_booking_url();
 
                   <div class="dropdown-section">
                     <h4 class="dropdown-title">Popular Destinations</h4>
-                    <a href="<?php echo esc_url( home_url( '/travel-thailand/' ) ); ?>" class="dropdown-link">
+                    <a href="<?php echo esc_url( home_url( '/thailand-travel-vaccines/' ) ); ?>" class="dropdown-link">
                       <div class="link-icon"><span class="flag-icon">🇹🇭</span></div>
                       <div class="link-content">
                         <span class="link-name">Thailand</span>
                         <span class="link-desc">Vaccinations & malaria advice</span>
                       </div>
                     </a>
-                    <a href="<?php echo esc_url( home_url( '/travel-india/' ) ); ?>" class="dropdown-link">
+                    <a href="<?php echo esc_url( home_url( '/india/' ) ); ?>" class="dropdown-link">
                       <div class="link-icon"><span class="flag-icon">🇮🇳</span></div>
                       <div class="link-content">
                         <span class="link-name">India</span>
                         <span class="link-desc">Vaccines, malaria & health advice</span>
                       </div>
                     </a>
-                    <a href="<?php echo esc_url( home_url( '/travel-gambia/' ) ); ?>" class="dropdown-link">
+                    <a href="<?php echo esc_url( home_url( '/gambia-travel-vaccines/' ) ); ?>" class="dropdown-link">
                       <div class="link-icon"><span class="flag-icon">🇬🇲</span></div>
                       <div class="link-content">
                         <span class="link-name">The Gambia</span>
@@ -455,9 +455,9 @@ $booking_url   = rl_booking_url();
             <a href="<?php echo esc_url( home_url( '/yellow-fever-vaccine-london/' ) ); ?>" class="mobile-nav-sub-link">Yellow Fever</a>
             <a href="<?php echo esc_url( home_url( '/dtp-vaccine-london/' ) ); ?>" class="mobile-nav-sub-link">DTP</a>
             <a href="<?php echo esc_url( home_url( '/hajj-umrah-vaccine/' ) ); ?>" class="mobile-nav-sub-link">Hajj &amp; Umrah</a>
-            <a href="<?php echo esc_url( home_url( '/travel-thailand/' ) ); ?>" class="mobile-nav-sub-link">Thailand</a>
-            <a href="<?php echo esc_url( home_url( '/travel-india/' ) ); ?>" class="mobile-nav-sub-link">India</a>
-            <a href="<?php echo esc_url( home_url( '/travel-gambia/' ) ); ?>" class="mobile-nav-sub-link">The Gambia</a>
+            <a href="<?php echo esc_url( home_url( '/thailand-travel-vaccines/' ) ); ?>" class="mobile-nav-sub-link">Thailand</a>
+            <a href="<?php echo esc_url( home_url( '/india/' ) ); ?>" class="mobile-nav-sub-link">India</a>
+            <a href="<?php echo esc_url( home_url( '/gambia-travel-vaccines/' ) ); ?>" class="mobile-nav-sub-link">The Gambia</a>
             <a href="<?php echo esc_url( home_url( '/travel-vaccinations-london/' ) ); ?>" class="mobile-nav-sub-link">Travel Consultations</a>
             <a href="<?php echo esc_url( home_url( '/malaria-prevention/' ) ); ?>" class="mobile-nav-sub-link">Malaria Prevention</a>
           </div>
