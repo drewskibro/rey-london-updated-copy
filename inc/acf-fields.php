@@ -1243,6 +1243,11 @@ acf_add_local_field_group( array(
         array( 'key' => 'field_rl_th_hero_title', 'label' => 'Hero Title', 'name' => 'th_hero_title', 'type' => 'text', 'default_value' => 'South East London\'s Trusted Travel Health Clinic' ),
         array( 'key' => 'field_rl_th_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'th_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'From yellow fever certification to malaria prevention – protect yourself with expert travel vaccinations before your next adventure.' ),
         array( 'key' => 'field_rl_th_hero_image', 'label' => 'Hero Image', 'name' => 'th_hero_image', 'type' => 'image', 'return_format' => 'url' ),
+        array( 'key' => 'field_rl_th_hero_pill', 'label' => 'Hero Pill / Badge Text', 'name' => 'th_hero_pill', 'type' => 'text', 'default_value' => 'GPhC Registered Travel Clinic' ),
+        array( 'key' => 'field_rl_th_stats_tab', 'label' => 'Stats Bar', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_th_stat1_number', 'label' => 'Stat 1 — Number / Value', 'name' => 'th_stat1_number', 'type' => 'text', 'default_value' => 'Same Day' ),
+        array( 'key' => 'field_rl_th_stat1_label', 'label' => 'Stat 1 — Label', 'name' => 'th_stat1_label', 'type' => 'text', 'default_value' => 'Travel vaccinations available' ),
+        array( 'key' => 'field_rl_th_stat1_desc', 'label' => 'Stat 1 — Description', 'name' => 'th_stat1_desc', 'type' => 'text', 'default_value' => 'No referral needed, no long waits' ),
         array( 'key' => 'field_rl_th_vaccines_tab', 'label' => 'Vaccinations', 'type' => 'tab' ),
         array(
             'key' => 'field_rl_th_vaccines', 'label' => 'Vaccination Cards', 'name' => 'th_vaccines', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Vaccination',
