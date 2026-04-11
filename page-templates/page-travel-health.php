@@ -18,9 +18,10 @@ get_header();
     <div class="container th-hero-container">
       <div class="th-hero-grid">
         <div class="th-hero-text">
+          <?php $th_is_yfc = rl_field( 'th_is_yellow_fever_centre' ); ?>
           <div class="th-hero-pill">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <span><?php echo esc_html( rl_field( 'th_hero_pill', 'GPhC Registered Travel Clinic' ) ); ?></span>
+            <span><?php echo esc_html( $th_is_yfc ? 'Official Yellow Fever Centre' : rl_field( 'th_hero_pill', 'GPhC Registered Travel Clinic' ) ); ?></span>
           </div>
           <h1 class="th-hero-title"><?php echo wp_kses_post( rl_field( 'th_hero_title', 'South East London\'s Trusted <span class="gradient-text">Travel Health Clinic</span>' ) ); ?></h1>
           <p class="th-hero-subtitle"><?php echo esc_html( rl_field( 'th_hero_subtitle', 'From yellow fever certification to malaria prevention – protect yourself with expert travel vaccinations before your next adventure. Serving Chislehurst, Bromley, Orpington, Sidcup, and Bexley.' ) ); ?></p>
@@ -68,9 +69,15 @@ get_header();
     <div class="container th-stats-container-dark">
       <div class="th-stats-grid-dark">
         <div class="th-stat-card-dark">
+          <?php if ( $th_is_yfc ) : ?>
+          <div class="th-stat-number-dark">Official</div>
+          <div class="th-stat-label-dark">Yellow Fever Centre</div>
+          <div class="th-stat-desc-dark">Internationally recognised certificates</div>
+          <?php else : ?>
           <div class="th-stat-number-dark"><?php echo esc_html( rl_field( 'th_stat1_number', 'Same Day' ) ); ?></div>
           <div class="th-stat-label-dark"><?php echo esc_html( rl_field( 'th_stat1_label', 'Travel vaccinations available' ) ); ?></div>
           <div class="th-stat-desc-dark"><?php echo esc_html( rl_field( 'th_stat1_desc', 'No referral needed, no long waits' ) ); ?></div>
+          <?php endif; ?>
         </div>
         <div class="th-stat-card-dark">
           <div class="th-stat-number-dark">1,000+</div>
@@ -213,13 +220,15 @@ get_header();
           <h3>Travel Health Kits</h3>
           <p>Personalized first aid supplies based on your destination risks. Include diarrhea treatment, altitude sickness prevention, or wound care as needed.</p>
         </div>
+        <?php if ( $th_is_yfc ) : ?>
         <div class="th-service-card">
           <div class="th-service-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           </div>
           <h3>Official Certificates</h3>
-          <p>Yellow Fever Centre issuing internationally recognized vaccination certificates required for entry to endemic countries. Accepted at all borders.</p>
+          <p>Yellow Fever Centre issuing internationally recognised vaccination certificates required for entry to endemic countries. Accepted at all borders.</p>
         </div>
+        <?php endif; ?>
         <div class="th-service-card">
           <div class="th-service-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg>
@@ -358,13 +367,15 @@ get_header();
                 <p>Thailand needs different preparation than Tanzania. Urban Dubai requires different vaccines than rural Kenya. We assess your exact itinerary and activities.</p>
               </div>
             </div>
+            <?php if ( $th_is_yfc ) : ?>
             <div class="th-feature-card">
               <div class="th-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg></div>
               <div>
                 <h4>Official Yellow Fever Centre</h4>
-                <p>One of the few authorized yellow fever vaccination centers in South East London. Issue internationally recognized certificates required for entry to endemic countries.</p>
+                <p>One of the few authorised yellow fever vaccination centres in South East London. Issue internationally recognised certificates required for entry to endemic countries.</p>
               </div>
             </div>
+            <?php endif; ?>
             <div class="th-feature-card">
               <div class="th-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
               <div>
@@ -476,7 +487,11 @@ get_header();
             <svg class="th-faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           </button>
           <div class="th-faq-content">
-            <p>Yellow fever certificates are mandatory for entry to many countries in Africa and South America. Some countries also require it if you've transited through endemic regions. We're an official Yellow Fever Centre and issue internationally recognized certificates valid for life. We'll confirm requirements for your specific itinerary during consultation.</p>
+            <?php if ( $th_is_yfc ) : ?>
+            <p>Yellow fever certificates are mandatory for entry to many countries in Africa and South America. Some countries also require it if you've transited through endemic regions. We're an official Yellow Fever Centre and issue internationally recognised certificates valid for life. We'll confirm requirements for your specific itinerary during consultation.</p>
+            <?php else : ?>
+            <p>Yellow fever certificates are mandatory for entry to many countries in Africa and South America. Some countries also require it if you've transited through endemic regions. While we don't currently issue certificates ourselves, we provide full pre-travel advice on yellow fever requirements for your specific itinerary during consultation.</p>
+            <?php endif; ?>
           </div>
         </div>
         <div class="th-faq-item">
@@ -544,7 +559,9 @@ get_header();
       <!-- CTA top -->
       <div class="th-footer-cta-top">
         <div class="th-cta-badges">
+          <?php if ( $th_is_yfc ) : ?>
           <span class="th-cta-badge">Yellow Fever Centre</span>
+          <?php endif; ?>
           <span class="th-cta-badge">Expert Pharmacists</span>
           <span class="th-cta-badge">Same-Day Service</span>
         </div>
