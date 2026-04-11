@@ -108,6 +108,7 @@ get_header();
           <div class="wl-proof-label">Initial Consultation</div>
         </div>
       </div>
+      <p class="wl-disclaimer-footnote">*Based on SURMOUNT-1 trial (tirzepatide 15mg, 72 weeks). Individual results vary. Full clinical assessment required before treatment.</p>
     </div>
   </section>
 
@@ -693,6 +694,22 @@ get_header();
           <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/ico.svg" alt="ICO">
           <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/gpc.svg" alt="GPhC">
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       COMPLIANCE DISCLAIMER — Full "Important Information" block
+       ============================================ -->
+  <?php $wl_disclaimer_full = get_field( 'wl_disclaimer_text' ) ?: 'Results cited are based on average outcomes from the SURMOUNT-1 clinical trial (tirzepatide 15mg, 72-week data). Individual results will vary. Weight loss depends on adherence to treatment, dietary changes, physical activity and individual metabolic factors. These figures are provided for informational purposes only and do not constitute medical advice. A full clinical assessment with a qualified healthcare professional is required before starting any weight loss treatment.'; ?>
+  <section class="wl-disclaimer-section" aria-label="Important information">
+    <div class="container">
+      <div class="wl-disclaimer-block">
+        <h3 class="wl-disclaimer-heading">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          Important information
+        </h3>
+        <p class="wl-disclaimer-body"><?php echo esc_html( $wl_disclaimer_full ); ?></p>
       </div>
     </div>
   </section>

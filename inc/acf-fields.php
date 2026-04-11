@@ -929,6 +929,22 @@ acf_add_local_field_group( array(
             ),
         ),
 
+        // ── COMPLIANCE DISCLAIMER ──
+        array(
+            'key'   => 'field_rl_wl_disclaimer_tab',
+            'label' => 'Compliance Disclaimer',
+            'type'  => 'tab',
+        ),
+        array(
+            'key'           => 'field_rl_wl_disclaimer_text',
+            'label'         => 'Full Disclaimer Text',
+            'name'          => 'wl_disclaimer_text',
+            'type'          => 'textarea',
+            'rows'          => 6,
+            'instructions'  => 'Full compliance disclaimer shown in the "Important Information" block directly before the FAQ section. Keep this compliant with current MHRA, ASA CAP Code and GPhC guidance.',
+            'default_value' => 'Results cited are based on average outcomes from the SURMOUNT-1 clinical trial (tirzepatide 15mg, 72-week data). Individual results will vary. Weight loss depends on adherence to treatment, dietary changes, physical activity and individual metabolic factors. These figures are provided for informational purposes only and do not constitute medical advice. A full clinical assessment with a qualified healthcare professional is required before starting any weight loss treatment.',
+        ),
+
         // ── FAQ ──
         array(
             'key'   => 'field_rl_wl_faq_tab',
