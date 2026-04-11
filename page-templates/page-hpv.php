@@ -693,39 +693,79 @@ get_header();
         <h2 class="section-title"><?php echo esc_html( rl_field( 'hpv_locations_title', 'Visit Us at Our South East London Locations' ) ); ?></h2>
       </div>
 
-      <div class="hpv-loc-grid hpv-reveal">
-        <?php
-        $hpv_locations = rl_field( 'hpv_locations' );
-        if ( $hpv_locations && is_array( $hpv_locations ) ) :
-            foreach ( $hpv_locations as $loc ) : ?>
-        <div class="hpv-loc-card">
-          <h3><?php echo esc_html( $loc['name'] ); ?></h3>
-          <div class="hpv-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span><?php echo esc_html( $loc['address'] ); ?></span></div>
-          <div class="hpv-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3"/></svg><a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', $loc['phone'] ) ); ?>"><?php echo esc_html( $loc['phone'] ); ?></a></div>
-          <?php if ( ! empty( $loc['hours'] ) ) : ?>
-          <div class="hpv-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span><?php echo esc_html( $loc['hours'] ); ?></span></div>
-          <?php endif; ?>
-          <?php if ( ! empty( $loc['directions_url'] ) ) : ?>
-          <a href="<?php echo esc_url( $loc['directions_url'] ); ?>" target="_blank" class="hpv-loc-cta">Get Directions &rarr;</a>
-          <?php endif; ?>
+      <?php
+      /* Default location data used as fallback when the hpv_locations
+         ACF repeater has no rows populated, and as per-field fallbacks
+         for rows that are missing specific sub-fields (e.g. a row
+         without an uploaded image still gets a default photo). */
+      $hpv_default_locations = array(
+          array(
+              'name'           => 'Pond Pharmacy',
+              'image'          => 'https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769343725749-0.jpeg',
+              'description'    => 'HPV vaccinations in Chislehurst, BR7. Gardasil 9 administered by GPhC-registered pharmacists. Same-day appointments for adults and adolescents.',
+              'address'        => '59 High Street, Chislehurst, BR7 5AF',
+              'phone'          => '020 8467 3158',
+              'hours'          => 'Mon–Fri: 8.30am–6.30pm | Sat: 9am–2pm | Sun: Closed',
+              'directions_url' => 'https://maps.google.com/?q=59+High+Street+Chislehurst+BR7+5AF',
+          ),
+          array(
+              'name'           => 'Chislehurst Pharmacy',
+              'image'          => 'https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769344823391-0.jpeg',
+              'description'    => 'HPV vaccinations in Chislehurst. Gardasil 9 for all eligible ages with face-to-face pharmacist support. Serving Orpington, Petts Wood and Sidcup.',
+              'address'        => '59 Chislehurst Road, Chislehurst, BR7 5NP',
+              'phone'          => '020 8295 0017',
+              'hours'          => 'Mon–Fri: 9am–6pm | Sat: 9am–1pm | Sun: Closed',
+              'directions_url' => 'https://maps.google.com/?q=59+Chislehurst+Road+BR7+5NP',
+          ),
+      );
+      $hpv_locations = rl_field( 'hpv_locations' );
+      if ( ! $hpv_locations || ! is_array( $hpv_locations ) ) {
+          $hpv_locations = $hpv_default_locations;
+      }
+      $hpv_book_url = home_url( '/contact-page/#book-appointment' );
+      ?>
+      <div class="locations-grid hpv-reveal">
+        <?php foreach ( $hpv_locations as $i => $loc ) :
+          /* Per-field fallback so rows missing new sub-fields (image /
+             description) still render with sensible defaults. */
+          $default = isset( $hpv_default_locations[ $i ] ) ? $hpv_default_locations[ $i ] : $hpv_default_locations[0];
+          $loc_name     = ! empty( $loc['name'] )           ? $loc['name']           : $default['name'];
+          $loc_image    = ! empty( $loc['image'] )          ? $loc['image']          : $default['image'];
+          $loc_desc     = ! empty( $loc['description'] )    ? $loc['description']    : $default['description'];
+          $loc_address  = ! empty( $loc['address'] )        ? $loc['address']        : $default['address'];
+          $loc_phone    = ! empty( $loc['phone'] )          ? $loc['phone']          : $default['phone'];
+          $loc_phone_t  = preg_replace( '/[^0-9+]/', '', $loc_phone );
+          $loc_hours    = ! empty( $loc['hours'] )          ? $loc['hours']          : $default['hours'];
+          $loc_dir_url  = ! empty( $loc['directions_url'] ) ? $loc['directions_url'] : $default['directions_url'];
+        ?>
+        <div class="location-card">
+          <div class="location-image">
+            <img src="<?php echo esc_url( $loc_image ); ?>" alt="<?php echo esc_attr( $loc_name ); ?> — HPV vaccination in Chislehurst">
+          </div>
+          <div class="location-content">
+            <h3><?php echo esc_html( $loc_name ); ?></h3>
+            <p class="location-seo"><?php echo esc_html( $loc_desc ); ?></p>
+            <div class="location-details">
+              <div class="detail-item">
+                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-19.svg" alt="Address">
+                <p><?php echo esc_html( $loc_address ); ?></p>
+              </div>
+              <div class="detail-item">
+                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-32.svg" alt="Phone">
+                <a href="tel:<?php echo esc_attr( $loc_phone_t ); ?>"><?php echo esc_html( $loc_phone ); ?></a>
+              </div>
+              <div class="detail-item">
+                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours">
+                <p><?php echo esc_html( $loc_hours ); ?></p>
+              </div>
+            </div>
+            <div class="location-actions">
+              <a href="<?php echo esc_url( $hpv_book_url ); ?>" class="btn-primary">Book Consultation</a>
+              <a href="<?php echo esc_url( $loc_dir_url ); ?>" target="_blank" rel="noopener" class="btn-outline">Get Directions</a>
+            </div>
+          </div>
         </div>
-            <?php endforeach;
-        else : ?>
-        <div class="hpv-loc-card">
-          <h3>Pond Pharmacy — Chislehurst</h3>
-          <div class="hpv-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>59 High Street, Chislehurst, BR7 5AF</span></div>
-          <div class="hpv-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3"/></svg><a href="tel:02084673158">020 8467 3158</a></div>
-          <div class="hpv-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>Mon–Fri: 9am–6pm &nbsp;|&nbsp; Sat: 9am–1pm &nbsp;|&nbsp; Sun: Closed</span></div>
-          <a href="https://maps.google.com/?q=59+High+Street+Chislehurst+BR7+5AF" target="_blank" class="hpv-loc-cta">Get Directions &rarr;</a>
-        </div>
-        <div class="hpv-loc-card">
-          <h3>Chislehurst Pharmacy</h3>
-          <div class="hpv-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>59 Chislehurst Road, Chislehurst, BR7 5NP</span></div>
-          <div class="hpv-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3"/></svg><a href="tel:02082950017">020 8295 0017</a></div>
-          <div class="hpv-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>Mon–Fri: 9am–6pm &nbsp;|&nbsp; Sat: 9am–1pm &nbsp;|&nbsp; Sun: Closed</span></div>
-          <a href="https://maps.google.com/?q=59+Chislehurst+Road+BR7+5NP" target="_blank" class="hpv-loc-cta">Get Directions &rarr;</a>
-        </div>
-        <?php endif; ?>
+        <?php endforeach; ?>
       </div>
 
       <div class="hpv-serving-text"><?php echo esc_html( rl_field( 'hpv_locations_serving', 'Conveniently located to serve patients across Chislehurst, Bromley, Orpington, Sidcup, Bexley, Eltham, and surrounding South East London areas. Free parking available at both locations.' ) ); ?></div>
