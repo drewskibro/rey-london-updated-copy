@@ -305,54 +305,54 @@ get_header();
         <p class="destinations-desc">We stock and administer every travel vaccine recommended by UK health authorities. No referrals needed, no delays.</p>
       </div>
       <div class="th-vaccine-grid">
-        <div class="th-vaccine-card<?php echo $th_is_yfc ? ' th-vaccine-featured' : ''; ?>">
+        <div class="th-vaccine-card<?php echo $th_is_yfc ? ' th-vaccine-featured' : ''; ?>" data-category="viral">
           <?php if ( $th_is_yfc ) : ?>
           <div class="th-vaccine-badge">Official Centre</div>
           <?php endif; ?>
           <div class="th-vaccine-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/></svg></div>
           <h4>Yellow Fever</h4>
         </div>
-        <div class="th-vaccine-card">
+        <div class="th-vaccine-card" data-category="bacterial">
           <div class="th-vaccine-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
           <h4>Typhoid</h4>
         </div>
-        <div class="th-vaccine-card">
+        <div class="th-vaccine-card" data-category="hepatic">
           <div class="th-vaccine-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19.5 12.572l-7.5 7.428l-7.5-7.428A5 5 0 1 1 12 6.006a5 5 0 1 1 7.5 6.572"/></svg></div>
           <h4>Hepatitis A</h4>
         </div>
-        <div class="th-vaccine-card">
+        <div class="th-vaccine-card" data-category="hepatic">
           <div class="th-vaccine-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19.5 12.572l-7.5 7.428l-7.5-7.428A5 5 0 1 1 12 6.006a5 5 0 1 1 7.5 6.572"/></svg></div>
           <h4>Hepatitis B</h4>
         </div>
-        <div class="th-vaccine-card">
+        <div class="th-vaccine-card" data-category="viral">
           <div class="th-vaccine-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
           <h4>Rabies</h4>
         </div>
-        <div class="th-vaccine-card">
+        <div class="th-vaccine-card" data-category="bacterial">
           <div class="th-vaccine-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
           <h4>Cholera</h4>
         </div>
-        <div class="th-vaccine-card">
+        <div class="th-vaccine-card" data-category="viral">
           <div class="th-vaccine-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
           <h4>Japanese Encephalitis</h4>
         </div>
-        <div class="th-vaccine-card">
+        <div class="th-vaccine-card" data-category="meningo">
           <div class="th-vaccine-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
           <h4>Meningitis ACWY</h4>
         </div>
-        <div class="th-vaccine-card">
+        <div class="th-vaccine-card" data-category="booster">
           <div class="th-vaccine-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
           <h4>Tetanus/Diphtheria/Polio</h4>
         </div>
-        <div class="th-vaccine-card">
+        <div class="th-vaccine-card" data-category="viral">
           <div class="th-vaccine-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
           <h4>Tick-borne Encephalitis</h4>
         </div>
-        <div class="th-vaccine-card">
+        <div class="th-vaccine-card" data-category="meningo">
           <div class="th-vaccine-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
           <h4>BCG (Tuberculosis)</h4>
         </div>
-        <div class="th-vaccine-card">
+        <div class="th-vaccine-card" data-category="meningo">
           <div class="th-vaccine-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
           <h4>MMR (Measles/Mumps/Rubella)</h4>
         </div>

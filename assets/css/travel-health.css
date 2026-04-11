@@ -534,7 +534,11 @@
 .th-vaccines-section {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 50%, var(--dark-blue) 100%);
+  /* Jewel-tone multi-stop gradient — same navy entry point as other
+     dark sections on the page, then drifts through deep indigo and
+     violet into near-midnight. Adds "considered depth" without
+     introducing a new dominant colour. */
+  background: linear-gradient(135deg, #0A2F8A 0%, #1E3A8A 30%, #312E81 65%, #0F172A 100%);
   padding: 100px 0 80px;
 }
 
@@ -639,6 +643,33 @@
   font-weight: 700;
   color: var(--white);
   letter-spacing: -0.01em;
+}
+
+/* ============================================
+   CATEGORY-CODED VACCINE ICONS
+   Each .th-vaccine-card has a data-category attribute that maps
+   to one of five accent colours. The category rule sets two CSS
+   custom properties (--vax-accent as R,G,B for rgba() mixing, and
+   --vax-icon-color as the solid stroke colour for the SVG). The
+   shared icon rule below then consumes both via var() so hover
+   states work with a single rule set.
+   Light variants are used for the SVG stroke so they stay legible
+   on the dark jewel-tone section background (WCAG AA).
+   ============================================ */
+.th-vaccine-card[data-category="viral"]     { --vax-accent: 245, 158, 11;  --vax-icon-color: #FCD34D; }  /* amber   — flavivirus/neurological (Yellow Fever, JE, Rabies, TBE) */
+.th-vaccine-card[data-category="hepatic"]   { --vax-accent: 16, 185, 129;  --vax-icon-color: #6EE7B7; }  /* jade    — liver-targeting (Hep A, Hep B) */
+.th-vaccine-card[data-category="bacterial"] { --vax-accent: 244, 63, 94;   --vax-icon-color: #FDA4AF; }  /* coral   — bacterial enteric (Typhoid, Cholera) */
+.th-vaccine-card[data-category="meningo"]   { --vax-accent: 139, 92, 246;  --vax-icon-color: #C4B5FD; }  /* violet  — meningeal/respiratory (Meningitis, BCG, MMR) */
+.th-vaccine-card[data-category="booster"]   { --vax-accent: 20, 184, 166;  --vax-icon-color: #5EEAD4; }  /* teal    — combined boosters (DTP) */
+
+.th-vaccine-card[data-category] .th-vaccine-icon {
+  background: rgba(var(--vax-accent), 0.14);
+  border-color: rgba(var(--vax-accent), 0.35);
+  color: var(--vax-icon-color);
+}
+.th-vaccine-card[data-category]:hover .th-vaccine-icon {
+  background: rgba(var(--vax-accent), 0.22);
+  border-color: rgba(var(--vax-accent), 0.55);
 }
 
 .th-vaccine-note {
