@@ -1161,3 +1161,68 @@
     font-size: 28px;
   }
 }
+
+/* ============================================
+   COMPLIANCE DISCLAIMERS
+   - Short asterisk footnote under the stats bar
+   - Full "Important information" block before the FAQ
+   ============================================ */
+
+/* Short footnote sits on the white .wl-proof-bar background.
+   Muted slate colour for "small print" feel while still meeting
+   4.5:1 contrast against white for WCAG AA legibility. */
+.wl-disclaimer-footnote {
+  margin: 18px auto 0;
+  max-width: 900px;
+  padding: 0 16px;
+  font-size: 12.5px;
+  line-height: 1.55;
+  font-style: italic;
+  color: #64748B;
+  text-align: center;
+}
+
+/* Full "Important information" block — distinct visual treatment
+   so it reads as an official notice, not body copy. Light neutral
+   background, subtle border, no aggressive framing. */
+.wl-disclaimer-section {
+  padding: 48px 0 24px;
+  background: var(--white);
+}
+.wl-disclaimer-block {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 28px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-left: 3px solid var(--primary-blue);
+  border-radius: 12px;
+}
+.wl-disclaimer-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--primary-blue);
+}
+.wl-disclaimer-heading svg {
+  flex-shrink: 0;
+  color: var(--primary-blue);
+}
+.wl-disclaimer-body {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.65;
+  font-style: italic;
+  color: #475569;
+}
+@media (max-width: 640px) {
+  .wl-disclaimer-footnote { font-size: 11.5px; padding: 0 12px; }
+  .wl-disclaimer-section { padding: 32px 0 16px; }
+  .wl-disclaimer-block { padding: 20px 20px; }
+  .wl-disclaimer-body { font-size: 12.5px; }
+}

@@ -173,9 +173,9 @@ $booking_url   = rl_booking_url();
                   <div class="dropdown-featured">
                     <div class="featured-card">
                       <div class="featured-badge">Most Popular</div>
-                      <h5>Free Delivery Service</h5>
-                      <p>Get your prescriptions delivered free across London on orders over £20</p>
-                      <a href="<?php echo esc_url( home_url( '/delivery/' ) ); ?>" class="featured-btn">Learn More →</a>
+                      <h5>Medical Weight Loss</h5>
+                      <p>GLP-1 treatments prescribed same day by our Independent Prescribers. Face-to-face care at both Chislehurst locations — no GP referral needed.</p>
+                      <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="featured-btn">Book Free Consultation →</a>
                     </div>
                   </div>
                 </div>
