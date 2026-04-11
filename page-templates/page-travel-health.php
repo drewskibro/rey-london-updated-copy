@@ -362,38 +362,65 @@ get_header();
   </section>
 
   <!-- ========== HOW IT WORKS ========== -->
+  <?php
+  /* Default journey steps — used as the whole-repeater fallback
+     when th_journey_steps is empty, and as per-field fallbacks for
+     rows missing individual sub-fields.
+     Note: step 3 description has been neutralised (removed the
+     "yellow fever certificate (if required)" phrase) because the
+     pharmacy is not yet a designated Yellow Fever Centre. Once
+     designation is confirmed, update the Step 3 Description ACF
+     field in wp-admin to restore the yellow fever mention. */
+  $th_journey_default_steps = array(
+      array(
+          'image'       => 'https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=600&h=400&fit=crop',
+          'title'       => 'Book Your Consultation',
+          'description' => 'Call either pharmacy or book online. Bring your itinerary details – countries, regions, dates, and activities. We recommend 6-8 weeks before travel, but can accommodate urgent requests.',
+          'meta'        => 'Book 24/7 online or call during opening hours',
+      ),
+      array(
+          'image'       => 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop',
+          'title'       => 'Expert Assessment & Vaccination',
+          'description' => "Our GPhC-registered pharmacist reviews your travel plans, medical history, and current medications. You'll receive necessary vaccinations immediately, plus malaria prevention if needed.",
+          'meta'        => 'Typically 30-45 minutes appointment',
+      ),
+      array(
+          'image'       => 'https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=600&h=400&fit=crop',
+          'title'       => 'Travel Protected & Confident',
+          'description' => "Leave with antimalarial medication and clear dosing instructions, a travel health kit tailored to your destination, and a 24/7 emergency advice card. You're ready to enjoy your trip, not worry about health risks.",
+          'meta'        => 'Expert advice you can rely on abroad',
+      ),
+  );
+  $th_journey_steps = rl_field( 'th_journey_steps' );
+  if ( ! $th_journey_steps || ! is_array( $th_journey_steps ) ) {
+      $th_journey_steps = $th_journey_default_steps;
+  }
+  ?>
   <section class="how-it-works" id="how-it-works">
     <div class="container">
-      <h2 class="section-title gradient-text">Your travel health journey</h2>
-      <p class="section-subtitle">Three simple steps to complete travel protection</p>
+      <h2 class="section-title gradient-text"><?php echo esc_html( rl_field( 'th_journey_title', 'Your travel health journey' ) ); ?></h2>
+      <p class="section-subtitle"><?php echo esc_html( rl_field( 'th_journey_subtitle', 'Three simple steps to complete travel protection' ) ); ?></p>
       <div class="steps-grid">
+        <?php foreach ( $th_journey_steps as $i => $step ) :
+          $default = isset( $th_journey_default_steps[ $i ] ) ? $th_journey_default_steps[ $i ] : $th_journey_default_steps[0];
+          $step_image = ! empty( $step['image'] )       ? $step['image']       : $default['image'];
+          $step_title = ! empty( $step['title'] )       ? $step['title']       : $default['title'];
+          $step_desc  = ! empty( $step['description'] ) ? $step['description'] : $default['description'];
+          $step_meta  = ! empty( $step['meta'] )        ? $step['meta']        : $default['meta'];
+          $step_num   = $i + 1;
+        ?>
         <div class="step-card">
-          <div class="step-image"><img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=600&h=400&fit=crop" alt="Book travel health appointment online or by phone"></div>
+          <div class="step-image"><img src="<?php echo esc_url( $step_image ); ?>" alt="<?php echo esc_attr( $step_title ); ?>"></div>
           <div class="step-content">
-            <span class="step-label">Step 1</span>
-            <h3>Book Your Consultation</h3>
-            <p>Call either pharmacy or book online. Bring your itinerary details – countries, regions, dates, and activities. We recommend 6-8 weeks before travel, but can accommodate urgent requests.</p>
-            <span class="th-step-meta">Book 24/7 online or call during opening hours</span>
+            <span class="step-label">Step <?php echo (int) $step_num; ?></span>
+            <h3><?php echo esc_html( $step_title ); ?></h3>
+            <p><?php echo esc_html( $step_desc ); ?></p>
+            <?php if ( $step_meta ) : ?>
+            <span class="th-step-meta"><?php echo esc_html( $step_meta ); ?></span>
+            <?php endif; ?>
           </div>
         </div>
-        <div class="step-card">
-          <div class="step-image"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="Expert pharmacist travel vaccination South East London"></div>
-          <div class="step-content">
-            <span class="step-label">Step 2</span>
-            <h3>Expert Assessment & Vaccination</h3>
-            <p>Our GPhC-registered pharmacist reviews your travel plans, medical history, and current medications. You'll receive necessary vaccinations immediately, plus malaria prevention if needed.</p>
-            <span class="th-step-meta">Typically 30-45 minutes appointment</span>
-          </div>
-        </div>
-        <div class="step-card">
-          <div class="step-image"><img src="https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=600&h=400&fit=crop" alt="Travel protected and confident with vaccination certificate"></div>
-          <div class="step-content">
-            <span class="step-label">Step 3</span>
-            <h3>Travel Protected & Confident</h3>
-            <p>Leave with yellow fever certificate (if required), antimalarial medication with clear instructions, travel health kit, and 24/7 emergency advice card. You're ready to enjoy your trip, not worry about health risks.</p>
-            <span class="th-step-meta">Official certificates valid internationally</span>
-          </div>
-        </div>
+        <?php endforeach; ?>
       </div>
     </div>
   </section>
