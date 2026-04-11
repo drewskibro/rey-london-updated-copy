@@ -1291,6 +1291,23 @@ acf_add_local_field_group( array(
         array( 'key' => 'field_rl_th_trust_cta_url', 'label' => 'CTA Button URL', 'name' => 'th_trust_cta_url', 'type' => 'text', 'default_value' => '#book', 'instructions' => 'Can be an on-page anchor (#book), a path (/contact/), or a full URL.' ),
         array( 'key' => 'field_rl_th_trust_image', 'label' => 'Main Image', 'name' => 'th_trust_image', 'type' => 'image', 'return_format' => 'url' ),
         array( 'key' => 'field_rl_th_trust_badge_text', 'label' => 'Floating Badge Text', 'name' => 'th_trust_badge_text', 'type' => 'text', 'default_value' => '15+ Years Serving South East London Travellers', 'instructions' => 'Small pill badge overlaid on the bottom of the main image.' ),
+        array( 'key' => 'field_rl_th_locations_tab', 'label' => 'Locations', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_th_locations_title_main', 'label' => 'Section Title — Main', 'name' => 'th_locations_title_main', 'type' => 'text', 'default_value' => 'Two Convenient South East London' ),
+        array( 'key' => 'field_rl_th_locations_title_accent', 'label' => 'Section Title — Accent (gradient)', 'name' => 'th_locations_title_accent', 'type' => 'text', 'default_value' => 'Locations' ),
+        array( 'key' => 'field_rl_th_locations_subtitle', 'label' => 'Section Subtitle', 'name' => 'th_locations_subtitle', 'type' => 'textarea', 'rows' => 3, 'default_value' => "Based in Chislehurst, we're South East London's local travel health clinic serving patients across Bromley, Orpington, Sidcup, Bexley, Eltham, Lewisham, and surrounding areas." ),
+        array(
+            'key' => 'field_rl_th_locations', 'label' => 'Location Cards', 'name' => 'th_locations', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Location',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_th_loc_name', 'label' => 'Name', 'name' => 'name', 'type' => 'text' ),
+                array( 'key' => 'field_rl_th_loc_image', 'label' => 'Card Image', 'name' => 'image', 'type' => 'image', 'return_format' => 'url' ),
+                array( 'key' => 'field_rl_th_loc_address', 'label' => 'Address', 'name' => 'address', 'type' => 'text' ),
+                array( 'key' => 'field_rl_th_loc_phone', 'label' => 'Phone', 'name' => 'phone', 'type' => 'text' ),
+                array( 'key' => 'field_rl_th_loc_hours', 'label' => 'Opening Hours', 'name' => 'hours', 'type' => 'text' ),
+                array( 'key' => 'field_rl_th_loc_services', 'label' => 'Services Bullet Line', 'name' => 'services', 'type' => 'textarea', 'rows' => 3, 'instructions' => 'Use • as a separator between services. The word "Services:" is added automatically as a bold prefix — do not include it here.' ),
+                array( 'key' => 'field_rl_th_loc_area', 'label' => 'Serving Area Line', 'name' => 'area', 'type' => 'text', 'instructions' => 'Short line shown beneath the services, e.g. "Serving Chislehurst, Bromley, and Sidcup".' ),
+                array( 'key' => 'field_rl_th_loc_directions_url', 'label' => 'Directions URL', 'name' => 'directions_url', 'type' => 'url' ),
+            ),
+        ),
         array( 'key' => 'field_rl_th_vaccines_tab', 'label' => 'Vaccinations', 'type' => 'tab' ),
         array(
             'key' => 'field_rl_th_vaccines', 'label' => 'Vaccination Cards', 'name' => 'th_vaccines', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Vaccination',
