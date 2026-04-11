@@ -1520,6 +1520,8 @@ acf_add_local_field_group( array(
             'key' => 'field_rl_hpv_locations', 'label' => 'Location Cards', 'name' => 'hpv_locations', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Location',
             'sub_fields' => array(
                 array( 'key' => 'field_rl_hpv_loc_name', 'label' => 'Name', 'name' => 'name', 'type' => 'text' ),
+                array( 'key' => 'field_rl_hpv_loc_image', 'label' => 'Card Image', 'name' => 'image', 'type' => 'image', 'return_format' => 'url' ),
+                array( 'key' => 'field_rl_hpv_loc_description', 'label' => 'Short Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 2 ),
                 array( 'key' => 'field_rl_hpv_loc_address', 'label' => 'Address', 'name' => 'address', 'type' => 'text' ),
                 array( 'key' => 'field_rl_hpv_loc_phone', 'label' => 'Phone', 'name' => 'phone', 'type' => 'text' ),
                 array( 'key' => 'field_rl_hpv_loc_hours', 'label' => 'Opening Hours', 'name' => 'hours', 'type' => 'text' ),

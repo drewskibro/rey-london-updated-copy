@@ -694,7 +694,7 @@
 /* ============================================
    LOCATION SEO TEXT
    ============================================ */
-.wl-location-seo {
+.location-seo {
   font-size: 14px;
   color: var(--text-gray);
   line-height: 1.6;
@@ -1143,7 +1143,7 @@
     gap: 12px;
   }
 
-  .wl-location-seo {
+  .location-seo {
     font-size: 13px;
   }
 }

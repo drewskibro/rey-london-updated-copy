@@ -1116,67 +1116,13 @@
   line-height: 1.6;
 }
 
-/* ===== LOCATIONS (reuse homepage pattern) ===== */
+/* ===== LOCATIONS =====
+   HPV locations now reuse the shared .location-card / .location-image
+   / .location-content / .detail-item / .location-actions classes
+   defined in globals.css, mirroring the weight loss page for
+   cross-page consistency. Only the section wrapper padding is
+   scoped here. */
 .hpv-locations { padding: 90px 0; background: var(--white); }
-.hpv-loc-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-  margin-top: 48px;
-}
-.hpv-loc-card {
-  background: var(--light-bg);
-  border-radius: 20px;
-  padding: 40px;
-  border: 1px solid rgba(10,47,138,.08);
-  transition: all .4s;
-}
-.hpv-loc-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(10,47,138,.12);
-}
-.hpv-loc-card h3 {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--primary-blue);
-  margin-bottom: 20px;
-}
-.hpv-loc-detail {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 14px;
-  font-size: 15px;
-  color: var(--text-dark);
-  line-height: 1.6;
-}
-.hpv-loc-detail svg { flex-shrink: 0; color: var(--primary-blue); margin-top: 2px; }
-.hpv-loc-detail a {
-  color: var(--primary-blue);
-  font-weight: 700;
-  text-decoration: none;
-}
-.hpv-loc-detail a:hover { text-decoration: underline; }
-.hpv-loc-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 20px;
-  padding: 12px 24px;
-  background: rgba(10,47,138,.08);
-  color: var(--primary-blue);
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 14px;
-  transition: all .3s;
-  border: 1px solid rgba(10,47,138,.15);
-}
-.hpv-loc-cta:hover {
-  background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
-  color: var(--white);
-  border-color: transparent;
-}
 .hpv-serving-text {
   text-align: center;
   margin-top: 40px;
@@ -1516,7 +1462,6 @@
   .hpv-pricing-grid { grid-template-columns: repeat(2, 1fr); }
   .hpv-pricing-grid > :last-child { grid-column: span 2; max-width: 400px; margin: 0 auto; }
   .hpv-why-grid { grid-template-columns: repeat(2, 1fr); }
-  .hpv-loc-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
   .hpv-safety-banner { height: 260px; }
