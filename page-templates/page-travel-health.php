@@ -244,21 +244,21 @@ get_header();
       <h2 class="section-title">Everything you need for <span class="gradient-text">safe travel</span></h2>
       <p class="section-subtitle">One appointment, complete protection. Walk out with vaccinations, medications, certificates, and the knowledge to stay healthy abroad.</p>
       <div class="th-services-grid">
-        <div class="th-service-card">
+        <div class="th-service-card" data-category="clinical">
           <div class="th-service-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19.5 12.572l-7.5 7.428l-7.5-7.428A5 5 0 1 1 12 6.006a5 5 0 1 1 7.5 6.572"/></svg>
           </div>
           <h3>Travel Vaccinations</h3>
           <p>Full range of travel-specific vaccines including yellow fever, typhoid, hepatitis A/B, rabies, cholera, Japanese encephalitis, and meningitis. Administered by GPhC-registered pharmacists.</p>
         </div>
-        <div class="th-service-card">
+        <div class="th-service-card" data-category="clinical">
           <div class="th-service-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
           </div>
           <h3>Malaria Prevention</h3>
           <p>Destination-specific antimalarial medication (Malarone, Doxycycline, or Mefloquine) with clear dosing instructions. No confusion about when to start or stop.</p>
         </div>
-        <div class="th-service-card">
+        <div class="th-service-card" data-category="supply">
           <div class="th-service-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
           </div>
@@ -266,7 +266,7 @@ get_header();
           <p>Personalized first aid supplies based on your destination risks. Include diarrhea treatment, altitude sickness prevention, or wound care as needed.</p>
         </div>
         <?php if ( $th_is_yfc ) : ?>
-        <div class="th-service-card">
+        <div class="th-service-card" data-category="supply">
           <div class="th-service-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           </div>
@@ -274,14 +274,14 @@ get_header();
           <p>Yellow Fever Centre issuing internationally recognised vaccination certificates required for entry to endemic countries. Accepted at all borders.</p>
         </div>
         <?php endif; ?>
-        <div class="th-service-card">
+        <div class="th-service-card" data-category="advice">
           <div class="th-service-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg>
           </div>
           <h3>Pre-Travel Health Advice</h3>
           <p>Guidance on food safety, water purification, insect bite prevention, altitude acclimatization, and what to do if you get sick abroad.</p>
         </div>
-        <div class="th-service-card">
+        <div class="th-service-card" data-category="advice">
           <div class="th-service-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.09 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81L9.27 8.95a16 16 0 0 0 6.78 6.78l1.42-1.42a12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </div>
