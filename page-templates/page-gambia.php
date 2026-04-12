@@ -409,8 +409,7 @@ get_header();
 
       <div class="th-locations-grid">
         <div class="th-location-card">
-          <div class="th-location-badge">Main Clinic</div>
-          <h3>Chislehurst Pharmacy & Travel Clinic</h3>
+          <h3>Chislehurst Pharmacy</h3>
           <div class="th-location-details">
             <div class="th-location-item">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -433,7 +432,6 @@ get_header();
         </div>
 
         <div class="th-location-card">
-          <div class="th-location-badge">Second Location</div>
           <h3>Pond Pharmacy</h3>
           <div class="th-location-details">
             <div class="th-location-item">
@@ -712,7 +710,7 @@ get_header();
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <div class="th-faq-answer">
-            <p>While no vaccinations are legally mandatory for UK travellers entering The Gambia directly, several are strongly recommended by the NHS and WHO. Hepatitis A and Typhoid vaccinations are considered essential for all travellers. Additional vaccines like Hepatitis B, Meningitis ACWY, and Rabies are recommended based on your activities and itinerary. Our pharmacists will assess your specific plans and advise accordingly.</p>
+            <p>Several vaccinations are strongly recommended by NaTHNaC for travel to The Gambia. Hepatitis A is recommended for all previously unvaccinated travellers. Typhoid is recommended for most travellers due to the risk from contaminated food and water. Hepatitis B, Meningitis ACWY and Rabies are recommended depending on your itinerary, length of stay and planned activities. Malaria prevention is essential for all travellers — year-round risk exists throughout the country. Our pharmacists will assess your specific plans and advise on the right combination of vaccines and antimalarials for your trip.</p>
           </div>
         </details>
 
@@ -722,7 +720,7 @@ get_header();
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <div class="th-faq-answer">
-            <p>Individual vaccines range from £35–£65 per dose. Our Essential Gambia Package starts from £120 (Hepatitis A + Typhoid + consultation), and the Comprehensive Package from £280 (including Hepatitis A &amp; B, Typhoid, Meningitis ACWY + consultation). All prices include expert consultation and administration. We offer competitive pricing with package discounts to make travel health affordable.</p>
+            <p>Pricing varies depending on which vaccines are recommended for your specific itinerary and health history. All appointments include an expert pharmacist consultation and vaccine administration. Contact either of our Chislehurst locations for current pricing, or book a free consultation and we will advise on exactly which vaccines you need before any costs are confirmed.</p>
           </div>
         </details>
 
