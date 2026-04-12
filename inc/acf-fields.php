@@ -2188,8 +2188,14 @@ acf_add_local_field_group( array(
     'title'    => 'Gambia Travel Health Page',
     'fields'   => array(
         array( 'key' => 'field_rl_gambia_hero_tab', 'label' => 'Hero Section', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_gambia_hero_badge', 'label' => 'Hero Badge Text', 'name' => 'gambia_hero_badge', 'type' => 'text', 'default_value' => 'Gambia Travel Health' ),
         array( 'key' => 'field_rl_gambia_hero_title', 'label' => 'Hero Title', 'name' => 'gambia_hero_title', 'type' => 'text', 'default_value' => 'Gambia Travel Vaccinations in South East London' ),
-        array( 'key' => 'field_rl_gambia_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'gambia_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'Expert travel health advice and essential vaccines for your Gambia trip. Same-day appointments available at our Chislehurst and Pond End clinics.' ),
+        array( 'key' => 'field_rl_gambia_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'gambia_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'Expert travel health advice and essential vaccines for your Gambia trip. Same-day appointments available at both our Chislehurst locations.' ),
+        array( 'key' => 'field_rl_gambia_hero_cta2_label', 'label' => 'Second CTA — Label', 'name' => 'gambia_hero_cta2_label', 'type' => 'text', 'default_value' => 'Find Your Nearest Location' ),
+        array( 'key' => 'field_rl_gambia_hero_cta2_url', 'label' => 'Second CTA — URL', 'name' => 'gambia_hero_cta2_url', 'type' => 'text', 'default_value' => '/contact/', 'instructions' => 'Can be a full URL, a relative path like /contact/, or an on-page anchor like #booking.' ),
+        array( 'key' => 'field_rl_gambia_hero_trust_1', 'label' => 'Trust Point 1', 'name' => 'gambia_hero_trust_1', 'type' => 'text', 'default_value' => 'GPhC Registered' ),
+        array( 'key' => 'field_rl_gambia_hero_trust_2', 'label' => 'Trust Point 2', 'name' => 'gambia_hero_trust_2', 'type' => 'text', 'default_value' => 'Same-Day Appointments' ),
+        array( 'key' => 'field_rl_gambia_hero_trust_3', 'label' => 'Trust Point 3', 'name' => 'gambia_hero_trust_3', 'type' => 'text', 'default_value' => 'Expert Pharmacist Advice' ),
         array( 'key' => 'field_rl_gambia_vaccines_tab', 'label' => 'Vaccines', 'type' => 'tab' ),
         array(
             'key' => 'field_rl_gambia_vaccines', 'label' => 'Recommended Vaccines', 'name' => 'gambia_vaccines', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Vaccine',
