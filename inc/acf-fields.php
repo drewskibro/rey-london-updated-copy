@@ -1196,6 +1196,12 @@ acf_add_local_field_group( array(
             ),
         ),
 
+        // ── QUICK PRICE FIELDS ──
+        array( 'key' => 'field_rl_hl_qprice_tab', 'label' => 'Quick Prices', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_hl_price_finasteride', 'label' => 'Finasteride Price', 'name' => 'hl_price_finasteride', 'type' => 'text', 'default_value' => 'From £25', 'instructions' => 'Shown on the Finasteride pricing card. Include "From" if applicable.' ),
+        array( 'key' => 'field_rl_hl_price_minoxidil', 'label' => 'Minoxidil Price', 'name' => 'hl_price_minoxidil', 'type' => 'text', 'default_value' => 'From £25' ),
+        array( 'key' => 'field_rl_hl_price_combo', 'label' => 'Combination Package Text', 'name' => 'hl_price_combo', 'type' => 'text', 'default_value' => 'Save more', 'instructions' => 'Shown on the Combination Package card.' ),
+
         // ── CTA ──
         array(
             'key'   => 'field_rl_hl_cta_tab',

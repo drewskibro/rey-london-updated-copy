@@ -54,7 +54,7 @@ get_header();
           </div>
         </div>
         <div class="hl-hero-visual">
-          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&h=600&fit=crop&crop=face" alt="Confident man after hair loss treatment consultation — South East London" loading="eager">
+          <img src="<?php echo esc_url( rl_field( 'hl_hero_image', 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&h=600&fit=crop&crop=face' ) ); ?>" alt="Hair loss treatment consultation — South East London" loading="eager">
           <div class="hl-hero-badge">
             <div class="hl-hero-badge-icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
@@ -458,7 +458,7 @@ get_header();
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M12 9v6"/><path d="M9 12h6"/></svg>
           </div>
           <h3>Finasteride</h3>
-          <div class="hl-pricing-value">From £25 <span>/month</span></div>
+          <div class="hl-pricing-value"><?php echo esc_html( rl_field( 'hl_price_finasteride', 'From £25' ) ); ?> <span>/month</span></div>
           <ul class="hl-pricing-items">
             <li>Generic Finasteride 1mg (28 tabs)</li>
             <li>Branded Propecia also available</li>
@@ -470,7 +470,7 @@ get_header();
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <h3>Minoxidil</h3>
-          <div class="hl-pricing-value">From £25</div>
+          <div class="hl-pricing-value"><?php echo esc_html( rl_field( 'hl_price_minoxidil', 'From £25' ) ); ?></div>
           <ul class="hl-pricing-items">
             <li>Regaine for Men solution/foam</li>
             <li>Generic minoxidil available</li>
@@ -482,7 +482,7 @@ get_header();
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
           <h3>Combination Package</h3>
-          <div class="hl-pricing-value">Save more</div>
+          <div class="hl-pricing-value"><?php echo esc_html( rl_field( 'hl_price_combo', 'Save more' ) ); ?></div>
           <p class="hl-pricing-desc">Finasteride + minoxidil together for maximum results. Ask during consultation for bundle pricing.</p>
         </div>
       </div>
@@ -583,25 +583,20 @@ get_header();
         <h2 class="section-title">Hair Loss Treatment <span class="gradient-text-light">FAQs</span></h2>
       </div>
       <div class="hl-faq-list">
-        <div class="hl-faq-item"><button class="hl-faq-trigger"><span class="hl-faq-num">01</span><span class="hl-faq-question">How quickly will I see results?</span><svg class="hl-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hl-faq-answer"><div class="hl-faq-answer-inner">Most men notice reduced hair loss within 3 months and visible regrowth by 6 months. Peak results occur around 12–24 months. Progress is gradual — take monthly photos to track improvement. Patience and consistency are essential.</div></div></div>
-
-        <div class="hl-faq-item"><button class="hl-faq-trigger"><span class="hl-faq-num">02</span><span class="hl-faq-question">Can I stop treatment once my hair grows back?</span><svg class="hl-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hl-faq-answer"><div class="hl-faq-answer-inner">No. Hair loss treatments manage a genetic condition — they don't cure it. Stopping treatment causes hair loss to resume within 6–12 months. Think of it as ongoing management, like managing blood pressure or wearing corrective lenses.</div></div></div>
-
-        <div class="hl-faq-item"><button class="hl-faq-trigger"><span class="hl-faq-num">03</span><span class="hl-faq-question">Do these treatments work for receding hairline?</span><svg class="hl-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hl-faq-answer"><div class="hl-faq-answer-inner">Finasteride and minoxidil work best on crown and vertex (top of head) thinning. They're less effective at regrowing hair along the frontal hairline, though they can slow recession. Results vary by individual — our pharmacist will assess your specific pattern.</div></div></div>
-
-        <div class="hl-faq-item"><button class="hl-faq-trigger"><span class="hl-faq-num">04</span><span class="hl-faq-question">Can women use these treatments?</span><svg class="hl-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hl-faq-answer"><div class="hl-faq-answer-inner">Minoxidil yes — there's a specific Regaine for Women formulation. Finasteride no — it's not licensed for women and can cause birth defects if pregnant. Women experiencing hair loss should consult their GP for appropriate treatments.</div></div></div>
-
-        <div class="hl-faq-item"><button class="hl-faq-trigger"><span class="hl-faq-num">05</span><span class="hl-faq-question">What if finasteride causes side effects?</span><svg class="hl-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hl-faq-answer"><div class="hl-faq-answer-inner">Side effects are uncommon (affect less than 2% of users) and usually resolve when stopping treatment. If you experience side effects, stop taking finasteride and contact us. We can discuss switching to minoxidil-only treatment or adjusting your approach.</div></div></div>
-
-        <div class="hl-faq-item"><button class="hl-faq-trigger"><span class="hl-faq-num">06</span><span class="hl-faq-question">Is this service available on the NHS?</span><svg class="hl-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hl-faq-answer"><div class="hl-faq-answer-inner">No. The NHS doesn't provide hair loss treatment for cosmetic reasons. Our service is entirely private. Finasteride requires a private prescription; minoxidil is available over-the-counter but we recommend guided use.</div></div></div>
-
-        <div class="hl-faq-item"><button class="hl-faq-trigger"><span class="hl-faq-num">07</span><span class="hl-faq-question">Can I use both finasteride and minoxidil together?</span><svg class="hl-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hl-faq-answer"><div class="hl-faq-answer-inner">Yes — combination therapy often produces best results. Finasteride blocks DHT internally; minoxidil stimulates follicles externally. Many men use both for maximum hair retention and regrowth. We'll advise on the best approach for your situation.</div></div></div>
-
-        <div class="hl-faq-item"><button class="hl-faq-trigger"><span class="hl-faq-num">08</span><span class="hl-faq-question">How long before minoxidil shows results?</span><svg class="hl-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hl-faq-answer"><div class="hl-faq-answer-inner">Consistent twice-daily application for at least 4 months to judge effectiveness. Some men see improvement by 2–3 months, others take 6+ months. Don't be discouraged by initial increased shedding — this is normal and temporary, a sign of new growth pushing out old hairs.</div></div></div>
-
-        <div class="hl-faq-item"><button class="hl-faq-trigger"><span class="hl-faq-num">09</span><span class="hl-faq-question">Will people notice I'm using hair loss treatment?</span><svg class="hl-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hl-faq-answer"><div class="hl-faq-answer-inner">Finasteride is oral — completely discreet, just a small daily tablet. Minoxidil foam is virtually invisible once applied and dries quickly. Most men use these treatments without anyone knowing. Our service is private and confidential throughout.</div></div></div>
-
-        <div class="hl-faq-item"><button class="hl-faq-trigger"><span class="hl-faq-num">10</span><span class="hl-faq-question">What happens if I miss doses?</span><svg class="hl-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hl-faq-answer"><div class="hl-faq-answer-inner">An occasional missed dose won't ruin progress, but consistency is key. Missing frequent doses reduces effectiveness significantly. If you miss finasteride, take the next dose as normal (don't double up). If you miss minoxidil, apply at next scheduled time.</div></div></div>
+        <?php
+        if ( function_exists( 'have_rows' ) && have_rows( 'hl_faqs' ) ) :
+          $faq_num = 0;
+          while ( have_rows( 'hl_faqs' ) ) :
+            the_row();
+            $faq_num++;
+            $faq_q = get_sub_field( 'question' );
+            $faq_a = get_sub_field( 'answer' );
+        ?>
+        <div class="hl-faq-item"><button class="hl-faq-trigger"><span class="hl-faq-num"><?php echo str_pad( (string) $faq_num, 2, '0', STR_PAD_LEFT ); ?></span><span class="hl-faq-question"><?php echo esc_html( $faq_q ); ?></span><svg class="hl-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hl-faq-answer"><div class="hl-faq-answer-inner"><?php echo wp_kses_post( $faq_a ); ?></div></div></div>
+        <?php
+          endwhile;
+        endif;
+        ?>
       </div>
     </div>
   </section>
@@ -616,8 +611,8 @@ get_header();
           <span class="hl-cta-badge">Private &amp; Discreet</span>
           <span class="hl-cta-badge">Same-Day Service</span>
         </div>
-        <h2 class="hl-footer-cta-title">Stop hair loss before it progresses</h2>
-        <p class="hl-footer-cta-sub">The earlier you start treatment, the better your results. Book your confidential consultation today at Chislehurst Pharmacy Group — no GP referral needed.</p>
+        <h2 class="hl-footer-cta-title"><?php echo esc_html( rl_field( 'hl_cta_title', 'Stop hair loss before it progresses' ) ); ?></h2>
+        <p class="hl-footer-cta-sub"><?php echo esc_html( rl_field( 'hl_cta_subtitle', 'The earlier you start treatment, the better your results. Book your confidential consultation today at Chislehurst Pharmacy Group — no GP referral needed.' ) ); ?></p>
         <div class="hl-footer-cta-btns">
           <a href="<?php echo esc_url( home_url( '/contact-page/#book-appointment' ) ); ?>" class="hl-btn-cta-white">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
