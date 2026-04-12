@@ -2547,3 +2547,26 @@ acf_add_local_field_group( array(
     'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-pharmacy-first.php' ) ) ),
     'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
 ) );
+
+/* ================================================================
+   MALARIA PREVENTION PAGE
+   ================================================================ */
+acf_add_local_field_group( array(
+    'key' => 'group_rl_malaria', 'title' => 'Malaria Prevention Page', 'fields' => array(
+        // ── HERO ──
+        array( 'key' => 'field_rl_mal_hero_tab', 'label' => 'Hero Section', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_mal_hero_eyebrow', 'label' => 'Eyebrow', 'name' => 'mal_hero_eyebrow', 'type' => 'text', 'default_value' => 'Travel Health · Chislehurst' ),
+        array( 'key' => 'field_rl_mal_hero_title', 'label' => 'Hero Title (HTML allowed)', 'name' => 'mal_hero_title', 'type' => 'text', 'default_value' => 'Malaria Prevention in Chislehurst — Antimalarial Tablets Prescribed Same Day' ),
+        array( 'key' => 'field_rl_mal_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'mal_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'Protect yourself against malaria with expert pharmacist advice and same-day prescriptions. We assess your destination, recommend the right antimalarial, and dispense your tablets at the same appointment — no GP referral, no waiting.' ),
+        array( 'key' => 'field_rl_mal_hero_image', 'label' => 'Hero Image', 'name' => 'mal_hero_image', 'type' => 'image', 'return_format' => 'url' ),
+
+        // ── PRICING ──
+        array( 'key' => 'field_rl_mal_pricing_tab', 'label' => 'Pricing', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_mal_price_consultation', 'label' => 'Consultation + Prescription Price', 'name' => 'mal_price_consultation', 'type' => 'text', 'default_value' => 'Price to be confirmed', 'instructions' => 'The main consultation fee shown on the primary pricing card.' ),
+        array( 'key' => 'field_rl_mal_price_malarone', 'label' => 'Malarone — Per Tablet Price', 'name' => 'mal_price_malarone', 'type' => 'text', 'default_value' => '£TBC' ),
+        array( 'key' => 'field_rl_mal_price_doxycycline', 'label' => 'Doxycycline — Per Capsule Price', 'name' => 'mal_price_doxycycline', 'type' => 'text', 'default_value' => '£TBC' ),
+        array( 'key' => 'field_rl_mal_price_mefloquine', 'label' => 'Mefloquine — Per Tablet Price', 'name' => 'mal_price_mefloquine', 'type' => 'text', 'default_value' => '£TBC' ),
+    ),
+    'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-malaria.php' ) ) ),
+    'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
+) );
