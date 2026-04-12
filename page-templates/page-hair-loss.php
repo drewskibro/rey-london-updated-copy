@@ -29,9 +29,9 @@ get_header();
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
               Book Private Consultation
             </a>
-            <a href="tel:02082950017" class="hl-btn-outline">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.09 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81L9.27 8.95a16 16 0 0 0 6.78 6.78l1.42-1.42a12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              Call: 020 8295 0017
+            <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="hl-btn-outline">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Find Your Nearest Location
             </a>
           </div>
           <div class="hl-hero-trust">
@@ -111,7 +111,7 @@ get_header();
       <div class="hl-understanding-grid">
         <div class="hl-understanding-content hl-reveal" data-reveal="left">
           <span class="hl-eyebrow">YOU'RE NOT ALONE</span>
-          <h2 class="section-title" style="text-align:left;">Understanding male pattern <span class="gradient-text">baldness</span></h2>
+          <h2 class="section-title" style="text-align:left;">Understanding male pattern <span class="gradient-text-light">baldness</span></h2>
           <p class="hl-intro-text">Male pattern baldness affects around 50% of men over 50 — but it can start as early as your late teens or twenties. Watching your hairline recede or crown thin isn't vanity. It's genuine loss of confidence in how you present yourself to the world.</p>
 
           <div class="hl-fact-cards">
@@ -254,7 +254,7 @@ get_header();
   <section class="hl-process-section" id="process">
     <div class="container">
       <div style="text-align:center;">
-        <h2 class="section-title">Your hair loss treatment <span class="gradient-text">journey</span></h2>
+        <h2 class="section-title">Your hair loss treatment <span class="gradient-text-light">journey</span></h2>
         <p class="section-subtitle">A simple, confidential 3-step process from first consultation to ongoing results.</p>
       </div>
 
@@ -304,7 +304,7 @@ get_header();
   <section class="hl-expectations-section" id="expectations">
     <div class="container">
       <div style="text-align:center;">
-        <h2 class="section-title">Realistic <span class="gradient-text">expectations</span></h2>
+        <h2 class="section-title">Realistic <span class="gradient-text-light">expectations</span></h2>
         <p class="section-subtitle" style="max-width:860px;margin:0 auto;">Hair loss treatments work — but they require patience, consistency, and realistic goals. Here's what to expect.</p>
       </div>
       <div class="hl-expect-grid">
@@ -404,7 +404,7 @@ get_header();
 
     <div class="container">
       <div style="text-align:center;margin-top:72px;">
-        <h2 class="section-title">Safety <span class="gradient-text">information</span></h2>
+        <h2 class="section-title">Safety <span class="gradient-text-light">information</span></h2>
         <p class="section-subtitle" style="max-width:860px;margin:0 auto;">Both finasteride and minoxidil are well-studied medications with established safety profiles. Side effects are uncommon but important to understand.</p>
       </div>
       <div class="hl-safety-grid hl-reveal">
@@ -496,7 +496,7 @@ get_header();
   <section class="hl-why-section" id="why-us">
     <div class="container">
       <div style="text-align:center;">
-        <h2 class="section-title">Why choose Chislehurst Pharmacy Group for <span class="gradient-text">hair loss treatment</span></h2>
+        <h2 class="section-title">Why choose Chislehurst Pharmacy Group for <span class="gradient-text-light">hair loss treatment</span></h2>
       </div>
       <div class="hl-why-grid">
         <div class="hl-why-card hl-reveal">
@@ -548,24 +548,24 @@ get_header();
             <h3>Chislehurst Pharmacy</h3>
             <div class="hl-loc-row"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>59 Chislehurst Rd, Chislehurst BR7 5NP</span></div>
             <div class="hl-loc-row"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3"/></svg><a href="tel:02082950017">020 8295 0017</a></div>
-            <div class="hl-loc-row"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>Mon–Fri: 9am–6pm | Sat: 9am–1pm</span></div>
+            <div class="hl-loc-row"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>Mon–Fri: 9am–6pm | Sat: 9am–1pm | Sun: Closed</span></div>
             <div class="hl-loc-actions">
-              <a href="tel:02082950017" class="hl-loc-btn-primary">Book Consultation</a>
+              <a href="<?php echo esc_url( home_url( '/contact-page/#book-appointment' ) ); ?>" class="hl-loc-btn-primary">Book Consultation</a>
               <a href="https://maps.google.com/?q=59+Chislehurst+Road+BR7+5NP" target="_blank" class="hl-loc-btn-outline">Get Directions</a>
             </div>
           </div>
         </div>
         <div class="hl-loc-card">
           <div class="hl-loc-image">
-            <img src="https://images.unsplash.com/photo-1587556930799-8dca6fad6d41?w=800&h=400&fit=crop" alt="Pond End Pharmacy — hair loss treatment Chislehurst" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1587556930799-8dca6fad6d41?w=800&h=400&fit=crop" alt="Pond Pharmacy — hair loss treatment Chislehurst" loading="lazy">
           </div>
           <div class="hl-loc-content">
             <h3>Pond Pharmacy</h3>
             <div class="hl-loc-row"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>59 High St, Chislehurst BR7 5AF</span></div>
             <div class="hl-loc-row"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3"/></svg><a href="tel:02084673158">020 8467 3158</a></div>
-            <div class="hl-loc-row"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>Mon–Fri: 9am–6pm | Sat: 9am–1pm</span></div>
+            <div class="hl-loc-row"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>Mon–Fri: 8.30am–6.30pm | Sat: 9am–2pm | Sun: Closed</span></div>
             <div class="hl-loc-actions">
-              <a href="tel:02084673158" class="hl-loc-btn-primary">Book Consultation</a>
+              <a href="<?php echo esc_url( home_url( '/contact-page/#book-appointment' ) ); ?>" class="hl-loc-btn-primary">Book Consultation</a>
               <a href="https://maps.google.com/?q=59+High+Street+Chislehurst+BR7+5AF" target="_blank" class="hl-loc-btn-outline">Get Directions</a>
             </div>
           </div>
@@ -580,7 +580,7 @@ get_header();
     <div class="container">
       <div style="text-align:center;">
         <div class="hl-pill" style="display:inline-flex;margin:0 auto 16px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> FAQs</div>
-        <h2 class="section-title">Hair Loss Treatment <span class="gradient-text">FAQs</span></h2>
+        <h2 class="section-title">Hair Loss Treatment <span class="gradient-text-light">FAQs</span></h2>
       </div>
       <div class="hl-faq-list">
         <div class="hl-faq-item"><button class="hl-faq-trigger"><span class="hl-faq-num">01</span><span class="hl-faq-question">How quickly will I see results?</span><svg class="hl-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hl-faq-answer"><div class="hl-faq-answer-inner">Most men notice reduced hair loss within 3 months and visible regrowth by 6 months. Peak results occur around 12–24 months. Progress is gradual — take monthly photos to track improvement. Patience and consistency are essential.</div></div></div>
@@ -617,15 +617,15 @@ get_header();
           <span class="hl-cta-badge">Same-Day Service</span>
         </div>
         <h2 class="hl-footer-cta-title">Stop hair loss before it progresses</h2>
-        <p class="hl-footer-cta-sub">The earlier you start treatment, the better your results. Book your confidential consultation today at Chislehurst Pharmacy Group Pharmacy — no GP referral needed.</p>
+        <p class="hl-footer-cta-sub">The earlier you start treatment, the better your results. Book your confidential consultation today at Chislehurst Pharmacy Group — no GP referral needed.</p>
         <div class="hl-footer-cta-btns">
-          <a href="tel:02082950017" class="hl-btn-cta-white">
+          <a href="<?php echo esc_url( home_url( '/contact-page/#book-appointment' ) ); ?>" class="hl-btn-cta-white">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             Book Hair Loss Consultation
           </a>
-          <a href="tel:02084673158" class="hl-btn-cta-ghost">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.09 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81L9.27 8.95a16 16 0 0 0 6.78 6.78l1.42-1.42a12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Call Us: 020 8467 3158
+          <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="hl-btn-cta-ghost">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Find Your Nearest Location
           </a>
         </div>
         <div class="hl-cta-checks">
