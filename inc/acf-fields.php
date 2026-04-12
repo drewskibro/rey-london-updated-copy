@@ -544,6 +544,21 @@ acf_add_local_field_group( array(
             'name'  => 'cta_button_url',
             'type'  => 'url',
         ),
+
+        // ── HOW IT WORKS ──
+        array( 'key' => 'field_rl_hp_hiw_tab', 'label' => 'How It Works', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_hp_hiw_title', 'label' => 'Section Title', 'name' => 'hp_hiw_title', 'type' => 'text', 'default_value' => 'How to use our services' ),
+        array( 'key' => 'field_rl_hp_hiw_subtitle', 'label' => 'Section Subtitle', 'name' => 'hp_hiw_subtitle', 'type' => 'text', 'default_value' => 'Getting the care you need is simple' ),
+        array(
+            'key' => 'field_rl_hp_hiw_steps', 'label' => 'Step Cards', 'name' => 'hp_hiw_steps', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Step',
+            'instructions' => 'Add 3 cards. The step label auto-defaults to "Step 1 / Step 2 / Step 3" if left blank. All fields support ACF — drop in images and copy once finalised.',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_hp_hiw_step_image', 'label' => 'Card Image', 'name' => 'image', 'type' => 'image', 'return_format' => 'url', 'instructions' => 'Recommended: 800×440px or similar landscape. Displays at 220px height with object-fit cover.' ),
+                array( 'key' => 'field_rl_hp_hiw_step_label', 'label' => 'Step Label', 'name' => 'label', 'type' => 'text', 'instructions' => 'e.g. "Step 1". Leave blank to auto-generate from row number.' ),
+                array( 'key' => 'field_rl_hp_hiw_step_title', 'label' => 'Heading', 'name' => 'title', 'type' => 'text' ),
+                array( 'key' => 'field_rl_hp_hiw_step_desc', 'label' => 'Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 3 ),
+            ),
+        ),
     ),
     'location'  => array(
         array(
