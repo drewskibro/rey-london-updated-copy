@@ -49,7 +49,7 @@ get_header();
         </div>
       </div>
       <div class="th-hero-visual">
-        <img src="https://images.unsplash.com/photo-1552553302-9211bf7f7053?w=800&h=600&fit=crop" alt="The Gambia West Africa">
+        <img src="<?php echo esc_url( rl_field( 'gambia_hero_image', 'https://images.unsplash.com/photo-1552553302-9211bf7f7053?w=800&h=600&fit=crop' ) ); ?>" alt="The Gambia West Africa">
         <div class="th-hero-visual-overlay"></div>
       </div>
     </div>
@@ -269,38 +269,36 @@ get_header();
       </div>
 
       <div class="th-risks-grid">
-        <div class="th-risk-card">
+        <div class="th-risk-card" data-category="mosquito">
           <div class="th-risk-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
           </div>
           <h3>Mosquito-Borne Diseases</h3>
           <p>Malaria is a serious risk throughout The Gambia, including urban areas such as Banjul. Risk is present year-round but peaks during and just after the rainy season (June to November). Dengue fever and Zika virus are also present. Use DEET-based repellents, sleep under treated mosquito nets, and wear long sleeves during dawn and dusk.</p>
         </div>
-        <div class="th-risk-card">
+        <div class="th-risk-card" data-category="enteric">
           <div class="th-risk-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
           </div>
           <h3>Food & Water Safety</h3>
           <p>Travellers' diarrhoea is common. Drink bottled water only, avoid ice from unknown sources, and be cautious with street food—choose busy stalls with fresh preparation. Typhoid and Hepatitis A are real risks from contaminated food and water, making vaccination essential before your trip.</p>
         </div>
-        <div class="th-risk-card">
+        <div class="th-risk-card" data-category="water">
           <div class="th-risk-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <h3>Schistosomiasis (Bilharzia)</h3>
           <p>A parasitic infection found in freshwater rivers and lakes throughout The Gambia, including the River Gambia. Avoid swimming, wading, or washing in freshwater. Infection can cause serious long-term organ damage if untreated. Sea swimming is generally safe.</p>
         </div>
-        <div class="th-risk-card">
+        <div class="th-risk-card" data-category="animal">
           <div class="th-risk-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           </div>
           <h3>Rabies from Animal Bites</h3>
           <p>Stray dogs are common throughout The Gambia, including tourist areas. Rabies is fatal once symptoms appear and post-exposure treatment may be difficult to access locally. Pre-exposure vaccination is strongly recommended, particularly for adventure travellers, cyclists, and families with children.</p>
         </div>
-        <div class="th-risk-card">
-          <div class="th-risk-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
-          </div>
+      </div>
+    </div>
   </section>
 
   <!-- Section 3: Antimalarial Medication -->

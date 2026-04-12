@@ -2189,6 +2189,7 @@ acf_add_local_field_group( array(
     'fields'   => array(
         array( 'key' => 'field_rl_gambia_hero_tab', 'label' => 'Hero Section', 'type' => 'tab' ),
         array( 'key' => 'field_rl_gambia_hero_badge', 'label' => 'Hero Badge Text', 'name' => 'gambia_hero_badge', 'type' => 'text', 'default_value' => 'Gambia Travel Health' ),
+        array( 'key' => 'field_rl_gambia_hero_image', 'label' => 'Hero Image', 'name' => 'gambia_hero_image', 'type' => 'image', 'return_format' => 'url' ),
         array( 'key' => 'field_rl_gambia_hero_title', 'label' => 'Hero Title', 'name' => 'gambia_hero_title', 'type' => 'text', 'default_value' => 'Gambia Travel Vaccinations in South East London' ),
         array( 'key' => 'field_rl_gambia_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'gambia_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'Expert travel health advice and essential vaccines for your Gambia trip. Same-day appointments available at both our Chislehurst locations.' ),
         array( 'key' => 'field_rl_gambia_hero_cta2_label', 'label' => 'Second CTA — Label', 'name' => 'gambia_hero_cta2_label', 'type' => 'text', 'default_value' => 'Find Your Nearest Location' ),

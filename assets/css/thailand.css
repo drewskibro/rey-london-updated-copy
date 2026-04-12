@@ -468,6 +468,29 @@
   line-height: 1.7;
 }
 
+/* ============================================
+   CATEGORY-CODED HEALTH RISK ICONS
+   Same data-attribute + CSS custom property pattern as the travel
+   health vaccines and services sections. Each .th-risk-card carries
+   a data-category that maps to an accent colour applied to the
+   icon chip only. Four-colour palette for health risk types.
+   ============================================ */
+.th-risk-card[data-category="mosquito"] { --risk-accent: 245, 158, 11;  --risk-icon-color: #FCD34D; }  /* amber  — mosquito-borne (malaria, dengue, zika) */
+.th-risk-card[data-category="enteric"]  { --risk-accent: 244, 63, 94;   --risk-icon-color: #FDA4AF; }  /* coral  — food & waterborne (typhoid, cholera, diarrhoea) */
+.th-risk-card[data-category="water"]    { --risk-accent: 20, 184, 166;  --risk-icon-color: #5EEAD4; }  /* teal   — freshwater parasites (schistosomiasis) */
+.th-risk-card[data-category="animal"]   { --risk-accent: 139, 92, 246;  --risk-icon-color: #C4B5FD; }  /* violet — animal contact (rabies) */
+
+.th-risk-card[data-category] .th-risk-icon {
+  background: rgba(var(--risk-accent), 0.14);
+  border-color: rgba(var(--risk-accent), 0.35);
+  color: var(--risk-icon-color);
+}
+.th-risk-card[data-category]:hover .th-risk-icon {
+  background: rgba(var(--risk-accent), 0.22);
+  border-color: rgba(var(--risk-accent), 0.55);
+  box-shadow: 0 8px 24px rgba(var(--risk-accent), 0.2);
+}
+
 /* Malaria Section */
 .th-malaria-grid {
   display: grid;
