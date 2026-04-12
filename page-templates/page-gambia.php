@@ -49,7 +49,7 @@ get_header();
         </div>
       </div>
       <div class="th-hero-visual">
-        <img src="https://images.unsplash.com/photo-1552553302-9211bf7f7053?w=800&h=600&fit=crop" alt="The Gambia West Africa">
+        <img src="<?php echo esc_url( rl_field( 'gambia_hero_image', 'https://images.unsplash.com/photo-1552553302-9211bf7f7053?w=800&h=600&fit=crop' ) ); ?>" alt="The Gambia West Africa">
         <div class="th-hero-visual-overlay"></div>
       </div>
     </div>
