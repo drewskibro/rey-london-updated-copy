@@ -1076,6 +1076,28 @@
   line-height: 1.6;
 }
 
+/* ============================================
+   CATEGORY-CODED "WHY CHOOSE" ICONS
+   Same data-attribute + CSS custom property pattern as the risk
+   cards, vaccines grid, and services grid. 4-colour palette for
+   "why us" value propositions.
+   ============================================ */
+.th-why-card[data-category="trust"]       { --why-accent: 245, 158, 11;  --why-icon-color: #FCD34D; }  /* amber — credentials & track record */
+.th-why-card[data-category="clinical"]    { --why-accent: 16, 185, 129;  --why-icon-color: #6EE7B7; }  /* jade  — clinical supply & expertise */
+.th-why-card[data-category="convenience"] { --why-accent: 56, 189, 248;  --why-icon-color: #7DD3FC; }  /* sky   — speed & accessibility */
+.th-why-card[data-category="value"]       { --why-accent: 244, 63, 94;   --why-icon-color: #FDA4AF; }  /* coral — pricing & value */
+
+.th-why-card[data-category] .th-why-icon {
+  background: rgba(var(--why-accent), 0.14);
+  border-color: rgba(var(--why-accent), 0.35);
+  color: var(--why-icon-color);
+}
+.th-why-card[data-category]:hover .th-why-icon {
+  background: rgba(var(--why-accent), 0.22);
+  border-color: rgba(var(--why-accent), 0.55);
+  box-shadow: 0 8px 24px rgba(var(--why-accent), 0.2);
+}
+
 /* FAQ */
 .th-faq-list {
   max-width: 800px;
@@ -1231,10 +1253,10 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(10, 47, 138, 0.82);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 16px;
   padding: 20px 28px;
   max-width: 700px;
