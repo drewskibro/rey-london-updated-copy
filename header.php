@@ -278,7 +278,7 @@ $booking_url   = rl_booking_url();
                         <span class="link-desc">Personalised travel health plans</span>
                       </div>
                     </a>
-                    <a href="<?php echo esc_url( home_url( '/malaria-prevention/' ) ); ?>" class="dropdown-link">
+                    <a href="<?php echo esc_url( home_url( '/antimalarial-tablets-london/' ) ); ?>" class="dropdown-link">
                       <div class="link-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="M9 12l2 2 4-4" />
@@ -459,7 +459,7 @@ $booking_url   = rl_booking_url();
             <a href="<?php echo esc_url( home_url( '/india/' ) ); ?>" class="mobile-nav-sub-link">India</a>
             <a href="<?php echo esc_url( home_url( '/gambia-travel-vaccines/' ) ); ?>" class="mobile-nav-sub-link">The Gambia</a>
             <a href="<?php echo esc_url( home_url( '/travel-vaccinations-london/' ) ); ?>" class="mobile-nav-sub-link">Travel Consultations</a>
-            <a href="<?php echo esc_url( home_url( '/malaria-prevention/' ) ); ?>" class="mobile-nav-sub-link">Malaria Prevention</a>
+            <a href="<?php echo esc_url( home_url( '/antimalarial-tablets-london/' ) ); ?>" class="mobile-nav-sub-link">Malaria Prevention</a>
           </div>
         </div>
 
