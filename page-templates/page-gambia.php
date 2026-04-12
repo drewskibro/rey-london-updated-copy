@@ -63,7 +63,7 @@ get_header();
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           <span>Recommended Vaccines</span>
         </div>
-        <h2 class="section-title">Essential Vaccinations for<br><span class="gradient-text">Gambia Travel</span></h2>
+        <h2 class="section-title">Essential Vaccinations for<br><span class="gradient-text-light">Gambia Travel</span></h2>
         <p class="th-section-desc">Planning a trip to The Gambia from London? Our South East London travel clinics provide comprehensive vaccination services and expert travel health advice for Gambia travellers. Whether you're visiting Banjul, the River Gambia, Kunta Kinteh Island, or exploring upcountry, we'll ensure you're fully protected with the right vaccines and antimalarial medication. Our GPhC-registered pharmacists assess your specific itinerary and medical history to create a personalised vaccination plan tailored to your trip.</p>
       </div>
 
@@ -112,7 +112,7 @@ get_header();
           <div class="th-vaccine-card">
             <div class="th-vaccine-name">Hepatitis A</div>
             <div class="th-vaccine-full">Hepatitis A Virus</div>
-            <p class="th-vaccine-desc">Highly recommended for The Gambia??. Spread through contaminated food and water, Hepatitis A is common in Southeast Asia. Provides long-term immunity.</p>
+            <p class="th-vaccine-desc">Highly recommended for The Gambia. Spread through contaminated food and water, Hepatitis A is common in Southeast Asia. Provides long-term immunity.</p>
             <div class="th-vaccine-meta">
               <span class="th-vaccine-who">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
@@ -237,7 +237,7 @@ get_header();
   <!-- Lifestyle Banner 1 -->
   <div class="th-lifestyle-banner">
     <div class="th-lifestyle-img-wrap">
-      <img src="https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=1400&h=500&fit=crop&q=80" alt="The Gambia?? floating market with fresh food and boats" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=1400&h=500&fit=crop&q=80" alt="The Gambia floating market with fresh food and boats" loading="lazy">
       <div class="th-lifestyle-overlay"></div>
     </div>
     <div class="th-lifestyle-caption">
@@ -246,7 +246,7 @@ get_header();
           <div class="th-lifestyle-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <p>Street food, floating markets, and tropical adventures — protecting your health means enjoying The Gambia?? to the fullest</p>
+          <p>Street food, floating markets, and tropical adventures — protecting your health means enjoying The Gambia to the fullest</p>
         </div>
       </div>
     </div>
@@ -264,7 +264,7 @@ get_header();
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           <span>Know Before You Go</span>
         </div>
-        <h2 class="th-title-dark">Health Risks When Traveling<br>to The Gambia??</h2>
+        <h2 class="th-title-dark">Health Risks When Traveling<br>to The Gambia</h2>
         <p class="th-desc-dark">Understanding potential health risks helps you prepare properly. Our pharmacists will assess your specific itinerary and activities to provide tailored advice.</p>
       </div>
 
@@ -274,7 +274,7 @@ get_header();
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
           </div>
           <h3>Mosquito-Borne Diseases</h3>
-          <p>Dengue fever is widespread throughout The Gambia??, including urban areas like Bangkok. While malaria risk is low in most tourist destinations, it remains a concern in rural and border regions. Use DEET-based repellents and wear long sleeves during dawn and dusk. Dengue-carrying mosquitoes bite during the day.</p>
+          <p>Dengue fever is widespread throughout The Gambia, including urban areas like Bangkok. While malaria risk is low in most tourist destinations, it remains a concern in rural and border regions. Use DEET-based repellents and wear long sleeves during dawn and dusk. Dengue-carrying mosquitoes bite during the day.</p>
         </div>
         <div class="th-risk-card">
           <div class="th-risk-icon">
@@ -288,14 +288,14 @@ get_header();
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <h3>Japanese Encephalitis</h3>
-          <p>Risk is higher in rural and agricultural areas, particularly rural areas of The Gambia. The virus is spread by mosquitoes and can cause serious brain inflammation. Vaccination is recommended for travellers spending extended time in rural The Gambia?? or visiting during the rainy season (May–October).</p>
+          <p>Risk is higher in rural and agricultural areas, particularly rural areas of The Gambia. The virus is spread by mosquitoes and can cause serious brain inflammation. Vaccination is recommended for travellers spending extended time in rural The Gambia or visiting during the rainy season (May–October).</p>
         </div>
         <div class="th-risk-card">
           <div class="th-risk-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           </div>
           <h3>Rabies from Animal Bites</h3>
-          <p>Stray dogs and monkeys are common throughout The Gambia??, including temple grounds and tourist areas. Rabies is fatal once symptoms appear. Pre-exposure vaccination is strongly recommended, particularly for adventure travellers, cyclists, and families with children.</p>
+          <p>Stray dogs and monkeys are common throughout The Gambia, including temple grounds and tourist areas. Rabies is fatal once symptoms appear. Pre-exposure vaccination is strongly recommended, particularly for adventure travellers, cyclists, and families with children.</p>
         </div>
         <div class="th-risk-card">
           <div class="th-risk-icon">
@@ -311,8 +311,8 @@ get_header();
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
           <span>Malaria Prevention</span>
         </div>
-        <h2 class="section-title">Malaria Prevention<br><span class="gradient-text">for The Gambia??</span></h2>
-        <p class="th-section-desc">While most tourist areas in The Gambia??—including Bangkok, Phuket, Chiang Mai, Pattaya, and Koh Samui—have low malaria risk, certain rural and border regions require antimalarial medication. Our pharmacists will assess your specific itinerary and recommend appropriate protection to keep you safe throughout your trip.</p>
+        <h2 class="section-title">Malaria Prevention<br><span class="gradient-text-light">for The Gambia</span></h2>
+        <p class="th-section-desc">While most tourist areas in The Gambia—including Bangkok, Phuket, Chiang Mai, Pattaya, and Koh Samui—have low malaria risk, certain rural and border regions require antimalarial medication. Our pharmacists will assess your specific itinerary and recommend appropriate protection to keep you safe throughout your trip.</p>
       </div>
 
       <div class="th-malaria-grid">
@@ -320,7 +320,7 @@ get_header();
           <div class="th-malaria-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
-          <h3>Risk Areas in The Gambia??</h3>
+          <h3>Risk Areas in The Gambia</h3>
           <p>Border regions with Myanmar, Cambodia, and Laos carry the highest malaria risk. Rural forested areas in Kanchanaburi, Tak, and Trat provinces also require precautions. Most popular beach and city destinations are malaria-free.</p>
         </div>
         <div class="th-malaria-card">
@@ -371,7 +371,7 @@ get_header();
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           <span>Simple 3-Step Process</span>
         </div>
-        <h2 class="th-title-dark">How to Get Your The Gambia??<br>Travel Vaccinations</h2>
+        <h2 class="th-title-dark">How to Get Your The Gambia<br>Travel Vaccinations</h2>
       </div>
 
       <div class="th-steps-grid">
@@ -387,12 +387,12 @@ get_header();
         <div class="th-step-card">
           <div class="th-step-number">2</div>
           <h3>Expert Assessment</h3>
-          <p>Our GPhC-registered pharmacists review your itinerary, medical history, and provide personalised The Gambia?? travel health advice. We'll identify exactly which vaccines and medications you need.</p>
+          <p>Our GPhC-registered pharmacists review your itinerary, medical history, and provide personalised The Gambia travel health advice. We'll identify exactly which vaccines and medications you need.</p>
         </div>
         <div class="th-step-card">
           <div class="th-step-number">3</div>
           <h3>Same-Day Vaccination</h3>
-          <p>Receive your vaccines immediately. We stock all The Gambia?? travel vaccinations and can complete your course before departure. No waiting lists, no delays—get protected the same day.</p>
+          <p>Receive your vaccines immediately. We stock all The Gambia travel vaccinations and can complete your course before departure. No waiting lists, no delays—get protected the same day.</p>
         </div>
       </div>
     </div>
@@ -406,7 +406,7 @@ get_header();
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           <span>Our Clinics</span>
         </div>
-        <h2 class="section-title">The Gambia?? Travel Clinic Locations<br><span class="gradient-text">in South East London</span></h2>
+        <h2 class="section-title">The Gambia Travel Clinic Locations<br><span class="gradient-text-light">in South East London</span></h2>
       </div>
 
       <div class="th-locations-grid">
@@ -460,7 +460,7 @@ get_header();
       </div>
 
       <div class="th-service-area">
-        <p>While based in Chislehurst, we welcome The Gambia?? travelers from across South East London and beyond. Easy access from <strong>Bromley, Orpington, Sidcup, Bexley, Eltham, Greenwich, Lewisham,</strong> and surrounding areas.</p>
+        <p>While based in Chislehurst, we welcome The Gambia travelers from across South East London and beyond. Easy access from <strong>Bromley, Orpington, Sidcup, Bexley, Eltham, Greenwich, Lewisham,</strong> and surrounding areas.</p>
       </div>
     </div>
   </section>
@@ -477,13 +477,13 @@ get_header();
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/><line x1="8" y1="2" x2="16" y2="2"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
           <span>Clear Pricing</span>
         </div>
-        <h2 class="th-title-dark">The Gambia?? Travel Vaccination<br>Packages</h2>
+        <h2 class="th-title-dark">The Gambia Travel Vaccination<br>Packages</h2>
       </div>
 
       <div class="th-pricing-grid">
         <div class="th-pricing-card">
           <div class="th-pricing-tier">Essential</div>
-          <h3>Essential The Gambia?? Package</h3>
+          <h3>Essential The Gambia Package</h3>
           <div class="th-pricing-price">
             <span class="th-price-from">From</span>
             <span class="th-price-amount">£120</span>
@@ -512,7 +512,7 @@ get_header();
         <div class="th-pricing-card th-pricing-card-featured">
           <div class="th-pricing-popular">Most Popular</div>
           <div class="th-pricing-tier">Comprehensive</div>
-          <h3>Comprehensive The Gambia?? Package</h3>
+          <h3>Comprehensive The Gambia Package</h3>
           <div class="th-pricing-price">
             <span class="th-price-from">From</span>
             <span class="th-price-amount">£280</span>
@@ -543,7 +543,7 @@ get_header();
         </div>
 
         <div class="th-pricing-card th-pricing-card-individual">
-          <div class="th-pricing-tier">The Gambia?vidual Vaccines</div>
+          <div class="th-pricing-tier">Individual Vaccines</div>
           <h3>À La Carte Pricing</h3>
           <div class="th-individual-list">
             <div class="th-individual-item">
@@ -593,8 +593,8 @@ get_header();
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           <span>Planning Your Vaccines</span>
         </div>
-        <h2 class="section-title">When to Get The Gambia??<br><span class="gradient-text">Travel Vaccinations</span></h2>
-        <p class="th-section-desc">Ideally, book your The Gambia?? travel vaccination appointment 6–8 weeks before departure. However, we accommodate last-minute travellers with same-day appointments and can provide immediate protection for most vaccines. Even if your trip is just days away, it's always worth visiting our clinic—many vaccines offer rapid protection.</p>
+        <h2 class="section-title">When to Get The Gambia<br><span class="gradient-text-light">Travel Vaccinations</span></h2>
+        <p class="th-section-desc">Ideally, book your The Gambia travel vaccination appointment 6–8 weeks before departure. However, we accommodate last-minute travellers with same-day appointments and can provide immediate protection for most vaccines. Even if your trip is just days away, it's always worth visiting our clinic—many vaccines offer rapid protection.</p>
       </div>
 
       <div class="th-timeline-grid">
@@ -632,7 +632,7 @@ get_header();
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <span>Why Chislehurst Pharmacy Group</span>
         </div>
-        <h2 class="th-title-dark">Why Choose Our<br>The Gambia?? Travel Clinic</h2>
+        <h2 class="th-title-dark">Why Choose Our<br>The Gambia Travel Clinic</h2>
       </div>
 
       <div class="th-why-grid">
@@ -647,7 +647,7 @@ get_header();
           <div class="th-why-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h3>All The Gambia?? Vaccines in Stock</h3>
+          <h3>All The Gambia Vaccines in Stock</h3>
           <p>No ordering delays—we carry every recommended vaccine for Gambia travel</p>
         </div>
         <div class="th-why-card">
@@ -662,7 +662,7 @@ get_header();
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/><line x1="8" y1="2" x2="16" y2="2"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
           </div>
           <h3>Competitive Pricing</h3>
-          <p>Transparent prices with package deals to save you money on your The Gambia?? vaccines</p>
+          <p>Transparent prices with package deals to save you money on your The Gambia vaccines</p>
         </div>
         <div class="th-why-card">
           <div class="th-why-icon">
@@ -704,27 +704,27 @@ get_header();
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           <span>Common Questions</span>
         </div>
-        <h2 class="section-title">The Gambia?? Travel<br><span class="gradient-text">Vaccination FAQs</span></h2>
+        <h2 class="section-title">The Gambia Travel<br><span class="gradient-text-light">Vaccination FAQs</span></h2>
       </div>
 
       <div class="th-faq-list">
         <details class="th-faq-item">
           <summary class="th-faq-question">
-            <span>Do I need vaccinations for The Gambia???</span>
+            <span>Do I need vaccinations for The Gambia?</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <div class="th-faq-answer">
-            <p>While no vaccinations are legally mandatory for UK travellers entering The Gambia?? directly, several are strongly recommended by the NHS and WHO. Hepatitis A and Typhoid vaccinations are considered essential for all travellers. Additional vaccines like Hepatitis B, Japanese Encephalitis, and Rabies are recommended based on your activities and itinerary. Our pharmacists will assess your specific plans and advise accordingly.</p>
+            <p>While no vaccinations are legally mandatory for UK travellers entering The Gambia directly, several are strongly recommended by the NHS and WHO. Hepatitis A and Typhoid vaccinations are considered essential for all travellers. Additional vaccines like Hepatitis B, Japanese Encephalitis, and Rabies are recommended based on your activities and itinerary. Our pharmacists will assess your specific plans and advise accordingly.</p>
           </div>
         </details>
 
         <details class="th-faq-item">
           <summary class="th-faq-question">
-            <span>How much do The Gambia?? travel vaccinations cost?</span>
+            <span>How much do The Gambia travel vaccinations cost?</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <div class="th-faq-answer">
-            <p>The Gambia?vidual vaccines range from £35–£95 per dose. Our Essential The Gambia?? Package starts from £120 (Hepatitis A + Typhoid + consultation), and the Comprehensive Package from £280 (including Hep A&B, Typhoid, Japanese Encephalitis + consultation). All prices include expert consultation and administration. We offer competitive pricing with package discounts to make travel health affordable.</p>
+            <p>Individual vaccines range from £35–£95 per dose. Our Essential The Gambia Package starts from £120 (Hepatitis A + Typhoid + consultation), and the Comprehensive Package from £280 (including Hep A&B, Typhoid, Japanese Encephalitis + consultation). All prices include expert consultation and administration. We offer competitive pricing with package discounts to make travel health affordable.</p>
           </div>
         </details>
 
@@ -744,17 +744,17 @@ get_header();
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <div class="th-faq-answer">
-            <p>Yes, both our South East London clinics are authorised Yellow Fever vaccination centres. We administer the vaccine and issue the International Certificate of Vaccination or Prophylaxis (ICVP) on-site. While Yellow Fever isn't required for direct entry to The Gambia?? from the UK, it may be needed if you're travelling from or transiting through countries with Yellow Fever risk.</p>
+            <p>Yes, both our South East London clinics are authorised Yellow Fever vaccination centres. We administer the vaccine and issue the International Certificate of Vaccination or Prophylaxis (ICVP) on-site. While Yellow Fever isn't required for direct entry to The Gambia from the UK, it may be needed if you're travelling from or transiting through countries with Yellow Fever risk.</p>
           </div>
         </details>
 
         <details class="th-faq-item">
           <summary class="th-faq-question">
-            <span>Which areas of The Gambia?? have malaria risk?</span>
+            <span>Which areas of The Gambia have malaria risk?</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <div class="th-faq-answer">
-            <p>Malaria risk in The Gambia?? is concentrated in rural, forested border areas—particularly along the borders with Myanmar (Burma), Cambodia, and Laos. Provinces like Tak, Kanchanaburi, Mae Hong Son, and Trat have documented cases. Major tourist destinations including Bangkok, Chiang Mai city, Phuket, Koh Samui, and Pattaya are generally considered malaria-free. Our pharmacists will assess your specific itinerary.</p>
+            <p>Malaria risk in The Gambia is concentrated in rural, forested border areas—particularly along the borders with Myanmar (Burma), Cambodia, and Laos. Provinces like Tak, Kanchanaburi, Mae Hong Son, and Trat have documented cases. Major tourist destinations including Bangkok, Chiang Mai city, Phuket, Koh Samui, and Pattaya are generally considered malaria-free. Our pharmacists will assess your specific itinerary.</p>
           </div>
         </details>
 
@@ -778,7 +778,7 @@ get_header();
       <div class="th-dark-orb th-dark-orb-2"></div>
     </div>
     <div class="container th-final-cta-container">
-      <h2 class="th-title-dark">Book Your The Gambia?? Travel<br>Vaccinations Today</h2>
+      <h2 class="th-title-dark">Book Your The Gambia Travel<br>Vaccinations Today</h2>
       <p class="th-desc-dark">Expert travel health services across South East London. Serving Chislehurst, Bromley, Orpington, Sidcup, Bexley, and surrounding areas.</p>
       <div class="th-final-cta-buttons">
         <a href="tel:02082950017" class="th-btn-primary">
