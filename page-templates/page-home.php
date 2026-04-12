@@ -853,55 +853,57 @@ get_header();
     </section>
 
     <!-- How It Works -->
-    <section class="how-it-works">
+    <section class="how-it-works" id="how-it-works">
       <div class="container">
-        <h2 class="section-title gradient-text">How to use our services</h2>
-        <p class="section-subtitle">Getting the care you need is simple</p>
+        <h2 class="section-title gradient-text"><?php echo esc_html( rl_field( 'hp_hiw_title', 'How to use our services' ) ); ?></h2>
+        <p class="section-subtitle"><?php echo esc_html( rl_field( 'hp_hiw_subtitle', 'Getting the care you need is simple' ) ); ?></p>
 
         <div class="steps-grid">
+          <?php
+          if ( function_exists( 'have_rows' ) && have_rows( 'hp_hiw_steps' ) ) :
+            $step_num = 0;
+            while ( have_rows( 'hp_hiw_steps' ) ) :
+              the_row();
+              $step_num++;
+              $s_image = get_sub_field( 'image' );
+              $s_label = get_sub_field( 'label' );
+              $s_title = get_sub_field( 'title' );
+              $s_desc  = get_sub_field( 'description' );
+              if ( ! $s_label ) $s_label = 'Step ' . $step_num;
+          ?>
           <div class="step-card">
+            <?php if ( $s_image ) : ?>
             <div class="step-image">
-              <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769518303266-1.jpeg" alt="Step 1" />
+              <img src="<?php echo esc_url( $s_image ); ?>" alt="<?php echo esc_attr( $s_title ); ?>" />
             </div>
+            <?php else : ?>
+            <div class="step-image step-image-placeholder">
+              <span>Image <?php echo (int) $step_num; ?></span>
+            </div>
+            <?php endif; ?>
             <div class="step-content">
-              <span class="step-label">Step 1</span>
-              <h3>Visit or Call Us</h3>
-              <p>Walk into either location or call ahead to speak with our pharmacists.</p>
+              <span class="step-label"><?php echo esc_html( $s_label ); ?></span>
+              <h3><?php echo esc_html( $s_title ? $s_title : 'Step ' . $step_num . ' Title' ); ?></h3>
+              <p><?php echo esc_html( $s_desc ? $s_desc : 'Step description — edit in wp-admin.' ); ?></p>
             </div>
           </div>
-
+          <?php
+            endwhile;
+          else :
+            /* Fallback: 3 placeholder cards when ACF repeater is empty */
+            for ( $i = 1; $i <= 3; $i++ ) :
+          ?>
           <div class="step-card">
-            <div class="step-image">
-              <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517146368-2.png" alt="Step 2" />
+            <div class="step-image step-image-placeholder">
+              <span>Image <?php echo $i; ?></span>
             </div>
             <div class="step-content">
-              <span class="step-label">Step 2</span>
-              <h3>Expert Consultation</h3>
-              <p>Our qualified pharmacists will provide personalized advice for your needs.</p>
+              <span class="step-label">Step <?php echo $i; ?></span>
+              <h3>Step <?php echo $i; ?> Title</h3>
+              <p>Add your content in the "How It Works" tab on the homepage in wp-admin.</p>
             </div>
           </div>
-
-          <div class="step-card">
-            <div class="step-image">
-              <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517273031-0.png" alt="Step 3" />
-            </div>
-            <div class="step-content">
-              <span class="step-label">Step 3</span>
-              <h3>Get Your Medication</h3>
-              <p>Collect immediately or choose free delivery to your London address.</p>
-            </div>
-          </div>
-
-          <div class="step-card">
-            <div class="step-image">
-              <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769518806795-0.jpeg" alt="Step 4" />
-            </div>
-            <div class="step-content">
-              <span class="step-label">Step 4</span>
-              <h3>Ongoing Support</h3>
-              <p>We're here whenever you need us with continuous care and advice.</p>
-            </div>
-          </div>
+          <?php endfor; endif; ?>
         </div>
       </div>
     </section>
