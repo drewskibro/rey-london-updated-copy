@@ -482,7 +482,7 @@ get_header();
           <h3>Essential Gambia Package</h3>
           <div class="th-pricing-price">
             <span class="th-price-from">From</span>
-            <span class="th-price-amount">£120</span>
+            <span class="th-price-amount"><?php echo esc_html( rl_field( 'gambia_price_essential', '£TBC' ) ); ?></span>
           </div>
           <ul class="th-pricing-features">
             <li>
@@ -511,7 +511,7 @@ get_header();
           <h3>Comprehensive Gambia Package</h3>
           <div class="th-pricing-price">
             <span class="th-price-from">From</span>
-            <span class="th-price-amount">£280</span>
+            <span class="th-price-amount"><?php echo esc_html( rl_field( 'gambia_price_comprehensive', '£TBC' ) ); ?></span>
           </div>
           <ul class="th-pricing-features">
             <li>
@@ -544,35 +544,31 @@ get_header();
           <div class="th-individual-list">
             <div class="th-individual-item">
               <span>Hepatitis A</span>
-              <span class="th-individual-price">From £50</span>
+              <span class="th-individual-price"><?php echo esc_html( rl_field( 'gambia_price_hepa', '£TBC' ) ); ?></span>
             </div>
             <div class="th-individual-item">
               <span>Hepatitis B (per dose)</span>
-              <span class="th-individual-price">From £40</span>
+              <span class="th-individual-price"><?php echo esc_html( rl_field( 'gambia_price_hepb', '£TBC' ) ); ?></span>
             </div>
             <div class="th-individual-item">
               <span>Typhoid</span>
-              <span class="th-individual-price">From £35</span>
+              <span class="th-individual-price"><?php echo esc_html( rl_field( 'gambia_price_typhoid', '£TBC' ) ); ?></span>
             </div>
             <div class="th-individual-item">
               <span>Meningitis ACWY</span>
-              <span class="th-individual-price">From £55</span>
+              <span class="th-individual-price"><?php echo esc_html( rl_field( 'gambia_price_menacwy', '£TBC' ) ); ?></span>
             </div>
             <div class="th-individual-item">
               <span>Rabies (per dose)</span>
-              <span class="th-individual-price">From £65</span>
-            </div>
-            <div class="th-individual-item">
-              <span>Yellow Fever + Certificate</span>
-              <span class="th-individual-price">From £75</span>
+              <span class="th-individual-price"><?php echo esc_html( rl_field( 'gambia_price_rabies', '£TBC' ) ); ?></span>
             </div>
             <div class="th-individual-item">
               <span>DTP Booster</span>
-              <span class="th-individual-price">From £35</span>
+              <span class="th-individual-price"><?php echo esc_html( rl_field( 'gambia_price_dtp', '£TBC' ) ); ?></span>
             </div>
             <div class="th-individual-item">
               <span>Antimalarial Tablets</span>
-              <span class="th-individual-price">From £30</span>
+              <span class="th-individual-price"><?php echo esc_html( rl_field( 'gambia_price_antimalarial', '£TBC' ) ); ?></span>
             </div>
           </div>
           <p class="th-pricing-note">All prices include expert consultation and administration by qualified pharmacists</p>
