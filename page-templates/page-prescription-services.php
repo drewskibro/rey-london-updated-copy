@@ -216,7 +216,7 @@ get_header();
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="1"/><path d="M9 11v10"/><path d="M5 17H3"/></svg>
           Your Local Pharmacy
         </div>
-        <h2 class="section-title" style="color: #fff;"><?php echo esc_html( rl_field( 'rx_delivery_title', 'NHS Prescription Services Across South East London' ) ); ?></h2>
+        <h2 class="section-title" style="color: #fff;"><?php echo esc_html( rl_field( 'rx_delivery_title', 'How We Manage Your Prescriptions' ) ); ?></h2>
         <p class="section-subtitle" style="color: rgba(255,255,255,0.75);"><?php echo esc_html( rl_field( 'rx_delivery_subtitle', 'Two convenient locations. Same-day collection. Managed by pharmacists who know you.' ) ); ?></p>
       </div>
 

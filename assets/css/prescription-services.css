@@ -483,9 +483,20 @@
   border-radius: 20px;
   padding: 36px;
   border: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 3px solid rgba(255, 255, 255, 0.25);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
 }
+
+.rx-feature-card:nth-child(1) { border-top-color: #4ecdc4; }
+.rx-feature-card:nth-child(2) { border-top-color: #f0a500; }
+.rx-feature-card:nth-child(3) { border-top-color: #a78bfa; }
+.rx-feature-card:nth-child(4) { border-top-color: #34d399; }
+
+.rx-feature-card:nth-child(1) .rx-feature-icon { background: rgba(78, 205, 196, 0.2); border-color: rgba(78, 205, 196, 0.3); }
+.rx-feature-card:nth-child(2) .rx-feature-icon { background: rgba(240, 165, 0, 0.2); border-color: rgba(240, 165, 0, 0.3); }
+.rx-feature-card:nth-child(3) .rx-feature-icon { background: rgba(167, 139, 250, 0.2); border-color: rgba(167, 139, 250, 0.3); }
+.rx-feature-card:nth-child(4) .rx-feature-icon { background: rgba(52, 211, 153, 0.2); border-color: rgba(52, 211, 153, 0.3); }
 
 .rx-feature-card:hover {
   background: rgba(255, 255, 255, 0.14);
