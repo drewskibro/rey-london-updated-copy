@@ -384,16 +384,31 @@ get_header();
               <h3><?php echo esc_html( $loc['name'] ); ?></h3>
               <div class="location-details">
                 <div class="detail-item">
-                  <span class="detail-label">Address</span>
-                  <p><?php echo esc_html( $loc['address'] ); ?></p>
+                  <span class="detail-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                  </span>
+                  <div class="detail-text">
+                    <span class="detail-label">Address</span>
+                    <p><?php echo esc_html( $loc['address'] ); ?></p>
+                  </div>
                 </div>
                 <div class="detail-item">
-                  <span class="detail-label">Phone</span>
-                  <a href="tel:<?php echo esc_attr( $phone_digits ); ?>"><?php echo esc_html( $loc['phone'] ); ?></a>
+                  <span class="detail-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  </span>
+                  <div class="detail-text">
+                    <span class="detail-label">Phone</span>
+                    <a href="tel:<?php echo esc_attr( $phone_digits ); ?>"><?php echo esc_html( $loc['phone'] ); ?></a>
+                  </div>
                 </div>
                 <div class="detail-item">
-                  <span class="detail-label">Hours</span>
-                  <p><?php echo esc_html( $loc['hours'] ); ?></p>
+                  <span class="detail-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </span>
+                  <div class="detail-text">
+                    <span class="detail-label">Hours</span>
+                    <p><?php echo esc_html( $loc['hours'] ); ?></p>
+                  </div>
                 </div>
               </div>
               <div class="location-actions">
@@ -411,16 +426,31 @@ get_header();
               <h3>Pond Pharmacy</h3>
               <div class="location-details">
                 <div class="detail-item">
-                  <span class="detail-label">Address</span>
-                  <p>59 High St, Chislehurst BR7 5AF</p>
+                  <span class="detail-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                  </span>
+                  <div class="detail-text">
+                    <span class="detail-label">Address</span>
+                    <p>59 High St, Chislehurst BR7 5AF</p>
+                  </div>
                 </div>
                 <div class="detail-item">
-                  <span class="detail-label">Phone</span>
-                  <a href="tel:02084673158">020 8467 3158</a>
+                  <span class="detail-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  </span>
+                  <div class="detail-text">
+                    <span class="detail-label">Phone</span>
+                    <a href="tel:02084673158">020 8467 3158</a>
+                  </div>
                 </div>
                 <div class="detail-item">
-                  <span class="detail-label">Hours</span>
-                  <p>Mon-Fri: 8am-8pm | Sat: 9am-6pm | Sun: 10am-4pm</p>
+                  <span class="detail-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </span>
+                  <div class="detail-text">
+                    <span class="detail-label">Hours</span>
+                    <p>Mon-Fri: 8am-8pm | Sat: 9am-6pm | Sun: 10am-4pm</p>
+                  </div>
                 </div>
               </div>
               <div class="location-actions">
@@ -437,16 +467,31 @@ get_header();
               <h3>Chislehurst Pharmacy</h3>
               <div class="location-details">
                 <div class="detail-item">
-                  <span class="detail-label">Address</span>
-                  <p>59 Chislehurst Rd, Chislehurst BR7 5NP</p>
+                  <span class="detail-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                  </span>
+                  <div class="detail-text">
+                    <span class="detail-label">Address</span>
+                    <p>59 Chislehurst Rd, Chislehurst BR7 5NP</p>
+                  </div>
                 </div>
                 <div class="detail-item">
-                  <span class="detail-label">Phone</span>
-                  <a href="tel:02082950017">020 8295 0017</a>
+                  <span class="detail-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  </span>
+                  <div class="detail-text">
+                    <span class="detail-label">Phone</span>
+                    <a href="tel:02082950017">020 8295 0017</a>
+                  </div>
                 </div>
                 <div class="detail-item">
-                  <span class="detail-label">Hours</span>
-                  <p>Mon-Fri: 8am-8pm | Sat: 9am-6pm | Sun: 10am-4pm</p>
+                  <span class="detail-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </span>
+                  <div class="detail-text">
+                    <span class="detail-label">Hours</span>
+                    <p>Mon-Fri: 8am-8pm | Sat: 9am-6pm | Sun: 10am-4pm</p>
+                  </div>
                 </div>
               </div>
               <div class="location-actions">

@@ -1757,8 +1757,8 @@ body {
 
 .detail-item {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  align-items: flex-start;
+  gap: 14px;
   padding: 0 0 16px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1770,6 +1770,31 @@ body {
 .detail-item + .detail-item {
   padding-top: 16px;
   border-top: 1px solid rgba(10, 47, 138, 0.08);
+}
+
+.detail-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-blue);
+  background: rgba(10, 47, 138, 0.06);
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.detail-item:hover .detail-icon {
+  background: rgba(10, 47, 138, 0.10);
+  transform: scale(1.05);
+}
+
+.detail-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
 }
 
 .detail-label {
@@ -1784,7 +1809,7 @@ body {
 .detail-item a {
   font-size: 16px;
   color: var(--text-dark);
-  line-height: 1.6;
+  line-height: 1.5;
   text-decoration: none;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -1800,7 +1825,7 @@ body {
 }
 
 .detail-item a:hover {
-  color: var(--primary-blue);
+  color: var(--light-blue);
 }
 
 .location-actions {
