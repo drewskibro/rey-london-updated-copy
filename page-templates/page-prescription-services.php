@@ -72,25 +72,6 @@ get_header();
           <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=700&h=600&fit=crop" alt="NHS prescription services South East London — medication dispensed by GPhC pharmacist">
           <div class="rx-hero-img-overlay"></div>
         </div>
-        <!-- Floating stat cards -->
-        <div class="rx-stat-card rx-stat-card-1">
-          <div class="rx-stat-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <div class="rx-stat-text">
-            <strong>GPhC Registered</strong>
-            <span>Qualified pharmacists</span>
-          </div>
-        </div>
-        <div class="rx-stat-card rx-stat-card-2">
-          <div class="rx-stat-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          </div>
-          <div class="rx-stat-text">
-            <strong>Same-Day Collection</strong>
-            <span>Ready when you are</span>
-          </div>
-        </div>
       </div>
     </div>
   </section>
