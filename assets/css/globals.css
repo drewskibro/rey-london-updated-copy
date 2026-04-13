@@ -2487,7 +2487,7 @@ body {
 
 .team-editorial {
   display: grid;
-  grid-template-columns: 45% 55%;
+  grid-template-columns: 35% 65%;
   min-height: 600px;
   position: relative;
   z-index: 1;
