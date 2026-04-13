@@ -101,6 +101,18 @@ get_header();
   <section class="rx-stats-bar">
     <div class="container">
       <div class="rx-stats-grid">
+        <?php
+        $rx_stats = rl_field( 'rx_stats' );
+        if ( $rx_stats ) :
+          $stat_count = count( $rx_stats );
+          foreach ( $rx_stats as $i => $stat ) :
+        ?>
+        <div class="rx-stat-item">
+          <div class="rx-stat-number"><?php echo esc_html( $stat['number'] ); ?></div>
+          <div class="rx-stat-label"><?php echo esc_html( $stat['label'] ); ?></div>
+        </div>
+        <?php if ( $i < $stat_count - 1 ) : ?><div class="rx-stat-divider"></div><?php endif; ?>
+        <?php endforeach; else : ?>
         <div class="rx-stat-item">
           <div class="rx-stat-number">Free</div>
           <div class="rx-stat-label">NHS Prescription Delivery</div>
@@ -125,6 +137,7 @@ get_header();
           <div class="rx-stat-number">4.9/5</div>
           <div class="rx-stat-label">Patient Satisfaction</div>
         </div>
+        <?php endif; ?>
       </div>
     </div>
   </section>
