@@ -1634,6 +1634,7 @@ body {
   box-shadow: 0 4px 24px rgba(10, 47, 138, 0.08);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(10, 47, 138, 0.12);
+  border-left: 3px solid var(--primary-blue);
   position: relative;
 }
 
@@ -1750,45 +1751,33 @@ body {
 .location-details {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 0;
   margin-bottom: 32px;
 }
 
 .detail-item {
   display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  padding: 16px 20px;
-  background: rgba(10, 47, 138, 0.04);
-  border-radius: 12px;
-  border: 1px solid rgba(10, 47, 138, 0.08);
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 0 16px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.detail-item:hover {
-  background: rgba(10, 47, 138, 0.08);
-  border-color: rgba(10, 47, 138, 0.15);
-  transform: translateX(4px);
+.detail-item:last-child {
+  padding-bottom: 0;
 }
 
-.detail-item img {
-  width: 24px;
-  height: 24px;
-  margin-top: 2px;
-  flex-shrink: 0;
-  opacity: 0.8;
-  transition: all 0.3s;
-  filter: brightness(0) saturate(100%) invert(17%) sepia(89%) saturate(2447%) hue-rotate(215deg) brightness(95%) contrast(95%);
+.detail-item + .detail-item {
+  padding-top: 16px;
+  border-top: 1px solid rgba(10, 47, 138, 0.08);
 }
 
-.detail-item:hover img {
-  opacity: 1;
-  transform: scale(1.15) rotate(-5deg);
-  filter: brightness(0) saturate(100%) invert(40%) sepia(68%) saturate(1000%) hue-rotate(195deg) brightness(95%) contrast(90%);
-}
-
-.location-card:hover .detail-item img {
-  filter: brightness(0) saturate(100%) invert(40%) sepia(68%) saturate(1000%) hue-rotate(195deg) brightness(95%) contrast(90%);
+.detail-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--light-blue);
 }
 
 .detail-item p,
@@ -1820,6 +1809,21 @@ body {
   flex-wrap: wrap;
   position: relative;
   z-index: 2;
+}
+
+.location-actions .btn-primary,
+.location-actions .btn-outline {
+  padding: 16px 32px;
+  font-size: 15px;
+}
+
+.btn-arrow {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.location-actions .btn-primary:hover .btn-arrow {
+  transform: translateX(4px);
 }
 
 .location-card:hover .location-actions .btn-primary {
