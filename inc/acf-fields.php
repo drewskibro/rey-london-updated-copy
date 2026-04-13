@@ -2042,7 +2042,8 @@ acf_add_local_field_group( array(
     'fields'   => array(
         array( 'key' => 'field_rl_rx_hero_tab', 'label' => 'Hero Section', 'type' => 'tab' ),
         array( 'key' => 'field_rl_rx_hero_title', 'label' => 'Hero Title', 'name' => 'rx_hero_title', 'type' => 'text', 'default_value' => 'NHS & Private Prescription Services in South East London' ),
-        array( 'key' => 'field_rl_rx_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'rx_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'Free delivery, online ordering, and automatic refills. Your prescriptions delivered to your door with expert care from our GPhC-registered pharmacists.' ),
+        array( 'key' => 'field_rl_rx_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'rx_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'Online ordering, automatic refills, and same-day collection. Your prescriptions managed by our GPhC-registered pharmacists.' ),
+        array( 'key' => 'field_rl_rx_hero_image', 'label' => 'Hero Image', 'name' => 'rx_hero_image', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'medium', 'instructions' => 'Recommended size: 700×600px' ),
         array( 'key' => 'field_rl_rx_stats_tab', 'label' => 'Stats Bar', 'type' => 'tab' ),
         array(
             'key' => 'field_rl_rx_stats', 'label' => 'Stats', 'name' => 'rx_stats', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Stat', 'max' => 5,
