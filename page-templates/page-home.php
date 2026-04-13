@@ -45,7 +45,7 @@ get_header();
               </div>
             </a>
             <?php endforeach; else : ?>
-            <a href="<?php echo esc_url( home_url( '/prescription-services/' ) ); ?>" class="service-card">
+            <a href="<?php echo esc_url( home_url( '/nhs-prescriptions/' ) ); ?>" class="service-card">
               <span class="service-title">Prescription Services</span>
               <div class="service-image">
                 <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769448207085-0.png" alt="Prescriptions" />

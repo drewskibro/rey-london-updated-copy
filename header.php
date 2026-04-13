@@ -60,7 +60,7 @@ $booking_url   = rl_booking_url();
                 <div class="dropdown-content">
                   <div class="dropdown-section">
                     <h4 class="dropdown-title">NHS Services</h4>
-                    <a href="<?php echo esc_url( home_url( '/prescription-services/' ) ); ?>" class="dropdown-link">
+                    <a href="<?php echo esc_url( home_url( '/nhs-prescriptions/' ) ); ?>" class="dropdown-link">
                       <div class="link-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <rect x="4" y="4" width="16" height="16" rx="2" />
@@ -391,7 +391,7 @@ $booking_url   = rl_booking_url();
             <div class="search-popular-links">
               <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="search-popular-link">Weight Loss Programs</a>
               <a href="<?php echo esc_url( home_url( '/travel-vaccinations-london/' ) ); ?>" class="search-popular-link">Travel Vaccinations</a>
-              <a href="<?php echo esc_url( home_url( '/prescription-services/' ) ); ?>" class="search-popular-link">NHS Prescriptions</a>
+              <a href="<?php echo esc_url( home_url( '/nhs-prescriptions/' ) ); ?>" class="search-popular-link">NHS Prescriptions</a>
               <a href="<?php echo esc_url( home_url( '/yellow-fever-vaccine-london/' ) ); ?>" class="search-popular-link">Yellow Fever Vaccine</a>
               <a href="<?php echo esc_url( home_url( '/vitamin-b12-injection/' ) ); ?>" class="search-popular-link">Vitamin B12 Injections</a>
               <a href="<?php echo esc_url( home_url( '/hair-loss/' ) ); ?>" class="search-popular-link">Hair Loss Treatment</a>
@@ -431,7 +431,7 @@ $booking_url   = rl_booking_url();
             </svg>
           </button>
           <div class="mobile-nav-sub">
-            <a href="<?php echo esc_url( home_url( '/prescription-services/' ) ); ?>" class="mobile-nav-sub-link">NHS Prescriptions</a>
+            <a href="<?php echo esc_url( home_url( '/nhs-prescriptions/' ) ); ?>" class="mobile-nav-sub-link">NHS Prescriptions</a>
             <a href="<?php echo esc_url( home_url( '/pharmacy-first/' ) ); ?>" class="mobile-nav-sub-link">Pharmacy First</a>
             <a href="<?php echo esc_url( home_url( '/nhs-vaccinations/' ) ); ?>" class="mobile-nav-sub-link">NHS Vaccinations</a>
             <a href="<?php echo esc_url( home_url( '/vitamin-b12-injection/' ) ); ?>" class="mobile-nav-sub-link">Vitamin B12 Injections</a>
