@@ -265,7 +265,7 @@ get_header();
         </a>
 
         <!-- Article 5 -->
-        <a href="<?php echo esc_url( home_url( '/prescription-services/' ) ); ?>" class="hh-article-card" data-category="wellness">
+        <a href="<?php echo esc_url( home_url( '/nhs-prescriptions/' ) ); ?>" class="hh-article-card" data-category="wellness">
           <div class="hh-article-img-wrap">
             <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=800&h=450&fit=crop" alt="NHS prescription — prescription services article" class="hh-article-img">
             <div class="hh-article-cat-badge hh-badge--wellness">PRESCRIPTIONS</div>
@@ -374,7 +374,7 @@ get_header();
           </div>
         </a>
 
-        <a href="<?php echo esc_url( home_url( '/prescription-services/' ) ); ?>" class="hh-explore-tile">
+        <a href="<?php echo esc_url( home_url( '/nhs-prescriptions/' ) ); ?>" class="hh-explore-tile">
           <div class="hh-explore-img-wrap">
             <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop" alt="Prescription Services" class="hh-explore-img">
             <div class="hh-explore-overlay"></div>

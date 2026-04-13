@@ -37,11 +37,11 @@ get_header();
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
-          <a href="tel:02082950017" class="rx-btn-secondary">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M14.5 11.5V13.5C14.5 14.05 14.05 14.5 13.5 14.5C6.6 14.5 1 8.9 1 2C1 1.45 1.45 1 2 1H4.5C5.05 1 5.5 1.45 5.5 2V4.5C5.5 5.05 5.05 5.5 4.5 5.5H3.5C4 8.5 6.5 11 9.5 11.5V10.5C9.5 9.95 9.95 9.5 10.5 9.5H13C13.55 9.5 14 9.95 14 10.5V11.5Z" fill="currentColor"/>
+          <a href="#locations" class="rx-btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
             </svg>
-            Call Chislehurst: 020 8295 0017
+            Find Your Branch
           </a>
         </div>
 
@@ -101,6 +101,18 @@ get_header();
   <section class="rx-stats-bar">
     <div class="container">
       <div class="rx-stats-grid">
+        <?php
+        $rx_stats = rl_field( 'rx_stats' );
+        if ( $rx_stats ) :
+          $stat_count = count( $rx_stats );
+          foreach ( $rx_stats as $i => $stat ) :
+        ?>
+        <div class="rx-stat-item">
+          <div class="rx-stat-number"><?php echo esc_html( $stat['number'] ); ?></div>
+          <div class="rx-stat-label"><?php echo esc_html( $stat['label'] ); ?></div>
+        </div>
+        <?php if ( $i < $stat_count - 1 ) : ?><div class="rx-stat-divider"></div><?php endif; ?>
+        <?php endforeach; else : ?>
         <div class="rx-stat-item">
           <div class="rx-stat-number">Free</div>
           <div class="rx-stat-label">NHS Prescription Delivery</div>
@@ -125,6 +137,7 @@ get_header();
           <div class="rx-stat-number">4.9/5</div>
           <div class="rx-stat-label">Patient Satisfaction</div>
         </div>
+        <?php endif; ?>
       </div>
     </div>
   </section>
@@ -139,15 +152,39 @@ get_header();
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           Simple Service
         </div>
-        <h2 class="section-title">Simple Prescription Management</h2>
-        <p class="section-subtitle">Managing your NHS or private prescriptions has never been easier.</p>
+        <h2 class="section-title"><?php echo esc_html( rl_field( 'rx_hiw_title', 'Simple Prescription Management' ) ); ?></h2>
+        <p class="section-subtitle"><?php echo esc_html( rl_field( 'rx_hiw_subtitle', 'Managing your NHS or private prescriptions has never been easier.' ) ); ?></p>
       </div>
 
-      <p class="rx-intro-text">
-        Managing your NHS or private prescriptions has never been easier. Our South East London pharmacies offer comprehensive prescription services including free delivery, electronic prescriptions, automatic refills, and expert pharmaceutical care. Serving patients across <strong>Chislehurst, Bromley, Orpington, Sidcup, Bexley</strong>, and surrounding areas.
-      </p>
+      <?php $hiw_intro = rl_field( 'rx_hiw_intro' ); ?>
+      <?php if ( $hiw_intro ) : ?>
+        <div class="rx-intro-text"><?php echo wp_kses_post( $hiw_intro ); ?></div>
+      <?php else : ?>
+        <p class="rx-intro-text">
+          Managing your NHS or private prescriptions has never been easier. Our South East London pharmacies offer comprehensive prescription services including free delivery, electronic prescriptions, and automatic refills. Serving patients across <strong>Chislehurst, Bromley, Orpington, Sidcup, Bexley</strong>, and surrounding areas.
+        </p>
+      <?php endif; ?>
 
       <div class="rx-steps-grid">
+        <?php
+        $rx_steps = rl_field( 'rx_steps' );
+        if ( $rx_steps ) :
+          foreach ( $rx_steps as $i => $step ) :
+            $step_num = str_pad( $i + 1, 2, '0', STR_PAD_LEFT );
+        ?>
+        <div class="rx-step-card">
+          <?php if ( ! empty( $step['image'] ) ) : ?>
+          <div class="rx-step-visual">
+            <img src="<?php echo esc_url( $step['image'] ); ?>" alt="<?php echo esc_attr( $step['title'] ); ?>">
+          </div>
+          <?php endif; ?>
+          <div class="rx-step-content">
+            <div class="rx-step-num"><?php echo esc_html( $step_num ); ?></div>
+            <h3><?php echo esc_html( $step['title'] ); ?></h3>
+            <p><?php echo esc_html( $step['description'] ); ?></p>
+          </div>
+        </div>
+        <?php endforeach; else : ?>
         <div class="rx-step-card">
           <div class="rx-step-visual">
             <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=600&h=400&fit=crop" alt="Order prescription online South East London">
@@ -158,7 +195,6 @@ get_header();
             <p>Order online through our free registration portal, call us, visit in person, or ask your GP to send your prescription electronically to either of our pharmacies.</p>
           </div>
         </div>
-
         <div class="rx-step-card">
           <div class="rx-step-visual">
             <img src="https://images.unsplash.com/photo-1576671081837-49000212a370?w=600&h=400&fit=crop" alt="GPhC pharmacist dispensing prescription safely">
@@ -169,7 +205,6 @@ get_header();
             <p>Our GPhC-registered pharmacists carefully dispense your medication and conduct all necessary safety checks. We'll text you when it's ready.</p>
           </div>
         </div>
-
         <div class="rx-step-card">
           <div class="rx-step-visual">
             <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=600&h=400&fit=crop" alt="Free prescription delivery to your door London">
@@ -177,9 +212,10 @@ get_header();
           <div class="rx-step-content">
             <div class="rx-step-num">03</div>
             <h3>Free Delivery or Collection</h3>
-            <p>Choose free home delivery tracked to your door, or collect from either Chislehurst or Pond End pharmacy at your convenience.</p>
+            <p>Choose free home delivery tracked to your door, or collect from either Chislehurst Pharmacy or Pond Pharmacy at your convenience.</p>
           </div>
         </div>
+        <?php endif; ?>
       </div>
     </div>
   </section>
@@ -198,58 +234,62 @@ get_header();
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="1"/><path d="M9 11v10"/><path d="M5 17H3"/></svg>
           100% Free
         </div>
-        <h2 class="section-title" style="color: #fff;">Free NHS Prescription Delivery Across South East London</h2>
-        <p class="section-subtitle" style="color: rgba(255,255,255,0.75);">No minimum order. No hidden fees. Just your medication, delivered on time.</p>
+        <h2 class="section-title" style="color: #fff;"><?php echo esc_html( rl_field( 'rx_delivery_title', 'Free NHS Prescription Delivery Across South East London' ) ); ?></h2>
+        <p class="section-subtitle" style="color: rgba(255,255,255,0.75);"><?php echo esc_html( rl_field( 'rx_delivery_subtitle', 'No minimum order. No hidden fees. Just your medication, delivered on time.' ) ); ?></p>
       </div>
 
-      <p class="rx-dark-intro">
-        We offer completely free NHS prescription delivery to your home, workplace, or any address of your choice across South East London and beyond. Our delivery service covers <strong>Chislehurst, Bromley, Orpington, Sidcup, Bexley, Eltham</strong>, and surrounding areas with no minimum order value.
-      </p>
+      <?php $del_intro = rl_field( 'rx_delivery_intro' ); ?>
+      <?php if ( $del_intro ) : ?>
+        <div class="rx-dark-intro"><?php echo wp_kses_post( $del_intro ); ?></div>
+      <?php else : ?>
+        <p class="rx-dark-intro">
+          We offer completely free NHS prescription delivery to your home, workplace, or any address of your choice across South East London and beyond. Our delivery service covers <strong>Chislehurst, Bromley, Orpington, Sidcup, Bexley, Eltham</strong>, and surrounding areas with no minimum order value.
+        </p>
+      <?php endif; ?>
 
       <div class="rx-features-grid">
+        <?php
+        $del_features = rl_field( 'rx_delivery_features' );
+        if ( $del_features ) :
+          foreach ( $del_features as $feat ) :
+        ?>
         <div class="rx-feature-card">
           <div class="rx-feature-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
-            </svg>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3><?php echo esc_html( $feat['title'] ); ?></h3>
+          <p><?php echo esc_html( $feat['description'] ); ?></p>
+        </div>
+        <?php endforeach; else : ?>
+        <div class="rx-feature-card">
+          <div class="rx-feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
           <h3>Free Delivery</h3>
           <p>All NHS prescriptions delivered free of charge to any address. No hidden fees, no minimum order — ever.</p>
         </div>
-
         <div class="rx-feature-card">
           <div class="rx-feature-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M12 6v6l4 2"/>
-            </svg>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           </div>
           <h3>Order Tracking</h3>
           <p>Track your delivery in real-time via email and text notifications. Know exactly when to expect your medication.</p>
         </div>
-
         <div class="rx-feature-card">
           <div class="rx-feature-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-              <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-            </svg>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
           </div>
           <h3>Delivery Reminders</h3>
           <p>Receive automatic text reminders 10 days before you run out so you never miss a dose of essential medication.</p>
         </div>
-
         <div class="rx-feature-card">
           <div class="rx-feature-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-            </svg>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           </div>
           <h3>Discreet Packaging</h3>
           <p>All medications arrive in plain, discreet packaging to protect your privacy — every single time.</p>
         </div>
+        <?php endif; ?>
       </div>
 
       <!-- Mid-page CTA -->
@@ -258,8 +298,8 @@ get_header();
           Register for Free Delivery
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a href="tel:02082950017" class="rx-btn-ghost">
-          Call Us: 020 8295 0017
+        <a href="#locations" class="rx-btn-ghost">
+          Find Your Branch
         </a>
       </div>
     </div>
@@ -276,64 +316,42 @@ get_header();
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
             Online Ordering
           </div>
-          <h2 class="section-title" style="text-align:left;">Register for Free Online Prescription Ordering</h2>
-          <p class="rx-content-text">
-            Take control of your repeat prescriptions with our free online ordering system. Order your regular medications 24/7 from anywhere — at home, at work, or on the go. No phone calls, no waiting, no hassle.
-          </p>
-          <p class="rx-content-text">
-            Our secure portal links directly with your prescription record, allowing you to manage all your regular medications in one place with just a few clicks.
-          </p>
+          <h2 class="section-title" style="text-align:left;"><?php echo esc_html( rl_field( 'rx_online_title', 'Register for Free Online Prescription Ordering' ) ); ?></h2>
+
+          <?php $online_body = rl_field( 'rx_online_body' ); ?>
+          <?php if ( $online_body ) : ?>
+            <div class="rx-content-text"><?php echo wp_kses_post( $online_body ); ?></div>
+          <?php else : ?>
+            <p class="rx-content-text">Take control of your repeat prescriptions with our free online ordering system. Order your regular medications 24/7 from anywhere — at home, at work, or on the go.</p>
+            <p class="rx-content-text">Our secure portal links directly with your prescription record, allowing you to manage all your regular medications in one place with just a few clicks.</p>
+          <?php endif; ?>
 
           <div class="rx-benefits-list">
+            <?php
+            $online_benefits = rl_field( 'rx_online_benefits' );
+            if ( $online_benefits ) :
+              foreach ( $online_benefits as $ben ) :
+            ?>
             <div class="rx-benefit-item">
               <div class="rx-benefit-tick">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
               <div class="rx-benefit-text">
-                <strong>Always Open</strong>
-                <span>Order your medication whenever you need it, day or night, from any device.</span>
+                <strong><?php echo esc_html( $ben['title'] ); ?></strong>
+                <span><?php echo esc_html( $ben['description'] ); ?></span>
               </div>
             </div>
-            <div class="rx-benefit-item">
-              <div class="rx-benefit-tick">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div class="rx-benefit-text">
-                <strong>Automatic Reminders</strong>
-                <span>We remind you when it's time to reorder so you never run out of essential medication.</span>
-              </div>
-            </div>
-            <div class="rx-benefit-item">
-              <div class="rx-benefit-tick">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div class="rx-benefit-text">
-                <strong>Track Everything</strong>
-                <span>Monitor your order status from submission to delivery with real-time updates.</span>
-              </div>
-            </div>
-            <div class="rx-benefit-item">
-              <div class="rx-benefit-tick">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div class="rx-benefit-text">
-                <strong>Manage Multiple Prescriptions</strong>
-                <span>Handle all your regular medications in one convenient portal.</span>
-              </div>
-            </div>
-            <div class="rx-benefit-item">
-              <div class="rx-benefit-tick">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div class="rx-benefit-text">
-                <strong>Secure &amp; Confidential</strong>
-                <span>Your prescription information is protected with NHS-grade security.</span>
-              </div>
-            </div>
+            <?php endforeach; else : ?>
+            <div class="rx-benefit-item"><div class="rx-benefit-tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div class="rx-benefit-text"><strong>Always Open</strong><span>Order your medication whenever you need it, day or night, from any device.</span></div></div>
+            <div class="rx-benefit-item"><div class="rx-benefit-tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div class="rx-benefit-text"><strong>Automatic Reminders</strong><span>We remind you when it's time to reorder so you never run out of essential medication.</span></div></div>
+            <div class="rx-benefit-item"><div class="rx-benefit-tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div class="rx-benefit-text"><strong>Track Everything</strong><span>Monitor your order status from submission to delivery with real-time updates.</span></div></div>
+            <div class="rx-benefit-item"><div class="rx-benefit-tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div class="rx-benefit-text"><strong>Manage Multiple Prescriptions</strong><span>Handle all your regular medications in one convenient portal.</span></div></div>
+            <div class="rx-benefit-item"><div class="rx-benefit-tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div class="rx-benefit-text"><strong>Secure &amp; Confidential</strong><span>Your prescription information is protected with NHS-grade security.</span></div></div>
+            <?php endif; ?>
           </div>
 
-          <a href="tel:02082950017" class="rx-btn-primary rx-register-btn">
-            Register Now — Free Online Access
+          <a href="#locations" class="rx-btn-primary rx-register-btn">
+            Register Now — Find Your Branch
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
@@ -363,18 +381,23 @@ get_header();
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
           Repeat Dispensing
         </div>
-        <h2 class="section-title" style="color:#fff;">What is NHS Repeat Dispensing?</h2>
-        <p class="section-subtitle" style="color:rgba(255,255,255,0.75);">A smarter way to manage your long-term medications — we handle it for you.</p>
+        <h2 class="section-title" style="color:#fff;"><?php echo esc_html( rl_field( 'rx_repeat_title', 'What is NHS Repeat Dispensing?' ) ); ?></h2>
+        <p class="section-subtitle" style="color:rgba(255,255,255,0.75);"><?php echo esc_html( rl_field( 'rx_repeat_subtitle', 'A smarter way to manage your long-term medications — we handle it for you.' ) ); ?></p>
       </div>
 
       <div class="rx-repeat-grid rx-repeat-grid-dark">
         <div class="rx-repeat-text rx-repeat-text-dark">
+          <?php $repeat_body = rl_field( 'rx_repeat_body' ); ?>
+          <?php if ( $repeat_body ) : ?>
+            <?php echo wp_kses_post( $repeat_body ); ?>
+          <?php else : ?>
           <p class="rx-dark-body">
             Repeat dispensing allows your GP to issue a batch of prescriptions for medications you take regularly. This means you don't need to request a new prescription from your doctor each time you need a refill — <strong>we manage the schedule for you</strong>.
           </p>
           <p class="rx-dark-body">
             Your GP issues a batch prescription valid for up to 12 months. We dispense your medication at regular intervals according to your dosage schedule. You collect or receive delivery automatically without contacting your doctor each time.
           </p>
+          <?php endif; ?>
           <div class="rx-eps-note rx-eps-note-dark">
             <div class="rx-eps-icon rx-eps-icon-dark">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M12 9v6"/><path d="M9 12h6"/></svg>
@@ -387,34 +410,40 @@ get_header();
         </div>
 
         <div class="rx-repeat-benefits">
+          <?php
+          $repeat_benefits = rl_field( 'rx_repeat_benefits' );
+          if ( $repeat_benefits ) :
+            foreach ( $repeat_benefits as $rb ) :
+          ?>
           <div class="rx-repeat-card rx-repeat-card-dark">
             <div class="rx-repeat-icon rx-repeat-icon-dark">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             </div>
+            <h3><?php echo esc_html( $rb['title'] ); ?></h3>
+            <p><?php echo esc_html( $rb['description'] ); ?></p>
+          </div>
+          <?php endforeach; else : ?>
+          <div class="rx-repeat-card rx-repeat-card-dark">
+            <div class="rx-repeat-icon rx-repeat-icon-dark"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
             <h3>Convenience</h3>
             <p>No repeated GP appointments for the same medication. Your refills happen automatically.</p>
           </div>
           <div class="rx-repeat-card rx-repeat-card-dark">
-            <div class="rx-repeat-icon rx-repeat-icon-dark">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            </div>
+            <div class="rx-repeat-icon rx-repeat-icon-dark"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
             <h3>Time-Saving</h3>
             <p>We handle prescription requests on your behalf automatically — freeing up your time.</p>
           </div>
           <div class="rx-repeat-card rx-repeat-card-dark">
-            <div class="rx-repeat-icon rx-repeat-icon-dark">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            </div>
+            <div class="rx-repeat-icon rx-repeat-icon-dark"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
             <h3>Better Medication Management</h3>
             <p>Regular intervals ensure you never run out of essential medication.</p>
           </div>
           <div class="rx-repeat-card rx-repeat-card-dark">
-            <div class="rx-repeat-icon rx-repeat-icon-dark">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
+            <div class="rx-repeat-icon rx-repeat-icon-dark"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
             <h3>Pharmacist Monitoring</h3>
             <p>Our pharmacists monitor your medication for any concerns or interactions at every dispensing.</p>
           </div>
+          <?php endif; ?>
         </div>
       </div>
     </div>
@@ -434,8 +463,8 @@ get_header();
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 12h6"/><path d="M12 9v6"/></svg>
           All Types Welcome
         </div>
-        <h2 class="section-title" style="color:#fff;">NHS &amp; Private Prescriptions Welcome</h2>
-        <p class="section-subtitle" style="color:rgba(255,255,255,0.75);">Whatever your prescription type, we have you covered at both locations.</p>
+        <h2 class="section-title" style="color:#fff;"><?php echo wp_kses_post( rl_field( 'rx_accept_title', 'NHS &amp; Private Prescriptions Welcome' ) ); ?></h2>
+        <p class="section-subtitle" style="color:rgba(255,255,255,0.75);"><?php echo esc_html( rl_field( 'rx_accept_subtitle', 'Whatever your prescription type, we have you covered at both locations.' ) ); ?></p>
       </div>
 
       <div class="rx-accept-grid">
@@ -447,6 +476,14 @@ get_header();
             <h3>NHS Prescriptions</h3>
           </div>
           <ul class="rx-accept-list">
+            <?php
+            $nhs_items_raw = rl_field( 'rx_accept_nhs' );
+            if ( $nhs_items_raw ) :
+              $nhs_items = array_filter( array_map( 'trim', explode( "\n", $nhs_items_raw ) ) );
+              foreach ( $nhs_items as $item ) :
+            ?>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <?php echo esc_html( $item ); ?></li>
+            <?php endforeach; else : ?>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Electronic prescriptions (EPS)</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Paper prescriptions from your GP</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Hospital discharge prescriptions</li>
@@ -454,6 +491,7 @@ get_header();
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Repeat dispensing prescriptions</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Free NHS prescription delivery</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Prescription exemptions honoured</li>
+            <?php endif; ?>
           </ul>
         </div>
 
@@ -465,20 +503,29 @@ get_header();
             <h3>Private Prescriptions</h3>
           </div>
           <ul class="rx-accept-list">
+            <?php
+            $private_items_raw = rl_field( 'rx_accept_private' );
+            if ( $private_items_raw ) :
+              $private_items = array_filter( array_map( 'trim', explode( "\n", $private_items_raw ) ) );
+              foreach ( $private_items as $item ) :
+            ?>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <?php echo esc_html( $item ); ?></li>
+            <?php endforeach; else : ?>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Private GP prescriptions</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Specialist prescriptions</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="rx-inline-link">Weight loss medications</a></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Weight loss medications</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Hair loss treatments</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <a href="<?php echo esc_url( home_url( '/travel-thailand/' ) ); ?>" class="rx-inline-link">Travel medication</a></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Travel medication</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Emergency medication supplies</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Competitive private prescription pricing</li>
+            <?php endif; ?>
           </ul>
         </div>
       </div>
 
       <div class="rx-accept-statement">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        <p>Both our Chislehurst and Pond End pharmacies accept NHS and private prescriptions. We can collect prescriptions from your GP surgery or receive them electronically.</p>
+        <p><?php echo esc_html( rl_field( 'rx_accept_note', 'Both Chislehurst Pharmacy and Pond Pharmacy accept NHS and private prescriptions. We can collect prescriptions from your GP surgery or receive them electronically.' ) ); ?></p>
       </div>
     </div>
   </section>
@@ -497,15 +544,29 @@ get_header();
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
             GP Collection
           </div>
-          <h2 class="section-title" style="text-align:left;">We Collect From Your GP</h2>
-          <p class="rx-content-text">
-            Too busy to collect your prescription from your doctor? No problem. We can arrange to collect your prescription directly from your GP surgery and have it ready for you to collect or deliver to your door. Just nominate our pharmacy with your GP and we'll handle the rest.
-          </p>
+          <h2 class="section-title" style="text-align:left;"><?php echo esc_html( rl_field( 'rx_collect_title', 'We Collect From Your GP' ) ); ?></h2>
+
+          <?php $collect_body = rl_field( 'rx_collect_body' ); ?>
+          <?php if ( $collect_body ) : ?>
+            <p class="rx-content-text"><?php echo esc_html( $collect_body ); ?></p>
+          <?php else : ?>
+            <p class="rx-content-text">Too busy to collect your prescription from your doctor? No problem. We can arrange to collect your prescription directly from your GP surgery and have it ready for you to collect or deliver to your door. Just nominate our pharmacy with your GP and we'll handle the rest.</p>
+          <?php endif; ?>
 
           <div class="rx-collect-steps">
+            <?php
+            $collect_steps = rl_field( 'rx_collect_steps' );
+            if ( $collect_steps ) :
+              foreach ( $collect_steps as $i => $cs ) :
+            ?>
+            <div class="rx-collect-step">
+              <div class="rx-collect-step-num"><?php echo esc_html( $i + 1 ); ?></div>
+              <p><?php echo wp_kses_post( $cs['text'] ); ?></p>
+            </div>
+            <?php endforeach; else : ?>
             <div class="rx-collect-step">
               <div class="rx-collect-step-num">1</div>
-              <p>Tell your GP to send prescriptions to <strong>Chislehurst Pharmacy</strong> or <strong>Pond End Pharmacy</strong></p>
+              <p>Tell your GP to send prescriptions to <strong>Chislehurst Pharmacy</strong> or <strong>Pond Pharmacy</strong></p>
             </div>
             <div class="rx-collect-step">
               <div class="rx-collect-step-num">2</div>
@@ -515,11 +576,13 @@ get_header();
               <div class="rx-collect-step-num">3</div>
               <p>You collect in-store or choose <strong>free home delivery</strong> — we'll text you when it's ready</p>
             </div>
+            <?php endif; ?>
           </div>
 
           <div class="rx-collect-actions">
-            <a href="tel:02082950017" class="rx-btn-primary">Call to Set Up: 020 8295 0017</a>
-            <a href="tel:02084673158" class="rx-btn-outline">Pond End: 020 8467 3158</a>
+            <a href="#locations" class="rx-btn-primary">Find Your Branch
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
           </div>
         </div>
       </div>
@@ -543,16 +606,31 @@ get_header();
             <h3>Chislehurst Pharmacy</h3>
             <div class="location-details">
               <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-19.svg" alt="Address">
-                <p>59 Chislehurst Rd, Chislehurst BR7 5NP</p>
+                <span class="detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                </span>
+                <div class="detail-text">
+                  <span class="detail-label">Address</span>
+                  <p>59 Chislehurst Rd, Chislehurst BR7 5NP</p>
+                </div>
               </div>
               <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-32.svg" alt="Phone">
-                <a href="tel:02082950017">020 8295 0017</a>
+                <span class="detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </span>
+                <div class="detail-text">
+                  <span class="detail-label">Phone</span>
+                  <a href="tel:02082950017">020 8295 0017</a>
+                </div>
               </div>
               <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours">
-                <p>Mon–Fri: 8am–8pm | Sat: 9am–6pm | Sun: 10am–4pm</p>
+                <span class="detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </span>
+                <div class="detail-text">
+                  <span class="detail-label">Hours</span>
+                  <p>Mon–Fri: 8am–8pm | Sat: 9am–6pm | Sun: 10am–4pm</p>
+                </div>
               </div>
             </div>
             <p class="rx-location-serving">NHS prescriptions, Private prescriptions, Free delivery, Electronic prescriptions (EPS)</p>
@@ -569,28 +647,43 @@ get_header();
 
         <div class="location-card">
           <div class="location-image">
-            <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769343725749-0.jpeg" alt="Pond End Pharmacy - Chislehurst prescription delivery service">
+            <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769343725749-0.jpeg" alt="Pond Pharmacy - Chislehurst prescription delivery service">
           </div>
           <div class="location-content">
-            <h3>Pond End Pharmacy</h3>
+            <h3>Pond Pharmacy</h3>
             <div class="location-details">
               <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-19.svg" alt="Address">
-                <p>59 High St, Chislehurst BR7 5AF</p>
+                <span class="detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                </span>
+                <div class="detail-text">
+                  <span class="detail-label">Address</span>
+                  <p>59 High St, Chislehurst BR7 5AF</p>
+                </div>
               </div>
               <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-32.svg" alt="Phone">
-                <a href="tel:02084673158">020 8467 3158</a>
+                <span class="detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </span>
+                <div class="detail-text">
+                  <span class="detail-label">Phone</span>
+                  <a href="tel:02084673158">020 8467 3158</a>
+                </div>
               </div>
               <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours">
-                <p>Mon–Fri: 8am–8pm | Sat: 9am–6pm | Sun: 10am–4pm</p>
+                <span class="detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </span>
+                <div class="detail-text">
+                  <span class="detail-label">Hours</span>
+                  <p>Mon–Fri: 8am–8pm | Sat: 9am–6pm | Sun: 10am–4pm</p>
+                </div>
               </div>
             </div>
             <p class="rx-location-serving">NHS prescriptions, Private prescriptions, Free delivery, Electronic prescriptions (EPS)</p>
             <p class="rx-location-area"><em>Convenient location for Orpington, Bexley, and surrounding areas</em></p>
             <div class="rx-location-map">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2488.3!2d0.0595!3d51.4217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8ab8e8e8e8e8e%3A0x0!2s59+High+St%2C+Chislehurst+BR7+5AF!5e0!3m2!1sen!2suk!4v1234" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" title="Pond End Pharmacy map"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2488.3!2d0.0595!3d51.4217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8ab8e8e8e8e8e%3A0x0!2s59+High+St%2C+Chislehurst+BR7+5AF!5e0!3m2!1sen!2suk!4v1234" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" title="Pond Pharmacy map"></iframe>
             </div>
             <div class="location-actions">
               <a href="tel:02084673158" class="btn-primary">Call to Register</a>
@@ -621,7 +714,7 @@ get_header();
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           15+ Years of Excellence
         </div>
-        <h2 class="section-title" style="color:#fff;">Expert Pharmaceutical Care</h2>
+        <h2 class="section-title" style="color:#fff;">Why Patients Choose Us</h2>
         <p class="section-subtitle" style="color:rgba(255,255,255,0.75);">Your local pharmacist — not a faceless online service.</p>
       </div>
 
@@ -638,7 +731,7 @@ get_header();
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <h3>GPhC-Registered Pharmacists</h3>
-          <p>Expert pharmaceutical care from qualified, registered pharmacists you can trust completely.</p>
+          <p>GPhC-registered pharmacists who know your name and your medication history.</p>
         </div>
         <div class="rx-why-card">
           <div class="rx-why-icon">
@@ -692,105 +785,58 @@ get_header();
       <p class="section-subtitle">Everything you need to know about our prescription services in South East London</p>
 
       <div class="rx-faq-list">
+        <?php
+        $rx_faqs = rl_field( 'rx_faqs' );
+        if ( $rx_faqs ) :
+          foreach ( $rx_faqs as $faq ) :
+        ?>
+        <details class="rx-faq-item">
+          <summary class="rx-faq-question">
+            <span><?php echo esc_html( $faq['question'] ); ?></span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="rx-faq-answer">
+            <?php echo wp_kses_post( $faq['answer'] ); ?>
+          </div>
+        </details>
+        <?php endforeach; else : ?>
         <details class="rx-faq-item">
           <summary class="rx-faq-question">
             <span>Is prescription delivery really free?</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <div class="rx-faq-answer">
-            <p>Yes, completely free for all NHS prescriptions across South East London and beyond. No minimum order, no delivery charges, no hidden fees. We absorb the cost because we believe medication access should never be a barrier.</p>
+            <p>Yes, completely free for all NHS prescriptions across South East London and beyond. No minimum order, no delivery charges, no hidden fees.</p>
           </div>
         </details>
-
         <details class="rx-faq-item">
           <summary class="rx-faq-question">
             <span>How long does delivery take?</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <div class="rx-faq-answer">
-            <p>Most prescriptions are delivered within 24–48 hours of being dispensed. Same-day collection is available at both pharmacies when ordered before 12pm. We'll text you at every stage so you're never left guessing.</p>
+            <p>Most prescriptions are delivered within 24–48 hours of being dispensed. Same-day collection is available at both pharmacies when ordered before 12pm.</p>
           </div>
         </details>
-
-        <details class="rx-faq-item">
-          <summary class="rx-faq-question">
-            <span>Can I track my prescription delivery?</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <div class="rx-faq-answer">
-            <p>Yes. You'll receive text and email notifications when your prescription is dispensed and ready, and again when it's out for delivery. You can track your delivery in real-time to know exactly when it will arrive.</p>
-          </div>
-        </details>
-
-        <details class="rx-faq-item">
-          <summary class="rx-faq-question">
-            <span>What if I run out of medication?</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <div class="rx-faq-answer">
-            <p>We send automatic reminder texts 10 days before you're due to run out. If you've already run out, call us immediately — we can often provide an emergency supply to bridge you until your prescription arrives. Call 020 8295 0017 or 020 8467 3158.</p>
-          </div>
-        </details>
-
         <details class="rx-faq-item">
           <summary class="rx-faq-question">
             <span>Do you accept electronic prescriptions?</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <div class="rx-faq-answer">
-            <p>Yes, we are fully integrated with the NHS Electronic Prescription Service (EPS). Ask your GP to nominate either Chislehurst Pharmacy or Pond End Pharmacy as your nominated dispensing pharmacy, and they can send all your prescriptions electronically — no paper required.</p>
+            <p>Yes, we are fully integrated with the NHS Electronic Prescription Service (EPS). Ask your GP to nominate either Chislehurst Pharmacy or Pond Pharmacy as your nominated dispensing pharmacy.</p>
           </div>
         </details>
-
-        <details class="rx-faq-item">
-          <summary class="rx-faq-question">
-            <span>Can you collect my prescription from my GP?</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <div class="rx-faq-answer">
-            <p>Yes. Simply nominate our pharmacy with your GP and we'll collect prescriptions on your behalf. We'll notify you when your medication is ready for collection or delivery. Call us to arrange this service.</p>
-          </div>
-        </details>
-
-        <details class="rx-faq-item">
-          <summary class="rx-faq-question">
-            <span>Do you deliver private prescriptions?</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <div class="rx-faq-answer">
-            <p>Yes, we deliver both NHS and private prescriptions free of charge across our service area. This includes <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="rx-faq-link">weight loss medications</a>, <a href="<?php echo esc_url( home_url( '/travel-thailand/' ) ); ?>" class="rx-faq-link">travel medications</a>, hair loss treatments, and all other private prescription items.</p>
-          </div>
-        </details>
-
-        <details class="rx-faq-item">
-          <summary class="rx-faq-question">
-            <span>What areas do you deliver to?</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <div class="rx-faq-answer">
-            <p>We deliver across South East London including Chislehurst, Bromley, Orpington, Sidcup, Bexley, Eltham, and surrounding areas. Contact us to confirm free delivery to your specific postcode — we cover a wider area than most people expect.</p>
-          </div>
-        </details>
-
-        <details class="rx-faq-item">
-          <summary class="rx-faq-question">
-            <span>How do I register for online ordering?</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <div class="rx-faq-answer">
-            <p>Call us on 020 8295 0017 or 020 8467 3158 and our team will register you over the phone in just a few minutes. You'll need your name, address, date of birth, and your GP's details. You'll receive access within 24 hours.</p>
-          </div>
-        </details>
-
         <details class="rx-faq-item">
           <summary class="rx-faq-question">
             <span>Can I use both pharmacies?</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <div class="rx-faq-answer">
-            <p>Yes, you can nominate either Chislehurst Pharmacy (59 Chislehurst Rd, BR7 5NP) or Pond End Pharmacy (59 High St, BR7 5AF) — whichever is most convenient for you. Both offer the same full range of prescription services.</p>
+            <p>Yes, you can nominate either Chislehurst Pharmacy (59 Chislehurst Rd, BR7 5NP) or Pond Pharmacy (59 High St, BR7 5AF) — whichever is most convenient.</p>
           </div>
         </details>
+        <?php endif; ?>
       </div>
     </div>
   </section>
