@@ -1583,28 +1583,36 @@ body {
   opacity: 1;
 }
 
-/* ============================================
-   LOCATION CARDS — Premium Navy/Blue Treatment
-   Navy header band, white body, inline SVG icons
-   in navy-tinted pills, confident typography.
-   ============================================ */
+/* Locations Section - Premium Redesign */
 .locations-section {
   padding: 80px 0;
-  background: linear-gradient(135deg, #ffffff 0%, var(--secondary-blue) 50%, #f5f9fc 100%);
+  background: linear-gradient(135deg, var(--secondary-blue) 0%, #f5f9fc 50%, #ffffff 100%);
   position: relative;
   overflow: hidden;
 }
+
 .locations-section::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 10% 20%, rgba(10, 47, 138, 0.06) 0%, transparent 50%),
-    radial-gradient(circle at 90% 80%, rgba(90, 127, 196, 0.05) 0%, transparent 50%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(10, 47, 138, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(90, 127, 196, 0.06) 0%, transparent 50%);
   pointer-events: none;
 }
-.locations-section .container { position: relative; z-index: 1; }
-.locations-section .gradient-text-light {
+
+.locations-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Keep the fade effect on the locations heading but use darker brand
+   blues so the text remains legible on the section's light background
+   (WCAG AA for large text). */
+.locations-section .gradient-text {
   background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 40%, var(--light-blue) 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -1614,37 +1622,94 @@ body {
 
 .locations-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 32px;
-  margin-top: 48px;
+  margin-top: 56px;
 }
 
 .location-card {
   background: var(--white);
-  border-radius: 16px;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(13, 31, 78, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.location-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(13, 31, 78, 0.14);
+  box-shadow: 0 4px 24px rgba(10, 47, 138, 0.08);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(10, 47, 138, 0.12);
+  position: relative;
 }
 
-/* --- Image --- */
-.location-image {
-  position: relative;
-  width: 100%;
-  height: 280px;
-  overflow: hidden;
+.location-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 50%, #7ba3d9 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: borderRotate 3s linear infinite;
+  animation-play-state: paused;
 }
+
+@keyframes borderRotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.location-card:hover::before {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+.location-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10, 47, 138, 0.03) 0%, rgba(90, 127, 196, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.location-card:hover::after {
+  opacity: 1;
+}
+
+.location-card:hover {
+  transform: translateY(-16px) scale(1.02);
+  box-shadow: 
+    0 32px 80px rgba(10, 47, 138, 0.35),
+    0 0 0 1px rgba(10, 47, 138, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  border-color: transparent;
+}
+
+.location-image {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--secondary-blue) 0%, #f5f9fc 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
 .location-image::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.06);
+  background: linear-gradient(180deg, transparent 0%, rgba(10, 47, 138, 0.05) 100%);
   pointer-events: none;
 }
+
 .location-image img {
   width: 100%;
   height: 100%;
@@ -1652,147 +1717,129 @@ body {
   transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   display: block;
 }
+
 .location-card:hover .location-image img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
-/* --- Navy header band --- */
-.location-header {
-  background: #0D1F4E;
-  padding: 24px 32px 20px;
+.location-content {
+  padding: 40px;
 }
-.location-label {
-  display: block;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--light-blue);
-  margin-bottom: 6px;
-}
-.location-header h3 {
-  font-size: 24px;
+
+.location-content h3 {
+  font-size: 32px;
   font-weight: 800;
-  color: var(--white);
+  margin-bottom: 32px;
+  color: var(--primary-blue);
   letter-spacing: -0.02em;
   line-height: 1.2;
-  font-family: 'Playfair Display', serif;
-  margin: 0;
-}
-.location-accent-line {
-  height: 2px;
-  margin-top: 16px;
-  background: linear-gradient(90deg, var(--light-blue) 0%, transparent 100%);
-  transform: scaleX(0.6);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-}
-.location-card:hover .location-accent-line {
-  transform: scaleX(1);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
 }
 
-/* --- White body --- */
-.location-body {
-  padding: 28px 32px 32px;
+.location-card:hover .location-content h3 {
+  color: var(--primary-blue);
+  transform: translateX(4px);
 }
-.location-row {
+
+.location-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.detail-item {
   display: flex;
   align-items: flex-start;
-  gap: 14px;
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(10, 47, 138, 0.06);
+  gap: 16px;
+  padding: 16px 20px;
+  background: rgba(10, 47, 138, 0.04);
+  border-radius: 12px;
+  border: 1px solid rgba(10, 47, 138, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.location-row:last-of-type {
-  border-bottom: none;
-}
-.location-row-icon {
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  background: #E8EDF8;
-  color: var(--primary-blue);
-}
-.location-row-label {
-  display: block;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: rgba(10, 47, 138, 0.5);
-  margin-bottom: 2px;
-}
-.location-row-content p,
-.location-row-content a {
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--primary-blue);
-  line-height: 1.5;
-  text-decoration: none;
-}
-.location-row-content a:hover {
-  text-decoration: underline;
-}
-.nowrap { white-space: nowrap; }
 
-/* --- Buttons --- */
+.detail-item:hover {
+  background: rgba(10, 47, 138, 0.08);
+  border-color: rgba(10, 47, 138, 0.15);
+  transform: translateX(4px);
+}
+
+.detail-item img {
+  width: 24px;
+  height: 24px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  opacity: 0.8;
+  transition: all 0.3s;
+  filter: brightness(0) saturate(100%) invert(17%) sepia(89%) saturate(2447%) hue-rotate(215deg) brightness(95%) contrast(95%);
+}
+
+.detail-item:hover img {
+  opacity: 1;
+  transform: scale(1.15) rotate(-5deg);
+  filter: brightness(0) saturate(100%) invert(40%) sepia(68%) saturate(1000%) hue-rotate(195deg) brightness(95%) contrast(90%);
+}
+
+.location-card:hover .detail-item img {
+  filter: brightness(0) saturate(100%) invert(40%) sepia(68%) saturate(1000%) hue-rotate(195deg) brightness(95%) contrast(90%);
+}
+
+.detail-item p,
+.detail-item a {
+  font-size: 16px;
+  color: var(--text-dark);
+  line-height: 1.6;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.detail-item a {
+  font-weight: 700;
+  color: var(--primary-blue);
+  transition: color 0.3s;
+}
+
+.detail-item a:hover {
+  color: var(--primary-blue);
+}
+
 .location-actions {
   display: flex;
   gap: 12px;
-  margin-top: 24px;
-}
-.loc-btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  background: #0D1F4E;
-  color: var(--white);
-  font-size: 14px;
-  font-weight: 700;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  border: 2px solid #0D1F4E;
-}
-.loc-btn-primary:hover {
-  background: var(--primary-blue);
-  border-color: var(--primary-blue);
-}
-.loc-btn-primary .loc-arrow {
-  transition: transform 0.2s ease;
-}
-.loc-btn-primary:hover .loc-arrow {
-  transform: translateX(3px);
-}
-.loc-btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  background: transparent;
-  color: #0D1F4E;
-  font-size: 14px;
-  font-weight: 700;
-  border-radius: 8px;
-  text-decoration: none;
-  border: 2px solid rgba(13, 31, 78, 0.2);
-  transition: all 0.2s ease;
-}
-.loc-btn-secondary:hover {
-  border-color: var(--primary-blue);
-  background: rgba(13, 31, 78, 0.04);
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
 }
 
-@media (max-width: 768px) {
-  .locations-grid { grid-template-columns: 1fr; }
-  .location-header { padding: 20px 24px 16px; }
-  .location-body { padding: 20px 24px 24px; }
-  .location-actions { flex-direction: column; }
-  .loc-btn-primary, .loc-btn-secondary { width: 100%; justify-content: center; }
+.location-card:hover .location-actions .btn-primary {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+  border-color: var(--primary-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(10, 47, 138, 0.4);
+}
+
+.location-card:hover .location-actions .btn-outline {
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+}
+
+.location-actions .btn-outline:hover {
+  background: rgba(10, 47, 138, 0.08);
+  color: var(--primary-blue);
+  border-color: var(--primary-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(10, 47, 138, 0.15);
 }
 
 /* Section Styles */
