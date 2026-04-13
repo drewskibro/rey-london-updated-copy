@@ -1574,7 +1574,8 @@ body {
 }
 .hp-locations-quote span {
   font-weight: 400;
-  opacity: 0.85;
+  color: var(--primary-blue);
+  opacity: 1;
 }
 .hp-locations-quote strong {
   font-weight: 800;
