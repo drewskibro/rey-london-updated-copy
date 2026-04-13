@@ -69,7 +69,8 @@ get_header();
       <!-- Right: Visual -->
       <div class="rx-hero-visual">
         <div class="rx-hero-img-wrap">
-          <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=700&h=600&fit=crop" alt="NHS prescription services South East London — medication dispensed by GPhC pharmacist">
+          <?php $hero_img = rl_field( 'rx_hero_image' ); ?>
+          <img src="<?php echo esc_url( $hero_img ?: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=700&h=600&fit=crop' ); ?>" alt="NHS prescription services South East London — medication dispensed by GPhC pharmacist">
           <div class="rx-hero-img-overlay"></div>
         </div>
       </div>
