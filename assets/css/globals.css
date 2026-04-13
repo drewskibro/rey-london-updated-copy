@@ -1563,6 +1563,25 @@ body {
   }
 }
 
+/* Homepage locations quote — two-beat rhythm treatment */
+.hp-locations-quote {
+  font-size: 20px;
+  font-style: italic;
+  color: var(--primary-blue);
+  line-height: 1.6;
+  max-width: 620px;
+  margin: 0 auto 48px;
+}
+.hp-locations-quote span {
+  font-weight: 400;
+  opacity: 0.7;
+}
+.hp-locations-quote strong {
+  font-weight: 800;
+  font-style: italic;
+  opacity: 1;
+}
+
 /* Locations Section - Premium Redesign */
 .locations-section {
   padding: 80px 0;
