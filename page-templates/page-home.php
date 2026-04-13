@@ -130,68 +130,74 @@ get_header();
         </div>
 
         <div class="articles-grid">
-          <!-- Article 1 -->
-          <a href="<?php echo esc_url( home_url( '/health-hub/' ) ); ?>" class="article-card">
+          <?php
+          if ( function_exists( 'have_rows' ) && have_rows( 'hp_hub_articles' ) ) :
+            while ( have_rows( 'hp_hub_articles' ) ) :
+              the_row();
+              $art_image = get_sub_field( 'image' );
+              $art_badge = get_sub_field( 'badge' );
+              $art_title = get_sub_field( 'title' );
+              $art_desc  = get_sub_field( 'description' );
+              $art_url   = get_sub_field( 'url' );
+              if ( ! $art_url ) $art_url = home_url( '/health-hub/' );
+          ?>
+          <a href="<?php echo esc_url( $art_url ); ?>" class="article-card">
             <div class="article-image">
-              <img
-                src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=500&fit=crop"
-                alt="Weight Loss Guide"
-              />
-              <div class="article-badge">Weight Loss</div>
+              <?php if ( $art_image ) : ?>
+              <img src="<?php echo esc_url( $art_image ); ?>" alt="<?php echo esc_attr( $art_title ); ?>" />
+              <?php endif; ?>
+              <?php if ( $art_badge ) : ?>
+              <div class="article-badge"><?php echo esc_html( $art_badge ); ?></div>
+              <?php endif; ?>
             </div>
             <div class="article-content">
-              <h3>Why Most Patients Wish They'd Started Mounjaro Sooner</h3>
-              <p>
-                The dual-action GLP-1 delivering 20.9% average weight loss. Our pharmacist explains what patients need
-                to know.
-              </p>
+              <h3><?php echo esc_html( $art_title ); ?></h3>
+              <p><?php echo esc_html( $art_desc ); ?></p>
               <span class="article-link">
                 Read Article
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow" />
               </span>
             </div>
           </a>
-
-          <!-- Article 2 -->
+          <?php
+            endwhile;
+          else :
+          ?>
+          <!-- Fallback: hardcoded cards when ACF repeater is empty -->
           <a href="<?php echo esc_url( home_url( '/health-hub/' ) ); ?>" class="article-card">
             <div class="article-image">
-              <img
-                src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=500&fit=crop"
-                alt="Travel Health"
-              />
+              <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=500&fit=crop" alt="Weight Loss Guide" />
+              <div class="article-badge">Weight Loss</div>
+            </div>
+            <div class="article-content">
+              <h3>Why Most Patients Wish They'd Started Mounjaro Sooner</h3>
+              <p>The dual-action GLP-1 delivering 20.9% average weight loss. Our pharmacist explains what patients need to know.</p>
+              <span class="article-link">Read Article <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow" /></span>
+            </div>
+          </a>
+          <a href="<?php echo esc_url( home_url( '/health-hub/' ) ); ?>" class="article-card">
+            <div class="article-image">
+              <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=500&fit=crop" alt="Travel Health" />
               <div class="article-badge">Travel Health</div>
             </div>
             <div class="article-content">
               <h3>The Ultimate Pre-Travel Health Checklist for 2026</h3>
               <p>Vaccines, malaria prevention, health kits — everything you need before your next adventure.</p>
-              <span class="article-link">
-                Read Article
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow" />
-              </span>
+              <span class="article-link">Read Article <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow" /></span>
             </div>
           </a>
-
-          <!-- Article 3 -->
           <a href="<?php echo esc_url( home_url( '/health-hub/' ) ); ?>" class="article-card">
             <div class="article-image">
-              <img
-                src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&h=500&fit=crop"
-                alt="Flu Vaccination"
-              />
+              <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&h=500&fit=crop" alt="Flu Vaccination" />
               <div class="article-badge">Seasonal Health</div>
             </div>
             <div class="article-content">
               <h3>Who Should Get the Flu Jab This Year — and Who Pays for It</h3>
-              <p>
-                NHS eligibility changes each season. Find out if you qualify for a free jab — or whether private makes
-                sense.
-              </p>
-              <span class="article-link">
-                Read Article
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow" />
-              </span>
+              <p>NHS eligibility changes each season. Find out if you qualify for a free jab — or whether private makes sense.</p>
+              <span class="article-link">Read Article <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow" /></span>
             </div>
           </a>
+          <?php endif; ?>
         </div>
       </div>
     </section>

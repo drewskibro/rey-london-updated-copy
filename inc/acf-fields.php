@@ -545,6 +545,20 @@ acf_add_local_field_group( array(
             'type'  => 'url',
         ),
 
+        // ── HEALTH HUB ARTICLES ──
+        array( 'key' => 'field_rl_hp_hub_tab', 'label' => 'Health Hub Articles', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_hp_hub_articles', 'label' => 'Featured Articles', 'name' => 'hp_hub_articles', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Article',
+            'instructions' => 'Add 3 featured Health Hub article cards for the homepage. Each card links to the full article.',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_hp_hub_art_image', 'label' => 'Card Image', 'name' => 'image', 'type' => 'image', 'return_format' => 'url', 'instructions' => 'Landscape, approx 800x500px.' ),
+                array( 'key' => 'field_rl_hp_hub_art_badge', 'label' => 'Category Badge', 'name' => 'badge', 'type' => 'text', 'instructions' => 'e.g. "Weight Loss", "Travel Health", "Seasonal Health"' ),
+                array( 'key' => 'field_rl_hp_hub_art_title', 'label' => 'Article Title', 'name' => 'title', 'type' => 'text' ),
+                array( 'key' => 'field_rl_hp_hub_art_desc', 'label' => 'Short Description', 'name' => 'description', 'type' => 'textarea', 'rows' => 2 ),
+                array( 'key' => 'field_rl_hp_hub_art_url', 'label' => 'Article URL', 'name' => 'url', 'type' => 'url', 'instructions' => 'Full URL to the article page. Defaults to /health-hub/ if left blank.' ),
+            ),
+        ),
+
         // ── HOW IT WORKS ──
         array( 'key' => 'field_rl_hp_hiw_tab', 'label' => 'How It Works', 'type' => 'tab' ),
         array( 'key' => 'field_rl_hp_hiw_title', 'label' => 'Section Title', 'name' => 'hp_hiw_title', 'type' => 'text', 'default_value' => 'How to use our services' ),
