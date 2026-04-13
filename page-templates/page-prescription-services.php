@@ -341,10 +341,6 @@ get_header();
         <div class="rx-online-visual">
           <?php $online_img = rl_field( 'rx_online_image' ); ?>
           <img src="<?php echo esc_url( $online_img ?: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=700&fit=crop' ); ?>" alt="Online prescription ordering portal on laptop and mobile">
-          <div class="rx-online-visual-badge">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            <span>Secure &amp; NHS-grade encrypted</span>
-          </div>
         </div>
       </div>
     </div>
