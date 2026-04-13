@@ -822,8 +822,19 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-color: rgba(255, 255, 255, 0.12);
+  border-top: 3px solid rgba(255, 255, 255, 0.25);
   box-shadow: none;
 }
+
+.rx-repeat-card-dark:nth-child(1) { border-top-color: #4ecdc4; }
+.rx-repeat-card-dark:nth-child(2) { border-top-color: #f0a500; }
+.rx-repeat-card-dark:nth-child(3) { border-top-color: #a78bfa; }
+.rx-repeat-card-dark:nth-child(4) { border-top-color: #34d399; }
+
+.rx-repeat-card-dark:nth-child(1) .rx-repeat-icon-dark { background: rgba(78, 205, 196, 0.2); border-color: rgba(78, 205, 196, 0.3); }
+.rx-repeat-card-dark:nth-child(2) .rx-repeat-icon-dark { background: rgba(240, 165, 0, 0.2); border-color: rgba(240, 165, 0, 0.3); }
+.rx-repeat-card-dark:nth-child(3) .rx-repeat-icon-dark { background: rgba(167, 139, 250, 0.2); border-color: rgba(167, 139, 250, 0.3); }
+.rx-repeat-card-dark:nth-child(4) .rx-repeat-icon-dark { background: rgba(52, 211, 153, 0.2); border-color: rgba(52, 211, 153, 0.3); }
 
 .rx-repeat-card:hover {
   transform: translateY(-6px);
