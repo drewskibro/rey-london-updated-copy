@@ -141,7 +141,7 @@ $booking_url   = rl_booking_url();
           <div class="footer-bottom-content">
             <div class="footer-legal">
               <p class="footer-copyright">&copy; <?php echo esc_html( date( 'Y' ) ); ?> <?php echo esc_html( $pharmacy_name ); ?>. All rights reserved.</p>
-              <p class="footer-registration"><?php echo esc_html( rl_option( 'footer_registration', 'Registered Pharmacy | GPhC Registration: 1234567' ) ); ?></p>
+              <p class="footer-registration"><?php echo esc_html( rl_option( 'footer_registration', 'Registered Pharmacy | GPhC Registration: 1119446' ) ); ?></p>
             </div>
 
             <div class="footer-certifications">

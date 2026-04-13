@@ -1565,22 +1565,22 @@ body {
 
 /* Homepage locations quote — two-beat rhythm treatment */
 .hp-locations-quote {
-  font-size: 20px;
-  font-style: italic;
+  font-size: 18px;
+  font-style: normal;
   color: var(--primary-blue);
   line-height: 1.6;
   max-width: 620px;
   margin: 0 auto 48px;
+  font-family: 'Inter', sans-serif;
 }
 .hp-locations-quote span {
-  font-weight: 400;
-  color: var(--primary-blue);
-  opacity: 1;
+  font-weight: 500;
+  color: var(--light-blue);
 }
 .hp-locations-quote strong {
-  font-weight: 800;
-  font-style: italic;
-  opacity: 1;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
 }
 
 /* Locations Section - Premium Redesign */
@@ -1966,6 +1966,10 @@ body {
   text-align: center;
   margin-bottom: 48px;
   font-weight: 400;
+}
+
+.locations-section .section-subtitle {
+  color: var(--primary-blue);
 }
 
 /* Benefits Grid */

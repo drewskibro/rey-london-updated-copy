@@ -1,6 +1,6 @@
 <?php
 /**
- * Rey London Theme Functions
+ * Chislehurst Pharmacy Group Theme Functions
  *
  * @package Rey_London
  * @version 1.0.0
@@ -226,7 +226,7 @@ function rl_field( $field_name, $default = '' ) {
  * Helper: Get pharmacy name
  */
 function rl_pharmacy_name() {
-    return rl_option( 'pharmacy_name', 'Rey London' );
+    return rl_option( 'pharmacy_name', 'Chislehurst Pharmacy Group' );
 }
 
 /**
@@ -330,7 +330,7 @@ function rey_london_body_classes( $classes ) {
 add_filter( 'body_class', 'rey_london_body_classes' );
 
 /**
- * Force Classic Editor for pages using Rey London templates.
+ * Force Classic Editor for pages using Chislehurst Pharmacy Group templates.
  */
 function rey_london_disable_gutenberg_for_templates( $use_block_editor, $post ) {
     if ( empty( $post->ID ) ) {
