@@ -1968,6 +1968,10 @@ body {
   font-weight: 400;
 }
 
+.locations-section .section-subtitle {
+  color: var(--primary-blue);
+}
+
 /* Benefits Grid */
 .benefits-grid {
   display: grid;
