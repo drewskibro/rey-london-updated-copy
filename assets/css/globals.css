@@ -2283,6 +2283,7 @@ body {
 
 .testimonials-trust-item {
   text-align: center;
+  min-width: 160px;
 }
 
 .testimonials-trust-number {
