@@ -37,11 +37,11 @@ get_header();
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
-          <a href="tel:02082950017" class="rx-btn-secondary">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M14.5 11.5V13.5C14.5 14.05 14.05 14.5 13.5 14.5C6.6 14.5 1 8.9 1 2C1 1.45 1.45 1 2 1H4.5C5.05 1 5.5 1.45 5.5 2V4.5C5.5 5.05 5.05 5.5 4.5 5.5H3.5C4 8.5 6.5 11 9.5 11.5V10.5C9.5 9.95 9.95 9.5 10.5 9.5H13C13.55 9.5 14 9.95 14 10.5V11.5Z" fill="currentColor"/>
+          <a href="#locations" class="rx-btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
             </svg>
-            Call Chislehurst: 020 8295 0017
+            Find Your Branch
           </a>
         </div>
 
@@ -144,7 +144,7 @@ get_header();
       </div>
 
       <p class="rx-intro-text">
-        Managing your NHS or private prescriptions has never been easier. Our South East London pharmacies offer comprehensive prescription services including free delivery, electronic prescriptions, automatic refills, and expert pharmaceutical care. Serving patients across <strong>Chislehurst, Bromley, Orpington, Sidcup, Bexley</strong>, and surrounding areas.
+        Managing your NHS or private prescriptions has never been easier. Our South East London pharmacies offer comprehensive prescription services including free delivery, electronic prescriptions, and automatic refills. Serving patients across <strong>Chislehurst, Bromley, Orpington, Sidcup, Bexley</strong>, and surrounding areas.
       </p>
 
       <div class="rx-steps-grid">
@@ -177,7 +177,7 @@ get_header();
           <div class="rx-step-content">
             <div class="rx-step-num">03</div>
             <h3>Free Delivery or Collection</h3>
-            <p>Choose free home delivery tracked to your door, or collect from either Chislehurst or Pond End pharmacy at your convenience.</p>
+            <p>Choose free home delivery tracked to your door, or collect from either Chislehurst Pharmacy or Pond Pharmacy at your convenience.</p>
           </div>
         </div>
       </div>
@@ -258,8 +258,8 @@ get_header();
           Register for Free Delivery
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a href="tel:02082950017" class="rx-btn-ghost">
-          Call Us: 020 8295 0017
+        <a href="#locations" class="rx-btn-ghost">
+          Find Your Branch
         </a>
       </div>
     </div>
@@ -332,8 +332,8 @@ get_header();
             </div>
           </div>
 
-          <a href="tel:02082950017" class="rx-btn-primary rx-register-btn">
-            Register Now — Free Online Access
+          <a href="#locations" class="rx-btn-primary rx-register-btn">
+            Register Now — Find Your Branch
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
@@ -478,7 +478,7 @@ get_header();
 
       <div class="rx-accept-statement">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        <p>Both our Chislehurst and Pond End pharmacies accept NHS and private prescriptions. We can collect prescriptions from your GP surgery or receive them electronically.</p>
+        <p>Both Chislehurst Pharmacy and Pond Pharmacy accept NHS and private prescriptions. We can collect prescriptions from your GP surgery or receive them electronically.</p>
       </div>
     </div>
   </section>
@@ -505,7 +505,7 @@ get_header();
           <div class="rx-collect-steps">
             <div class="rx-collect-step">
               <div class="rx-collect-step-num">1</div>
-              <p>Tell your GP to send prescriptions to <strong>Chislehurst Pharmacy</strong> or <strong>Pond End Pharmacy</strong></p>
+              <p>Tell your GP to send prescriptions to <strong>Chislehurst Pharmacy</strong> or <strong>Pond Pharmacy</strong></p>
             </div>
             <div class="rx-collect-step">
               <div class="rx-collect-step-num">2</div>
@@ -518,8 +518,9 @@ get_header();
           </div>
 
           <div class="rx-collect-actions">
-            <a href="tel:02082950017" class="rx-btn-primary">Call to Set Up: 020 8295 0017</a>
-            <a href="tel:02084673158" class="rx-btn-outline">Pond End: 020 8467 3158</a>
+            <a href="#locations" class="rx-btn-primary">Find Your Branch
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
           </div>
         </div>
       </div>
@@ -543,16 +544,31 @@ get_header();
             <h3>Chislehurst Pharmacy</h3>
             <div class="location-details">
               <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-19.svg" alt="Address">
-                <p>59 Chislehurst Rd, Chislehurst BR7 5NP</p>
+                <span class="detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                </span>
+                <div class="detail-text">
+                  <span class="detail-label">Address</span>
+                  <p>59 Chislehurst Rd, Chislehurst BR7 5NP</p>
+                </div>
               </div>
               <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-32.svg" alt="Phone">
-                <a href="tel:02082950017">020 8295 0017</a>
+                <span class="detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </span>
+                <div class="detail-text">
+                  <span class="detail-label">Phone</span>
+                  <a href="tel:02082950017">020 8295 0017</a>
+                </div>
               </div>
               <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours">
-                <p>Mon–Fri: 8am–8pm | Sat: 9am–6pm | Sun: 10am–4pm</p>
+                <span class="detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </span>
+                <div class="detail-text">
+                  <span class="detail-label">Hours</span>
+                  <p>Mon–Fri: 8am–8pm | Sat: 9am–6pm | Sun: 10am–4pm</p>
+                </div>
               </div>
             </div>
             <p class="rx-location-serving">NHS prescriptions, Private prescriptions, Free delivery, Electronic prescriptions (EPS)</p>
@@ -569,28 +585,43 @@ get_header();
 
         <div class="location-card">
           <div class="location-image">
-            <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769343725749-0.jpeg" alt="Pond End Pharmacy - Chislehurst prescription delivery service">
+            <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769343725749-0.jpeg" alt="Pond Pharmacy - Chislehurst prescription delivery service">
           </div>
           <div class="location-content">
-            <h3>Pond End Pharmacy</h3>
+            <h3>Pond Pharmacy</h3>
             <div class="location-details">
               <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-19.svg" alt="Address">
-                <p>59 High St, Chislehurst BR7 5AF</p>
+                <span class="detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                </span>
+                <div class="detail-text">
+                  <span class="detail-label">Address</span>
+                  <p>59 High St, Chislehurst BR7 5AF</p>
+                </div>
               </div>
               <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-32.svg" alt="Phone">
-                <a href="tel:02084673158">020 8467 3158</a>
+                <span class="detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </span>
+                <div class="detail-text">
+                  <span class="detail-label">Phone</span>
+                  <a href="tel:02084673158">020 8467 3158</a>
+                </div>
               </div>
               <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours">
-                <p>Mon–Fri: 8am–8pm | Sat: 9am–6pm | Sun: 10am–4pm</p>
+                <span class="detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </span>
+                <div class="detail-text">
+                  <span class="detail-label">Hours</span>
+                  <p>Mon–Fri: 8am–8pm | Sat: 9am–6pm | Sun: 10am–4pm</p>
+                </div>
               </div>
             </div>
             <p class="rx-location-serving">NHS prescriptions, Private prescriptions, Free delivery, Electronic prescriptions (EPS)</p>
             <p class="rx-location-area"><em>Convenient location for Orpington, Bexley, and surrounding areas</em></p>
             <div class="rx-location-map">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2488.3!2d0.0595!3d51.4217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8ab8e8e8e8e8e%3A0x0!2s59+High+St%2C+Chislehurst+BR7+5AF!5e0!3m2!1sen!2suk!4v1234" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" title="Pond End Pharmacy map"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2488.3!2d0.0595!3d51.4217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8ab8e8e8e8e8e%3A0x0!2s59+High+St%2C+Chislehurst+BR7+5AF!5e0!3m2!1sen!2suk!4v1234" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" title="Pond Pharmacy map"></iframe>
             </div>
             <div class="location-actions">
               <a href="tel:02084673158" class="btn-primary">Call to Register</a>
@@ -621,7 +652,7 @@ get_header();
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           15+ Years of Excellence
         </div>
-        <h2 class="section-title" style="color:#fff;">Expert Pharmaceutical Care</h2>
+        <h2 class="section-title" style="color:#fff;">Why Patients Choose Us</h2>
         <p class="section-subtitle" style="color:rgba(255,255,255,0.75);">Your local pharmacist — not a faceless online service.</p>
       </div>
 
@@ -638,7 +669,7 @@ get_header();
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <h3>GPhC-Registered Pharmacists</h3>
-          <p>Expert pharmaceutical care from qualified, registered pharmacists you can trust completely.</p>
+          <p>GPhC-registered pharmacists who know your name and your medication history.</p>
         </div>
         <div class="rx-why-card">
           <div class="rx-why-icon">
@@ -692,105 +723,58 @@ get_header();
       <p class="section-subtitle">Everything you need to know about our prescription services in South East London</p>
 
       <div class="rx-faq-list">
+        <?php
+        $rx_faqs = rl_field( 'rx_faqs' );
+        if ( $rx_faqs ) :
+          foreach ( $rx_faqs as $faq ) :
+        ?>
+        <details class="rx-faq-item">
+          <summary class="rx-faq-question">
+            <span><?php echo esc_html( $faq['question'] ); ?></span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="rx-faq-answer">
+            <?php echo wp_kses_post( $faq['answer'] ); ?>
+          </div>
+        </details>
+        <?php endforeach; else : ?>
         <details class="rx-faq-item">
           <summary class="rx-faq-question">
             <span>Is prescription delivery really free?</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <div class="rx-faq-answer">
-            <p>Yes, completely free for all NHS prescriptions across South East London and beyond. No minimum order, no delivery charges, no hidden fees. We absorb the cost because we believe medication access should never be a barrier.</p>
+            <p>Yes, completely free for all NHS prescriptions across South East London and beyond. No minimum order, no delivery charges, no hidden fees.</p>
           </div>
         </details>
-
         <details class="rx-faq-item">
           <summary class="rx-faq-question">
             <span>How long does delivery take?</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <div class="rx-faq-answer">
-            <p>Most prescriptions are delivered within 24–48 hours of being dispensed. Same-day collection is available at both pharmacies when ordered before 12pm. We'll text you at every stage so you're never left guessing.</p>
+            <p>Most prescriptions are delivered within 24–48 hours of being dispensed. Same-day collection is available at both pharmacies when ordered before 12pm.</p>
           </div>
         </details>
-
-        <details class="rx-faq-item">
-          <summary class="rx-faq-question">
-            <span>Can I track my prescription delivery?</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <div class="rx-faq-answer">
-            <p>Yes. You'll receive text and email notifications when your prescription is dispensed and ready, and again when it's out for delivery. You can track your delivery in real-time to know exactly when it will arrive.</p>
-          </div>
-        </details>
-
-        <details class="rx-faq-item">
-          <summary class="rx-faq-question">
-            <span>What if I run out of medication?</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <div class="rx-faq-answer">
-            <p>We send automatic reminder texts 10 days before you're due to run out. If you've already run out, call us immediately — we can often provide an emergency supply to bridge you until your prescription arrives. Call 020 8295 0017 or 020 8467 3158.</p>
-          </div>
-        </details>
-
         <details class="rx-faq-item">
           <summary class="rx-faq-question">
             <span>Do you accept electronic prescriptions?</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <div class="rx-faq-answer">
-            <p>Yes, we are fully integrated with the NHS Electronic Prescription Service (EPS). Ask your GP to nominate either Chislehurst Pharmacy or Pond End Pharmacy as your nominated dispensing pharmacy, and they can send all your prescriptions electronically — no paper required.</p>
+            <p>Yes, we are fully integrated with the NHS Electronic Prescription Service (EPS). Ask your GP to nominate either Chislehurst Pharmacy or Pond Pharmacy as your nominated dispensing pharmacy.</p>
           </div>
         </details>
-
-        <details class="rx-faq-item">
-          <summary class="rx-faq-question">
-            <span>Can you collect my prescription from my GP?</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <div class="rx-faq-answer">
-            <p>Yes. Simply nominate our pharmacy with your GP and we'll collect prescriptions on your behalf. We'll notify you when your medication is ready for collection or delivery. Call us to arrange this service.</p>
-          </div>
-        </details>
-
-        <details class="rx-faq-item">
-          <summary class="rx-faq-question">
-            <span>Do you deliver private prescriptions?</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <div class="rx-faq-answer">
-            <p>Yes, we deliver both NHS and private prescriptions free of charge across our service area. This includes <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="rx-faq-link">weight loss medications</a>, <a href="<?php echo esc_url( home_url( '/travel-thailand/' ) ); ?>" class="rx-faq-link">travel medications</a>, hair loss treatments, and all other private prescription items.</p>
-          </div>
-        </details>
-
-        <details class="rx-faq-item">
-          <summary class="rx-faq-question">
-            <span>What areas do you deliver to?</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <div class="rx-faq-answer">
-            <p>We deliver across South East London including Chislehurst, Bromley, Orpington, Sidcup, Bexley, Eltham, and surrounding areas. Contact us to confirm free delivery to your specific postcode — we cover a wider area than most people expect.</p>
-          </div>
-        </details>
-
-        <details class="rx-faq-item">
-          <summary class="rx-faq-question">
-            <span>How do I register for online ordering?</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <div class="rx-faq-answer">
-            <p>Call us on 020 8295 0017 or 020 8467 3158 and our team will register you over the phone in just a few minutes. You'll need your name, address, date of birth, and your GP's details. You'll receive access within 24 hours.</p>
-          </div>
-        </details>
-
         <details class="rx-faq-item">
           <summary class="rx-faq-question">
             <span>Can I use both pharmacies?</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <div class="rx-faq-answer">
-            <p>Yes, you can nominate either Chislehurst Pharmacy (59 Chislehurst Rd, BR7 5NP) or Pond End Pharmacy (59 High St, BR7 5AF) — whichever is most convenient for you. Both offer the same full range of prescription services.</p>
+            <p>Yes, you can nominate either Chislehurst Pharmacy (59 Chislehurst Rd, BR7 5NP) or Pond Pharmacy (59 High St, BR7 5AF) — whichever is most convenient.</p>
           </div>
         </details>
+        <?php endif; ?>
       </div>
     </div>
   </section>
