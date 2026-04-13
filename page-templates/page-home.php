@@ -380,64 +380,78 @@ get_header();
               <img src="<?php echo esc_url( $loc['image'] ); ?>" alt="<?php echo esc_attr( $loc['name'] ); ?>" />
             </div>
             <?php endif; ?>
-            <div class="location-header">
-              <span class="location-label">Chislehurst</span>
+            <div class="location-content">
               <h3><?php echo esc_html( $loc['name'] ); ?></h3>
-              <div class="location-accent-line"></div>
-            </div>
-            <div class="location-body">
-              <div class="location-row">
-                <div class="location-row-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-                <div class="location-row-content">
-                  <span class="location-row-label">Address</span>
+              <div class="location-details">
+                <div class="detail-item">
+                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-19.svg" alt="Address" />
                   <p><?php echo esc_html( $loc['address'] ); ?></p>
                 </div>
-              </div>
-              <div class="location-row">
-                <div class="location-row-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-                <div class="location-row-content">
-                  <span class="location-row-label">Phone</span>
+                <div class="detail-item">
+                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-32.svg" alt="Phone" />
                   <a href="tel:<?php echo esc_attr( $phone_digits ); ?>"><?php echo esc_html( $loc['phone'] ); ?></a>
                 </div>
-              </div>
-              <div class="location-row">
-                <div class="location-row-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-                <div class="location-row-content">
-                  <span class="location-row-label">Hours</span>
+                <div class="detail-item">
+                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours" />
                   <p><?php echo esc_html( $loc['hours'] ); ?></p>
                 </div>
               </div>
               <div class="location-actions">
-                <a href="<?php echo esc_url( $loc['directions_url'] ?: '#directions' ); ?>" target="_blank" rel="noopener" class="loc-btn-primary">Get Directions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="loc-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                <a href="tel:<?php echo esc_attr( $phone_digits ); ?>" class="loc-btn-secondary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="loc-phone-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3"/></svg> Call Now</a>
+                <a href="<?php echo esc_url( $loc['directions_url'] ?: '#directions' ); ?>" target="_blank" rel="noopener" class="btn-primary">Get Directions</a>
+                <a href="tel:<?php echo esc_attr( $phone_digits ); ?>" class="btn-outline">Call Now</a>
               </div>
             </div>
           </div>
           <?php endforeach; else : ?>
-          <!-- Fallback cards -->
           <div class="location-card">
-            <div class="location-image"><img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769343725749-0.jpeg" alt="Pond Pharmacy" /></div>
-            <div class="location-header"><span class="location-label">Chislehurst</span><h3>Pond Pharmacy</h3><div class="location-accent-line"></div></div>
-            <div class="location-body">
-              <div class="location-row"><div class="location-row-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="location-row-content"><span class="location-row-label">Address</span><p>59 High St, Chislehurst <span class="nowrap">BR7 5AF</span></p></div></div>
-              <div class="location-row"><div class="location-row-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3"/></svg></div><div class="location-row-content"><span class="location-row-label">Phone</span><a href="tel:02084673158">020 8467 3158</a></div></div>
-              <div class="location-row"><div class="location-row-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div class="location-row-content"><span class="location-row-label">Hours</span><p>Mon–Fri: 8.30am–6.30pm | Sat: 9am–2pm | Sun: Closed</p></div></div>
+            <div class="location-image">
+              <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769343725749-0.jpeg" alt="Pond Pharmacy" />
+            </div>
+            <div class="location-content">
+              <h3>Pond Pharmacy</h3>
+              <div class="location-details">
+                <div class="detail-item">
+                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-19.svg" alt="Address" />
+                  <p>59 High St, Chislehurst BR7 5AF</p>
+                </div>
+                <div class="detail-item">
+                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-32.svg" alt="Phone" />
+                  <a href="tel:02084673158">020 8467 3158</a>
+                </div>
+                <div class="detail-item">
+                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours" />
+                  <p>Mon-Fri: 8am-8pm | Sat: 9am-6pm | Sun: 10am-4pm</p>
+                </div>
+              </div>
               <div class="location-actions">
-                <a href="#directions" target="_blank" rel="noopener" class="loc-btn-primary">Get Directions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="loc-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                <a href="tel:02084673158" class="loc-btn-secondary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="loc-phone-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3"/></svg> Call Now</a>
+                <a href="#directions" target="_blank" rel="noopener" class="btn-primary">Get Directions</a>
+                <a href="tel:02084673158" class="btn-outline">Call Now</a>
               </div>
             </div>
           </div>
           <div class="location-card">
-            <div class="location-image"><img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769344823391-0.jpeg" alt="Chislehurst Pharmacy" /></div>
-            <div class="location-header"><span class="location-label">Chislehurst</span><h3>Chislehurst Pharmacy</h3><div class="location-accent-line"></div></div>
-            <div class="location-body">
-              <div class="location-row"><div class="location-row-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="location-row-content"><span class="location-row-label">Address</span><p>59 Chislehurst Rd, Chislehurst <span class="nowrap">BR7 5NP</span></p></div></div>
-              <div class="location-row"><div class="location-row-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3"/></svg></div><div class="location-row-content"><span class="location-row-label">Phone</span><a href="tel:02082950017">020 8295 0017</a></div></div>
-              <div class="location-row"><div class="location-row-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div class="location-row-content"><span class="location-row-label">Hours</span><p>Mon–Fri: 9am–6pm | Sat: 9am–1pm | Sun: Closed</p></div></div>
+            <div class="location-image">
+              <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769344823391-0.jpeg" alt="Chislehurst Pharmacy" />
+            </div>
+            <div class="location-content">
+              <h3>Chislehurst Pharmacy</h3>
+              <div class="location-details">
+                <div class="detail-item">
+                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-19.svg" alt="Address" />
+                  <p>59 Chislehurst Rd, Chislehurst BR7 5NP</p>
+                </div>
+                <div class="detail-item">
+                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-32.svg" alt="Phone" />
+                  <a href="tel:02082950017">020 8295 0017</a>
+                </div>
+                <div class="detail-item">
+                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours" />
+                  <p>Mon-Fri: 8am-8pm | Sat: 9am-6pm | Sun: 10am-4pm</p>
+                </div>
+              </div>
               <div class="location-actions">
-                <a href="#directions" target="_blank" rel="noopener" class="loc-btn-primary">Get Directions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="loc-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                <a href="tel:02082950017" class="loc-btn-secondary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="loc-phone-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3"/></svg> Call Now</a>
+                <a href="#directions" target="_blank" rel="noopener" class="btn-primary">Get Directions</a>
+                <a href="tel:02082950017" class="btn-outline">Call Now</a>
               </div>
             </div>
           </div>
