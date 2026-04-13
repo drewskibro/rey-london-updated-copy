@@ -295,17 +295,17 @@ get_header();
       <div class="rx-online-grid">
         <div class="rx-online-content">
           <div class="rx-pill">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-            Online Ordering
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Your Local Pharmacy
           </div>
-          <h2 class="section-title" style="text-align:left;"><?php echo esc_html( rl_field( 'rx_online_title', 'Register for Free Online Prescription Ordering' ) ); ?></h2>
+          <h2 class="section-title" style="text-align:left;"><?php echo esc_html( rl_field( 'rx_online_title', 'Your Local Pharmacy, Here When You Need Us' ) ); ?></h2>
 
           <?php $online_body = rl_field( 'rx_online_body' ); ?>
           <?php if ( $online_body ) : ?>
             <div class="rx-content-text"><?php echo wp_kses_post( $online_body ); ?></div>
           <?php else : ?>
-            <p class="rx-content-text">Take control of your repeat prescriptions with our free online ordering system. Order your regular medications 24/7 from anywhere — at home, at work, or on the go.</p>
-            <p class="rx-content-text">Our secure portal links directly with your prescription record, allowing you to manage all your regular medications in one place with just a few clicks.</p>
+            <p class="rx-content-text">Managing your NHS or private prescriptions is simple when you have a trusted pharmacy team behind you. Visit any of our South East London branches and let our GPhC-registered pharmacists take care of everything in person.</p>
+            <p class="rx-content-text">Our pharmacists are on hand to handle your repeat prescriptions, answer your medication questions, and make sure you never run out of what you need — all with the personal care you'd expect from a local pharmacy.</p>
           <?php endif; ?>
 
           <div class="rx-benefits-list">
@@ -324,16 +324,16 @@ get_header();
               </div>
             </div>
             <?php endforeach; else : ?>
-            <div class="rx-benefit-item"><div class="rx-benefit-tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div class="rx-benefit-text"><strong>Always Open</strong><span>Order your medication whenever you need it, day or night, from any device.</span></div></div>
-            <div class="rx-benefit-item"><div class="rx-benefit-tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div class="rx-benefit-text"><strong>Automatic Reminders</strong><span>We remind you when it's time to reorder so you never run out of essential medication.</span></div></div>
-            <div class="rx-benefit-item"><div class="rx-benefit-tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div class="rx-benefit-text"><strong>Track Everything</strong><span>Monitor your order status from submission to collection with real-time updates.</span></div></div>
-            <div class="rx-benefit-item"><div class="rx-benefit-tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div class="rx-benefit-text"><strong>Manage Multiple Prescriptions</strong><span>Handle all your regular medications in one convenient portal.</span></div></div>
-            <div class="rx-benefit-item"><div class="rx-benefit-tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div class="rx-benefit-text"><strong>Secure &amp; Confidential</strong><span>Your prescription information is protected with NHS-grade security.</span></div></div>
+            <div class="rx-benefit-item"><div class="rx-benefit-tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div class="rx-benefit-text"><strong>Expert Advice In Store</strong><span>Speak directly with our GPhC-registered pharmacists about your medications, dosage, and treatment.</span></div></div>
+            <div class="rx-benefit-item"><div class="rx-benefit-tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div class="rx-benefit-text"><strong>Repeat Prescriptions Made Easy</strong><span>Bring in your prescription and we'll have it ready for you quickly and accurately.</span></div></div>
+            <div class="rx-benefit-item"><div class="rx-benefit-tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div class="rx-benefit-text"><strong>All Prescriptions Welcome</strong><span>We accept NHS and private prescriptions across all our branches.</span></div></div>
+            <div class="rx-benefit-item"><div class="rx-benefit-tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div class="rx-benefit-text"><strong>A Pharmacy You Can Trust</strong><span>Serving patients across Chislehurst, Bromley, Orpington, Sidcup, and Bexley with expert, personalised care.</span></div></div>
+            <div class="rx-benefit-item"><div class="rx-benefit-tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div class="rx-benefit-text"><strong>Safe &amp; Confidential</strong><span>Your health information is always handled with the utmost care and discretion.</span></div></div>
             <?php endif; ?>
           </div>
 
           <a href="#locations" class="rx-btn-primary rx-register-btn">
-            Register Now — Find Your Branch
+            Find Your Nearest Branch
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
