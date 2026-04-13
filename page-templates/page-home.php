@@ -397,7 +397,7 @@ get_header();
                 </div>
               </div>
               <div class="location-actions">
-                <a href="<?php echo esc_url( $loc['directions_url'] ?: '#directions' ); ?>" class="btn-primary">Get Directions</a>
+                <a href="<?php echo esc_url( $loc['directions_url'] ?: '#directions' ); ?>" target="_blank" rel="noopener" class="btn-primary">Get Directions</a>
                 <a href="tel:<?php echo esc_attr( $phone_digits ); ?>" class="btn-outline">Call Now</a>
               </div>
             </div>
@@ -424,7 +424,7 @@ get_header();
                 </div>
               </div>
               <div class="location-actions">
-                <a href="#directions" class="btn-primary">Get Directions</a>
+                <a href="#directions" target="_blank" rel="noopener" class="btn-primary">Get Directions</a>
                 <a href="tel:02084673158" class="btn-outline">Call Now</a>
               </div>
             </div>
@@ -450,7 +450,7 @@ get_header();
                 </div>
               </div>
               <div class="location-actions">
-                <a href="#directions" class="btn-primary">Get Directions</a>
+                <a href="#directions" target="_blank" rel="noopener" class="btn-primary">Get Directions</a>
                 <a href="tel:02082950017" class="btn-outline">Call Now</a>
               </div>
             </div>
