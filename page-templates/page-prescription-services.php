@@ -516,7 +516,8 @@ get_header();
     <div class="container">
       <div class="rx-collect-grid">
         <div class="rx-collect-visual">
-          <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600&h=500&fit=crop" alt="Pharmacist collecting prescription from GP surgery South East London">
+          <?php $collect_img = rl_field( 'rx_collect_image' ); ?>
+          <img src="<?php echo esc_url( $collect_img ?: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600&h=500&fit=crop' ); ?>" alt="Pharmacist collecting prescription from GP surgery South East London">
         </div>
         <div class="rx-collect-content">
           <div class="rx-pill">

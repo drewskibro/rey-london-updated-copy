@@ -2104,6 +2104,7 @@ acf_add_local_field_group( array(
         array( 'key' => 'field_rl_rx_accept_private', 'label' => 'Private Prescription Items (one per line)', 'name' => 'rx_accept_private', 'type' => 'textarea', 'rows' => 8 ),
         array( 'key' => 'field_rl_rx_accept_note', 'label' => 'Footer Note', 'name' => 'rx_accept_note', 'type' => 'textarea', 'rows' => 3 ),
         array( 'key' => 'field_rl_rx_collect_tab', 'label' => 'Collection Service', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_rx_collect_image', 'label' => 'Section Image', 'name' => 'rx_collect_image', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'medium', 'instructions' => 'Recommended size: 600×500px' ),
         array( 'key' => 'field_rl_rx_collect_title', 'label' => 'Section Title', 'name' => 'rx_collect_title', 'type' => 'text', 'default_value' => 'We Collect From Your GP' ),
         array( 'key' => 'field_rl_rx_collect_body', 'label' => 'Body Text', 'name' => 'rx_collect_body', 'type' => 'textarea', 'rows' => 4 ),
         array(
