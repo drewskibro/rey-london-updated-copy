@@ -1607,6 +1607,9 @@ a.featured-btn:hover svg {
   margin: 0 auto 48px;
   font-family: 'Inter', sans-serif;
 }
+.hp-locations-quote.section-subtitle {
+  color: var(--primary-blue);
+}
 .hp-locations-quote span {
   font-weight: 500;
   color: var(--light-blue);
