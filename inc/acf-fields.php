@@ -2076,6 +2076,7 @@ acf_add_local_field_group( array(
             ),
         ),
         array( 'key' => 'field_rl_rx_online_tab', 'label' => 'Online Ordering', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_rx_online_image', 'label' => 'Section Image', 'name' => 'rx_online_image', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'medium', 'instructions' => 'Recommended size: 600×700px' ),
         array( 'key' => 'field_rl_rx_online_title', 'label' => 'Section Title', 'name' => 'rx_online_title', 'type' => 'text', 'default_value' => 'Register for Free Online Prescription Ordering' ),
         array( 'key' => 'field_rl_rx_online_body', 'label' => 'Body Text', 'name' => 'rx_online_body', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0 ),
         array(
