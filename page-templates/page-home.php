@@ -841,13 +841,13 @@ get_header();
         <!-- Trust Indicators -->
         <div class="testimonials-trust">
           <div class="testimonials-trust-item">
-            <div class="testimonials-trust-number">4.9/5</div>
-            <div class="testimonials-trust-label">Average Rating</div>
+            <div class="testimonials-trust-number">2</div>
+            <div class="testimonials-trust-label">Chislehurst Locations</div>
           </div>
           <div class="testimonials-trust-divider"></div>
           <div class="testimonials-trust-item">
-            <div class="testimonials-trust-number">400+</div>
-            <div class="testimonials-trust-label">5-Star Reviews</div>
+            <div class="testimonials-trust-number">Same Day</div>
+            <div class="testimonials-trust-label">Appointments Available</div>
           </div>
           <div class="testimonials-trust-divider"></div>
           <div class="testimonials-trust-item">
