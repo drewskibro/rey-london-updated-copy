@@ -28,7 +28,7 @@ get_header();
           <?php echo wp_kses_post( rl_field( 'rx_hero_title', 'NHS &amp; Private Prescription Services in <span class="rx-gradient-text">South East London</span>' ) ); ?>
         </h1>
         <p class="rx-hero-subtitle">
-          <?php echo esc_html( rl_field( 'rx_hero_subtitle', 'Free delivery, online ordering, and automatic refills. Your prescriptions delivered to your door with expert care from our GPhC-registered pharmacists.' ) ); ?>
+          <?php echo esc_html( rl_field( 'rx_hero_subtitle', 'Online ordering, automatic refills, and same-day collection. Your prescriptions managed by our GPhC-registered pharmacists.' ) ); ?>
         </p>
         <div class="rx-hero-actions">
           <a href="#register" class="rx-btn-primary">
@@ -49,7 +49,7 @@ get_header();
         <div class="rx-hero-trust">
           <div class="rx-trust-item">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-            <span>Free NHS Delivery</span>
+            <span>NHS Prescriptions</span>
           </div>
           <div class="rx-trust-item">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -69,27 +69,8 @@ get_header();
       <!-- Right: Visual -->
       <div class="rx-hero-visual">
         <div class="rx-hero-img-wrap">
-          <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=700&h=600&fit=crop" alt="Free prescription delivery service South East London — NHS medication dispensed by GPhC pharmacist">
+          <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=700&h=600&fit=crop" alt="NHS prescription services South East London — medication dispensed by GPhC pharmacist">
           <div class="rx-hero-img-overlay"></div>
-        </div>
-        <!-- Floating stat cards -->
-        <div class="rx-stat-card rx-stat-card-1">
-          <div class="rx-stat-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <div class="rx-stat-text">
-            <strong>GPhC Registered</strong>
-            <span>Qualified pharmacists</span>
-          </div>
-        </div>
-        <div class="rx-stat-card rx-stat-card-2">
-          <div class="rx-stat-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          </div>
-          <div class="rx-stat-text">
-            <strong>24–48hr Delivery</strong>
-            <span>Tracked to your door</span>
-          </div>
         </div>
       </div>
     </div>
@@ -115,7 +96,7 @@ get_header();
         <?php endforeach; else : ?>
         <div class="rx-stat-item">
           <div class="rx-stat-number">Free</div>
-          <div class="rx-stat-label">NHS Prescription Delivery</div>
+          <div class="rx-stat-label">NHS Prescription Collection</div>
         </div>
         <div class="rx-stat-divider"></div>
         <div class="rx-stat-item">
@@ -161,7 +142,7 @@ get_header();
         <div class="rx-intro-text"><?php echo wp_kses_post( $hiw_intro ); ?></div>
       <?php else : ?>
         <p class="rx-intro-text">
-          Managing your NHS or private prescriptions has never been easier. Our South East London pharmacies offer comprehensive prescription services including free delivery, electronic prescriptions, and automatic refills. Serving patients across <strong>Chislehurst, Bromley, Orpington, Sidcup, Bexley</strong>, and surrounding areas.
+          Managing your NHS or private prescriptions has never been easier. Our South East London pharmacies offer comprehensive prescription services including electronic prescriptions, automatic refills, and same-day collection. Serving patients across <strong>Chislehurst, Bromley, Orpington, Sidcup, Bexley</strong>, and surrounding areas.
         </p>
       <?php endif; ?>
 
@@ -207,12 +188,12 @@ get_header();
         </div>
         <div class="rx-step-card">
           <div class="rx-step-visual">
-            <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=600&h=400&fit=crop" alt="Free prescription delivery to your door London">
+            <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=600&h=400&fit=crop" alt="Collect your prescription from either pharmacy location">
           </div>
           <div class="rx-step-content">
             <div class="rx-step-num">03</div>
-            <h3>Free Delivery or Collection</h3>
-            <p>Choose free home delivery tracked to your door, or collect from either Chislehurst Pharmacy or Pond Pharmacy at your convenience.</p>
+            <h3>Collect at Your Convenience</h3>
+            <p>Pick up from either Chislehurst Pharmacy or Pond Pharmacy at a time that suits you. We'll text you when it's ready.</p>
           </div>
         </div>
         <?php endif; ?>
@@ -221,9 +202,9 @@ get_header();
   </section>
 
   <!-- ============================================
-       SECTION 2: FREE DELIVERY
+       SECTION 2: PRESCRIPTION SERVICES
        ============================================ -->
-  <section class="rx-section rx-section-dark" id="delivery">
+  <section class="rx-section rx-section-dark" id="services">
     <div class="rx-dark-bg">
       <div class="rx-dark-orb rx-dark-orb-1"></div>
       <div class="rx-dark-orb rx-dark-orb-2"></div>
@@ -232,10 +213,10 @@ get_header();
       <div class="rx-section-header">
         <div class="rx-pill rx-pill-light">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="1"/><path d="M9 11v10"/><path d="M5 17H3"/></svg>
-          100% Free
+          Your Local Pharmacy
         </div>
-        <h2 class="section-title" style="color: #fff;"><?php echo esc_html( rl_field( 'rx_delivery_title', 'Free NHS Prescription Delivery Across South East London' ) ); ?></h2>
-        <p class="section-subtitle" style="color: rgba(255,255,255,0.75);"><?php echo esc_html( rl_field( 'rx_delivery_subtitle', 'No minimum order. No hidden fees. Just your medication, delivered on time.' ) ); ?></p>
+        <h2 class="section-title" style="color: #fff;"><?php echo esc_html( rl_field( 'rx_delivery_title', 'NHS Prescription Services Across South East London' ) ); ?></h2>
+        <p class="section-subtitle" style="color: rgba(255,255,255,0.75);"><?php echo esc_html( rl_field( 'rx_delivery_subtitle', 'Two convenient locations. Same-day collection. Managed by pharmacists who know you.' ) ); ?></p>
       </div>
 
       <?php $del_intro = rl_field( 'rx_delivery_intro' ); ?>
@@ -243,7 +224,7 @@ get_header();
         <div class="rx-dark-intro"><?php echo wp_kses_post( $del_intro ); ?></div>
       <?php else : ?>
         <p class="rx-dark-intro">
-          We offer completely free NHS prescription delivery to your home, workplace, or any address of your choice across South East London and beyond. Our delivery service covers <strong>Chislehurst, Bromley, Orpington, Sidcup, Bexley, Eltham</strong>, and surrounding areas with no minimum order value.
+          We manage your NHS and private prescriptions at two convenient South East London locations. Whether you need repeat prescriptions, electronic prescriptions, or same-day collection, we make it simple. Serving patients across <strong>Chislehurst, Bromley, Orpington, Sidcup, Bexley, Eltham</strong>, and surrounding areas.
         </p>
       <?php endif; ?>
 
@@ -265,29 +246,29 @@ get_header();
           <div class="rx-feature-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
-          <h3>Free Delivery</h3>
-          <p>All NHS prescriptions delivered free of charge to any address. No hidden fees, no minimum order — ever.</p>
+          <h3>Same-Day Collection</h3>
+          <p>Order before 12pm and collect the same day from either of our two pharmacies.</p>
         </div>
         <div class="rx-feature-card">
           <div class="rx-feature-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           </div>
-          <h3>Order Tracking</h3>
-          <p>Track your delivery in real-time via email and text notifications. Know exactly when to expect your medication.</p>
+          <h3>Text Notifications</h3>
+          <p>We'll text you when your prescription is ready to collect — no need to call or check.</p>
         </div>
         <div class="rx-feature-card">
           <div class="rx-feature-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
           </div>
-          <h3>Delivery Reminders</h3>
+          <h3>Automatic Reminders</h3>
           <p>Receive automatic text reminders 10 days before you run out so you never miss a dose of essential medication.</p>
         </div>
         <div class="rx-feature-card">
           <div class="rx-feature-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           </div>
-          <h3>Discreet Packaging</h3>
-          <p>All medications arrive in plain, discreet packaging to protect your privacy — every single time.</p>
+          <h3>Electronic Prescriptions</h3>
+          <p>Fully integrated with NHS EPS — your GP sends prescriptions directly to us, no paper required.</p>
         </div>
         <?php endif; ?>
       </div>
@@ -295,7 +276,7 @@ get_header();
       <!-- Mid-page CTA -->
       <div class="rx-mid-cta">
         <a href="#register" class="rx-btn-white">
-          Register for Free Delivery
+          Register for Online Ordering
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <a href="#locations" class="rx-btn-ghost">
@@ -344,7 +325,7 @@ get_header();
             <?php endforeach; else : ?>
             <div class="rx-benefit-item"><div class="rx-benefit-tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div class="rx-benefit-text"><strong>Always Open</strong><span>Order your medication whenever you need it, day or night, from any device.</span></div></div>
             <div class="rx-benefit-item"><div class="rx-benefit-tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div class="rx-benefit-text"><strong>Automatic Reminders</strong><span>We remind you when it's time to reorder so you never run out of essential medication.</span></div></div>
-            <div class="rx-benefit-item"><div class="rx-benefit-tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div class="rx-benefit-text"><strong>Track Everything</strong><span>Monitor your order status from submission to delivery with real-time updates.</span></div></div>
+            <div class="rx-benefit-item"><div class="rx-benefit-tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div class="rx-benefit-text"><strong>Track Everything</strong><span>Monitor your order status from submission to collection with real-time updates.</span></div></div>
             <div class="rx-benefit-item"><div class="rx-benefit-tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div class="rx-benefit-text"><strong>Manage Multiple Prescriptions</strong><span>Handle all your regular medications in one convenient portal.</span></div></div>
             <div class="rx-benefit-item"><div class="rx-benefit-tick"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div class="rx-benefit-text"><strong>Secure &amp; Confidential</strong><span>Your prescription information is protected with NHS-grade security.</span></div></div>
             <?php endif; ?>
@@ -395,7 +376,7 @@ get_header();
             Repeat dispensing allows your GP to issue a batch of prescriptions for medications you take regularly. This means you don't need to request a new prescription from your doctor each time you need a refill — <strong>we manage the schedule for you</strong>.
           </p>
           <p class="rx-dark-body">
-            Your GP issues a batch prescription valid for up to 12 months. We dispense your medication at regular intervals according to your dosage schedule. You collect or receive delivery automatically without contacting your doctor each time.
+            Your GP issues a batch prescription valid for up to 12 months. We dispense your medication at regular intervals according to your dosage schedule. You collect from the pharmacy automatically without contacting your doctor each time.
           </p>
           <?php endif; ?>
           <div class="rx-eps-note rx-eps-note-dark">
@@ -489,7 +470,7 @@ get_header();
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Hospital discharge prescriptions</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Repeat prescriptions</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Repeat dispensing prescriptions</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Free NHS prescription delivery</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Same-day prescription collection</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Prescription exemptions honoured</li>
             <?php endif; ?>
           </ul>
@@ -550,7 +531,7 @@ get_header();
           <?php if ( $collect_body ) : ?>
             <p class="rx-content-text"><?php echo esc_html( $collect_body ); ?></p>
           <?php else : ?>
-            <p class="rx-content-text">Too busy to collect your prescription from your doctor? No problem. We can arrange to collect your prescription directly from your GP surgery and have it ready for you to collect or deliver to your door. Just nominate our pharmacy with your GP and we'll handle the rest.</p>
+            <p class="rx-content-text">Too busy to collect your prescription from your doctor? No problem. We can arrange to collect your prescription directly from your GP surgery and have it ready for you. Just nominate our pharmacy with your GP and we'll handle the rest.</p>
           <?php endif; ?>
 
           <div class="rx-collect-steps">
@@ -574,7 +555,7 @@ get_header();
             </div>
             <div class="rx-collect-step">
               <div class="rx-collect-step-num">3</div>
-              <p>You collect in-store or choose <strong>free home delivery</strong> — we'll text you when it's ready</p>
+              <p>You collect in-store at either pharmacy — we'll text you when it's ready</p>
             </div>
             <?php endif; ?>
           </div>
@@ -633,7 +614,7 @@ get_header();
                 </div>
               </div>
             </div>
-            <p class="rx-location-serving">NHS prescriptions, Private prescriptions, Free delivery, Electronic prescriptions (EPS)</p>
+            <p class="rx-location-serving">NHS prescriptions, Private prescriptions, Electronic prescriptions (EPS), Same-day collection</p>
             <p class="rx-location-area"><em>Serving Chislehurst, Bromley, Sidcup, and South East London</em></p>
             <div class="rx-location-map">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2488.3!2d0.0595!3d51.4217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8ab8e8e8e8e8e%3A0x0!2s59+Chislehurst+Rd%2C+Chislehurst+BR7+5NP!5e0!3m2!1sen!2suk!4v1234" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" title="Chislehurst Pharmacy map"></iframe>
@@ -647,7 +628,7 @@ get_header();
 
         <div class="location-card">
           <div class="location-image">
-            <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769343725749-0.jpeg" alt="Pond Pharmacy - Chislehurst prescription delivery service">
+            <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769343725749-0.jpeg" alt="Pond Pharmacy - Chislehurst prescription services">
           </div>
           <div class="location-content">
             <h3>Pond Pharmacy</h3>
@@ -680,7 +661,7 @@ get_header();
                 </div>
               </div>
             </div>
-            <p class="rx-location-serving">NHS prescriptions, Private prescriptions, Free delivery, Electronic prescriptions (EPS)</p>
+            <p class="rx-location-serving">NHS prescriptions, Private prescriptions, Electronic prescriptions (EPS), Same-day collection</p>
             <p class="rx-location-area"><em>Convenient location for Orpington, Bexley, and surrounding areas</em></p>
             <div class="rx-location-map">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2488.3!2d0.0595!3d51.4217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8ab8e8e8e8e8e%3A0x0!2s59+High+St%2C+Chislehurst+BR7+5AF!5e0!3m2!1sen!2suk!4v1234" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" title="Pond Pharmacy map"></iframe>
@@ -695,7 +676,7 @@ get_header();
 
       <div class="rx-service-area-banner">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <p>Based in Chislehurst, we serve patients across South East London including <strong>Bromley, Orpington, Sidcup, Bexley, Eltham, Lewisham</strong>, and beyond. Our free prescription delivery service covers a wide area — contact us to confirm delivery to your postcode.</p>
+        <p>Based in Chislehurst, we serve patients across South East London including <strong>Bromley, Orpington, Sidcup, Bexley, Eltham, Lewisham</strong>, and beyond. Visit either pharmacy for same-day collection, or nominate us with your GP for electronic prescriptions.</p>
       </div>
     </div>
   </section>
@@ -723,8 +704,8 @@ get_header();
           <div class="rx-why-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3m-4 3h9v7a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-7z"/></svg>
           </div>
-          <h3>Free Delivery</h3>
-          <p>All NHS prescriptions delivered free across South East London — no conditions, no minimums.</p>
+          <h3>Same-Day Collection</h3>
+          <p>Order before 12pm and your prescription is ready to collect the same day at either pharmacy.</p>
         </div>
         <div class="rx-why-card">
           <div class="rx-why-icon">
@@ -802,20 +783,11 @@ get_header();
         <?php endforeach; else : ?>
         <details class="rx-faq-item">
           <summary class="rx-faq-question">
-            <span>Is prescription delivery really free?</span>
+            <span>How quickly can I collect my prescription?</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <div class="rx-faq-answer">
-            <p>Yes, completely free for all NHS prescriptions across South East London and beyond. No minimum order, no delivery charges, no hidden fees.</p>
-          </div>
-        </details>
-        <details class="rx-faq-item">
-          <summary class="rx-faq-question">
-            <span>How long does delivery take?</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <div class="rx-faq-answer">
-            <p>Most prescriptions are delivered within 24–48 hours of being dispensed. Same-day collection is available at both pharmacies when ordered before 12pm.</p>
+            <p>Same-day collection is available at both pharmacies when ordered before 12pm. We'll text you as soon as it's ready to pick up.</p>
           </div>
         </details>
         <details class="rx-faq-item">
