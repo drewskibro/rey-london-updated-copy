@@ -161,7 +161,7 @@ get_header();
           </div>
           <?php endif; ?>
           <div class="rx-step-content">
-            <div class="rx-step-num"><?php echo esc_html( $step_num ); ?></div>
+            <div class="rx-step-num">Step <?php echo esc_html( $step_num ); ?></div>
             <h3><?php echo esc_html( $step['title'] ); ?></h3>
             <p><?php echo esc_html( $step['description'] ); ?></p>
           </div>
@@ -172,7 +172,7 @@ get_header();
             <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=600&h=400&fit=crop" alt="Order prescription online South East London">
           </div>
           <div class="rx-step-content">
-            <div class="rx-step-num">01</div>
+            <div class="rx-step-num">Step 1</div>
             <h3>Order Your Prescription</h3>
             <p>Order online through our free registration portal, call us, visit in person, or ask your GP to send your prescription electronically to either of our pharmacies.</p>
           </div>
@@ -182,7 +182,7 @@ get_header();
             <img src="https://images.unsplash.com/photo-1576671081837-49000212a370?w=600&h=400&fit=crop" alt="GPhC pharmacist dispensing prescription safely">
           </div>
           <div class="rx-step-content">
-            <div class="rx-step-num">02</div>
+            <div class="rx-step-num">Step 2</div>
             <h3>We Dispense &amp; Prepare</h3>
             <p>Our GPhC-registered pharmacists carefully dispense your medication and conduct all necessary safety checks. We'll text you when it's ready.</p>
           </div>
@@ -192,7 +192,7 @@ get_header();
             <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=600&h=400&fit=crop" alt="Collect your prescription from either pharmacy location">
           </div>
           <div class="rx-step-content">
-            <div class="rx-step-num">03</div>
+            <div class="rx-step-num">Step 3</div>
             <h3>Collect at Your Convenience</h3>
             <p>Pick up from either Chislehurst Pharmacy or Pond Pharmacy at a time that suits you. We'll text you when it's ready.</p>
           </div>
