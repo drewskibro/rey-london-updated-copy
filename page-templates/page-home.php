@@ -365,7 +365,7 @@ get_header();
           Find your nearest<br />
           <span class="gradient-text">Chislehurst Pharmacy Group pharmacy</span>
         </h2>
-        <p class="section-subtitle">Visit us in person for expert advice and immediate service</p>
+        <p class="section-subtitle">Most patients tell us the same thing after their first visit. They waited too long to come in.</p>
 
         <div class="locations-grid">
           <?php
