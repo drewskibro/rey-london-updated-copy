@@ -2,7 +2,7 @@
 /**
  * ACF Field Group Definitions
  *
- * Registers all ACF field groups for the Rey London theme.
+ * Registers all ACF field groups for the Chislehurst Pharmacy Group theme.
  *
  * @package Rey_London
  */
@@ -100,7 +100,7 @@ acf_add_local_field_group( array(
             'name'          => 'destinations_description',
             'type'          => 'textarea',
             'rows'          => 3,
-            'default_value' => 'At Rey London, we provide expert travel health services across South East London. Find the vaccines you need for your next adventure.',
+            'default_value' => 'At Chislehurst Pharmacy Group, we provide expert travel health services across South East London. Find the vaccines you need for your next adventure.',
         ),
         array(
             'key'          => 'field_rl_destinations_stats',
@@ -363,7 +363,7 @@ acf_add_local_field_group( array(
             'name'          => 'hiw_subtitle',
             'type'          => 'textarea',
             'rows'          => 2,
-            'default_value' => 'Getting started with Rey London is simple',
+            'default_value' => 'Getting started with Chislehurst Pharmacy Group is simple',
         ),
         array(
             'key'          => 'field_rl_hiw_steps',
@@ -2389,7 +2389,7 @@ acf_add_local_field_group( array(
     'title'  => 'Branding',
     'fields' => array(
         array( 'key' => 'field_rl_opt_top_banner', 'label' => 'Top Banner Text', 'name' => 'top_banner_text', 'type' => 'text', 'default_value' => 'GPhC-registered pharmacists across two Chislehurst locations · No GP referral needed · Same-day appointments available', 'instructions' => 'Text shown in the sticky banner across all pages.' ),
-        array( 'key' => 'field_rl_opt_pharmacy_name', 'label' => 'Pharmacy Group Name', 'name' => 'pharmacy_name', 'type' => 'text', 'default_value' => 'Rey London Pharmacy' ),
+        array( 'key' => 'field_rl_opt_pharmacy_name', 'label' => 'Pharmacy Group Name', 'name' => 'pharmacy_name', 'type' => 'text', 'default_value' => 'Chislehurst Pharmacy Group Pharmacy' ),
         array( 'key' => 'field_rl_opt_pharmacy_logo', 'label' => 'Logo', 'name' => 'pharmacy_logo', 'type' => 'image', 'return_format' => 'url' ),
         array( 'key' => 'field_rl_opt_pharmacy_logo_dark', 'label' => 'Logo (Dark/White)', 'name' => 'pharmacy_logo_dark', 'type' => 'image', 'return_format' => 'url', 'instructions' => 'For dark backgrounds / footer' ),
         array( 'key' => 'field_rl_opt_footer_tagline', 'label' => 'Footer Tagline', 'name' => 'footer_tagline', 'type' => 'textarea', 'rows' => 2, 'default_value' => 'Your trusted healthcare partner in London. Providing expert pharmaceutical care and personalized health services since 2010.' ),
