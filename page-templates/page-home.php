@@ -915,150 +915,46 @@ get_header();
     </section>
 
     <!-- Team Section -->
+    <!-- Meet Your Pharmacist — Editorial Layout -->
     <section class="team-section" id="team">
+      <div class="team-editorial">
+        <div class="team-photo-col">
+          <img src="<?php echo esc_url( rl_field( 'pharmacist_image', 'https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517579457-0.png' ) ); ?>" alt="<?php echo esc_attr( rl_field( 'pharmacist_name', 'Sumeet Banker' ) ); ?>" class="team-photo" />
+          <div class="team-photo-fade"></div>
+        </div>
+        <div class="team-credentials-col">
+          <div class="team-credentials-inner">
+            <span class="team-eyebrow">Your Pharmacist</span>
+            <h2 class="team-name"><?php echo esc_html( rl_field( 'pharmacist_name', 'Sumeet Banker' ) ); ?></h2>
+            <p class="team-title"><?php echo esc_html( rl_field( 'pharmacist_title', 'Superintendent Pharmacist & Owner' ) ); ?></p>
+            <div class="team-badge">GPhC Registered</div>
+            <p class="team-bio"><?php echo esc_html( rl_field( 'pharmacist_bio', 'Sumeet has led Chislehurst Pharmacy Group for over 15 years, building a reputation for face-to-face care that patients across South East London trust.' ) ); ?></p>
+            <div class="team-buttons">
+              <a href="<?php echo esc_url( home_url( '/contact-page/#book-appointment' ) ); ?>" class="team-btn-primary">Book Consultation</a>
+              <a href="<?php echo esc_url( home_url( '/meet-the-team/' ) ); ?>" class="team-btn-ghost">Meet the Team</a>
+            </div>
+            <div class="team-stats-grid">
+              <div class="team-stat">
+                <div class="team-stat-number"><?php echo esc_html( rl_field( 'hp_team_stat1_number', '15+' ) ); ?></div>
+                <div class="team-stat-label"><?php echo esc_html( rl_field( 'hp_team_stat1_label', 'Years Serving London' ) ); ?></div>
+              </div>
+              <div class="team-stat">
+                <div class="team-stat-number"><?php echo esc_html( rl_field( 'hp_team_stat2_number', '2' ) ); ?></div>
+                <div class="team-stat-label"><?php echo esc_html( rl_field( 'hp_team_stat2_label', 'Chislehurst Locations' ) ); ?></div>
+              </div>
+              <div class="team-stat">
+                <div class="team-stat-number"><?php echo esc_html( rl_field( 'hp_team_stat3_number', '10,000+' ) ); ?></div>
+                <div class="team-stat-label"><?php echo esc_html( rl_field( 'hp_team_stat3_label', 'Patients Served' ) ); ?></div>
+              </div>
+              <div class="team-stat">
+                <div class="team-stat-number"><?php echo esc_html( rl_field( 'hp_team_stat4_number', 'Same Day' ) ); ?></div>
+                <div class="team-stat-label"><?php echo esc_html( rl_field( 'hp_team_stat4_label', 'Appointments Available' ) ); ?></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="container">
-        <div class="team-header">
-          <h2 class="section-title">
-            Meet your<br />
-            <span class="gradient-text">expert pharmacy team</span>
-          </h2>
-          <p class="section-subtitle">
-            Led by Sumeet Banker, our team delivers exceptional pharmaceutical care across South East London
-          </p>
-        </div>
-
-        <div class="team-content-grid">
-          <!-- Left Column - Hero Pharmacist Feature -->
-          <div class="pharmacist-hero">
-            <div class="pharmacist-image-wrapper">
-              <img
-                src="<?php echo esc_url( rl_field( 'pharmacist_image', 'https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517579457-0.png' ) ); ?>"
-                alt="<?php echo esc_attr( rl_field( 'pharmacist_name', 'Sumeet Banker' ) ); ?> - Superintendent Pharmacist"
-                class="pharmacist-image"
-              />
-
-              <div class="pharmacist-profile-card">
-                <div class="profile-header">
-                  <div class="profile-info">
-                    <h3 class="profile-name"><?php echo esc_html( rl_field( 'pharmacist_name', 'Sumeet Banker' ) ); ?></h3>
-                    <p class="profile-title"><?php echo esc_html( rl_field( 'pharmacist_title', 'Superintendent Pharmacist & Owner' ) ); ?></p>
-                    <div class="profile-badge">
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M8 1l2.5 5 5.5.5-4 4 1 5.5L8 13l-5 3 1-5.5-4-4 5.5-.5L8 1z" fill="currentColor" />
-                      </svg>
-                      <span>GPhC Registered</span>
-                    </div>
-                  </div>
-                </div>
-
-                <p class="profile-bio">
-                  <?php echo esc_html( rl_field( 'pharmacist_bio', 'With over 15 years of experience, Sumeet leads our team in providing exceptional pharmaceutical care to the South East London community.' ) ); ?>
-                </p>
-
-                <div class="profile-actions">
-                  <a href="#contact" class="btn-profile-primary"> Book Consultation </a>
-                  <a href="#team-full" class="btn-profile-secondary"> Meet the Team </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column - Premium Stats Grid -->
-          <div class="team-stats-premium">
-            <div class="stats-grid-premium">
-              <!-- Stat 1 -->
-              <div class="stat-card-hero">
-                <div class="stat-icon-hero">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-                <div class="stat-content-hero">
-                  <div class="stat-number-hero">8</div>
-                  <h4 class="stat-label-hero">Qualified Pharmacists</h4>
-                </div>
-              </div>
-
-              <!-- Stat 2 -->
-              <div class="stat-card-hero">
-                <div class="stat-icon-hero">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <circle
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path d="M12 6v6l4 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </div>
-                <div class="stat-content-hero">
-                  <div class="stat-number-hero">15+</div>
-                  <h4 class="stat-label-hero">Years Serving London</h4>
-                </div>
-              </div>
-
-              <!-- Stat 3 -->
-              <div class="stat-card-hero">
-                <div class="stat-icon-hero">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <circle
-                      cx="12"
-                      cy="10"
-                      r="3"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-                <div class="stat-content-hero">
-                  <div class="stat-number-hero">2</div>
-                  <h4 class="stat-label-hero">Premium Locations</h4>
-                </div>
-              </div>
-
-              <!-- Stat 4 -->
-              <div class="stat-card-hero">
-                <div class="stat-icon-hero">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-                <div class="stat-content-hero">
-                  <div class="stat-number-hero">10,000+</div>
-                  <h4 class="stat-label-hero">Patients Served</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div class="certifications-modern">
           <div class="cert-label">Certified & Regulated By</div>
           <div class="cert-logos">

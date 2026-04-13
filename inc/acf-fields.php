@@ -545,6 +545,17 @@ acf_add_local_field_group( array(
             'type'  => 'url',
         ),
 
+        // ── PHARMACIST STATS ──
+        array( 'key' => 'field_rl_hp_team_stats_tab', 'label' => 'Pharmacist Stats', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_hp_team_stat1_num', 'label' => 'Stat 1 — Number', 'name' => 'hp_team_stat1_number', 'type' => 'text', 'default_value' => '15+' ),
+        array( 'key' => 'field_rl_hp_team_stat1_lbl', 'label' => 'Stat 1 — Label', 'name' => 'hp_team_stat1_label', 'type' => 'text', 'default_value' => 'Years Serving London' ),
+        array( 'key' => 'field_rl_hp_team_stat2_num', 'label' => 'Stat 2 — Number', 'name' => 'hp_team_stat2_number', 'type' => 'text', 'default_value' => '2' ),
+        array( 'key' => 'field_rl_hp_team_stat2_lbl', 'label' => 'Stat 2 — Label', 'name' => 'hp_team_stat2_label', 'type' => 'text', 'default_value' => 'Chislehurst Locations' ),
+        array( 'key' => 'field_rl_hp_team_stat3_num', 'label' => 'Stat 3 — Number', 'name' => 'hp_team_stat3_number', 'type' => 'text', 'default_value' => '10,000+' ),
+        array( 'key' => 'field_rl_hp_team_stat3_lbl', 'label' => 'Stat 3 — Label', 'name' => 'hp_team_stat3_label', 'type' => 'text', 'default_value' => 'Patients Served' ),
+        array( 'key' => 'field_rl_hp_team_stat4_num', 'label' => 'Stat 4 — Number', 'name' => 'hp_team_stat4_number', 'type' => 'text', 'default_value' => 'Same Day' ),
+        array( 'key' => 'field_rl_hp_team_stat4_lbl', 'label' => 'Stat 4 — Label', 'name' => 'hp_team_stat4_label', 'type' => 'text', 'default_value' => 'Appointments Available' ),
+
         // ── HEALTH HUB ARTICLES ──
         array( 'key' => 'field_rl_hp_hub_tab', 'label' => 'Health Hub Articles', 'type' => 'tab' ),
         array(
