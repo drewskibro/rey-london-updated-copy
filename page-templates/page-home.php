@@ -384,20 +384,20 @@ get_header();
               <h3><?php echo esc_html( $loc['name'] ); ?></h3>
               <div class="location-details">
                 <div class="detail-item">
-                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-19.svg" alt="Address" />
+                  <span class="detail-label">Address</span>
                   <p><?php echo esc_html( $loc['address'] ); ?></p>
                 </div>
                 <div class="detail-item">
-                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-32.svg" alt="Phone" />
+                  <span class="detail-label">Phone</span>
                   <a href="tel:<?php echo esc_attr( $phone_digits ); ?>"><?php echo esc_html( $loc['phone'] ); ?></a>
                 </div>
                 <div class="detail-item">
-                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours" />
+                  <span class="detail-label">Hours</span>
                   <p><?php echo esc_html( $loc['hours'] ); ?></p>
                 </div>
               </div>
               <div class="location-actions">
-                <a href="<?php echo esc_url( $loc['directions_url'] ?: '#directions' ); ?>" target="_blank" rel="noopener" class="btn-primary">Get Directions</a>
+                <a href="<?php echo esc_url( $loc['directions_url'] ?: '#directions' ); ?>" target="_blank" rel="noopener" class="btn-primary">Get Directions <span class="btn-arrow">&rarr;</span></a>
                 <a href="tel:<?php echo esc_attr( $phone_digits ); ?>" class="btn-outline">Call Now</a>
               </div>
             </div>
@@ -411,20 +411,20 @@ get_header();
               <h3>Pond Pharmacy</h3>
               <div class="location-details">
                 <div class="detail-item">
-                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-19.svg" alt="Address" />
+                  <span class="detail-label">Address</span>
                   <p>59 High St, Chislehurst BR7 5AF</p>
                 </div>
                 <div class="detail-item">
-                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-32.svg" alt="Phone" />
+                  <span class="detail-label">Phone</span>
                   <a href="tel:02084673158">020 8467 3158</a>
                 </div>
                 <div class="detail-item">
-                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours" />
+                  <span class="detail-label">Hours</span>
                   <p>Mon-Fri: 8am-8pm | Sat: 9am-6pm | Sun: 10am-4pm</p>
                 </div>
               </div>
               <div class="location-actions">
-                <a href="#directions" target="_blank" rel="noopener" class="btn-primary">Get Directions</a>
+                <a href="#directions" target="_blank" rel="noopener" class="btn-primary">Get Directions <span class="btn-arrow">&rarr;</span></a>
                 <a href="tel:02084673158" class="btn-outline">Call Now</a>
               </div>
             </div>
@@ -437,20 +437,20 @@ get_header();
               <h3>Chislehurst Pharmacy</h3>
               <div class="location-details">
                 <div class="detail-item">
-                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-19.svg" alt="Address" />
+                  <span class="detail-label">Address</span>
                   <p>59 Chislehurst Rd, Chislehurst BR7 5NP</p>
                 </div>
                 <div class="detail-item">
-                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-32.svg" alt="Phone" />
+                  <span class="detail-label">Phone</span>
                   <a href="tel:02082950017">020 8295 0017</a>
                 </div>
                 <div class="detail-item">
-                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours" />
+                  <span class="detail-label">Hours</span>
                   <p>Mon-Fri: 8am-8pm | Sat: 9am-6pm | Sun: 10am-4pm</p>
                 </div>
               </div>
               <div class="location-actions">
-                <a href="#directions" target="_blank" rel="noopener" class="btn-primary">Get Directions</a>
+                <a href="#directions" target="_blank" rel="noopener" class="btn-primary">Get Directions <span class="btn-arrow">&rarr;</span></a>
                 <a href="tel:02082950017" class="btn-outline">Call Now</a>
               </div>
             </div>
