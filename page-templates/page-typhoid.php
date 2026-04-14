@@ -30,9 +30,9 @@ $typh_booking_url = '#';
           <h1><?php echo wp_kses_post( rl_field( 'typh_hero_title', 'Typhoid Vaccination in <span class="gradient-text">Chislehurst</span>' ) ); ?></h1>
           <p class="dtp-hero-sub"><?php echo esc_html( rl_field( 'typh_hero_subtitle', 'Protect yourself before you travel. Available at both our Chislehurst branches — no GP referral needed.' ) ); ?></p>
 
-          <div class="dtp-body-text" style="margin-top:24px;max-width:620px;">
-            <p class="dtp-body-text">Typhoid fever is a serious bacterial infection caused by <strong>Salmonella typhi</strong>, spread through contaminated food and water. It is most common in parts of Asia, Africa, and Latin America where hygiene standards and access to clean water vary. There are around 21 million cases worldwide every year.</p>
-            <p class="dtp-body-text">Symptoms include high fever, abdominal pain, loss of appetite, and constipation or diarrhoea. In serious cases it can lead to intestinal perforation or meningitis, both of which can be life-threatening. Vaccination is the most effective way to protect yourself before travelling to an at-risk area.</p>
+          <div style="margin:-8px 0 28px;max-width:620px;color:rgba(255,255,255,.78);font-size:15px;line-height:1.7;">
+            <p style="margin:0 0 14px;">Typhoid fever is a serious bacterial infection caused by <strong style="color:#fff;font-weight:600;">Salmonella typhi</strong>, spread through contaminated food and water. It is most common in parts of Asia, Africa, and Latin America where hygiene standards and access to clean water vary. There are around 21 million cases worldwide every year.</p>
+            <p style="margin:0;">Symptoms include high fever, abdominal pain, loss of appetite, and constipation or diarrhoea. In serious cases it can lead to intestinal perforation or meningitis, both of which can be life-threatening. Vaccination is the most effective way to protect yourself before travelling to an at-risk area.</p>
           </div>
 
           <div class="dtp-hero-trust">
@@ -42,7 +42,7 @@ $typh_booking_url = '#';
           </div>
 
           <div class="dtp-hero-ctas">
-            <a href="<?php echo esc_url( $typh_booking_url ); ?>" class="btn-primary">
+            <a href="<?php echo esc_url( $typh_booking_url ); ?>" class="dtp-btn-primary">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
               Book a Travel Consultation
             </a>
@@ -63,10 +63,10 @@ $typh_booking_url = '#';
   </section>
 
   <!-- ===================== SECTION 2 — THE VACCINES WE OFFER ===================== -->
-  <section class="dtp-section-light" id="vaccines">
+  <section class="dtp-section-dark" id="vaccines">
     <div class="container">
       <div style="text-align:center;">
-        <div class="dtp-quick-pill">
+        <div class="dtp-quick-pill" style="background:rgba(103,232,249,.12);color:#67E8F9;border-color:rgba(103,232,249,.35);">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
           The Vaccines We Offer
         </div>
@@ -103,12 +103,13 @@ $typh_booking_url = '#';
         </div>
       </div>
 
-      <div class="dtp-highlight-box" style="max-width:1100px;margin:32px auto 0;">
-        <strong>Note:</strong> A combined typhoid and Hepatitis A injection called Viatim was previously available but is no longer manufactured. If you received this vaccine in the past, your pharmacist will advise on the appropriate approach for your upcoming travel.
+      <!-- Viatim note — inline-styled so it reads correctly on the dark section -->
+      <div style="max-width:1100px;margin:32px auto 0;padding:20px 26px;background:rgba(255,255,255,.06);border-left:4px solid var(--dtp-accent,#0891B2);border-radius:0 12px 12px 0;color:rgba(255,255,255,.82);font-size:15px;line-height:1.7;">
+        <strong style="color:#fff;">Note:</strong> A combined typhoid and Hepatitis A injection called Viatim was previously available but is no longer manufactured. If you received this vaccine in the past, your pharmacist will advise on the appropriate approach for your upcoming travel.
       </div>
 
       <div style="text-align:center;margin-top:40px;">
-        <a href="<?php echo esc_url( $typh_booking_url ); ?>" class="btn-primary">
+        <a href="<?php echo esc_url( $typh_booking_url ); ?>" class="dtp-btn-primary">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           Book a Travel Consultation
         </a>
@@ -180,79 +181,21 @@ $typh_booking_url = '#';
   </section>
 
   <!-- ===================== SECTION 6 — BOOK YOUR APPOINTMENT ===================== -->
-  <section class="dtp-locations" id="book">
+  <!--
+    Uses the standardised location-cards template partial that the home
+    page and other service pages share, so the card style stays in sync
+    with the rest of the site rather than re-inventing a one-off layout.
+  -->
+  <section class="locations-section" id="book">
     <div class="container">
-      <div style="text-align:center;">
-        <h2 class="section-title">Book Your <span class="gradient-text">Travel Consultation</span></h2>
-        <p class="section-subtitle" style="max-width:820px;margin:0 auto;">Sumeet and the team at both Chislehurst Pharmacy Group branches can advise on typhoid vaccination as part of a full travel health consultation. We'll review your itinerary, destination, and health history to ensure you have the right vaccinations before you fly. Same-day and next-day appointments are usually available.</p>
-      </div>
+      <h2 class="section-title">
+        Book Your <span class="gradient-text">Travel Consultation</span>
+      </h2>
+      <p class="section-subtitle" style="max-width:820px;margin:0 auto;">Sumeet and the team at both Chislehurst Pharmacy Group branches can advise on typhoid vaccination as part of a full travel health consultation. We'll review your itinerary, destination, and health history to ensure you have the right vaccinations before you fly. Same-day and next-day appointments are usually available.</p>
 
-      <div class="dtp-loc-grid">
-        <!-- Pond Pharmacy -->
-        <div class="dtp-loc-card">
-          <div class="dtp-loc-image">
-            <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769343725749-0.jpeg" alt="Pond Pharmacy, Chislehurst" loading="lazy" />
-          </div>
-          <div class="dtp-loc-content">
-            <h3>Pond Pharmacy</h3>
-            <div class="dtp-loc-details">
-              <div class="dtp-loc-row">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-19.svg" alt="Address">
-                <p>59 High St, Chislehurst, BR7 5AF</p>
-              </div>
-              <div class="dtp-loc-row">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-32.svg" alt="Phone">
-                <a href="tel:02084673158">020 8467 3158</a>
-              </div>
-              <div class="dtp-loc-row">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours">
-                <p>Mon–Fri: 9am–6pm · Sat: 9am–1pm</p>
-              </div>
-            </div>
-            <div class="dtp-loc-actions">
-              <a href="https://maps.google.com/?q=59+High+Street+Chislehurst+BR7+5AF" target="_blank" rel="noopener" class="dtp-loc-btn-primary">Get Directions</a>
-              <a href="tel:02084673158" class="dtp-loc-btn-outline">Call Now</a>
-            </div>
-          </div>
-        </div>
+      <?php get_template_part( 'template-parts/location-cards', null, array( 'cta_prefix' => 'Book at' ) ); ?>
 
-        <!-- Chislehurst Pharmacy -->
-        <div class="dtp-loc-card">
-          <div class="dtp-loc-image">
-            <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769344823391-0.jpeg" alt="Chislehurst Pharmacy" loading="lazy" />
-          </div>
-          <div class="dtp-loc-content">
-            <h3>Chislehurst Pharmacy</h3>
-            <div class="dtp-loc-details">
-              <div class="dtp-loc-row">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-19.svg" alt="Address">
-                <p>59 Chislehurst Rd, Chislehurst, BR7 5NP</p>
-              </div>
-              <div class="dtp-loc-row">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-32.svg" alt="Phone">
-                <a href="tel:02082950017">020 8295 0017</a>
-              </div>
-              <div class="dtp-loc-row">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours">
-                <p>Mon–Fri: 9am–6pm · Sat: 9am–1pm</p>
-              </div>
-            </div>
-            <div class="dtp-loc-actions">
-              <a href="https://maps.google.com/?q=59+Chislehurst+Road+BR7+5NP" target="_blank" rel="noopener" class="dtp-loc-btn-primary">Get Directions</a>
-              <a href="tel:02082950017" class="dtp-loc-btn-outline">Call Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div style="text-align:center;margin-top:48px;">
-        <!-- TODO: Replace "#" with the real booking URL once confirmed by the client. -->
-        <a href="<?php echo esc_url( $typh_booking_url ); ?>" class="btn-primary" style="padding:18px 36px;font-size:16px;">
-          Book Online
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-        <p style="margin-top:16px;font-size:14px;color:var(--text-gray);">Typhoid vaccination is a private service. Prices are available on request — call either branch for details.</p>
-      </div>
+      <p style="text-align:center;margin-top:32px;font-size:14px;color:var(--text-gray);">Typhoid vaccination is a private service. Prices are available on request — call either branch for details.</p>
     </div>
   </section>
 
