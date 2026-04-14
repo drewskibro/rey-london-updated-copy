@@ -1312,3 +1312,137 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* ============================================
+   SYMPTOM ICONS — PER-CARD ACCENT COLOURS
+   Each symptom card gets a unique accent hue so
+   the icon row reads as a palette rather than a
+   single flat colour, while keeping the icons
+   legible on the dark navy section background.
+   ============================================ */
+.b12-symptom-card:nth-child(1) .b12-symptom-icon {
+  background: rgba(252, 211, 77, 0.18);
+  border-color: rgba(252, 211, 77, 0.45);
+  color: #FCD34D; /* amber — energy / fatigue */
+}
+.b12-symptom-card:nth-child(2) .b12-symptom-icon {
+  background: rgba(196, 181, 253, 0.18);
+  border-color: rgba(196, 181, 253, 0.45);
+  color: #C4B5FD; /* violet — brain fog */
+}
+.b12-symptom-card:nth-child(3) .b12-symptom-icon {
+  background: rgba(251, 113, 133, 0.18);
+  border-color: rgba(251, 113, 133, 0.45);
+  color: #FB7185; /* coral — pins & needles */
+}
+.b12-symptom-card:nth-child(4) .b12-symptom-icon {
+  background: rgba(103, 232, 249, 0.18);
+  border-color: rgba(103, 232, 249, 0.45);
+  color: #67E8F9; /* cyan — breath / oxygen */
+}
+.b12-symptom-card:nth-child(5) .b12-symptom-icon {
+  background: rgba(249, 168, 212, 0.18);
+  border-color: rgba(249, 168, 212, 0.45);
+  color: #F9A8D4; /* rose — mood */
+}
+.b12-symptom-card:nth-child(6) .b12-symptom-icon {
+  background: rgba(253, 230, 138, 0.22);
+  border-color: rgba(253, 230, 138, 0.5);
+  color: #FDE68A; /* gold — skin / jaundice */
+}
+/* Keep the hover lift consistent but a touch more saturated */
+.b12-symptom-card:hover .b12-symptom-icon {
+  filter: saturate(1.2);
+}
+
+/* ============================================
+   FINAL CTA SECTION
+   The .cta-section / .cta-content-full classes
+   had no rules defined — leaving the white-on-
+   dark badges, buttons and check row invisible
+   on a default light background. These rules
+   restore the dark-background canvas the inner
+   elements were designed for.
+   ============================================ */
+.cta-section {
+  position: relative;
+  padding: 100px 0 96px;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 50%, var(--dark-blue) 100%);
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(90, 127, 196, 0.18) 0%, transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(103, 232, 249, 0.08) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.cta-content-full {
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin: 0 0 16px;
+}
+
+.cta-section > .cta-content-full > p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  max-width: 640px;
+  margin: 0 auto 32px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 32px;
+  background: var(--white);
+  color: var(--primary-blue);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  border: 2px solid var(--white);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.btn-cta-primary:hover {
+  background: #F8FAFC;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive polish */
+@media (max-width: 640px) {
+  .cta-section { padding: 72px 0 64px; }
+  .cta-section h2 { font-size: 32px; }
+  .cta-section > .cta-content-full > p { font-size: 16px; }
+  .cta-buttons { flex-direction: column; align-items: stretch; }
+  .btn-cta-primary { justify-content: center; }
+}
