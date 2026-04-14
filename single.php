@@ -231,6 +231,29 @@ $reviewer_initials = strtoupper( substr( $reviewer, 0, 1 ) );
     </div>
   </section>
 
+  <!-- ============================================
+       NEXT ARTICLE
+       ============================================ -->
+  <?php
+  $next_post = get_next_post();
+  if ( ! $next_post ) {
+      $next_post = get_previous_post();
+  }
+  if ( $next_post ) :
+  ?>
+  <section class="bp-next-article-section">
+    <div class="container">
+      <a href="<?php echo esc_url( get_permalink( $next_post ) ); ?>" class="bp-next-article-card">
+        <span class="bp-next-article-label">
+          Next
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </span>
+        <span class="bp-next-article-title"><?php echo esc_html( get_the_title( $next_post ) ); ?></span>
+      </a>
+    </div>
+  </section>
+  <?php endif; ?>
+
 <?php endwhile; ?>
 
 <?php get_footer(); ?>
