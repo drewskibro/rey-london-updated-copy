@@ -279,6 +279,32 @@ get_header();
       <h2 class="section-title"><?php echo wp_kses_post( rl_field( 'b12_process_title', 'Your B12 injection <span class="gradient-text">appointment</span>' ) ); ?></h2>
       <p class="section-subtitle"><?php echo esc_html( rl_field( 'b12_process_subtitle', 'A quick, simple process — from walking in to feeling better, usually within 15 minutes.' ) ); ?></p>
       <div class="b12-steps-grid">
+        <?php
+        $b12_steps = rl_field( 'b12_process_steps' );
+        if ( $b12_steps && is_array( $b12_steps ) ) :
+            foreach ( $b12_steps as $i => $step ) :
+                $step_img   = isset( $step['image'] ) ? $step['image'] : '';
+                $step_title = isset( $step['title'] ) ? $step['title'] : '';
+                $step_desc  = isset( $step['description'] ) ? $step['description'] : '';
+                $step_meta  = isset( $step['meta'] ) ? $step['meta'] : '';
+                ?>
+        <div class="b12-step-card">
+          <?php if ( $step_img ) : ?>
+          <div class="b12-step-image">
+            <img src="<?php echo esc_url( $step_img ); ?>" alt="<?php echo esc_attr( $step_title ); ?>">
+          </div>
+          <?php endif; ?>
+          <div class="b12-step-content">
+            <span class="b12-step-label">Step <?php echo esc_html( sprintf( '%02d', $i + 1 ) ); ?></span>
+            <h3><?php echo esc_html( $step_title ); ?></h3>
+            <p><?php echo esc_html( $step_desc ); ?></p>
+            <?php if ( $step_meta ) : ?>
+            <span class="b12-step-meta"><?php echo esc_html( $step_meta ); ?></span>
+            <?php endif; ?>
+          </div>
+        </div>
+            <?php endforeach;
+        else : ?>
         <div class="b12-step-card">
           <div class="b12-step-image">
             <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop" alt="Brief consultation with pharmacist before B12 injection">
@@ -312,6 +338,7 @@ get_header();
             <span class="b12-step-meta">Easy ongoing programme</span>
           </div>
         </div>
+        <?php endif; ?>
       </div>
     </div>
   </section>
@@ -387,10 +414,10 @@ get_header();
       <div class="b12-pricing-grid">
         <div class="b12-pricing-card b12-revealed">
           <div class="b12-pricing-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/></svg>
           </div>
           <h3>Single Injection</h3>
-          <div class="b12-pricing-value">From £25</div>
+          <div class="b12-pricing-value b12-pricing-value--tbc">Price to be confirmed</div>
           <p class="b12-pricing-desc">Single hydroxocobalamin injection. No appointment needed — walk in during pharmacy hours.</p>
         </div>
         <div class="b12-pricing-card b12-pricing-featured b12-revealed">
@@ -399,7 +426,7 @@ get_header();
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
           <h3>Course of 3</h3>
-          <div class="b12-pricing-value">From £65</div>
+          <div class="b12-pricing-value b12-pricing-value--tbc">Price to be confirmed</div>
           <ul class="b12-pricing-items">
             <li>3 injections over 3 months</li>
             <li>Ideal for first-time patients</li>
@@ -412,7 +439,7 @@ get_header();
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <h3>Maintenance Plan</h3>
-          <div class="b12-pricing-value">Monthly</div>
+          <div class="b12-pricing-value b12-pricing-value--tbc">Price to be confirmed</div>
           <p class="b12-pricing-desc">Ongoing monthly injections for sustained wellbeing. Perfect for vegans, active professionals, and those managing deficiency long-term.</p>
         </div>
       </div>

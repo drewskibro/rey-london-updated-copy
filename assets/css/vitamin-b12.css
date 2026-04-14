@@ -968,6 +968,16 @@
   font-family: 'Inter', sans-serif;
 }
 
+/* Modifier for placeholder states ("Price to be confirmed") where the
+   full price label is longer than a numeric value and needs to size
+   down to sit on one line inside the card. */
+.b12-pricing-value--tbc {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
 .b12-pricing-desc {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.75);
