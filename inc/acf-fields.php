@@ -2677,3 +2677,30 @@ acf_add_local_field_group( array(
     'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-malaria.php' ) ) ),
     'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
 ) );
+
+// =============================================================================
+// BLOG POST FIELDS
+// =============================================================================
+acf_add_local_field_group( array(
+    'key'      => 'group_rl_blog_post',
+    'title'    => 'Blog Post Settings',
+    'fields'   => array(
+        array( 'key' => 'field_rl_bp_content_tab', 'label' => 'Content', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_bp_reading_time', 'label' => 'Reading Time (minutes)', 'name' => 'reading_time', 'type' => 'number', 'min' => 1, 'step' => 1, 'instructions' => 'Leave blank to auto-calculate' ),
+        array( 'key' => 'field_rl_bp_toc_toggle', 'label' => 'Show Table of Contents', 'name' => 'show_table_of_contents', 'type' => 'true_false', 'default_value' => 1, 'ui' => 1, 'ui_on_text' => 'Show', 'ui_off_text' => 'Hide' ),
+        array( 'key' => 'field_rl_bp_author_tab', 'label' => 'Author & Reviewer', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_bp_article_author', 'label' => 'Author Name Override', 'name' => 'article_author', 'type' => 'text', 'instructions' => 'Defaults to WordPress post author' ),
+        array( 'key' => 'field_rl_bp_author_photo', 'label' => 'Author Photo', 'name' => 'author_photo', 'type' => 'image', 'return_format' => 'id', 'preview_size' => 'thumbnail' ),
+        array( 'key' => 'field_rl_bp_reviewer_photo', 'label' => 'Reviewer Photo Override', 'name' => 'reviewer_photo', 'type' => 'image', 'return_format' => 'id', 'preview_size' => 'thumbnail', 'instructions' => 'Overrides the default pharmacist image from theme options' ),
+        array( 'key' => 'field_rl_bp_faq_tab', 'label' => 'FAQs', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_bp_faqs', 'label' => 'Post FAQs', 'name' => 'post_faqs', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add FAQ', 'max' => 20,
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_bp_faq_q', 'label' => 'Question', 'name' => 'question', 'type' => 'text' ),
+                array( 'key' => 'field_rl_bp_faq_a', 'label' => 'Answer', 'name' => 'answer', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0 ),
+            ),
+        ),
+    ),
+    'location' => array( array( array( 'param' => 'post_type', 'operator' => '==', 'value' => 'post' ) ) ),
+    'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
+) );
