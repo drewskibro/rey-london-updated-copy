@@ -200,7 +200,7 @@ get_header();
         </table>
       </div>
       <div class="hajj-highlight-box" style="margin-top:32px;">
-        <strong>Direct UK to Saudi flights:</strong> Yellow fever vaccination is not required. It only becomes a requirement if you are transiting through or arriving from a country with yellow fever transmission risk. Your pharmacist will confirm based on your exact itinerary.
+        For direct UK to Saudi flights, yellow fever vaccination is not a standard requirement. However, Saudi Arabia does require proof of vaccination if you are arriving from a country where yellow fever is present. If you have recently visited or plan to travel through any part of sub-Saharan Africa or South America, your pharmacist will check whether this applies to your itinerary.
       </div>
     </div>
   </section>

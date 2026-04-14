@@ -122,7 +122,7 @@ get_header();
   </section>
 
   <!-- ============================================
-       SECTION 4 — WHEN TO GET VACCINATED
+       SECTION 4 — WHEN TO GET VACCINATED (card layout)
        ============================================ -->
   <section class="flu-section flu-section-light">
     <div class="container">
@@ -134,32 +134,67 @@ get_header();
         <h2 class="section-title">When Should You Get Vaccinated?</h2>
       </div>
 
-      <div class="flu-content-block">
-        <p>The flu vaccine is offered every year, typically from September onwards, ahead of the winter season. Immunity takes around two weeks to build, so earlier in the season is better — particularly for older patients or those with underlying health conditions.</p>
-        <p>COVID-19 booster programmes are rolled out periodically for eligible groups. The timing of each round is confirmed by the UK Health Security Agency — our team will let you know when the current programme is open and whether you're due a booster.</p>
+      <div class="flu-timing-grid">
+        <div class="flu-timing-card">
+          <div class="flu-timing-icon flu-timing-icon--flu">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <h3>Flu vaccine</h3>
+          <p>Offered every year from <strong>September onwards</strong>, ahead of the winter season. Immunity takes around two weeks to build, so earlier is better — particularly for older patients or those with underlying health conditions.</p>
+        </div>
+        <div class="flu-timing-card">
+          <div class="flu-timing-icon flu-timing-icon--covid">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </div>
+          <h3>COVID-19 booster</h3>
+          <p>Rolled out <strong>periodically</strong> for eligible groups. The timing of each round is confirmed by the UK Health Security Agency — our team will let you know when the current programme is open and whether you're due a booster.</p>
+        </div>
+      </div>
+
+      <div class="flu-eligibility-note" style="margin-top:32px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
         <p>If you're unsure whether you're currently due either vaccination, call the branch closest to you and we'll check.</p>
       </div>
     </div>
   </section>
 
   <!-- ============================================
-       SECTION 5 — WHAT TO EXPECT
+       SECTION 5 — WHAT TO EXPECT (dark section, step cards)
        ============================================ -->
-  <section class="flu-section flu-section-accent">
-    <div class="container">
+  <section class="flu-section flu-section-dark">
+    <div class="flu-dark-bg">
+      <div class="flu-dark-orb flu-dark-orb-1"></div>
+      <div class="flu-dark-orb flu-dark-orb-2"></div>
+    </div>
+    <div class="container flu-dark-container">
       <div class="flu-section-header">
-        <span class="flu-pill">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <span class="flu-pill flu-pill-light">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           Your Visit
         </span>
-        <h2 class="section-title">What Happens at Your Appointment?</h2>
+        <h2 class="section-title" style="color:#fff;">What Happens at Your Appointment?</h2>
+        <p class="section-subtitle" style="color:rgba(255,255,255,0.7);">Quick, straightforward, and usually done in under ten minutes.</p>
       </div>
 
-      <div class="flu-content-block">
-        <p>Both vaccinations are quick and straightforward. Most appointments take under ten minutes from start to finish. You don't need to do anything to prepare — just bring any relevant medical information if you have a complex health history.</p>
-        <p>After the injection, we'll ask you to wait briefly at the branch before you leave. Side effects are usually mild — a slightly sore arm or feeling a little tired for a day or two — and most people feel completely fine afterwards.</p>
-        <p>If you have any questions before or after your appointment, Sumeet and the team are available at both branches throughout the week.</p>
+      <div class="flu-steps-grid">
+        <div class="flu-step-card">
+          <div class="flu-step-num">01</div>
+          <h3>Walk in or arrive for your booking</h3>
+          <p>No preparation needed — just bring any relevant medical information if you have a complex health history.</p>
+        </div>
+        <div class="flu-step-card">
+          <div class="flu-step-num">02</div>
+          <h3>Quick vaccination</h3>
+          <p>Both flu and COVID vaccinations are administered by our trained pharmacists. If you're eligible for both, we can do them in the same visit.</p>
+        </div>
+        <div class="flu-step-card">
+          <div class="flu-step-num">03</div>
+          <h3>Brief wait, then you're done</h3>
+          <p>We'll ask you to wait a few minutes before leaving. Side effects are usually mild — a slightly sore arm or feeling tired for a day or two.</p>
+        </div>
       </div>
+
+      <p style="text-align:center;color:rgba(255,255,255,0.6);font-size:15px;margin-top:32px;">If you have any questions before or after your appointment, Sumeet and the team are available at both branches throughout the week.</p>
     </div>
   </section>
 
