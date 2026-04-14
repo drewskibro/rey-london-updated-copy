@@ -407,53 +407,7 @@ get_header();
         <h2 class="section-title">India Travel Clinic Locations<br><span class="gradient-text-light">in South East London</span></h2>
       </div>
 
-      <div class="th-locations-grid">
-        <div class="th-location-card">
-          <h3>Chislehurst Pharmacy</h3>
-          <div class="th-location-details">
-            <div class="th-location-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>59 Chislehurst Rd, Chislehurst BR7 5NP</span>
-            </div>
-            <div class="th-location-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <a href="tel:02082950017">020 8295 0017</a>
-            </div>
-            <div class="th-location-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              <span>Mon–Fri: 9am–6pm | Sat: 9am–1pm | Sun: Closed</span>
-            </div>
-          </div>
-          <p class="th-location-serving">Serving Chislehurst, Bromley, Sidcup, and South East London</p>
-          <div class="th-location-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2494.5!2d0.0566!3d51.4075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a9f8a8a8a8a8%3A0x0!2s59+Chislehurst+Rd%2C+Chislehurst+BR7+5NP!5e0!3m2!1sen!2suk!4v1" width="100%" height="200" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-          <a href="tel:02082950017" class="th-location-btn">Book at Chislehurst</a>
-        </div>
-
-        <div class="th-location-card">
-          <h3>Pond Pharmacy</h3>
-          <div class="th-location-details">
-            <div class="th-location-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>59 High St, Chislehurst BR7 5AF</span>
-            </div>
-            <div class="th-location-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <a href="tel:02084673158">020 8467 3158</a>
-            </div>
-            <div class="th-location-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              <span>Mon–Fri: 8.30am–6.30pm | Sat: 9am–2pm | Sun: Closed</span>
-            </div>
-          </div>
-          <p class="th-location-serving">Convenient location for Orpington, Bexley, and surrounding areas</p>
-          <div class="th-location-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2494.5!2d0.0586!3d51.4095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a9f8a8a8a8a8%3A0x0!2s59+High+St%2C+Chislehurst+BR7+5AF!5e0!3m2!1sen!2suk!4v1" width="100%" height="200" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-          <a href="tel:02084673158" class="th-location-btn">Book at Pond Pharmacy</a>
-        </div>
-      </div>
+      <?php get_template_part( 'template-parts/location-cards', null, array( 'cta_prefix' => 'Book at' ) ); ?>
 
       <div class="th-service-area">
         <p>While based in Chislehurst, we welcome India travelers from across South East London and beyond. Easy access from <strong>Bromley, Orpington, Sidcup, Bexley, Eltham, Greenwich, Lewisham,</strong> and surrounding areas.</p>
