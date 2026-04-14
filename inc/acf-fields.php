@@ -2420,6 +2420,8 @@ acf_add_local_field_group( array(
         array( 'key' => 'field_rl_opt_gphc_verify_url', 'label' => 'GPhC Verify URL', 'name' => 'gphc_verify_url', 'type' => 'url', 'instructions' => 'Link to your GPhC register entry', 'default_value' => 'https://www.pharmacyregulation.org/registers/pharmacist' ),
         array( 'key' => 'field_rl_opt_nathnac_registered', 'label' => 'NaTHNaC Registered?', 'name' => 'nathnac_registered', 'type' => 'true_false', 'default_value' => 1, 'instructions' => 'Yellow Fever Vaccination Centre status' ),
         array( 'key' => 'field_rl_opt_reviewer_url', 'label' => 'Clinical Reviewer Profile URL', 'name' => 'reviewer_profile_url', 'type' => 'url' ),
+        array( 'key' => 'field_rl_opt_pharmacist_image', 'label' => 'Pharmacist Photo', 'name' => 'pharmacist_image', 'type' => 'image', 'return_format' => 'id', 'preview_size' => 'thumbnail', 'instructions' => 'Used for blog post author/reviewer avatars and the consultation closer card' ),
+        array( 'key' => 'field_rl_opt_author_role', 'label' => 'Default Author Role', 'name' => 'default_author_role', 'type' => 'text', 'default_value' => 'Superintendent Pharmacist', 'instructions' => 'Displayed under the author name on blog posts' ),
     ),
     'location' => array( array( array( 'param' => 'options_page', 'operator' => '==', 'value' => 'registration-compliance' ) ) ),
     'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
