@@ -438,7 +438,7 @@ get_header();
   <!-- ========== FAQ SECTION ========== -->
   <section class="b12-faq-section" id="faq">
     <div class="container">
-      <h2 class="section-title">Vitamin B12 Injection <span class="gradient-text">FAQs</span></h2>
+      <h2 class="section-title">Vitamin B12 Injection <span class="gradient-text-light">FAQs</span></h2>
       <p class="section-subtitle">Common questions about B12 injections, deficiency, and our private service.</p>
       <div class="b12-faq-list">
         <div class="b12-faq-item">
