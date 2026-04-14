@@ -385,7 +385,7 @@ get_header();
               'image_alt'   => 'Same day prescription Mounjaro Wegovy London',
               'label'       => 'Step 2',
               'heading'     => 'Same-Day Prescription',
-              'description' => 'As Independent Prescribers, our pharmacists can prescribe Mounjaro, Wegovy or Saxenda the same day. You leave your appointment with your medication and a clear injection guide — no waiting for a GP letter.',
+              'description' => 'Our pharmacists can assess your suitability and prescribe Mounjaro, Wegovy or Saxenda in a single visit where clinically appropriate. You leave your appointment with your medication and a clear injection guide — no waiting for a GP letter.',
           ),
           array(
               'image'       => 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&h=400&fit=crop',
