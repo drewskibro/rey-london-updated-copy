@@ -2416,8 +2416,8 @@ acf_add_local_field_group( array(
         array( 'key' => 'field_rl_opt_company_reg', 'label' => 'Company Registration Number', 'name' => 'company_registration', 'type' => 'text' ),
         array( 'key' => 'field_rl_opt_established_year', 'label' => 'Established Year', 'name' => 'established_year', 'type' => 'text', 'default_value' => '2010' ),
         array( 'key' => 'field_rl_opt_superintendent', 'label' => 'Superintendent Pharmacist', 'name' => 'superintendent_pharmacist', 'type' => 'text', 'default_value' => 'Sumeet Banker' ),
-        array( 'key' => 'field_rl_opt_superintendent_gphc', 'label' => 'Superintendent GPhC Number', 'name' => 'superintendent_gphc_number', 'type' => 'text' ),
-        array( 'key' => 'field_rl_opt_gphc_verify_url', 'label' => 'GPhC Verify URL', 'name' => 'gphc_verify_url', 'type' => 'url', 'instructions' => 'Link to your GPhC register entry' ),
+        array( 'key' => 'field_rl_opt_superintendent_gphc', 'label' => 'Superintendent GPhC Number', 'name' => 'superintendent_gphc_number', 'type' => 'text', 'default_value' => '2075664' ),
+        array( 'key' => 'field_rl_opt_gphc_verify_url', 'label' => 'GPhC Verify URL', 'name' => 'gphc_verify_url', 'type' => 'url', 'instructions' => 'Link to your GPhC register entry', 'default_value' => 'https://www.pharmacyregulation.org/registers/pharmacist' ),
         array( 'key' => 'field_rl_opt_nathnac_registered', 'label' => 'NaTHNaC Registered?', 'name' => 'nathnac_registered', 'type' => 'true_false', 'default_value' => 1, 'instructions' => 'Yellow Fever Vaccination Centre status' ),
         array( 'key' => 'field_rl_opt_reviewer_url', 'label' => 'Clinical Reviewer Profile URL', 'name' => 'reviewer_profile_url', 'type' => 'url' ),
     ),
@@ -2675,5 +2675,32 @@ acf_add_local_field_group( array(
         array( 'key' => 'field_rl_mal_price_mefloquine', 'label' => 'Mefloquine — Per Tablet Price', 'name' => 'mal_price_mefloquine', 'type' => 'text', 'default_value' => '£TBC' ),
     ),
     'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-malaria.php' ) ) ),
+    'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
+) );
+
+// =============================================================================
+// BLOG POST FIELDS
+// =============================================================================
+acf_add_local_field_group( array(
+    'key'      => 'group_rl_blog_post',
+    'title'    => 'Blog Post Settings',
+    'fields'   => array(
+        array( 'key' => 'field_rl_bp_content_tab', 'label' => 'Content', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_bp_reading_time', 'label' => 'Reading Time (minutes)', 'name' => 'reading_time', 'type' => 'number', 'min' => 1, 'step' => 1, 'instructions' => 'Leave blank to auto-calculate' ),
+        array( 'key' => 'field_rl_bp_toc_toggle', 'label' => 'Show Table of Contents', 'name' => 'show_table_of_contents', 'type' => 'true_false', 'default_value' => 1, 'ui' => 1, 'ui_on_text' => 'Show', 'ui_off_text' => 'Hide' ),
+        array( 'key' => 'field_rl_bp_author_tab', 'label' => 'Author & Reviewer', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_bp_article_author', 'label' => 'Author Name Override', 'name' => 'article_author', 'type' => 'text', 'instructions' => 'Defaults to WordPress post author' ),
+        array( 'key' => 'field_rl_bp_author_photo', 'label' => 'Author Photo', 'name' => 'author_photo', 'type' => 'image', 'return_format' => 'id', 'preview_size' => 'thumbnail' ),
+        array( 'key' => 'field_rl_bp_reviewer_photo', 'label' => 'Reviewer Photo Override', 'name' => 'reviewer_photo', 'type' => 'image', 'return_format' => 'id', 'preview_size' => 'thumbnail', 'instructions' => 'Overrides the default pharmacist image from theme options' ),
+        array( 'key' => 'field_rl_bp_faq_tab', 'label' => 'FAQs', 'type' => 'tab' ),
+        array(
+            'key' => 'field_rl_bp_faqs', 'label' => 'Post FAQs', 'name' => 'post_faqs', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add FAQ', 'max' => 20,
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_bp_faq_q', 'label' => 'Question', 'name' => 'question', 'type' => 'text' ),
+                array( 'key' => 'field_rl_bp_faq_a', 'label' => 'Answer', 'name' => 'answer', 'type' => 'wysiwyg', 'toolbar' => 'basic', 'media_upload' => 0 ),
+            ),
+        ),
+    ),
+    'location' => array( array( array( 'param' => 'post_type', 'operator' => '==', 'value' => 'post' ) ) ),
     'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
 ) );
