@@ -507,6 +507,28 @@ function rl_add_consultation_closer( $content ) {
     $h .= '<span>' . $tick . ' Two Chislehurst Locations</span>';
     $h .= '</div></div></section>';
 
+    // Compliance pills
+    $shield = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>';
+    $clock  = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>';
+    $user   = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';
+    $h .= '<div class="bp-compliance-inline">';
+    $h .= '<span class="bp-pill">' . $shield . ' GPhC Registered Pharmacy</span>';
+    $h .= '<span class="bp-pill">' . $clock . ' Prescription-Only Medicine</span>';
+    $h .= '<span class="bp-pill">' . $user . ' Clinical Criteria Apply</span>';
+    $h .= '</div>';
+
+    // Next article card
+    $next_post = get_next_post();
+    if ( ! $next_post ) {
+        $next_post = get_previous_post();
+    }
+    if ( $next_post ) {
+        $h .= '<a href="' . esc_url( get_permalink( $next_post ) ) . '" class="bp-next-article-card">';
+        $h .= '<span class="bp-next-article-label">Next <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>';
+        $h .= '<span class="bp-next-article-title">' . esc_html( get_the_title( $next_post ) ) . '</span>';
+        $h .= '</a>';
+    }
+
     return $content . $h;
 }
 add_filter( 'the_content', 'rl_add_consultation_closer', 12 );
