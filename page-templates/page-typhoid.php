@@ -7,6 +7,11 @@
  * component classes (dtp-*) so no new styles are introduced — the
  * design system, spacing, typography and colour tokens are shared.
  *
+ * ACF fields (see inc/acf-fields.php → "Typhoid Vaccine Page" group):
+ *   - typh_hero_eyebrow / typh_hero_title / typh_hero_subtitle — hero copy
+ *   - typh_hero_image    — hero right-hand image
+ *   - typh_spread_image  — "How Is Typhoid Spread?" section image
+ *
  * Booking URL is a placeholder ("#") until the client confirms.
  *
  * @package Rey_London
@@ -55,7 +60,8 @@ $typh_booking_url = '#';
 
         <div class="dtp-hero-visual">
           <div class="dtp-hero-visual-inner">
-            <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&q=80&auto=format&fit=crop" alt="Pharmacist preparing a typhoid vaccination in a clinical setting — professional travel health service" loading="lazy" />
+            <?php $typh_hero_img = rl_field( 'typh_hero_image', 'https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&q=80&auto=format&fit=crop' ); ?>
+            <img src="<?php echo esc_url( $typh_hero_img ); ?>" alt="Pharmacist preparing a typhoid vaccination in a clinical setting — professional travel health service" loading="lazy" />
           </div>
         </div>
       </div>
@@ -129,7 +135,8 @@ $typh_booking_url = '#';
           <p class="dtp-body-text">Travellers are at greatest risk when eating <strong>street food</strong>, drinking <strong>tap water</strong>, or consuming <strong>ice, salads, or shellfish</strong> in high-risk regions.</p>
         </div>
         <div class="dtp-visual-placeholder">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop" alt="Food and water hygiene in high-risk travel destinations — typhoid prevention" loading="lazy" />
+          <?php $typh_spread_img = rl_field( 'typh_spread_image', 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop' ); ?>
+          <img src="<?php echo esc_url( $typh_spread_img ); ?>" alt="Food and water hygiene in high-risk travel destinations — typhoid prevention" loading="lazy" />
           <div class="dtp-visual-badge">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
             <span>Food-and-water hygiene is the main prevention route alongside vaccination.</span>

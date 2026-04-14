@@ -2727,3 +2727,23 @@ acf_add_local_field_group( array(
     'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-hajj-umrah.php' ) ) ),
     'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
 ) );
+
+// =============================================================================
+// TYPHOID VACCINE PAGE FIELDS
+// =============================================================================
+acf_add_local_field_group( array(
+    'key'      => 'group_rl_typhoid',
+    'title'    => 'Typhoid Vaccine Page',
+    'fields'   => array(
+        array( 'key' => 'field_rl_typh_hero_tab', 'label' => 'Hero Section', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_typh_hero_eyebrow', 'label' => 'Eyebrow Text', 'name' => 'typh_hero_eyebrow', 'type' => 'text', 'default_value' => 'Travel Health · Chislehurst' ),
+        array( 'key' => 'field_rl_typh_hero_title', 'label' => 'Hero Title', 'name' => 'typh_hero_title', 'type' => 'text', 'default_value' => 'Typhoid Vaccination in <span class="gradient-text">Chislehurst</span>', 'instructions' => 'HTML allowed — wrap the accent word in <span class="gradient-text">…</span>.' ),
+        array( 'key' => 'field_rl_typh_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'typh_hero_subtitle', 'type' => 'textarea', 'rows' => 3, 'default_value' => 'Protect yourself before you travel. Available at both our Chislehurst branches — no GP referral needed.' ),
+        array( 'key' => 'field_rl_typh_hero_image', 'label' => 'Hero Image', 'name' => 'typh_hero_image', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'medium', 'instructions' => 'Image shown on the right of the hero. Recommended: 800px wide.' ),
+
+        array( 'key' => 'field_rl_typh_spread_tab', 'label' => 'How Typhoid Is Spread Section', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_typh_spread_image', 'label' => 'Section Image', 'name' => 'typh_spread_image', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'medium', 'instructions' => 'Image shown alongside the "How Is Typhoid Spread?" section. Recommended: 800px wide.' ),
+    ),
+    'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-typhoid.php' ) ) ),
+    'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
+) );
