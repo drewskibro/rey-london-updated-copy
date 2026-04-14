@@ -19,7 +19,7 @@
    HERO
    ============================================================ */
 .bp-hero {
-  background: linear-gradient(135deg, var(--secondary-blue) 0%, #f5f9fc 50%, #ffffff 100%);
+  background: linear-gradient(135deg, #e8eef8 0%, #edf2fa 50%, #f5f8fc 100%);
   padding: 120px 0 80px;
   position: relative;
   overflow: hidden;
@@ -41,7 +41,7 @@
   height: 500px;
   top: -200px;
   right: -100px;
-  background: radial-gradient(circle, rgba(10,47,138,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(10,47,138,0.08) 0%, transparent 70%);
 }
 
 .bp-hero-blob-2 {
@@ -49,19 +49,22 @@
   height: 400px;
   bottom: -120px;
   left: -80px;
-  background: radial-gradient(circle, rgba(90,127,196,0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(90,127,196,0.06) 0%, transparent 70%);
 }
 
 .bp-hero-container {
   position: relative;
   z-index: 2;
   max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-/* Breadcrumb */
+/* Breadcrumb — centered */
 .bp-breadcrumb {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   font-size: 14px;
   font-weight: 500;
@@ -91,23 +94,40 @@
   font-weight: 600;
 }
 
-/* Meta Row */
+/* Meta Row — centered */
 .bp-meta-row {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   flex-wrap: wrap;
 }
 
 .bp-category-badge {
   display: inline-block;
-  padding: 6px 16px;
+  padding: 8px 20px;
   border-radius: 50px;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  background: rgba(10,47,138,0.08);
+  color: var(--primary-blue);
+  border: 1px solid rgba(10,47,138,0.12);
+}
+
+.bp-reading-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-gray);
+}
+
+.bp-reading-time svg {
+  color: var(--primary-blue);
 }
 
 .bp-badge--weight {
@@ -145,24 +165,37 @@
 }
 
 /* Headline */
-.bp-hero-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 56px;
-  font-weight: 700;
+.bp-hero-title,
+.bp-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
   line-height: 1.15;
   color: var(--primary-blue);
   letter-spacing: -0.03em;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
   max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Author Row */
+.bp-excerpt {
+  font-size: 18px;
+  color: var(--text-gray);
+  line-height: 1.6;
+  max-width: 640px;
+  margin: 0 auto 32px;
+}
+
+/* Author Row — centered */
 .bp-author-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  justify-content: center;
+  gap: 16px;
   flex-wrap: wrap;
+  margin-bottom: 40px;
+  text-align: left;
 }
 
 .bp-author-left {
@@ -245,7 +278,7 @@
    ============================================================ */
 .bp-review-section {
   padding: 48px 0;
-  background: var(--secondary-blue);
+  background: transparent;
 }
 
 .bp-review-card {
@@ -256,6 +289,7 @@
   padding: 36px 40px;
   box-shadow: 0 4px 24px rgba(10,47,138,0.08);
   border: 1px solid rgba(10,47,138,0.1);
+  text-align: left;
 }
 
 .bp-review-header {
