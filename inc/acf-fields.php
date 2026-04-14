@@ -2721,6 +2721,8 @@ acf_add_local_field_group( array(
         array( 'key' => 'field_rl_hajj_hero_image', 'label' => 'Hero Image', 'name' => 'hajj_hero_image', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'medium', 'instructions' => 'Recommended size: 800px wide' ),
         array( 'key' => 'field_rl_hajj_info_tab', 'label' => 'MenACWY Info Section', 'type' => 'tab' ),
         array( 'key' => 'field_rl_hajj_info_image', 'label' => 'Section Image', 'name' => 'hajj_info_image', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'medium', 'instructions' => 'Image shown alongside the "What Is MenACWY" section. Recommended: 800px wide' ),
+        array( 'key' => 'field_rl_hajj_appt_tab', 'label' => 'Appointment Section', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_hajj_appt_image', 'label' => 'Appointment Image', 'name' => 'hajj_appt_image', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'medium', 'instructions' => 'Image shown in the "Your Appointment" section. Recommended: 800px wide' ),
     ),
     'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-hajj-umrah.php' ) ) ),
     'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',
