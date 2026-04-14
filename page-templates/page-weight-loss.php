@@ -522,7 +522,7 @@ get_header();
   $why_subtitle        = get_field( 'wl_why_subtitle' )        ?: "We're not an online chatbot or a faceless app. We're your local pharmacist — the difference is enormous.";
   $why_pharm_image     = get_field( 'wl_why_pharmacist_image' ) ?: 'https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517579457-0.png';
   $why_pharm_name      = get_field( 'wl_why_pharmacist_name' )  ?: 'Sumeet Banker';
-  $why_pharm_role      = get_field( 'wl_why_pharmacist_role' )  ?: 'Superintendent Pharmacist';
+  $why_pharm_role      = 'Superintendent Pharmacist';
   $why_pharm_badge     = get_field( 'wl_why_pharmacist_badge' ) ?: 'GPhC Registered';
   $why_pharm_bio       = get_field( 'wl_why_pharmacist_bio' )   ?: '"Weight is complex — it\'s hormonal, emotional, and behavioural. That\'s why I believe everyone deserves face-to-face care from someone who actually listens. Not an algorithm."';
   $why_stats           = get_field( 'wl_why_stats' );
