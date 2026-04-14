@@ -119,8 +119,8 @@ get_header();
         </div>
         <div class="ct-quick-card">
           <div class="ct-quick-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-4"/><path d="M16 16v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-2"/><line x1="8" y1="12" x2="8" y2="12.01"/></svg></div>
-          <div class="ct-quick-stat">Free Delivery</div>
-          <div class="ct-quick-label">On prescriptions over £20 across South East London</div>
+          <div class="ct-quick-stat">Same-Day Collection</div>
+          <div class="ct-quick-label">Order before 12pm and collect the same day</div>
         </div>
       </div>
     </div>
@@ -133,79 +133,10 @@ get_header();
         <h2 class="section-title">Find Your Nearest <span class="gradient-text" style="background:linear-gradient(135deg,var(--primary-blue),var(--light-blue),#3a6bb5);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Chislehurst Pharmacy Group</span> Pharmacy</h2>
         <p class="section-subtitle" style="max-width:700px;margin:0 auto;">Both pharmacies are conveniently located in Chislehurst with easy access from across South East London.</p>
       </div>
-      <div class="ct-loc-grid ct-reveal">
-        <!-- Pond Pharmacy -->
-        <div class="ct-loc-card">
-          <div class="ct-loc-image">
-            <img src="https://images.unsplash.com/photo-1586015555751-63bb77f4322a?w=700&h=400&fit=crop" alt="Pond Pharmacy, Chislehurst">
-          </div>
-          <div class="ct-loc-content">
-            <h3>Pond Pharmacy</h3>
-            <div class="ct-loc-row">
-              <svg class="ct-loc-row-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <p>59 High Street, Chislehurst, BR7 5AF</p>
-            </div>
-            <div class="ct-loc-row">
-              <svg class="ct-loc-row-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>
-              <a href="tel:02084673158">020 8467 3158</a>
-            </div>
-            <div class="ct-loc-row">
-              <svg class="ct-loc-row-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              <p>Mon–Fri 9am–6pm &nbsp;|&nbsp; Sat 9am–1pm</p>
-            </div>
-            <div class="ct-loc-actions">
-              <a href="https://www.google.com/maps/search/?api=1&query=59+High+Street+Chislehurst+BR7+5AF" target="_blank" rel="noopener" class="ct-loc-btn-primary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-                Get Directions
-              </a>
-              <a href="tel:02084673158" class="ct-loc-btn-outline">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>
-                Call Now
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Chislehurst Pharmacy -->
-        <div class="ct-loc-card">
-          <div class="ct-loc-image">
-            <img src="https://images.unsplash.com/photo-1576602976047-174e57a47881?w=700&h=400&fit=crop" alt="Chislehurst Pharmacy">
-          </div>
-          <div class="ct-loc-content">
-            <h3>Chislehurst Pharmacy</h3>
-            <div class="ct-loc-row">
-              <svg class="ct-loc-row-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <p>59 Chislehurst Road, Chislehurst, BR7 5NP</p>
-            </div>
-            <div class="ct-loc-row">
-              <svg class="ct-loc-row-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>
-              <a href="tel:02082950017">020 8295 0017</a>
-            </div>
-            <div class="ct-loc-row">
-              <svg class="ct-loc-row-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              <p>Mon–Fri 9am–6pm &nbsp;|&nbsp; Sat 9am–1pm</p>
-            </div>
-            <div class="ct-loc-actions">
-              <a href="https://www.google.com/maps/search/?api=1&query=59+Chislehurst+Road+Chislehurst+BR7+5NP" target="_blank" rel="noopener" class="ct-loc-btn-primary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-                Get Directions
-              </a>
-              <a href="tel:02082950017" class="ct-loc-btn-outline">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>
-                Call Now
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <?php get_template_part( 'template-parts/location-cards', null, array( 'cta_prefix' => 'Book at' ) ); ?>
     </div>
   </section>
 
-  <!-- ===================== MAP ===================== -->
-  <section class="ct-map-section">
-    <div class="ct-map-wrap">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2492.8!2d0.0545!3d51.4045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDI0JzE2LjIiTiAwwrAwMycxNi4yIkU!5e0!3m2!1sen!2suk!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Chislehurst Pharmacy Group Pharmacy locations in Chislehurst"></iframe>
-    </div>
-  </section>
 
   <!-- ===================== CONTACT FORM + INFO ===================== -->
   <section class="ct-form-section" id="contact-details">
@@ -243,8 +174,8 @@ get_header();
           <div class="ct-info-item">
             <div class="ct-info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-4"/></svg></div>
             <div>
-              <div class="ct-info-label">Delivery</div>
-              <span class="ct-info-value">Free on orders over £20</span>
+              <div class="ct-info-label">Collection</div>
+              <span class="ct-info-value">Same-day collection available</span>
             </div>
           </div>
         </div>
@@ -277,7 +208,7 @@ get_header();
                   <option value="weight-loss">Weight Loss Consultation</option>
                   <option value="b12">Vitamin B12 Injection</option>
                   <option value="hpv">HPV Vaccine</option>
-                  <option value="delivery">Delivery Enquiry</option>
+                  <option value="general">General Enquiry</option>
                   <option value="complaint">Feedback / Complaint</option>
                   <option value="other">Other</option>
                 </select>
@@ -355,8 +286,8 @@ get_header();
           <div class="ct-faq-a"><div class="ct-faq-a-inner">Yes, transferring is simple. Just nominate us as your preferred pharmacy through your GP surgery, or ask us in-store and we can guide you through the process. It takes effect within 24–48 hours.</div></div>
         </div>
         <div class="ct-faq-item">
-          <button class="ct-faq-q" aria-expanded="false">Do you offer home delivery?<svg class="ct-faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
-          <div class="ct-faq-a"><div class="ct-faq-a-inner">Yes. We offer free delivery on prescription orders over £20 across South East London. Same-day delivery is available for urgent prescriptions placed before 2pm.</div></div>
+          <button class="ct-faq-q" aria-expanded="false">Do you offer same-day collection?<svg class="ct-faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="ct-faq-a"><div class="ct-faq-a-inner">Yes. Prescriptions ordered before 12pm are usually ready for same-day collection at either Pond Pharmacy or Chislehurst Pharmacy. We'll text you when your prescription is ready.</div></div>
         </div>
         <div class="ct-faq-item">
           <button class="ct-faq-q" aria-expanded="false">How quickly will you respond to my enquiry?<svg class="ct-faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
