@@ -147,6 +147,11 @@ function rey_london_scripts() {
         wp_enqueue_script( 'rey-london-dtp-js', REY_LONDON_URI . '/assets/js/dtp.js', array(), REY_LONDON_VERSION, true );
     }
 
+    // Typhoid page — reuses the DTP service-page component styles (dtp-*).
+    if ( is_page_template( 'page-templates/page-typhoid.php' ) ) {
+        wp_enqueue_style( 'rey-london-dtp', REY_LONDON_URI . '/assets/css/dtp.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
+    }
+
     if ( is_page_template( 'page-templates/page-hajj-umrah.php' ) ) {
         wp_enqueue_style( 'rey-london-hajj-umrah', REY_LONDON_URI . '/assets/css/hajj-umrah.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
         wp_enqueue_script( 'rey-london-hajj-umrah-js', REY_LONDON_URI . '/assets/js/hajj-umrah.js', array(), REY_LONDON_VERSION, true );

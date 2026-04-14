@@ -205,15 +205,15 @@ $booking_url   = rl_booking_url();
                         <span class="link-desc">Essential travel protection</span>
                       </div>
                     </a>
-                    <a href="<?php echo esc_url( home_url( '/yellow-fever-vaccine-london/' ) ); ?>" class="dropdown-link">
+                    <a href="<?php echo esc_url( home_url( '/typhoid-vaccination-chislehurst/' ) ); ?>" class="dropdown-link">
                       <div class="link-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                          <circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                          <path d="M12 2.5c-3 4.5-6 7.5-6 11a6 6 0 0 0 12 0c0-3.5-3-6.5-6-11z" />
                         </svg>
                       </div>
                       <div class="link-content">
-                        <span class="link-name">Yellow Fever</span>
-                        <span class="link-desc">Official vaccination centre</span>
+                        <span class="link-name">Typhoid</span>
+                        <span class="link-desc">Protection against typhoid fever</span>
                       </div>
                     </a>
                     <a href="<?php echo esc_url( home_url( '/dtp-vaccine-london/' ) ); ?>" class="dropdown-link">
@@ -452,7 +452,7 @@ $booking_url   = rl_booking_url();
           </button>
           <div class="mobile-nav-sub">
             <a href="<?php echo esc_url( home_url( '/hepatitis-vaccine-london/' ) ); ?>" class="mobile-nav-sub-link">Hepatitis A &amp; B</a>
-            <a href="<?php echo esc_url( home_url( '/yellow-fever-vaccine-london/' ) ); ?>" class="mobile-nav-sub-link">Yellow Fever</a>
+            <a href="<?php echo esc_url( home_url( '/typhoid-vaccination-chislehurst/' ) ); ?>" class="mobile-nav-sub-link">Typhoid</a>
             <a href="<?php echo esc_url( home_url( '/dtp-vaccine-london/' ) ); ?>" class="mobile-nav-sub-link">DTP</a>
             <a href="<?php echo esc_url( home_url( '/hajj-umrah-london/' ) ); ?>" class="mobile-nav-sub-link">Hajj &amp; Umrah</a>
             <a href="<?php echo esc_url( home_url( '/thailand-travel-vaccines/' ) ); ?>" class="mobile-nav-sub-link">Thailand</a>
