@@ -24,7 +24,6 @@ get_header();
       <p class="mt-hero-sub"><?php echo esc_html( rl_field( 'mt_hero_subtitle', 'Our team of GPhC-registered pharmacists, independent prescribers, and healthcare professionals are dedicated to delivering personalised, evidence-based care to every patient at both of our South East London locations.' ) ); ?></p>
       <div class="mt-hero-trust">
         <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> GPhC Registered Team</span>
-        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Independent Prescribers</span>
         <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> 15+ Years Combined Experience</span>
         <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Two South East London Clinics</span>
       </div>

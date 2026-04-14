@@ -385,7 +385,7 @@ get_header();
               'image_alt'   => 'Same day prescription Mounjaro Wegovy London',
               'label'       => 'Step 2',
               'heading'     => 'Same-Day Prescription',
-              'description' => 'As Independent Prescribers, our pharmacists can prescribe Mounjaro, Wegovy or Saxenda the same day. You leave your appointment with your medication and a clear injection guide — no waiting for a GP letter.',
+              'description' => 'Our pharmacists can assess your suitability and prescribe Mounjaro, Wegovy or Saxenda in a single visit where clinically appropriate. You leave your appointment with your medication and a clear injection guide — no waiting for a GP letter.',
           ),
           array(
               'image'       => 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&h=400&fit=crop',
@@ -686,7 +686,7 @@ get_header();
             <svg class="wl-faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <div class="wl-faq-answer">
-            <p>No. Our pharmacists are Independent Prescribers, which means they are legally authorised to assess your suitability and issue a prescription directly. You don't need to see your GP first, and there's no waiting list. Many of our patients book on a Monday and start treatment by Wednesday.</p>
+            <p>No. Our pharmacists are legally authorised to assess your suitability and issue a prescription directly. You don't need to see your GP first, and there's no waiting list.</p>
           </div>
         </details>
 
@@ -763,11 +763,10 @@ get_header();
       <div class="wl-footer-cta-top">
         <div class="wl-cta-badges">
           <span class="wl-cta-badge">GPhC Registered</span>
-          <span class="wl-cta-badge">Independent Prescribers</span>
           <span class="wl-cta-badge">Same-Day Prescription</span>
           <span class="wl-cta-badge">No GP Referral</span>
         </div>
-        <h2 class="wl-footer-cta-title">Start losing weight this week —<br>not in 3 months</h2>
+        <h2 class="wl-footer-cta-title">Start your weight-loss journey<br>with face-to-face pharmacist care</h2>
         <p class="wl-footer-cta-sub">Free consultation. No GP referral. Same-day prescription. Two South East London locations with face-to-face pharmacist support.</p>
         <div class="wl-footer-cta-buttons">
           <a href="https://chislehurstpharmacygroup.kinsta.cloud/contact-page/#book-appointment" class="wl-btn-cta-white">
