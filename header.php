@@ -98,7 +98,7 @@ $booking_url   = rl_booking_url();
 
                   <div class="dropdown-section">
                     <h4 class="dropdown-title">Private Services</h4>
-                    <a href="<?php echo esc_url( home_url( '/vitamin-b12-injection/' ) ); ?>" class="dropdown-link">
+                    <a href="<?php echo esc_url( home_url( '/vitamin-b12-london/' ) ); ?>" class="dropdown-link">
                       <div class="link-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
@@ -146,7 +146,7 @@ $booking_url   = rl_booking_url();
                         <span class="link-desc">Personalized programs</span>
                       </div>
                     </a>
-                    <a href="<?php echo esc_url( home_url( '/hair-loss/' ) ); ?>" class="dropdown-link">
+                    <a href="<?php echo esc_url( home_url( '/hair-loss-london/' ) ); ?>" class="dropdown-link">
                       <div class="link-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
@@ -227,7 +227,7 @@ $booking_url   = rl_booking_url();
                         <span class="link-desc">Protect against 3 serious infections</span>
                       </div>
                     </a>
-                    <a href="<?php echo esc_url( home_url( '/hajj-umrah-vaccine/' ) ); ?>" class="dropdown-link">
+                    <a href="<?php echo esc_url( home_url( '/hajj-umrah-london/' ) ); ?>" class="dropdown-link">
                       <div class="link-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="M9 12l2 2 4-4" />
@@ -278,7 +278,7 @@ $booking_url   = rl_booking_url();
                         <span class="link-desc">Personalised travel health plans</span>
                       </div>
                     </a>
-                    <a href="<?php echo esc_url( home_url( '/antimalarial-tablets-london/' ) ); ?>" class="dropdown-link">
+                    <a href="<?php echo esc_url( home_url( '/malaria-prevention-london/' ) ); ?>" class="dropdown-link">
                       <div class="link-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="M9 12l2 2 4-4" />
@@ -393,8 +393,8 @@ $booking_url   = rl_booking_url();
               <a href="<?php echo esc_url( home_url( '/travel-vaccinations-london/' ) ); ?>" class="search-popular-link">Travel Vaccinations</a>
               <a href="https://chislehurstpharmacygroup.kinsta.cloud/nhs-prescriptions/" class="search-popular-link">NHS Prescriptions</a>
               <a href="<?php echo esc_url( home_url( '/yellow-fever-vaccine-london/' ) ); ?>" class="search-popular-link">Yellow Fever Vaccine</a>
-              <a href="<?php echo esc_url( home_url( '/vitamin-b12-injection/' ) ); ?>" class="search-popular-link">Vitamin B12 Injections</a>
-              <a href="<?php echo esc_url( home_url( '/hair-loss/' ) ); ?>" class="search-popular-link">Hair Loss Treatment</a>
+              <a href="<?php echo esc_url( home_url( '/vitamin-b12-london/' ) ); ?>" class="search-popular-link">Vitamin B12 Injections</a>
+              <a href="<?php echo esc_url( home_url( '/hair-loss-london/' ) ); ?>" class="search-popular-link">Hair Loss Treatment</a>
             </div>
           </div>
         </div>
@@ -434,10 +434,10 @@ $booking_url   = rl_booking_url();
             <a href="https://chislehurstpharmacygroup.kinsta.cloud/nhs-prescriptions/" class="mobile-nav-sub-link">NHS Prescriptions</a>
             <a href="<?php echo esc_url( home_url( '/pharmacy-first/' ) ); ?>" class="mobile-nav-sub-link">Pharmacy First</a>
             <a href="<?php echo esc_url( home_url( '/nhs-vaccinations/' ) ); ?>" class="mobile-nav-sub-link">NHS Vaccinations</a>
-            <a href="<?php echo esc_url( home_url( '/vitamin-b12-injection/' ) ); ?>" class="mobile-nav-sub-link">Vitamin B12 Injections</a>
+            <a href="<?php echo esc_url( home_url( '/vitamin-b12-london/' ) ); ?>" class="mobile-nav-sub-link">Vitamin B12 Injections</a>
             <a href="<?php echo esc_url( home_url( '/health-checks/' ) ); ?>" class="mobile-nav-sub-link">Health Checks</a>
             <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="mobile-nav-sub-link">Weight Loss</a>
-            <a href="<?php echo esc_url( home_url( '/hair-loss/' ) ); ?>" class="mobile-nav-sub-link">Hair Loss</a>
+            <a href="<?php echo esc_url( home_url( '/hair-loss-london/' ) ); ?>" class="mobile-nav-sub-link">Hair Loss</a>
             <a href="<?php echo esc_url( home_url( '/hpv-vaccine/' ) ); ?>" class="mobile-nav-sub-link">HPV Vaccine</a>
           </div>
         </div>
@@ -454,12 +454,12 @@ $booking_url   = rl_booking_url();
             <a href="<?php echo esc_url( home_url( '/hepatitis-vaccine-london/' ) ); ?>" class="mobile-nav-sub-link">Hepatitis A &amp; B</a>
             <a href="<?php echo esc_url( home_url( '/yellow-fever-vaccine-london/' ) ); ?>" class="mobile-nav-sub-link">Yellow Fever</a>
             <a href="<?php echo esc_url( home_url( '/dtp-vaccine-london/' ) ); ?>" class="mobile-nav-sub-link">DTP</a>
-            <a href="<?php echo esc_url( home_url( '/hajj-umrah-vaccine/' ) ); ?>" class="mobile-nav-sub-link">Hajj &amp; Umrah</a>
+            <a href="<?php echo esc_url( home_url( '/hajj-umrah-london/' ) ); ?>" class="mobile-nav-sub-link">Hajj &amp; Umrah</a>
             <a href="<?php echo esc_url( home_url( '/thailand-travel-vaccines/' ) ); ?>" class="mobile-nav-sub-link">Thailand</a>
             <a href="<?php echo esc_url( home_url( '/india/' ) ); ?>" class="mobile-nav-sub-link">India</a>
             <a href="<?php echo esc_url( home_url( '/gambia-travel-vaccines/' ) ); ?>" class="mobile-nav-sub-link">The Gambia</a>
             <a href="<?php echo esc_url( home_url( '/travel-vaccinations-london/' ) ); ?>" class="mobile-nav-sub-link">Travel Consultations</a>
-            <a href="<?php echo esc_url( home_url( '/antimalarial-tablets-london/' ) ); ?>" class="mobile-nav-sub-link">Malaria Prevention</a>
+            <a href="<?php echo esc_url( home_url( '/malaria-prevention-london/' ) ); ?>" class="mobile-nav-sub-link">Malaria Prevention</a>
           </div>
         </div>
 
