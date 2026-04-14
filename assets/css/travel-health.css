@@ -720,12 +720,14 @@
   display: inline-block;
   margin-top: 12px;
   padding: 8px 16px;
-  background: rgba(10, 47, 138, 0.08);
-  border: 1px solid rgba(10, 47, 138, 0.12);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 50px;
   font-size: 13px;
   font-weight: 600;
-  color: var(--primary-blue);
+  color: #ffffff;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
 }
 
 /* ========== TRUST / ABOUT ========== */
