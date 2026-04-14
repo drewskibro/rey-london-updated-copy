@@ -508,6 +508,69 @@
 .hajj-visual-badge svg { flex-shrink: 0; color: var(--hajj-accent); }
 .hajj-visual-badge span { font-size: 13px; font-weight: 700; line-height: 1.4; }
 
+/* Sub-section headings within body text */
+.hajj-subsection-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin: 28px 0 12px;
+  letter-spacing: -0.01em;
+}
+
+/* CTA button within info section */
+.hajj-info-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+  padding: 14px 28px;
+  background: var(--primary-blue);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: all 0.3s;
+  box-shadow: 0 4px 16px rgba(10,47,138,0.3);
+}
+
+.hajj-info-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(10,47,138,0.4);
+}
+
+/* Prominent badge variant */
+.hajj-visual-badge--prominent {
+  padding: 16px 20px;
+  gap: 14px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.hajj-visual-badge--prominent svg {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+}
+
+.hajj-visual-badge--prominent div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hajj-visual-badge--prominent strong {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.hajj-visual-badge--prominent span {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.8);
+}
+
 /* ===== COMPARISON TABLE ===== */
 .hajj-compare-wrapper {
   margin-top: 48px;
