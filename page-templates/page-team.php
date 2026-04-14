@@ -117,10 +117,6 @@ get_header();
                   <div class="mt-spec-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg></div>
                   <div><span class="mt-spec-name">Ear Wax Removal</span><span class="mt-spec-desc">Microsuction specialist</span></div>
                 </a>
-                <a href="<?php echo esc_url( home_url( '/nhs-prescriptions/' ) ); ?>" class="mt-specialism-card">
-                  <div class="mt-spec-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M12 9v6"/><path d="M9 12h6"/></svg></div>
-                  <div><span class="mt-spec-name">Independent Prescribing</span><span class="mt-spec-desc">PGDs &amp; clinical protocols</span></div>
-                </a>
                 <a href="<?php echo esc_url( home_url( '/hpv-vaccine/' ) ); ?>" class="mt-specialism-card">
                   <div class="mt-spec-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
                   <div><span class="mt-spec-name">Clinical Consultations</span><span class="mt-spec-desc">Face-to-face and remote</span></div>
@@ -131,9 +127,19 @@ get_header();
 
           <div class="mt-lead-actions">
             <a href="#book" class="mt-btn-primary"><?php echo esc_html( $lead_cta ); ?></a>
-            <a href="tel:02084673158" class="mt-btn-outline">
+            <?php
+            $phone_pond_num       = rl_option( 'phone_pond', '020 8467 3158' );
+            $phone_chisl_num      = rl_option( 'phone_chislehurst', '020 8295 0017' );
+            $phone_pond_link      = preg_replace( '/[^0-9+]/', '', $phone_pond_num );
+            $phone_chisl_link     = preg_replace( '/[^0-9+]/', '', $phone_chisl_num );
+            ?>
+            <a href="tel:<?php echo esc_attr( $phone_pond_link ); ?>" class="mt-btn-outline">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              Call 020 8467 3158
+              Pond Pharmacy · <?php echo esc_html( $phone_pond_num ); ?>
+            </a>
+            <a href="tel:<?php echo esc_attr( $phone_chisl_link ); ?>" class="mt-btn-outline">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Chislehurst Pharmacy · <?php echo esc_html( $phone_chisl_num ); ?>
             </a>
           </div>
         </div>
@@ -167,78 +173,6 @@ get_header();
     </div>
   </section>
   <?php endif; ?>
-
-  <!-- ===================== QUALIFICATIONS ===================== -->
-  <section class="mt-quals-section" id="qualifications">
-    <div class="container">
-      <div style="text-align:center;">
-        <div class="mt-pill">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-          Education &amp; Training
-        </div>
-        <h2 class="section-title">Qualifications &amp; <span class="gradient-text">Credentials</span></h2>
-        <p class="section-subtitle" style="max-width:700px;margin:0 auto 0;">Our team holds advanced qualifications across pharmacy, clinical practice, and specialist healthcare.</p>
-      </div>
-
-      <div class="mt-quals-grid mt-reveal">
-        <?php
-        $quals = rl_field( 'mt_quals' );
-        if ( $quals ) :
-          foreach ( $quals as $qual ) :
-        ?>
-          <div class="mt-qual-card">
-            <div class="mt-qual-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-            </div>
-            <h3><?php echo esc_html( $qual['title'] ); ?></h3>
-            <p><?php echo esc_html( $qual['description'] ); ?></p>
-          </div>
-        <?php
-          endforeach;
-        else :
-        ?>
-          <div class="mt-qual-card">
-            <div class="mt-qual-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-            </div>
-            <h3>MPharm (Bachelor of Pharmacy)</h3>
-            <p>4-year integrated Master's degree from a UK-accredited university</p>
-          </div>
-          <div class="mt-qual-card">
-            <div class="mt-qual-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M12 9v6"/><path d="M9 12h6"/></svg>
-            </div>
-            <h3>PG Cert Non-Medical Prescribing</h3>
-            <p>Qualified to prescribe independently across therapeutic areas</p>
-          </div>
-          <div class="mt-qual-card">
-            <div class="mt-qual-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
-            </div>
-            <h3>Master's in Medical Informatics</h3>
-            <p>NHS Lancaster University Medical School — clinical data &amp; systems</p>
-          </div>
-          <div class="mt-qual-card">
-            <div class="mt-qual-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-            </div>
-            <h3>Diploma in Diseases</h3>
-            <p>Advanced understanding of long-term conditions and comorbidities</p>
-          </div>
-        <?php endif; ?>
-      </div>
-
-      <div class="mt-gphc-card mt-reveal">
-        <div class="mt-gphc-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-        </div>
-        <div>
-          <strong>Independent Prescriber Status</strong>
-          <span>Authorised to prescribe medicines directly — no GP referral required for eligible treatments</span>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ===================== FULL TEAM ===================== -->
   <section class="mt-team-section" id="team">
@@ -382,9 +316,19 @@ get_header();
       </div>
       <div class="mt-final-ctas">
         <a href="#book" class="mt-btn-primary">Book an Appointment</a>
-        <a href="tel:02084673158" class="mt-btn-outline">
+        <?php
+        $phone_pond_num   = rl_option( 'phone_pond', '020 8467 3158' );
+        $phone_chisl_num  = rl_option( 'phone_chislehurst', '020 8295 0017' );
+        $phone_pond_link  = preg_replace( '/[^0-9+]/', '', $phone_pond_num );
+        $phone_chisl_link = preg_replace( '/[^0-9+]/', '', $phone_chisl_num );
+        ?>
+        <a href="tel:<?php echo esc_attr( $phone_pond_link ); ?>" class="mt-btn-outline">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          020 8467 3158
+          Pond Pharmacy · <?php echo esc_html( $phone_pond_num ); ?>
+        </a>
+        <a href="tel:<?php echo esc_attr( $phone_chisl_link ); ?>" class="mt-btn-outline">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Chislehurst Pharmacy · <?php echo esc_html( $phone_chisl_num ); ?>
         </a>
       </div>
     </div>
