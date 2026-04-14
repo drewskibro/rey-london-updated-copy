@@ -1094,180 +1094,245 @@
 /* ============================================================
    CLOSER CARD
    ============================================================ */
-.bp-closer-section {
-  padding: 0 0 40px;
-  background: var(--white);
-}
-
+/* ============================================================
+   CLOSER CARD — Premium consultation CTA
+   Mirrors Easy Pharmacy structure: gradient header, flex body,
+   pharmacist left, CTA right, trust row, compliance pills
+   ============================================================ */
 .bp-closer-card {
-  max-width: 800px;
-  margin: 0 auto;
+  margin-top: 3rem;
   background: var(--white);
-  border-radius: 16px;
-  padding: 40px;
-  box-shadow: 0 8px 40px rgba(10,47,138,0.12);
+  border-radius: 1.25rem;
   border: 1px solid rgba(10,47,138,0.1);
+  box-shadow: 0 12px 40px rgba(10,47,138,0.1);
+  overflow: hidden;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .bp-closer-header {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 50%, var(--light-blue) 100%);
+  padding: 0.875rem 1.75rem;
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 18px;
+  gap: 0.625rem;
+  font-size: 0.8125rem;
   font-weight: 700;
-  color: var(--primary-blue);
-  margin-bottom: 28px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--border-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--white);
 }
 
+.bp-closer-header svg { color: rgba(255,255,255,0.8); }
+
 .bp-closer-body {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 36px;
-  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .bp-closer-body {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2.5rem;
+  }
 }
 
 .bp-closer-pharmacist {
   display: flex;
-  gap: 16px;
   align-items: flex-start;
+  gap: 1rem;
+  flex-shrink: 0;
 }
 
 .bp-closer-avatar {
-  width: 100px;
-  height: 100px;
-  min-width: 100px;
+  width: 72px;
+  height: 72px;
+  min-width: 72px;
   border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(10,47,138,0.15);
+  box-shadow: 0 4px 16px rgba(10,47,138,0.1);
+  flex-shrink: 0;
   background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
   color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 800;
-  border: 3px solid rgba(10,47,138,0.15);
-  flex-shrink: 0;
+}
+
+img.bp-closer-avatar {
+  background: none;
+  font-size: 0;
+}
+
+.bp-closer-pharmacist-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
 }
 
 .bp-closer-preamble {
-  display: block;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-gray);
+  font-size: 0.6875rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-bottom: 4px;
+  color: var(--primary-blue);
 }
 
 .bp-closer-name {
-  display: block;
-  font-size: 22px;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-dark);
-  letter-spacing: -0.01em;
 }
 
-.bp-closer-title {
-  display: block;
-  font-size: 14px;
+.bp-closer-role {
+  font-size: 0.8125rem;
   color: var(--text-gray);
-  margin-bottom: 8px;
+  line-height: 1.4;
 }
 
 .bp-closer-gphc {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 13px;
+  gap: 0.375rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--primary-blue);
+  margin-top: 0.25rem;
 }
 
-.bp-closer-action h3 {
-  font-size: 22px;
-  font-weight: 700;
+.bp-closer-gphc svg { color: #10b981; }
+
+.bp-closer-action { flex: 1; }
+
+.bp-closer-action-title {
+  font-size: 1.5rem;
+  font-weight: 800;
   color: var(--text-dark);
-  margin-bottom: 8px;
+  margin: 0 0 0.625rem;
+  line-height: 1.25;
 }
 
-.bp-closer-action p {
-  font-size: 16px;
+.bp-closer-action-desc {
+  font-size: 0.9375rem;
   color: var(--text-gray);
   line-height: 1.6;
-  margin-bottom: 20px;
+  margin: 0 0 1.25rem;
 }
 
-.bp-closer-btns {
+.bp-closer-buttons {
   display: flex;
-  gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  align-items: center;
+  gap: 1rem;
 }
 
-.bp-btn-primary {
+.bp-closer-book {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
   background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
   color: var(--white);
   text-decoration: none;
-  border-radius: 50px;
-  font-size: 15px;
+  border-radius: 100px;
+  font-size: 1rem;
   font-weight: 700;
-  transition: all 0.3s;
-  box-shadow: 0 4px 16px rgba(10,47,138,0.3);
+  border: none;
+  box-shadow: 0 8px 24px rgba(10,47,138,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.bp-btn-primary:hover {
+.bp-closer-book:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(10,47,138,0.4);
+  box-shadow: 0 12px 32px rgba(10,47,138,0.4);
 }
 
-.bp-btn-outline {
+.bp-closer-phone {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  background: transparent;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
   color: var(--primary-blue);
   text-decoration: none;
-  border-radius: 50px;
-  font-size: 15px;
-  font-weight: 700;
-  border: 2px solid rgba(10,47,138,0.2);
-  transition: all 0.3s;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid rgba(10,47,138,0.15);
+  border-radius: 100px;
+  transition: border-color 0.2s ease, background 0.2s ease;
 }
 
-.bp-btn-outline:hover {
-  background: rgba(10,47,138,0.06);
-  border-color: var(--primary-blue);
-  transform: translateY(-2px);
+.bp-closer-phone:hover {
+  border-color: rgba(10,47,138,0.3);
+  background: rgba(10,47,138,0.04);
 }
 
+.bp-closer-phone svg { color: var(--primary-blue); }
+
+/* Trust row inside card */
 .bp-closer-trust {
   display: flex;
-  gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 1rem 2rem 1.25rem;
+  border-top: 1px solid rgba(10,47,138,0.08);
 }
 
-.bp-closer-trust span {
-  display: flex;
+.bp-closer-trust-item {
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 13px;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.bp-closer-trust-item svg { color: #10b981; }
+
+/* Compliance pills below card */
+.bp-closer-compliance {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.bp-closer-compliance-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--text-gray);
+  background: rgba(10,47,138,0.04);
+  border: 1px solid rgba(10,47,138,0.06);
+  border-radius: 100px;
+  padding: 0.5rem 1rem;
 }
 
-.bp-closer-trust svg {
-  color: #10b981;
-  flex-shrink: 0;
+.bp-closer-compliance-pill svg { color: var(--primary-blue); }
+
+/* Mobile closer */
+@media (max-width: 640px) {
+  .bp-closer-body { padding: 1.5rem; }
+  .bp-closer-pharmacist { flex-direction: column; align-items: center; text-align: center; }
+  .bp-closer-pharmacist-info { align-items: center; }
+  .bp-closer-action { text-align: center; }
+  .bp-closer-action-title { font-size: 1.375rem; }
+  .bp-closer-buttons { justify-content: center; flex-direction: column; align-items: center; }
 }
 
 /* ============================================================
-   COMPLIANCE PILLS
+   COMPLIANCE PILLS (legacy standalone section — kept for backwards compat)
    ============================================================ */
 .bp-compliance {
   padding: 32px 0;
@@ -1354,15 +1419,11 @@
 /* ============================================================
    NEXT ARTICLE — Premium card
    ============================================================ */
-.bp-next-article-section {
-  padding: 0 0 80px;
-  background: var(--white);
-}
-
+/* Compliance pills inline (inside content filter) */
 .bp-next-article-card {
   display: block;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 1.5rem auto 0;
   padding: 32px 36px;
   background: var(--white);
   border-radius: 16px;
@@ -1826,50 +1887,4 @@ img.bp-review-avatar {
   margin-bottom: 40px;
 }
 
-/* Closer card — gradient header bar */
-.bp-closer-header {
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
-  color: var(--white);
-  border-radius: 12px 12px 0 0;
-  margin: -40px -40px 28px;
-  padding: 16px 40px;
-  border-bottom: none;
-}
-
-.bp-closer-header svg {
-  color: var(--white);
-}
-
-.bp-closer-header span {
-  color: var(--white);
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-/* Closer card — side-by-side layout on desktop */
-@media (min-width: 768px) {
-  .bp-closer-body {
-    grid-template-columns: auto 1fr;
-    gap: 40px;
-  }
-}
-
-/* Closer buttons — inline on desktop */
-@media (min-width: 640px) {
-  .bp-closer-btns {
-    flex-direction: row;
-    align-items: center;
-  }
-}
-
-/* Closer card — section needs tighter spacing */
-.bp-closer-section {
-  padding: 0 0 60px;
-}
-
-.bp-closer-section .bp-closer-card {
-  max-width: 800px;
-  margin: 0 auto;
-}
+/* (old closer overrides removed — now handled in main closer card block) */

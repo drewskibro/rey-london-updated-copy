@@ -209,50 +209,8 @@ $reviewer_initials = strtoupper( substr( $reviewer, 0, 1 ) );
   </section>
   <?php endif; ?>
 
-  <!-- ============================================
-       COMPLIANCE PILLS
-       ============================================ -->
-  <section class="bp-compliance">
-    <div class="container">
-      <div class="bp-compliance-pills">
-        <span class="bp-pill">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          GPhC Registered Pharmacy
-        </span>
-        <span class="bp-pill">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          Prescription-Only Medicine
-        </span>
-        <span class="bp-pill">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          Clinical Criteria Apply
-        </span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================
-       NEXT ARTICLE
-       ============================================ -->
-  <?php
-  $next_post = get_next_post();
-  if ( ! $next_post ) {
-      $next_post = get_previous_post();
-  }
-  if ( $next_post ) :
-  ?>
-  <section class="bp-next-article-section">
-    <div class="container">
-      <a href="<?php echo esc_url( get_permalink( $next_post ) ); ?>" class="bp-next-article-card">
-        <span class="bp-next-article-label">
-          Next
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-        </span>
-        <span class="bp-next-article-title"><?php echo esc_html( get_the_title( $next_post ) ); ?></span>
-      </a>
-    </div>
-  </section>
-  <?php endif; ?>
+  <!-- Compliance pills + Next article are injected via the_content filter
+       after the closer card, so they flow as one cohesive end-of-post unit -->
 
 <?php endwhile; ?>
 
