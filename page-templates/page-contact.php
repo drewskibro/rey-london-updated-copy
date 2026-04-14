@@ -62,8 +62,7 @@ get_header();
             <div class="ct-hero-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
             <div class="ct-hero-card-content">
               <h3>Opening Hours</h3>
-              <p>Mon–Fri 9am–6pm | Sat 9am–1pm</p>
-              <a href="#hours">View full hours</a>
+              <p>Mon–Fri: 9am–6pm | Sat: 9am–1pm | Sun: Closed</p>
             </div>
           </div>
         </div>
@@ -229,37 +228,6 @@ get_header();
     </div>
   </section>
 
-  <!-- ===================== OPENING HOURS ===================== -->
-  <section class="ct-hours-section" id="hours">
-    <div class="container ct-hours-inner">
-      <h2 class="ct-hours-title">Opening Hours</h2>
-      <p class="ct-hours-sub">Both pharmacies keep the same core hours. Extended hours available by appointment for specialist services.</p>
-      <div class="ct-hours-grid ct-reveal">
-        <div class="ct-hours-card">
-          <h3>Pond Pharmacy</h3>
-          <div class="ct-hours-row"><span class="ct-hours-day">Monday – Friday</span><span class="ct-hours-time">9:00 am – 6:00 pm</span></div>
-          <div class="ct-hours-row"><span class="ct-hours-day">Saturday</span><span class="ct-hours-time">9:00 am – 1:00 pm</span></div>
-          <div class="ct-hours-row"><span class="ct-hours-day">Sunday</span><span class="ct-hours-time">Closed</span></div>
-          <div class="ct-hours-row"><span class="ct-hours-day">Bank Holidays</span><span class="ct-hours-time">Closed</span></div>
-          <div class="ct-hours-note">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-            Walk-ins welcome during opening hours
-          </div>
-        </div>
-        <div class="ct-hours-card">
-          <h3>Chislehurst Pharmacy</h3>
-          <div class="ct-hours-row"><span class="ct-hours-day">Monday – Friday</span><span class="ct-hours-time">9:00 am – 6:00 pm</span></div>
-          <div class="ct-hours-row"><span class="ct-hours-day">Saturday</span><span class="ct-hours-time">9:00 am – 1:00 pm</span></div>
-          <div class="ct-hours-row"><span class="ct-hours-day">Sunday</span><span class="ct-hours-time">Closed</span></div>
-          <div class="ct-hours-row"><span class="ct-hours-day">Bank Holidays</span><span class="ct-hours-time">Closed</span></div>
-          <div class="ct-hours-note">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-            Convenient parking on surrounding streets
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ===================== FAQ ===================== -->
   <section class="ct-faq-section" id="faq">
@@ -319,9 +287,9 @@ get_header();
         <p class="ct-footer-cta-sub">Skip the phone queue — book online in minutes and get instant confirmation. Same-day appointments available at both Chislehurst locations.</p>
         <div class="ct-footer-cta-buttons">
           <a href="#book-appointment" class="hp-btn-cta-white">Book Appointment Online</a>
-          <a href="tel:02084673158" class="hp-btn-cta-ghost">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.09 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81L9.27 8.95a16 16 0 0 0 6.78 6.78l1.42-1.42a12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Or Call: 020 8467 3158
+          <a href="#locations" class="hp-btn-cta-ghost">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Find Your Branch
           </a>
         </div>
         <div class="ct-cta-checks">
