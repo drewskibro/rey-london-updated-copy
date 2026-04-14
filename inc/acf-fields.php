@@ -2719,6 +2719,8 @@ acf_add_local_field_group( array(
         array( 'key' => 'field_rl_hajj_hero_title', 'label' => 'Hero Title', 'name' => 'hajj_hero_title', 'type' => 'text', 'default_value' => 'Hajj & Umrah Vaccination in Chislehurst — MenACWY Certificate Issued Same Day' ),
         array( 'key' => 'field_rl_hajj_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'hajj_hero_subtitle', 'type' => 'textarea', 'rows' => 4 ),
         array( 'key' => 'field_rl_hajj_hero_image', 'label' => 'Hero Image', 'name' => 'hajj_hero_image', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'medium', 'instructions' => 'Recommended size: 800px wide' ),
+        array( 'key' => 'field_rl_hajj_info_tab', 'label' => 'MenACWY Info Section', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_hajj_info_image', 'label' => 'Section Image', 'name' => 'hajj_info_image', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'medium', 'instructions' => 'Image shown alongside the "What Is MenACWY" section. Recommended: 800px wide' ),
     ),
     'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'page-templates/page-hajj-umrah.php' ) ) ),
     'menu_order' => 0, 'position' => 'normal', 'style' => 'default', 'label_placement' => 'top',

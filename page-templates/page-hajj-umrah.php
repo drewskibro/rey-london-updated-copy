@@ -112,7 +112,8 @@ get_header();
           <p class="hajj-body-text"><strong>Two vaccine types exist,</strong> but they are not equivalent. The <strong>conjugate MenACWY vaccine</strong> provides longer-lasting immunity and its official certificate is valid for <strong>5 years</strong>. The older <strong>polysaccharide vaccine</strong> produces weaker, shorter-lasting immunity and its certificate is only valid for <strong>3 years</strong>. Saudi authorities and NaTHNaC both prefer the conjugate vaccine — it is what we administer at our Chislehurst pharmacy.</p>
         </div>
         <div class="hajj-visual-placeholder">
-          <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80&auto=format&fit=crop" alt="Pharmacist administering MenACWY vaccination — professional clinical setting" loading="lazy" />
+          <?php $hajj_info_img = rl_field( 'hajj_info_image' ); ?>
+          <img src="<?php echo esc_url( $hajj_info_img ?: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80&auto=format&fit=crop' ); ?>" alt="Pharmacist administering MenACWY vaccination — professional clinical setting" loading="lazy" />
           <div class="hajj-visual-badge">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
             <span>Conjugate MenACWY — 5-year certificate validity.</span>
