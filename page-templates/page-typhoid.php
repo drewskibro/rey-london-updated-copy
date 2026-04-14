@@ -7,6 +7,11 @@
  * component classes (dtp-*) so no new styles are introduced — the
  * design system, spacing, typography and colour tokens are shared.
  *
+ * ACF fields (see inc/acf-fields.php → "Typhoid Vaccine Page" group):
+ *   - typh_hero_eyebrow / typh_hero_title / typh_hero_subtitle — hero copy
+ *   - typh_hero_image    — hero right-hand image
+ *   - typh_spread_image  — "How Is Typhoid Spread?" section image
+ *
  * Booking URL is a placeholder ("#") until the client confirms.
  *
  * @package Rey_London
@@ -30,11 +35,6 @@ $typh_booking_url = '#';
           <h1><?php echo wp_kses_post( rl_field( 'typh_hero_title', 'Typhoid Vaccination in <span class="gradient-text">Chislehurst</span>' ) ); ?></h1>
           <p class="dtp-hero-sub"><?php echo esc_html( rl_field( 'typh_hero_subtitle', 'Protect yourself before you travel. Available at both our Chislehurst branches — no GP referral needed.' ) ); ?></p>
 
-          <div style="margin:-8px 0 28px;max-width:620px;color:rgba(255,255,255,.78);font-size:15px;line-height:1.7;">
-            <p style="margin:0 0 14px;">Typhoid fever is a serious bacterial infection caused by <strong style="color:#fff;font-weight:600;">Salmonella typhi</strong>, spread through contaminated food and water. It is most common in parts of Asia, Africa, and Latin America where hygiene standards and access to clean water vary. There are around 21 million cases worldwide every year.</p>
-            <p style="margin:0;">Symptoms include high fever, abdominal pain, loss of appetite, and constipation or diarrhoea. In serious cases it can lead to intestinal perforation or meningitis, both of which can be life-threatening. Vaccination is the most effective way to protect yourself before travelling to an at-risk area.</p>
-          </div>
-
           <div class="dtp-hero-trust">
             <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> GPhC-registered pharmacists</span>
             <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> No GP referral needed</span>
@@ -55,7 +55,8 @@ $typh_booking_url = '#';
 
         <div class="dtp-hero-visual">
           <div class="dtp-hero-visual-inner">
-            <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&q=80&auto=format&fit=crop" alt="Pharmacist preparing a typhoid vaccination in a clinical setting — professional travel health service" loading="lazy" />
+            <?php $typh_hero_img = rl_field( 'typh_hero_image', 'https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&q=80&auto=format&fit=crop' ); ?>
+            <img src="<?php echo esc_url( $typh_hero_img ); ?>" alt="Pharmacist preparing a typhoid vaccination in a clinical setting — professional travel health service" loading="lazy" />
           </div>
         </div>
       </div>
@@ -117,19 +118,21 @@ $typh_booking_url = '#';
     </div>
   </section>
 
-  <!-- ===================== SECTION 3 — HOW TYPHOID IS SPREAD ===================== -->
-  <section class="dtp-section-white" id="how-spread">
+  <!-- ===================== SECTION 3 — UNDERSTANDING TYPHOID ===================== -->
+  <section class="dtp-section-white" id="about">
     <div class="container">
       <div class="dtp-two-col">
         <div>
           <span class="dtp-eyebrow">Understanding the Risk</span>
-          <h2 class="dtp-section-title">How Is Typhoid Spread?</h2>
-          <p class="dtp-body-text">Typhoid is transmitted through contaminated food or water, or through close contact with an infected person.</p>
+          <h2 class="dtp-section-title">What is typhoid fever, and how does it spread?</h2>
+          <p class="dtp-body-text">Typhoid fever is a serious bacterial infection caused by <strong>Salmonella typhi</strong>, spread through contaminated food and water. It is most common in parts of Asia, Africa, and Latin America where hygiene standards and access to clean water vary. There are around 21 million cases worldwide every year.</p>
+          <p class="dtp-body-text">Symptoms include high fever, abdominal pain, loss of appetite, and constipation or diarrhoea. In serious cases it can lead to intestinal perforation or meningitis, both of which can be life-threatening. Vaccination is the most effective way to protect yourself before travelling to an at-risk area.</p>
           <p class="dtp-body-text">The bacteria spread when someone who is ill — or who has recently recovered but is still shedding the bacteria — handles food without washing their hands thoroughly. Drinking or using water contaminated with sewage is another common route of infection, particularly in areas with limited sanitation infrastructure.</p>
           <p class="dtp-body-text">Travellers are at greatest risk when eating <strong>street food</strong>, drinking <strong>tap water</strong>, or consuming <strong>ice, salads, or shellfish</strong> in high-risk regions.</p>
         </div>
         <div class="dtp-visual-placeholder">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop" alt="Food and water hygiene in high-risk travel destinations — typhoid prevention" loading="lazy" />
+          <?php $typh_spread_img = rl_field( 'typh_spread_image', 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop' ); ?>
+          <img src="<?php echo esc_url( $typh_spread_img ); ?>" alt="Food and water hygiene in high-risk travel destinations — typhoid prevention" loading="lazy" />
           <div class="dtp-visual-badge">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
             <span>Food-and-water hygiene is the main prevention route alongside vaccination.</span>
