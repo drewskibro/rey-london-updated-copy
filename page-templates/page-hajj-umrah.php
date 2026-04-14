@@ -106,16 +106,29 @@ get_header();
         <div>
           <span class="hajj-eyebrow">What You Need to Know</span>
           <h2 class="hajj-section-title">What Is MenACWY and Why Does It Matter for Hajj and Umrah?</h2>
+
           <p class="hajj-body-text">Meningococcal disease is a serious, potentially fatal bacterial infection caused by <em>Neisseria meningitidis</em>. It spreads through close contact — coughing, sneezing, sharing food or drinks — and can progress from mild symptoms to life-threatening meningitis or septicaemia within hours. Mass gatherings where millions of people from across the world sleep, eat and worship in close proximity dramatically increase transmission risk, which is why Saudi Arabia requires MenACWY vaccination for Hajj.</p>
-          <p class="hajj-body-text">Hajj has a long history of meningococcal outbreaks. Large group A outbreaks occurred among pilgrims in previous decades, and in 2000/2001 a major group W outbreak among Hajj pilgrims led directly to the current Saudi vaccination requirements. Group W has remained the dominant strain in pilgrimage-linked cases ever since.</p>
-          <p class="hajj-body-text"><strong>The 2024/2025 context is serious.</strong> By March 2025, 17 meningococcal cases associated with Saudi Arabian pilgrimage had been reported globally. In 2024, 12 cases were confirmed across the UK, US and France among Hajj and Umrah returnees — 9 of whom were <em>unvaccinated</em>. The UKHSA has confirmed 5 MenW cases in England and Wales among UK returnees between February and March 2025 alone. Saudi Ministry of Health data showed Umrah pilgrim compliance was only 54% in March 2025, which is why vaccination enforcement is now tightening.</p>
-          <p class="hajj-body-text"><strong>Two vaccine types exist,</strong> but they are not equivalent. The <strong>conjugate MenACWY vaccine</strong> provides longer-lasting immunity and its official certificate is valid for <strong>5 years</strong>. The older <strong>polysaccharide vaccine</strong> produces weaker, shorter-lasting immunity and its certificate is only valid for <strong>3 years</strong>. Saudi authorities and NaTHNaC both prefer the conjugate vaccine — it is what we administer at our Chislehurst pharmacy.</p>
+
+          <h3 class="hajj-subsection-title">The outbreak context</h3>
+          <p class="hajj-body-text">Hajj has a long history of meningococcal outbreaks. In 2000/2001 a major group W outbreak among Hajj pilgrims led directly to the current Saudi vaccination requirements. By March 2025, 17 meningococcal cases associated with Saudi Arabian pilgrimage had been reported globally. In 2024, 12 cases were confirmed across the UK, US and France among Hajj and Umrah returnees — 9 of whom were <em>unvaccinated</em>. Saudi Ministry of Health data showed Umrah pilgrim compliance was only 54% in March 2025, which is why vaccination enforcement is now tightening.</p>
+
+          <h3 class="hajj-subsection-title">Conjugate vs polysaccharide</h3>
+          <p class="hajj-body-text">Two vaccine types exist, but they are not equivalent. The <strong>conjugate MenACWY vaccine</strong> provides longer-lasting immunity and its official certificate is valid for <strong>5 years</strong>. The older <strong>polysaccharide vaccine</strong> produces weaker, shorter-lasting immunity and its certificate is only valid for <strong>3 years</strong>. Saudi authorities and NaTHNaC both prefer the conjugate vaccine — it is what we administer at our Chislehurst pharmacy.</p>
+
+          <a href="https://chislehurstpharmacygroup.kinsta.cloud/contact-page/#book-appointment" class="hajj-info-cta">
+            Book Your MenACWY Vaccination
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
         <div class="hajj-visual-placeholder">
-          <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80&auto=format&fit=crop" alt="Pharmacist administering MenACWY vaccination — professional clinical setting" loading="lazy" />
-          <div class="hajj-visual-badge">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-            <span>Conjugate MenACWY — 5-year certificate validity.</span>
+          <?php $hajj_info_img = rl_field( 'hajj_info_image' ); ?>
+          <img src="<?php echo esc_url( $hajj_info_img ?: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80&auto=format&fit=crop' ); ?>" alt="Pharmacist administering MenACWY vaccination — professional clinical setting" loading="lazy" />
+          <div class="hajj-visual-badge hajj-visual-badge--prominent">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            <div>
+              <strong>Conjugate MenACWY vaccine</strong>
+              <span>5-year certificate validity · Preferred by Saudi authorities</span>
+            </div>
           </div>
         </div>
       </div>
