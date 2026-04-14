@@ -313,7 +313,121 @@
 }
 
 /* ============================================
-   CONTENT BLOCK (Sections 4 & 5)
+   TIMING CARDS (Section 4)
+   ============================================ */
+.flu-timing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.flu-timing-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 36px;
+  border: 1px solid rgba(10,47,138,0.1);
+  box-shadow: 0 4px 24px rgba(10,47,138,0.06);
+  transition: all 0.3s;
+}
+
+.flu-timing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(10,47,138,0.1);
+}
+
+.flu-timing-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.flu-timing-icon--flu {
+  background: rgba(13,148,136,0.1);
+  color: var(--flu-accent);
+  border: 1px solid rgba(13,148,136,0.2);
+}
+
+.flu-timing-icon--covid {
+  background: rgba(99,102,241,0.1);
+  color: #6366f1;
+  border: 1px solid rgba(99,102,241,0.2);
+}
+
+.flu-timing-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 12px;
+}
+
+.flu-timing-card p {
+  font-size: 15px;
+  color: var(--text-gray);
+  line-height: 1.7;
+}
+
+/* ============================================
+   STEP CARDS (Section 5 — dark background)
+   ============================================ */
+.flu-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.flu-step-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 36px;
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: all 0.3s;
+}
+
+.flu-step-card:hover {
+  background: rgba(255,255,255,0.14);
+  transform: translateY(-4px);
+}
+
+.flu-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--flu-accent);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.flu-step-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.flu-step-card p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+}
+
+/* ============================================
+   CONTENT BLOCK (fallback for simple text sections)
    ============================================ */
 .flu-content-block {
   max-width: 800px;
@@ -355,6 +469,8 @@
   .flu-hero h1 { font-size: 36px; }
   .flu-eligibility-grid { grid-template-columns: 1fr; }
   .flu-why-grid { grid-template-columns: 1fr; max-width: 500px; }
+  .flu-timing-grid { grid-template-columns: 1fr; }
+  .flu-steps-grid { grid-template-columns: 1fr; max-width: 500px; }
 }
 
 @media (max-width: 640px) {
