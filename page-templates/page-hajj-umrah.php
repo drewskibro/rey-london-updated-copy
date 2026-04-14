@@ -243,7 +243,8 @@ get_header();
       <div class="hajj-hiw-grid">
         <div class="hajj-hiw-photo-col">
           <div class="hajj-hiw-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80&auto=format&fit=crop" alt="Pharmacist administering MenACWY vaccination in a professional clinical setting" class="hajj-hiw-photo" loading="lazy" />
+            <?php $hajj_appt_img = rl_field( 'hajj_appt_image' ); ?>
+            <img src="<?php echo esc_url( $hajj_appt_img ?: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80&auto=format&fit=crop' ); ?>" alt="Pharmacist administering MenACWY vaccination in a professional clinical setting" class="hajj-hiw-photo" loading="lazy" />
             <div class="hajj-hiw-photo-badge">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
               <span>GPhC-Registered Pharmacists</span>
