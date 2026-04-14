@@ -272,7 +272,7 @@ get_header();
         <p class="section-subtitle" style="max-width:800px;margin:0 auto 0;"><?php echo esc_html( rl_field( 'hpv_dosing_subtitle', 'The number of doses depends on your age when you receive your first vaccination and your immune system status. For private vaccination, we follow the Gardasil 9 Summary of Product Characteristics.' ) ); ?></p>
       </div>
 
-      <div class="hpv-dose-grid hpv-reveal">
+      <div class="hpv-dose-grid hpv-reveal" style="grid-template-columns:repeat(2,minmax(0,1fr));max-width:820px;margin:48px auto 0;">
         <?php
         $hpv_dosing_cards = rl_field( 'hpv_dosing_cards' );
         if ( $hpv_dosing_cards && is_array( $hpv_dosing_cards ) ) :
@@ -292,24 +292,16 @@ get_header();
         <div class="hpv-dose-card recommended">
           <div class="hpv-dose-number">2</div>
           <h3>2 Doses</h3>
-          <div class="hpv-dose-who">Ages 9–14 years</div>
-          <p>Two doses provide full protection when the second dose is given 6 to 12 months after the first.</p>
+          <div class="hpv-dose-who">Adults aged 25 and over</div>
+          <p>Two doses are recommended for adults starting their HPV vaccination course at 25 or older.</p>
           <div class="hpv-timeline"><div class="hpv-timeline-dot"></div><div class="hpv-timeline-line"></div><div class="hpv-timeline-dot"></div></div>
-          <div class="hpv-dose-note">Second dose 6–12 months after first</div>
+          <div class="hpv-dose-note">Doses at 0 and 6 months</div>
         </div>
         <div class="hpv-dose-card">
           <div class="hpv-dose-number">3</div>
           <h3>3 Doses</h3>
-          <div class="hpv-dose-who">Ages 15 and over</div>
-          <p>Three doses are recommended for anyone receiving their first dose aged 15 or older.</p>
-          <div class="hpv-timeline"><div class="hpv-timeline-dot"></div><div class="hpv-timeline-line"></div><div class="hpv-timeline-dot"></div><div class="hpv-timeline-line"></div><div class="hpv-timeline-dot"></div></div>
-          <div class="hpv-dose-note">Doses at 0, 2 and 6 months</div>
-        </div>
-        <div class="hpv-dose-card">
-          <div class="hpv-dose-number">3</div>
-          <h3>3 Doses</h3>
-          <div class="hpv-dose-who">Immunocompromised individuals</div>
-          <p>If you have HIV, are immunosuppressed, or have a weakened immune system, three doses are required regardless of age.</p>
+          <div class="hpv-dose-who">Immunosuppressed individuals</div>
+          <p>If you are immunosuppressed or living with HIV, three doses are required regardless of age.</p>
           <div class="hpv-timeline"><div class="hpv-timeline-dot"></div><div class="hpv-timeline-line"></div><div class="hpv-timeline-dot"></div><div class="hpv-timeline-line"></div><div class="hpv-timeline-dot"></div></div>
           <div class="hpv-dose-note">Doses at 0, 1–2 and 6 months</div>
         </div>
