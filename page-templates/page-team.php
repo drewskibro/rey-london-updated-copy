@@ -33,13 +33,13 @@ get_header();
 
   <!-- ===================== LEAD PHARMACIST ===================== -->
   <?php
-  $lead_name  = rl_field( 'mt_lead_name', 'Dilip Modhvadia' );
+  $lead_name  = rl_field( 'mt_lead_name', 'Sumeet Banker' );
   $lead_role  = rl_field( 'mt_lead_role', 'Lead Pharmacist & Independent Prescriber' );
   $lead_photo = rl_field( 'mt_lead_photo', 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80&auto=format&fit=crop' );
-  $lead_bio   = rl_field( 'mt_lead_bio', 'With over 15 years of experience, Dilip leads our clinical team across both locations in Chislehurst. As an Independent Prescriber, he specialises in weight loss treatment, travel health, and ear wax removal — and is well-known for his straightforward, no-jargon approach, no waiting lists, and his commitment to building a system designed to make you well.' );
+  $lead_bio   = rl_field( 'mt_lead_bio', 'With over 15 years of experience, Sumeet leads our clinical team across both locations in Chislehurst. As an Independent Prescriber, he specialises in weight loss treatment, travel health, and ear wax removal — and is well-known for his straightforward, no-jargon approach, no waiting lists, and his commitment to building a system designed to make you well.' );
   $lead_quote = rl_field( 'mt_lead_quote', '"My approach has always been the same — listen first, treat second. Every patient deserves a pharmacist who takes the time to understand not just their symptoms, but their life. That\'s the standard I hold our entire team to."' );
   $lead_creds = rl_field( 'mt_lead_credentials', 'MPharm, Ind. Prescriber, GPhC Registered' );
-  $lead_cta   = rl_field( 'mt_lead_cta_text', 'Book with Dilip' );
+  $lead_cta   = rl_field( 'mt_lead_cta_text', 'Book a Consultation' );
   $lead_stat_num   = rl_field( 'mt_lead_stat_num', '15+' );
   $lead_stat_label = rl_field( 'mt_lead_stat_label', 'Years of Clinical Practice' );
   $lead_specialisms = rl_field( 'mt_lead_specialisms' );
@@ -307,8 +307,8 @@ get_header();
   <!-- ===================== FINAL CTA ===================== -->
   <section class="mt-final-cta" id="book">
     <div class="container" style="position:relative;z-index:2;">
-      <h2>Ready to Book a Consultation?</h2>
-      <p>Speak directly with Dilip and our clinical team — no waiting lists, no referrals needed.</p>
+      <h2><?php echo esc_html( rl_field( 'mt_final_cta_title', 'Ready to Book a Consultation?' ) ); ?></h2>
+      <p><?php echo esc_html( rl_field( 'mt_final_cta_subtitle', 'Speak directly with our clinical team — no waiting lists, no referrals needed.' ) ); ?></p>
       <div class="mt-final-trust">
         <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> GPhC Registered</span>
         <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Same-Day Appointments</span>
@@ -316,19 +316,9 @@ get_header();
       </div>
       <div class="mt-final-ctas">
         <a href="#book" class="mt-btn-primary">Book an Appointment</a>
-        <?php
-        $phone_pond_num   = rl_option( 'phone_pond', '020 8467 3158' );
-        $phone_chisl_num  = rl_option( 'phone_chislehurst', '020 8295 0017' );
-        $phone_pond_link  = preg_replace( '/[^0-9+]/', '', $phone_pond_num );
-        $phone_chisl_link = preg_replace( '/[^0-9+]/', '', $phone_chisl_num );
-        ?>
-        <a href="tel:<?php echo esc_attr( $phone_pond_link ); ?>" class="mt-btn-outline">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Pond Pharmacy · <?php echo esc_html( $phone_pond_num ); ?>
-        </a>
-        <a href="tel:<?php echo esc_attr( $phone_chisl_link ); ?>" class="mt-btn-outline">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Chislehurst Pharmacy · <?php echo esc_html( $phone_chisl_num ); ?>
+        <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="mt-btn-outline">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Find a Location
         </a>
       </div>
     </div>
