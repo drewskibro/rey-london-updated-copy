@@ -81,7 +81,7 @@ get_header();
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-17.svg" alt="Arrow" />
               </div>
             </a>
-            <a href="<?php echo esc_url( home_url( '/vitamin-b12-injection/' ) ); ?>" class="service-card">
+            <a href="<?php echo esc_url( home_url( '/vitamin-b12-london/' ) ); ?>" class="service-card">
               <span class="service-title">Vitamin B12</span>
               <div class="service-image">
                 <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769514862073-0.png" alt="Vitamin B12" />
@@ -90,7 +90,7 @@ get_header();
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-17.svg" alt="Arrow" />
               </div>
             </a>
-            <a href="<?php echo esc_url( home_url( '/hair-loss/' ) ); ?>" class="service-card">
+            <a href="<?php echo esc_url( home_url( '/hair-loss-london/' ) ); ?>" class="service-card">
               <span class="service-title">Hair Loss</span>
               <div class="service-image">
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/1759225236perioddelay.png" alt="Hair Loss" />

@@ -388,7 +388,7 @@ get_header();
           </div>
         </a>
 
-        <a href="<?php echo esc_url( home_url( '/vitamin-b12-injection/' ) ); ?>" class="hh-explore-tile">
+        <a href="<?php echo esc_url( home_url( '/vitamin-b12-london/' ) ); ?>" class="hh-explore-tile">
           <div class="hh-explore-img-wrap">
             <img src="https://images.unsplash.com/photo-1550572017-4814c6f55999?w=600&h=400&fit=crop" alt="Vitamin B12 and Wellness" class="hh-explore-img">
             <div class="hh-explore-overlay"></div>
@@ -402,7 +402,7 @@ get_header();
           </div>
         </a>
 
-        <a href="<?php echo esc_url( home_url( '/hair-loss/' ) ); ?>" class="hh-explore-tile">
+        <a href="<?php echo esc_url( home_url( '/hair-loss-london/' ) ); ?>" class="hh-explore-tile">
           <div class="hh-explore-img-wrap">
             <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=400&fit=crop" alt="Hair Loss Treatment" class="hh-explore-img">
             <div class="hh-explore-overlay"></div>
