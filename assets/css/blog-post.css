@@ -1672,3 +1672,103 @@
     font-size: 16px;
   }
 }
+
+/* ============================================================
+   FIXES — Hero featured image, content centering, closer card
+   ============================================================ */
+
+/* Featured image integrated into hero */
+.bp-hero-featured {
+  margin-top: 40px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(10,47,138,0.12);
+}
+
+.bp-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+/* Review card inside hero — no separate section background */
+.bp-hero .bp-review-card {
+  margin-top: 40px;
+}
+
+/* Author avatar with image */
+.bp-author-avatar--img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(10,47,138,0.12);
+}
+
+/* Review avatar with image */
+img.bp-review-avatar {
+  object-fit: cover;
+}
+
+/* Center the article content */
+.bp-article-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* TOC inside article wrap — full width of the centered column */
+.bp-article-wrap .bp-toc {
+  position: relative;
+  top: auto;
+  margin-bottom: 40px;
+}
+
+/* Closer card — gradient header bar */
+.bp-closer-header {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+  color: var(--white);
+  border-radius: 12px 12px 0 0;
+  margin: -40px -40px 28px;
+  padding: 16px 40px;
+  border-bottom: none;
+}
+
+.bp-closer-header svg {
+  color: var(--white);
+}
+
+.bp-closer-header span {
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Closer card — side-by-side layout on desktop */
+@media (min-width: 768px) {
+  .bp-closer-body {
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+  }
+}
+
+/* Closer buttons — inline on desktop */
+@media (min-width: 640px) {
+  .bp-closer-btns {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* Closer card — section needs tighter spacing */
+.bp-closer-section {
+  padding: 0 0 60px;
+}
+
+.bp-closer-section .bp-closer-card {
+  max-width: 800px;
+  margin: 0 auto;
+}

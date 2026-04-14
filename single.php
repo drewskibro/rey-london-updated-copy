@@ -8,27 +8,30 @@
 get_header();
 
 // Gather data
-$author_name = rl_field( 'article_author' ) ?: get_the_author();
-$author_role = rl_option( 'default_author_role', 'Pharmacist' );
+$author_name = rl_field( 'article_author' ) ?: get_the_author_meta( 'display_name' );
+if ( ! $author_name || $author_name === get_the_author_meta( 'user_login' ) ) {
+    $author_name = rl_option( 'superintendent_pharmacist', 'Sumeet Banker' );
+}
+$author_role = rl_option( 'default_author_role', 'Superintendent Pharmacist' );
 $reviewer    = rl_option( 'superintendent_pharmacist', 'Sumeet Banker' );
-$gphc        = rl_option( 'superintendent_gphc_number', '' );
-$gphc_url    = rl_option( 'gphc_verify_url', '' );
+$gphc        = rl_option( 'superintendent_gphc_number', '2075664' );
+$gphc_url    = rl_option( 'gphc_verify_url', 'https://www.pharmacyregulation.org/registers/pharmacist' );
 $profile_url = rl_option( 'reviewer_profile_url', '' );
 
 // Author avatar
 $author_photo_id = rl_field( 'author_photo' );
 $author_img      = $author_photo_id ? wp_get_attachment_image_url( $author_photo_id, 'thumbnail' ) : '';
 if ( ! $author_img ) {
-    $global_img  = rl_option( 'pharmacist_image', '' );
-    $author_img  = is_numeric( $global_img ) ? wp_get_attachment_image_url( $global_img, 'thumbnail' ) : $global_img;
+    $global_img = rl_option( 'pharmacist_image', '' );
+    $author_img = is_numeric( $global_img ) ? wp_get_attachment_image_url( $global_img, 'thumbnail' ) : $global_img;
 }
 
 // Reviewer avatar
 $reviewer_photo_id = rl_field( 'reviewer_photo' );
 $reviewer_img      = $reviewer_photo_id ? wp_get_attachment_image_url( $reviewer_photo_id, 'thumbnail' ) : '';
 if ( ! $reviewer_img ) {
-    $global_img    = rl_option( 'pharmacist_image', '' );
-    $reviewer_img  = is_numeric( $global_img ) ? wp_get_attachment_image_url( $global_img, 'thumbnail' ) : $global_img;
+    $global_img   = rl_option( 'pharmacist_image', '' );
+    $reviewer_img = is_numeric( $global_img ) ? wp_get_attachment_image_url( $global_img, 'thumbnail' ) : $global_img;
 }
 
 // Reading time
@@ -40,12 +43,16 @@ if ( ! $reading_time ) {
 
 $categories = get_the_category();
 $cat_name   = ! empty( $categories ) ? $categories[0]->name : 'Health';
+
+// Avatar helper
+$author_initials   = strtoupper( substr( $author_name, 0, 1 ) );
+$reviewer_initials = strtoupper( substr( $reviewer, 0, 1 ) );
 ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 
   <!-- ============================================
-       HERO
+       HERO — integrated featured image + review block
        ============================================ -->
   <section class="bp-hero">
     <div class="bp-hero-bg">
@@ -77,9 +84,9 @@ $cat_name   = ! empty( $categories ) ? $categories[0]->name : 'Health';
 
       <div class="bp-author-row">
         <?php if ( $author_img ) : ?>
-          <img src="<?php echo esc_url( $author_img ); ?>" alt="<?php echo esc_attr( $author_name ); ?>" class="bp-author-avatar" />
+          <img src="<?php echo esc_url( $author_img ); ?>" alt="<?php echo esc_attr( $author_name ); ?>" class="bp-author-avatar bp-author-avatar--img" />
         <?php else : ?>
-          <div class="bp-author-avatar"><?php echo esc_html( strtoupper( substr( $author_name, 0, 1 ) ) ); ?></div>
+          <div class="bp-author-avatar"><?php echo esc_html( $author_initials ); ?></div>
         <?php endif; ?>
         <div class="bp-author-info">
           <span class="bp-author-name"><?php echo esc_html( $author_name ); ?></span>
@@ -88,26 +95,26 @@ $cat_name   = ! empty( $categories ) ? $categories[0]->name : 'Health';
           </span>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ============================================
-       CLINICALLY REVIEWED
-       ============================================ -->
-  <section class="bp-review-section">
-    <div class="container">
+      <!-- Featured image integrated into hero -->
+      <?php if ( has_post_thumbnail() ) : ?>
+      <div class="bp-hero-featured">
+        <?php the_post_thumbnail( 'large', array( 'class' => 'bp-hero-img' ) ); ?>
+      </div>
+      <?php endif; ?>
+
+      <!-- Clinically Reviewed — tightly integrated -->
       <div class="bp-review-card">
         <div class="bp-review-header">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           <span>Clinically Reviewed Content</span>
         </div>
         <div class="bp-review-columns">
-          <!-- Written by -->
           <div class="bp-review-person">
             <?php if ( $author_img ) : ?>
               <img src="<?php echo esc_url( $author_img ); ?>" alt="<?php echo esc_attr( $author_name ); ?>" class="bp-review-avatar" />
             <?php else : ?>
-              <div class="bp-review-avatar"><?php echo esc_html( strtoupper( substr( $author_name, 0, 1 ) ) ); ?></div>
+              <div class="bp-review-avatar"><?php echo esc_html( $author_initials ); ?></div>
             <?php endif; ?>
             <div>
               <span class="bp-review-label">Written by</span>
@@ -115,12 +122,11 @@ $cat_name   = ! empty( $categories ) ? $categories[0]->name : 'Health';
               <span class="bp-review-title"><?php echo esc_html( $author_role ); ?></span>
             </div>
           </div>
-          <!-- Reviewed by -->
           <div class="bp-review-person">
             <?php if ( $reviewer_img ) : ?>
               <img src="<?php echo esc_url( $reviewer_img ); ?>" alt="<?php echo esc_attr( $reviewer ); ?>" class="bp-review-avatar bp-review-avatar--verify" />
             <?php else : ?>
-              <div class="bp-review-avatar bp-review-avatar--verify"><?php echo esc_html( strtoupper( substr( $reviewer, 0, 1 ) ) ); ?></div>
+              <div class="bp-review-avatar bp-review-avatar--verify"><?php echo esc_html( $reviewer_initials ); ?></div>
             <?php endif; ?>
             <div>
               <span class="bp-review-label">Reviewed &amp; fact-checked by</span>
@@ -158,25 +164,14 @@ $cat_name   = ! empty( $categories ) ? $categories[0]->name : 'Health';
   </section>
 
   <!-- ============================================
-       FEATURED IMAGE
-       ============================================ -->
-  <?php if ( has_post_thumbnail() ) : ?>
-  <section class="bp-featured-image-section">
-    <div class="container">
-      <div class="bp-featured-image-wrap">
-        <?php the_post_thumbnail( 'large', array( 'class' => 'bp-featured-img' ) ); ?>
-      </div>
-    </div>
-  </section>
-  <?php endif; ?>
-
-  <!-- ============================================
        ARTICLE CONTENT (TOC + closer injected via filters)
        ============================================ -->
   <section class="bp-article-section">
     <div class="container">
-      <div class="bp-content">
-        <?php the_content(); ?>
+      <div class="bp-article-wrap">
+        <div class="bp-content">
+          <?php the_content(); ?>
+        </div>
       </div>
     </div>
   </section>
@@ -226,7 +221,7 @@ $cat_name   = ! empty( $categories ) ? $categories[0]->name : 'Health';
         </span>
         <span class="bp-pill">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          Same-Day Collection
+          Prescription-Only Medicine
         </span>
         <span class="bp-pill">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
