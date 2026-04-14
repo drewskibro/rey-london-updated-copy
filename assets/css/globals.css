@@ -2520,6 +2520,7 @@ body {
    No cards, no frosted glass, no icons.
    ============================================ */
 .team-section {
+  padding: 96px 0 80px;
   background: #11368F;
   position: relative;
   overflow: hidden;
