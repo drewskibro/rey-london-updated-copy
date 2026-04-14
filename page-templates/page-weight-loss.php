@@ -511,63 +511,7 @@ get_header();
       </h2>
       <p class="section-subtitle">Weight loss prescriptions at both locations. Walk-ins welcome. Same-day appointments available.</p>
 
-      <div class="locations-grid">
-        <div class="location-card">
-          <div class="location-image">
-            <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769343725749-0.jpeg" alt="Chislehurst Pharmacy Group Pond Pharmacy - Weight Loss Chislehurst">
-          </div>
-          <div class="location-content">
-            <h3>Pond Pharmacy</h3>
-            <p class="location-seo">Medical weight loss in Chislehurst, BR7. Prescription Mounjaro & Wegovy with same-day appointments. Serving Chislehurst, Bromley, Sidcup, and Bexley.</p>
-            <div class="location-details">
-              <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-19.svg" alt="Address">
-                <p>59 High St, Chislehurst BR7 5AF</p>
-              </div>
-              <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-32.svg" alt="Phone">
-                <a href="tel:02084673158">020 8467 3158</a>
-              </div>
-              <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours">
-                <p>Mon–Fri: 8.30am–6.30pm | Sat: 9am–2pm | Sun: Closed</p>
-              </div>
-            </div>
-            <div class="location-actions">
-              <a href="tel:02084673158" class="btn-primary">Book Consultation</a>
-              <a href="https://maps.google.com/?q=59+High+St+Chislehurst+BR7+5AF" target="_blank" rel="noopener" class="btn-outline">Get Directions</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="location-card">
-          <div class="location-image">
-            <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769344823391-0.jpeg" alt="Chislehurst Pharmacy Group Chislehurst Pharmacy - Weight Loss London">
-          </div>
-          <div class="location-content">
-            <h3>Chislehurst Pharmacy</h3>
-            <p class="location-seo">Medical weight loss in Chislehurst. Prescription Mounjaro & Wegovy with face-to-face pharmacist support. Serving Orpington, Petts Wood, St Mary Cray, and Swanley.</p>
-            <div class="location-details">
-              <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-19.svg" alt="Address">
-                <p>59 Chislehurst Rd, Chislehurst BR7 5NP</p>
-              </div>
-              <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-32.svg" alt="Phone">
-                <a href="tel:02082950017">020 8295 0017</a>
-              </div>
-              <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours">
-                <p>Mon–Fri: 9am–6pm | Sat: 9am–1pm | Sun: Closed</p>
-              </div>
-            </div>
-            <div class="location-actions">
-              <a href="tel:02082950017" class="btn-primary">Book Consultation</a>
-              <a href="https://maps.google.com/?q=59+Chislehurst+Rd+Chislehurst+BR7+5NP" target="_blank" rel="noopener" class="btn-outline">Get Directions</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <?php get_template_part( 'template-parts/location-cards', null, array( 'cta_prefix' => 'Book at' ) ); ?>
     </div>
   </section>
 

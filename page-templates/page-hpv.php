@@ -724,49 +724,7 @@ get_header();
       }
       $hpv_book_url = home_url( '/contact-page/#book-appointment' );
       ?>
-      <div class="locations-grid hpv-reveal">
-        <?php foreach ( $hpv_locations as $i => $loc ) :
-          /* Per-field fallback so rows missing new sub-fields (image /
-             description) still render with sensible defaults. */
-          $default = isset( $hpv_default_locations[ $i ] ) ? $hpv_default_locations[ $i ] : $hpv_default_locations[0];
-          $loc_name     = ! empty( $loc['name'] )           ? $loc['name']           : $default['name'];
-          $loc_image    = ! empty( $loc['image'] )          ? $loc['image']          : $default['image'];
-          $loc_desc     = ! empty( $loc['description'] )    ? $loc['description']    : $default['description'];
-          $loc_address  = ! empty( $loc['address'] )        ? $loc['address']        : $default['address'];
-          $loc_phone    = ! empty( $loc['phone'] )          ? $loc['phone']          : $default['phone'];
-          $loc_phone_t  = preg_replace( '/[^0-9+]/', '', $loc_phone );
-          $loc_hours    = ! empty( $loc['hours'] )          ? $loc['hours']          : $default['hours'];
-          $loc_dir_url  = ! empty( $loc['directions_url'] ) ? $loc['directions_url'] : $default['directions_url'];
-        ?>
-        <div class="location-card">
-          <div class="location-image">
-            <img src="<?php echo esc_url( $loc_image ); ?>" alt="<?php echo esc_attr( $loc_name ); ?> — HPV vaccination in Chislehurst">
-          </div>
-          <div class="location-content">
-            <h3><?php echo esc_html( $loc_name ); ?></h3>
-            <p class="location-seo"><?php echo esc_html( $loc_desc ); ?></p>
-            <div class="location-details">
-              <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-19.svg" alt="Address">
-                <p><?php echo esc_html( $loc_address ); ?></p>
-              </div>
-              <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-32.svg" alt="Phone">
-                <a href="tel:<?php echo esc_attr( $loc_phone_t ); ?>"><?php echo esc_html( $loc_phone ); ?></a>
-              </div>
-              <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours">
-                <p><?php echo esc_html( $loc_hours ); ?></p>
-              </div>
-            </div>
-            <div class="location-actions">
-              <a href="<?php echo esc_url( $hpv_book_url ); ?>" class="btn-primary">Book Consultation</a>
-              <a href="<?php echo esc_url( $loc_dir_url ); ?>" target="_blank" rel="noopener" class="btn-outline">Get Directions</a>
-            </div>
-          </div>
-        </div>
-        <?php endforeach; ?>
-      </div>
+      <?php get_template_part( 'template-parts/location-cards', null, array( 'cta_prefix' => 'Book at' ) ); ?>
 
       <div class="hpv-serving-text"><?php echo esc_html( rl_field( 'hpv_locations_serving', 'Conveniently located to serve patients across Chislehurst, Bromley, Orpington, Sidcup, Bexley, Eltham, and surrounding South East London areas. Free parking available at both locations.' ) ); ?></div>
     </div>
