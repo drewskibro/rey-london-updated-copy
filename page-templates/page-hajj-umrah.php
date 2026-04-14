@@ -41,7 +41,8 @@ get_header();
 
         <div class="hajj-hero-visual">
           <div class="hajj-hero-visual-inner">
-            <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&q=80&auto=format&fit=crop" alt="Pharmacist preparing MenACWY vaccination for Hajj and Umrah pilgrims — professional travel health service in Chislehurst" loading="lazy" />
+            <?php $hajj_hero_img = rl_field( 'hajj_hero_image' ); ?>
+            <img src="<?php echo esc_url( $hajj_hero_img ?: 'https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&q=80&auto=format&fit=crop' ); ?>" alt="Pharmacist preparing MenACWY vaccination for Hajj and Umrah pilgrims — professional travel health service in Chislehurst" loading="lazy" />
           </div>
         </div>
       </div>
