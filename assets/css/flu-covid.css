@@ -1,0 +1,365 @@
+/* ============================================================
+   NHS Flu & COVID-19 Vaccinations — Dedicated Page Styles (flu- prefix)
+   ACCENT: Teal-green for NHS health/vaccination feel
+   ============================================================ */
+
+:root {
+  --flu-accent: #0d9488;
+  --flu-accent-light: #ccfbf1;
+  --flu-accent-glow: rgba(13,148,136,0.15);
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.flu-hero {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 50%, var(--dark-blue) 100%);
+  padding: 140px 0 100px;
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.flu-hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.flu-hero-orb {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.flu-hero-orb-1 {
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  right: -150px;
+  background: radial-gradient(circle, rgba(90,127,196,0.2) 0%, transparent 70%);
+}
+
+.flu-hero-orb-2 {
+  width: 400px;
+  height: 400px;
+  bottom: -100px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(90,127,196,0.12) 0%, transparent 70%);
+}
+
+.flu-hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.flu-hero-text {
+  text-align: center;
+}
+
+.flu-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  margin-bottom: 28px;
+}
+
+.flu-hero h1 {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+  color: var(--white);
+}
+
+.flu-hero h1 .gradient-text {
+  background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.flu-hero-sub {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.flu-hero-body {
+  font-size: 17px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flu-hero-ctas {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.flu-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  background: var(--white);
+  color: var(--primary-blue);
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.flu-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+/* ============================================
+   SHARED SECTION STYLES
+   ============================================ */
+.flu-section { padding: 80px 0; position: relative; }
+.flu-section-light { background: #fff; }
+
+.flu-section-accent {
+  background: linear-gradient(135deg, #f0f7ff 0%, #f8fafd 100%);
+}
+
+.flu-section-dark {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 50%, var(--dark-blue) 100%);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.flu-dark-bg { position: absolute; inset: 0; pointer-events: none; }
+.flu-dark-orb { position: absolute; border-radius: 50%; }
+.flu-dark-orb-1 { width: 500px; height: 500px; top: -200px; right: -100px; background: radial-gradient(circle, rgba(90,127,196,0.15) 0%, transparent 70%); }
+.flu-dark-orb-2 { width: 400px; height: 400px; bottom: -150px; left: -80px; background: radial-gradient(circle, rgba(90,127,196,0.08) 0%, transparent 70%); }
+.flu-dark-container { position: relative; z-index: 2; }
+
+.flu-section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.flu-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: rgba(10,47,138,0.08);
+  color: var(--primary-blue);
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.flu-pill-light {
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* ============================================
+   ELIGIBILITY CARDS
+   ============================================ */
+.flu-eligibility-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.flu-eligibility-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 36px;
+  border: 1px solid rgba(10,47,138,0.1);
+  box-shadow: 0 4px 24px rgba(10,47,138,0.06);
+}
+
+.flu-eligibility-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+.flu-check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.flu-check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+.flu-check-list svg {
+  color: var(--flu-accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.flu-eligibility-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 700px;
+  margin: 32px auto 0;
+  padding: 20px 24px;
+  background: var(--flu-accent-light);
+  border-radius: 12px;
+  border-left: 4px solid var(--flu-accent);
+}
+
+.flu-eligibility-note svg {
+  color: var(--flu-accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.flu-eligibility-note p {
+  font-size: 15px;
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ============================================
+   WHY CHOOSE US CARDS
+   ============================================ */
+.flu-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.flu-why-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 36px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-top: 3px solid var(--flu-accent);
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.flu-why-card:hover {
+  background: rgba(255,255,255,0.14);
+  transform: translateY(-4px);
+}
+
+.flu-why-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(13,148,136,0.2);
+  border: 1px solid rgba(13,148,136,0.3);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  margin: 0 auto 20px;
+}
+
+.flu-why-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.flu-why-card p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+}
+
+/* ============================================
+   CONTENT BLOCK (Sections 4 & 5)
+   ============================================ */
+.flu-content-block {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.flu-content-block p {
+  font-size: 17px;
+  color: var(--text-gray);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.flu-content-block p:last-child { margin-bottom: 0; }
+
+/* ============================================
+   DISCLAIMER
+   ============================================ */
+.flu-disclaimer {
+  max-width: 800px;
+  margin: 40px auto 0;
+  padding: 20px 24px;
+  background: rgba(10,47,138,0.04);
+  border-radius: 12px;
+  border: 1px solid rgba(10,47,138,0.08);
+}
+
+.flu-disclaimer p {
+  font-size: 14px;
+  color: var(--text-gray);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .flu-hero h1 { font-size: 36px; }
+  .flu-eligibility-grid { grid-template-columns: 1fr; }
+  .flu-why-grid { grid-template-columns: 1fr; max-width: 500px; }
+}
+
+@media (max-width: 640px) {
+  .flu-hero { padding: 120px 0 60px; }
+  .flu-hero h1 { font-size: 28px; }
+  .flu-hero-sub { font-size: 17px; }
+  .flu-section { padding: 60px 0; }
+}

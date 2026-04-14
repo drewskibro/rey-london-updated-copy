@@ -108,6 +108,10 @@ function rey_london_scripts() {
         wp_enqueue_script( 'rey-london-blog-js', REY_LONDON_URI . '/assets/js/blog.js', array(), REY_LONDON_VERSION, true );
     }
 
+    if ( is_page_template( 'page-templates/page-flu-covid.php' ) ) {
+        wp_enqueue_style( 'rey-london-flu-covid', REY_LONDON_URI . '/assets/css/flu-covid.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
+    }
+
     if ( is_page_template( 'page-templates/page-contact.php' ) ) {
         wp_enqueue_style( 'rey-london-contact', REY_LONDON_URI . '/assets/css/contact.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
         wp_enqueue_script( 'rey-london-contact-js', REY_LONDON_URI . '/assets/js/contact.js', array(), REY_LONDON_VERSION, true );
