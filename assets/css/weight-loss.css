@@ -846,6 +846,244 @@
 }
 
 /* ============================================
+   WHY CHOOSE US — Pharmacist + Stats + Pillars
+   ============================================ */
+.team-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-top: 48px;
+}
+
+.pharmacist-hero { position: relative; }
+
+.pharmacist-image-wrapper {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.pharmacist-image {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  border: 4px solid rgba(255,255,255,0.2);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+}
+
+.pharmacist-profile-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 24px;
+  margin-top: -40px;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.profile-header { margin-bottom: 12px; }
+
+.profile-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 2px;
+}
+
+.profile-title {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 8px;
+}
+
+.profile-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fbbf24;
+}
+
+.profile-badge svg { color: #fbbf24; }
+
+.profile-bio {
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.profile-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-profile-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: var(--white);
+  color: var(--primary-blue);
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn-profile-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.btn-profile-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn-profile-secondary:hover {
+  border-color: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.1);
+}
+
+/* Stats grid */
+.team-stats-premium { display: flex; flex-direction: column; gap: 24px; }
+
+.stats-grid-premium {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.stat-card-hero {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.12);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: all 0.3s;
+}
+
+.stat-card-hero:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-2px);
+}
+
+.stat-icon-hero {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+
+.stat-icon-hero svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+.stat-number-hero {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.stat-label-hero {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* Pillars */
+.wl-pillars-premium {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wl-pillar-card {
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 20px 24px;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: all 0.3s;
+}
+
+.wl-pillar-card:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.wl-pillar-icon {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+
+.wl-pillar-text h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.wl-pillar-text p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .team-content-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .pharmacist-image { max-width: 240px; }
+}
+
+@media (max-width: 640px) {
+  .stats-grid-premium { grid-template-columns: 1fr; }
+}
+
+/* ============================================
    FOOTER CTA BLOCK (integrated)
    ============================================ */
 .wl-footer-cta-block {

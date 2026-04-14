@@ -591,7 +591,7 @@ get_header();
               </div>
               <p class="profile-bio"><?php echo esc_html( $why_pharm_bio ); ?></p>
               <div class="profile-actions">
-                <a href="tel:02084673158" class="btn-profile-primary">Book Consultation</a>
+                <a href="https://chislehurstpharmacygroup.kinsta.cloud/contact-page/#book-appointment" class="btn-profile-primary">Book Consultation</a>
                 <a href="<?php echo esc_url( home_url( '/meet-the-team/' ) ); ?>" class="btn-profile-secondary">Meet the Team</a>
               </div>
             </div>
@@ -770,13 +770,13 @@ get_header();
         <h2 class="wl-footer-cta-title">Start losing weight this week —<br>not in 3 months</h2>
         <p class="wl-footer-cta-sub">Free consultation. No GP referral. Same-day prescription. Two South East London locations with face-to-face pharmacist support.</p>
         <div class="wl-footer-cta-buttons">
-          <a href="tel:02084673158" class="wl-btn-cta-white">
+          <a href="https://chislehurstpharmacygroup.kinsta.cloud/contact-page/#book-appointment" class="wl-btn-cta-white">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             Book Free Consultation
           </a>
-          <a href="tel:02084673158" class="wl-btn-cta-ghost">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.09 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81L9.27 8.95a16 16 0 0 0 6.78 6.78l1.42-1.42a12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Call Us: 020 8467 3158
+          <a href="https://chislehurstpharmacygroup.kinsta.cloud/contact-page/" class="wl-btn-cta-ghost">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Contact Us
           </a>
         </div>
         <div class="wl-cta-checks">
