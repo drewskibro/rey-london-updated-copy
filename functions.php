@@ -486,7 +486,7 @@ function rl_add_consultation_closer( $content ) {
     $h .= '<div class="bp-closer-header"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> <span>Your Next Step</span></div>';
     $h .= '<div class="bp-closer-body">';
     $h .= '<div class="bp-closer-pharmacist">' . $avatar . '<div>';
-    $h .= '<span class="bp-closer-preamble">Your pharmacist</span>';
+    $h .= '<span class="bp-closer-preamble">Your consultation with</span>';
     $h .= '<span class="bp-closer-name">' . esc_html( $pharmacist ) . '</span>';
     $h .= '<span class="bp-closer-title">Superintendent Pharmacist</span>';
     if ( $gphc ) {
@@ -494,13 +494,17 @@ function rl_add_consultation_closer( $content ) {
     }
     $h .= '</div></div>';
     $h .= '<div class="bp-closer-action"><h3>Ready to take the next step?</h3>';
-    $h .= '<p>Visit Chislehurst Pharmacy Group in person. Same-day and next-day appointments usually available.</p>';
-    $h .= '<div class="bp-closer-btns"><a href="#locations" class="bp-btn-primary">Visit ' . esc_html( $first ) . ' <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a></div>';
-    $h .= '</div></div>';
+    $h .= '<p>Book your consultation at either Chislehurst Pharmacy Group location. Same-day and next-day appointments usually available.</p>';
+    $h .= '<div class="bp-closer-btns">';
+    $h .= '<a href="https://chislehurstpharmacygroup.kinsta.cloud/contact-page/#book-appointment" class="bp-btn-primary">Book a Consultation <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>';
+    $h .= '<a href="tel:02084673158" class="bp-btn-outline"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 020 8467 3158</a>';
+    $h .= '<a href="tel:02082950017" class="bp-btn-outline"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 020 8295 0017</a>';
+    $h .= '</div></div></div>';
     $h .= '<div class="bp-closer-trust">';
-    $h .= '<span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Same-Day Appointments</span>';
-    $h .= '<span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> No GP Referral Needed</span>';
-    $h .= '<span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Face-to-Face Consultations</span>';
+    $tick = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>';
+    $h .= '<span>' . $tick . ' Same-Day Appointments</span>';
+    $h .= '<span>' . $tick . ' No GP Referral Needed</span>';
+    $h .= '<span>' . $tick . ' Two Chislehurst Locations</span>';
     $h .= '</div></div></section>';
 
     return $content . $h;
