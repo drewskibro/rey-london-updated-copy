@@ -431,70 +431,7 @@ get_header();
     <div class="container">
       <h2 class="section-title"><?php echo wp_kses_post( rl_field( 'b12_locations_title', 'Two South East London <span class="gradient-text">locations</span>' ) ); ?></h2>
       <p class="section-subtitle"><?php echo esc_html( rl_field( 'b12_locations_subtitle', 'B12 injections available at both pharmacies — walk-ins welcome, no appointment needed.' ) ); ?></p>
-      <div class="locations-grid">
-        <div class="location-card">
-          <div class="location-image">
-            <img src="https://images.unsplash.com/photo-1586015555751-63bb77f4322a?w=800&h=400&fit=crop" alt="Pond End Pharmacy B12 injections Chislehurst High Street">
-          </div>
-          <div class="location-content">
-            <h3>Pond End Pharmacy</h3>
-            <div class="location-details">
-              <div class="detail-item">
-                <img src="https://api.iconify.design/lucide/map-pin.svg" alt="Location">
-                <p>59 High St, Chislehurst BR7 5AF</p>
-              </div>
-              <div class="detail-item">
-                <img src="https://api.iconify.design/lucide/phone.svg" alt="Phone">
-                <a href="tel:02084673158">020 8467 3158</a>
-              </div>
-              <div class="detail-item">
-                <img src="https://api.iconify.design/lucide/shield.svg" alt="Services">
-                <div>
-                  <p>Vitamin B12 injections</p>
-                  <p>Walk-ins welcome</p>
-                  <p>NHS &amp; private prescriptions</p>
-                  <p>Health consultations</p>
-                </div>
-              </div>
-            </div>
-            <div class="location-actions">
-              <a href="tel:02084673158" class="btn-primary">Book B12 Injection</a>
-              <a href="/#directions" class="btn-outline">Get Directions</a>
-            </div>
-          </div>
-        </div>
-        <div class="location-card">
-          <div class="location-image">
-            <img src="https://images.unsplash.com/photo-1587556930799-8dca6fad6d41?w=800&h=400&fit=crop" alt="Chislehurst Pharmacy B12 injections South East London">
-          </div>
-          <div class="location-content">
-            <h3>Chislehurst Pharmacy</h3>
-            <div class="location-details">
-              <div class="detail-item">
-                <img src="https://api.iconify.design/lucide/map-pin.svg" alt="Location">
-                <p>59 Chislehurst Rd, Chislehurst BR7 5NP</p>
-              </div>
-              <div class="detail-item">
-                <img src="https://api.iconify.design/lucide/phone.svg" alt="Phone">
-                <a href="tel:02082950017">020 8295 0017</a>
-              </div>
-              <div class="detail-item">
-                <img src="https://api.iconify.design/lucide/shield.svg" alt="Services">
-                <div>
-                  <p>Vitamin B12 injections</p>
-                  <p>Walk-ins welcome</p>
-                  <p>Free parking available</p>
-                  <p>Private consultation rooms</p>
-                </div>
-              </div>
-            </div>
-            <div class="location-actions">
-              <a href="tel:02082950017" class="btn-primary">Book B12 Injection</a>
-              <a href="/#directions" class="btn-outline">Get Directions</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <?php get_template_part( 'template-parts/location-cards', null, array( 'cta_prefix' => 'Book at' ) ); ?>
     </div>
   </section>
 
