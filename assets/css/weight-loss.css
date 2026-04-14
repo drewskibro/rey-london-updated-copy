@@ -848,12 +848,16 @@
 /* ============================================
    WHY CHOOSE US — Pharmacist + Stats + Pillars
    ============================================ */
+.team-section .section-subtitle {
+  margin-bottom: 48px;
+}
+
 .team-content-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: start;
-  margin-top: 48px;
+  margin-top: 0;
 }
 
 .pharmacist-hero { position: relative; }
