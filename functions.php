@@ -46,8 +46,17 @@ function rey_london_setup() {
     add_image_size( 'health-hub-featured', 800, 600, true );
     add_image_size( 'health-hub-card', 600, 400, true );
     add_image_size( 'pharmacist-photo', 600, 750, true );
+    add_image_size( 'content-large', 1024, 9999, false );
 }
 add_action( 'after_setup_theme', 'rey_london_setup' );
+
+/** Make the content-large size available in the editor image-size dropdown. */
+function rl_custom_image_sizes( $sizes ) {
+    return array_merge( $sizes, array(
+        'content-large' => __( 'Content Large', 'rey-london' ),
+    ) );
+}
+add_filter( 'image_size_names_choose', 'rl_custom_image_sizes' );
 
 /**
  * Enqueue Global Styles & Scripts
