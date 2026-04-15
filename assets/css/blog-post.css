@@ -619,6 +619,10 @@
   margin-bottom: 0;
 }
 
+.bp-content img {
+  border-radius: 12px;
+}
+
 /* Callout Cards */
 .bp-callout {
   display: flex;
