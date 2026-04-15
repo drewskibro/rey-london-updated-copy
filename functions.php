@@ -394,12 +394,12 @@ function rey_london_activation() {
 add_action( 'after_switch_theme', 'rey_london_activation' );
 
 /**
- * Create reusable blocks (Synced Patterns) on theme init.
- * Uses an option flag so each block is only inserted once.
+ * Create / update reusable blocks (Synced Patterns).
+ * Bumping the version flag re-creates blocks with updated content.
  */
 function rl_register_reusable_blocks() {
-    $flag = get_option( 'rl_reusable_blocks_v2', false );
-    if ( $flag ) {
+    $version = 'v3';
+    if ( get_option( 'rl_reusable_blocks_version' ) === $version ) {
         return;
     }
 
@@ -407,30 +407,30 @@ function rl_register_reusable_blocks() {
         'CPG – Booking Banner' => '<!-- wp:html -->' . "\n" .
 '<style>
 .cpg-cta-banner{background:#103385;border-radius:14px;padding:2.5rem 2.75rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin:2.5rem 0}
-.cpg-cta-headline{font-family:\'Inter\',-apple-system,BlinkMacSystemFont,\'Segoe UI\',sans-serif;font-size:1.5rem;font-weight:800;color:#fff;line-height:1.3;letter-spacing:-0.02em;max-width:420px;margin:0}
+.cpg-cta-banner p{font-family:\'Inter\',-apple-system,BlinkMacSystemFont,\'Segoe UI\',sans-serif;font-size:1.5rem;font-weight:800;color:#fff;line-height:1.3;letter-spacing:-0.02em;max-width:420px;margin:0}
 .cpg-cta-links{display:flex;flex-direction:column;gap:.75rem}
-.cpg-cta-link{display:inline-flex;align-items:center;gap:.5rem;font-family:\'Inter\',-apple-system,BlinkMacSystemFont,\'Segoe UI\',sans-serif;font-size:.9375rem;font-weight:600;color:#baad9a;text-decoration:none;transition:color .2s ease}
-.cpg-cta-link:hover{color:#fff}
-.cpg-cta-link svg{flex-shrink:0;color:inherit}
+.cpg-cta-banner a{display:inline-flex;align-items:center;gap:.5rem;font-family:\'Inter\',-apple-system,BlinkMacSystemFont,\'Segoe UI\',sans-serif;font-size:.9375rem;font-weight:600;color:#baad9a;text-decoration:none;border-bottom:none;transition:color .2s ease}
+.cpg-cta-banner a:hover{color:#fff}
+.cpg-cta-banner a svg{flex-shrink:0;color:inherit}
 @media(max-width:640px){
   .cpg-cta-banner{flex-direction:column;text-align:center;padding:2rem 1.5rem}
-  .cpg-cta-headline{max-width:100%;font-size:1.25rem}
+  .cpg-cta-banner p{max-width:100%;font-size:1.25rem}
   .cpg-cta-links{align-items:center}
 }
 </style>
 
 <div class="cpg-cta-banner">
-  <p class="cpg-cta-headline">Ready to book? Don\'t leave it any longer.</p>
+  <p>Ready to book? Don\'t leave it any longer.</p>
   <div class="cpg-cta-links">
-    <a href="tel:02082950017" class="cpg-cta-link">
+    <a href="tel:02082950017">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       Chislehurst Pharmacy: 020 8295 0017
     </a>
-    <a href="tel:02084673158" class="cpg-cta-link">
+    <a href="tel:02084673158">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       Pond Pharmacy: 020 8467 3158
     </a>
-    <a href="https://chislehurstpharmacygroup.kinsta.cloud/contact-page/#book-appointment" class="cpg-cta-link">
+    <a href="https://chislehurstpharmacygroup.kinsta.cloud/contact-page/#book-appointment">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
       Book online
     </a>
@@ -450,8 +450,8 @@ img.cpg-review-avatar{background:none;font-size:0}
 .cpg-review-label{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#103385;margin-bottom:4px}
 .cpg-review-name{display:block;font-size:18px;font-weight:700;color:#1a1a1a;letter-spacing:-.01em}
 .cpg-review-title{display:block;font-size:14px;color:#6b7280;font-weight:400;margin-bottom:8px}
-.cpg-review-links a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#103385;text-decoration:none;transition:color .2s;margin-right:16px}
-.cpg-review-links a:hover{color:#5a7fc4;text-decoration:underline}
+.cpg-review .cpg-review-links a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#103385;text-decoration:none;border-bottom:none;transition:color .2s;margin-right:16px}
+.cpg-review .cpg-review-links a:hover{color:#5a7fc4;text-decoration:underline}
 .cpg-review-ftr{display:flex;align-items:center;gap:28px;padding:20px 40px 28px;border-top:1px solid rgba(16,51,133,.08);flex-wrap:wrap}
 .cpg-review-meta{display:flex;align-items:center;gap:8px;font-size:14px;color:#6b7280;font-weight:500}
 .cpg-review-meta svg{color:#103385}
@@ -506,6 +506,18 @@ img.cpg-review-avatar{background:none;font-size:0}
 </div>' . "\n" . '<!-- /wp:html -->',
     );
 
+    // Delete old versions if they exist.
+    $old = get_posts( array(
+        'post_type'   => 'wp_block',
+        'post_status' => 'any',
+        'numberposts' => 10,
+        'meta_query'  => array(),
+        's'           => 'CPG –',
+    ) );
+    foreach ( $old as $p ) {
+        wp_delete_post( $p->ID, true );
+    }
+
     foreach ( $blocks as $title => $content ) {
         wp_insert_post( array(
             'post_type'    => 'wp_block',
@@ -515,7 +527,7 @@ img.cpg-review-avatar{background:none;font-size:0}
         ) );
     }
 
-    update_option( 'rl_reusable_blocks_v2', true );
+    update_option( 'rl_reusable_blocks_version', $version );
 }
 add_action( 'init', 'rl_register_reusable_blocks' );
 
