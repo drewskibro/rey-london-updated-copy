@@ -395,10 +395,11 @@ add_action( 'after_switch_theme', 'rey_london_activation' );
 
 /**
  * Create / update reusable blocks (Synced Patterns).
- * Bumping the version flag re-creates blocks with updated content.
+ * Updates existing blocks in-place to preserve their IDs (and all
+ * post references). Only creates new blocks if they don't exist yet.
  */
 function rl_register_reusable_blocks() {
-    $version = 'v4';
+    $version = 'v5';
     if ( get_option( 'rl_reusable_blocks_version' ) === $version ) {
         return;
     }
@@ -513,25 +514,30 @@ img.cpg-review-avatar{background:none;font-size:0}
 </div>' . "\n" . '<!-- /wp:html -->',
     );
 
-    // Delete old versions if they exist.
-    $old = get_posts( array(
-        'post_type'   => 'wp_block',
-        'post_status' => 'any',
-        'numberposts' => 10,
-        'meta_query'  => array(),
-        's'           => 'CPG –',
-    ) );
-    foreach ( $old as $p ) {
-        wp_delete_post( $p->ID, true );
-    }
-
+    // Upsert: update existing blocks in-place to preserve their IDs
+    // (and all wp:block references in posts), or create if missing.
     foreach ( $blocks as $title => $content ) {
-        wp_insert_post( array(
-            'post_type'    => 'wp_block',
-            'post_title'   => $title,
-            'post_content' => $content,
-            'post_status'  => 'publish',
+        $existing = get_posts( array(
+            'post_type'   => 'wp_block',
+            'post_status' => 'any',
+            'title'       => $title,
+            'numberposts' => 1,
         ) );
+
+        if ( ! empty( $existing ) ) {
+            wp_update_post( array(
+                'ID'           => $existing[0]->ID,
+                'post_content' => $content,
+                'post_status'  => 'publish',
+            ) );
+        } else {
+            wp_insert_post( array(
+                'post_type'    => 'wp_block',
+                'post_title'   => $title,
+                'post_content' => $content,
+                'post_status'  => 'publish',
+            ) );
+        }
     }
 
     update_option( 'rl_reusable_blocks_version', $version );
