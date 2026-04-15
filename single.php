@@ -15,7 +15,7 @@ if ( ! $author_name || $author_name === get_the_author_meta( 'user_login' ) ) {
 $author_role = rl_option( 'default_author_role', 'Superintendent Pharmacist' );
 $reviewer    = rl_option( 'superintendent_pharmacist', 'Sumeet Banker' );
 $gphc        = rl_option( 'superintendent_gphc_number', '2075664' );
-$gphc_url    = rl_option( 'gphc_verify_url', 'https://www.pharmacyregulation.org/registers/pharmacist' );
+$gphc_url    = rl_option( 'gphc_verify_url', 'https://www.pharmacyregulation.org/registers/pharmacist/2075664' );
 $profile_url = rl_option( 'reviewer_profile_url', '' );
 
 // Author avatar
