@@ -514,7 +514,7 @@ function rl_add_consultation_closer( $content ) {
     $h .= '<div class="bp-closer-pharmacist">';
     $h .= $avatar;
     $h .= '<div class="bp-closer-pharmacist-info">';
-    $h .= '<span class="bp-closer-preamble">Your consultation with</span>';
+    $h .= '<span class="bp-closer-preamble">Your Clinical Team</span>';
     $h .= '<span class="bp-closer-name">' . esc_html( $pharmacist ) . '</span>';
     $h .= '<span class="bp-closer-role">Superintendent Pharmacist</span>';
     if ( $gphc ) {

@@ -1326,10 +1326,8 @@ img.bp-closer-avatar {
   font-size: 0.8125rem;
   font-weight: 600;
   color: var(--primary-blue);
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(10,47,138,0.1);
+  background: var(--white);
+  border: 1.5px solid rgba(10,47,138,0.12);
   border-radius: 100px;
   padding: 0.625rem 1.25rem;
   box-shadow: 0 2px 12px rgba(10,47,138,0.06);
