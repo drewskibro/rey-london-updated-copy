@@ -394,6 +394,132 @@ function rey_london_activation() {
 add_action( 'after_switch_theme', 'rey_london_activation' );
 
 /**
+ * Create reusable blocks (Synced Patterns) on theme init.
+ * Uses an option flag so each block is only inserted once.
+ */
+function rl_register_reusable_blocks() {
+    $flag = get_option( 'rl_reusable_blocks_v2', false );
+    if ( $flag ) {
+        return;
+    }
+
+    $blocks = array(
+        'CPG – Booking Banner' => '<!-- wp:html -->' . "\n" .
+'<style>
+.cpg-cta-banner{background:#103385;border-radius:14px;padding:2.5rem 2.75rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin:2.5rem 0}
+.cpg-cta-headline{font-family:\'Inter\',-apple-system,BlinkMacSystemFont,\'Segoe UI\',sans-serif;font-size:1.5rem;font-weight:800;color:#fff;line-height:1.3;letter-spacing:-0.02em;max-width:420px;margin:0}
+.cpg-cta-links{display:flex;flex-direction:column;gap:.75rem}
+.cpg-cta-link{display:inline-flex;align-items:center;gap:.5rem;font-family:\'Inter\',-apple-system,BlinkMacSystemFont,\'Segoe UI\',sans-serif;font-size:.9375rem;font-weight:600;color:#baad9a;text-decoration:none;transition:color .2s ease}
+.cpg-cta-link:hover{color:#fff}
+.cpg-cta-link svg{flex-shrink:0;color:inherit}
+@media(max-width:640px){
+  .cpg-cta-banner{flex-direction:column;text-align:center;padding:2rem 1.5rem}
+  .cpg-cta-headline{max-width:100%;font-size:1.25rem}
+  .cpg-cta-links{align-items:center}
+}
+</style>
+
+<div class="cpg-cta-banner">
+  <p class="cpg-cta-headline">Ready to book? Don\'t leave it any longer.</p>
+  <div class="cpg-cta-links">
+    <a href="tel:02082950017" class="cpg-cta-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Chislehurst Pharmacy: 020 8295 0017
+    </a>
+    <a href="tel:02084673158" class="cpg-cta-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Pond Pharmacy: 020 8467 3158
+    </a>
+    <a href="https://chislehurstpharmacygroup.kinsta.cloud/contact-page/#book-appointment" class="cpg-cta-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      Book online
+    </a>
+  </div>
+</div>' . "\n" . '<!-- /wp:html -->',
+
+        'CPG – Clinically Reviewed Card' => '<!-- wp:html -->' . "\n" .
+'<style>
+.cpg-review{max-width:900px;margin:2.5rem auto;background:#f0f4fa;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(16,51,133,.08);border:1px solid rgba(16,51,133,.1);font-family:\'Inter\',-apple-system,BlinkMacSystemFont,\'Segoe UI\',sans-serif;text-align:left}
+.cpg-review-hdr{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#fff;background:linear-gradient(135deg,#103385 0%,#0f307d 50%,#5a7fc4 100%);padding:14px 40px}
+.cpg-review-hdr svg{color:#fff;flex-shrink:0}
+.cpg-review-cols{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:32px 40px 28px}
+.cpg-review-person{display:flex;align-items:flex-start;gap:16px}
+.cpg-review-avatar{width:80px;height:80px;min-width:80px;border-radius:50%;object-fit:cover;border:3px solid rgba(16,51,133,.12);flex-shrink:0;background:linear-gradient(135deg,#103385 0%,#5a7fc4 100%);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800}
+img.cpg-review-avatar{background:none;font-size:0}
+.cpg-review-avatar--verify{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,.15)}
+.cpg-review-label{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#103385;margin-bottom:4px}
+.cpg-review-name{display:block;font-size:18px;font-weight:700;color:#1a1a1a;letter-spacing:-.01em}
+.cpg-review-title{display:block;font-size:14px;color:#6b7280;font-weight:400;margin-bottom:8px}
+.cpg-review-links a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#103385;text-decoration:none;transition:color .2s;margin-right:16px}
+.cpg-review-links a:hover{color:#5a7fc4;text-decoration:underline}
+.cpg-review-ftr{display:flex;align-items:center;gap:28px;padding:20px 40px 28px;border-top:1px solid rgba(16,51,133,.08);flex-wrap:wrap}
+.cpg-review-meta{display:flex;align-items:center;gap:8px;font-size:14px;color:#6b7280;font-weight:500}
+.cpg-review-meta svg{color:#103385}
+.cpg-review-meta--check svg{color:#10b981}
+@media(max-width:640px){
+  .cpg-review-cols{grid-template-columns:1fr;gap:24px;padding:24px 20px}
+  .cpg-review-hdr{padding:14px 20px}
+  .cpg-review-ftr{padding:16px 20px 20px;gap:16px}
+  .cpg-review-avatar{width:60px;height:60px;min-width:60px}
+}
+</style>
+
+<div class="cpg-review">
+  <div class="cpg-review-hdr">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    <span>Clinically Reviewed Content</span>
+  </div>
+  <div class="cpg-review-cols">
+    <div class="cpg-review-person">
+      <img src="/wp-content/uploads/sumeet-banker.jpg" alt="Sumeet Banker" class="cpg-review-avatar" />
+      <div>
+        <span class="cpg-review-label">Written by</span>
+        <span class="cpg-review-name">Sumeet Banker</span>
+        <span class="cpg-review-title">Superintendent Pharmacist</span>
+      </div>
+    </div>
+    <div class="cpg-review-person">
+      <img src="/wp-content/uploads/sumeet-banker.jpg" alt="Sumeet Banker" class="cpg-review-avatar cpg-review-avatar--verify" />
+      <div>
+        <span class="cpg-review-label">Reviewed &amp; fact-checked by</span>
+        <span class="cpg-review-name">Sumeet Banker</span>
+        <span class="cpg-review-title">Superintendent Pharmacist &middot; GPhC: 2075664</span>
+        <div class="cpg-review-links">
+          <a href="https://www.pharmacyregulation.org/registers/pharmacist/2075664" target="_blank" rel="noopener">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Verify on GPhC Register
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cpg-review-ftr">
+    <span class="cpg-review-meta">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Last updated: Apr 15, 2026
+    </span>
+    <span class="cpg-review-meta cpg-review-meta--check">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      Medically reviewed
+    </span>
+  </div>
+</div>' . "\n" . '<!-- /wp:html -->',
+    );
+
+    foreach ( $blocks as $title => $content ) {
+        wp_insert_post( array(
+            'post_type'    => 'wp_block',
+            'post_title'   => $title,
+            'post_content' => $content,
+            'post_status'  => 'publish',
+        ) );
+    }
+
+    update_option( 'rl_reusable_blocks_v2', true );
+}
+add_action( 'init', 'rl_register_reusable_blocks' );
+
+/**
  * Ensure permalink structure stays set.
  */
 function rey_london_ensure_permalinks() {
