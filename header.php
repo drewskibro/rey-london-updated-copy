@@ -329,7 +329,7 @@ $booking_url   = rl_booking_url();
                         <span class="link-desc">Our expert pharmacists</span>
                       </div>
                     </a>
-                    <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="dropdown-link">
+                    <a href="https://chislehurstpharmacygroup.kinsta.cloud/contact-page/" class="dropdown-link">
                       <div class="link-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
@@ -476,7 +476,7 @@ $booking_url   = rl_booking_url();
           </button>
           <div class="mobile-nav-sub">
             <a href="<?php echo esc_url( home_url( '/meet-the-team/' ) ); ?>" class="mobile-nav-sub-link">Meet the Team</a>
-            <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="mobile-nav-sub-link">Contact &amp; Locations</a>
+            <a href="https://chislehurstpharmacygroup.kinsta.cloud/contact-page/" class="mobile-nav-sub-link">Contact &amp; Locations</a>
           </div>
         </div>
       </div>
