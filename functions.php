@@ -556,9 +556,23 @@ function rl_add_consultation_closer( $content ) {
         $next_post = get_previous_post();
     }
     if ( $next_post ) {
+        $next_cats = get_the_category( $next_post->ID );
+        $next_cat  = ! empty( $next_cats ) ? esc_html( $next_cats[0]->name ) : '';
+
+        $next_word_count = str_word_count( wp_strip_all_tags( $next_post->post_content ) );
+        $next_read_time  = max( 1, ceil( $next_word_count / 250 ) );
+
+        $clock_svg = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>';
+
         $h .= '<a href="' . esc_url( get_permalink( $next_post ) ) . '" class="bp-next-article-card">';
-        $h .= '<span class="bp-next-article-label">Next ' . $arrow_svg . '</span>';
+        $h .= '<span class="bp-next-article-label">Up Next ' . $arrow_svg . '</span>';
         $h .= '<span class="bp-next-article-title">' . esc_html( get_the_title( $next_post ) ) . '</span>';
+        $h .= '<span class="bp-next-article-meta">';
+        if ( $next_cat ) {
+            $h .= '<span class="bp-next-article-category">' . $next_cat . '</span>';
+        }
+        $h .= '<span class="bp-next-article-readtime">' . $clock_svg . ' ' . $next_read_time . ' min read</span>';
+        $h .= '</span>';
         $h .= '</a>';
     }
 
