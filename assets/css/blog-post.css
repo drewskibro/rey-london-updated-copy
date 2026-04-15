@@ -1246,7 +1246,6 @@ img.bp-closer-avatar {
   font-weight: 700;
   letter-spacing: 0.01em;
   border: 2px solid var(--primary-blue);
-  box-shadow: 0 4px 16px rgba(10,47,138,0.1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1259,7 +1258,6 @@ img.bp-closer-avatar {
   background: var(--primary-blue);
   color: var(--white);
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(10,47,138,0.25);
 }
 
 .bp-closer-book:hover svg {
@@ -1330,12 +1328,12 @@ img.bp-closer-avatar {
   border: none;
   border-radius: 100px;
   padding: 0.625rem 1.25rem;
-  box-shadow: inset 0 0 0 1.5px rgba(10,47,138,0.15), 0 2px 12px rgba(10,47,138,0.06);
+  box-shadow: inset 0 0 0 1.5px rgba(10,47,138,0.15);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .bp-closer-compliance-pill:hover {
-  box-shadow: inset 0 0 0 1.5px rgba(10,47,138,0.25), 0 4px 20px rgba(10,47,138,0.1);
+  box-shadow: inset 0 0 0 1.5px rgba(10,47,138,0.25);
   transform: translateY(-1px);
 }
 
