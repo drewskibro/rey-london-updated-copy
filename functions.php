@@ -395,10 +395,11 @@ add_action( 'after_switch_theme', 'rey_london_activation' );
 
 /**
  * Create / update reusable blocks (Synced Patterns).
- * Bumping the version flag re-creates blocks with updated content.
+ * Updates existing blocks in-place to preserve their IDs (and all
+ * post references). Only creates new blocks if they don't exist yet.
  */
 function rl_register_reusable_blocks() {
-    $version = 'v4';
+    $version = 'v5';
     if ( get_option( 'rl_reusable_blocks_version' ) === $version ) {
         return;
     }
@@ -513,30 +514,67 @@ img.cpg-review-avatar{background:none;font-size:0}
 </div>' . "\n" . '<!-- /wp:html -->',
     );
 
-    // Delete old versions if they exist.
-    $old = get_posts( array(
-        'post_type'   => 'wp_block',
-        'post_status' => 'any',
-        'numberposts' => 10,
-        'meta_query'  => array(),
-        's'           => 'CPG –',
-    ) );
-    foreach ( $old as $p ) {
-        wp_delete_post( $p->ID, true );
-    }
-
+    // Upsert: update existing blocks in-place to preserve their IDs
+    // (and all wp:block references in posts), or create if missing.
     foreach ( $blocks as $title => $content ) {
-        wp_insert_post( array(
-            'post_type'    => 'wp_block',
-            'post_title'   => $title,
-            'post_content' => $content,
-            'post_status'  => 'publish',
+        $existing = get_posts( array(
+            'post_type'   => 'wp_block',
+            'post_status' => 'any',
+            'title'       => $title,
+            'numberposts' => 1,
         ) );
+
+        if ( ! empty( $existing ) ) {
+            wp_update_post( array(
+                'ID'           => $existing[0]->ID,
+                'post_content' => $content,
+                'post_status'  => 'publish',
+            ) );
+        } else {
+            wp_insert_post( array(
+                'post_type'    => 'wp_block',
+                'post_title'   => $title,
+                'post_content' => $content,
+                'post_status'  => 'publish',
+            ) );
+        }
     }
 
     update_option( 'rl_reusable_blocks_version', $version );
 }
 add_action( 'init', 'rl_register_reusable_blocks' );
+
+/**
+ * Register block patterns for blog post components.
+ * Patterns are templates — each insertion creates an independent,
+ * editable copy so the content can be customised per instance.
+ */
+function rl_register_block_patterns() {
+    register_block_pattern_category( 'cpg', array(
+        'label' => __( 'Chislehurst Pharmacy', 'rey-london' ),
+    ) );
+
+    register_block_pattern( 'cpg/key-point', array(
+        'title'       => __( 'CPG – Key Point', 'rey-london' ),
+        'description' => __( 'Highlighted key-point card with bullet list.', 'rey-london' ),
+        'categories'  => array( 'cpg' ),
+        'content'     => '<!-- wp:html -->' . "\n" .
+'<div class="bp-key-point">
+  <div class="bp-key-point-header">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    Key Point
+  </div>
+  <div class="bp-key-point-body">
+    <ul>
+      <li>Same-day and next-day appointments.</li>
+      <li>Medication prescribed at the same appointment.</li>
+      <li>Personalised risk assessment based on your exact itinerary, accommodation and activities.</li>
+    </ul>
+  </div>
+</div>' . "\n" . '<!-- /wp:html -->',
+    ) );
+}
+add_action( 'init', 'rl_register_block_patterns' );
 
 /**
  * Ensure permalink structure stays set.
