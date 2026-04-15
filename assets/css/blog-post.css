@@ -1237,32 +1237,31 @@ img.bp-closer-avatar {
   display: inline-flex;
   align-items: center;
   gap: 0.625rem;
-  padding: 1rem 2.25rem;
-  background: var(--white);
-  color: var(--primary-blue);
+  padding: 1.1rem 2.5rem;
+  background: var(--primary-blue);
+  color: var(--white);
   text-decoration: none;
-  border-radius: 100px;
+  border-radius: 12px;
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.01em;
-  border: 2px solid var(--primary-blue);
+  border: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .bp-closer-book svg {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  color: var(--primary-blue);
+  color: var(--white);
 }
 
 .bp-closer-book:hover {
-  background: var(--primary-blue);
-  color: var(--white);
+  background: var(--accent-blue);
   transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(10,47,138,0.25);
 }
 
 .bp-closer-book:hover svg {
   transform: translateX(3px);
-  color: var(--white);
 }
 
 .bp-closer-phone {
@@ -1324,16 +1323,15 @@ img.bp-closer-avatar {
   font-size: 0.8125rem;
   font-weight: 600;
   color: var(--primary-blue);
-  background: var(--white);
+  background: var(--secondary-blue);
   border: none;
-  border-radius: 100px;
+  border-radius: 10px;
   padding: 0.625rem 1.25rem;
-  box-shadow: inset 0 0 0 1.5px rgba(10,47,138,0.15);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .bp-closer-compliance-pill:hover {
-  box-shadow: inset 0 0 0 1.5px rgba(10,47,138,0.25);
+  background: #dce8f3;
   transform: translateY(-1px);
 }
 
