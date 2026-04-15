@@ -528,8 +528,6 @@ function rl_add_consultation_closer( $content ) {
     $h .= '<p class="bp-closer-action-desc">Book your consultation at either Chislehurst Pharmacy Group location. Same-day and next-day appointments usually available.</p>';
     $h .= '<div class="bp-closer-buttons">';
     $h .= '<a href="https://chislehurstpharmacygroup.kinsta.cloud/contact-page/#book-appointment" class="bp-closer-book">Book a Consultation ' . $arrow_svg . '</a>';
-    $h .= '<a href="tel:02084673158" class="bp-closer-phone">' . $phone_svg . ' 020 8467 3158</a>';
-    $h .= '<a href="tel:02082950017" class="bp-closer-phone">' . $phone_svg . ' 020 8295 0017</a>';
     $h .= '</div></div>';
 
     $h .= '</div>'; // close body
