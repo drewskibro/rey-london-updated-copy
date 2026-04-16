@@ -303,9 +303,9 @@ $booking_url   = rl_booking_url();
                     <div class="featured-card">
                       <div class="featured-badge">Travel Health</div>
                       <h5>Travelling This Summer?</h5>
-                      <p>Personalised vaccination plans for your destination. We cover all major travel vaccines including yellow fever, typhoid, hepatitis A &amp; B, and antimalarials.</p>
+                      <p>Personalised vaccination plans for your destination. We cover all major travel vaccines including typhoid, hepatitis A &amp; B, and antimalarials.</p>
                       <div class="featured-trust">
-                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Yellow fever certified centre</span>
+                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Destination-specific vaccine plans</span>
                         <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> NHS &amp; private vaccines available</span>
                         <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Antimalarial prescriptions</span>
                       </div>
