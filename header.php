@@ -174,10 +174,11 @@ $booking_url   = rl_booking_url();
                     <div class="featured-card">
                       <div class="featured-badge">Most Popular</div>
                       <h5>Medical Weight Loss</h5>
-                      <p>GLP-1 treatments prescribed same day by our Independent Prescribers. Face-to-face care at both Chislehurst locations.</p>
+                      <p>GLP-1 treatments supplied same day. Face-to-face care at both Chislehurst locations — clinically supervised throughout.</p>
                       <div class="featured-trust">
-                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> GPhC-registered prescribers</span>
+                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> GPhC-registered pharmacists</span>
                         <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Free initial consultation</span>
+                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> No GP referral needed</span>
                       </div>
                       <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="featured-btn">
                         Book Free Consultation
