@@ -95,10 +95,10 @@ $booking_url   = rl_booking_url();
               <h4 class="footer-col-title">Services</h4>
               <ul class="footer-links-list">
                 <li><a href="<?php echo esc_url( home_url( '/nhs-prescriptions/' ) ); ?>">NHS Prescriptions</a></li>
-                <li><a href="<?php echo esc_url( home_url( '/travel-health/' ) ); ?>">Travel Clinic</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/travel-vaccinations-london/' ) ); ?>">Travel Clinic</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/health-checks/' ) ); ?>">Health Checks</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>">Weight Loss Programs</a></li>
-                <li><a href="<?php echo esc_url( home_url( '/vaccinations/' ) ); ?>">Vaccinations</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/nhs-vaccinations/' ) ); ?>">NHS Vaccinations</a></li>
               </ul>
             </div>
 
@@ -106,10 +106,10 @@ $booking_url   = rl_booking_url();
             <div class="footer-links-col">
               <h4 class="footer-col-title">Quick Links</h4>
               <ul class="footer-links-list">
-                <li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">About Us</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/meet-the-team/' ) ); ?>">About Us</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/meet-the-team/' ) ); ?>">Meet the Team</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/health-hub/' ) ); ?>">Health Hub</a></li>
-                <li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Contact Us</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/contact-page/' ) ); ?>">Contact Us</a></li>
               </ul>
             </div>
 
