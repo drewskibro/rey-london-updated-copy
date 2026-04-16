@@ -23,7 +23,7 @@ $booking_url = rl_booking_url();
           <p class="pf-hero-sub"><?php echo esc_html( rl_field( 'pf_hero_subtitle', 'Under the NHS Pharmacy First scheme, our pharmacists at Chislehurst Pharmacy Group can assess and treat seven common conditions — completely free of charge. No referral, no waiting weeks for a GP. Walk in or book online and get treated the same day.' ) ); ?></p>
 
           <div class="pf-hero-ctas">
-            <a href="<?php echo esc_url( rl_field( 'pf_hero_cta1_url', home_url( '/book-appointment/' ) ) ); ?>" class="pf-btn-primary"><?php echo esc_html( rl_field( 'pf_hero_cta1_text', 'Book a Pharmacy First Appointment' ) ); ?></a>
+            <a href="<?php echo esc_url( rl_field( 'pf_hero_cta1_url', home_url( '/contact-page/#book-appointment' ) ) ); ?>" class="pf-btn-primary"><?php echo esc_html( rl_field( 'pf_hero_cta1_text', 'Book a Pharmacy First Appointment' ) ); ?></a>
             <a href="<?php echo esc_url( rl_field( 'pf_hero_cta2_url', '#conditions' ) ); ?>" class="pf-btn-outline"><?php echo esc_html( rl_field( 'pf_hero_cta2_text', 'Learn About the Seven Conditions' ) ); ?></a>
           </div>
 
@@ -313,8 +313,8 @@ $booking_url = rl_booking_url();
         <h2 class="pf-footer-cta-title"><?php echo esc_html( rl_field( 'pf_cta_title', 'Don\'t Wait Weeks for a GP. Get Treated Today.' ) ); ?></h2>
         <p class="pf-footer-cta-sub"><?php echo esc_html( rl_field( 'pf_cta_subtitle', 'Both our Chislehurst locations offer NHS Pharmacy First — walk in during opening hours or book your slot online. Free treatment, expert pharmacists, no appointment needed.' ) ); ?></p>
         <div class="pf-cta-buttons">
-          <a href="<?php echo esc_url( rl_field( 'pf_cta_cta1_url', home_url( '/book-appointment/' ) ) ); ?>" class="pf-cta-primary"><?php echo esc_html( rl_field( 'pf_cta_cta1_text', 'Book a Pharmacy First Appointment' ) ); ?></a>
-          <a href="<?php echo esc_url( rl_field( 'pf_cta_cta2_url', home_url( '/contact/' ) ) ); ?>" class="pf-cta-secondary"><?php echo esc_html( rl_field( 'pf_cta_cta2_text', 'Find Your Nearest Location' ) ); ?></a>
+          <a href="<?php echo esc_url( rl_field( 'pf_cta_cta1_url', home_url( '/contact-page/#book-appointment' ) ) ); ?>" class="pf-cta-primary"><?php echo esc_html( rl_field( 'pf_cta_cta1_text', 'Book a Pharmacy First Appointment' ) ); ?></a>
+          <a href="<?php echo esc_url( rl_field( 'pf_cta_cta2_url', home_url( '/contact-page/#book-appointment' ) ) ); ?>" class="pf-cta-secondary"><?php echo esc_html( rl_field( 'pf_cta_cta2_text', 'Find Your Nearest Location' ) ); ?></a>
         </div>
         <div class="pf-cta-checks">
           <span>✓ No referral needed</span>
