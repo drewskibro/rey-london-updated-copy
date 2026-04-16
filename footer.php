@@ -74,26 +74,16 @@ $booking_url   = rl_booking_url();
               <div class="footer-social">
                 <span class="social-label">Follow Us</span>
                 <div class="social-links-premium">
-                  <a href="<?php echo esc_url( rl_option( 'social_facebook', '#' ) ); ?>" class="social-link" aria-label="Facebook">
+                  <a href="https://www.facebook.com/chispharm/" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                       <path d="M15 1H12C10.6739 1 9.40215 1.52678 8.46447 2.46447C7.52678 3.40215 7 4.67392 7 6V9H4V13H7V19H11V13H14L15 9H11V6C11 5.73478 11.1054 5.48043 11.2929 5.29289C11.4804 5.10536 11.7348 5 12 5H15V1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </a>
-                  <a href="<?php echo esc_url( rl_option( 'social_instagram', '#' ) ); ?>" class="social-link" aria-label="Instagram">
+                  <a href="https://www.instagram.com/chislehurstpharmacy/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                       <rect x="2" y="2" width="16" height="16" rx="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                       <circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="2" />
                       <circle cx="14.5" cy="5.5" r="0.5" fill="currentColor" />
-                    </svg>
-                  </a>
-                  <a href="<?php echo esc_url( rl_option( 'social_twitter', '#' ) ); ?>" class="social-link" aria-label="Twitter">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path d="M19 3a8.5 8.5 0 01-2.36.64 4.13 4.13 0 001.81-2.27 8.21 8.21 0 01-2.61 1 4.1 4.1 0 00-7 3.74A11.64 11.64 0 012 2.13a4.1 4.1 0 001.27 5.47A4.07 4.07 0 011.64 7v.05a4.1 4.1 0 003.29 4 4.1 4.1 0 01-1.85.07 4.1 4.1 0 003.83 2.85A8.23 8.23 0 011 15.54a11.6 11.6 0 006.29 1.84c7.55 0 11.68-6.25 11.68-11.67 0-.18 0-.35-.01-.53A8.35 8.35 0 0019 3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </a>
-                  <a href="<?php echo esc_url( rl_option( 'social_linkedin', '#' ) ); ?>" class="social-link" aria-label="LinkedIn">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path d="M13 7a5 5 0 015 5v6h-4v-6a1 1 0 00-2 0v6H8v-6a5 5 0 015-5zM4 8h4v10H4V8zM6 5a2 2 0 100-4 2 2 0 000 4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </a>
                 </div>
