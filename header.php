@@ -300,10 +300,18 @@ $booking_url   = rl_booking_url();
 
                   <div class="dropdown-featured travel-featured">
                     <div class="featured-card">
-                      <div class="featured-badge">🌍 Travel Ready</div>
-                      <h5>Planning a Trip?</h5>
-                      <p>Book a travel consultation and get a personalised vaccination plan for your destination</p>
-                      <a href="<?php echo esc_url( $booking_url ); ?>" class="featured-btn">Book Consultation →</a>
+                      <div class="featured-badge">Travel Health</div>
+                      <h5>Travelling This Summer?</h5>
+                      <p>Personalised vaccination plans for your destination. We cover all major travel vaccines including yellow fever, typhoid, hepatitis A &amp; B, and antimalarials.</p>
+                      <div class="featured-trust">
+                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Yellow fever certified centre</span>
+                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> NHS &amp; private vaccines available</span>
+                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Antimalarial prescriptions</span>
+                      </div>
+                      <a href="<?php echo esc_url( home_url( '/travel-vaccinations-london/' ) ); ?>" class="featured-btn">
+                        Book Travel Consultation
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                      </a>
                     </div>
                   </div>
                 </div>
