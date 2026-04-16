@@ -714,74 +714,6 @@
 /* ── LOCATIONS ── */
 .pf-locations { padding: 90px 0; background: #fff; }
 
-.pf-loc-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-}
-
-.pf-loc-card {
-  background: var(--light-bg);
-  border-radius: 20px;
-  padding: 40px;
-  border: 1px solid rgba(10,47,138,.08);
-  transition: all .4s;
-}
-
-.pf-loc-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(10,47,138,.12);
-}
-
-.pf-loc-card h3 {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--primary-blue);
-  margin-bottom: 20px;
-}
-
-.pf-loc-detail {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 14px;
-  font-size: 15px;
-  color: var(--text-dark);
-  line-height: 1.6;
-}
-
-.pf-loc-detail svg { flex-shrink: 0; color: var(--primary-blue); margin-top: 2px; }
-
-.pf-loc-detail a {
-  color: var(--primary-blue);
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.pf-loc-detail a:hover { text-decoration: underline; }
-
-.pf-loc-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 20px;
-  padding: 12px 24px;
-  background: rgba(10,47,138,.08);
-  color: var(--primary-blue);
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 14px;
-  transition: all .3s;
-  border: 1px solid rgba(10,47,138,.15);
-}
-
-.pf-loc-cta:hover {
-  background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
-  color: #fff;
-  border-color: transparent;
-}
-
 .pf-serving-text {
   text-align: center;
   margin-top: 40px;
@@ -833,7 +765,6 @@
   .pf-steps-grid { grid-template-columns: repeat(3, 1fr); }
   .pf-lifestyle-banner { height: 340px; }
   .pf-lifestyle-banner-overlay { padding: 24px 32px; }
-  .pf-loc-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {

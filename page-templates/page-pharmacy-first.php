@@ -266,40 +266,7 @@ $booking_url = rl_booking_url();
         <h2 class="pf-section-title pf-reveal"><?php echo wp_kses_post( rl_field( 'pf_locations_title', 'Visit Us at Either <span class="gradient-text">Chislehurst Location</span>' ) ); ?></h2>
       </div>
 
-      <div class="pf-loc-grid pf-reveal">
-        <?php
-        $pf_locations = rl_field( 'pf_locations' );
-        if ( $pf_locations && is_array( $pf_locations ) ) :
-            foreach ( $pf_locations as $loc ) : ?>
-        <div class="pf-loc-card">
-          <h3><?php echo esc_html( $loc['name'] ); ?></h3>
-          <div class="pf-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span><?php echo esc_html( $loc['address'] ); ?></span></div>
-          <div class="pf-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3"/></svg><a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', $loc['phone'] ) ); ?>"><?php echo esc_html( $loc['phone'] ); ?></a></div>
-          <?php if ( ! empty( $loc['hours'] ) ) : ?>
-          <div class="pf-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span><?php echo esc_html( $loc['hours'] ); ?></span></div>
-          <?php endif; ?>
-          <?php if ( ! empty( $loc['directions_url'] ) ) : ?>
-          <a href="<?php echo esc_url( $loc['directions_url'] ); ?>" target="_blank" class="pf-loc-cta">Get Directions &rarr;</a>
-          <?php endif; ?>
-        </div>
-            <?php endforeach;
-        else : ?>
-        <div class="pf-loc-card">
-          <h3>Pond Pharmacy — Chislehurst</h3>
-          <div class="pf-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>59 High Street, Chislehurst, BR7 5AF</span></div>
-          <div class="pf-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3"/></svg><a href="tel:02084673158">020 8467 3158</a></div>
-          <div class="pf-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>Mon–Fri: 9am–6pm &nbsp;|&nbsp; Sat: 9am–1pm &nbsp;|&nbsp; Sun: Closed</span></div>
-          <a href="https://maps.google.com/?q=59+High+Street+Chislehurst+BR7+5AF" target="_blank" class="pf-loc-cta">Get Directions &rarr;</a>
-        </div>
-        <div class="pf-loc-card">
-          <h3>Chislehurst Pharmacy</h3>
-          <div class="pf-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>59 Chislehurst Road, Chislehurst, BR7 5NP</span></div>
-          <div class="pf-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3"/></svg><a href="tel:02082950017">020 8295 0017</a></div>
-          <div class="pf-loc-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>Mon–Fri: 9am–6pm &nbsp;|&nbsp; Sat: 9am–1pm &nbsp;|&nbsp; Sun: Closed</span></div>
-          <a href="https://maps.google.com/?q=59+Chislehurst+Road+BR7+5NP" target="_blank" class="pf-loc-cta">Get Directions &rarr;</a>
-        </div>
-        <?php endif; ?>
-      </div>
+      <?php get_template_part( 'template-parts/location-cards', null, array( 'cta_prefix' => 'Book at' ) ); ?>
 
       <div class="pf-serving-text pf-reveal"><?php echo esc_html( rl_field( 'pf_locations_serving', 'Conveniently located to serve patients across Chislehurst, Bromley, Orpington, Sidcup, Bexley, Eltham, and surrounding South East London areas. Free parking available at both locations.' ) ); ?></div>
     </div>
