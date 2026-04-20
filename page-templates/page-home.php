@@ -1073,6 +1073,7 @@ get_header();
             <p>Get expert health tips, exclusive offers, and updates delivered to your inbox</p>
           </div>
           <form class="newsletter-form hp-footer-newsletter-form">
+            <input type="text" name="rl_hp" style="display:none" tabindex="-1" autocomplete="off">
             <div class="newsletter-input-wrapper">
               <svg class="newsletter-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
