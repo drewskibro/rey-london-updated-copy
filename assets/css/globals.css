@@ -1919,8 +1919,9 @@ a.featured-btn:hover svg {
 }
 
 .locations-section--dark .section-subtitle,
-.locations-section--dark .hp-locations-quote {
-  color: #ffffff;
+.locations-section--dark .hp-locations-quote,
+.locations-section--dark .hp-locations-quote.section-subtitle {
+  color: rgba(255, 255, 255, 0.85);
   font-size: 17px;
   font-weight: 400;
   font-style: normal;
