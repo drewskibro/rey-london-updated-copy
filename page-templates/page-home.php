@@ -123,7 +123,7 @@ get_header();
               <span class="gradient-text">Health Hub</span>
             </h2>
           </div>
-          <a href="#all-articles" class="btn-secondary btn-view-all">
+          <a href="<?php echo esc_url( home_url( '/health-hub/' ) ); ?>" class="btn-secondary btn-view-all">
             View all articles
             <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow" />
           </a>
