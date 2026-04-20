@@ -1906,6 +1906,52 @@ a.featured-btn:hover svg {
    ========================================================================== */
 .locations-section--dark {
   background: #11368F;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient background orbs — soft radial glows for visual depth */
+.locations-section--dark::before,
+.locations-section--dark::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(60px);
+}
+
+.locations-section--dark::before {
+  width: 520px;
+  height: 520px;
+  top: -120px;
+  left: -160px;
+  background: radial-gradient(circle, rgba(90, 127, 196, 0.28) 0%, rgba(90, 127, 196, 0) 70%);
+  animation: rl-orb-drift 14s ease-in-out infinite alternate;
+}
+
+.locations-section--dark::after {
+  width: 620px;
+  height: 620px;
+  bottom: -180px;
+  right: -200px;
+  background: radial-gradient(circle, rgba(120, 170, 255, 0.22) 0%, rgba(120, 170, 255, 0) 70%);
+  animation: rl-orb-drift 18s ease-in-out infinite alternate-reverse;
+}
+
+.locations-section--dark .container {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes rl-orb-drift {
+  0%   { transform: translate(0, 0) scale(1); opacity: 0.9; }
+  100% { transform: translate(40px, -30px) scale(1.08); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .locations-section--dark::before,
+  .locations-section--dark::after { animation: none; }
 }
 
 .locations-section--dark .section-title,
@@ -1951,8 +1997,11 @@ a.featured-btn:hover svg {
 
 .locations-section--dark .location-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.28);
-  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(90, 127, 196, 0.35),
+    0 0 48px rgba(90, 127, 196, 0.28);
+  border-color: rgba(120, 170, 255, 0.32);
 }
 
 .locations-section--dark .location-content {
