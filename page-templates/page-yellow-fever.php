@@ -781,7 +781,7 @@ get_header();
           </div>
           <div class="yf-loc-detail">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            <span>Mon–Fri: 9:00am–6:30pm &nbsp;|&nbsp; Sat: 9:00am–5:00pm &nbsp;|&nbsp; Sun: Closed</span>
+            <span>Mon–Fri: 8:30am–6:30pm &nbsp;|&nbsp; Sat: 9:00am–2:00pm &nbsp;|&nbsp; Sun: Closed</span>
           </div>
           <div class="yf-loc-detail">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -801,7 +801,7 @@ get_header();
           </div>
           <div class="yf-loc-detail">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            <span>Mon–Fri: 8:00am–7:00pm &nbsp;|&nbsp; Sat: 9:00am–1:00pm &nbsp;|&nbsp; Sun: Closed</span>
+            <span>Mon–Fri: 9:00am–6:00pm &nbsp;|&nbsp; Sat: 9:00am–1:00pm &nbsp;|&nbsp; Sun: Closed</span>
           </div>
           <div class="yf-loc-detail">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>

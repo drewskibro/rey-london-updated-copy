@@ -43,7 +43,7 @@ $locations = array(
         'address'   => '59 High St, Chislehurst BR7 5AF',
         'phone'     => '020 8467 3158',
         'phone_raw' => '02084673158',
-        'hours'     => 'Mon–Fri: 9am–6pm | Sat: 9am–1pm | Sun: Closed',
+        'hours'     => 'Mon–Fri: 8:30am–6:30pm | Sat: 9am–2pm | Sun: Closed',
         'map_embed' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2488.175332813155!2d0.0647090766147177!3d51.4182057717932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8ab20b9bfd2d5%3A0x92c9dc4d9fa96c0e!2sPond%20Pharmacy%20-%20Vaccinations%20and%20Diagnostics%20Clinic!5e0!3m2!1sen!2suk!4v1776151216113!5m2!1sen!2suk',
         'map_link'  => 'https://maps.google.com/?q=59+High+St+Chislehurst+BR7+5AF',
     ),

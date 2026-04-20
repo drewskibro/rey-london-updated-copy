@@ -2395,7 +2395,7 @@ acf_add_local_field_group( array(
                 array( 'key' => 'field_rl_opt_loc_maps_embed', 'label' => 'Google Maps Embed URL', 'name' => 'maps_embed_url', 'type' => 'url' ),
                 array( 'key' => 'field_rl_opt_loc_parking', 'label' => 'Parking Info', 'name' => 'parking', 'type' => 'textarea', 'rows' => 2 ),
                 array( 'key' => 'field_rl_opt_loc_store_image', 'label' => 'Storefront Photo', 'name' => 'store_image', 'type' => 'image', 'return_format' => 'url' ),
-                array( 'key' => 'field_rl_opt_loc_hours_weekday', 'label' => 'Weekday Hours', 'name' => 'hours_weekday', 'type' => 'text', 'default_value' => 'Mon–Fri: 9am–6pm' ),
+                array( 'key' => 'field_rl_opt_loc_hours_weekday', 'label' => 'Weekday Hours', 'name' => 'hours_weekday', 'type' => 'text', 'default_value' => 'Mon–Fri: 9am–6pm', 'instructions' => 'e.g. Mon–Fri: 9am–6pm (Pond: 8:30am–6:30pm)' ),
                 array( 'key' => 'field_rl_opt_loc_hours_saturday', 'label' => 'Saturday Hours', 'name' => 'hours_saturday', 'type' => 'text', 'default_value' => 'Sat: 9am–1pm' ),
                 array( 'key' => 'field_rl_opt_loc_hours_sunday', 'label' => 'Sunday Hours', 'name' => 'hours_sunday', 'type' => 'text', 'default_value' => 'Sun: Closed' ),
             ),
