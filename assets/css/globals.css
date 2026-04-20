@@ -1922,21 +1922,21 @@ a.featured-btn:hover svg {
 }
 
 .locations-section--dark::before {
-  width: 520px;
-  height: 520px;
-  top: -120px;
-  left: -160px;
-  background: radial-gradient(circle, rgba(90, 127, 196, 0.28) 0%, rgba(90, 127, 196, 0) 70%);
-  animation: rl-orb-drift 14s ease-in-out infinite alternate;
+  width: 720px;
+  height: 720px;
+  top: -240px;
+  left: -240px;
+  background: radial-gradient(circle, rgba(140, 190, 255, 0.55) 0%, rgba(140, 190, 255, 0) 65%);
+  animation: rl-orb-drift 16s ease-in-out infinite alternate;
 }
 
 .locations-section--dark::after {
-  width: 620px;
-  height: 620px;
-  bottom: -180px;
-  right: -200px;
-  background: radial-gradient(circle, rgba(120, 170, 255, 0.22) 0%, rgba(120, 170, 255, 0) 70%);
-  animation: rl-orb-drift 18s ease-in-out infinite alternate-reverse;
+  width: 820px;
+  height: 820px;
+  bottom: -320px;
+  right: -260px;
+  background: radial-gradient(circle, rgba(90, 220, 255, 0.42) 0%, rgba(90, 220, 255, 0) 65%);
+  animation: rl-orb-drift 22s ease-in-out infinite alternate-reverse;
 }
 
 .locations-section--dark .container {
@@ -1967,11 +1967,12 @@ a.featured-btn:hover svg {
 .locations-section--dark .section-subtitle,
 .locations-section--dark .hp-locations-quote,
 .locations-section--dark .hp-locations-quote.section-subtitle {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 17px;
+  color: #ffffff;
+  font-size: 18px;
   font-weight: 400;
   font-style: normal;
   line-height: 1.7;
+  opacity: 1;
 }
 
 .locations-section--dark .hp-locations-quote span,
@@ -2062,6 +2063,24 @@ a.featured-btn:hover svg {
 
 .locations-section--dark .location-map {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Soften the scroll-in reveal inside the dark locations section.
+   Default hp-reveal-left/right slides cards 50px horizontally with a sharp
+   ease — on the navy background that reads as jagged. Replace with a short,
+   vertical-only fade-up using a gentler curve. */
+.locations-section--dark .location-card.hp-reveal,
+.locations-section--dark .location-card.hp-reveal.hp-reveal-left,
+.locations-section--dark .location-card.hp-reveal.hp-reveal-right {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 1.1s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.locations-section--dark .location-card.hp-reveal.hp-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Section Styles */
