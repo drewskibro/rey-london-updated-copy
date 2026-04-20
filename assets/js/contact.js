@@ -59,14 +59,16 @@
         .then(function(r) { return r.json(); })
         .then(function(res) {
           if (res.success) {
-            btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Message Sent!';
-            btn.style.background = 'linear-gradient(135deg, #10B981 0%, #059669 100%)';
+            var wrap = document.getElementById('contactFormWrap');
+            var success = document.getElementById('contactFormSuccess');
+            if (wrap && success) {
+              wrap.hidden = true;
+              success.hidden = false;
+              success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
             contactForm.reset();
-            setTimeout(function() {
-              btn.innerHTML = origHTML;
-              btn.style.background = '';
-              btn.disabled = false;
-            }, 4000);
+            btn.innerHTML = origHTML;
+            btn.disabled = false;
           } else {
             btn.innerHTML = origHTML;
             btn.disabled = false;
@@ -78,5 +80,18 @@
           btn.disabled = false;
           alert('Could not send message. Please call us directly on 020 8467 3158.');
         });
+    });
+  }
+
+  // Reset form from success state
+  var successReset = document.querySelector('.ct-form-success-reset');
+  if (successReset) {
+    successReset.addEventListener('click', function() {
+      var wrap = document.getElementById('contactFormWrap');
+      var success = document.getElementById('contactFormSuccess');
+      if (wrap && success) {
+        success.hidden = true;
+        wrap.hidden = false;
+      }
     });
   }

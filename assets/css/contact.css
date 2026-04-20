@@ -561,6 +561,66 @@
   margin-top: 16px;
 }
 
+/* ---- FORM SUCCESS STATE ---- */
+.ct-form-success {
+  text-align: center;
+  padding: 24px 8px;
+  animation: ctFormSuccessIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ct-form-success-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+}
+.ct-form-success h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin: 0 0 12px;
+  letter-spacing: -0.3px;
+}
+.ct-form-success p {
+  font-size: 15px;
+  color: var(--text-gray);
+  line-height: 1.6;
+  max-width: 440px;
+  margin: 0 auto 24px;
+}
+.ct-form-success p a {
+  color: var(--primary-blue);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+.ct-form-success-reset {
+  background: transparent;
+  border: 1.5px solid var(--primary-blue);
+  color: var(--primary-blue);
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+.ct-form-success-reset:hover {
+  background: var(--primary-blue);
+  color: var(--white);
+}
+@keyframes ctFormSuccessIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* ---- OPENING HOURS ---- */
 .ct-hours-section {
   padding: 100px 0;
