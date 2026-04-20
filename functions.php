@@ -212,6 +212,15 @@ function rey_london_scripts() {
         true
     );
 
+    // Amelia overrides JS — hides "Free" price labels until real pricing is set
+    wp_enqueue_script(
+        'rey-london-amelia-overrides',
+        REY_LONDON_URI . '/assets/js/amelia-overrides.js',
+        array(),
+        REY_LONDON_VERSION,
+        true
+    );
+
     // Navigation JS — loaded on all pages
     wp_enqueue_script(
         'rey-london-nav-js',
