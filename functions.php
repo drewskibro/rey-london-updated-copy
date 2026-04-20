@@ -86,6 +86,14 @@ function rey_london_scripts() {
         REY_LONDON_VERSION
     );
 
+    // Amelia booking form overrides (hides price/Free label until real pricing is set)
+    wp_enqueue_style(
+        'rey-london-amelia-overrides',
+        REY_LONDON_URI . '/assets/css/amelia-overrides.css',
+        array( 'rey-london-globals' ),
+        REY_LONDON_VERSION
+    );
+
     // Theme stylesheet (style.css - mostly metadata)
     wp_enqueue_style(
         'rey-london-style',
