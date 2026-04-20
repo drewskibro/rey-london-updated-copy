@@ -125,7 +125,7 @@ get_header();
           </div>
 
           <div class="mt-lead-actions">
-            <a href="#book" class="mt-btn-primary"><?php echo esc_html( $lead_cta ); ?></a>
+            <a href="<?php echo esc_url( home_url( '/contact-page/#book-appointment' ) ); ?>" class="mt-btn-primary"><?php echo esc_html( $lead_cta ); ?></a>
             <?php
             $phone_pond_num       = rl_option( 'phone_pond', '020 8467 3158' );
             $phone_chisl_num      = rl_option( 'phone_chislehurst', '020 8295 0017' );
@@ -217,7 +217,7 @@ get_header();
                 <?php endforeach; ?>
               </div>
             <?php endif; ?>
-            <a href="#book" class="mt-team-cta">Book Appointment</a>
+            <a href="<?php echo esc_url( home_url( '/contact-page/#book-appointment' ) ); ?>" class="mt-team-cta">Book Appointment</a>
           </div>
         </div>
         <?php
@@ -314,7 +314,7 @@ get_header();
         <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> No Referral Required</span>
       </div>
       <div class="mt-final-ctas">
-        <a href="#book" class="mt-btn-primary">Book an Appointment</a>
+        <a href="<?php echo esc_url( home_url( '/contact-page/#book-appointment' ) ); ?>" class="mt-btn-primary">Book an Appointment</a>
         <a href="<?php echo esc_url( home_url( '/contact-page/' ) ); ?>" class="mt-btn-outline">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           Find a Location
