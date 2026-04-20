@@ -230,11 +230,34 @@ if ( file_exists( REY_LONDON_DIR . '/inc/acf-fields.php' ) ) {
  * Helper: Health Hub default author — returns [initials, name, title].
  */
 function rl_hh_author() {
+    $photo     = rl_field( 'hh_author_photo' );
+    $photo_url = is_array( $photo ) && ! empty( $photo['url'] ) ? $photo['url'] : '';
+    $photo_alt = is_array( $photo ) && ! empty( $photo['alt'] ) ? $photo['alt'] : '';
     return array(
-        'initials' => rl_field( 'hh_author_initials', 'SB' ),
-        'name'     => rl_field( 'hh_author_name', 'Sumeet Banker' ),
-        'title'    => rl_field( 'hh_author_title', 'Lead Pharmacist' ),
+        'initials'  => rl_field( 'hh_author_initials', 'SB' ),
+        'name'      => rl_field( 'hh_author_name', 'Sumeet Banker' ),
+        'title'     => rl_field( 'hh_author_title', 'Lead Pharmacist' ),
+        'photo_url' => $photo_url,
+        'photo_alt' => $photo_alt,
     );
+}
+
+/**
+ * Helper: Render the Health Hub byline avatar (photo if set, else initials).
+ */
+function rl_hh_avatar( $author, $size = 'lg' ) {
+    $class = 'hh-byline-avatar' . ( $size === 'sm' ? ' hh-byline-avatar--sm' : '' );
+    if ( ! empty( $author['photo_url'] ) ) {
+        $alt = $author['photo_alt'] ?: $author['name'];
+        printf(
+            '<div class="%s hh-byline-avatar--photo"><img src="%s" alt="%s"></div>',
+            esc_attr( $class ),
+            esc_url( $author['photo_url'] ),
+            esc_attr( $alt )
+        );
+    } else {
+        printf( '<div class="%s">%s</div>', esc_attr( $class ), esc_html( $author['initials'] ) );
+    }
 }
 
 /**
