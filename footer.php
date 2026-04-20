@@ -118,9 +118,9 @@ $booking_url   = rl_booking_url();
               <h4 class="footer-col-title">Support</h4>
               <ul class="footer-links-list">
                 <li><a href="<?php echo esc_url( home_url( '/faq/' ) ); ?>">FAQs</a></li>
-                <li><a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>">Privacy Policy</a></li>
-                <li><a href="<?php echo esc_url( home_url( '/terms/' ) ); ?>">Terms & Conditions</a></li>
-                <li><a href="<?php echo esc_url( home_url( '/accessibility/' ) ); ?>">Accessibility</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/legal/#privacy' ) ); ?>">Privacy Policy</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/legal/#terms' ) ); ?>">Terms &amp; Conditions</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/legal/#accessibility' ) ); ?>">Accessibility</a></li>
               </ul>
             </div>
           </div>
