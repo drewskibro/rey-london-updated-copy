@@ -96,7 +96,7 @@ $booking_url   = rl_booking_url();
               <ul class="footer-links-list">
                 <li><a href="<?php echo esc_url( home_url( '/nhs-prescriptions/' ) ); ?>">NHS Prescriptions</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/travel-vaccinations-london/' ) ); ?>">Travel Clinic</a></li>
-                <li><a href="<?php echo esc_url( home_url( '/health-checks/' ) ); ?>">Health Checks</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/vitamin-b12-london/' ) ); ?>">Vitamin B12</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>">Weight Loss Programs</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/nhs-vaccinations/' ) ); ?>">NHS Vaccinations</a></li>
               </ul>

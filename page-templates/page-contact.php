@@ -62,7 +62,7 @@ get_header();
             <div class="ct-hero-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
             <div class="ct-hero-card-content">
               <h3>Opening Hours</h3>
-              <p>Mon–Fri: 9am–6pm | Sat: 9am–1pm | Sun: Closed</p>
+              <p>Open Mon–Sat — hours vary by branch, see below</p>
             </div>
           </div>
         </div>
@@ -167,7 +167,7 @@ get_header();
             <div class="ct-info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
             <div>
               <div class="ct-info-label">Opening Hours</div>
-              <span class="ct-info-value">Mon–Fri 9am–6pm &nbsp;|&nbsp; Sat 9am–1pm</span>
+              <span class="ct-info-value">Pond: <?php echo esc_html( rl_hours_pond() ); ?><br>Chislehurst: <?php echo esc_html( rl_hours_chislehurst() ); ?></span>
             </div>
           </div>
           <div class="ct-info-item">

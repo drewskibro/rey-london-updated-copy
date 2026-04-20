@@ -2382,6 +2382,8 @@ acf_add_local_field_group( array(
         array( 'key' => 'field_rl_opt_group_email', 'label' => 'Group Email', 'name' => 'pharmacy_group_email', 'type' => 'email', 'default_value' => '' ),
         array( 'key' => 'field_rl_opt_booking_url', 'label' => 'Online Booking URL', 'name' => 'pharmacy_booking_url', 'type' => 'url', 'instructions' => 'Main booking link used across all pages' ),
         array( 'key' => 'field_rl_opt_patients_treated', 'label' => 'Patients Treated (stat)', 'name' => 'pharmacy_patients_treated', 'type' => 'text', 'default_value' => '10,000+' ),
+        array( 'key' => 'field_rl_opt_hours_pond', 'label' => 'Pond Pharmacy — Opening Hours (summary)', 'name' => 'hours_pond_summary', 'type' => 'text', 'default_value' => 'Mon–Fri: 8:30am–6:30pm | Sat: 9am–2pm | Sun: Closed', 'instructions' => 'Single-line summary used on location cards across the site. Update here to change everywhere.' ),
+        array( 'key' => 'field_rl_opt_hours_chislehurst', 'label' => 'Chislehurst Pharmacy — Opening Hours (summary)', 'name' => 'hours_chislehurst_summary', 'type' => 'text', 'default_value' => 'Mon–Fri: 9am–6pm | Sat: 9am–1pm | Sun: Closed', 'instructions' => 'Single-line summary used on location cards across the site. Update here to change everywhere.' ),
         array(
             'key' => 'field_rl_opt_locations', 'label' => 'Locations', 'name' => 'pharmacy_locations', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Location',
             'sub_fields' => array(
@@ -2395,7 +2397,7 @@ acf_add_local_field_group( array(
                 array( 'key' => 'field_rl_opt_loc_maps_embed', 'label' => 'Google Maps Embed URL', 'name' => 'maps_embed_url', 'type' => 'url' ),
                 array( 'key' => 'field_rl_opt_loc_parking', 'label' => 'Parking Info', 'name' => 'parking', 'type' => 'textarea', 'rows' => 2 ),
                 array( 'key' => 'field_rl_opt_loc_store_image', 'label' => 'Storefront Photo', 'name' => 'store_image', 'type' => 'image', 'return_format' => 'url' ),
-                array( 'key' => 'field_rl_opt_loc_hours_weekday', 'label' => 'Weekday Hours', 'name' => 'hours_weekday', 'type' => 'text', 'default_value' => 'Mon–Fri: 9am–6pm' ),
+                array( 'key' => 'field_rl_opt_loc_hours_weekday', 'label' => 'Weekday Hours', 'name' => 'hours_weekday', 'type' => 'text', 'default_value' => 'Mon–Fri: 9am–6pm', 'instructions' => 'e.g. Mon–Fri: 9am–6pm (Pond: 8:30am–6:30pm)' ),
                 array( 'key' => 'field_rl_opt_loc_hours_saturday', 'label' => 'Saturday Hours', 'name' => 'hours_saturday', 'type' => 'text', 'default_value' => 'Sat: 9am–1pm' ),
                 array( 'key' => 'field_rl_opt_loc_hours_sunday', 'label' => 'Sunday Hours', 'name' => 'hours_sunday', 'type' => 'text', 'default_value' => 'Sun: Closed' ),
             ),

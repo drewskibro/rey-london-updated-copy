@@ -476,7 +476,7 @@ get_header();
               </div>
               <div class="hep-loc-row">
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours">
-                <p>Mon-Fri: 8am-8pm | Sat: 9am-6pm | Sun: 10am-4pm</p>
+                <p><?php echo esc_html( rl_hours_pond() ); ?></p>
               </div>
             </div>
             <div class="hep-loc-actions">
@@ -504,7 +504,7 @@ get_header();
               </div>
               <div class="hep-loc-row">
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours">
-                <p>Mon-Fri: 8am-8pm | Sat: 9am-6pm | Sun: 10am-4pm</p>
+                <p><?php echo esc_html( rl_hours_chislehurst() ); ?></p>
               </div>
             </div>
             <div class="hep-loc-actions">

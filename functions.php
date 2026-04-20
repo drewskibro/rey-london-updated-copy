@@ -269,6 +269,20 @@ function rl_phone() {
 }
 
 /**
+ * Helper: Pond Pharmacy opening hours summary (single line)
+ */
+function rl_hours_pond() {
+    return rl_option( 'hours_pond_summary', 'Mon–Fri: 8:30am–6:30pm | Sat: 9am–2pm | Sun: Closed' );
+}
+
+/**
+ * Helper: Chislehurst Pharmacy opening hours summary (single line)
+ */
+function rl_hours_chislehurst() {
+    return rl_option( 'hours_chislehurst_summary', 'Mon–Fri: 9am–6pm | Sat: 9am–1pm | Sun: Closed' );
+}
+
+/**
  * Helper: Get phone link (digits only)
  */
 function rl_phone_link() {
