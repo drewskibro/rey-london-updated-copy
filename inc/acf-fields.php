@@ -2382,6 +2382,8 @@ acf_add_local_field_group( array(
         array( 'key' => 'field_rl_opt_group_email', 'label' => 'Group Email', 'name' => 'pharmacy_group_email', 'type' => 'email', 'default_value' => '' ),
         array( 'key' => 'field_rl_opt_booking_url', 'label' => 'Online Booking URL', 'name' => 'pharmacy_booking_url', 'type' => 'url', 'instructions' => 'Main booking link used across all pages' ),
         array( 'key' => 'field_rl_opt_patients_treated', 'label' => 'Patients Treated (stat)', 'name' => 'pharmacy_patients_treated', 'type' => 'text', 'default_value' => '10,000+' ),
+        array( 'key' => 'field_rl_opt_hours_pond', 'label' => 'Pond Pharmacy — Opening Hours (summary)', 'name' => 'hours_pond_summary', 'type' => 'text', 'default_value' => 'Mon–Fri: 8:30am–6:30pm | Sat: 9am–2pm | Sun: Closed', 'instructions' => 'Single-line summary used on location cards across the site. Update here to change everywhere.' ),
+        array( 'key' => 'field_rl_opt_hours_chislehurst', 'label' => 'Chislehurst Pharmacy — Opening Hours (summary)', 'name' => 'hours_chislehurst_summary', 'type' => 'text', 'default_value' => 'Mon–Fri: 9am–6pm | Sat: 9am–1pm | Sun: Closed', 'instructions' => 'Single-line summary used on location cards across the site. Update here to change everywhere.' ),
         array(
             'key' => 'field_rl_opt_locations', 'label' => 'Locations', 'name' => 'pharmacy_locations', 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Add Location',
             'sub_fields' => array(

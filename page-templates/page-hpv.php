@@ -697,7 +697,7 @@ get_header();
               'description'    => 'HPV vaccinations in Chislehurst, BR7. Gardasil 9 administered by GPhC-registered pharmacists. Same-day appointments for adults and adolescents.',
               'address'        => '59 High Street, Chislehurst, BR7 5AF',
               'phone'          => '020 8467 3158',
-              'hours'          => 'Mon–Fri: 8.30am–6.30pm | Sat: 9am–2pm | Sun: Closed',
+              'hours'          => rl_hours_pond(),
               'directions_url' => 'https://maps.google.com/?q=59+High+Street+Chislehurst+BR7+5AF',
           ),
           array(
@@ -706,7 +706,7 @@ get_header();
               'description'    => 'HPV vaccinations in Chislehurst. Gardasil 9 for all eligible ages with face-to-face pharmacist support. Serving Orpington, Petts Wood and Sidcup.',
               'address'        => '59 Chislehurst Road, Chislehurst, BR7 5NP',
               'phone'          => '020 8295 0017',
-              'hours'          => 'Mon–Fri: 9am–6pm | Sat: 9am–1pm | Sun: Closed',
+              'hours'          => rl_hours_chislehurst(),
               'directions_url' => 'https://maps.google.com/?q=59+Chislehurst+Road+BR7+5NP',
           ),
       );

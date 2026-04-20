@@ -167,7 +167,7 @@ get_header();
             <div class="ct-info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
             <div>
               <div class="ct-info-label">Opening Hours</div>
-              <span class="ct-info-value">Pond: Mon–Fri 8:30am–6:30pm · Sat 9am–2pm<br>Chislehurst: Mon–Fri 9am–6pm · Sat 9am–1pm</span>
+              <span class="ct-info-value">Pond: <?php echo esc_html( rl_hours_pond() ); ?><br>Chislehurst: <?php echo esc_html( rl_hours_chislehurst() ); ?></span>
             </div>
           </div>
           <div class="ct-info-item">
