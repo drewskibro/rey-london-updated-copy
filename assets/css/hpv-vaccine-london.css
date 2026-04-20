@@ -1280,6 +1280,13 @@
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 32px;
+  align-items: center;
+}
+.hpv-cta-phones {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .hpv-cta-checks {
   display: flex;
@@ -1369,6 +1376,7 @@
   .hpv-footer-newsletter-form { min-width: 0; width: 100%; }
   .hpv-footer-cta-top .btn-cta-primary,
   .hpv-footer-cta-top .btn-cta-secondary-ghost { width: 100%; justify-content: center; padding: 16px 32px; }
+  .hpv-cta-phones { width: 100%; flex-direction: column; }
 }
 
 /* ===== FINAL CTA (old, kept for fallback reference) ===== */
