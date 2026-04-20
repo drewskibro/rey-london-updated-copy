@@ -2721,14 +2721,25 @@ a.featured-btn:hover svg {
 
 @media (max-width: 1024px) {
   .team-editorial { grid-template-columns: 1fr; min-height: auto; }
-  .team-photo-col { height: 400px; }
+  .team-photo-col { height: 420px; }
   .team-photo-fade { display: none; }
+  .team-photo { object-position: top center; }
+  .team-photo-col::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 60%, #11368F 100%);
+    pointer-events: none;
+  }
   .team-credentials-col { padding: 48px 32px; }
   .team-name { font-size: 34px; }
   .team-stat-number { font-size: 36px; }
 }
 @media (max-width: 640px) {
-  .team-photo-col { height: 360px; }
+  .team-photo-col { height: 420px; }
   .team-credentials-col { padding: 32px 20px; }
   .team-name { font-size: 28px; }
   .team-stats-grid { gap: 24px 32px; }
