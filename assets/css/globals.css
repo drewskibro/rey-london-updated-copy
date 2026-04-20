@@ -1657,7 +1657,7 @@ a.featured-btn:hover svg {
 
 .location-card {
   background: var(--white);
-  border-radius: 24px;
+  border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 24px rgba(10, 47, 138, 0.08);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
