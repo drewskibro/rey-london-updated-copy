@@ -181,11 +181,26 @@ get_header();
         <!-- Right: Form -->
         <div class="ct-form-card">
           <div id="contactFormSuccess" class="ct-form-success" hidden>
-            <div class="ct-form-success-icon">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <div class="ct-form-success-ring">
+              <div class="ct-form-success-icon">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              </div>
             </div>
             <h3>Thank you — message received</h3>
-            <p>We've received your enquiry and will be in touch within 24 hours on business days. For urgent matters, please call us on <a href="tel:02084673158">020 8467 3158</a>.</p>
+            <p>We've received your enquiry and will be in touch within 24 hours on business days.</p>
+            <div class="ct-form-success-trust">
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Confirmation sent to your email</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Average reply within 4 hours</span>
+            </div>
+            <div class="ct-form-success-hub">
+              <span class="ct-form-success-hub-label">While you wait</span>
+              <p>Browse expert health advice from our pharmacists</p>
+              <a href="<?php echo esc_url( home_url( '/health-hub/' ) ); ?>" class="ct-form-success-hub-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                Explore the Health Hub
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
             <button type="button" class="ct-form-success-reset">Send another message</button>
           </div>
           <div id="contactFormWrap">
