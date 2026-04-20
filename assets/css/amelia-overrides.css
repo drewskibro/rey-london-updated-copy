@@ -1,0 +1,18 @@
+/**
+ * Amelia booking form — theme overrides
+ *
+ * Hide the service price / "Free" label in the catalog booking form.
+ * Amelia ships with Element UI under the hood, so the price pill typically
+ * renders as an .el-tag element inside the service card.
+ *
+ * Broadened selector list per project brief. If this accidentally hides
+ * other Amelia UI pills, tighten this list to only the specific class used
+ * by the price label.
+ */
+.amelia-app .am-service-price,
+.amelia-app .am-price,
+.amelia-app [class*="price"],
+.amelia-app .el-tag,
+.amelia-app .el-tag--info {
+    display: none !important;
+}
