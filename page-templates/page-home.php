@@ -388,12 +388,11 @@ get_header();
               />
             </div>
             <div class="benefit-content">
-              <h3>Prescription Services</h3>
+              <h3>NHS Prescriptions</h3>
               <p>
-                Same-day collection available. Transfer your prescription to Chislehurst Pharmacy Group for convenient, reliable
-                service.
+                Collect your prescription same day from either of our Chislehurst locations. Quick, straightforward and local.
               </p>
-              <a href="#prescriptions" class="benefit-cta">
+              <a href="<?php echo esc_url( home_url( '/nhs-prescriptions/' ) ); ?>" class="benefit-cta">
                 Learn More
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path
@@ -418,8 +417,7 @@ get_header();
             <div class="benefit-content">
               <h3>Weight Loss</h3>
               <p>
-                Personalized weight loss programs with expert pharmacist support. Achieve your health goals with our
-                proven treatment plans.
+                Personalised weight loss programmes with expert pharmacist support. GLP-1 treatments prescribed same day by our pharmacists. Face-to-face care, no GP referral needed.
               </p>
               <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="benefit-cta">
                 Start Your Journey
@@ -440,14 +438,14 @@ get_header();
             <div class="benefit-image">
               <img
                 src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769370349564-0.jpeg"
-                alt="Health Checks"
+                alt="Vitamin B12 Injections"
               />
             </div>
             <div class="benefit-content">
-              <h3>Health Checks</h3>
-              <p>Blood pressure monitoring, diabetes screening, and cholesterol checks available daily.</p>
-              <a href="#health-checks" class="benefit-cta">
-                Book a Check
+              <h3>Vitamin B12 Injections</h3>
+              <p>Boost your energy, support your immune system and improve your mood. Administered by our qualified pharmacists at both Chislehurst locations — no GP referral needed.</p>
+              <a href="<?php echo esc_url( home_url( '/vitamin-b12-london/' ) ); ?>" class="benefit-cta">
+                Book Your Injection
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path
                     d="M3 8h10M9 4l4 4-4 4"
@@ -468,7 +466,7 @@ get_header();
             <div class="benefit-content">
               <h3>Travel Clinic</h3>
               <p>Vaccinations and travel health advice from our experienced pharmacists.</p>
-              <a href="#travel-clinic" class="benefit-cta">
+              <a href="<?php echo esc_url( home_url( '/travel-vaccinations-london/' ) ); ?>" class="benefit-cta">
                 Plan Your Trip
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path
@@ -493,7 +491,7 @@ get_header();
             <div class="benefit-content">
               <h3>Skip the GP wait.</h3>
               <p>Free NHS treatment for 7 common conditions including sore throats, UTIs, and skin infections.</p>
-              <a href="#nhs-services" class="benefit-cta">
+              <a href="<?php echo esc_url( home_url( '/pharmacy-first/' ) ); ?>" class="benefit-cta">
                 Get Treatment Now
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path
