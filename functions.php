@@ -195,6 +195,15 @@ function rey_london_scripts() {
         wp_enqueue_script( 'rey-london-homepage', REY_LONDON_URI . '/assets/js/homepage-animations.js', array(), REY_LONDON_VERSION, true );
     }
 
+    // Newsletter JS — loaded on all pages
+    wp_enqueue_script(
+        'rey-london-newsletter-js',
+        REY_LONDON_URI . '/assets/js/newsletter.js',
+        array(),
+        REY_LONDON_VERSION,
+        true
+    );
+
     // Navigation JS — loaded on all pages
     wp_enqueue_script(
         'rey-london-nav-js',
@@ -769,3 +778,113 @@ function rl_add_consultation_closer( $content ) {
     return $content . $h;
 }
 add_filter( 'the_content', 'rl_add_consultation_closer', 12 );
+
+/**
+ * Localise AJAX URL + nonces for forms
+ */
+function rl_localise_ajax() {
+    wp_localize_script( 'rey-london-contact-js', 'rlAjax', array(
+        'url'              => admin_url( 'admin-ajax.php' ),
+        'contactNonce'    => wp_create_nonce( 'rl_contact_nonce' ),
+        'newsletterNonce' => wp_create_nonce( 'rl_newsletter_nonce' ),
+    ) );
+    wp_localize_script( 'rey-london-newsletter-js', 'rlAjax', array(
+        'url'              => admin_url( 'admin-ajax.php' ),
+        'newsletterNonce' => wp_create_nonce( 'rl_newsletter_nonce' ),
+    ) );
+}
+add_action( 'wp_enqueue_scripts', 'rl_localise_ajax', 20 );
+
+/**
+ * Contact form AJAX handler
+ */
+function rl_handle_contact_form() {
+    check_ajax_referer( 'rl_contact_nonce', 'nonce' );
+
+    // Honeypot check
+    if ( ! empty( $_POST['rl_hp'] ) ) {
+        wp_send_json_success();
+    }
+
+    $name    = sanitize_text_field( wp_unslash( $_POST['name'] ?? '' ) );
+    $email   = sanitize_email( wp_unslash( $_POST['email'] ?? '' ) );
+    $phone   = sanitize_text_field( wp_unslash( $_POST['phone'] ?? '' ) );
+    $subject = sanitize_text_field( wp_unslash( $_POST['subject'] ?? '' ) );
+    $message = sanitize_textarea_field( wp_unslash( $_POST['message'] ?? '' ) );
+
+    if ( empty( $name ) || ! is_email( $email ) || empty( $message ) ) {
+        wp_send_json_error( array( 'message' => 'Please fill in all required fields.' ) );
+    }
+
+    $to      = 'support@chislehurstpharmacygroup.co.uk';
+    $subject_line = 'New enquiry via website' . ( $subject ? ' — ' . ucfirst( str_replace( '-', ' ', $subject ) ) : '' );
+    $body    = "Name: {$name}\nEmail: {$email}\nPhone: {$phone}\nSubject: {$subject}\n\nMessage:\n{$message}";
+    $headers = array(
+        'Content-Type: text/plain; charset=UTF-8',
+        "Reply-To: {$name} <{$email}>",
+    );
+
+    $sent = wp_mail( $to, $subject_line, $body, $headers );
+
+    if ( $sent ) {
+        wp_send_json_success( array( 'message' => 'Message sent.' ) );
+    } else {
+        wp_send_json_error( array( 'message' => 'Could not send message. Please try calling us directly.' ) );
+    }
+}
+add_action( 'wp_ajax_nopriv_rl_contact_form', 'rl_handle_contact_form' );
+add_action( 'wp_ajax_rl_contact_form', 'rl_handle_contact_form' );
+
+/**
+ * Newsletter signup AJAX handler — adds contact to Brevo list
+ */
+function rl_handle_newsletter_signup() {
+    check_ajax_referer( 'rl_newsletter_nonce', 'nonce' );
+
+    // Honeypot check
+    if ( ! empty( $_POST['rl_hp'] ) ) {
+        wp_send_json_success();
+    }
+
+    $email = sanitize_email( wp_unslash( $_POST['email'] ?? '' ) );
+
+    if ( ! is_email( $email ) ) {
+        wp_send_json_error( array( 'message' => 'Please enter a valid email address.' ) );
+    }
+
+    $api_key = defined( 'BREVO_API_KEY' ) ? BREVO_API_KEY : '';
+
+    if ( empty( $api_key ) ) {
+        wp_send_json_error( array( 'message' => 'Newsletter service not configured.' ) );
+    }
+
+    $response = wp_remote_post( 'https://api.brevo.com/v3/contacts', array(
+        'headers' => array(
+            'accept'       => 'application/json',
+            'content-type' => 'application/json',
+            'api-key'      => $api_key,
+        ),
+        'body'    => wp_json_encode( array(
+            'email'            => $email,
+            'updateEnabled'    => true,
+            'listIds'          => array( 2 ),
+        ) ),
+        'timeout' => 15,
+    ) );
+
+    if ( is_wp_error( $response ) ) {
+        wp_send_json_error( array( 'message' => 'Could not connect to newsletter service.' ) );
+    }
+
+    $code = wp_remote_retrieve_response_code( $response );
+
+    if ( $code === 201 || $code === 204 ) {
+        wp_send_json_success( array( 'message' => 'Subscribed!' ) );
+    } else {
+        $body = json_decode( wp_remote_retrieve_body( $response ), true );
+        $msg  = $body['message'] ?? 'Subscription failed. Please try again.';
+        wp_send_json_error( array( 'message' => $msg ) );
+    }
+}
+add_action( 'wp_ajax_nopriv_rl_newsletter_signup', 'rl_handle_newsletter_signup' );
+add_action( 'wp_ajax_rl_newsletter_signup', 'rl_handle_newsletter_signup' );

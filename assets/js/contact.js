@@ -41,19 +41,42 @@
     });
   });
 
-  // Simple form handler (UI only)
+  // Contact form AJAX submit
   var contactForm = document.getElementById('contactForm');
-  if (contactForm) {
+  if (contactForm && typeof rlAjax !== 'undefined') {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       var btn = contactForm.querySelector('.ct-form-submit');
       var origHTML = btn.innerHTML;
-      btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Message Sent!';
-      btn.style.background = 'linear-gradient(135deg, #10B981 0%, #059669 100%)';
-      setTimeout(function() {
-        btn.innerHTML = origHTML;
-        btn.style.background = '';
-        contactForm.reset();
-      }, 3000);
+      btn.disabled = true;
+      btn.innerHTML = 'Sending…';
+
+      var data = new FormData(contactForm);
+      data.append('action', 'rl_contact_form');
+      data.append('nonce', rlAjax.contactNonce);
+
+      fetch(rlAjax.url, { method: 'POST', body: data })
+        .then(function(r) { return r.json(); })
+        .then(function(res) {
+          if (res.success) {
+            btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Message Sent!';
+            btn.style.background = 'linear-gradient(135deg, #10B981 0%, #059669 100%)';
+            contactForm.reset();
+            setTimeout(function() {
+              btn.innerHTML = origHTML;
+              btn.style.background = '';
+              btn.disabled = false;
+            }, 4000);
+          } else {
+            btn.innerHTML = origHTML;
+            btn.disabled = false;
+            alert(res.data && res.data.message ? res.data.message : 'Something went wrong. Please try again.');
+          }
+        })
+        .catch(function() {
+          btn.innerHTML = origHTML;
+          btn.disabled = false;
+          alert('Could not send message. Please call us directly on 020 8467 3158.');
+        });
     });
   }

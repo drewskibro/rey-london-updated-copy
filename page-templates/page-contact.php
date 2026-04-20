@@ -183,6 +183,7 @@ get_header();
           <h3>Your Enquiry</h3>
           <p>We'll get back to you as soon as possible.</p>
           <form id="contactForm">
+            <input type="text" name="rl_hp" style="display:none" tabindex="-1" autocomplete="off">
             <div class="ct-form-row">
               <div class="ct-form-group">
                 <label for="ctName">Full Name</label>
@@ -305,6 +306,7 @@ get_header();
           <p>Get expert health tips, exclusive offers, and updates delivered to your inbox</p>
         </div>
         <form class="newsletter-form ct-footer-newsletter-form">
+          <input type="text" name="rl_hp" style="display:none" tabindex="-1" autocomplete="off">
           <div class="newsletter-input-wrapper">
             <svg class="newsletter-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 4h14c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 6l-9 6-9-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <input type="email" placeholder="Enter your email address" class="newsletter-input" required>
