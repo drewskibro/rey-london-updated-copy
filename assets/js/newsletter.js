@@ -27,14 +27,7 @@
       .then(function(r) { return r.json(); })
       .then(function(res) {
         if (res.success) {
-          input.value = '';
-          btn.textContent = '✓ Subscribed!';
-          btn.style.background = 'linear-gradient(135deg, #10B981 0%, #059669 100%)';
-          setTimeout(function() {
-            btn.innerHTML = origHTML;
-            btn.style.background = '';
-            btn.disabled = false;
-          }, 4000);
+          showSuccess(form);
         } else {
           btn.innerHTML = origHTML;
           btn.disabled = false;
@@ -49,4 +42,27 @@
         btn.disabled = false;
       });
   });
+
+  function showSuccess(form) {
+    var wrapper = form.querySelector('.newsletter-input-wrapper');
+    var existing = form.querySelector('.newsletter-success');
+    if (existing) existing.remove();
+
+    var hubLink = '/health-hub/';
+    var successEl = document.createElement('div');
+    successEl.className = 'newsletter-success';
+    successEl.innerHTML =
+      '<span class="newsletter-success-icon">' +
+      '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>' +
+      '</span>' +
+      '<span class="newsletter-success-text">You\'re subscribed! While you\'re here, </span>' +
+      '<a href="' + hubLink + '" class="newsletter-success-link">browse the Health Hub ' +
+      '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>' +
+      '</a>';
+
+    if (wrapper) {
+      wrapper.style.display = 'none';
+    }
+    form.appendChild(successEl);
+  }
 })();
