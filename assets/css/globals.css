@@ -4288,6 +4288,96 @@ a.featured-btn:hover svg {
   background: rgba(10, 47, 138, 0.04);
 }
 
+/* Branch quick-contact cards */
+.mobile-nav-branches {
+  margin-top: 20px;
+  padding: 20px 20px 16px;
+  background: linear-gradient(180deg, rgba(10, 47, 138, 0.02) 0%, rgba(10, 47, 138, 0.05) 100%);
+  border-top: 1px solid var(--border-light);
+}
+
+.mobile-nav-branches-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--primary-blue);
+  margin-bottom: 12px;
+  padding-left: 4px;
+}
+
+.mobile-nav-branch {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--white);
+  border: 1px solid rgba(10, 47, 138, 0.08);
+  border-radius: 12px;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: all 0.25s ease;
+}
+
+.mobile-nav-branch:hover,
+.mobile-nav-branch:active {
+  transform: translateY(-1px);
+  border-color: rgba(10, 47, 138, 0.2);
+  box-shadow: 0 4px 12px rgba(10, 47, 138, 0.08);
+}
+
+.mobile-nav-branch-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-nav-branch-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.mobile-nav-branch-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-gray);
+  letter-spacing: -0.01em;
+}
+
+.mobile-nav-branch-phone {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  letter-spacing: -0.01em;
+}
+
+.mobile-nav-trust {
+  display: flex;
+  gap: 14px;
+  margin-top: 14px;
+  padding-left: 4px;
+  flex-wrap: wrap;
+}
+
+.mobile-nav-trust span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-gray);
+  letter-spacing: 0.01em;
+}
+
 /* Drawer footer CTA */
 .mobile-nav-footer {
   padding: 20px 24px;

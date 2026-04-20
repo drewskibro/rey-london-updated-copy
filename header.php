@@ -495,6 +495,33 @@ $booking_url   = rl_booking_url();
             <a href="https://chislehurstpharmacygroup.kinsta.cloud/contact-page/" class="mobile-nav-sub-link">Contact &amp; Locations</a>
           </div>
         </div>
+
+        <!-- Branch quick-contact cards -->
+        <div class="mobile-nav-branches">
+          <span class="mobile-nav-branches-label">Speak to a pharmacist</span>
+          <a href="tel:<?php echo esc_attr( preg_replace( '/\s+/', '', rl_option( 'phone_pond', '020 8467 3158' ) ) ); ?>" class="mobile-nav-branch">
+            <div class="mobile-nav-branch-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.09 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81L9.27 8.95a16 16 0 0 0 6.78 6.78l1.42-1.42a12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="mobile-nav-branch-text">
+              <span class="mobile-nav-branch-name">Pond Pharmacy</span>
+              <span class="mobile-nav-branch-phone"><?php echo esc_html( rl_option( 'phone_pond', '020 8467 3158' ) ); ?></span>
+            </div>
+          </a>
+          <a href="tel:<?php echo esc_attr( preg_replace( '/\s+/', '', rl_option( 'phone_chislehurst', '020 8295 0017' ) ) ); ?>" class="mobile-nav-branch">
+            <div class="mobile-nav-branch-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.09 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81L9.27 8.95a16 16 0 0 0 6.78 6.78l1.42-1.42a12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="mobile-nav-branch-text">
+              <span class="mobile-nav-branch-name">Chislehurst Pharmacy</span>
+              <span class="mobile-nav-branch-phone"><?php echo esc_html( rl_option( 'phone_chislehurst', '020 8295 0017' ) ); ?></span>
+            </div>
+          </a>
+          <div class="mobile-nav-trust">
+            <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> GPhC Registered</span>
+            <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Same-Day Service</span>
+          </div>
+        </div>
       </div>
 
       <div class="mobile-nav-footer">
