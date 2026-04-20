@@ -510,7 +510,7 @@ get_header();
 
           <div class="benefit-card">
             <div class="benefit-image">
-              <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517025474-0.jpeg" alt="HPV Vaccine — Gardasil 9" />
+              <img src="https://chislehurstpharmacygroup.kinsta.cloud/wp-content/uploads/2026/04/Generated-Image-April-20-2026-1_36PM.jpg" alt="HPV Vaccine — Gardasil 9" />
             </div>
             <div class="benefit-content">
               <h3>HPV Vaccine — Gardasil 9</h3>
