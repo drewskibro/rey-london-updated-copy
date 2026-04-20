@@ -1091,7 +1091,7 @@ get_header();
                   stroke-linejoin="round"
                 />
               </svg>
-              <input type="email" placeholder="Enter your email address" class="newsletter-input" required />
+              <input type="email" name="email" autocomplete="email" placeholder="Enter your email address" class="newsletter-input" required />
               <button type="submit" class="newsletter-btn">
                 Subscribe
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">

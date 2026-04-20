@@ -608,7 +608,7 @@ get_header();
           <input type="text" name="rl_hp" style="display:none" tabindex="-1" autocomplete="off">
           <div class="newsletter-input-wrapper">
             <svg class="newsletter-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 4h14c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 6l-9 6-9-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <input type="email" placeholder="Enter your email address" class="newsletter-input" required>
+            <input type="email" name="email" autocomplete="email" placeholder="Enter your email address" class="newsletter-input" required>
             <button type="submit" class="newsletter-btn">Subscribe <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
         </form>
