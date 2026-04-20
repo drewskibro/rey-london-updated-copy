@@ -180,6 +180,15 @@ get_header();
         </div>
         <!-- Right: Form -->
         <div class="ct-form-card">
+          <div id="contactFormSuccess" class="ct-form-success" hidden>
+            <div class="ct-form-success-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <h3>Thank you — message received</h3>
+            <p>We've received your enquiry and will be in touch within 24 hours on business days. For urgent matters, please call us on <a href="tel:02084673158">020 8467 3158</a>.</p>
+            <button type="button" class="ct-form-success-reset">Send another message</button>
+          </div>
+          <div id="contactFormWrap">
           <h3>Your Enquiry</h3>
           <p>We'll get back to you as soon as possible.</p>
           <form id="contactForm">
@@ -224,6 +233,7 @@ get_header();
             </button>
             <p class="ct-form-note">We respond within 24 hours on business days. For urgent matters, call us directly.</p>
           </form>
+          </div>
         </div>
       </div>
     </div>
