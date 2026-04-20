@@ -772,7 +772,7 @@ get_header();
         <h2 class="hpv-footer-cta-title"><?php echo esc_html( rl_field( 'hpv_cta_title', 'Protect your future health today' ) ); ?></h2>
         <p class="hpv-footer-cta-sub"><?php echo esc_html( rl_field( 'hpv_cta_subtitle', 'Book your private HPV vaccination at Chislehurst Pharmacy Group Pharmacy — South East London\'s trusted clinic. No GP referral needed, same-day appointments available.' ) ); ?></p>
         <div class="cta-buttons">
-          <a href="/contact/" class="btn-cta-primary">Book HPV Vaccine Appointment</a>
+          <a href="<?php echo esc_url( home_url( '/contact-page/#book-appointment' ) ); ?>" class="btn-cta-primary">Book HPV Vaccine Appointment</a>
           <div class="hpv-cta-phones">
             <a href="tel:02084673158" class="btn-cta-secondary-ghost">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.09 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81L9.27 8.95a16 16 0 0 0 6.78 6.78l1.42-1.42a12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
