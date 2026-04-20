@@ -510,13 +510,13 @@ get_header();
 
           <div class="benefit-card">
             <div class="benefit-image">
-              <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517025474-0.jpeg" alt="Delivery" />
+              <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517025474-0.jpeg" alt="HPV Vaccine — Gardasil 9" />
             </div>
             <div class="benefit-content">
-              <h3>Free Local Delivery</h3>
-              <p>Free delivery across London on orders over £20. We know the city.</p>
-              <a href="#delivery" class="benefit-cta">
-                Order Now
+              <h3>HPV Vaccine — Gardasil 9</h3>
+              <p>Protection against nine strains of HPV, including those linked to cervical cancer. Available same day at both our Chislehurst locations. No GP referral needed.</p>
+              <a href="<?php echo esc_url( home_url( '/hpv-vaccine/' ) ); ?>" class="benefit-cta">
+                Book Your Vaccine
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path
                     d="M3 8h10M9 4l4 4-4 4"
