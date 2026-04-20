@@ -2047,6 +2047,34 @@ acf_add_local_field_group( array(
         array( 'key' => 'field_rl_hh_feat_url', 'label' => 'Article URL', 'name' => 'hh_feat_url', 'type' => 'url', 'instructions' => 'Where the "Read Full Article" button links.' ),
         array( 'key' => 'field_rl_hh_feat_author_title', 'label' => 'Author Title Override', 'name' => 'hh_feat_author_title', 'type' => 'text', 'instructions' => 'Leave blank to use the Default Author title above.' ),
 
+        array( 'key' => 'field_rl_hh_explore_tab', 'label' => 'Explore by Topic', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_hh_explore_title', 'label' => 'Section Title', 'name' => 'hh_explore_title', 'type' => 'text', 'default_value' => 'Explore by Topic' ),
+        array( 'key' => 'field_rl_hh_explore_lead', 'label' => 'Section Subtitle', 'name' => 'hh_explore_lead', 'type' => 'text', 'default_value' => 'Browse our most-read health guides organised by what matters to you' ),
+        array(
+            'key' => 'field_rl_hh_explore_tiles', 'label' => 'Topic Tiles', 'name' => 'hh_explore_tiles', 'type' => 'repeater',
+            'instructions' => 'Tiles shown in the "Explore by Topic" grid. Recommend 8 tiles for a balanced 4x2 layout.',
+            'min' => 0, 'max' => 16, 'layout' => 'block', 'button_label' => 'Add Topic',
+            'sub_fields' => array(
+                array( 'key' => 'field_rl_hh_tile_image', 'label' => 'Background Image', 'name' => 'image', 'type' => 'image', 'return_format' => 'array', 'preview_size' => 'medium' ),
+                array( 'key' => 'field_rl_hh_tile_image_alt', 'label' => 'Image Alt Text', 'name' => 'image_alt', 'type' => 'text' ),
+                array( 'key' => 'field_rl_hh_tile_icon', 'label' => 'Icon', 'name' => 'icon', 'type' => 'select', 'choices' => array(
+                    'shield' => 'Shield (protection)',
+                    'globe' => 'Globe (travel)',
+                    'plus-box' => 'Plus in box (medical)',
+                    'sun' => 'Sun (energy / wellness)',
+                    'pill' => 'Pill (medication)',
+                    'calendar' => 'Calendar (certificates)',
+                    'sun-horizon' => 'Sun horizon (seasonal)',
+                    'heart' => 'Heart (care)',
+                    'syringe' => 'Syringe (vaccination)',
+                    'stethoscope' => 'Stethoscope (clinical)',
+                ), 'default_value' => 'shield', 'return_format' => 'value' ),
+                array( 'key' => 'field_rl_hh_tile_name', 'label' => 'Topic Name', 'name' => 'name', 'type' => 'text' ),
+                array( 'key' => 'field_rl_hh_tile_count', 'label' => 'Article Count Label', 'name' => 'count', 'type' => 'text', 'instructions' => 'e.g. "18 articles". Shown below the topic name.' ),
+                array( 'key' => 'field_rl_hh_tile_url', 'label' => 'Link URL', 'name' => 'url', 'type' => 'url' ),
+            ),
+        ),
+
         array( 'key' => 'field_rl_hh_articles_tab', 'label' => 'Latest Articles', 'type' => 'tab' ),
         array(
             'key' => 'field_rl_hh_articles', 'label' => 'Articles', 'name' => 'hh_articles', 'type' => 'repeater',
