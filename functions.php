@@ -123,7 +123,7 @@ function rey_london_scripts() {
 
     if ( is_page_template( 'page-templates/page-contact.php' ) ) {
         wp_enqueue_style( 'rey-london-contact', REY_LONDON_URI . '/assets/css/contact.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
-        wp_enqueue_script( 'rey-london-contact-js', REY_LONDON_URI . '/assets/js/contact.js', array(), REY_LONDON_VERSION, true );
+        wp_enqueue_script( 'rey-london-contact-js', REY_LONDON_URI . '/assets/js/contact.js', array( 'rey-london-newsletter-js' ), REY_LONDON_VERSION, true );
     }
 
     if ( is_page_template( 'page-templates/page-team.php' ) ) {
@@ -783,13 +783,9 @@ add_filter( 'the_content', 'rl_add_consultation_closer', 12 );
  * Localise AJAX URL + nonces for forms
  */
 function rl_localise_ajax() {
-    wp_localize_script( 'rey-london-contact-js', 'rlAjax', array(
-        'url'              => admin_url( 'admin-ajax.php' ),
-        'contactNonce'    => wp_create_nonce( 'rl_contact_nonce' ),
-        'newsletterNonce' => wp_create_nonce( 'rl_newsletter_nonce' ),
-    ) );
     wp_localize_script( 'rey-london-newsletter-js', 'rlAjax', array(
         'url'              => admin_url( 'admin-ajax.php' ),
+        'contactNonce'    => wp_create_nonce( 'rl_contact_nonce' ),
         'newsletterNonce' => wp_create_nonce( 'rl_newsletter_nonce' ),
     ) );
 }
