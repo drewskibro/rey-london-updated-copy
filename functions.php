@@ -227,6 +227,17 @@ if ( file_exists( REY_LONDON_DIR . '/inc/acf-fields.php' ) ) {
 }
 
 /**
+ * Helper: Health Hub default author — returns [initials, name, title].
+ */
+function rl_hh_author() {
+    return array(
+        'initials' => rl_field( 'hh_author_initials', 'SB' ),
+        'name'     => rl_field( 'hh_author_name', 'Sumeet Banker' ),
+        'title'    => rl_field( 'hh_author_title', 'Lead Pharmacist' ),
+    );
+}
+
+/**
  * Helper: Get option field with fallback
  */
 function rl_option( $field_name, $default = '' ) {
