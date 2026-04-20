@@ -837,7 +837,7 @@ get_header();
             <h2 class="team-name"><?php echo esc_html( rl_field( 'pharmacist_name', 'Sumeet Banker' ) ); ?></h2>
             <p class="team-title"><?php echo esc_html( rl_field( 'pharmacist_title', 'Superintendent Pharmacist & Owner' ) ); ?></p>
             <div class="team-badge">GPhC Registered</div>
-            <p class="team-bio"><?php echo esc_html( rl_field( 'pharmacist_bio', 'Sumeet has led Chislehurst Pharmacy Group for over 15 years, building a reputation for face-to-face care that patients across South East London trust.' ) ); ?></p>
+            <p class="team-bio"><?php echo esc_html( rl_field( 'pharmacist_bio', 'Fifteen years. Two pharmacies. One standard of care. Sumeet built Chislehurst Pharmacy Group on the belief that local healthcare should feel personal — not transactional.' ) ); ?></p>
             <div class="team-buttons">
               <a href="<?php echo esc_url( home_url( '/contact-page/#book-appointment' ) ); ?>" class="team-btn-primary">Book Consultation</a>
               <a href="<?php echo esc_url( home_url( '/meet-the-team/' ) ); ?>" class="team-btn-ghost">Meet the Team</a>
