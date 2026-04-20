@@ -2030,7 +2030,8 @@ acf_add_local_field_group( array(
         array( 'key' => 'field_rl_hh_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'hh_hero_subtitle', 'type' => 'textarea', 'rows' => 3, 'default_value' => 'Trusted advice from our GPhC-registered pharmacists. Evidence-based guidance to help you make informed health decisions across South East London.' ),
 
         array( 'key' => 'field_rl_hh_author_tab', 'label' => 'Default Author', 'type' => 'tab' ),
-        array( 'key' => 'field_rl_hh_author_initials', 'label' => 'Initials (avatar)', 'name' => 'hh_author_initials', 'type' => 'text', 'instructions' => 'Shown in the circular avatar on every byline.', 'default_value' => 'SB', 'maxlength' => 3 ),
+        array( 'key' => 'field_rl_hh_author_photo', 'label' => 'Photo (avatar)', 'name' => 'hh_author_photo', 'type' => 'image', 'instructions' => 'Shown in the circular avatar on every byline. Square images work best. If left blank, the initials below are used instead.', 'return_format' => 'array', 'preview_size' => 'thumbnail' ),
+        array( 'key' => 'field_rl_hh_author_initials', 'label' => 'Initials (avatar fallback)', 'name' => 'hh_author_initials', 'type' => 'text', 'instructions' => 'Used only when no photo is uploaded above.', 'default_value' => 'SB', 'maxlength' => 3 ),
         array( 'key' => 'field_rl_hh_author_name', 'label' => 'Name', 'name' => 'hh_author_name', 'type' => 'text', 'default_value' => 'Sumeet Banker' ),
         array( 'key' => 'field_rl_hh_author_title', 'label' => 'Default Title', 'name' => 'hh_author_title', 'type' => 'text', 'instructions' => 'Used when a card does not set its own author title.', 'default_value' => 'Lead Pharmacist' ),
 

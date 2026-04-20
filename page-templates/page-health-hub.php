@@ -156,7 +156,7 @@ get_header();
           <h2 class="hh-featured-title"><?php echo esc_html( $feat_title ); ?></h2>
           <p class="hh-featured-excerpt"><?php echo esc_html( $feat_excerpt ); ?></p>
           <div class="hh-byline">
-            <div class="hh-byline-avatar"><?php echo esc_html( $hh_author['initials'] ); ?></div>
+            <?php rl_hh_avatar( $hh_author, 'lg' ); ?>
             <div class="hh-byline-info">
               <span class="hh-byline-name"><?php echo esc_html( $hh_author['name'] ); ?></span>
               <span class="hh-byline-title"><?php echo esc_html( $feat_author_title ); ?></span>
@@ -220,7 +220,7 @@ get_header();
             <h3 class="hh-article-title"><?php echo esc_html( $art['title'] ?? '' ); ?></h3>
             <p class="hh-article-excerpt"><?php echo esc_html( $art['excerpt'] ?? '' ); ?></p>
             <div class="hh-byline hh-byline--sm">
-              <div class="hh-byline-avatar hh-byline-avatar--sm"><?php echo esc_html( $hh_author['initials'] ); ?></div>
+              <?php rl_hh_avatar( $hh_author, 'sm' ); ?>
               <div class="hh-byline-info">
                 <span class="hh-byline-name"><?php echo esc_html( $hh_author['name'] ); ?></span>
                 <span class="hh-byline-title"><?php echo esc_html( $a_title ); ?></span>
