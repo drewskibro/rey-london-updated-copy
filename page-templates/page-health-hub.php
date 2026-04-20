@@ -122,32 +122,47 @@ get_header();
         </div>
       </div>
 
-      <div class="hh-featured-card" data-category="weight-loss">
+      <?php
+      $hh_author    = rl_hh_author();
+      $feat_image   = rl_field( 'hh_feat_image' );
+      $feat_img_url = is_array( $feat_image ) && ! empty( $feat_image['url'] ) ? $feat_image['url'] : 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=900&h=600&fit=crop';
+      $feat_img_alt = rl_field( 'hh_feat_image_alt', 'Clinical weight loss — Mounjaro vs Wegovy comparison' );
+      if ( ! $feat_img_alt && is_array( $feat_image ) && ! empty( $feat_image['alt'] ) ) { $feat_img_alt = $feat_image['alt']; }
+      $feat_cat      = rl_field( 'hh_feat_category', 'weight-loss' );
+      $feat_cat_text = rl_field( 'hh_feat_category_text', 'WEIGHT LOSS' );
+      $feat_date     = rl_field( 'hh_feat_date', 'Mar 14, 2026' );
+      $feat_read     = rl_field( 'hh_feat_read_time', '8 min read' );
+      $feat_title    = rl_field( 'hh_feat_title', 'Mounjaro vs Wegovy: What the Clinical Trials Actually Show' );
+      $feat_excerpt  = rl_field( 'hh_feat_excerpt', '"My GP mentioned Wegovy. But my friend lost heaps of weight on Mounjaro. Are they the same thing? Should I ask for the other one?" Two of the most-prescribed GLP-1 medications — but they work differently, cost differently, and suit different patients. Our lead pharmacist breaks down what the data actually shows.' );
+      $feat_url      = rl_field( 'hh_feat_url', home_url( '/health-hub/' ) );
+      $feat_author_title = rl_field( 'hh_feat_author_title', $hh_author['title'] );
+      ?>
+      <div class="hh-featured-card" data-category="<?php echo esc_attr( $feat_cat ); ?>">
         <div class="hh-featured-img-col">
           <div class="hh-featured-img-wrap">
-            <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=900&h=600&fit=crop" alt="Clinical weight loss — Mounjaro vs Wegovy comparison" class="hh-featured-img">
-            <div class="hh-featured-cat-badge">WEIGHT LOSS</div>
+            <img src="<?php echo esc_url( $feat_img_url ); ?>" alt="<?php echo esc_attr( $feat_img_alt ); ?>" class="hh-featured-img">
+            <div class="hh-featured-cat-badge"><?php echo esc_html( $feat_cat_text ); ?></div>
           </div>
         </div>
         <div class="hh-featured-content-col">
           <div class="hh-featured-meta">
             <span class="hh-read-time">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              8 min read
+              <?php echo esc_html( $feat_read ); ?>
             </span>
             <span class="hh-meta-dot">·</span>
-            <span class="hh-date">Mar 14, 2026</span>
+            <span class="hh-date"><?php echo esc_html( $feat_date ); ?></span>
           </div>
-          <h2 class="hh-featured-title">Mounjaro vs Wegovy: What the Clinical Trials Actually Show</h2>
-          <p class="hh-featured-excerpt">"My GP mentioned Wegovy. But my friend lost heaps of weight on Mounjaro. Are they the same thing? Should I ask for the other one?" Two of the most-prescribed GLP-1 medications — but they work differently, cost differently, and suit different patients. Our lead pharmacist breaks down what the data actually shows.</p>
+          <h2 class="hh-featured-title"><?php echo esc_html( $feat_title ); ?></h2>
+          <p class="hh-featured-excerpt"><?php echo esc_html( $feat_excerpt ); ?></p>
           <div class="hh-byline">
-            <div class="hh-byline-avatar">SB</div>
+            <div class="hh-byline-avatar"><?php echo esc_html( $hh_author['initials'] ); ?></div>
             <div class="hh-byline-info">
-              <span class="hh-byline-name">Sumeet Banker</span>
-              <span class="hh-byline-title">Lead Pharmacist</span>
+              <span class="hh-byline-name"><?php echo esc_html( $hh_author['name'] ); ?></span>
+              <span class="hh-byline-title"><?php echo esc_html( $feat_author_title ); ?></span>
             </div>
           </div>
-          <a href="<?php echo esc_url( home_url( '/health-hub/' ) ); ?>" class="hh-featured-cta">
+          <a href="<?php echo esc_url( $feat_url ); ?>" class="hh-featured-cta">
             Read Full Article
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -166,152 +181,54 @@ get_header();
         <p class="hh-section-lead">Evidence-based health guidance — written and reviewed by our GPhC-registered team</p>
       </div>
 
+      <?php
+      $hh_articles = rl_field( 'hh_articles', array() );
+      if ( empty( $hh_articles ) || ! is_array( $hh_articles ) ) {
+          $hh_articles = array(
+              array( 'image' => array( 'url' => 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=450&fit=crop' ), 'image_alt' => 'Person with energy and wellness — B12 injections article', 'category' => 'wellness', 'category_text' => 'WELLNESS', 'date' => 'Mar 10, 2026', 'read_time' => '5 min read', 'title' => '7 Signs You Might Be Deficient in Vitamin B12', 'excerpt' => 'Fatigue, brain fog, pins and needles — these 7 warning signs could mean your B12 is dangerously low. Here\'s when an injection is right for you.', 'url' => home_url( '/health-hub/' ), 'author_title' => 'Superintendent Pharmacist' ),
+              array( 'image' => array( 'url' => 'https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=800&h=450&fit=crop' ), 'image_alt' => 'Tropical destination — travel health article', 'category' => 'travel-health', 'category_text' => 'TRAVEL HEALTH', 'date' => 'Mar 03, 2026', 'read_time' => '6 min read', 'title' => 'The Ultimate Pre-Travel Health Checklist for 2026', 'excerpt' => 'Vaccines, malaria tablets, health kits, insurance — the complete pharmacist-approved checklist for travellers from South East London.', 'url' => home_url( '/health-hub/' ), 'author_title' => '' ),
+              array( 'image' => array( 'url' => 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800&h=450&fit=crop' ), 'image_alt' => 'Thailand temple — Thailand travel vaccinations guide', 'category' => 'travel-health', 'category_text' => 'TRAVEL HEALTH', 'date' => 'Feb 28, 2026', 'read_time' => '12 min read', 'title' => 'Thailand Travel Vaccinations: Complete Guide for South East London Travellers', 'excerpt' => 'Essential vaccines, malaria prevention, and health advice for your Thailand trip from our yellow fever centre.', 'url' => home_url( '/travel-thailand/' ), 'author_title' => 'Superintendent Pharmacist' ),
+              array( 'image' => array( 'url' => 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&h=450&fit=crop' ), 'image_alt' => 'Healthy meal prep — weight loss guide', 'category' => 'weight-loss', 'category_text' => 'WEIGHT LOSS', 'date' => 'Feb 21, 2026', 'read_time' => '7 min read', 'title' => 'What Actually Happens When You Start Mounjaro: Week by Week', 'excerpt' => 'The first injection, the appetite changes, the expected side effects — and when to call us if something feels wrong.', 'url' => home_url( '/weight-loss/' ), 'author_title' => '' ),
+              array( 'image' => array( 'url' => 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=800&h=450&fit=crop' ), 'image_alt' => 'NHS prescription — prescription services article', 'category' => 'wellness', 'category_text' => 'PRESCRIPTIONS', 'date' => 'Feb 14, 2026', 'read_time' => '4 min read', 'title' => 'NHS Repeat Prescriptions: 5 Things Chislehurst Patients Should Know', 'excerpt' => 'NHS Electronic Prescription Service means you never need to collect a paper script again. Here\'s how to set it up properly.', 'url' => home_url( '/nhs-prescriptions/' ), 'author_title' => 'Superintendent Pharmacist' ),
+              array( 'image' => array( 'url' => 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&h=450&fit=crop' ), 'image_alt' => 'Flu vaccination — seasonal health article', 'category' => 'seasonal', 'category_text' => 'SEASONAL HEALTH', 'date' => 'Feb 07, 2026', 'read_time' => '5 min read', 'title' => 'Who Should Get the Flu Jab This Year — and Who Pays for It', 'excerpt' => 'NHS eligibility criteria change each season. Find out if you qualify for a free jab — or whether a private one makes sense for your family.', 'url' => home_url( '/health-hub/' ), 'author_title' => '' ),
+          );
+      }
+      $hh_badge_map = array( 'wellness' => 'hh-badge--wellness', 'travel-health' => 'hh-badge--travel', 'weight-loss' => 'hh-badge--weight', 'seasonal' => 'hh-badge--seasonal', 'prescriptions' => 'hh-badge--wellness' );
+      ?>
       <div class="hh-articles-grid" id="articlesGrid">
-
-        <!-- Article 1 -->
-        <a href="<?php echo esc_url( home_url( '/health-hub/' ) ); ?>" class="hh-article-card" data-category="wellness">
+        <?php foreach ( $hh_articles as $art ) :
+            $img_url = is_array( $art['image'] ?? null ) && ! empty( $art['image']['url'] ) ? $art['image']['url'] : '';
+            if ( ! $img_url ) { continue; }
+            $img_alt = $art['image_alt'] ?? ( is_array( $art['image'] ?? null ) ? ( $art['image']['alt'] ?? '' ) : '' );
+            $cat     = $art['category'] ?? 'wellness';
+            $cat_txt = $art['category_text'] ?? strtoupper( str_replace( '-', ' ', $cat ) );
+            $badge_class = $hh_badge_map[ $cat ] ?? 'hh-badge--wellness';
+            $url     = ! empty( $art['url'] ) ? $art['url'] : home_url( '/health-hub/' );
+            $a_title = ! empty( $art['author_title'] ) ? $art['author_title'] : $hh_author['title'];
+        ?>
+        <a href="<?php echo esc_url( $url ); ?>" class="hh-article-card" data-category="<?php echo esc_attr( $cat ); ?>">
           <div class="hh-article-img-wrap">
-            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=450&fit=crop" alt="Person with energy and wellness — B12 injections article" class="hh-article-img">
-            <div class="hh-article-cat-badge hh-badge--wellness">WELLNESS</div>
+            <img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $img_alt ); ?>" class="hh-article-img">
+            <div class="hh-article-cat-badge <?php echo esc_attr( $badge_class ); ?>"><?php echo esc_html( $cat_txt ); ?></div>
           </div>
           <div class="hh-article-body">
             <div class="hh-article-meta">
-              <span class="hh-read-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>5 min read</span>
+              <span class="hh-read-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><?php echo esc_html( $art['read_time'] ?? '' ); ?></span>
               <span class="hh-meta-dot">·</span>
-              <span class="hh-date">Mar 10, 2026</span>
+              <span class="hh-date"><?php echo esc_html( $art['date'] ?? '' ); ?></span>
             </div>
-            <h3 class="hh-article-title">7 Signs You Might Be Deficient in Vitamin B12</h3>
-            <p class="hh-article-excerpt">Fatigue, brain fog, pins and needles — these 7 warning signs could mean your B12 is dangerously low. Here's when an injection is right for you.</p>
+            <h3 class="hh-article-title"><?php echo esc_html( $art['title'] ?? '' ); ?></h3>
+            <p class="hh-article-excerpt"><?php echo esc_html( $art['excerpt'] ?? '' ); ?></p>
             <div class="hh-byline hh-byline--sm">
-              <div class="hh-byline-avatar hh-byline-avatar--sm">SB</div>
+              <div class="hh-byline-avatar hh-byline-avatar--sm"><?php echo esc_html( $hh_author['initials'] ); ?></div>
               <div class="hh-byline-info">
-                <span class="hh-byline-name">Sumeet Banker</span>
-                <span class="hh-byline-title">Superintendent Pharmacist</span>
+                <span class="hh-byline-name"><?php echo esc_html( $hh_author['name'] ); ?></span>
+                <span class="hh-byline-title"><?php echo esc_html( $a_title ); ?></span>
               </div>
             </div>
           </div>
         </a>
-
-        <!-- Article 2 -->
-        <a href="<?php echo esc_url( home_url( '/health-hub/' ) ); ?>" class="hh-article-card" data-category="travel-health">
-          <div class="hh-article-img-wrap">
-            <img src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=800&h=450&fit=crop" alt="Tropical destination — travel health article" class="hh-article-img">
-            <div class="hh-article-cat-badge hh-badge--travel">TRAVEL HEALTH</div>
-          </div>
-          <div class="hh-article-body">
-            <div class="hh-article-meta">
-              <span class="hh-read-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>6 min read</span>
-              <span class="hh-meta-dot">·</span>
-              <span class="hh-date">Mar 03, 2026</span>
-            </div>
-            <h3 class="hh-article-title">The Ultimate Pre-Travel Health Checklist for 2026</h3>
-            <p class="hh-article-excerpt">Vaccines, malaria tablets, health kits, insurance — the complete pharmacist-approved checklist for travellers from South East London.</p>
-            <div class="hh-byline hh-byline--sm">
-              <div class="hh-byline-avatar hh-byline-avatar--sm">SB</div>
-              <div class="hh-byline-info">
-                <span class="hh-byline-name">Sumeet Banker</span>
-                <span class="hh-byline-title">Lead Pharmacist</span>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <!-- Article 3 -->
-        <a href="<?php echo esc_url( home_url( '/travel-thailand/' ) ); ?>" class="hh-article-card" data-category="travel-health">
-          <div class="hh-article-img-wrap">
-            <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800&h=450&fit=crop" alt="Thailand temple — Thailand travel vaccinations guide" class="hh-article-img">
-            <div class="hh-article-cat-badge hh-badge--travel">TRAVEL HEALTH</div>
-          </div>
-          <div class="hh-article-body">
-            <div class="hh-article-meta">
-              <span class="hh-read-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>12 min read</span>
-              <span class="hh-meta-dot">·</span>
-              <span class="hh-date">Feb 28, 2026</span>
-            </div>
-            <h3 class="hh-article-title">Thailand Travel Vaccinations: Complete Guide for South East London Travellers</h3>
-            <p class="hh-article-excerpt">Essential vaccines, malaria prevention, and health advice for your Thailand trip from our yellow fever centre.</p>
-            <div class="hh-byline hh-byline--sm">
-              <div class="hh-byline-avatar hh-byline-avatar--sm">SB</div>
-              <div class="hh-byline-info">
-                <span class="hh-byline-name">Sumeet Banker</span>
-                <span class="hh-byline-title">Superintendent Pharmacist</span>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <!-- Article 4 -->
-        <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="hh-article-card" data-category="weight-loss">
-          <div class="hh-article-img-wrap">
-            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&h=450&fit=crop" alt="Healthy meal prep — weight loss guide" class="hh-article-img">
-            <div class="hh-article-cat-badge hh-badge--weight">WEIGHT LOSS</div>
-          </div>
-          <div class="hh-article-body">
-            <div class="hh-article-meta">
-              <span class="hh-read-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>7 min read</span>
-              <span class="hh-meta-dot">·</span>
-              <span class="hh-date">Feb 21, 2026</span>
-            </div>
-            <h3 class="hh-article-title">What Actually Happens When You Start Mounjaro: Week by Week</h3>
-            <p class="hh-article-excerpt">The first injection, the appetite changes, the expected side effects — and when to call us if something feels wrong.</p>
-            <div class="hh-byline hh-byline--sm">
-              <div class="hh-byline-avatar hh-byline-avatar--sm">SB</div>
-              <div class="hh-byline-info">
-                <span class="hh-byline-name">Sumeet Banker</span>
-                <span class="hh-byline-title">Lead Pharmacist</span>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <!-- Article 5 -->
-        <a href="<?php echo esc_url( home_url( '/nhs-prescriptions/' ) ); ?>" class="hh-article-card" data-category="wellness">
-          <div class="hh-article-img-wrap">
-            <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=800&h=450&fit=crop" alt="NHS prescription — prescription services article" class="hh-article-img">
-            <div class="hh-article-cat-badge hh-badge--wellness">PRESCRIPTIONS</div>
-          </div>
-          <div class="hh-article-body">
-            <div class="hh-article-meta">
-              <span class="hh-read-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>4 min read</span>
-              <span class="hh-meta-dot">·</span>
-              <span class="hh-date">Feb 14, 2026</span>
-            </div>
-            <h3 class="hh-article-title">NHS Repeat Prescriptions: 5 Things Chislehurst Patients Should Know</h3>
-            <p class="hh-article-excerpt">NHS Electronic Prescription Service means you never need to collect a paper script again. Here's how to set it up properly.</p>
-            <div class="hh-byline hh-byline--sm">
-              <div class="hh-byline-avatar hh-byline-avatar--sm">SB</div>
-              <div class="hh-byline-info">
-                <span class="hh-byline-name">Sumeet Banker</span>
-                <span class="hh-byline-title">Superintendent Pharmacist</span>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <!-- Article 6 -->
-        <a href="<?php echo esc_url( home_url( '/health-hub/' ) ); ?>" class="hh-article-card" data-category="wellness">
-          <div class="hh-article-img-wrap">
-            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&h=450&fit=crop" alt="Flu vaccination — seasonal health article" class="hh-article-img">
-            <div class="hh-article-cat-badge hh-badge--seasonal">SEASONAL HEALTH</div>
-          </div>
-          <div class="hh-article-body">
-            <div class="hh-article-meta">
-              <span class="hh-read-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>5 min read</span>
-              <span class="hh-meta-dot">·</span>
-              <span class="hh-date">Feb 07, 2026</span>
-            </div>
-            <h3 class="hh-article-title">Who Should Get the Flu Jab This Year — and Who Pays for It</h3>
-            <p class="hh-article-excerpt">NHS eligibility criteria change each season. Find out if you qualify for a free jab — or whether a private one makes sense for your family.</p>
-            <div class="hh-byline hh-byline--sm">
-              <div class="hh-byline-avatar hh-byline-avatar--sm">SB</div>
-              <div class="hh-byline-info">
-                <span class="hh-byline-name">Sumeet Banker</span>
-                <span class="hh-byline-title">Lead Pharmacist</span>
-              </div>
-            </div>
-          </div>
-        </a>
-
+        <?php endforeach; ?>
       </div>
     </div>
   </section>
