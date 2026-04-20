@@ -79,22 +79,16 @@ $locations = array(
         </div>
       </div>
 
-      <?php if ( $args['show_map'] ) : ?>
-      <div class="location-map-wrap">
-        <a href="<?php echo esc_url( $loc['map_link'] ); ?>" target="_blank" rel="noopener" class="location-map-link">
-          <?php echo $icon_map; ?> Open in Maps <?php echo $icon_ext; ?>
-        </a>
-        <div class="location-map">
-          <iframe src="<?php echo esc_url( $loc['map_embed'] ); ?>" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="<?php echo esc_attr( $loc['name'] ); ?> map"></iframe>
-        </div>
-      </div>
-      <?php endif; ?>
-
       <div class="location-actions">
         <a href="<?php echo esc_url( $args['cta_url'] ); ?>" class="btn-primary"><?php echo esc_html( $args['cta_prefix'] . ' ' . $loc['name'] ); ?> <?php echo $icon_arrow; ?></a>
-        <a href="<?php echo esc_url( $loc['map_link'] ); ?>" target="_blank" rel="noopener" class="btn-outline">Get Directions</a>
       </div>
     </div>
+
+    <?php if ( $args['show_map'] ) : ?>
+    <div class="location-map">
+      <iframe src="<?php echo esc_url( $loc['map_embed'] ); ?>" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="<?php echo esc_attr( $loc['name'] ); ?> map"></iframe>
+    </div>
+    <?php endif; ?>
   </div>
   <?php endforeach; ?>
 </div>

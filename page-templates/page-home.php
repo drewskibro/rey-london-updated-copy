@@ -359,13 +359,13 @@ get_header();
     </section>
 
     <!-- Locations Section -->
-    <section class="locations-section" id="locations">
+    <section class="locations-section locations-section--dark" id="locations">
       <div class="container">
         <h2 class="section-title">
           Find your nearest<br />
           <span class="gradient-text">Chislehurst Pharmacy Group pharmacy</span>
         </h2>
-        <p class="section-subtitle hp-locations-quote"><span>Most patients tell us the same thing after their first visit.</span><br><strong>They waited too long to come in.</strong></p>
+        <p class="section-subtitle hp-locations-quote">Most patients tell us the same thing after their first visit.<br>They waited too long to come in.</p>
 
         <?php get_template_part( 'template-parts/location-cards', null, array( 'cta_prefix' => 'Book at' ) ); ?>
       </div>

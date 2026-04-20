@@ -1886,39 +1886,132 @@ a.featured-btn:hover svg {
   box-shadow: 0 4px 12px rgba(10, 47, 138, 0.15);
 }
 
-/* Location card — embedded map */
-.location-map-wrap {
-  margin-top: 20px;
-  margin-bottom: 24px;
-  position: relative;
-}
-
-.location-map-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--primary-blue);
-  text-decoration: none;
-  margin-bottom: 8px;
-  transition: color 0.2s;
-}
-
-.location-map-link:hover {
-  color: var(--light-blue);
-}
-
+/* Location card — embedded map (flush with card bottom) */
 .location-map {
-  border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(10, 47, 138, 0.1);
+  border-top: 1px solid rgba(10, 47, 138, 0.1);
+  line-height: 0;
 }
 
 .location-map iframe {
   display: block;
   width: 100%;
-  height: 200px;
+  height: 220px;
+  border: 0;
+}
+
+/* ==========================================================================
+   Locations Section — DARK variant (homepage)
+   Scoped to .locations-section--dark so other pages keep the light treatment.
+   ========================================================================== */
+.locations-section--dark {
+  background: #11368F;
+}
+
+.locations-section--dark .section-title,
+.locations-section--dark .section-title span,
+.locations-section--dark .gradient-text {
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+}
+
+.locations-section--dark .section-subtitle,
+.locations-section--dark .hp-locations-quote {
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.7;
+}
+
+.locations-section--dark .hp-locations-quote span,
+.locations-section--dark .hp-locations-quote strong {
+  color: #ffffff;
+  font-weight: 400;
+  font-style: normal;
+  font-size: inherit;
+}
+
+.locations-section--dark .location-card {
+  background: #1a3a7a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+}
+
+.locations-section--dark .location-card::before,
+.locations-section--dark .location-card::after {
+  display: none;
+}
+
+.locations-section--dark .location-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.28);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.locations-section--dark .location-content {
+  padding: 32px;
+}
+
+.locations-section--dark .location-content h3,
+.locations-section--dark .location-card:hover .location-content h3 {
+  color: #ffffff;
+}
+
+.locations-section--dark .detail-item + .detail-item {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+.locations-section--dark .detail-icon {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.locations-section--dark .detail-item:hover .detail-icon {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.locations-section--dark .detail-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.locations-section--dark .detail-item p,
+.locations-section--dark .detail-item a {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.locations-section--dark .detail-item a:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.locations-section--dark .location-actions .btn-primary {
+  background: #ffffff;
+  color: #11368F;
+  border: 1px solid #ffffff;
+}
+
+.locations-section--dark .location-actions .btn-primary:hover,
+.locations-section--dark .location-card:hover .location-actions .btn-primary {
+  background: rgba(255, 255, 255, 0.92);
+  color: #11368F;
+  border-color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.locations-section--dark .location-map {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Section Styles */
