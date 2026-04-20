@@ -2455,7 +2455,7 @@ acf_add_local_field_group( array(
         array( 'key' => 'field_rl_opt_pharmacy_name', 'label' => 'Pharmacy Group Name', 'name' => 'pharmacy_name', 'type' => 'text', 'default_value' => 'Chislehurst Pharmacy Group Pharmacy' ),
         array( 'key' => 'field_rl_opt_pharmacy_logo', 'label' => 'Logo', 'name' => 'pharmacy_logo', 'type' => 'image', 'return_format' => 'url' ),
         array( 'key' => 'field_rl_opt_pharmacy_logo_dark', 'label' => 'Logo (Dark/White)', 'name' => 'pharmacy_logo_dark', 'type' => 'image', 'return_format' => 'url', 'instructions' => 'For dark backgrounds / footer' ),
-        array( 'key' => 'field_rl_opt_footer_tagline', 'label' => 'Footer Tagline', 'name' => 'footer_tagline', 'type' => 'textarea', 'rows' => 2, 'default_value' => 'Your trusted healthcare partner in London. Providing expert pharmaceutical care and personalized health services since 2010.' ),
+        array( 'key' => 'field_rl_opt_footer_tagline', 'label' => 'Footer Tagline', 'name' => 'footer_tagline', 'type' => 'textarea', 'rows' => 2, 'default_value' => 'Private healthcare & NHS, travel vaccinations and medical weight loss, available today at both our Chislehurst pharmacies.' ),
         array( 'key' => 'field_rl_opt_google_rating', 'label' => 'Google Rating', 'name' => 'google_rating', 'type' => 'number', 'default_value' => '4.9', 'step' => 0.1, 'min' => 0, 'max' => 5 ),
         array( 'key' => 'field_rl_opt_google_review_count', 'label' => 'Google Review Count', 'name' => 'google_review_count', 'type' => 'text', 'default_value' => '200+' ),
         array( 'key' => 'field_rl_opt_google_review_url', 'label' => 'Google Review URL', 'name' => 'google_review_url', 'type' => 'url', 'instructions' => 'Link to leave a Google review' ),

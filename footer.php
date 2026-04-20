@@ -38,7 +38,7 @@ $booking_url   = rl_booking_url();
                 <?php endif; ?>
               </div>
               <p class="footer-description">
-                <?php echo esc_html( rl_option( 'footer_description', 'Your trusted healthcare partner in London. Providing expert pharmaceutical care and personalized health services since 2010.' ) ); ?>
+                <?php echo esc_html( rl_option( 'footer_tagline', 'Private healthcare & NHS, travel vaccinations and medical weight loss, available today at both our Chislehurst pharmacies.' ) ); ?>
               </p>
 
               <!-- Contact Cards -->
