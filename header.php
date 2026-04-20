@@ -447,14 +447,14 @@ $booking_url   = rl_booking_url();
             </svg>
           </button>
           <div class="mobile-nav-sub">
-            <a href="https://chislehurstpharmacygroup.kinsta.cloud/nhs-prescriptions/" class="mobile-nav-sub-link">NHS Prescriptions</a>
+            <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="mobile-nav-sub-link">Weight Loss</a>
+            <a href="<?php echo esc_url( home_url( '/vitamin-b12-london/' ) ); ?>" class="mobile-nav-sub-link">Vitamin B12 Injections</a>
+            <a href="<?php echo esc_url( home_url( '/hpv-vaccine/' ) ); ?>" class="mobile-nav-sub-link">HPV Vaccine</a>
+            <a href="<?php echo esc_url( home_url( '/hair-loss-london/' ) ); ?>" class="mobile-nav-sub-link">Hair Loss</a>
+            <a href="<?php echo esc_url( home_url( '/health-checks/' ) ); ?>" class="mobile-nav-sub-link">Health Checks</a>
             <a href="<?php echo esc_url( home_url( '/pharmacy-first/' ) ); ?>" class="mobile-nav-sub-link">Pharmacy First</a>
             <a href="<?php echo esc_url( home_url( '/nhs-vaccinations/' ) ); ?>" class="mobile-nav-sub-link">NHS Vaccinations</a>
-            <a href="<?php echo esc_url( home_url( '/vitamin-b12-london/' ) ); ?>" class="mobile-nav-sub-link">Vitamin B12 Injections</a>
-            <a href="<?php echo esc_url( home_url( '/health-checks/' ) ); ?>" class="mobile-nav-sub-link">Health Checks</a>
-            <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="mobile-nav-sub-link">Weight Loss</a>
-            <a href="<?php echo esc_url( home_url( '/hair-loss-london/' ) ); ?>" class="mobile-nav-sub-link">Hair Loss</a>
-            <a href="<?php echo esc_url( home_url( '/hpv-vaccine/' ) ); ?>" class="mobile-nav-sub-link">HPV Vaccine</a>
+            <a href="https://chislehurstpharmacygroup.kinsta.cloud/nhs-prescriptions/" class="mobile-nav-sub-link">NHS Prescriptions</a>
           </div>
         </div>
 
