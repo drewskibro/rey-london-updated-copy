@@ -149,6 +149,11 @@ function rey_london_scripts() {
         wp_enqueue_script( 'rey-london-prescriptions-js', REY_LONDON_URI . '/assets/js/prescription-services.js', array(), REY_LONDON_VERSION, true );
     }
 
+    if ( is_page_template( 'page-templates/page-legal.php' ) ) {
+        wp_enqueue_style( 'rey-london-legal', REY_LONDON_URI . '/assets/css/legal.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
+        wp_enqueue_script( 'rey-london-legal-js', REY_LONDON_URI . '/assets/js/legal.js', array(), REY_LONDON_VERSION, true );
+    }
+
     if ( is_page_template( 'page-templates/page-vitamin-b12.php' ) ) {
         wp_enqueue_style( 'rey-london-vitamin-b12', REY_LONDON_URI . '/assets/css/vitamin-b12.css', array( 'rey-london-globals' ), REY_LONDON_VERSION );
         wp_enqueue_script( 'rey-london-vitamin-b12-js', REY_LONDON_URI . '/assets/js/vitamin-b12.js', array(), REY_LONDON_VERSION, true );
