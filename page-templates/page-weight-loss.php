@@ -297,7 +297,7 @@ get_header();
             <p><?php echo esc_html( $wl_desc ); ?></p>
             <div class="product-footer">
               <span class="product-price"><?php echo esc_html( $wl_price ); ?></span>
-              <a href="<?php echo esc_url( $wl_url ? $wl_url : '#consultation' ); ?>" class="product-cta">
+              <a href="<?php echo esc_url( home_url( '/contact-page/#book-appointment' ) ); ?>" class="product-cta">
                 Book Now
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow">
               </a>
