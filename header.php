@@ -72,7 +72,7 @@ $booking_url   = rl_booking_url();
                         <span class="link-desc">Free prescription collection</span>
                       </div>
                     </a>
-                    <a href="<?php echo esc_url( home_url( '/pharmacy-first/' ) ); ?>" class="dropdown-link">
+                    <a href="<?php echo esc_url( home_url( '/pharmacy-first-london/' ) ); ?>" class="dropdown-link">
                       <div class="link-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
@@ -135,7 +135,7 @@ $booking_url   = rl_booking_url();
 
                   <div class="dropdown-section">
                     <h4 class="dropdown-title">Specialist Care</h4>
-                    <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="dropdown-link">
+                    <a href="<?php echo esc_url( home_url( '/medical-weight-loss-london/' ) ); ?>" class="dropdown-link">
                       <div class="link-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" />
@@ -157,7 +157,7 @@ $booking_url   = rl_booking_url();
                         <span class="link-desc">Effective treatments</span>
                       </div>
                     </a>
-                    <a href="<?php echo esc_url( home_url( '/hpv-vaccine/' ) ); ?>" class="dropdown-link">
+                    <a href="<?php echo esc_url( home_url( '/hpv-vaccine-london/' ) ); ?>" class="dropdown-link">
                       <div class="link-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="M9 12l2 2 4-4" />
@@ -180,7 +180,7 @@ $booking_url   = rl_booking_url();
                         <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Free initial consultation</span>
                         <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> No GP referral needed</span>
                       </div>
-                      <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="featured-btn">
+                      <a href="<?php echo esc_url( home_url( '/medical-weight-loss-london/' ) ); ?>" class="featured-btn">
                         Book Free Consultation
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
                       </a>
@@ -405,7 +405,7 @@ $booking_url   = rl_booking_url();
           <div class="search-overlay-popular">
             <span class="search-popular-label">Popular Searches</span>
             <div class="search-popular-links">
-              <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="search-popular-link">Weight Loss Programs</a>
+              <a href="<?php echo esc_url( home_url( '/medical-weight-loss-london/' ) ); ?>" class="search-popular-link">Weight Loss Programs</a>
               <a href="<?php echo esc_url( home_url( '/travel-vaccinations-london/' ) ); ?>" class="search-popular-link">Travel Vaccinations</a>
               <a href="https://chislehurstpharmacygroup.kinsta.cloud/nhs-prescriptions/" class="search-popular-link">NHS Prescriptions</a>
               <a href="<?php echo esc_url( home_url( '/yellow-fever-vaccine-london/' ) ); ?>" class="search-popular-link">Yellow Fever Vaccine</a>
@@ -447,12 +447,12 @@ $booking_url   = rl_booking_url();
             </svg>
           </button>
           <div class="mobile-nav-sub">
-            <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="mobile-nav-sub-link">Weight Loss</a>
+            <a href="<?php echo esc_url( home_url( '/medical-weight-loss-london/' ) ); ?>" class="mobile-nav-sub-link">Weight Loss</a>
             <a href="<?php echo esc_url( home_url( '/vitamin-b12-london/' ) ); ?>" class="mobile-nav-sub-link">Vitamin B12 Injections</a>
-            <a href="<?php echo esc_url( home_url( '/hpv-vaccine/' ) ); ?>" class="mobile-nav-sub-link">HPV Vaccine</a>
+            <a href="<?php echo esc_url( home_url( '/hpv-vaccine-london/' ) ); ?>" class="mobile-nav-sub-link">HPV Vaccine</a>
             <a href="<?php echo esc_url( home_url( '/hair-loss-london/' ) ); ?>" class="mobile-nav-sub-link">Hair Loss</a>
             <a href="<?php echo esc_url( home_url( '/health-checks/' ) ); ?>" class="mobile-nav-sub-link">Health Checks</a>
-            <a href="<?php echo esc_url( home_url( '/pharmacy-first/' ) ); ?>" class="mobile-nav-sub-link">Pharmacy First</a>
+            <a href="<?php echo esc_url( home_url( '/pharmacy-first-london/' ) ); ?>" class="mobile-nav-sub-link">Pharmacy First</a>
             <a href="<?php echo esc_url( home_url( '/nhs-vaccinations/' ) ); ?>" class="mobile-nav-sub-link">NHS Vaccinations</a>
             <a href="https://chislehurstpharmacygroup.kinsta.cloud/nhs-prescriptions/" class="mobile-nav-sub-link">NHS Prescriptions</a>
           </div>
