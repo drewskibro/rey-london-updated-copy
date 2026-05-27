@@ -109,7 +109,7 @@ $booking_url = rl_booking_url();
       </div>
     </div>
     <div class="container" style="margin-top: 16px;">
-      <p style="font-size: 0.78rem; color: rgba(255,255,255,0.55); line-height: 1.6; max-width: 900px; margin: 0 auto; text-align: center;">
+      <p style="font-size: 0.85rem; color: rgba(255,255,255,0.85); line-height: 1.7; max-width: 900px; margin: 0 auto; text-align: center;">
         <?php echo esc_html( rl_field( 'pf_stats_disclaimer', 'The NHS Pharmacy First consultation is provided free of charge. Any prescription medicines supplied may be subject to the standard NHS prescription charge of £9.90 per item unless you are exempt. Exemptions include children under 16, people aged 60 and over, pregnant women, and those with qualifying medical conditions or low income. Our pharmacist will advise you at your appointment.' ) ); ?>
       </p>
     </div>
