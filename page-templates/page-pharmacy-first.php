@@ -108,6 +108,11 @@ $booking_url = rl_booking_url();
         <?php endif; ?>
       </div>
     </div>
+    <div class="container" style="margin-top: 16px;">
+      <p style="font-size: 0.78rem; color: var(--text-gray, #6B7280); line-height: 1.6; max-width: 900px; margin: 0 auto; text-align: center;">
+        <?php echo esc_html( rl_field( 'pf_stats_disclaimer', 'The NHS Pharmacy First consultation is provided free of charge. Any prescription medicines supplied may be subject to the standard NHS prescription charge of £9.90 per item unless you are exempt. Exemptions include children under 16, people aged 60 and over, pregnant women, and those with qualifying medical conditions or low income. Our pharmacist will advise you at your appointment.' ) ); ?>
+      </p>
+    </div>
   </section>
 
   <!-- ===================== CONDITIONS WE TREAT ===================== -->
@@ -238,7 +243,7 @@ $booking_url = rl_booking_url();
         <div class="pf-step-card pf-reveal">
           <div class="pf-step-num">3</div>
           <h3>Walk Out Treated</h3>
-          <p>If your condition meets the NHS Pharmacy First criteria, you'll receive appropriate treatment on the spot — including prescription-only medicines such as antibiotics or antivirals where clinically indicated. Completely free of charge.</p>
+          <p><?php echo esc_html( rl_field( 'pf_step3_description', 'If your condition meets the NHS Pharmacy First criteria, you\'ll receive appropriate treatment on the spot — including prescription-only medicines such as antibiotics or antivirals where clinically indicated. Free of charge if you are exempt from NHS prescription charges. The standard charge of £9.90 per item applies if you are not exempt — our pharmacist will confirm this at your appointment.' ) ); ?></p>
         </div>
         <?php endif; ?>
       </div>
@@ -268,7 +273,7 @@ $booking_url = rl_booking_url();
 
       <?php get_template_part( 'template-parts/location-cards', null, array( 'cta_prefix' => 'Book at' ) ); ?>
 
-      <div class="pf-serving-text pf-reveal"><?php echo esc_html( rl_field( 'pf_locations_serving', 'Conveniently located to serve patients across Chislehurst, Bromley, Orpington, Sidcup, Bexley, Eltham, and surrounding South East London areas. Free parking available at both locations.' ) ); ?></div>
+      <div class="pf-serving-text pf-reveal"><?php echo esc_html( rl_field( 'pf_locations_serving', 'Conveniently located to serve patients across Chislehurst, Bromley, Orpington, Sidcup, Bexley, Eltham, and surrounding South East London areas.' ) ); ?></div>
     </div>
   </section>
 

@@ -2643,6 +2643,8 @@ acf_add_local_field_group( array(
                 array( 'key' => 'field_rl_pf_stat_label', 'label' => 'Label', 'name' => 'label', 'type' => 'text' ),
             ),
         ),
+        array( 'key' => 'field_rl_pf_stats_disclaimer', 'label' => 'Stats Disclaimer', 'name' => 'pf_stats_disclaimer', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'The NHS Pharmacy First consultation is provided free of charge. Any prescription medicines supplied may be subject to the standard NHS prescription charge of £9.90 per item unless you are exempt. Exemptions include children under 16, people aged 60 and over, pregnant women, and those with qualifying medical conditions or low income. Our pharmacist will advise you at your appointment.', 'instructions' => 'Small print disclaimer shown below the stats bar.' ),
+        array( 'key' => 'field_rl_pf_step3_desc', 'label' => 'Step 3 "Walk Out Treated" Description', 'name' => 'pf_step3_description', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'If your condition meets the NHS Pharmacy First criteria, you\'ll receive appropriate treatment on the spot — including prescription-only medicines such as antibiotics or antivirals where clinically indicated. Free of charge if you are exempt from NHS prescription charges. The standard charge of £9.90 per item applies if you are not exempt — our pharmacist will confirm this at your appointment.' ),
 
         // ── CONDITIONS ──
         array( 'key' => 'field_rl_pf_conditions_tab', 'label' => 'Conditions', 'type' => 'tab' ),
