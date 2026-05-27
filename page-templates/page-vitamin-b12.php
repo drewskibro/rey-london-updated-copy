@@ -25,8 +25,12 @@ get_header();
           <h1 class="b12-hero-title"><?php echo wp_kses_post( rl_field( 'b12_hero_title', 'Vitamin B12 Injections in <span class="gradient-text">South East London</span>' ) ); ?></h1>
           <p class="b12-hero-subtitle"><?php echo esc_html( rl_field( 'b12_hero_subtitle', 'Boost your energy, lift brain fog, and address B12 deficiency with a fast-acting intramuscular injection. No GP referral needed. Walk-ins welcome at both Chislehurst pharmacies.' ) ); ?></p>
           <div class="b12-hero-ctas">
-            <a href="tel:02084673158" class="btn-primary b12-btn-lg">Book Your B12 Injection</a>
-            <a href="tel:02084673158" class="btn-outline b12-btn-lg b12-btn-outline-hero">Call: 020 8467 3158</a>
+            <?php
+            $b12_booking_url  = rl_field( 'b12_booking_url', 'https://treatlocal.co.uk/online-booking/bromley/vitamin-b12-injection-service/appointment' );
+            $b12_booking_text = rl_field( 'b12_booking_text', 'Book Your B12 Injection' );
+            ?>
+            <a href="<?php echo esc_url( $b12_booking_url ); ?>" target="_blank" rel="noopener" class="btn-primary b12-btn-lg"><?php echo esc_html( $b12_booking_text ); ?></a>
+            <p style="font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-top: 12px; max-width: 400px;">Vitamin B12 injections at Chislehurst Pharmacy Group are booked through our trusted partner TreatLocal. You will be redirected to their secure booking system.</p>
           </div>
           <div class="b12-trust-strip">
             <div class="b12-trust-item">
@@ -347,63 +351,7 @@ get_header();
     </div>
   </section>
 
-  <!-- ========== PRICING SECTION ========== -->
-  <section class="b12-pricing-section" id="book">
-    <div class="b12-symptoms-bg">
-      <div class="b12-symp-orb b12-symp-orb-1"></div>
-      <div class="b12-symp-orb b12-symp-orb-2"></div>
-    </div>
-    <div class="container b12-symptoms-container">
-      <div class="destinations-header">
-        <div class="destinations-pill">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          <span>Transparent Pricing</span>
-        </div>
-        <h2 class="destinations-title">Simple, affordable <br class="destinations-br-md">B12 injection pricing</h2>
-        <p class="destinations-desc">No hidden fees. Competitive private pricing with no GP referral or waiting list required.</p>
-      </div>
-
-      <div class="b12-pricing-grid">
-        <div class="b12-pricing-card b12-revealed">
-          <div class="b12-pricing-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-          </div>
-          <h3>Single Injection</h3>
-          <div class="b12-pricing-value">From £25</div>
-          <p class="b12-pricing-desc">Single hydroxocobalamin injection. No appointment needed — walk in during pharmacy hours.</p>
-        </div>
-        <div class="b12-pricing-card b12-pricing-featured b12-revealed">
-          <div class="b12-pricing-badge">Best Value</div>
-          <div class="b12-pricing-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <h3>Course of 3</h3>
-          <div class="b12-pricing-value">From £65</div>
-          <ul class="b12-pricing-items">
-            <li>3 injections over 3 months</li>
-            <li>Ideal for first-time patients</li>
-            <li>Pharmacist advice included</li>
-            <li>Save vs single sessions</li>
-          </ul>
-        </div>
-        <div class="b12-pricing-card b12-revealed">
-          <div class="b12-pricing-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h3>Maintenance Plan</h3>
-          <div class="b12-pricing-value">Monthly</div>
-          <p class="b12-pricing-desc">Ongoing monthly injections for sustained wellbeing. Perfect for vegans, active professionals, and those managing deficiency long-term.</p>
-        </div>
-      </div>
-
-      <p class="b12-pricing-note">Prices may vary — call for current pricing. NHS B12 injections available for clinically diagnosed deficiency with GP referral.</p>
-
-      <div class="b12-pricing-ctas">
-        <a href="tel:02084673158" class="btn-primary b12-btn-lg">Book Your B12 Injection</a>
-        <a href="tel:02082950017" class="btn-outline b12-btn-lg b12-btn-outline-hero">Questions? Call Chislehurst</a>
-      </div>
-    </div>
-  </section>
+  <!-- Pricing section removed — pricing managed by TreatLocal -->
 
   <!-- ========== LOCATIONS SECTION ========== -->
   <section class="locations-section" id="locations">
@@ -437,7 +385,7 @@ get_header();
               </div>
             </div>
             <div class="location-actions">
-              <a href="tel:02084673158" class="btn-primary">Book B12 Injection</a>
+              <a href="<?php echo esc_url( rl_field( 'b12_booking_url', 'https://treatlocal.co.uk/online-booking/bromley/vitamin-b12-injection-service/appointment' ) ); ?>" target="_blank" rel="noopener" class="btn-primary">Book B12 Injection</a>
               <a href="/#directions" class="btn-outline">Get Directions</a>
             </div>
           </div>
@@ -468,7 +416,7 @@ get_header();
               </div>
             </div>
             <div class="location-actions">
-              <a href="tel:02082950017" class="btn-primary">Book B12 Injection</a>
+              <a href="<?php echo esc_url( rl_field( 'b12_booking_url', 'https://treatlocal.co.uk/online-booking/bromley/vitamin-b12-injection-service/appointment' ) ); ?>" target="_blank" rel="noopener" class="btn-primary">Book B12 Injection</a>
               <a href="/#directions" class="btn-outline">Get Directions</a>
             </div>
           </div>
@@ -530,12 +478,11 @@ get_header();
       <h2>Feel the difference a B12 injection makes</h2>
       <p>Don't let low B12 leave you tired, foggy, and running below your potential. Our pharmacists are ready to help — same day, no fuss.</p>
       <div class="cta-buttons">
-        <a href="tel:02084673158" class="btn-cta-primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3A2 2 0 0 1 8.6 3.87c.193.96.52 1.89.97 2.78a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6.29 6.29l1.15-1.15a2 2 0 0 1 2.11-.45c.89.45 1.82.777 2.78.97a2 2 0 0 1 1.69 2.03z"/></svg>
-          Book B12 Injection Now
+        <a href="<?php echo esc_url( rl_field( 'b12_booking_url', 'https://treatlocal.co.uk/online-booking/bromley/vitamin-b12-injection-service/appointment' ) ); ?>" target="_blank" rel="noopener" class="btn-cta-primary">
+          Book Your B12 Injection
         </a>
-        <a href="tel:02082950017" class="btn-secondary b12-btn-lg">Call Chislehurst Pharmacy</a>
       </div>
+      <p style="font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 12px;">Bookings handled securely by our partner TreatLocal.</p>
       <div class="b12-cta-checks">
         <span>✓ Hydroxocobalamin injection</span>
         <span>✓ Results in 24–72 hours</span>
