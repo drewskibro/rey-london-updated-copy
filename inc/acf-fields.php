@@ -2204,6 +2204,9 @@ acf_add_local_field_group( array(
         array( 'key' => 'field_rl_b12_hero_title', 'label' => 'Hero Title', 'name' => 'b12_hero_title', 'type' => 'text', 'default_value' => 'Vitamin B12 Injections in South East London' ),
         array( 'key' => 'field_rl_b12_hero_subtitle', 'label' => 'Hero Subtitle', 'name' => 'b12_hero_subtitle', 'type' => 'textarea', 'rows' => 4, 'default_value' => 'Boost your energy, lift brain fog, and address B12 deficiency with a fast-acting intramuscular injection. No GP referral needed. Walk-ins welcome at both Chislehurst pharmacies.' ),
         array( 'key' => 'field_rl_b12_hero_image', 'label' => 'Hero Image', 'name' => 'b12_hero_image', 'type' => 'image', 'return_format' => 'url' ),
+        array( 'key' => 'field_rl_b12_booking_tab', 'label' => 'Booking (TreatLocal)', 'type' => 'tab' ),
+        array( 'key' => 'field_rl_b12_booking_url', 'label' => 'Booking URL', 'name' => 'b12_booking_url', 'type' => 'url', 'default_value' => 'https://treatlocal.co.uk/online-booking/bromley/vitamin-b12-injection-service/appointment', 'instructions' => 'TreatLocal booking link. All booking buttons on this page use this URL.' ),
+        array( 'key' => 'field_rl_b12_booking_text', 'label' => 'Booking Button Text', 'name' => 'b12_booking_text', 'type' => 'text', 'default_value' => 'Book Your B12 Injection' ),
         array(
             'key' => 'field_rl_b12_hero_trust', 'label' => 'Trust Strip Items', 'name' => 'b12_hero_trust', 'type' => 'repeater', 'layout' => 'table', 'button_label' => 'Add Item',
             'sub_fields' => array(
