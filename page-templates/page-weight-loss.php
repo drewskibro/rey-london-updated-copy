@@ -37,11 +37,11 @@ get_header();
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
-          <a href="tel:02084673158" class="btn-secondary wl-btn-hero-secondary">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M14.5 11.5V13.5C14.5 14.05 14.05 14.5 13.5 14.5C6.6 14.5 1 8.9 1 2C1 1.45 1.45 1 2 1H4.5C5.05 1 5.5 1.45 5.5 2V4.5C5.5 5.05 5.05 5.5 4.5 5.5H3.5C4 8.5 6.5 11 9.5 11.5V10.5C9.5 9.95 9.95 9.5 10.5 9.5H13C13.55 9.5 14 9.95 14 10.5V11.5Z" fill="currentColor"/>
+          <a href="#treatments" class="btn-secondary wl-btn-hero-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>
             </svg>
-            020 8467 3158
+            Check Eligibility
           </a>
         </div>
         <div class="wl-hero-trust">
@@ -64,10 +64,8 @@ get_header();
       <div class="wl-hero-visual">
         <div class="wl-hero-img-stack">
           <div class="wl-hero-img wl-hero-img-main">
-            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=700&h=800&fit=crop" alt="Medical weight loss consultation at Rey London pharmacy">
-          </div>
-          <div class="wl-hero-img wl-hero-img-secondary">
-            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500&h=400&fit=crop" alt="Weight loss results">
+            <?php $wl_hero_main = rl_field( 'wl_hero_image_main' ); ?>
+            <img src="<?php echo esc_url( $wl_hero_main ?: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=700&h=800&fit=crop' ); ?>" alt="Medical weight loss consultation at Chislehurst Pharmacy Group pharmacy">
           </div>
         </div>
       </div>
@@ -86,7 +84,7 @@ get_header();
         </div>
         <div class="wl-proof-divider"></div>
         <div class="wl-proof-item">
-          <div class="wl-proof-number">10–20%</div>
+          <div class="wl-proof-number">10–20%*</div>
           <div class="wl-proof-label">Average Body Weight Lost</div>
         </div>
         <div class="wl-proof-divider"></div>
@@ -104,7 +102,13 @@ get_header();
           <div class="wl-proof-number">Same Day</div>
           <div class="wl-proof-label">Appointments Available</div>
         </div>
+        <div class="wl-proof-divider"></div>
+        <div class="wl-proof-item">
+          <div class="wl-proof-number">FREE</div>
+          <div class="wl-proof-label">Initial Consultation</div>
+        </div>
       </div>
+      <p class="wl-disclaimer-footnote">*Based on SURMOUNT-1 trial (tirzepatide 15mg, 72 weeks). Individual results vary. Full clinical assessment required before treatment.</p>
     </div>
   </section>
 
@@ -132,8 +136,8 @@ get_header();
       <!-- Stats Row -->
       <div class="wl-vs-stats">
         <div class="wl-vs-stat-card">
-          <div class="wl-vs-stat-number">95%</div>
-          <div class="wl-vs-stat-label">of diets fail within 5 years</div>
+          <div class="wl-vs-stat-number">20.9%*</div>
+          <div class="wl-vs-stat-label">Average weight loss with Mounjaro</div>
         </div>
         <div class="wl-vs-stat-card">
           <div class="wl-vs-stat-number">20%</div>
@@ -270,61 +274,40 @@ get_header();
       </div>
 
       <div class="products-grid">
-        <!-- Mounjaro -->
+        <?php
+        if ( function_exists( 'have_rows' ) && have_rows( 'wl_treatments' ) ) :
+          while ( have_rows( 'wl_treatments' ) ) :
+            the_row();
+            $wl_name  = get_sub_field( 'name' );
+            $wl_desc  = get_sub_field( 'description' );
+            $wl_image = get_sub_field( 'image' );
+            $wl_price = get_sub_field( 'price' );
+            $wl_badge = get_sub_field( 'badge' );
+            $wl_url   = get_sub_field( 'url' );
+        ?>
         <div class="product-card">
-          <div class="product-badge">Most Effective</div>
+          <?php if ( $wl_badge ) : ?>
+          <div class="product-badge"><?php echo esc_html( $wl_badge ); ?></div>
+          <?php endif; ?>
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&h=400&fit=crop" alt="Mounjaro tirzepatide weight loss injection">
+            <img src="<?php echo esc_url( $wl_image ); ?>" alt="<?php echo esc_attr( $wl_name ); ?>">
           </div>
           <div class="product-content">
-            <h3>Mounjaro (Tirzepatide)</h3>
-            <p>The most advanced GLP-1 treatment available. Activates two receptors (GLP-1 and GIP) for significantly greater weight loss than older options. Clinical trials show up to 22% body weight lost in 72 weeks.</p>
+            <h3><?php echo esc_html( $wl_name ); ?></h3>
+            <p><?php echo esc_html( $wl_desc ); ?></p>
             <div class="product-footer">
-              <span class="product-price">From £125/mo</span>
-              <a href="#consultation" class="product-cta">
+              <span class="product-price"><?php echo esc_html( $wl_price ); ?></span>
+              <a href="<?php echo esc_url( home_url( '/contact-page/#book-appointment' ) ); ?>" class="product-cta">
                 Book Now
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow">
               </a>
             </div>
           </div>
         </div>
-
-        <!-- Wegovy -->
-        <div class="product-card">
-          <div class="product-badge">NICE Approved</div>
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop" alt="Wegovy semaglutide prescription">
-          </div>
-          <div class="product-content">
-            <h3>Wegovy (Semaglutide)</h3>
-            <p>The first GLP-1 to receive NICE approval for obesity. Reduces appetite by mimicking the natural fullness hormone. Proven to deliver 15–17% average weight loss in clinical trials over 68 weeks.</p>
-            <div class="product-footer">
-              <span class="product-price">From £199/mo</span>
-              <a href="#consultation" class="product-cta">
-                Book Now
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow">
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Saxenda -->
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop" alt="Saxenda liraglutide weight management">
-          </div>
-          <div class="product-content">
-            <h3>Saxenda (Liraglutide)</h3>
-            <p>A well-established daily GLP-1 injection with a strong safety record. Approved for long-term weight management. An excellent choice for patients seeking a proven treatment already familiar to clinicians.</p>
-            <div class="product-footer">
-              <span class="product-price">From £150/mo</span>
-              <a href="#consultation" class="product-cta">
-                Book Now
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow">
-              </a>
-            </div>
-          </div>
-        </div>
+        <?php
+          endwhile;
+        endif;
+        ?>
       </div>
 
       <!-- Eligibility note -->
@@ -347,13 +330,21 @@ get_header();
       <p class="section-subtitle">Weight loss that changes more than just the number on the scales</p>
 
       <div class="benefits-grid">
+        <?php
+        if ( function_exists( 'have_rows' ) && have_rows( 'wl_benefits' ) ) :
+          while ( have_rows( 'wl_benefits' ) ) :
+            the_row();
+            $ben_title = get_sub_field( 'title' );
+            $ben_desc  = get_sub_field( 'description' );
+            $ben_image = get_sub_field( 'image' );
+        ?>
         <div class="benefit-card">
           <div class="benefit-image">
-            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop" alt="Reduced joint pain after weight loss">
+            <img src="<?php echo esc_url( $ben_image ); ?>" alt="<?php echo esc_attr( $ben_title ); ?>">
           </div>
           <div class="benefit-content">
-            <h3>Joints that no longer hurt</h3>
-            <p>Every kg lost removes approximately 4kg of pressure from your knees. Patients who lose 15kg report walking further, sleeping better, and needing less pain relief within 3–4 months.</p>
+            <h3><?php echo esc_html( $ben_title ); ?></h3>
+            <p><?php echo esc_html( $ben_desc ); ?></p>
             <a href="#consultation" class="benefit-cta">
               Learn More
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -362,86 +353,10 @@ get_header();
             </a>
           </div>
         </div>
-
-        <div class="benefit-card">
-          <div class="benefit-image">
-            <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&h=400&fit=crop" alt="Improved blood sugar and type 2 diabetes">
-          </div>
-          <div class="benefit-content">
-            <h3>Blood sugar under control</h3>
-            <p>Many of our Type 2 diabetes patients reduce or stop their metformin within 6 months of starting Mounjaro. Lower blood glucose, improved HbA1c, and reduced cardiovascular risk — beyond just weight.</p>
-            <a href="#consultation" class="benefit-cta">
-              Learn More
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="benefit-card">
-          <div class="benefit-image">
-            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop" alt="More energy and confidence after weight loss">
-          </div>
-          <div class="benefit-content">
-            <h3>Energy and confidence restored</h3>
-            <p>Patients consistently report sleeping better, having more energy for family and work, and feeling genuinely confident in their body again — often after years of struggling alone.</p>
-            <a href="#consultation" class="benefit-cta">
-              Learn More
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="benefit-card">
-          <div class="benefit-image">
-            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&h=400&fit=crop" alt="Blood pressure improvement London pharmacy">
-          </div>
-          <div class="benefit-content">
-            <h3>Blood pressure that finally drops</h3>
-            <p>Losing 5–10% of body weight reduces systolic blood pressure by an average of 5–8mmHg. Our pharmacists monitor your results at every visit, tracking progress beyond just weight.</p>
-            <a href="#consultation" class="benefit-cta">
-              Learn More
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="benefit-card">
-          <div class="benefit-image">
-            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&h=400&fit=crop" alt="Sustainable eating habits">
-          </div>
-          <div class="benefit-content">
-            <h3>A changed relationship with food</h3>
-            <p>GLP-1 treatments reduce cravings and emotional eating at the neurological level — not just willpower. Patients describe "finally feeling in control" of their diet for the first time in years.</p>
-            <a href="#consultation" class="benefit-cta">
-              Learn More
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="benefit-card">
-          <div class="benefit-image">
-            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop" alt="Long term weight maintenance">
-          </div>
-          <div class="benefit-content">
-            <h3>Results that actually stay</h3>
-            <p>Unlike crash diets, medically supervised GLP-1 programmes teach sustainable habits alongside the treatment. Our ongoing support means you're equipped to maintain your results long-term.</p>
-            <a href="#consultation" class="benefit-cta">
-              Learn More
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
-        </div>
+        <?php
+          endwhile;
+        endif;
+        ?>
       </div>
     </div>
   </section>
@@ -449,55 +364,64 @@ get_header();
   <!-- ============================================
        HOW IT WORKS — STEPS
        ============================================ -->
+  <?php
+  /* ── Journey Steps — ACF-driven with hardcoded fallback ── */
+  $journey_title    = get_field( 'wl_journey_title' )    ?: 'Your weight loss journey at Chislehurst Pharmacy Group';
+  $journey_subtitle = get_field( 'wl_journey_subtitle' ) ?: 'Four clear steps from your first conversation to your goal weight';
+  $journey_steps    = get_field( 'wl_journey_steps' );
+
+  /* Fallback data when the repeater is empty / not yet saved */
+  if ( empty( $journey_steps ) ) {
+      $journey_steps = array(
+          array(
+              'image'       => 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop',
+              'image_alt'   => 'Initial weight loss consultation',
+              'label'       => 'Step 1',
+              'heading'     => 'Free Consultation',
+              'description' => 'Meet your pharmacist at our Chislehurst or Pond End clinic. We review your health history, calculate your BMI, discuss your goals and confirm which treatment is right for you. No pressure, no commitment on the day.',
+          ),
+          array(
+              'image'       => 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&h=400&fit=crop',
+              'image_alt'   => 'Same day prescription Mounjaro Wegovy London',
+              'label'       => 'Step 2',
+              'heading'     => 'Same-Day Prescription',
+              'description' => 'Our pharmacists can assess your suitability and prescribe Mounjaro, Wegovy or Saxenda in a single visit where clinically appropriate. You leave your appointment with your medication and a clear injection guide — no waiting for a GP letter.',
+          ),
+          array(
+              'image'       => 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&h=400&fit=crop',
+              'image_alt'   => 'Monthly review weight loss check-in',
+              'label'       => 'Step 3',
+              'heading'     => 'Monthly Check-Ins',
+              'description' => 'Every month, pop back in for a face-to-face review. We track your weight, blood pressure and how you\'re feeling. We adjust your dose as needed and tackle any side effects early. You\'re never left to figure it out alone.',
+          ),
+          array(
+              'image'       => 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop',
+              'image_alt'   => 'Reach goal weight London',
+              'label'       => 'Step 4',
+              'heading'     => 'Reach Your Goal',
+              'description' => 'Most patients reach their target weight within 9–12 months. We then transition you to a maintenance plan designed to keep the weight off permanently — because the goal isn\'t just losing weight, it\'s not finding it again.',
+          ),
+      );
+  }
+  ?>
   <section class="how-it-works" id="how-it-works">
     <div class="container">
-      <h2 class="section-title gradient-text">Your weight loss journey at Rey London</h2>
-      <p class="section-subtitle">Four clear steps from your first conversation to your goal weight</p>
+      <h2 class="section-title gradient-text"><?php echo esc_html( $journey_title ); ?></h2>
+      <p class="section-subtitle"><?php echo esc_html( $journey_subtitle ); ?></p>
 
       <div class="steps-grid">
+        <?php foreach ( $journey_steps as $i => $step ) : ?>
         <div class="step-card">
           <div class="step-image">
-            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop" alt="Initial weight loss consultation">
+            <img src="<?php echo esc_url( $step['image'] ); ?>" alt="<?php echo esc_attr( $step['image_alt'] ?? '' ); ?>">
           </div>
           <div class="step-content">
-            <span class="step-label">Step 1</span>
-            <h3>Free Consultation</h3>
-            <p>Meet your pharmacist at our Chislehurst or Pond End clinic. We review your health history, calculate your BMI, discuss your goals and confirm which treatment is right for you. No pressure, no commitment on the day.</p>
+            <span class="step-label"><?php echo esc_html( $step['label'] ); ?></span>
+            <h3><?php echo esc_html( $step['heading'] ); ?></h3>
+            <p><?php echo esc_html( $step['description'] ); ?></p>
           </div>
         </div>
-
-        <div class="step-card">
-          <div class="step-image">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&h=400&fit=crop" alt="Same day prescription Mounjaro Wegovy London">
-          </div>
-          <div class="step-content">
-            <span class="step-label">Step 2</span>
-            <h3>Same-Day Prescription</h3>
-            <p>As Independent Prescribers, our pharmacists can prescribe Mounjaro, Wegovy or Saxenda the same day. You leave your appointment with your medication and a clear injection guide — no waiting for a GP letter.</p>
-          </div>
-        </div>
-
-        <div class="step-card">
-          <div class="step-image">
-            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&h=400&fit=crop" alt="Monthly review weight loss check-in">
-          </div>
-          <div class="step-content">
-            <span class="step-label">Step 3</span>
-            <h3>Monthly Check-Ins</h3>
-            <p>Every month, pop back in for a face-to-face review. We track your weight, blood pressure and how you're feeling. We adjust your dose as needed and tackle any side effects early. You're never left to figure it out alone.</p>
-          </div>
-        </div>
-
-        <div class="step-card">
-          <div class="step-image">
-            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop" alt="Reach goal weight London">
-          </div>
-          <div class="step-content">
-            <span class="step-label">Step 4</span>
-            <h3>Reach Your Goal</h3>
-            <p>Most patients reach their target weight within 9–12 months. We then transition you to a maintenance plan designed to keep the weight off permanently — because the goal isn't just losing weight, it's not finding it again.</p>
-          </div>
-        </div>
+        <?php endforeach; ?>
       </div>
     </div>
   </section>
@@ -523,113 +447,38 @@ get_header();
       </div>
 
       <div class="testimonials-grid">
+        <?php
+        if ( function_exists( 'have_rows' ) && have_rows( 'wl_testimonials' ) ) :
+          while ( have_rows( 'wl_testimonials' ) ) :
+            the_row();
+            $t_quote    = get_sub_field( 'quote' );
+            $t_name     = get_sub_field( 'name' );
+            $t_initials = get_sub_field( 'initials' );
+            $t_detail   = get_sub_field( 'detail' );
+            $t_stars    = (int) get_sub_field( 'stars' );
+            if ( ! $t_stars ) $t_stars = 5;
+        ?>
         <div class="testimonial-card">
           <div class="testimonial-stars">
+            <?php for ( $s = 0; $s < $t_stars; $s++ ) : ?>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <?php endfor; ?>
           </div>
-          <p class="testimonial-quote">"18kg down in 5 months with Mounjaro. I'd tried every diet for 10 years. The difference is that the hunger just stopped. My knee pain is nearly gone, my blood pressure is normal for the first time in years. This has genuinely changed my life."</p>
+          <p class="testimonial-quote"><?php echo esc_html( $t_quote ); ?></p>
           <div class="testimonial-author">
-            <div class="testimonial-avatar">MT</div>
+            <div class="testimonial-avatar"><?php echo esc_html( $t_initials ); ?></div>
             <div>
-              <div class="testimonial-name">Michael T.</div>
-              <div class="testimonial-location">Pond End Pharmacy</div>
+              <div class="testimonial-name"><?php echo esc_html( $t_name ); ?></div>
+              <?php if ( $t_detail ) : ?>
+              <div class="testimonial-location"><?php echo esc_html( $t_detail ); ?></div>
+              <?php endif; ?>
             </div>
           </div>
         </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          </div>
-          <p class="testimonial-quote">"I was sceptical — I'd been through so many failed diets. But the pharmacist at Chislehurst was so thorough and caring. Wegovy worked and the monthly check-ins kept me on track. Down 22kg and feeling like myself again."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">SR</div>
-            <div>
-              <div class="testimonial-name">Sarah R.</div>
-              <div class="testimonial-location">Chislehurst Pharmacy</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          </div>
-          <p class="testimonial-quote">"My GP had a 3-month waiting list. Rey London had me started on Mounjaro within a week. The pharmacist knew everything about the treatment and answered every single question I had. I've now lost 3 stone and my diabetes medication has been halved."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">JA</div>
-            <div>
-              <div class="testimonial-name">James A.</div>
-              <div class="testimonial-location">Pond End Pharmacy</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          </div>
-          <p class="testimonial-quote">"As a busy working mum, I didn't have time for an expensive weight loss clinic. Rey London fit perfectly into my routine — pop in monthly on my way home. Lost 14kg without the stress. Genuinely could not recommend more highly."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">LK</div>
-            <div>
-              <div class="testimonial-name">Louise K.</div>
-              <div class="testimonial-location">Chislehurst Pharmacy</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          </div>
-          <p class="testimonial-quote">"The weight loss programme has been life-changing. Professional, supportive, results-driven. I've lost 18kg in 4 months with expert guidance at every step. The pharmacist is far more accessible than any doctor I've seen."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">PB</div>
-            <div>
-              <div class="testimonial-name">Peter B.</div>
-              <div class="testimonial-location">Pond End Pharmacy</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#facc15" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          </div>
-          <p class="testimonial-quote">"After a hip replacement, my surgeon told me I needed to lose weight before they'd consider the second hip. In 7 months with Mounjaro at Rey London, I lost 25kg. The op is now booked. I'm beyond grateful."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">DH</div>
-            <div>
-              <div class="testimonial-name">Diana H.</div>
-              <div class="testimonial-location">Chislehurst Pharmacy</div>
-            </div>
-          </div>
-        </div>
+        <?php
+          endwhile;
+        endif;
+        ?>
       </div>
 
       <div class="testimonials-trust">
@@ -662,100 +511,88 @@ get_header();
       </h2>
       <p class="section-subtitle">Weight loss prescriptions at both locations. Walk-ins welcome. Same-day appointments available.</p>
 
-      <div class="locations-grid">
-        <div class="location-card">
-          <div class="location-image">
-            <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769343725749-0.jpeg" alt="Rey London Pond Pharmacy - Weight Loss Chislehurst">
-          </div>
-          <div class="location-content">
-            <h3>Pond Pharmacy — Chislehurst</h3>
-            <p class="wl-location-seo">Medical weight loss in Chislehurst, BR7. Prescription Mounjaro & Wegovy with same-day appointments. Serving Chislehurst, Bromley, Sidcup, and Bexley.</p>
-            <div class="location-details">
-              <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-19.svg" alt="Address">
-                <p>59 High St, Chislehurst BR7 5AF</p>
-              </div>
-              <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-32.svg" alt="Phone">
-                <a href="tel:02084673158">020 8467 3158</a>
-              </div>
-              <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours">
-                <p>Mon–Fri: 8am–8pm | Sat: 9am–6pm | Sun: 10am–4pm</p>
-              </div>
-            </div>
-            <div class="location-actions">
-              <a href="tel:02084673158" class="btn-primary">Book Consultation</a>
-              <a href="https://maps.google.com/?q=59+High+St+Chislehurst+BR7+5AF" target="_blank" rel="noopener" class="btn-outline">Get Directions</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="location-card">
-          <div class="location-image">
-            <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769344823391-0.jpeg" alt="Rey London Chislehurst Pharmacy - Weight Loss London">
-          </div>
-          <div class="location-content">
-            <h3>Chislehurst Pharmacy — Pond End</h3>
-            <p class="wl-location-seo">Medical weight loss at Pond End, SE London. Prescription Mounjaro & Wegovy with face-to-face pharmacist support. Serving Orpington, Petts Wood, St Mary Cray, and Swanley.</p>
-            <div class="location-details">
-              <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-19.svg" alt="Address">
-                <p>59 Chislehurst Rd, Chislehurst BR7 5NP</p>
-              </div>
-              <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-32.svg" alt="Phone">
-                <a href="tel:02082950017">020 8295 0017</a>
-              </div>
-              <div class="detail-item">
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours">
-                <p>Mon–Fri: 8am–8pm | Sat: 9am–6pm | Sun: 10am–4pm</p>
-              </div>
-            </div>
-            <div class="location-actions">
-              <a href="tel:02082950017" class="btn-primary">Book Consultation</a>
-              <a href="https://maps.google.com/?q=59+Chislehurst+Rd+Chislehurst+BR7+5NP" target="_blank" rel="noopener" class="btn-outline">Get Directions</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <?php get_template_part( 'template-parts/location-cards', null, array( 'cta_prefix' => 'Book at' ) ); ?>
     </div>
   </section>
 
+  <?php
+  /* ── Why Choose Us — ACF-driven with hardcoded fallback ── */
+  $why_title           = get_field( 'wl_why_title' )           ?: 'Why choose Chislehurst Pharmacy Group for';
+  $why_title_highlight = get_field( 'wl_why_title_highlight' ) ?: 'medical weight loss?';
+  $why_subtitle        = get_field( 'wl_why_subtitle' )        ?: "We're not an online chatbot or a faceless app. We're your local pharmacist — the difference is enormous.";
+  $why_pharm_image     = get_field( 'wl_why_pharmacist_image' ) ?: 'https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517579457-0.png';
+  $why_pharm_name      = get_field( 'wl_why_pharmacist_name' )  ?: 'Sumeet Banker';
+  $why_pharm_role      = 'Superintendent Pharmacist';
+  $why_pharm_badge     = get_field( 'wl_why_pharmacist_badge' ) ?: 'GPhC Registered';
+  $why_pharm_bio       = get_field( 'wl_why_pharmacist_bio' )   ?: '"Weight is complex — it\'s hormonal, emotional, and behavioural. That\'s why I believe everyone deserves face-to-face care from someone who actually listens. Not an algorithm."';
+  $why_stats           = get_field( 'wl_why_stats' );
+  $why_pillars         = get_field( 'wl_why_pillars' );
+
+  if ( empty( $why_stats ) ) {
+      $why_stats = array(
+          array( 'number' => 'No GP',  'label' => 'Referral required — start this week' ),
+          array( 'number' => '15+',    'label' => 'Years of pharmacy expertise in London' ),
+          array( 'number' => '2',      'label' => 'Convenient South East London locations' ),
+          array( 'number' => '10K+',   'label' => "Patients who've trusted our care" ),
+      );
+  }
+
+  if ( empty( $why_pillars ) ) {
+      $why_pillars = array(
+          array( 'title' => 'Qualified staff on-site',  'description' => 'No referral, no waiting list — prescription same day' ),
+          array( 'title' => 'Monthly face-to-face reviews',     'description' => 'We track more than weight — blood pressure, glucose, wellbeing' ),
+          array( 'title' => 'Genuine clinical privacy',         'description' => "Discreet consultations — we've heard everything before" ),
+      );
+  }
+
+  /* SVG icons for stat cards — cycled by index */
+  $stat_icons = array(
+      '<svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+      '<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+      '<svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+      '<svg viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  );
+
+  $pillar_icons = array(
+      '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>',
+      '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>',
+      '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+  );
+  ?>
   <!-- ============================================
-       WHY REY LONDON
+       WHY CHISLEHURST PHARMACY GROUP
        ============================================ -->
   <section class="team-section" id="why-us">
     <div class="container">
       <div class="team-header">
         <h2 class="section-title">
-          Why choose Rey London for<br>
-          <span class="gradient-text">medical weight loss?</span>
+          <?php echo esc_html( $why_title ); ?><br>
+          <span class="gradient-text"><?php echo esc_html( $why_title_highlight ); ?></span>
         </h2>
-        <p class="section-subtitle">We're not an online chatbot or a faceless app. We're your local pharmacist — the difference is enormous.</p>
+        <p class="section-subtitle"><?php echo esc_html( $why_subtitle ); ?></p>
       </div>
 
       <div class="team-content-grid">
         <div class="pharmacist-hero">
           <div class="pharmacist-image-wrapper">
-            <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517579457-0.png" alt="Sumeet Banker — Superintendent Pharmacist, Rey London weight loss specialist" class="pharmacist-image">
+            <img src="<?php echo esc_url( $why_pharm_image ); ?>" alt="<?php echo esc_attr( $why_pharm_name ); ?> — <?php echo esc_attr( $why_pharm_role ); ?>" class="pharmacist-image">
             <div class="pharmacist-profile-card">
               <div class="profile-header">
                 <div class="profile-info">
-                  <h3 class="profile-name">Sumeet Banker</h3>
-                  <p class="profile-title">Superintendent Pharmacist & Independent Prescriber</p>
+                  <h3 class="profile-name"><?php echo esc_html( $why_pharm_name ); ?></h3>
+                  <p class="profile-title"><?php echo esc_html( $why_pharm_role ); ?></p>
                   <div class="profile-badge">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                       <path d="M8 1l2.5 5 5.5.5-4 4 1 5.5L8 13l-5 3 1-5.5-4-4 5.5-.5L8 1z" fill="currentColor"/>
                     </svg>
-                    <span>GPhC Registered</span>
+                    <span><?php echo esc_html( $why_pharm_badge ); ?></span>
                   </div>
                 </div>
               </div>
-              <p class="profile-bio">"Weight is complex — it's hormonal, emotional, and behavioural. That's why I believe everyone deserves face-to-face care from someone who actually listens. Not an algorithm."</p>
+              <p class="profile-bio"><?php echo esc_html( $why_pharm_bio ); ?></p>
               <div class="profile-actions">
-                <a href="tel:02084673158" class="btn-profile-primary">Book Consultation</a>
-                <a href="/#team" class="btn-profile-secondary">Meet the Team</a>
+                <a href="https://chislehurstpharmacygroup.kinsta.cloud/contact-page/#book-appointment" class="btn-profile-primary">Book Consultation</a>
+                <a href="<?php echo esc_url( home_url( '/meet-the-team/' ) ); ?>" class="btn-profile-secondary">Meet the Team</a>
               </div>
             </div>
           </div>
@@ -763,88 +600,32 @@ get_header();
 
         <div class="team-stats-premium">
           <div class="stats-grid-premium">
+            <?php foreach ( $why_stats as $i => $stat ) : ?>
             <div class="stat-card-hero">
               <div class="stat-icon-hero">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                  <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                <?php echo $stat_icons[ $i % count( $stat_icons ) ]; ?>
               </div>
               <div class="stat-content-hero">
-                <div class="stat-number-hero">No GP</div>
-                <h4 class="stat-label-hero">Referral required — start this week</h4>
+                <div class="stat-number-hero"><?php echo esc_html( $stat['number'] ); ?></div>
+                <h4 class="stat-label-hero"><?php echo esc_html( $stat['label'] ); ?></h4>
               </div>
             </div>
-
-            <div class="stat-card-hero">
-              <div class="stat-icon-hero">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M12 6v6l4 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div class="stat-content-hero">
-                <div class="stat-number-hero">15+</div>
-                <h4 class="stat-label-hero">Years of pharmacy expertise in London</h4>
-              </div>
-            </div>
-
-            <div class="stat-card-hero">
-              <div class="stat-icon-hero">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                  <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div class="stat-content-hero">
-                <div class="stat-number-hero">2</div>
-                <h4 class="stat-label-hero">Convenient South East London locations</h4>
-              </div>
-            </div>
-
-            <div class="stat-card-hero">
-              <div class="stat-icon-hero">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div class="stat-content-hero">
-                <div class="stat-number-hero">10K+</div>
-                <h4 class="stat-label-hero">Patients who've trusted our care</h4>
-              </div>
-            </div>
+            <?php endforeach; ?>
           </div>
 
           <!-- Feature pillars -->
           <div class="wl-pillars">
+            <?php foreach ( $why_pillars as $i => $pillar ) : ?>
             <div class="wl-pillar">
               <div class="wl-pillar-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+                <?php echo $pillar_icons[ $i % count( $pillar_icons ) ]; ?>
               </div>
               <div class="wl-pillar-text">
-                <strong>Independent Prescribers on-site</strong>
-                <span>No referral, no waiting list — prescription same day</span>
+                <strong><?php echo esc_html( $pillar['title'] ); ?></strong>
+                <span><?php echo esc_html( $pillar['description'] ); ?></span>
               </div>
             </div>
-            <div class="wl-pillar">
-              <div class="wl-pillar-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              </div>
-              <div class="wl-pillar-text">
-                <strong>Monthly face-to-face reviews</strong>
-                <span>We track more than weight — blood pressure, glucose, wellbeing</span>
-              </div>
-            </div>
-            <div class="wl-pillar">
-              <div class="wl-pillar-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              </div>
-              <div class="wl-pillar-text">
-                <strong>Genuine clinical privacy</strong>
-                <span>Discreet consultations — we've heard everything before</span>
-              </div>
-            </div>
+            <?php endforeach; ?>
           </div>
         </div>
       </div>
@@ -857,6 +638,22 @@ get_header();
           <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/ico.svg" alt="ICO">
           <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/gpc.svg" alt="GPhC">
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       COMPLIANCE DISCLAIMER — Full "Important Information" block
+       ============================================ -->
+  <?php $wl_disclaimer_full = get_field( 'wl_disclaimer_text' ) ?: 'Results cited are based on average outcomes from the SURMOUNT-1 clinical trial (tirzepatide 15mg, 72-week data). Individual results will vary. Weight loss depends on adherence to treatment, dietary changes, physical activity and individual metabolic factors. These figures are provided for informational purposes only and do not constitute medical advice. A full clinical assessment with a qualified healthcare professional is required before starting any weight loss treatment.'; ?>
+  <section class="wl-disclaimer-section" aria-label="Important information">
+    <div class="container">
+      <div class="wl-disclaimer-block">
+        <h3 class="wl-disclaimer-heading">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          Important information
+        </h3>
+        <p class="wl-disclaimer-body"><?php echo esc_html( $wl_disclaimer_full ); ?></p>
       </div>
     </div>
   </section>
@@ -889,7 +686,7 @@ get_header();
             <svg class="wl-faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <div class="wl-faq-answer">
-            <p>No. Our pharmacists are Independent Prescribers, which means they are legally authorised to assess your suitability and issue a prescription directly. You don't need to see your GP first, and there's no waiting list. Many of our patients book on a Monday and start treatment by Wednesday.</p>
+            <p>No. Our pharmacists are legally authorised to assess your suitability and issue a prescription directly. You don't need to see your GP first, and there's no waiting list.</p>
           </div>
         </details>
 
@@ -966,20 +763,19 @@ get_header();
       <div class="wl-footer-cta-top">
         <div class="wl-cta-badges">
           <span class="wl-cta-badge">GPhC Registered</span>
-          <span class="wl-cta-badge">Independent Prescribers</span>
           <span class="wl-cta-badge">Same-Day Prescription</span>
           <span class="wl-cta-badge">No GP Referral</span>
         </div>
-        <h2 class="wl-footer-cta-title">Start losing weight this week —<br>not in 3 months</h2>
+        <h2 class="wl-footer-cta-title">Start your weight-loss journey<br>with face-to-face pharmacist care</h2>
         <p class="wl-footer-cta-sub">Free consultation. No GP referral. Same-day prescription. Two South East London locations with face-to-face pharmacist support.</p>
         <div class="wl-footer-cta-buttons">
-          <a href="tel:02084673158" class="wl-btn-cta-white">
+          <a href="https://chislehurstpharmacygroup.kinsta.cloud/contact-page/#book-appointment" class="wl-btn-cta-white">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             Book Free Consultation
           </a>
-          <a href="tel:02084673158" class="wl-btn-cta-ghost">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.09 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81L9.27 8.95a16 16 0 0 0 6.78 6.78l1.42-1.42a12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Call Us: 020 8467 3158
+          <a href="https://chislehurstpharmacygroup.kinsta.cloud/contact-page/" class="wl-btn-cta-ghost">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Contact Us
           </a>
         </div>
         <div class="wl-cta-checks">
@@ -999,9 +795,10 @@ get_header();
           <p>Get expert tips on weight management, nutrition, and pharmacy health services — straight to your inbox</p>
         </div>
         <form class="newsletter-form wl-footer-newsletter-form">
+          <input type="text" name="rl_hp" style="display:none" tabindex="-1" autocomplete="off">
           <div class="newsletter-input-wrapper">
             <svg class="newsletter-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 4h14c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 6l-9 6-9-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <input type="email" placeholder="Enter your email address" class="newsletter-input" required>
+            <input type="email" name="email" autocomplete="email" placeholder="Enter your email address" class="newsletter-input" required>
             <button type="submit" class="newsletter-btn">Subscribe <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
         </form>

@@ -20,7 +20,7 @@ get_header();
         <div class="b12-hero-text">
           <div class="b12-hero-pill">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-            <span>Private Injection Service</span>
+            <span><?php echo esc_html( rl_field( 'b12_hero_pill', 'Private Injection Service' ) ); ?></span>
           </div>
           <h1 class="b12-hero-title"><?php echo wp_kses_post( rl_field( 'b12_hero_title', 'Vitamin B12 Injections in <span class="gradient-text">South East London</span>' ) ); ?></h1>
           <p class="b12-hero-subtitle"><?php echo esc_html( rl_field( 'b12_hero_subtitle', 'Boost your energy, lift brain fog, and address B12 deficiency with a fast-acting intramuscular injection. No GP referral needed. Walk-ins welcome at both Chislehurst pharmacies.' ) ); ?></p>
@@ -30,9 +30,29 @@ get_header();
             $b12_booking_text = rl_field( 'b12_booking_text', 'Book Your B12 Injection' );
             ?>
             <a href="<?php echo esc_url( $b12_booking_url ); ?>" target="_blank" rel="noopener" class="btn-primary b12-btn-lg"><?php echo esc_html( $b12_booking_text ); ?></a>
+            <a href="#symptoms" class="btn-outline b12-btn-lg b12-btn-outline-hero">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg>
+              Check If You're Deficient
+            </a>
             <p style="font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-top: 12px; max-width: 400px;">Vitamin B12 injections at Chislehurst Pharmacy Group are booked through our trusted partner TreatLocal. You will be redirected to their secure booking system.</p>
           </div>
           <div class="b12-trust-strip">
+            <?php
+            $b12_trust = rl_field( 'b12_hero_trust' );
+            if ( $b12_trust && is_array( $b12_trust ) ) :
+                $b12_trust_icons = array(
+                    '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>',
+                    '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>',
+                    '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>',
+                    '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>',
+                );
+                foreach ( $b12_trust as $i => $item ) : ?>
+            <div class="b12-trust-item">
+              <?php echo $b12_trust_icons[ $i % count( $b12_trust_icons ) ]; ?>
+              <span><?php echo esc_html( $item['text'] ); ?></span>
+            </div>
+                <?php endforeach;
+            else : ?>
             <div class="b12-trust-item">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
               <span>GPhC Registered</span>
@@ -49,10 +69,12 @@ get_header();
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               <span>No Referral Needed</span>
             </div>
+            <?php endif; ?>
           </div>
         </div>
         <div class="b12-hero-visual">
-          <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&h=600&fit=crop" alt="Vitamin B12 injection South East London — pharmacist in professional setting">
+          <?php $b12_hero_img = rl_field( 'b12_hero_image' ); ?>
+          <img src="<?php echo esc_url( $b12_hero_img ?: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&h=600&fit=crop' ); ?>" alt="Vitamin B12 injection South East London — pharmacist in professional setting">
           <div class="b12-hero-badge-premium">
             <div class="b12-badge-icon-wrap">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
@@ -71,6 +93,16 @@ get_header();
   <section class="b12-stats-section">
     <div class="container">
       <div class="b12-stats-grid">
+        <?php
+        $b12_stats = rl_field( 'b12_stats' );
+        if ( $b12_stats && is_array( $b12_stats ) ) :
+            foreach ( $b12_stats as $stat ) : ?>
+        <div class="b12-stat-card b12-revealed">
+          <div class="b12-stat-number"><?php echo esc_html( $stat['number'] ); ?></div>
+          <div class="b12-stat-label"><?php echo esc_html( $stat['label'] ); ?></div>
+        </div>
+            <?php endforeach;
+        else : ?>
         <div class="b12-stat-card b12-revealed">
           <div class="b12-stat-number">1 in 5</div>
           <div class="b12-stat-label">UK adults have low B12 levels</div>
@@ -87,6 +119,7 @@ get_header();
           <div class="b12-stat-number">15 min</div>
           <div class="b12-stat-label">Quick in-clinic appointment</div>
         </div>
+        <?php endif; ?>
       </div>
     </div>
   </section>
@@ -96,45 +129,50 @@ get_header();
     <div class="container">
       <div class="b12-about-grid">
         <div class="b12-about-visual">
-          <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=600&h=700&fit=crop" alt="Vitamin B12 deficiency symptoms and health effects">
+          <?php $b12_about_img = rl_field( 'b12_about_image' ); ?>
+          <img src="<?php echo esc_url( $b12_about_img ?: 'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=600&h=700&fit=crop' ); ?>" alt="Vitamin B12 deficiency symptoms and health effects">
           <div class="b12-about-badge">
-            <div class="b12-badge-stat">6–8 wks</div>
-            <div class="b12-badge-desc">How long a single injection can sustain optimal B12 levels</div>
+            <div class="b12-badge-stat"><?php echo esc_html( rl_field( 'b12_about_badge', '6–8 wks' ) ); ?></div>
+            <div class="b12-badge-desc"><?php echo esc_html( rl_field( 'b12_about_badge_desc', 'How long a single injection can sustain optimal B12 levels' ) ); ?></div>
           </div>
         </div>
         <div class="b12-about-content">
-          <span class="b12-eyebrow">THE ESSENTIAL VITAMIN</span>
-          <h2 class="section-title b12-left-title">Why Vitamin B12 matters more than <span class="gradient-text">you think</span></h2>
-          <p class="b12-intro-text">Vitamin B12 is essential for red blood cell production, nerve function, and DNA synthesis. Your body can't make it — you have to get it from food or supplements. Many people are chronically low without knowing it.</p>
+          <span class="b12-eyebrow"><?php echo esc_html( rl_field( 'b12_about_eyebrow', 'THE ESSENTIAL VITAMIN' ) ); ?></span>
+          <h2 class="section-title b12-left-title"><?php echo wp_kses_post( rl_field( 'b12_about_heading', 'Why Vitamin B12 matters more than <span class="gradient-text">you think</span>' ) ); ?></h2>
+          <p class="b12-intro-text"><?php echo esc_html( rl_field( 'b12_about_intro', 'Vitamin B12 is essential for red blood cell production, nerve function, and DNA synthesis. Your body can\'t make it — you have to get it from food or supplements. Many people are chronically low without knowing it.' ) ); ?></p>
 
           <div class="b12-fact-cards">
+            <?php
+            $b12_facts = rl_field( 'b12_about_facts' );
+            if ( $b12_facts && is_array( $b12_facts ) ) :
+                $fact_icons = array(
+                    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>',
+                    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>',
+                    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>',
+                );
+                foreach ( $b12_facts as $i => $fact ) : ?>
             <div class="b12-fact-card b12-revealed">
-              <div class="b12-fact-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-              </div>
+              <div class="b12-fact-icon"><?php echo $fact_icons[ $i % count( $fact_icons ) ]; ?></div>
               <div>
-                <h4>Energy Production</h4>
-                <p>B12 is critical for converting food into cellular energy. Low levels leave mitochondria unable to function properly, causing chronic fatigue no amount of sleep fixes.</p>
+                <h4><?php echo esc_html( $fact['title'] ); ?></h4>
+                <p><?php echo esc_html( $fact['description'] ); ?></p>
               </div>
+            </div>
+                <?php endforeach;
+            else : ?>
+            <div class="b12-fact-card b12-revealed">
+              <div class="b12-fact-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+              <div><h4>Energy Production</h4><p>B12 is critical for converting food into cellular energy. Low levels leave mitochondria unable to function properly, causing chronic fatigue no amount of sleep fixes.</p></div>
             </div>
             <div class="b12-fact-card">
-              <div class="b12-fact-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-              </div>
-              <div>
-                <h4>Brain &amp; Nerve Health</h4>
-                <p>B12 maintains the myelin sheath protecting your nerves. Deficiency causes brain fog, memory issues, pins and needles, and in severe cases, irreversible nerve damage.</p>
-              </div>
+              <div class="b12-fact-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+              <div><h4>Brain &amp; Nerve Health</h4><p>B12 maintains the myelin sheath protecting your nerves. Deficiency causes brain fog, memory issues, pins and needles, and in severe cases, irreversible nerve damage.</p></div>
             </div>
             <div class="b12-fact-card">
-              <div class="b12-fact-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              </div>
-              <div>
-                <h4>Red Blood Cell Formation</h4>
-                <p>Without adequate B12, red blood cells become abnormally large and can't carry oxygen efficiently — leading to anaemia, shortness of breath, and persistent weakness.</p>
-              </div>
+              <div class="b12-fact-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+              <div><h4>Red Blood Cell Formation</h4><p>Without adequate B12, red blood cells become abnormally large and can't carry oxygen efficiently — leading to anaemia, shortness of breath, and persistent weakness.</p></div>
             </div>
+            <?php endif; ?>
           </div>
         </div>
       </div>
@@ -151,60 +189,44 @@ get_header();
       <div class="destinations-header">
         <div class="destinations-pill">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-          <span>Recognise the Signs</span>
+          <span><?php echo esc_html( rl_field( 'b12_symptoms_pill', 'Recognise the Signs' ) ); ?></span>
         </div>
-        <h2 class="destinations-title">Could you be B12 <br class="destinations-br-md">deficient?</h2>
-        <p class="destinations-desc">B12 deficiency often goes undiagnosed for years. These symptoms are commonly dismissed as stress or ageing — but they may have a simple, correctable cause.</p>
+        <h2 class="destinations-title"><?php echo wp_kses_post( rl_field( 'b12_symptoms_title', 'Could you be B12 <br class="destinations-br-md">deficient?' ) ); ?></h2>
+        <p class="destinations-desc"><?php echo esc_html( rl_field( 'b12_symptoms_desc', 'B12 deficiency often goes undiagnosed for years. These symptoms are commonly dismissed as stress or ageing — but they may have a simple, correctable cause.' ) ); ?></p>
       </div>
 
       <div class="b12-symptoms-grid">
+        <?php
+        $b12_symptoms = rl_field( 'b12_symptoms_cards' );
+        if ( $b12_symptoms && is_array( $b12_symptoms ) ) :
+            $symp_icons = array(
+                '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>',
+                '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>',
+                '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>',
+                '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>',
+                '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+                '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>',
+            );
+            foreach ( $b12_symptoms as $i => $card ) : ?>
         <div class="b12-symptom-card b12-revealed">
-          <div class="b12-symptom-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </div>
-          <h3>Extreme Tiredness &amp; Fatigue</h3>
-          <p>Persistent exhaustion even after adequate sleep. Feeling drained after minimal exertion or struggling to get through the day.</p>
+          <div class="b12-symptom-icon"><?php echo $symp_icons[ $i % count( $symp_icons ) ]; ?></div>
+          <h3><?php echo esc_html( $card['title'] ); ?></h3>
+          <p><?php echo esc_html( $card['description'] ); ?></p>
         </div>
-        <div class="b12-symptom-card b12-revealed">
-          <div class="b12-symptom-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          </div>
-          <h3>Brain Fog &amp; Poor Concentration</h3>
-          <p>Difficulty focusing, forgetfulness, mental cloudiness. Tasks that used to be easy feel mentally draining.</p>
-        </div>
-        <div class="b12-symptom-card b12-revealed">
-          <div class="b12-symptom-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-          </div>
-          <h3>Pins &amp; Needles</h3>
-          <p>Tingling or numbness in hands, feet, or legs — a sign of nerve involvement. Can worsen significantly without treatment.</p>
-        </div>
-        <div class="b12-symptom-card b12-revealed">
-          <div class="b12-symptom-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          </div>
-          <h3>Shortness of Breath</h3>
-          <p>Reduced red blood cell production means less oxygen reaches muscles and organs. Even light activity can leave you breathless.</p>
-        </div>
-        <div class="b12-symptom-card b12-revealed">
-          <div class="b12-symptom-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          </div>
-          <h3>Low Mood &amp; Irritability</h3>
-          <p>B12 is involved in serotonin production. Deficiency can contribute to depressive symptoms, anxiety, and mood instability.</p>
-        </div>
-        <div class="b12-symptom-card b12-revealed">
-          <div class="b12-symptom-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
-          </div>
-          <h3>Pale or Jaundiced Skin</h3>
-          <p>A yellowing or pallor to skin and whites of eyes can indicate B12-related anaemia affecting red blood cell production and breakdown.</p>
-        </div>
+            <?php endforeach;
+        else : ?>
+        <div class="b12-symptom-card b12-revealed"><div class="b12-symptom-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>Extreme Tiredness &amp; Fatigue</h3><p>Persistent exhaustion even after adequate sleep. Feeling drained after minimal exertion or struggling to get through the day.</p></div>
+        <div class="b12-symptom-card b12-revealed"><div class="b12-symptom-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><h3>Brain Fog &amp; Poor Concentration</h3><p>Difficulty focusing, forgetfulness, mental cloudiness. Tasks that used to be easy feel mentally draining.</p></div>
+        <div class="b12-symptom-card b12-revealed"><div class="b12-symptom-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div><h3>Pins &amp; Needles</h3><p>Tingling or numbness in hands, feet, or legs — a sign of nerve involvement. Can worsen significantly without treatment.</p></div>
+        <div class="b12-symptom-card b12-revealed"><div class="b12-symptom-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><h3>Shortness of Breath</h3><p>Reduced red blood cell production means less oxygen reaches muscles and organs. Even light activity can leave you breathless.</p></div>
+        <div class="b12-symptom-card b12-revealed"><div class="b12-symptom-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><h3>Low Mood &amp; Irritability</h3><p>B12 is involved in serotonin production. Deficiency can contribute to depressive symptoms, anxiety, and mood instability.</p></div>
+        <div class="b12-symptom-card b12-revealed"><div class="b12-symptom-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div><h3>Pale or Jaundiced Skin</h3><p>A yellowing or pallor to skin and whites of eyes can indicate B12-related anaemia affecting red blood cell production and breakdown.</p></div>
+        <?php endif; ?>
       </div>
 
       <div class="b12-at-risk-note">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-        <p><strong>Higher risk groups:</strong> Vegans &amp; vegetarians, over-50s, people with IBS/Crohn's/coeliac, those taking metformin or proton pump inhibitors, and anyone with pernicious anaemia.</p>
+        <?php echo wp_kses_post( rl_field( 'b12_at_risk_note', '<p><strong>Higher risk groups:</strong> Vegans &amp; vegetarians, over-50s, people with IBS/Crohn\'s/coeliac, those taking metformin or proton pump inhibitors, and anyone with pernicious anaemia.</p>' ) ); ?>
       </div>
     </div>
   </section>
@@ -212,8 +234,8 @@ get_header();
   <!-- ========== INJECTION VS TABLETS ========== -->
   <section class="b12-compare-section" id="why-injection">
     <div class="container">
-      <h2 class="section-title">Injection vs <span class="gradient-text">oral supplements</span></h2>
-      <p class="section-subtitle">Not all B12 is absorbed equally. Here's why injections are far superior for those with deficiency or poor gut absorption.</p>
+      <h2 class="section-title"><?php echo wp_kses_post( rl_field( 'b12_compare_title', 'Injection vs <span class="gradient-text">oral supplements</span>' ) ); ?></h2>
+      <p class="section-subtitle"><?php echo esc_html( rl_field( 'b12_compare_subtitle', 'Not all B12 is absorbed equally. Here\'s why injections are far superior for those with deficiency or poor gut absorption.' ) ); ?></p>
       <div class="b12-compare-grid">
         <div class="b12-compare-card b12-compare-winner b12-revealed">
           <div class="b12-compare-header b12-header-winner">
@@ -259,9 +281,35 @@ get_header();
   <!-- ========== HOW IT WORKS ========== -->
   <section class="b12-process-section" id="process">
     <div class="container">
-      <h2 class="section-title">Your B12 injection <span class="gradient-text">appointment</span></h2>
-      <p class="section-subtitle">A quick, simple process — from walking in to feeling better, usually within 15 minutes.</p>
+      <h2 class="section-title"><?php echo wp_kses_post( rl_field( 'b12_process_title', 'Your B12 injection <span class="gradient-text">appointment</span>' ) ); ?></h2>
+      <p class="section-subtitle"><?php echo esc_html( rl_field( 'b12_process_subtitle', 'A quick, simple process — from walking in to feeling better, usually within 15 minutes.' ) ); ?></p>
       <div class="b12-steps-grid">
+        <?php
+        $b12_steps = rl_field( 'b12_process_steps' );
+        if ( $b12_steps && is_array( $b12_steps ) ) :
+            foreach ( $b12_steps as $i => $step ) :
+                $step_img   = isset( $step['image'] ) ? $step['image'] : '';
+                $step_title = isset( $step['title'] ) ? $step['title'] : '';
+                $step_desc  = isset( $step['description'] ) ? $step['description'] : '';
+                $step_meta  = isset( $step['meta'] ) ? $step['meta'] : '';
+                ?>
+        <div class="b12-step-card">
+          <?php if ( $step_img ) : ?>
+          <div class="b12-step-image">
+            <img src="<?php echo esc_url( $step_img ); ?>" alt="<?php echo esc_attr( $step_title ); ?>">
+          </div>
+          <?php endif; ?>
+          <div class="b12-step-content">
+            <span class="b12-step-label">Step <?php echo esc_html( sprintf( '%02d', $i + 1 ) ); ?></span>
+            <h3><?php echo esc_html( $step_title ); ?></h3>
+            <p><?php echo esc_html( $step_desc ); ?></p>
+            <?php if ( $step_meta ) : ?>
+            <span class="b12-step-meta"><?php echo esc_html( $step_meta ); ?></span>
+            <?php endif; ?>
+          </div>
+        </div>
+            <?php endforeach;
+        else : ?>
         <div class="b12-step-card">
           <div class="b12-step-image">
             <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop" alt="Brief consultation with pharmacist before B12 injection">
@@ -295,6 +343,7 @@ get_header();
             <span class="b12-step-meta">Easy ongoing programme</span>
           </div>
         </div>
+        <?php endif; ?>
       </div>
     </div>
   </section>
@@ -302,8 +351,8 @@ get_header();
   <!-- ========== BENEFITS SECTION ========== -->
   <section class="b12-benefits-section" id="benefits">
     <div class="container">
-      <h2 class="section-title">Benefits most people <span class="gradient-text">notice</span></h2>
-      <p class="section-subtitle">B12 injections can produce noticeable improvements across multiple aspects of daily health and wellbeing.</p>
+      <h2 class="section-title"><?php echo wp_kses_post( rl_field( 'b12_benefits_title', 'Benefits most people <span class="gradient-text">notice</span>' ) ); ?></h2>
+      <p class="section-subtitle"><?php echo esc_html( rl_field( 'b12_benefits_subtitle', 'B12 injections can produce noticeable improvements across multiple aspects of daily health and wellbeing.' ) ); ?></p>
       <div class="b12-benefits-grid">
         <div class="b12-benefit-card b12-revealed">
           <div class="b12-benefit-icon">
@@ -356,79 +405,16 @@ get_header();
   <!-- ========== LOCATIONS SECTION ========== -->
   <section class="locations-section" id="locations">
     <div class="container">
-      <h2 class="section-title">Two South East London <span class="gradient-text">locations</span></h2>
-      <p class="section-subtitle">B12 injections available at both pharmacies — walk-ins welcome, no appointment needed.</p>
-      <div class="locations-grid">
-        <div class="location-card">
-          <div class="location-image">
-            <img src="https://images.unsplash.com/photo-1586015555751-63bb77f4322a?w=800&h=400&fit=crop" alt="Pond End Pharmacy B12 injections Chislehurst High Street">
-          </div>
-          <div class="location-content">
-            <h3>Pond End Pharmacy</h3>
-            <div class="location-details">
-              <div class="detail-item">
-                <img src="https://api.iconify.design/lucide/map-pin.svg" alt="Location">
-                <p>59 High St, Chislehurst BR7 5AF</p>
-              </div>
-              <div class="detail-item">
-                <img src="https://api.iconify.design/lucide/phone.svg" alt="Phone">
-                <a href="tel:02084673158">020 8467 3158</a>
-              </div>
-              <div class="detail-item">
-                <img src="https://api.iconify.design/lucide/shield.svg" alt="Services">
-                <div>
-                  <p>Vitamin B12 injections</p>
-                  <p>Walk-ins welcome</p>
-                  <p>NHS &amp; private prescriptions</p>
-                  <p>Health consultations</p>
-                </div>
-              </div>
-            </div>
-            <div class="location-actions">
-              <a href="<?php echo esc_url( rl_field( 'b12_booking_url', 'https://treatlocal.co.uk/online-booking/bromley/vitamin-b12-injection-service/appointment' ) ); ?>" target="_blank" rel="noopener" class="btn-primary">Book B12 Injection</a>
-              <a href="/#directions" class="btn-outline">Get Directions</a>
-            </div>
-          </div>
-        </div>
-        <div class="location-card">
-          <div class="location-image">
-            <img src="https://images.unsplash.com/photo-1587556930799-8dca6fad6d41?w=800&h=400&fit=crop" alt="Chislehurst Pharmacy B12 injections South East London">
-          </div>
-          <div class="location-content">
-            <h3>Chislehurst Pharmacy</h3>
-            <div class="location-details">
-              <div class="detail-item">
-                <img src="https://api.iconify.design/lucide/map-pin.svg" alt="Location">
-                <p>59 Chislehurst Rd, Chislehurst BR7 5NP</p>
-              </div>
-              <div class="detail-item">
-                <img src="https://api.iconify.design/lucide/phone.svg" alt="Phone">
-                <a href="tel:02082950017">020 8295 0017</a>
-              </div>
-              <div class="detail-item">
-                <img src="https://api.iconify.design/lucide/shield.svg" alt="Services">
-                <div>
-                  <p>Vitamin B12 injections</p>
-                  <p>Walk-ins welcome</p>
-                  <p>Free parking available</p>
-                  <p>Private consultation rooms</p>
-                </div>
-              </div>
-            </div>
-            <div class="location-actions">
-              <a href="<?php echo esc_url( rl_field( 'b12_booking_url', 'https://treatlocal.co.uk/online-booking/bromley/vitamin-b12-injection-service/appointment' ) ); ?>" target="_blank" rel="noopener" class="btn-primary">Book B12 Injection</a>
-              <a href="/#directions" class="btn-outline">Get Directions</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <h2 class="section-title"><?php echo wp_kses_post( rl_field( 'b12_locations_title', 'Two South East London <span class="gradient-text">locations</span>' ) ); ?></h2>
+      <p class="section-subtitle"><?php echo esc_html( rl_field( 'b12_locations_subtitle', 'B12 injections available at both pharmacies — walk-ins welcome, no appointment needed.' ) ); ?></p>
+      <?php get_template_part( 'template-parts/location-cards', null, array( 'cta_prefix' => 'Book at' ) ); ?>
     </div>
   </section>
 
   <!-- ========== FAQ SECTION ========== -->
   <section class="b12-faq-section" id="faq">
     <div class="container">
-      <h2 class="section-title">Vitamin B12 Injection <span class="gradient-text">FAQs</span></h2>
+      <h2 class="section-title">Vitamin B12 Injection <span class="gradient-text-light">FAQs</span></h2>
       <p class="section-subtitle">Common questions about B12 injections, deficiency, and our private service.</p>
       <div class="b12-faq-list">
         <div class="b12-faq-item">
@@ -471,12 +457,20 @@ get_header();
   <section class="cta-section" id="cta">
     <div class="cta-content-full">
       <div class="b12-cta-badges">
+        <?php
+        $b12_cta_badges = rl_field( 'b12_cta_badges' );
+        if ( $b12_cta_badges && is_array( $b12_cta_badges ) ) :
+            foreach ( $b12_cta_badges as $badge ) : ?>
+        <span class="b12-cta-badge"><?php echo esc_html( $badge['text'] ); ?></span>
+            <?php endforeach;
+        else : ?>
         <span class="b12-cta-badge">Walk-ins Welcome</span>
         <span class="b12-cta-badge">No Referral Needed</span>
         <span class="b12-cta-badge">GPhC Registered</span>
+        <?php endif; ?>
       </div>
-      <h2>Feel the difference a B12 injection makes</h2>
-      <p>Don't let low B12 leave you tired, foggy, and running below your potential. Our pharmacists are ready to help — same day, no fuss.</p>
+      <h2><?php echo esc_html( rl_field( 'b12_cta_title', 'Feel the difference a B12 injection makes' ) ); ?></h2>
+      <p><?php echo esc_html( rl_field( 'b12_cta_subtitle', 'Don\'t let low B12 leave you tired, foggy, and running below your potential. Our pharmacists are ready to help — same day, no fuss.' ) ); ?></p>
       <div class="cta-buttons">
         <a href="<?php echo esc_url( rl_field( 'b12_booking_url', 'https://treatlocal.co.uk/online-booking/bromley/vitamin-b12-injection-service/appointment' ) ); ?>" target="_blank" rel="noopener" class="btn-cta-primary">
           Book Your B12 Injection

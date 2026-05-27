@@ -19,37 +19,37 @@ get_header();
       <div class="th-hero-content">
         <div class="th-hero-badge">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          <span>Thailand Travel Health</span>
+          <span><?php echo esc_html( rl_field( 'thai_hero_badge', 'Thailand Travel Health' ) ); ?></span>
         </div>
         <h1 class="th-hero-title"><?php echo esc_html( rl_field( 'thai_hero_title', 'Thailand Travel Vaccinations in South East London' ) ); ?></h1>
-        <p class="th-hero-subtitle"><?php echo esc_html( rl_field( 'thai_hero_subtitle', 'Expert travel health advice and essential vaccines for your Thailand trip. Same-day appointments available at our Chislehurst and Pond End clinics.' ) ); ?></p>
+        <p class="th-hero-subtitle"><?php echo esc_html( rl_field( 'thai_hero_subtitle', 'Expert travel health advice and essential vaccines for your Thailand trip. Same-day appointments available at both our Chislehurst locations.' ) ); ?></p>
         <div class="th-hero-actions">
           <a href="#booking" class="th-btn-primary">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             Book Thailand Travel Consultation
           </a>
-          <a href="tel:02082950017" class="th-btn-secondary">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Call Chislehurst: 020 8295 0017
+          <a href="<?php echo esc_url( rl_field( 'thai_hero_cta2_url', '#vaccines' ) ); ?>" class="th-btn-secondary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg>
+            <?php echo esc_html( rl_field( 'thai_hero_cta2_label', 'Check What Vaccines You Need' ) ); ?>
           </a>
         </div>
         <div class="th-hero-trust">
           <div class="th-trust-item">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <span>GPhC Registered</span>
+            <span><?php echo esc_html( rl_field( 'thai_hero_trust_1', 'GPhC Registered' ) ); ?></span>
           </div>
           <div class="th-trust-item">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            <span>Same-Day Appointments</span>
+            <span><?php echo esc_html( rl_field( 'thai_hero_trust_2', 'Same-Day Appointments' ) ); ?></span>
           </div>
           <div class="th-trust-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
-            <span>Yellow Fever Centre</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            <span><?php echo esc_html( rl_field( 'thai_hero_trust_3', 'Expert Pharmacist Advice' ) ); ?></span>
           </div>
         </div>
       </div>
       <div class="th-hero-visual">
-        <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=800&h=600&fit=crop" alt="Thailand temples and landscape">
+        <img src="<?php echo esc_url( rl_field( 'thai_hero_image', 'https://images.unsplash.com/photo-1528181304800-259b08848526?w=800&h=600&fit=crop' ) ); ?>" alt="Thailand travel health">
         <div class="th-hero-visual-overlay"></div>
       </div>
     </div>
@@ -63,7 +63,7 @@ get_header();
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           <span>Recommended Vaccines</span>
         </div>
-        <h2 class="section-title">Essential Vaccinations for<br><span class="gradient-text">Thailand Travel</span></h2>
+        <h2 class="section-title">Essential Vaccinations for<br><span class="gradient-text-light">Thailand Travel</span></h2>
         <p class="th-section-desc">Planning a trip to Thailand from London? Our South East London travel clinics provide comprehensive vaccination services and expert travel health advice for Thailand travelers. Whether you're visiting Bangkok, Phuket, Chiang Mai, or exploring rural Thailand, we'll ensure you're fully protected with the right vaccines and antimalarial medication. Our GPhC-registered pharmacists assess your specific itinerary and medical history to create a personalised vaccination plan tailored to your trip.</p>
       </div>
 
@@ -217,7 +217,7 @@ get_header();
           <div class="th-vaccine-card th-vaccine-card-required">
             <div class="th-vaccine-name">Yellow Fever</div>
             <div class="th-vaccine-full">Yellow Fever Virus (Certificate Required)</div>
-            <p class="th-vaccine-desc">Required if arriving from a country with risk of Yellow Fever transmission (e.g., parts of Africa or South America). Both our clinics are authorised Yellow Fever vaccination centres and can issue the International Certificate of Vaccination (ICVP).</p>
+            <p class="th-vaccine-desc">Required if arriving from a country with risk of Yellow Fever transmission. Thailand requires a certificate if travelling from or transiting through a country with Yellow Fever risk. Your pharmacist will advise based on your specific itinerary.</p>
             <div class="th-vaccine-meta">
               <span class="th-vaccine-who">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
@@ -297,10 +297,8 @@ get_header();
           <h3>Rabies from Animal Bites</h3>
           <p>Stray dogs and monkeys are common throughout Thailand, including temple grounds and tourist areas. Rabies is fatal once symptoms appear. Pre-exposure vaccination is strongly recommended, particularly for adventure travellers, cyclists, and families with children.</p>
         </div>
-        <div class="th-risk-card">
-          <div class="th-risk-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
-          </div>
+      </div>
+    </div>
   </section>
 
   <!-- Section 3: Antimalarial Medication -->
@@ -311,7 +309,7 @@ get_header();
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
           <span>Malaria Prevention</span>
         </div>
-        <h2 class="section-title">Malaria Prevention<br><span class="gradient-text">for Thailand</span></h2>
+        <h2 class="section-title">Malaria Prevention<br><span class="gradient-text-light">for Thailand</span></h2>
         <p class="th-section-desc">While most tourist areas in Thailand—including Bangkok, Phuket, Chiang Mai, Pattaya, and Koh Samui—have low malaria risk, certain rural and border regions require antimalarial medication. Our pharmacists will assess your specific itinerary and recommend appropriate protection to keep you safe throughout your trip.</p>
       </div>
 
@@ -406,58 +404,10 @@ get_header();
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           <span>Our Clinics</span>
         </div>
-        <h2 class="section-title">Thailand Travel Clinic Locations<br><span class="gradient-text">in South East London</span></h2>
+        <h2 class="section-title">Thailand Travel Clinic Locations<br><span class="gradient-text-light">in South East London</span></h2>
       </div>
 
-      <div class="th-locations-grid">
-        <div class="th-location-card">
-          <div class="th-location-badge">Main Clinic</div>
-          <h3>Chislehurst Pharmacy & Travel Clinic</h3>
-          <div class="th-location-details">
-            <div class="th-location-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>59 Chislehurst Rd, Chislehurst BR7 5NP</span>
-            </div>
-            <div class="th-location-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <a href="tel:02082950017">020 8295 0017</a>
-            </div>
-            <div class="th-location-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              <span>Mon–Fri: 8am–8pm | Sat: 9am–6pm | Sun: 10am–4pm</span>
-            </div>
-          </div>
-          <p class="th-location-serving">Serving Chislehurst, Bromley, Sidcup, and South East London</p>
-          <div class="th-location-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2494.5!2d0.0566!3d51.4075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a9f8a8a8a8a8%3A0x0!2s59+Chislehurst+Rd%2C+Chislehurst+BR7+5NP!5e0!3m2!1sen!2suk!4v1" width="100%" height="200" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-          <a href="tel:02082950017" class="th-location-btn">Book at Chislehurst</a>
-        </div>
-
-        <div class="th-location-card">
-          <div class="th-location-badge">Second Location</div>
-          <h3>Pond Pharmacy</h3>
-          <div class="th-location-details">
-            <div class="th-location-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>59 High St, Chislehurst BR7 5AF</span>
-            </div>
-            <div class="th-location-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <a href="tel:02084673158">020 8467 3158</a>
-            </div>
-            <div class="th-location-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              <span>Mon–Fri: 8am–8pm | Sat: 9am–6pm | Sun: 10am–4pm</span>
-            </div>
-          </div>
-          <p class="th-location-serving">Convenient location for Orpington, Bexley, and surrounding areas</p>
-          <div class="th-location-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2494.5!2d0.0586!3d51.4095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a9f8a8a8a8a8%3A0x0!2s59+High+St%2C+Chislehurst+BR7+5AF!5e0!3m2!1sen!2suk!4v1" width="100%" height="200" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-          <a href="tel:02084673158" class="th-location-btn">Book at Pond Pharmacy</a>
-        </div>
-      </div>
+      <?php get_template_part( 'template-parts/location-cards', null, array( 'cta_prefix' => 'Book at' ) ); ?>
 
       <div class="th-service-area">
         <p>While based in Chislehurst, we welcome Thailand travelers from across South East London and beyond. Easy access from <strong>Bromley, Orpington, Sidcup, Bexley, Eltham, Greenwich, Lewisham,</strong> and surrounding areas.</p>
@@ -474,7 +424,7 @@ get_header();
     <div class="container th-pricing-container">
       <div class="th-section-header th-section-header-dark">
         <div class="th-section-pill th-pill-dark">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/><line x1="8" y1="2" x2="16" y2="2"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
           <span>Clear Pricing</span>
         </div>
         <h2 class="th-title-dark">Thailand Travel Vaccination<br>Packages</h2>
@@ -486,7 +436,7 @@ get_header();
           <h3>Essential Thailand Package</h3>
           <div class="th-pricing-price">
             <span class="th-price-from">From</span>
-            <span class="th-price-amount">£120</span>
+            <span class="th-price-amount"><?php echo esc_html( rl_field( 'thai_price_essential', '£TBC' ) ); ?></span>
           </div>
           <ul class="th-pricing-features">
             <li>
@@ -515,7 +465,7 @@ get_header();
           <h3>Comprehensive Thailand Package</h3>
           <div class="th-pricing-price">
             <span class="th-price-from">From</span>
-            <span class="th-price-amount">£280</span>
+            <span class="th-price-amount"><?php echo esc_html( rl_field( 'thai_price_comprehensive', '£TBC' ) ); ?></span>
           </div>
           <ul class="th-pricing-features">
             <li>
@@ -548,35 +498,31 @@ get_header();
           <div class="th-individual-list">
             <div class="th-individual-item">
               <span>Hepatitis A</span>
-              <span class="th-individual-price">From £50</span>
+              <span class="th-individual-price"><?php echo esc_html( rl_field( 'thai_price_hepa', '£TBC' ) ); ?></span>
             </div>
             <div class="th-individual-item">
               <span>Hepatitis B (per dose)</span>
-              <span class="th-individual-price">From £40</span>
+              <span class="th-individual-price"><?php echo esc_html( rl_field( 'thai_price_hepb', '£TBC' ) ); ?></span>
             </div>
             <div class="th-individual-item">
               <span>Typhoid</span>
-              <span class="th-individual-price">From £35</span>
+              <span class="th-individual-price"><?php echo esc_html( rl_field( 'thai_price_typhoid', '£TBC' ) ); ?></span>
             </div>
             <div class="th-individual-item">
               <span>Japanese Encephalitis (per dose)</span>
-              <span class="th-individual-price">From £95</span>
+              <span class="th-individual-price"><?php echo esc_html( rl_field( 'thai_price_je', '£TBC' ) ); ?></span>
             </div>
             <div class="th-individual-item">
               <span>Rabies (per dose)</span>
-              <span class="th-individual-price">From £65</span>
-            </div>
-            <div class="th-individual-item">
-              <span>Yellow Fever + Certificate</span>
-              <span class="th-individual-price">From £75</span>
+              <span class="th-individual-price"><?php echo esc_html( rl_field( 'thai_price_rabies', '£TBC' ) ); ?></span>
             </div>
             <div class="th-individual-item">
               <span>DTP Booster</span>
-              <span class="th-individual-price">From £35</span>
+              <span class="th-individual-price"><?php echo esc_html( rl_field( 'thai_price_dtp', '£TBC' ) ); ?></span>
             </div>
             <div class="th-individual-item">
               <span>Antimalarial Tablets</span>
-              <span class="th-individual-price">From £30</span>
+              <span class="th-individual-price"><?php echo esc_html( rl_field( 'thai_price_antimalarial', '£TBC' ) ); ?></span>
             </div>
           </div>
           <p class="th-pricing-note">All prices include expert consultation and administration by qualified pharmacists</p>
@@ -593,7 +539,7 @@ get_header();
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           <span>Planning Your Vaccines</span>
         </div>
-        <h2 class="section-title">When to Get Thailand<br><span class="gradient-text">Travel Vaccinations</span></h2>
+        <h2 class="section-title">When to Get Thailand<br><span class="gradient-text-light">Travel Vaccinations</span></h2>
         <p class="th-section-desc">Ideally, book your Thailand travel vaccination appointment 6–8 weeks before departure. However, we accommodate last-minute travellers with same-day appointments and can provide immediate protection for most vaccines. Even if your trip is just days away, it's always worth visiting our clinic—many vaccines offer rapid protection.</p>
       </div>
 
@@ -630,7 +576,7 @@ get_header();
       <div class="th-section-header th-section-header-dark">
         <div class="th-section-pill th-pill-dark">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <span>Why Rey London</span>
+          <span>Why Chislehurst Pharmacy Group</span>
         </div>
         <h2 class="th-title-dark">Why Choose Our<br>Thailand Travel Clinic</h2>
       </div>
@@ -659,7 +605,7 @@ get_header();
         </div>
         <div class="th-why-card">
           <div class="th-why-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/><line x1="8" y1="2" x2="16" y2="2"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
           </div>
           <h3>Competitive Pricing</h3>
           <p>Transparent prices with package deals to save you money on your Thailand vaccines</p>
@@ -675,8 +621,8 @@ get_header();
           <div class="th-why-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
           </div>
-          <h3>Yellow Fever Certification Centre</h3>
-          <p>Authorised to administer Yellow Fever vaccines and issue International Certificates</p>
+          <h3>Comprehensive Travel Health</h3>
+          <p>Expert advice on all travel vaccines, antimalarials, and destination-specific health risks</p>
         </div>
         <div class="th-why-card">
           <div class="th-why-icon">
@@ -704,7 +650,7 @@ get_header();
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           <span>Common Questions</span>
         </div>
-        <h2 class="section-title">Thailand Travel<br><span class="gradient-text">Vaccination FAQs</span></h2>
+        <h2 class="section-title">Thailand Travel<br><span class="gradient-text-light">Vaccination FAQs</span></h2>
       </div>
 
       <div class="th-faq-list">
@@ -744,7 +690,7 @@ get_header();
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
           <div class="th-faq-answer">
-            <p>Yes, both our South East London clinics are authorised Yellow Fever vaccination centres. We administer the vaccine and issue the International Certificate of Vaccination or Prophylaxis (ICVP) on-site. While Yellow Fever isn't required for direct entry to Thailand from the UK, it may be needed if you're travelling from or transiting through countries with Yellow Fever risk.</p>
+            <p>A Yellow Fever certificate is required if you are arriving in Thailand from or transiting through a country with risk of Yellow Fever transmission. It is not required for travellers flying directly from the UK. Your pharmacist will confirm whether you need the vaccine and certificate based on your specific itinerary and routing.</p>
           </div>
         </details>
 

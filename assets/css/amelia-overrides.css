@@ -1,0 +1,17 @@
+/**
+ * Amelia booking form — theme overrides
+ *
+ * Hide the service price / "Free" label in the catalog booking form until
+ * real pricing is configured. We intentionally avoid scoping to .amelia-app
+ * because the wrapper class differs between Amelia versions / catalog vs
+ * booking views. The companion JS (amelia-overrides.js) is the reliable
+ * backstop — this CSS just catches the common class names fast.
+ */
+[class*="am-s-p-amount"],
+[class*="service-price"],
+[class*="catalog-price"],
+[class*="amelia-price"],
+[class*="am-price"],
+[class*="am-service-price"] {
+    display: none !important;
+}

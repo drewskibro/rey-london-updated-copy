@@ -182,6 +182,8 @@
           var suffix = '';
           var targetNum = parseFloat(raw.replace(/[^0-9.]/g, ''));
           if (isNaN(targetNum)) return;
+          // Skip single-digit numbers — they animate too fast and look jittery
+          if (targetNum < 10 && raw.indexOf('.') === -1 && raw.indexOf(',') === -1) return;
 
           if (raw.indexOf('+') !== -1) suffix = '+';
           if (raw.indexOf('/5') !== -1) suffix = '/5';

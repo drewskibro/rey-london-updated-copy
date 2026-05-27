@@ -97,9 +97,9 @@ get_header();
           <p class="hep-body-text">Both are preventable through vaccination — offering protection whether you're travelling abroad, working in healthcare, or simply protecting your long-term health.</p>
 
           <div class="hep-stat-grid">
-            <div class="hep-stat-box"><div class="hep-stat-num">1,400,000</div><div class="hep-stat-desc">Hepatitis A cases annually worldwide</div></div>
-            <div class="hep-stat-box"><div class="hep-stat-num">296,000,000</div><div class="hep-stat-desc">People living with chronic hepatitis B</div></div>
-            <div class="hep-stat-box"><div class="hep-stat-num">820,000</div><div class="hep-stat-desc">Hepatitis B deaths each year</div></div>
+            <div class="hep-stat-box"><div class="hep-stat-num">159 Million</div><div class="hep-stat-desc">Estimated global hepatitis A infections annually</div></div>
+            <div class="hep-stat-box"><div class="hep-stat-num">254,000,000</div><div class="hep-stat-desc">People living with chronic hepatitis B</div></div>
+            <div class="hep-stat-box"><div class="hep-stat-num">1,100,000</div><div class="hep-stat-desc">Hepatitis B deaths each year</div></div>
             <div class="hep-stat-box"><div class="hep-stat-num">95%+</div><div class="hep-stat-desc">Vaccine effectiveness after full course</div></div>
           </div>
         </div>
@@ -127,7 +127,7 @@ get_header();
             <tr><td>How It Spreads</td><td>Contaminated food/water, poor hygiene, faecal-oral route</td><td>Blood, bodily fluids, sexual contact, needles, childbirth</td></tr>
             <tr><td>Risk Regions</td><td>Asia, Africa, South/Central America, Middle East</td><td>Same regions + Eastern Europe, Pacific Islands</td></tr>
             <tr><td>Becomes Chronic?</td><td>No — always acute infection only</td><td>Yes — can become lifelong infection</td></tr>
-            <tr><td>Serious Complications</td><td>Rare liver failure (mainly adults 50+)</td><td>Cirrhosis, liver cancer, liver failure</td></tr>
+            <tr><td>Serious Complications</td><td>Rare fulminant liver failure — risk increases with age</td><td>Cirrhosis, liver cancer, liver failure</td></tr>
             <tr><td>Typical Recovery</td><td>2–6 months complete recovery</td><td>Can persist for life if chronic</td></tr>
             <tr><td>Vaccine Schedule</td><td>2 doses (0, 6–12 months)</td><td>3 doses (0, 1, 6 months)</td></tr>
             <tr><td>Protection Duration</td><td>25+ years after course</td><td>20–30+ years, often lifelong</td></tr>
@@ -400,40 +400,10 @@ get_header();
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg> Breastfeeding: Both vaccines safe</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg> Immunosuppression: Safe but may have reduced effectiveness</li>
           </ul>
-          <p class="hep-side-note">Both vaccines have outstanding safety profiles with hundreds of millions of doses administered worldwide over 30+ years. Serious reactions are extremely rare — less than 1 in 1,000,000 doses.</p>
+          <p class="hep-side-note">Both vaccines have outstanding safety profiles with hundreds of millions of doses administered worldwide over 30+ years. Serious reactions are extremely rare with both hepatitis vaccines.</p>
         </div>
       </div>
       <div class="hep-safety-box">Both hepatitis A and B vaccines are <strong>inactivated vaccines</strong> — they cannot cause the disease. We observe all patients for 15 minutes post-vaccination. Emergency treatment is immediately available.</div>
-    </div>
-  </section>
-
-  <!-- ===================== NHS vs PRIVATE ===================== -->
-  <section class="hep-section-light" id="nhs-private">
-    <div class="container">
-      <div style="text-align:center;">
-        <h2 class="section-title">Hepatitis Vaccines: NHS or Private?</h2>
-        <p class="section-subtitle" style="max-width:800px;margin:0 auto 0;">Understanding when you can access free NHS vaccination vs when private is needed.</p>
-      </div>
-      <div style="overflow-x:auto;">
-        <table class="hep-nhs-table">
-          <thead><tr><th></th><th>Free on NHS</th><th>Private at REY London</th></tr></thead>
-          <tbody>
-            <tr>
-              <td>Hepatitis A</td>
-              <td><ul class="hep-nhs-list"><li>Travel to endemic areas (GP referral, 6–8 weeks wait)</li><li>Chronic liver disease</li><li>Occupational exposure (sewage/lab)</li><li>MSM (sexual health clinics)</li></ul></td>
-              <td><ul class="hep-nhs-list"><li>Immediate appointments (no GP wait)</li><li>Last-minute travel (&lt;6 weeks)</li><li>Pharmacy convenience</li><li>Combined A+B preferred</li><li>Accelerated schedule needed</li></ul></td>
-            </tr>
-            <tr>
-              <td>Hepatitis B</td>
-              <td><ul class="hep-nhs-list"><li>Healthcare workers (occupational)</li><li>Prison staff (occupational)</li><li>MSM (sexual health clinics)</li><li>People who inject drugs</li><li>UK babies (routine since 2017)</li></ul></td>
-              <td><ul class="hep-nhs-list"><li>Travel to endemic areas</li><li>Not eligible for occupational NHS</li><li>Accelerated schedule for urgent travel</li><li>Combined A+B preferred</li><li>Pharmacy convenience &amp; speed</li></ul></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="hep-highlight-box" style="margin-top:32px;">
-        <strong>Important:</strong> Many GPs now only provide hepatitis B for occupational health, not travel. NHS appointments may have 6–8 week wait times. Private vaccination offers immediate access, flexible scheduling, and combined A+B availability.
-      </div>
     </div>
   </section>
 
@@ -442,7 +412,7 @@ get_header();
     <div class="container">
       <div style="text-align:center;">
         <h2 class="section-title" style="color:var(--white);">Expert Hepatitis Vaccination in Chislehurst</h2>
-        <p class="section-subtitle" style="max-width:800px;margin:0 auto 0;color:rgba(255,255,255,.75);">REY London Pharmacy provides professional, accessible hepatitis vaccination with expert guidance and flexible scheduling.</p>
+        <p class="section-subtitle" style="max-width:800px;margin:0 auto 0;color:rgba(255,255,255,.75);">Chislehurst Pharmacy Group provides professional, accessible hepatitis vaccination with expert guidance and flexible scheduling.</p>
       </div>
 
       <div class="hep-why-grid">
@@ -484,7 +454,7 @@ get_header();
   <section class="hep-locations" id="locations">
     <div class="container">
       <div style="text-align:center;">
-        <h2 class="section-title">Find your nearest<br><span class="gradient-text">Rey London pharmacy</span></h2>
+        <h2 class="section-title">Find your nearest<br><span class="gradient-text">Chislehurst Pharmacy Group location</span></h2>
         <p class="section-subtitle" style="max-width:700px;margin:0 auto;">Visit us in person for expert advice and immediate service</p>
       </div>
       <div class="hep-loc-grid">
@@ -506,7 +476,7 @@ get_header();
               </div>
               <div class="hep-loc-row">
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours">
-                <p>Mon-Fri: 8am-8pm | Sat: 9am-6pm | Sun: 10am-4pm</p>
+                <p><?php echo esc_html( rl_hours_pond() ); ?></p>
               </div>
             </div>
             <div class="hep-loc-actions">
@@ -534,7 +504,7 @@ get_header();
               </div>
               <div class="hep-loc-row">
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours">
-                <p>Mon-Fri: 8am-8pm | Sat: 9am-6pm | Sun: 10am-4pm</p>
+                <p><?php echo esc_html( rl_hours_chislehurst() ); ?></p>
               </div>
             </div>
             <div class="hep-loc-actions">
@@ -556,7 +526,7 @@ get_header();
       </div>
       <div class="hep-faq-list">
         <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">01</span><span class="hep-faq-question">Do I need both hepatitis A and hepatitis B vaccines for travel?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">It depends on your destination and planned activities. Hepatitis A is recommended for most travellers to Asia, Africa, South America, and the Middle East due to food/water contamination risk. Hepatitis B is essential if staying 6+ months, may need medical treatment, have sexual contact with new partners, or work in healthcare. The combined A+B vaccine (Twinrix) offers convenient comprehensive protection for both.</div></div></div>
-        <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">02</span><span class="hep-faq-question">Can I get hepatitis vaccines on the NHS?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Hepatitis A: Often available free on NHS for travel to endemic areas — consult your GP 6–8 weeks before departure. Hepatitis B: Free on NHS only for occupational health (healthcare workers, prison staff) or high-risk groups, NOT typically for travel. Most travellers require private vaccination. REY London offers immediate appointments without GP referral wait times.</div></div></div>
+        <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">02</span><span class="hep-faq-question">Can I get hepatitis vaccines on the NHS?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Hepatitis A: Often available free on NHS for travel to endemic areas — consult your GP 6–8 weeks before departure. Hepatitis B: Free on NHS only for occupational health (healthcare workers, prison staff) or high-risk groups, NOT typically for travel. Most travellers require private vaccination. Chislehurst Pharmacy Group offers immediate appointments without GP referral wait times.</div></div></div>
         <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">03</span><span class="hep-faq-question">How long before travel should I get vaccinated?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Hepatitis A: First dose at least 2 weeks before travel (ideally 3–4 weeks). Single dose provides good short-term protection for imminent trips. Hepatitis B: Standard course takes 6 months — start as early as possible. Accelerated course provides protection in 3 weeks but requires 12-month booster. Combined A+B: Same timeline as hepatitis B schedules.</div></div></div>
         <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">04</span><span class="hep-faq-question">What if I'm travelling in 2 weeks and haven't been vaccinated?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Hepatitis A: First dose now still provides substantial protection — don't delay. Hepatitis B: Consider accelerated schedule (doses at 0, 7, 21 days) for urgent travel, with 12-month booster later. OR assess your specific risk and consider deferring hepatitis B to future trips if low-risk activities. Combined A+B: Accelerated schedule available. Book consultation to discuss your situation.</div></div></div>
         <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">05</span><span class="hep-faq-question">How long does hepatitis vaccine protection last?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Hepatitis A: 25+ years after completing the 2-dose course, possibly lifelong. No routine boosters needed. Hepatitis B: 20–30+ years after 3-dose course, often lifelong protection. Routine boosters not needed for most people. Healthcare workers: May require blood tests (anti-HBs titres) and 5-year boosters depending on results. Bring vaccination records to appointments.</div></div></div>
@@ -565,7 +535,7 @@ get_header();
         <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">08</span><span class="hep-faq-question">I started my hepatitis B course abroad but didn't finish. Can I continue here?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Absolutely. Hepatitis B vaccination is a series — you don't need to restart. Just continue where you left off. Ideally bring documentation of doses received (dates, vaccine brand if available). If you don't have records, we can arrange a blood test to check antibody levels and determine next steps. The vaccine series remains valid even with long gaps between doses.</div></div></div>
         <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">09</span><span class="hep-faq-question">Do I need a booster if I was vaccinated years ago?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Usually no. Hepatitis A: No booster needed after full 2-dose course — protection lasts 25+ years. Hepatitis B: No routine travel booster after full 3-dose course. Healthcare workers: May need blood test to check anti-HBs antibody levels and possible 5-year booster depending on results and exposure risk. Bring previous vaccination documentation to consultation.</div></div></div>
         <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">10</span><span class="hep-faq-question">Are hepatitis vaccines safe during pregnancy?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Hepatitis A: Generally deferred during pregnancy unless high exposure risk makes it essential. Hepatitis B: Safe during pregnancy if significant exposure risk exists (e.g., healthcare work, travel to endemic area). Both are inactivated vaccines containing no live virus. We assess risk vs benefit during consultation. Inform pharmacist if you're pregnant or may become pregnant.</div></div></div>
-        <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">11</span><span class="hep-faq-question">What are the side effects?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Most people experience only mild effects: injection site soreness, headache, or fatigue for 1–2 days. Manage with paracetamol if needed. Serious reactions are extremely rare — less than 1 in 1,000,000 doses. Both vaccines have excellent safety records with hundreds of millions of doses administered globally over 30+ years. We observe all patients for 15 minutes post-vaccination.</div></div></div>
+        <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">11</span><span class="hep-faq-question">What are the side effects?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Most people experience only mild effects: injection site soreness, headache, or fatigue for 1–2 days. Manage with paracetamol if needed. Serious reactions are extremely rare with both hepatitis vaccines. Both have excellent safety records with hundreds of millions of doses administered globally over 30+ years. We observe all patients for 15 minutes post-vaccination.</div></div></div>
         <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">12</span><span class="hep-faq-question">Can I have hepatitis vaccines with other travel vaccinations?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Yes. Hepatitis A and B can be given simultaneously with yellow fever, typhoid, rabies, meningitis, and other travel vaccines. We administer them at separate sites (different arms). This is ideal for multi-destination travel requiring multiple vaccines. Book a comprehensive travel health consultation to coordinate all necessary vaccinations efficiently.</div></div></div>
         <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">13</span><span class="hep-faq-question">I have liver disease. Should I get hepatitis vaccines?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Yes, strongly recommended. People with chronic liver disease (cirrhosis, hepatitis C, fatty liver disease, alcoholic liver disease) face higher risk of severe complications from hepatitis A or B infection. Hepatitis A can cause acute liver failure in people with existing liver disease. Hepatitis B can accelerate liver damage. Inform pharmacist of your liver condition during consultation.</div></div></div>
         <div class="hep-faq-item"><button class="hep-faq-trigger"><span class="hep-faq-num">14</span><span class="hep-faq-question">What if I'm allergic to yeast?</span><svg class="hep-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="hep-faq-answer"><div class="hep-faq-answer-inner">Hepatitis B and combined A+B vaccines are grown in yeast — severe yeast allergy (anaphylaxis to yeast) is a contraindication. You cannot receive these vaccines. Hepatitis A vaccine does NOT contain yeast and is safe. If you have yeast allergy, you can receive hepatitis A vaccine separately but not hepatitis B or Twinrix. Mild yeast sensitivity (not anaphylaxis) may still allow vaccination with extended observation — discuss during consultation.</div></div></div>
@@ -586,7 +556,7 @@ get_header();
           <span class="hep-cta-badge">Same-Day Appointments</span>
         </div>
         <h2 class="hep-footer-cta-title">Protect Your Liver. Protect Your Future.</h2>
-        <p class="hep-footer-cta-sub">Don't risk serious liver disease while travelling or at work. Book your hepatitis vaccination at REY London Pharmacy in Chislehurst today.</p>
+        <p class="hep-footer-cta-sub">Don't risk serious liver disease while travelling or at work. Book your hepatitis vaccination at Chislehurst Pharmacy Group today.</p>
         <div class="cta-buttons">
           <a href="tel:02084673158" class="btn-cta-primary">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -612,9 +582,10 @@ get_header();
           <p>Get expert travel health tips, vaccine reminders, and destination guides delivered to your inbox before your next trip.</p>
         </div>
         <form class="newsletter-form hep-footer-newsletter-form">
+          <input type="text" name="rl_hp" style="display:none" tabindex="-1" autocomplete="off">
           <div class="newsletter-input-wrapper">
             <svg class="newsletter-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 4h14c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 6l-9 6-9-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <input type="email" placeholder="Enter your email address" class="newsletter-input" required>
+            <input type="email" name="email" autocomplete="email" placeholder="Enter your email address" class="newsletter-input" required>
             <button type="submit" class="newsletter-btn">Subscribe <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
         </form>
@@ -628,34 +599,5 @@ get_header();
       This information is for educational purposes and does not constitute medical advice. Hepatitis A and B vaccinations are prescription-only medicines in the UK. Eligibility and suitability are assessed by our GPhC-registered pharmacists during your consultation. Information is accurate as of March 2026 and based on current MHRA, NHS, and WHO guidance.
     </div>
   </div>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-glow"></div>
-    <div class="container">
-      <div class="footer-main" style="padding-top:0;">
-        <div class="footer-grid">
-          <div class="footer-brand-col">
-            <div class="footer-logo-wrapper"><span class="footer-logo-text">Rey London</span></div>
-            <p class="footer-description">Your trusted healthcare partner in London. Providing expert pharmaceutical care and personalized health services since 2010.</p>
-            <div class="footer-contact-cards">
-              <div class="contact-card"><div class="contact-card-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M18 8c0 5.5-7 11-7 11S4 13.5 4 8a7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="8" r="2" stroke="currentColor" stroke-width="2"/></svg></div><div class="contact-card-content"><span class="contact-card-label">Pond Pharmacy</span><a href="tel:02084673158" class="contact-card-value">020 8467 3158</a></div></div>
-              <div class="contact-card"><div class="contact-card-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M18 8c0 5.5-7 11-7 11S4 13.5 4 8a7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="8" r="2" stroke="currentColor" stroke-width="2"/></svg></div><div class="contact-card-content"><span class="contact-card-label">Chislehurst Pharmacy</span><a href="tel:02082950017" class="contact-card-value">020 8295 0017</a></div></div>
-            </div>
-            <div class="footer-social"><span class="social-label">Follow Us</span><div class="social-links-premium"><a href="#facebook" class="social-link" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 1H12C10.67 1 9.4 1.53 8.46 2.46C7.53 3.4 7 4.67 7 6V9H4V13H7V19H11V13H14L15 9H11V6C11 5.73 11.1 5.48 11.29 5.29C11.48 5.1 11.73 5 12 5H15V1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="#instagram" class="social-link" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="4" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg></a></div></div>
-          </div>
-          <div class="footer-links-col"><h4 class="footer-col-title">Services</h4><ul class="footer-links-list"><li><a href="/#prescriptions">NHS Prescriptions</a></li><li><a href="<?php echo esc_url( home_url( '/travel-health/' ) ); ?>">Travel Clinic</a></li><li><a href="<?php echo esc_url( home_url( '/yellow-fever-vaccine/' ) ); ?>">Yellow Fever Vaccine</a></li><li><a href="<?php echo esc_url( home_url( '/hpv-vaccine/' ) ); ?>">HPV Vaccine</a></li><li><a href="<?php echo esc_url( home_url( '/vitamin-b12-injection/' ) ); ?>">Vitamin B12</a></li><li><a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>">Weight Loss Programs</a></li></ul></div>
-          <div class="footer-links-col"><h4 class="footer-col-title">Hepatitis Vaccines</h4><ul class="footer-links-list"><li><a href="#about">What is Hepatitis?</a></li><li><a href="#comparison">A vs B Comparison</a></li><li><a href="#eligibility">Who Needs Vaccines</a></li><li><a href="#pricing">Pricing &amp; Courses</a></li><li><a href="#risk-areas">Risk Regions</a></li><li><a href="#faq">FAQs</a></li></ul></div>
-          <div class="footer-links-col"><h4 class="footer-col-title">Support</h4><ul class="footer-links-list"><li><a href="/#faq">FAQs</a></li><li><a href="/#opening-hours">Opening Hours</a></li><li><a href="/#privacy">Privacy Policy</a></li><li><a href="/#terms">Terms &amp; Conditions</a></li></ul></div>
-        </div>
-      </div>
-      <div class="footer-bottom-premium">
-        <div class="footer-bottom-content">
-          <div class="footer-legal"><p class="footer-copyright">© 2026 Rey London Pharmacy. All rights reserved.</p><p class="footer-registration">Registered Pharmacy | GPhC Registration: 1234567</p></div>
-          <div class="footer-certifications"><div class="cert-badge"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/mhra.svg" alt="MHRA Approved"></div><div class="cert-badge"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/gpc.svg" alt="GPhC Registered"></div><div class="cert-badge"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/ico.svg" alt="ICO Registered"></div></div>
-          <div class="footer-payments"><span class="payments-label">We Accept</span><div class="payment-methods"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/visa.svg" alt="Visa"><img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/mastercard.svg" alt="Mastercard"><div class="payment-badge-text">Apple Pay</div><div class="payment-badge-text">Google Pay</div></div></div>
-        </div>
-      </div>
-    </div>
 
 <?php get_footer(); ?>

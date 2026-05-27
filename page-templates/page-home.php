@@ -23,7 +23,7 @@ get_header();
                 <?php echo esc_html( rl_field( 'hero_subtitle', 'Expert prescriptions, travel health, and weight management across South East London. Two Chislehurst locations ready to help.' ) ); ?>
               </p>
             </div>
-            <a href="#all-services" class="btn-secondary btn-view-all">
+            <a href="#services" class="btn-secondary btn-view-all">
               View all services
               <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow" />
             </a>
@@ -45,7 +45,7 @@ get_header();
               </div>
             </a>
             <?php endforeach; else : ?>
-            <a href="<?php echo esc_url( home_url( '/prescription-services/' ) ); ?>" class="service-card">
+            <a href="<?php echo esc_url( home_url( '/nhs-prescriptions/' ) ); ?>" class="service-card">
               <span class="service-title">Prescription Services</span>
               <div class="service-image">
                 <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769448207085-0.png" alt="Prescriptions" />
@@ -81,7 +81,7 @@ get_header();
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-17.svg" alt="Arrow" />
               </div>
             </a>
-            <a href="<?php echo esc_url( home_url( '/vitamin-b12-injection/' ) ); ?>" class="service-card">
+            <a href="<?php echo esc_url( home_url( '/vitamin-b12-london/' ) ); ?>" class="service-card">
               <span class="service-title">Vitamin B12</span>
               <div class="service-image">
                 <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769514862073-0.png" alt="Vitamin B12" />
@@ -90,7 +90,7 @@ get_header();
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-17.svg" alt="Arrow" />
               </div>
             </a>
-            <a href="<?php echo esc_url( home_url( '/hair-loss/' ) ); ?>" class="service-card">
+            <a href="<?php echo esc_url( home_url( '/hair-loss-london/' ) ); ?>" class="service-card">
               <span class="service-title">Hair Loss</span>
               <div class="service-image">
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/1759225236perioddelay.png" alt="Hair Loss" />
@@ -123,75 +123,81 @@ get_header();
               <span class="gradient-text">Health Hub</span>
             </h2>
           </div>
-          <a href="#all-articles" class="btn-secondary btn-view-all">
+          <a href="<?php echo esc_url( home_url( '/health-hub/' ) ); ?>" class="btn-secondary btn-view-all">
             View all articles
             <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow" />
           </a>
         </div>
 
         <div class="articles-grid">
-          <!-- Article 1 -->
-          <a href="<?php echo esc_url( home_url( '/health-hub/' ) ); ?>" class="article-card">
+          <?php
+          if ( function_exists( 'have_rows' ) && have_rows( 'hp_hub_articles' ) ) :
+            while ( have_rows( 'hp_hub_articles' ) ) :
+              the_row();
+              $art_image = get_sub_field( 'image' );
+              $art_badge = get_sub_field( 'badge' );
+              $art_title = get_sub_field( 'title' );
+              $art_desc  = get_sub_field( 'description' );
+              $art_url   = get_sub_field( 'url' );
+              if ( ! $art_url ) $art_url = home_url( '/health-hub/' );
+          ?>
+          <a href="<?php echo esc_url( $art_url ); ?>" class="article-card">
             <div class="article-image">
-              <img
-                src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=500&fit=crop"
-                alt="Weight Loss Guide"
-              />
-              <div class="article-badge">Weight Loss</div>
+              <?php if ( $art_image ) : ?>
+              <img src="<?php echo esc_url( $art_image ); ?>" alt="<?php echo esc_attr( $art_title ); ?>" />
+              <?php endif; ?>
+              <?php if ( $art_badge ) : ?>
+              <div class="article-badge"><?php echo esc_html( $art_badge ); ?></div>
+              <?php endif; ?>
             </div>
             <div class="article-content">
-              <h3>Why Most Patients Wish They'd Started Mounjaro Sooner</h3>
-              <p>
-                The dual-action GLP-1 delivering 20.9% average weight loss. Our pharmacist explains what patients need
-                to know.
-              </p>
+              <h3><?php echo esc_html( $art_title ); ?></h3>
+              <p><?php echo esc_html( $art_desc ); ?></p>
               <span class="article-link">
                 Read Article
                 <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow" />
               </span>
             </div>
           </a>
-
-          <!-- Article 2 -->
+          <?php
+            endwhile;
+          else :
+          ?>
+          <!-- Fallback: hardcoded cards when ACF repeater is empty -->
           <a href="<?php echo esc_url( home_url( '/health-hub/' ) ); ?>" class="article-card">
             <div class="article-image">
-              <img
-                src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=500&fit=crop"
-                alt="Travel Health"
-              />
+              <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=500&fit=crop" alt="Weight Loss Guide" />
+              <div class="article-badge">Weight Loss</div>
+            </div>
+            <div class="article-content">
+              <h3>Why Most Patients Wish They'd Started Mounjaro Sooner</h3>
+              <p>The dual-action GLP-1 delivering 20.9% average weight loss. Our pharmacist explains what patients need to know.</p>
+              <span class="article-link">Read Article <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow" /></span>
+            </div>
+          </a>
+          <a href="<?php echo esc_url( home_url( '/health-hub/' ) ); ?>" class="article-card">
+            <div class="article-image">
+              <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=500&fit=crop" alt="Travel Health" />
               <div class="article-badge">Travel Health</div>
             </div>
             <div class="article-content">
               <h3>The Ultimate Pre-Travel Health Checklist for 2026</h3>
               <p>Vaccines, malaria prevention, health kits — everything you need before your next adventure.</p>
-              <span class="article-link">
-                Read Article
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow" />
-              </span>
+              <span class="article-link">Read Article <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow" /></span>
             </div>
           </a>
-
-          <!-- Article 3 -->
           <a href="<?php echo esc_url( home_url( '/health-hub/' ) ); ?>" class="article-card">
             <div class="article-image">
-              <img
-                src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&h=500&fit=crop"
-                alt="Flu Vaccination"
-              />
+              <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&h=500&fit=crop" alt="Flu Vaccination" />
               <div class="article-badge">Seasonal Health</div>
             </div>
             <div class="article-content">
               <h3>Who Should Get the Flu Jab This Year — and Who Pays for It</h3>
-              <p>
-                NHS eligibility changes each season. Find out if you qualify for a free jab — or whether private makes
-                sense.
-              </p>
-              <span class="article-link">
-                Read Article
-                <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow" />
-              </span>
+              <p>NHS eligibility changes each season. Find out if you qualify for a free jab — or whether private makes sense.</p>
+              <span class="article-link">Read Article <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-18.svg" alt="Arrow" /></span>
             </div>
           </a>
+          <?php endif; ?>
         </div>
       </div>
     </section>
@@ -226,7 +232,7 @@ get_header();
             Destination
           </h2>
           <p class="destinations-desc">
-            At Rey London, we provide expert travel health services across South East London. Find the vaccines you need
+            At Chislehurst Pharmacy Group, we provide expert travel health services across South East London. Find the vaccines you need
             for your next adventure.
           </p>
         </div>
@@ -353,104 +359,15 @@ get_header();
     </section>
 
     <!-- Locations Section -->
-    <section class="locations-section" id="locations">
+    <section class="locations-section locations-section--dark" id="locations">
       <div class="container">
         <h2 class="section-title">
           Find your nearest<br />
-          <span class="gradient-text">Rey London pharmacy</span>
+          <span class="gradient-text">Chislehurst Pharmacy Group pharmacy</span>
         </h2>
-        <p class="section-subtitle">Visit us in person for expert advice and immediate service</p>
+        <p class="section-subtitle hp-locations-quote">Most patients tell us the same thing after their first visit.<br>They waited too long to come in.</p>
 
-        <div class="locations-grid">
-          <?php
-          $locations = rl_field( 'locations' );
-          if ( $locations ) :
-            foreach ( $locations as $loc ) :
-              $phone_digits = preg_replace( '/[^0-9+]/', '', $loc['phone'] );
-          ?>
-          <div class="location-card">
-            <?php if ( ! empty( $loc['image'] ) ) : ?>
-            <div class="location-image">
-              <img src="<?php echo esc_url( $loc['image'] ); ?>" alt="<?php echo esc_attr( $loc['name'] ); ?>" />
-            </div>
-            <?php endif; ?>
-            <div class="location-content">
-              <h3><?php echo esc_html( $loc['name'] ); ?></h3>
-              <div class="location-details">
-                <div class="detail-item">
-                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-19.svg" alt="Address" />
-                  <p><?php echo esc_html( $loc['address'] ); ?></p>
-                </div>
-                <div class="detail-item">
-                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-32.svg" alt="Phone" />
-                  <a href="tel:<?php echo esc_attr( $phone_digits ); ?>"><?php echo esc_html( $loc['phone'] ); ?></a>
-                </div>
-                <div class="detail-item">
-                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours" />
-                  <p><?php echo esc_html( $loc['hours'] ); ?></p>
-                </div>
-              </div>
-              <div class="location-actions">
-                <a href="<?php echo esc_url( $loc['directions_url'] ?: '#directions' ); ?>" class="btn-primary">Get Directions</a>
-                <a href="tel:<?php echo esc_attr( $phone_digits ); ?>" class="btn-outline">Call Now</a>
-              </div>
-            </div>
-          </div>
-          <?php endforeach; else : ?>
-          <div class="location-card">
-            <div class="location-image">
-              <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769343725749-0.jpeg" alt="Pond Pharmacy" />
-            </div>
-            <div class="location-content">
-              <h3>Pond Pharmacy</h3>
-              <div class="location-details">
-                <div class="detail-item">
-                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-19.svg" alt="Address" />
-                  <p>59 High St, Chislehurst BR7 5AF</p>
-                </div>
-                <div class="detail-item">
-                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-32.svg" alt="Phone" />
-                  <a href="tel:02084673158">020 8467 3158</a>
-                </div>
-                <div class="detail-item">
-                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours" />
-                  <p>Mon-Fri: 8am-8pm | Sat: 9am-6pm | Sun: 10am-4pm</p>
-                </div>
-              </div>
-              <div class="location-actions">
-                <a href="#directions" class="btn-primary">Get Directions</a>
-                <a href="tel:02084673158" class="btn-outline">Call Now</a>
-              </div>
-            </div>
-          </div>
-          <div class="location-card">
-            <div class="location-image">
-              <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769344823391-0.jpeg" alt="Chislehurst Pharmacy" />
-            </div>
-            <div class="location-content">
-              <h3>Chislehurst Pharmacy</h3>
-              <div class="location-details">
-                <div class="detail-item">
-                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-19.svg" alt="Address" />
-                  <p>59 Chislehurst Rd, Chislehurst BR7 5NP</p>
-                </div>
-                <div class="detail-item">
-                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-32.svg" alt="Phone" />
-                  <a href="tel:02082950017">020 8295 0017</a>
-                </div>
-                <div class="detail-item">
-                  <img src="https://c.animaapp.com/mkteqonbVRr1hb/assets/icon-21.svg" alt="Hours" />
-                  <p>Mon-Fri: 8am-8pm | Sat: 9am-6pm | Sun: 10am-4pm</p>
-                </div>
-              </div>
-              <div class="location-actions">
-                <a href="#directions" class="btn-primary">Get Directions</a>
-                <a href="tel:02082950017" class="btn-outline">Call Now</a>
-              </div>
-            </div>
-          </div>
-          <?php endif; ?>
-        </div>
+        <?php get_template_part( 'template-parts/location-cards', null, array( 'cta_prefix' => 'Book at' ) ); ?>
       </div>
     </section>
 
@@ -471,12 +388,11 @@ get_header();
               />
             </div>
             <div class="benefit-content">
-              <h3>Prescription Services</h3>
+              <h3>NHS Prescriptions</h3>
               <p>
-                Same-day collection available. Transfer your prescription to Rey London for convenient, reliable
-                service.
+                Collect your prescription same day from either of our Chislehurst locations. Quick, straightforward and local.
               </p>
-              <a href="#prescriptions" class="benefit-cta">
+              <a href="<?php echo esc_url( home_url( '/nhs-prescriptions/' ) ); ?>" class="benefit-cta">
                 Learn More
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path
@@ -501,8 +417,7 @@ get_header();
             <div class="benefit-content">
               <h3>Weight Loss</h3>
               <p>
-                Personalized weight loss programs with expert pharmacist support. Achieve your health goals with our
-                proven treatment plans.
+                Personalised weight loss programmes with expert pharmacist support. GLP-1 treatments prescribed same day by our pharmacists. Face-to-face care, no GP referral needed.
               </p>
               <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="benefit-cta">
                 Start Your Journey
@@ -523,14 +438,14 @@ get_header();
             <div class="benefit-image">
               <img
                 src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769370349564-0.jpeg"
-                alt="Health Checks"
+                alt="Vitamin B12 Injections"
               />
             </div>
             <div class="benefit-content">
-              <h3>Health Checks</h3>
-              <p>Blood pressure monitoring, diabetes screening, and cholesterol checks available daily.</p>
-              <a href="#health-checks" class="benefit-cta">
-                Book a Check
+              <h3>Vitamin B12 Injections</h3>
+              <p>Boost your energy, support your immune system and improve your mood. Administered by our qualified pharmacists at both Chislehurst locations — no GP referral needed.</p>
+              <a href="<?php echo esc_url( home_url( '/vitamin-b12-london/' ) ); ?>" class="benefit-cta">
+                Book Your Injection
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path
                     d="M3 8h10M9 4l4 4-4 4"
@@ -551,7 +466,7 @@ get_header();
             <div class="benefit-content">
               <h3>Travel Clinic</h3>
               <p>Vaccinations and travel health advice from our experienced pharmacists.</p>
-              <a href="#travel-clinic" class="benefit-cta">
+              <a href="<?php echo esc_url( home_url( '/travel-vaccinations-london/' ) ); ?>" class="benefit-cta">
                 Plan Your Trip
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path
@@ -576,7 +491,7 @@ get_header();
             <div class="benefit-content">
               <h3>Skip the GP wait.</h3>
               <p>Free NHS treatment for 7 common conditions including sore throats, UTIs, and skin infections.</p>
-              <a href="#nhs-services" class="benefit-cta">
+              <a href="<?php echo esc_url( home_url( '/pharmacy-first/' ) ); ?>" class="benefit-cta">
                 Get Treatment Now
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path
@@ -593,13 +508,13 @@ get_header();
 
           <div class="benefit-card">
             <div class="benefit-image">
-              <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517025474-0.jpeg" alt="Delivery" />
+              <img src="https://chislehurstpharmacygroup.kinsta.cloud/wp-content/uploads/2026/04/Generated-Image-April-20-2026-1_36PM.jpg" alt="HPV Vaccine — Gardasil 9" />
             </div>
             <div class="benefit-content">
-              <h3>Free Local Delivery</h3>
-              <p>Free delivery across London on orders over £20. We know the city.</p>
-              <a href="#delivery" class="benefit-cta">
-                Order Now
+              <h3>HPV Vaccine — Gardasil 9</h3>
+              <p>Protection against nine strains of HPV, including those linked to cervical cancer. Available same day at both our Chislehurst locations. No GP referral needed.</p>
+              <a href="<?php echo esc_url( home_url( '/hpv-vaccine/' ) ); ?>" class="benefit-cta">
+                Book Your Vaccine
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path
                     d="M3 8h10M9 4l4 4-4 4"
@@ -787,7 +702,7 @@ get_header();
               </svg>
             </div>
             <p class="testimonial-quote">
-              "As a frequent traveller, I rely on Rey London for all my travel health needs. Yellow fever certification
+              "As a frequent traveller, I rely on Chislehurst Pharmacy Group for all my travel health needs. Yellow fever certification
               was processed immediately. Couldn't ask for better service."
             </p>
             <div class="testimonial-author">
@@ -835,13 +750,13 @@ get_header();
         <!-- Trust Indicators -->
         <div class="testimonials-trust">
           <div class="testimonials-trust-item">
-            <div class="testimonials-trust-number">4.9/5</div>
-            <div class="testimonials-trust-label">Average Rating</div>
+            <div class="testimonials-trust-number">2</div>
+            <div class="testimonials-trust-label">Chislehurst Locations</div>
           </div>
           <div class="testimonials-trust-divider"></div>
           <div class="testimonials-trust-item">
-            <div class="testimonials-trust-number">400+</div>
-            <div class="testimonials-trust-label">5-Star Reviews</div>
+            <div class="testimonials-trust-number">Same Day</div>
+            <div class="testimonials-trust-label">Appointments Available</div>
           </div>
           <div class="testimonials-trust-divider"></div>
           <div class="testimonials-trust-item">
@@ -853,204 +768,102 @@ get_header();
     </section>
 
     <!-- How It Works -->
-    <section class="how-it-works">
+    <section class="how-it-works" id="how-it-works">
       <div class="container">
-        <h2 class="section-title gradient-text">How to use our services</h2>
-        <p class="section-subtitle">Getting the care you need is simple</p>
+        <h2 class="section-title gradient-text"><?php echo esc_html( rl_field( 'hp_hiw_title', 'How to use our services' ) ); ?></h2>
+        <p class="section-subtitle"><?php echo esc_html( rl_field( 'hp_hiw_subtitle', 'Getting the care you need is simple' ) ); ?></p>
 
         <div class="steps-grid">
+          <?php
+          if ( function_exists( 'have_rows' ) && have_rows( 'hp_hiw_steps' ) ) :
+            $step_num = 0;
+            while ( have_rows( 'hp_hiw_steps' ) ) :
+              the_row();
+              $step_num++;
+              $s_image = get_sub_field( 'image' );
+              $s_label = get_sub_field( 'label' );
+              $s_title = get_sub_field( 'title' );
+              $s_desc  = get_sub_field( 'description' );
+              if ( ! $s_label ) $s_label = 'Step ' . $step_num;
+          ?>
           <div class="step-card">
+            <?php if ( $s_image ) : ?>
             <div class="step-image">
-              <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769518303266-1.jpeg" alt="Step 1" />
+              <img src="<?php echo esc_url( $s_image ); ?>" alt="<?php echo esc_attr( $s_title ); ?>" />
             </div>
+            <?php else : ?>
+            <div class="step-image step-image-placeholder">
+              <span>Image <?php echo (int) $step_num; ?></span>
+            </div>
+            <?php endif; ?>
             <div class="step-content">
-              <span class="step-label">Step 1</span>
-              <h3>Visit or Call Us</h3>
-              <p>Walk into either location or call ahead to speak with our pharmacists.</p>
+              <span class="step-label"><?php echo esc_html( $s_label ); ?></span>
+              <h3><?php echo esc_html( $s_title ? $s_title : 'Step ' . $step_num . ' Title' ); ?></h3>
+              <p><?php echo esc_html( $s_desc ? $s_desc : 'Step description — edit in wp-admin.' ); ?></p>
             </div>
           </div>
-
+          <?php
+            endwhile;
+          else :
+            /* Fallback: 3 placeholder cards when ACF repeater is empty */
+            for ( $i = 1; $i <= 3; $i++ ) :
+          ?>
           <div class="step-card">
-            <div class="step-image">
-              <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517146368-2.png" alt="Step 2" />
+            <div class="step-image step-image-placeholder">
+              <span>Image <?php echo $i; ?></span>
             </div>
             <div class="step-content">
-              <span class="step-label">Step 2</span>
-              <h3>Expert Consultation</h3>
-              <p>Our qualified pharmacists will provide personalized advice for your needs.</p>
+              <span class="step-label">Step <?php echo $i; ?></span>
+              <h3>Step <?php echo $i; ?> Title</h3>
+              <p>Add your content in the "How It Works" tab on the homepage in wp-admin.</p>
             </div>
           </div>
-
-          <div class="step-card">
-            <div class="step-image">
-              <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517273031-0.png" alt="Step 3" />
-            </div>
-            <div class="step-content">
-              <span class="step-label">Step 3</span>
-              <h3>Get Your Medication</h3>
-              <p>Collect immediately or choose free delivery to your London address.</p>
-            </div>
-          </div>
-
-          <div class="step-card">
-            <div class="step-image">
-              <img src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769518806795-0.jpeg" alt="Step 4" />
-            </div>
-            <div class="step-content">
-              <span class="step-label">Step 4</span>
-              <h3>Ongoing Support</h3>
-              <p>We're here whenever you need us with continuous care and advice.</p>
-            </div>
-          </div>
+          <?php endfor; endif; ?>
         </div>
       </div>
     </section>
 
     <!-- Team Section -->
+    <!-- Meet Your Pharmacist — Editorial Layout -->
     <section class="team-section" id="team">
+      <div class="team-editorial">
+        <div class="team-photo-col">
+          <img src="<?php echo esc_url( rl_field( 'pharmacist_image', 'https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517579457-0.png' ) ); ?>" alt="<?php echo esc_attr( rl_field( 'pharmacist_name', 'Sumeet Banker' ) ); ?>" class="team-photo" />
+          <div class="team-photo-fade"></div>
+        </div>
+        <div class="team-credentials-col">
+          <div class="team-credentials-inner">
+            <span class="team-eyebrow">Your Pharmacist</span>
+            <h2 class="team-name"><?php echo esc_html( rl_field( 'pharmacist_name', 'Sumeet Banker' ) ); ?></h2>
+            <p class="team-title"><?php echo esc_html( rl_field( 'pharmacist_title', 'Superintendent Pharmacist & Owner' ) ); ?></p>
+            <div class="team-badge">GPhC Registered</div>
+            <p class="team-bio"><?php echo esc_html( rl_field( 'pharmacist_bio', 'Fifteen years. Two pharmacies. One standard of care. Sumeet built Chislehurst Pharmacy Group on the belief that local healthcare should feel personal — not transactional.' ) ); ?></p>
+            <div class="team-buttons">
+              <a href="<?php echo esc_url( home_url( '/contact-page/#book-appointment' ) ); ?>" class="team-btn-primary">Book Consultation</a>
+              <a href="<?php echo esc_url( home_url( '/meet-the-team/' ) ); ?>" class="team-btn-ghost">Meet the Team</a>
+            </div>
+            <div class="team-stats-grid">
+              <div class="team-stat">
+                <div class="team-stat-number"><?php echo esc_html( rl_field( 'hp_team_stat1_number', '15+' ) ); ?></div>
+                <div class="team-stat-label"><?php echo esc_html( rl_field( 'hp_team_stat1_label', 'Years Serving London' ) ); ?></div>
+              </div>
+              <div class="team-stat">
+                <div class="team-stat-number"><?php echo esc_html( rl_field( 'hp_team_stat2_number', '2' ) ); ?></div>
+                <div class="team-stat-label"><?php echo esc_html( rl_field( 'hp_team_stat2_label', 'Chislehurst Locations' ) ); ?></div>
+              </div>
+              <div class="team-stat">
+                <div class="team-stat-number"><?php echo esc_html( rl_field( 'hp_team_stat3_number', '10,000+' ) ); ?></div>
+                <div class="team-stat-label"><?php echo esc_html( rl_field( 'hp_team_stat3_label', 'Patients Served' ) ); ?></div>
+              </div>
+              <div class="team-stat">
+                <div class="team-stat-number"><?php echo esc_html( rl_field( 'hp_team_stat4_number', 'Same Day' ) ); ?></div>
+                <div class="team-stat-label"><?php echo esc_html( rl_field( 'hp_team_stat4_label', 'Appointments Available' ) ); ?></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="container">
-        <div class="team-header">
-          <h2 class="section-title">
-            Meet your<br />
-            <span class="gradient-text">expert pharmacy team</span>
-          </h2>
-          <p class="section-subtitle">
-            Led by Sumeet Banker, our team delivers exceptional pharmaceutical care across South East London
-          </p>
-        </div>
-
-        <div class="team-content-grid">
-          <!-- Left Column - Hero Pharmacist Feature -->
-          <div class="pharmacist-hero">
-            <div class="pharmacist-image-wrapper">
-              <img
-                src="https://c.animaapp.com/mldwlo03Vo3ysQ/img/uploaded-asset-1769517579457-0.png"
-                alt="Sumeet Banker - Superintendent Pharmacist"
-                class="pharmacist-image"
-              />
-
-              <div class="pharmacist-profile-card">
-                <div class="profile-header">
-                  <div class="profile-info">
-                    <h3 class="profile-name"><?php echo esc_html( rl_field( 'pharmacist_name', 'Sumeet Banker' ) ); ?></h3>
-                    <p class="profile-title"><?php echo esc_html( rl_field( 'pharmacist_title', 'Superintendent Pharmacist & Owner' ) ); ?></p>
-                    <div class="profile-badge">
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M8 1l2.5 5 5.5.5-4 4 1 5.5L8 13l-5 3 1-5.5-4-4 5.5-.5L8 1z" fill="currentColor" />
-                      </svg>
-                      <span>GPhC Registered</span>
-                    </div>
-                  </div>
-                </div>
-
-                <p class="profile-bio">
-                  <?php echo esc_html( rl_field( 'pharmacist_bio', 'With over 15 years of experience, Sumeet leads our team in providing exceptional pharmaceutical care to the South East London community.' ) ); ?>
-                </p>
-
-                <div class="profile-actions">
-                  <a href="#contact" class="btn-profile-primary"> Book Consultation </a>
-                  <a href="#team-full" class="btn-profile-secondary"> Meet the Team </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column - Premium Stats Grid -->
-          <div class="team-stats-premium">
-            <div class="stats-grid-premium">
-              <!-- Stat 1 -->
-              <div class="stat-card-hero">
-                <div class="stat-icon-hero">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-                <div class="stat-content-hero">
-                  <div class="stat-number-hero">8</div>
-                  <h4 class="stat-label-hero">Qualified Pharmacists</h4>
-                </div>
-              </div>
-
-              <!-- Stat 2 -->
-              <div class="stat-card-hero">
-                <div class="stat-icon-hero">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <circle
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path d="M12 6v6l4 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </div>
-                <div class="stat-content-hero">
-                  <div class="stat-number-hero">15+</div>
-                  <h4 class="stat-label-hero">Years Serving London</h4>
-                </div>
-              </div>
-
-              <!-- Stat 3 -->
-              <div class="stat-card-hero">
-                <div class="stat-icon-hero">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <circle
-                      cx="12"
-                      cy="10"
-                      r="3"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-                <div class="stat-content-hero">
-                  <div class="stat-number-hero">2</div>
-                  <h4 class="stat-label-hero">Premium Locations</h4>
-                </div>
-              </div>
-
-              <!-- Stat 4 -->
-              <div class="stat-card-hero">
-                <div class="stat-icon-hero">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-                <div class="stat-content-hero">
-                  <div class="stat-number-hero">10,000+</div>
-                  <h4 class="stat-label-hero">Patients Served</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div class="certifications-modern">
           <div class="cert-label">Certified & Regulated By</div>
           <div class="cert-logos">
@@ -1235,14 +1048,12 @@ get_header();
             <?php echo esc_html( rl_field( 'cta_subtitle', 'Our expert pharmacists are here to help you across both South East London locations. No appointment needed for most services.' ) ); ?>
           </p>
           <div class="hp-footer-cta-buttons">
-            <a href="<?php echo esc_url( rl_field( 'cta_button_url' ) ?: rl_booking_url() ); ?>" class="hp-btn-cta-white"><?php echo esc_html( rl_field( 'cta_button_text', 'Book Appointment' ) ); ?></a>
-            <a href="tel:<?php echo esc_attr( rl_phone_link() ); ?>" class="hp-btn-cta-ghost">
+            <a href="<?php echo esc_url( rl_field( 'cta_button_url' ) ?: rl_booking_url() ); ?>" class="hp-btn-cta-white"><?php echo esc_html( rl_field( 'cta_button_text', 'Book Consultation' ) ); ?></a>
+            <a href="<?php echo esc_url( home_url( '/contact-page/' ) ); ?>" class="hp-btn-cta-ghost">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.09 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81L9.27 8.95a16 16 0 0 0 6.78 6.78l1.42-1.42a12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                />
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
               </svg>
-              Call Us: <?php echo esc_html( rl_phone() ); ?>
+              Contact Us
             </a>
           </div>
           <div class="hp-cta-checks">
@@ -1260,6 +1071,7 @@ get_header();
             <p>Get expert health tips, exclusive offers, and updates delivered to your inbox</p>
           </div>
           <form class="newsletter-form hp-footer-newsletter-form">
+            <input type="text" name="rl_hp" style="display:none" tabindex="-1" autocomplete="off">
             <div class="newsletter-input-wrapper">
               <svg class="newsletter-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
@@ -1277,7 +1089,7 @@ get_header();
                   stroke-linejoin="round"
                 />
               </svg>
-              <input type="email" placeholder="Enter your email address" class="newsletter-input" required />
+              <input type="email" name="email" autocomplete="email" placeholder="Enter your email address" class="newsletter-input" required />
               <button type="submit" class="newsletter-btn">
                 Subscribe
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
