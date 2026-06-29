@@ -53,7 +53,7 @@ get_header();
       <div class="hh-topic-cards">
 
         <!-- Card 1: Weight Loss -->
-        <a href="#weight-loss-articles" class="hh-topic-card hh-topic-card--wl" data-topic="weight-loss" data-category="weight-loss">
+        <a href="<?php echo esc_url( get_category_link( get_cat_ID( 'Weight Loss' ) ) ?: home_url( '/category/weight-loss/' ) ); ?>" class="hh-topic-card hh-topic-card--wl" data-topic="weight-loss" data-category="weight-loss">
           <div class="hh-topic-img-wrap">
             <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=900&h=600&fit=crop" alt="Person preparing healthy food — Weight Loss Journeys" class="hh-topic-img">
             <div class="hh-topic-overlay"></div>
@@ -70,7 +70,7 @@ get_header();
         </a>
 
         <!-- Card 2: Travel Health -->
-        <a href="#travel-health-articles" class="hh-topic-card hh-topic-card--travel" data-topic="travel-health" data-category="travel-health">
+        <a href="<?php echo esc_url( get_category_link( get_cat_ID( 'Travel Health' ) ) ?: home_url( '/category/travel-health/' ) ); ?>" class="hh-topic-card hh-topic-card--travel" data-topic="travel-health" data-category="travel-health">
           <div class="hh-topic-img-wrap">
             <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=900&h=600&fit=crop" alt="Travel destination with passport — Travel Health Guides" class="hh-topic-img">
             <div class="hh-topic-overlay"></div>
@@ -87,7 +87,7 @@ get_header();
         </a>
 
         <!-- Card 3: Wellness -->
-        <a href="#wellness-articles" class="hh-topic-card hh-topic-card--wellness" data-topic="wellness" data-category="wellness">
+        <a href="<?php echo esc_url( get_category_link( get_cat_ID( 'Wellness' ) ) ?: home_url( '/category/wellness/' ) ); ?>" class="hh-topic-card hh-topic-card--wellness" data-topic="wellness" data-category="wellness">
           <div class="hh-topic-img-wrap">
             <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=900&h=600&fit=crop" alt="Wellness and healthy lifestyle scene" class="hh-topic-img">
             <div class="hh-topic-overlay"></div>
@@ -123,24 +123,20 @@ get_header();
       </div>
 
       <?php
-      $hh_author    = rl_hh_author();
-      $feat_image   = rl_field( 'hh_feat_image' );
-      $feat_img_url = is_array( $feat_image ) && ! empty( $feat_image['url'] ) ? $feat_image['url'] : 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=900&h=600&fit=crop';
-      $feat_img_alt = rl_field( 'hh_feat_image_alt', 'Clinical weight loss — Mounjaro vs Wegovy comparison' );
-      if ( ! $feat_img_alt && is_array( $feat_image ) && ! empty( $feat_image['alt'] ) ) { $feat_img_alt = $feat_image['alt']; }
-      $feat_cat      = rl_field( 'hh_feat_category', 'weight-loss' );
-      $feat_cat_text = rl_field( 'hh_feat_category_text', 'WEIGHT LOSS' );
-      $feat_date     = rl_field( 'hh_feat_date', 'Mar 14, 2026' );
-      $feat_read     = rl_field( 'hh_feat_read_time', '8 min read' );
-      $feat_title    = rl_field( 'hh_feat_title', 'Mounjaro vs Wegovy: What the Clinical Trials Actually Show' );
-      $feat_excerpt  = rl_field( 'hh_feat_excerpt', '"My GP mentioned Wegovy. But my friend lost heaps of weight on Mounjaro. Are they the same thing? Should I ask for the other one?" Two of the most-prescribed GLP-1 medications — but they work differently, cost differently, and suit different patients. Our lead pharmacist breaks down what the data actually shows.' );
-      $feat_url      = rl_field( 'hh_feat_url', home_url( '/health-hub/' ) );
-      $feat_author_title = rl_field( 'hh_feat_author_title', $hh_author['title'] );
+      $hh_author = rl_hh_author();
+      $feat_query = new WP_Query( array( 'posts_per_page' => 1, 'post_status' => 'publish', 'orderby' => 'date', 'order' => 'DESC' ) );
+      if ( $feat_query->have_posts() ) : $feat_query->the_post();
+        $feat_cats     = get_the_category();
+        $feat_cat      = ! empty( $feat_cats ) ? $feat_cats[0]->slug : 'wellness';
+        $feat_cat_text = ! empty( $feat_cats ) ? strtoupper( $feat_cats[0]->name ) : 'WELLNESS';
+        $feat_img_url  = get_the_post_thumbnail_url( get_the_ID(), 'large' ) ?: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=900&h=600&fit=crop';
+        $feat_word_count = str_word_count( wp_strip_all_tags( get_the_content() ) );
+        $feat_read     = max( 1, ceil( $feat_word_count / 250 ) ) . ' min read';
       ?>
       <div class="hh-featured-card" data-category="<?php echo esc_attr( $feat_cat ); ?>">
         <div class="hh-featured-img-col">
           <div class="hh-featured-img-wrap">
-            <img src="<?php echo esc_url( $feat_img_url ); ?>" alt="<?php echo esc_attr( $feat_img_alt ); ?>" class="hh-featured-img">
+            <img src="<?php echo esc_url( $feat_img_url ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" class="hh-featured-img">
             <div class="hh-featured-cat-badge"><?php echo esc_html( $feat_cat_text ); ?></div>
           </div>
         </div>
@@ -151,23 +147,24 @@ get_header();
               <?php echo esc_html( $feat_read ); ?>
             </span>
             <span class="hh-meta-dot">·</span>
-            <span class="hh-date"><?php echo esc_html( $feat_date ); ?></span>
+            <span class="hh-date"><?php echo esc_html( get_the_date( 'M d, Y' ) ); ?></span>
           </div>
-          <h2 class="hh-featured-title"><?php echo esc_html( $feat_title ); ?></h2>
-          <p class="hh-featured-excerpt"><?php echo esc_html( $feat_excerpt ); ?></p>
+          <h2 class="hh-featured-title"><?php the_title(); ?></h2>
+          <p class="hh-featured-excerpt"><?php echo esc_html( get_the_excerpt() ); ?></p>
           <div class="hh-byline">
             <?php rl_hh_avatar( $hh_author, 'lg' ); ?>
             <div class="hh-byline-info">
               <span class="hh-byline-name"><?php echo esc_html( $hh_author['name'] ); ?></span>
-              <span class="hh-byline-title"><?php echo esc_html( $feat_author_title ); ?></span>
+              <span class="hh-byline-title"><?php echo esc_html( $hh_author['title'] ); ?></span>
             </div>
           </div>
-          <a href="<?php echo esc_url( $feat_url ); ?>" class="hh-featured-cta">
+          <a href="<?php the_permalink(); ?>" class="hh-featured-cta">
             Read Full Article
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </div>
+      <?php endif; wp_reset_postdata(); ?>
     </div>
   </section>
 
@@ -182,53 +179,50 @@ get_header();
       </div>
 
       <?php
-      $hh_articles = rl_field( 'hh_articles', array() );
-      if ( empty( $hh_articles ) || ! is_array( $hh_articles ) ) {
-          $hh_articles = array(
-              array( 'image' => array( 'url' => 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=450&fit=crop' ), 'image_alt' => 'Person with energy and wellness — B12 injections article', 'category' => 'wellness', 'category_text' => 'WELLNESS', 'date' => 'Mar 10, 2026', 'read_time' => '5 min read', 'title' => '7 Signs You Might Be Deficient in Vitamin B12', 'excerpt' => 'Fatigue, brain fog, pins and needles — these 7 warning signs could mean your B12 is dangerously low. Here\'s when an injection is right for you.', 'url' => home_url( '/health-hub/' ), 'author_title' => 'Superintendent Pharmacist' ),
-              array( 'image' => array( 'url' => 'https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=800&h=450&fit=crop' ), 'image_alt' => 'Tropical destination — travel health article', 'category' => 'travel-health', 'category_text' => 'TRAVEL HEALTH', 'date' => 'Mar 03, 2026', 'read_time' => '6 min read', 'title' => 'The Ultimate Pre-Travel Health Checklist for 2026', 'excerpt' => 'Vaccines, malaria tablets, health kits, insurance — the complete pharmacist-approved checklist for travellers from South East London.', 'url' => home_url( '/health-hub/' ), 'author_title' => '' ),
-              array( 'image' => array( 'url' => 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800&h=450&fit=crop' ), 'image_alt' => 'Thailand temple — Thailand travel vaccinations guide', 'category' => 'travel-health', 'category_text' => 'TRAVEL HEALTH', 'date' => 'Feb 28, 2026', 'read_time' => '12 min read', 'title' => 'Thailand Travel Vaccinations: Complete Guide for South East London Travellers', 'excerpt' => 'Essential vaccines, malaria prevention, and health advice for your Thailand trip from our yellow fever centre.', 'url' => home_url( '/travel-thailand/' ), 'author_title' => 'Superintendent Pharmacist' ),
-              array( 'image' => array( 'url' => 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&h=450&fit=crop' ), 'image_alt' => 'Healthy meal prep — weight loss guide', 'category' => 'weight-loss', 'category_text' => 'WEIGHT LOSS', 'date' => 'Feb 21, 2026', 'read_time' => '7 min read', 'title' => 'What Actually Happens When You Start Mounjaro: Week by Week', 'excerpt' => 'The first injection, the appetite changes, the expected side effects — and when to call us if something feels wrong.', 'url' => home_url( '/weight-loss/' ), 'author_title' => '' ),
-              array( 'image' => array( 'url' => 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=800&h=450&fit=crop' ), 'image_alt' => 'NHS prescription — prescription services article', 'category' => 'wellness', 'category_text' => 'PRESCRIPTIONS', 'date' => 'Feb 14, 2026', 'read_time' => '4 min read', 'title' => 'NHS Repeat Prescriptions: 5 Things Chislehurst Patients Should Know', 'excerpt' => 'NHS Electronic Prescription Service means you never need to collect a paper script again. Here\'s how to set it up properly.', 'url' => home_url( '/nhs-prescriptions/' ), 'author_title' => 'Superintendent Pharmacist' ),
-              array( 'image' => array( 'url' => 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&h=450&fit=crop' ), 'image_alt' => 'Flu vaccination — seasonal health article', 'category' => 'seasonal', 'category_text' => 'SEASONAL HEALTH', 'date' => 'Feb 07, 2026', 'read_time' => '5 min read', 'title' => 'Who Should Get the Flu Jab This Year — and Who Pays for It', 'excerpt' => 'NHS eligibility criteria change each season. Find out if you qualify for a free jab — or whether a private one makes sense for your family.', 'url' => home_url( '/health-hub/' ), 'author_title' => '' ),
-          );
-      }
-      $hh_badge_map = array( 'wellness' => 'hh-badge--wellness', 'travel-health' => 'hh-badge--travel', 'weight-loss' => 'hh-badge--weight', 'seasonal' => 'hh-badge--seasonal', 'prescriptions' => 'hh-badge--wellness' );
+      $hh_badge_map = array( 'wellness' => 'hh-badge--wellness', 'travel-health' => 'hh-badge--travel', 'weight-loss' => 'hh-badge--weight', 'seasonal' => 'hh-badge--seasonal', 'prescriptions' => 'hh-badge--wellness', 'pharmacy-advice' => 'hh-badge--wellness', 'vaccinations' => 'hh-badge--travel' );
+      $articles_query = new WP_Query( array(
+          'posts_per_page' => 6,
+          'post_status'    => 'publish',
+          'orderby'        => 'date',
+          'order'          => 'DESC',
+          'offset'         => 1,
+      ) );
       ?>
       <div class="hh-articles-grid" id="articlesGrid">
-        <?php foreach ( $hh_articles as $art ) :
-            $img_url = is_array( $art['image'] ?? null ) && ! empty( $art['image']['url'] ) ? $art['image']['url'] : '';
-            if ( ! $img_url ) { continue; }
-            $img_alt = $art['image_alt'] ?? ( is_array( $art['image'] ?? null ) ? ( $art['image']['alt'] ?? '' ) : '' );
-            $cat     = $art['category'] ?? 'wellness';
-            $cat_txt = $art['category_text'] ?? strtoupper( str_replace( '-', ' ', $cat ) );
+        <?php if ( $articles_query->have_posts() ) : while ( $articles_query->have_posts() ) : $articles_query->the_post();
+            $art_cats  = get_the_category();
+            $cat       = ! empty( $art_cats ) ? $art_cats[0]->slug : 'wellness';
+            $cat_txt   = ! empty( $art_cats ) ? strtoupper( $art_cats[0]->name ) : 'WELLNESS';
             $badge_class = $hh_badge_map[ $cat ] ?? 'hh-badge--wellness';
-            $url     = ! empty( $art['url'] ) ? $art['url'] : home_url( '/health-hub/' );
-            $a_title = ! empty( $art['author_title'] ) ? $art['author_title'] : $hh_author['title'];
+            $art_img   = get_the_post_thumbnail_url( get_the_ID(), 'health-hub-card' );
+            $art_words = str_word_count( wp_strip_all_tags( get_the_content() ) );
+            $art_read  = max( 1, ceil( $art_words / 250 ) ) . ' min read';
         ?>
-        <a href="<?php echo esc_url( $url ); ?>" class="hh-article-card" data-category="<?php echo esc_attr( $cat ); ?>">
+        <a href="<?php the_permalink(); ?>" class="hh-article-card" data-category="<?php echo esc_attr( $cat ); ?>">
+          <?php if ( $art_img ) : ?>
           <div class="hh-article-img-wrap">
-            <img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $img_alt ); ?>" class="hh-article-img">
+            <img src="<?php echo esc_url( $art_img ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" class="hh-article-img">
             <div class="hh-article-cat-badge <?php echo esc_attr( $badge_class ); ?>"><?php echo esc_html( $cat_txt ); ?></div>
           </div>
+          <?php endif; ?>
           <div class="hh-article-body">
             <div class="hh-article-meta">
-              <span class="hh-read-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><?php echo esc_html( $art['read_time'] ?? '' ); ?></span>
+              <span class="hh-read-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><?php echo esc_html( $art_read ); ?></span>
               <span class="hh-meta-dot">·</span>
-              <span class="hh-date"><?php echo esc_html( $art['date'] ?? '' ); ?></span>
+              <span class="hh-date"><?php echo esc_html( get_the_date( 'M d, Y' ) ); ?></span>
             </div>
-            <h3 class="hh-article-title"><?php echo esc_html( $art['title'] ?? '' ); ?></h3>
-            <p class="hh-article-excerpt"><?php echo esc_html( $art['excerpt'] ?? '' ); ?></p>
+            <h3 class="hh-article-title"><?php the_title(); ?></h3>
+            <p class="hh-article-excerpt"><?php echo esc_html( get_the_excerpt() ); ?></p>
             <div class="hh-byline hh-byline--sm">
               <?php rl_hh_avatar( $hh_author, 'sm' ); ?>
               <div class="hh-byline-info">
                 <span class="hh-byline-name"><?php echo esc_html( $hh_author['name'] ); ?></span>
-                <span class="hh-byline-title"><?php echo esc_html( $a_title ); ?></span>
+                <span class="hh-byline-title"><?php echo esc_html( $hh_author['title'] ); ?></span>
               </div>
             </div>
           </div>
         </a>
-        <?php endforeach; ?>
+        <?php endwhile; endif; wp_reset_postdata(); ?>
       </div>
     </div>
   </section>
